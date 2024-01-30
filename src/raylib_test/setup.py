@@ -6,15 +6,9 @@ with open('requirements.txt') as f:
     install_requires = f.read().strip().split('\n')
 
 setup(
-    name='raylib-cython',
-    version='5.0.0',
-    url='https://github.com/Le-o-n/raylib-cython',
-    description='Cython bindings for the raylib game engine.',
-    license='MIT',
-    author='Leon Bass',
     
     package_dir={
-        "": "src"
+        "": "src/raylib_test"
     },
     
     ext_modules=cythonize(
