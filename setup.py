@@ -19,8 +19,9 @@ setup(
             '*.pxd',
         ]
     },
-    ext_modules=cythonize("src/raylib_cython/raylib.pyx"),
+    ext_modules=cythonize("src/raylib_cython/raylib.pyx", annotate=True),
     install_requires=install_requires,
-    compiler_directives={"language_level": "3"}
+    compiler_directives={"language_level": "3"},
+
 
 )
