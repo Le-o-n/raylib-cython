@@ -12,13 +12,15 @@ setup(
     license='MIT',
     author='Leon Bass',
     packages=find_packages(where="src"),
+    package_dir={"": "src"},
     package_data={
         'raylib_cython': [
-            'raylib.pyi',
-            'raylib.pxd'
+            '*.pyi',
+            '*.pxd',
         ]
     },
     ext_modules=cythonize("src/raylib_cython/raylib.pyx"),
     install_requires=install_requires,
+    compiler_directives={"language_level": "3"}
 
 )
