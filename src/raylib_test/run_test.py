@@ -1,4 +1,6 @@
-import main
+import test
+
+
 
 if  __name__ == "__main__":
-    main.main()
+    test.run()
