@@ -1,5 +1,5 @@
 
-from src.raylib_cython.raylib cimport Vector2
+from src.raylib_cython.raylib cimport Vector2, PI
 
 
 cpdef void run():
@@ -8,4 +8,4 @@ cpdef void run():
     
     cdef Vector2 vec2
 
-    vec2.x = 1
+    print(PI)
