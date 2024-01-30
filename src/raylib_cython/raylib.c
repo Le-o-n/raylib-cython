@@ -3,12 +3,18 @@
 /* BEGIN: Cython Metadata
 {
     "distutils": {
-        "name": "raylib",
+        "depends": [
+            "src\\raylib5\\raylib.h"
+        ],
+        "include_dirs": [
+            "src/raylib_cython"
+        ],
+        "name": "src.raylib_cython.raylib",
         "sources": [
-            "src/raylib.pyx"
+            "src/raylib_cython/raylib.pyx"
         ]
     },
-    "module_name": "raylib"
+    "module_name": "src.raylib_cython.raylib"
 }
 END: Cython Metadata */
 
@@ -750,9 +756,10 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__raylib
-#define __PYX_HAVE_API__raylib
+#define __PYX_HAVE__src__raylib_cython__raylib
+#define __PYX_HAVE_API__src__raylib_cython__raylib
 /* Early includes */
+#include "../raylib5/raylib.h"
 #ifdef _OPENMP
 #include <omp.h>
 #endif /* _OPENMP */
@@ -962,7 +969,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "src\\raylib.pyx",
+  "src\\raylib_cython\\raylib.pyx",
 };
 
 /*--- Type declarations ---*/
@@ -1160,12 +1167,12 @@ static int __Pyx_check_binary_version(void);
 static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 
 
-/* Module declarations from 'raylib' */
-#define __Pyx_MODULE_NAME "raylib"
-extern int __pyx_module_is_main_raylib;
-int __pyx_module_is_main_raylib = 0;
+/* Module declarations from 'src.raylib_cython.raylib' */
+#define __Pyx_MODULE_NAME "src.raylib_cython.raylib"
+extern int __pyx_module_is_main_src__raylib_cython__raylib;
+int __pyx_module_is_main_src__raylib_cython__raylib = 0;
 
-/* Implementation of 'raylib' */
+/* Implementation of 'src.raylib_cython.raylib' */
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_test[] = "__test__";
@@ -1482,14 +1489,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_raylib) {
+  if (__pyx_module_is_main_src__raylib_cython__raylib) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "raylib")) {
-      if (unlikely(PyDict_SetItemString(modules, "raylib", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "src.raylib_cython.raylib")) {
+      if (unlikely(PyDict_SetItemString(modules, "src.raylib_cython.raylib", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -1510,7 +1517,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "raylib.pyx":1
+  /* "src/raylib_cython/raylib.pyx":1
              # <<<<<<<<<<<<<<
  */
   __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
@@ -1525,11 +1532,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_1);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init raylib", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init src.raylib_cython.raylib", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init raylib");
+    PyErr_SetString(PyExc_ImportError, "init src.raylib_cython.raylib");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
