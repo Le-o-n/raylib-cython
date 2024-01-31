@@ -14,6 +14,8 @@ cdef extern from "../raylib5/raylib.h":
     cdef void* RL_REALLOC(void* ptr, size_t sz)
     cdef void RL_FREE(void* ptr)
 
+    cdef Color LIGHTGRAY = Color(200, 200, 200, 255)
+
     # Vector2, 2 components
     ctypedef struct Vector2:
         float x                 # Vector x component
