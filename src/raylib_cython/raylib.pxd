@@ -1,4 +1,3 @@
-cimport ctypes
 from libc.stdint cimport uint8_t
 
 cdef extern from "../raylib5/raylib.h":
@@ -14,8 +13,7 @@ cdef extern from "../raylib5/raylib.h":
     cdef void* RL_REALLOC(void* ptr, size_t sz)
     cdef void RL_FREE(void* ptr)
 
-    cdef Color LIGHTGRAY = Color(200, 200, 200, 255)
-
+    
     # Vector2, 2 components
     ctypedef struct Vector2:
         float x                 # Vector x component
@@ -50,6 +48,28 @@ cdef extern from "../raylib5/raylib.h":
         uint8_t g               # Color green value
         uint8_t b               # Color blue value
         uint8_t a               # Color alpha value
+
+    cdef Color LIGHTGRAY = {200, 200, 200, 255}
+    cdef Color GRAY      
+    cdef Color DARKGRAY  
+    cdef Color YELLOW    
+    cdef Color GOLD      
+    cdef Color ORANGE    
+    cdef Color PINK      
+    cdef Color RED       
+    cdef Color MAROON    
+    cdef Color GREEN     
+    cdef Color LIME      
+    cdef Color DARKGREEN 
+    cdef Color SKYBLUE   
+    cdef Color BLUE      
+    cdef Color DARKBLUE  
+    cdef Color PURPLE    
+    cdef Color VIOLET    
+    cdef Color DARKPURPLE
+    cdef Color BEIGE     
+    cdef Color BROWN     
+    cdef Color DARKBROWN 
 
     # Rectangle, 4 components
     ctypedef struct Rectangle:

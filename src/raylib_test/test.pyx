@@ -1,11 +1,9 @@
 
-from src.raylib_cython.raylib cimport Vector2, PI
+from raylib_cython.raylib cimport LIGHTGRAY
 
 
 cpdef void run():
     print("Running test")
 
+    print(LIGHTGRAY.b)
     
-    cdef Vector2 vec2
-
-    print(PI)
