@@ -1,9 +1,14 @@
 
-from raylib_cython.raylib cimport LIGHTGRAY
+from raylib_cython.raylib cimport InitWindow, CloseWindow, WindowShouldClose
 
 
 cpdef void run():
     print("Running test")
 
-    print(LIGHTGRAY.b)
+    InitWindow(500, 599, "Window")
+
+    while not WindowShouldClose():
+        pass
+    
+    CloseWindow()
     

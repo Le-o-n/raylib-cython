@@ -1,6 +1,9 @@
 from libc.stdint cimport uint8_t
 from cpython cimport va_list
 
+#TODO finish enums
+#TODO change function pointer definintions back from function defs to function pointer defs
+
 cdef extern from "../raylib5/src/raylib.h":
     
     cdef double PI
@@ -102,6 +105,8 @@ cdef extern from "../raylib5/src/raylib.h":
 
     # Texture2D, same as Texture
     ctypedef Texture Texture2D
+
+    ctypedef Texture TextureCubemap
 
     # RenderTexture, fbo for texture rendering
     ctypedef struct RenderTexture:
@@ -1366,7 +1371,7 @@ cdef extern from "../raylib5/src/raylib.h":
     #------------------------------------------------------------------------------------
     # Audio Loading and Playing Functions (Module: audio)
     #------------------------------------------------------------------------------------
-    cdef void AudioCallback(void *bufferData, unsigned int frames)
+    ctypedef void (*AudioCallback)(void *bufferData, unsigned int frames)
 
     # Audio device management functions
     cdef void InitAudioDevice(void)                                     # Initialize audio device and context
