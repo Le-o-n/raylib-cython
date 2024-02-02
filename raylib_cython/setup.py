@@ -42,6 +42,16 @@ extensions = [
         libraries=["./libs/raylib"],  # Add any necessary libraries here
         extra_compile_args=[],  # Add any necessary compile flags here
     ),
+    Extension(
+        "rlgl",
+        [
+            "rlgl.pyx"
+        ],
+        include_dirs=["./libs"],
+        library_dirs=["./libs"],
+        libraries=["./libs/raylib"],  # Add any necessary libraries here
+        extra_compile_args=[],  # Add any necessary compile flags here
+    ),
 
 ]
 
