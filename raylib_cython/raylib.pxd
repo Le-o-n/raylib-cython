@@ -1,15 +1,10 @@
 from libc.stdint cimport uint8_t
 from cpython cimport va_list
 
-#TODO finish enums
-#TODO change function pointer definintions back from function defs to function pointer defs
-
 cdef extern from "libs/raylib.h":
     
     cdef double PI
-
     cdef double DEG2RAD
-
     cdef double RAD2DEG
 
     cdef void* RL_MALLOC(size_t sz)
@@ -17,7 +12,6 @@ cdef extern from "libs/raylib.h":
     cdef void* RL_REALLOC(void* ptr, size_t sz)
     cdef void RL_FREE(void* ptr)
 
-    
     # Vector2, 2 components
     ctypedef struct Vector2:
         float x                 # Vector x component
