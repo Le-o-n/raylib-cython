@@ -2,20 +2,31 @@ from setuptools import setup, find_packages, Extension
 from Cython.Build import cythonize
 
 import os
+import glob
 
-with open('requirements.txt') as f:
-    install_requires = f.read().strip().split('\n')
 
-# Define the extension module
+directory_path: str = os.path.abspath(".")
+
+file_exts: list[str] = ["c", "pyd"]
+
+for file_name in os.listdir(directory_path):
+    ext = file_name.split(".")[-1]
+    if ext in file_exts:
+        full_path: str = os.path.join(directory_path, file_name)
+        if os.path.exists(full_path):
+            os.remove(full_path)
+            print(f"Removed: {file_name}")
+
+
 extensions = [
     Extension(
-        "raylib_cython.raylib",
+        "raylib",
         [
-            "src/raylib_cython/raylib.pyx",
+            "raylib.pyx",
         ],
-        include_dirs=["src/raylib5/src/"],
-        library_dirs=["src/raylib5/libs"],
-        libraries=["libraylib"],  # Add any necessary libraries here
+        include_dirs=["../../libs"],
+        library_dirs=["../../libs"],
+        libraries=["../../libs/raylib"],  # Add any necessary libraries here
         extra_compile_args=[],  # Add any necessary compile flags here
     ),
     # Extension(
@@ -37,16 +48,6 @@ setup(
     description='Cython bindings for the raylib game engine.',
     license='MIT',
     author='Leon Bass',
-    packages=find_packages(where="src", include=["raylib_cython/src"]),
-    package_dir={"": "src"},
-    package_data={
-        'raylib_cython': [
-            'raylib.pyi',
-            'raylib.pxd',
-            'raylib.pyd'
-        ]
-    },
     ext_modules=cythonize(extensions),
-    install_requires=install_requires,
     compiler_directives={"language_level": "3"},
 )
