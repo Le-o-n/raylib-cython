@@ -1,13 +1,19 @@
-from raylib cimport InitWindow, WindowShouldClose, BeginDrawing, EndDrawing, DrawText, RED, CloseWindow
-
+cimport raylib
 
 cpdef int main():
 
-    InitWindow(600, 600 ,"Window")
+    raylib.InitWindow(600, 600 ,"Window")
 
-    while not WindowShouldClose():
-        BeginDrawing()
-        DrawText("Hello", 100, 100, 20, RED)
-        EndDrawing()
+    cdef raylib.Vector2 mouse_pos
+     
 
-    CloseWindow()
+    while not raylib.WindowShouldClose():
+        raylib.BeginDrawing()
+        raylib.ClearBackground(raylib.WHITE)
+        mouse_pos = raylib.GetMousePosition()
+
+        raylib.DrawFPS(0, 0)
+        raylib.DrawText("Hello", <int>mouse_pos.x, <int>mouse_pos.y, 20, RED)
+        raylib.EndDrawing()
+
+    raylib.CloseWindow()
