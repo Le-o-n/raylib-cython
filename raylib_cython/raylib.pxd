@@ -378,13 +378,13 @@ cdef extern from "libs/raylib.h":
     # NOTE: Organized by priority level
     ctypedef enum TraceLogLevel:
         LOG_ALL = 0,        # Display all logs
-        LOG_TRACE,          # Trace logging, intended for internal use only
-        LOG_DEBUG,          # Debug logging, used for internal debugging, it should be disabled on release builds
-        LOG_INFO,           # Info logging, used for program execution info
-        LOG_WARNING,        # Warning logging, used on recoverable failures
-        LOG_ERROR,          # Error logging, used on unrecoverable failures
-        LOG_FATAL,          # Fatal logging, used to abort program: exit(EXIT_FAILURE)
-        LOG_NONE            # Disable logging
+        LOG_TRACE = 1,          # Trace logging, intended for internal use only
+        LOG_DEBUG = 2,          # Debug logging, used for internal debugging, it should be disabled on release builds
+        LOG_INFO = 3,           # Info logging, used for program execution info
+        LOG_WARNING = 4,        # Warning logging, used on recoverable failures
+        LOG_ERROR = 5,          # Error logging, used on unrecoverable failures
+        LOG_FATAL = 6,          # Fatal logging, used to abort program: exit(EXIT_FAILURE)
+        LOG_NONE = 7            # Disable logging
     
         
     # Keyboard keys (US keyboard layout)
@@ -749,7 +749,7 @@ cdef extern from "libs/raylib.h":
 
 
     # Window-related functions
-    cdef void InitWindow(int width, int height, const char *title)  # Initialize window and OpenGL context
+    cpdef void InitWindow(int width, int height, const char *title)  # Initialize window and OpenGL context
     cdef void CloseWindow()                                     # Close window and unload OpenGL context
     cdef bint WindowShouldClose()                               # Check if application should close (KEY_ESCAPE pressed or windows close icon clicked)
     cdef bint IsWindowReady()                                   # Check if window has been initialized successfully
