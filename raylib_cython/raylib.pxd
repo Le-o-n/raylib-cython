@@ -4,7 +4,7 @@ from cpython cimport va_list
 #TODO finish enums
 #TODO change function pointer definintions back from function defs to function pointer defs
 
-cdef extern from "../../libs/raylib.h":
+cdef extern from "libs/raylib.h":
     
     cdef double PI
 
