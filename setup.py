@@ -10,11 +10,23 @@ with open('requirements.txt') as f:
 extensions = [
     Extension(
         "raylib_cython.raylib",
-        ["src/raylib_cython/raylib.pyx"],
+        [
+            "src/raylib_cython/raylib.pyx",
+        ],
         include_dirs=["src/raylib5/src/"],
-        library_dirs=["src/raylib5/src/"],
-        libraries=[],  # Add any necessary libraries here
-        extra_compile_args=["-std=c99"],  # Add any necessary compile flags here
+        library_dirs=["src/raylib5/lib"],
+        libraries=["libraylib"],  # Add any necessary libraries here
+        extra_compile_args=[],  # Add any necessary compile flags here
+    ),
+    Extension(
+        "raylib_cython.test",
+        [
+            "src/raylib_cython/test.pyx",
+        ],
+        include_dirs=["src/raylib5/src/"],
+        library_dirs=["src/raylib5/lib/"],
+        libraries=["libraylib"],  # Add any necessary libraries here
+        extra_compile_args=[], 
     )
 ]
 
@@ -25,7 +37,7 @@ setup(
     description='Cython bindings for the raylib game engine.',
     license='MIT',
     author='Leon Bass',
-    packages=find_packages(where="src", include=["raylib_cython"]),
+    packages=find_packages(where="src", include=["raylib_cython/src"]),
     package_dir={"": "src"},
     package_data={
         'raylib_cython': [

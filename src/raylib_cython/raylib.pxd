@@ -743,30 +743,30 @@ cdef extern from "../raylib5/src/raylib.h":
     
     ctypedef void (*TraceLogCallback)(int logLevel, const char *text, va_list args) # Logging: Redirect trace log messages
     ctypedef unsigned char *(*LoadFileDataCallback)(const char *fileName, int *dataSize) # FileIO: Load binary data
-    ctypedef bool (*SaveFileDataCallback)(const char *fileName, void *data, int dataSize) # FileIO: Save binary data
+    ctypedef bint (*SaveFileDataCallback)(const char *fileName, void *data, int dataSize) # FileIO: Save binary data
     ctypedef char *(*LoadFileTextCallback)(const char *fileName) # FileIO: Load text data
-    ctypedef bool (*SaveFileTextCallback)(const char *fileName, char *text) # FileIO: Save text data
+    ctypedef bint (*SaveFileTextCallback)(const char *fileName, char *text) # FileIO: Save text data
 
 
     # Window-related functions
     cdef void InitWindow(int width, int height, const char *title)  # Initialize window and OpenGL context
-    cdef void CloseWindow(void)                                     # Close window and unload OpenGL context
-    cdef bool WindowShouldClose(void)                               # Check if application should close (KEY_ESCAPE pressed or windows close icon clicked)
-    cdef bool IsWindowReady(void)                                   # Check if window has been initialized successfully
-    cdef bool IsWindowFullscreen(void)                              # Check if window is currently fullscreen
-    cdef bool IsWindowHidden(void)                                  # Check if window is currently hidden (only PLATFORM_DESKTOP)
-    cdef bool IsWindowMinimized(void)                               # Check if window is currently minimized (only PLATFORM_DESKTOP)
-    cdef bool IsWindowMaximized(void)                               # Check if window is currently maximized (only PLATFORM_DESKTOP)
-    cdef bool IsWindowFocused(void)                                 # Check if window is currently focused (only PLATFORM_DESKTOP)
-    cdef bool IsWindowResized(void)                                 # Check if window has been resized last frame
-    cdef bool IsWindowState(unsigned int flag)                      # Check if one specific window flag is enabled
+    cdef void CloseWindow()                                     # Close window and unload OpenGL context
+    cdef bint WindowShouldClose()                               # Check if application should close (KEY_ESCAPE pressed or windows close icon clicked)
+    cdef bint IsWindowReady()                                   # Check if window has been initialized successfully
+    cdef bint IsWindowFullscreen()                              # Check if window is currently fullscreen
+    cdef bint IsWindowHidden()                                  # Check if window is currently hidden (only PLATFORM_DESKTOP)
+    cdef bint IsWindowMinimized()                               # Check if window is currently minimized (only PLATFORM_DESKTOP)
+    cdef bint IsWindowMaximized()                               # Check if window is currently maximized (only PLATFORM_DESKTOP)
+    cdef bint IsWindowFocused()                                 # Check if window is currently focused (only PLATFORM_DESKTOP)
+    cdef bint IsWindowResized()                                 # Check if window has been resized last frame
+    cdef bint IsWindowState(unsigned int flag)                      # Check if one specific window flag is enabled
     cdef void SetWindowState(unsigned int flags)                    # Set window configuration state using flags (only PLATFORM_DESKTOP)
     cdef void ClearWindowState(unsigned int flags)                  # Clear window configuration state flags
-    cdef void ToggleFullscreen(void)                                # Toggle window state: fullscreen/windowed (only PLATFORM_DESKTOP)
-    cdef void ToggleBorderlessWindowed(void)                        # Toggle window state: borderless windowed (only PLATFORM_DESKTOP)
-    cdef void MaximizeWindow(void)                                  # Set window state: maximized, if resizable (only PLATFORM_DESKTOP)
-    cdef void MinimizeWindow(void)                                  # Set window state: minimized, if resizable (only PLATFORM_DESKTOP)
-    cdef void RestoreWindow(void)                                   # Set window state: not minimized/maximized (only PLATFORM_DESKTOP)
+    cdef void ToggleFullscreen()                                # Toggle window state: fullscreen/windowed (only PLATFORM_DESKTOP)
+    cdef void ToggleBorderlessWindowed()                        # Toggle window state: borderless windowed (only PLATFORM_DESKTOP)
+    cdef void MaximizeWindow()                                  # Set window state: maximized, if resizable (only PLATFORM_DESKTOP)
+    cdef void MinimizeWindow()                                  # Set window state: minimized, if resizable (only PLATFORM_DESKTOP)
+    cdef void RestoreWindow()                                   # Set window state: not minimized/maximized (only PLATFORM_DESKTOP)
     cdef void SetWindowIcon(Image image)                            # Set icon for window (single image, RGBA 32bit, only PLATFORM_DESKTOP)
     cdef void SetWindowIcons(Image *images, int count)              # Set icon for window (multiple images, RGBA 32bit, only PLATFORM_DESKTOP)
     cdef void SetWindowTitle(const char *title)                     # Set title for window (only PLATFORM_DESKTOP and PLATFORM_WEB)
@@ -776,54 +776,54 @@ cdef extern from "../raylib5/src/raylib.h":
     cdef void SetWindowMaxSize(int width, int height)               # Set window maximum dimensions (for FLAG_WINDOW_RESIZABLE)
     cdef void SetWindowSize(int width, int height)                  # Set window dimensions
     cdef void SetWindowOpacity(float opacity)                       # Set window opacity [0.0f..1.0f] (only PLATFORM_DESKTOP)
-    cdef void SetWindowFocused(void)                                # Set window focused (only PLATFORM_DESKTOP)
-    cdef void *GetWindowHandle(void)                                # Get native window handle
-    cdef int GetScreenWidth(void)                                   # Get current screen width
-    cdef int GetScreenHeight(void)                                  # Get current screen height
-    cdef int GetRenderWidth(void)                                   # Get current render width (it considers HiDPI)
-    cdef int GetRenderHeight(void)                                  # Get current render height (it considers HiDPI)
-    cdef int GetMonitorCount(void)                                  # Get number of connected monitors
-    cdef int GetCurrentMonitor(void)                                # Get current connected monitor
+    cdef void SetWindowFocused()                                # Set window focused (only PLATFORM_DESKTOP)
+    cdef void *GetWindowHandle()                                # Get native window handle
+    cdef int GetScreenWidth()                                   # Get current screen width
+    cdef int GetScreenHeight()                                  # Get current screen height
+    cdef int GetRenderWidth()                                   # Get current render width (it considers HiDPI)
+    cdef int GetRenderHeight()                                  # Get current render height (it considers HiDPI)
+    cdef int GetMonitorCount()                                  # Get number of connected monitors
+    cdef int GetCurrentMonitor()                                # Get current connected monitor
     cdef Vector2 GetMonitorPosition(int monitor)                    # Get specified monitor position
     cdef int GetMonitorWidth(int monitor)                           # Get specified monitor width (current video mode used by monitor)
     cdef int GetMonitorHeight(int monitor)                          # Get specified monitor height (current video mode used by monitor)
     cdef int GetMonitorPhysicalWidth(int monitor)                   # Get specified monitor physical width in millimetres
     cdef int GetMonitorPhysicalHeight(int monitor)                  # Get specified monitor physical height in millimetres
     cdef int GetMonitorRefreshRate(int monitor)                     # Get specified monitor refresh rate
-    cdef Vector2 GetWindowPosition(void)                            # Get window position XY on monitor
-    cdef Vector2 GetWindowScaleDPI(void)                            # Get window scale DPI factor
+    cdef Vector2 GetWindowPosition()                            # Get window position XY on monitor
+    cdef Vector2 GetWindowScaleDPI()                            # Get window scale DPI factor
     cdef const char *GetMonitorName(int monitor)                    # Get the human-readable, UTF-8 encoded name of the specified monitor
     cdef void SetClipboardText(const char *text)                    # Set clipboard text content
-    cdef const char *GetClipboardText(void)                         # Get clipboard text content
-    cdef void EnableEventWaiting(void)                              # Enable waiting for events on EndDrawing(), no automatic event polling
-    cdef void DisableEventWaiting(void)                             # Disable waiting for events on EndDrawing(), automatic events polling
+    cdef const char *GetClipboardText()                         # Get clipboard text content
+    cdef void EnableEventWaiting()                              # Enable waiting for events on EndDrawing(), no automatic event polling
+    cdef void DisableEventWaiting()                             # Disable waiting for events on EndDrawing(), automatic events polling
 
     # Cursor-related functions
-    cdef void ShowCursor(void)                                      # Shows cursor
-    cdef void HideCursor(void)                                      # Hides cursor
-    cdef bool IsCursorHidden(void)                                  # Check if cursor is not visible
-    cdef void EnableCursor(void)                                    # Enables cursor (unlock cursor)
-    cdef void DisableCursor(void)                                   # Disables cursor (lock cursor)
-    cdef bool IsCursorOnScreen(void)                                # Check if cursor is on the screen
+    cdef void ShowCursor()                                      # Shows cursor
+    cdef void HideCursor()                                      # Hides cursor
+    cdef bint IsCursorHidden()                                  # Check if cursor is not visible
+    cdef void EnableCursor()                                    # Enables cursor (unlock cursor)
+    cdef void DisableCursor()                                   # Disables cursor (lock cursor)
+    cdef bint IsCursorOnScreen()                                # Check if cursor is on the screen
 
     # Drawing-related functions
     cdef void ClearBackground(Color color)                          # Set background color (framebuffer clear color)
-    cdef void BeginDrawing(void)                                    # Setup canvas (framebuffer) to start drawing
-    cdef void EndDrawing(void)                                      # End canvas drawing and swap buffers (double buffering)
+    cdef void BeginDrawing()                                    # Setup canvas (framebuffer) to start drawing
+    cdef void EndDrawing()                                      # End canvas drawing and swap buffers (double buffering)
     cdef void BeginMode2D(Camera2D camera)                          # Begin 2D mode with custom camera (2D)
-    cdef void EndMode2D(void)                                       # Ends 2D mode with custom camera
+    cdef void EndMode2D()                                       # Ends 2D mode with custom camera
     cdef void BeginMode3D(Camera3D camera)                          # Begin 3D mode with custom camera (3D)
-    cdef void EndMode3D(void)                                       # Ends 3D mode and returns to default 2D orthographic mode
+    cdef void EndMode3D()                                       # Ends 3D mode and returns to default 2D orthographic mode
     cdef void BeginTextureMode(RenderTexture2D target)              # Begin drawing to render texture
-    cdef void EndTextureMode(void)                                  # Ends drawing to render texture
+    cdef void EndTextureMode()                                  # Ends drawing to render texture
     cdef void BeginShaderMode(Shader shader)                        # Begin custom shader drawing
-    cdef void EndShaderMode(void)                                   # End custom shader drawing (use default shader)
+    cdef void EndShaderMode()                                   # End custom shader drawing (use default shader)
     cdef void BeginBlendMode(int mode)                              # Begin blending mode (alpha, additive, multiplied, subtract, custom)
-    cdef void EndBlendMode(void)                                    # End blending mode (reset to default: alpha blending)
+    cdef void EndBlendMode()                                    # End blending mode (reset to default: alpha blending)
     cdef void BeginScissorMode(int x, int y, int width, int height) # Begin scissor mode (define screen area for following drawing)
-    cdef void EndScissorMode(void)                                  # End scissor mode
+    cdef void EndScissorMode()                                  # End scissor mode
     cdef void BeginVrStereoMode(VrStereoConfig config)              # Begin stereo rendering (requires VR simulator)
-    cdef void EndVrStereoMode(void)                                 # End stereo rendering (requires VR simulator)
+    cdef void EndVrStereoMode()                                 # End stereo rendering (requires VR simulator)
 
     # VR stereo config functions for VR simulator
     cdef VrStereoConfig LoadVrStereoConfig(VrDeviceInfo device)     # Load VR stereo config for VR simulator device parameters
@@ -833,7 +833,7 @@ cdef extern from "../raylib5/src/raylib.h":
     # NOTE: Shader functionality is not available on OpenGL 1.1
     cdef Shader LoadShader(const char *vsFileName, const char *fsFileName)   # Load shader from files and bind default locations
     cdef Shader LoadShaderFromMemory(const char *vsCode, const char *fsCode) # Load shader from code strings and bind default locations
-    cdef bool IsShaderReady(Shader shader)                                   # Check if a shader is ready
+    cdef bint IsShaderReady(Shader shader)                                   # Check if a shader is ready
     cdef int GetShaderLocation(Shader shader, const char *uniformName)       # Get shader uniform location
     cdef int GetShaderLocationAttrib(Shader shader, const char *attribName)  # Get shader attribute location
     cdef void SetShaderValue(Shader shader, int locIndex, const void *value, int uniformType)               # Set shader uniform value
@@ -853,16 +853,16 @@ cdef extern from "../raylib5/src/raylib.h":
 
     # Timing-related functions
     cdef void SetTargetFPS(int fps)                                 # Set target FPS (maximum)
-    cdef float GetFrameTime(void)                                   # Get time in seconds for last frame drawn (delta time)
-    cdef double GetTime(void)                                       # Get elapsed time in seconds since InitWindow()
-    cdef int GetFPS(void)                                           # Get current FPS
+    cdef float GetFrameTime()                                   # Get time in seconds for last frame drawn (delta time)
+    cdef double GetTime()                                       # Get elapsed time in seconds since InitWindow()
+    cdef int GetFPS()                                           # Get current FPS
 
     # Custom frame control functions
     # NOTE: Those functions are intended for advance users that want full control over the frame processing
     # By default EndDrawing() does this job: draws everything + SwapScreenBuffer() + manage frame timing + PollInputEvents()
     # To avoid that behaviour and control frame processes manually, enable in config.h: SUPPORT_CUSTOM_FRAME_CONTROL
-    cdef void SwapScreenBuffer(void)                                # Swap back buffer with front buffer (screen drawing)
-    cdef void PollInputEvents(void)                                 # Register all input events
+    cdef void SwapScreenBuffer()                                # Swap back buffer with front buffer (screen drawing)
+    cdef void PollInputEvents()                                 # Register all input events
     cdef void WaitTime(double seconds)                              # Wait for some time (halt program execution)
 
     # Random values generation functions
@@ -895,32 +895,32 @@ cdef extern from "../raylib5/src/raylib.h":
     # Files management functions
     cdef unsigned char *LoadFileData(const char *fileName, int *dataSize) # Load file data as byte array (read)
     cdef void UnloadFileData(unsigned char *data)                   # Unload file data allocated by LoadFileData()
-    cdef bool SaveFileData(const char *fileName, void *data, int dataSize) # Save data to file from byte array (write), returns true on success
-    cdef bool ExportDataAsCode(const unsigned char *data, int dataSize, const char *fileName) # Export data to code (.h), returns true on success
+    cdef bint SaveFileData(const char *fileName, void *data, int dataSize) # Save data to file from byte array (write), returns true on success
+    cdef bint ExportDataAsCode(const unsigned char *data, int dataSize, const char *fileName) # Export data to code (.h), returns true on success
     cdef char *LoadFileText(const char *fileName)                   # Load text data from file (read), returns a '\0' terminated string
     cdef void UnloadFileText(char *text)                            # Unload file text data allocated by LoadFileText()
-    cdef bool SaveFileText(const char *fileName, char *text)        # Save text data to file (write), string must be '\0' terminated, returns true on success
+    cdef bint SaveFileText(const char *fileName, char *text)        # Save text data to file (write), string must be '\0' terminated, returns true on success
     #------------------------------------------------------------------
 
     # File system functions
-    cdef bool FileExists(const char *fileName)                      # Check if file exists
-    cdef bool DirectoryExists(const char *dirPath)                  # Check if a directory path exists
-    cdef bool IsFileExtension(const char *fileName, const char *ext) # Check file extension (including point: .png, .wav)
+    cdef bint FileExists(const char *fileName)                      # Check if file exists
+    cdef bint DirectoryExists(const char *dirPath)                  # Check if a directory path exists
+    cdef bint IsFileExtension(const char *fileName, const char *ext) # Check file extension (including point: .png, .wav)
     cdef int GetFileLength(const char *fileName)                    # Get file length in bytes (NOTE: GetFileSize() conflicts with windows.h)
     cdef const char *GetFileExtension(const char *fileName)         # Get pointer to extension for a filename string (includes dot: '.png')
     cdef const char *GetFileName(const char *filePath)              # Get pointer to filename for a path string
     cdef const char *GetFileNameWithoutExt(const char *filePath)    # Get filename string without extension (uses static string)
     cdef const char *GetDirectoryPath(const char *filePath)         # Get full path for a given fileName with path (uses static string)
     cdef const char *GetPrevDirectoryPath(const char *dirPath)      # Get previous directory path for a given path (uses static string)
-    cdef const char *GetWorkingDirectory(void)                      # Get current working directory (uses static string)
-    cdef const char *GetApplicationDirectory(void)                  # Get the directory of the running application (uses static string)
-    cdef bool ChangeDirectory(const char *dir)                      # Change working directory, return true on success
-    cdef bool IsPathFile(const char *path)                          # Check if a given path is a file or a directory
+    cdef const char *GetWorkingDirectory()                      # Get current working directory (uses static string)
+    cdef const char *GetApplicationDirectory()                  # Get the directory of the running application (uses static string)
+    cdef bint ChangeDirectory(const char *dir)                      # Change working directory, return true on success
+    cdef bint IsPathFile(const char *path)                          # Check if a given path is a file or a directory
     cdef FilePathList LoadDirectoryFiles(const char *dirPath)       # Load directory filepaths
-    cdef FilePathList LoadDirectoryFilesEx(const char *basePath, const char *filter, bool scanSubdirs) # Load directory filepaths with extension filtering and recursive directory scan
+    cdef FilePathList LoadDirectoryFilesEx(const char *basePath, const char *filter, bint scanSubdirs) # Load directory filepaths with extension filtering and recursive directory scan
     cdef void UnloadDirectoryFiles(FilePathList files)              # Unload filepaths
-    cdef bool IsFileDropped(void)                                   # Check if a file has been dropped into window
-    cdef FilePathList LoadDroppedFiles(void)                        # Load dropped filepaths
+    cdef bint IsFileDropped()                                   # Check if a file has been dropped into window
+    cdef FilePathList LoadDroppedFiles()                        # Load dropped filepaths
     cdef void UnloadDroppedFiles(FilePathList files)                # Unload dropped filepaths
     cdef long GetFileModTime(const char *fileName)                  # Get file modification time (last write time)
 
@@ -933,11 +933,11 @@ cdef extern from "../raylib5/src/raylib.h":
     # Automation events functionality
     cdef AutomationEventList LoadAutomationEventList(const char *fileName)                # Load automation events list from file, NULL for empty list, capacity = MAX_AUTOMATION_EVENTS
     cdef void UnloadAutomationEventList(AutomationEventList list)                        # Unload automation events list from file
-    cdef bool ExportAutomationEventList(AutomationEventList list, const char *fileName)   # Export automation events list as text file
+    cdef bint ExportAutomationEventList(AutomationEventList list, const char *fileName)   # Export automation events list as text file
     cdef void SetAutomationEventList(AutomationEventList *list)                           # Set automation event list to record to
     cdef void SetAutomationEventBaseFrame(int frame)                                      # Set automation event internal base frame to start recording
-    cdef void StartAutomationEventRecording(void)                                         # Start recording automation events (AutomationEventList must be set)
-    cdef void StopAutomationEventRecording(void)                                          # Stop recording automation events
+    cdef void StartAutomationEventRecording()                                         # Start recording automation events (AutomationEventList must be set)
+    cdef void StopAutomationEventRecording()                                          # Stop recording automation events
     cdef void PlayAutomationEvent(AutomationEvent event)                                  # Play a recorded automation event
 
     #------------------------------------------------------------------------------------
@@ -945,61 +945,61 @@ cdef extern from "../raylib5/src/raylib.h":
     #------------------------------------------------------------------------------------
 
     # Input-related functions: keyboard
-    cdef bool IsKeyPressed(int key)                             # Check if a key has been pressed once
-    cdef bool IsKeyPressedRepeat(int key)                       # Check if a key has been pressed again (Only PLATFORM_DESKTOP)
-    cdef bool IsKeyDown(int key)                                # Check if a key is being pressed
-    cdef bool IsKeyReleased(int key)                            # Check if a key has been released once
-    cdef bool IsKeyUp(int key)                                  # Check if a key is NOT being pressed
-    cdef int GetKeyPressed(void)                                # Get key pressed (keycode), call it multiple times for keys queued, returns 0 when the queue is empty
-    cdef int GetCharPressed(void)                               # Get char pressed (unicode), call it multiple times for chars queued, returns 0 when the queue is empty
+    cdef bint IsKeyPressed(int key)                             # Check if a key has been pressed once
+    cdef bint IsKeyPressedRepeat(int key)                       # Check if a key has been pressed again (Only PLATFORM_DESKTOP)
+    cdef bint IsKeyDown(int key)                                # Check if a key is being pressed
+    cdef bint IsKeyReleased(int key)                            # Check if a key has been released once
+    cdef bint IsKeyUp(int key)                                  # Check if a key is NOT being pressed
+    cdef int GetKeyPressed()                                # Get key pressed (keycode), call it multiple times for keys queued, returns 0 when the queue is empty
+    cdef int GetCharPressed()                               # Get char pressed (unicode), call it multiple times for chars queued, returns 0 when the queue is empty
     cdef void SetExitKey(int key)                               # Set a custom key to exit program (default is ESC)
 
     # Input-related functions: gamepads
-    cdef bool IsGamepadAvailable(int gamepad)                   # Check if a gamepad is available
+    cdef bint IsGamepadAvailable(int gamepad)                   # Check if a gamepad is available
     cdef const char *GetGamepadName(int gamepad)                # Get gamepad internal name id
-    cdef bool IsGamepadButtonPressed(int gamepad, int button)   # Check if a gamepad button has been pressed once
-    cdef bool IsGamepadButtonDown(int gamepad, int button)      # Check if a gamepad button is being pressed
-    cdef bool IsGamepadButtonReleased(int gamepad, int button)  # Check if a gamepad button has been released once
-    cdef bool IsGamepadButtonUp(int gamepad, int button)        # Check if a gamepad button is NOT being pressed
-    cdef int GetGamepadButtonPressed(void)                      # Get the last gamepad button pressed
+    cdef bint IsGamepadButtonPressed(int gamepad, int button)   # Check if a gamepad button has been pressed once
+    cdef bint IsGamepadButtonDown(int gamepad, int button)      # Check if a gamepad button is being pressed
+    cdef bint IsGamepadButtonReleased(int gamepad, int button)  # Check if a gamepad button has been released once
+    cdef bint IsGamepadButtonUp(int gamepad, int button)        # Check if a gamepad button is NOT being pressed
+    cdef int GetGamepadButtonPressed()                      # Get the last gamepad button pressed
     cdef int GetGamepadAxisCount(int gamepad)                   # Get gamepad axis count for a gamepad
     cdef float GetGamepadAxisMovement(int gamepad, int axis)    # Get axis movement value for a gamepad axis
     cdef int SetGamepadMappings(const char *mappings)           # Set internal gamepad mappings (SDL_GameControllerDB)
 
     # Input-related functions: mouse
-    cdef bool IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
-    cdef bool IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
-    cdef bool IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
-    cdef bool IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
-    cdef int GetMouseX(void)                                    # Get mouse position X
-    cdef int GetMouseY(void)                                    # Get mouse position Y
-    cdef Vector2 GetMousePosition(void)                         # Get mouse position XY
-    cdef Vector2 GetMouseDelta(void)                            # Get mouse delta between frames
+    cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
+    cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
+    cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
+    cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
+    cdef int GetMouseX()                                    # Get mouse position X
+    cdef int GetMouseY()                                    # Get mouse position Y
+    cdef Vector2 GetMousePosition()                         # Get mouse position XY
+    cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
     cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
     cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
     cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
-    cdef float GetMouseWheelMove(void)                          # Get mouse wheel movement for X or Y, whichever is larger
-    cdef Vector2 GetMouseWheelMoveV(void)                       # Get mouse wheel movement for both X and Y
+    cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
+    cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
     cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
 
     # Input-related functions: touch
-    cdef int GetTouchX(void)                                    # Get touch position X for touch point 0 (relative to screen size)
-    cdef int GetTouchY(void)                                    # Get touch position Y for touch point 0 (relative to screen size)
+    cdef int GetTouchX()                                    # Get touch position X for touch point 0 (relative to screen size)
+    cdef int GetTouchY()                                    # Get touch position Y for touch point 0 (relative to screen size)
     cdef Vector2 GetTouchPosition(int index)                    # Get touch position XY for a touch point index (relative to screen size)
     cdef int GetTouchPointId(int index)                         # Get touch point identifier for given index
-    cdef int GetTouchPointCount(void)                           # Get number of touch points
+    cdef int GetTouchPointCount()                           # Get number of touch points
 
     #------------------------------------------------------------------------------------
     # Gestures and Touch Handling Functions (Module: rgestures)
     #------------------------------------------------------------------------------------
     cdef void SetGesturesEnabled(unsigned int flags)      # Enable a set of gestures using flags
-    cdef bool IsGestureDetected(unsigned int gesture)     # Check if a gesture have been detected
-    cdef int GetGestureDetected(void)                     # Get latest detected gesture
-    cdef float GetGestureHoldDuration(void)               # Get gesture hold time in milliseconds
-    cdef Vector2 GetGestureDragVector(void)               # Get gesture drag vector
-    cdef float GetGestureDragAngle(void)                  # Get gesture drag angle
-    cdef Vector2 GetGesturePinchVector(void)              # Get gesture pinch delta
-    cdef float GetGesturePinchAngle(void)                 # Get gesture pinch angle
+    cdef bint IsGestureDetected(unsigned int gesture)     # Check if a gesture have been detected
+    cdef int GetGestureDetected()                     # Get latest detected gesture
+    cdef float GetGestureHoldDuration()               # Get gesture hold time in milliseconds
+    cdef Vector2 GetGestureDragVector()               # Get gesture drag vector
+    cdef float GetGestureDragAngle()                  # Get gesture drag angle
+    cdef Vector2 GetGesturePinchVector()              # Get gesture pinch delta
+    cdef float GetGesturePinchAngle()                 # Get gesture pinch angle
 
     #------------------------------------------------------------------------------------
     # Camera System Functions (Module: rcamera)
@@ -1014,8 +1014,8 @@ cdef extern from "../raylib5/src/raylib.h":
     # NOTE: It can be useful when using basic shapes and one single font,
     # defining a font char white rectangle would allow drawing everything in a single draw call
     cdef void SetShapesTexture(Texture2D texture, Rectangle source)       # Set texture and rectangle to be used on shapes drawing
-    cdef Texture2D GetShapesTexture(void)                                 # Get texture that is used for shapes drawing
-    cdef Rectangle GetShapesTextureRectangle(void)                        # Get texture source rectangle that is used for shapes drawing
+    cdef Texture2D GetShapesTexture()                                 # Get texture that is used for shapes drawing
+    cdef Rectangle GetShapesTextureRectangle()                        # Get texture source rectangle that is used for shapes drawing
 
     # Basic shapes drawing functions
     cdef void DrawPixel(int posX, int posY, Color color)                                                   # Draw a pixel
@@ -1075,15 +1075,15 @@ cdef extern from "../raylib5/src/raylib.h":
     cdef Vector2 GetSplinePointBezierCubic(Vector2 p1, Vector2 c2, Vector2 c3, Vector2 p4, float t)        # Get (evaluate) spline point: Cubic Bezier
 
     # Basic shapes collision detection functions
-    cdef bool CheckCollisionRecs(Rectangle rec1, Rectangle rec2)                                           # Check collision between two rectangles
-    cdef bool CheckCollisionCircles(Vector2 center1, float radius1, Vector2 center2, float radius2)        # Check collision between two circles
-    cdef bool CheckCollisionCircleRec(Vector2 center, float radius, Rectangle rec)                         # Check collision between circle and rectangle
-    cdef bool CheckCollisionPointRec(Vector2 point, Rectangle rec)                                         # Check if point is inside rectangle
-    cdef bool CheckCollisionPointCircle(Vector2 point, Vector2 center, float radius)                       # Check if point is inside circle
-    cdef bool CheckCollisionPointTriangle(Vector2 point, Vector2 p1, Vector2 p2, Vector2 p3)               # Check if point is inside a triangle
-    cdef bool CheckCollisionPointPoly(Vector2 point, Vector2 *points, int pointCount)                      # Check if point is within a polygon described by array of vertices
-    cdef bool CheckCollisionLines(Vector2 startPos1, Vector2 endPos1, Vector2 startPos2, Vector2 endPos2, Vector2 *collisionPoint) # Check the collision between two lines defined by two points each, returns collision point by reference
-    cdef bool CheckCollisionPointLine(Vector2 point, Vector2 p1, Vector2 p2, int threshold)                # Check if point belongs to line created between two points [p1] and [p2] with defined margin in pixels [threshold]
+    cdef bint CheckCollisionRecs(Rectangle rec1, Rectangle rec2)                                           # Check collision between two rectangles
+    cdef bint CheckCollisionCircles(Vector2 center1, float radius1, Vector2 center2, float radius2)        # Check collision between two circles
+    cdef bint CheckCollisionCircleRec(Vector2 center, float radius, Rectangle rec)                         # Check collision between circle and rectangle
+    cdef bint CheckCollisionPointRec(Vector2 point, Rectangle rec)                                         # Check if point is inside rectangle
+    cdef bint CheckCollisionPointCircle(Vector2 point, Vector2 center, float radius)                       # Check if point is inside circle
+    cdef bint CheckCollisionPointTriangle(Vector2 point, Vector2 p1, Vector2 p2, Vector2 p3)               # Check if point is inside a triangle
+    cdef bint CheckCollisionPointPoly(Vector2 point, Vector2 *points, int pointCount)                      # Check if point is within a polygon described by array of vertices
+    cdef bint CheckCollisionLines(Vector2 startPos1, Vector2 endPos1, Vector2 startPos2, Vector2 endPos2, Vector2 *collisionPoint) # Check the collision between two lines defined by two points each, returns collision point by reference
+    cdef bint CheckCollisionPointLine(Vector2 point, Vector2 p1, Vector2 p2, int threshold)                # Check if point belongs to line created between two points [p1] and [p2] with defined margin in pixels [threshold]
     cdef Rectangle GetCollisionRec(Rectangle rec1, Rectangle rec2)                                         # Get collision rectangle for two rectangles collision
 
     #------------------------------------------------------------------------------------
@@ -1099,12 +1099,12 @@ cdef extern from "../raylib5/src/raylib.h":
     cdef Image LoadImageAnimFromMemory(const char *fileType, const unsigned char *fileData, int dataSize, int *frames) # Load image sequence from memory buffer
     cdef Image LoadImageFromMemory(const char *fileType, const unsigned char *fileData, int dataSize)      # Load image from memory buffer, fileType refers to extension: i.e. '.png'
     cdef Image LoadImageFromTexture(Texture2D texture)                                                     # Load image from GPU texture data
-    cdef Image LoadImageFromScreen(void)                                                                   # Load image from screen buffer and (screenshot)
-    cdef bool IsImageReady(Image image)                                                                    # Check if an image is ready
+    cdef Image LoadImageFromScreen()                                                                   # Load image from screen buffer and (screenshot)
+    cdef bint IsImageReady(Image image)                                                                    # Check if an image is ready
     cdef void UnloadImage(Image image)                                                                     # Unload image from CPU memory (RAM)
-    cdef bool ExportImage(Image image, const char *fileName)                                               # Export image data to file, returns true on success
+    cdef bint ExportImage(Image image, const char *fileName)                                               # Export image data to file, returns true on success
     cdef unsigned char *ExportImageToMemory(Image image, const char *fileType, int *fileSize)              # Export image to memory buffer
-    cdef bool ExportImageAsCode(Image image, const char *fileName)                                         # Export image as code file defining an array of bytes, returns true on success
+    cdef bint ExportImageAsCode(Image image, const char *fileName)                                         # Export image as code file defining an array of bytes, returns true on success
 
     # Image generation functions
     cdef Image GenImageColor(int width, int height, Color color)                                           # Generate image: plain color
@@ -1179,9 +1179,9 @@ cdef extern from "../raylib5/src/raylib.h":
     cdef Texture2D LoadTextureFromImage(Image image)                                                       # Load texture from image data
     cdef TextureCubemap LoadTextureCubemap(Image image, int layout)                                        # Load cubemap from image, multiple image cubemap layouts supported
     cdef RenderTexture2D LoadRenderTexture(int width, int height)                                          # Load texture for rendering (framebuffer)
-    cdef bool IsTextureReady(Texture2D texture)                                                            # Check if a texture is ready
+    cdef bint IsTextureReady(Texture2D texture)                                                            # Check if a texture is ready
     cdef void UnloadTexture(Texture2D texture)                                                             # Unload texture from GPU memory (VRAM)
-    cdef bool IsRenderTextureReady(RenderTexture2D target)                                                 # Check if a render texture is ready
+    cdef bint IsRenderTextureReady(RenderTexture2D target)                                                 # Check if a render texture is ready
     cdef void UnloadRenderTexture(RenderTexture2D target)                                                  # Unload render texture from GPU memory (VRAM)
     cdef void UpdateTexture(Texture2D texture, const void *pixels)                                         # Update GPU texture with new data
     cdef void UpdateTextureRec(Texture2D texture, Rectangle rec, const void *pixels)                       # Update GPU texture rectangle with new data
@@ -1221,17 +1221,17 @@ cdef extern from "../raylib5/src/raylib.h":
     #------------------------------------------------------------------------------------
 
     # Font loading/unloading functions
-    cdef Font GetFontDefault(void)                                                            # Get the default Font
+    cdef Font GetFontDefault()                                                            # Get the default Font
     cdef Font LoadFont(const char *fileName)                                                  # Load font from file into GPU memory (VRAM)
     cdef Font LoadFontEx(const char *fileName, int fontSize, int *codepoints, int codepointCount)  # Load font from file with extended parameters, use NULL for codepoints and 0 for codepointCount to load the default character set
     cdef Font LoadFontFromImage(Image image, Color key, int firstChar)                        # Load font from Image (XNA style)
     cdef Font LoadFontFromMemory(const char *fileType, const unsigned char *fileData, int dataSize, int fontSize, int *codepoints, int codepointCount) # Load font from memory buffer, fileType refers to extension: i.e. '.ttf'
-    cdef bool IsFontReady(Font font)                                                          # Check if a font is ready
+    cdef bint IsFontReady(Font font)                                                          # Check if a font is ready
     cdef GlyphInfo *LoadFontData(const unsigned char *fileData, int dataSize, int fontSize, int *codepoints, int codepointCount, int type) # Load font data for further use
     cdef Image GenImageFontAtlas(const GlyphInfo *glyphs, Rectangle **glyphRecs, int glyphCount, int fontSize, int padding, int packMethod) # Generate image font atlas using chars info
     cdef void UnloadFontData(GlyphInfo *glyphs, int glyphCount)                               # Unload font chars info data (RAM)
     cdef void UnloadFont(Font font)                                                           # Unload font from GPU memory (VRAM)
-    cdef bool ExportFontAsCode(Font font, const char *fileName)                               # Export font as code file, returns true on success
+    cdef bint ExportFontAsCode(Font font, const char *fileName)                               # Export font as code file, returns true on success
 
     # Text drawing functions
     cdef void DrawFPS(int posX, int posY)                                                     # Draw current FPS
@@ -1263,7 +1263,7 @@ cdef extern from "../raylib5/src/raylib.h":
     # Text strings management functions (no UTF-8 strings, only byte chars)
     # NOTE: Some strings allocate memory internally for returned strings, just be careful!
     cdef int TextCopy(char *dst, const char *src)                                             # Copy one string to another, returns bytes copied
-    cdef bool TextIsEqual(const char *text1, const char *text2)                               # Check if two text string are equal
+    cdef bint TextIsEqual(const char *text1, const char *text2)                               # Check if two text string are equal
     cdef unsigned int TextLength(const char *text)                                            # Get text length, checks for '\0' ending
     cdef const char *TextFormat(const char *text, ...)                                        # Text formatting with variables (sprintf() style)
     cdef const char *TextSubtext(const char *text, int position, int length)                  # Get a piece of a text string
@@ -1313,7 +1313,7 @@ cdef extern from "../raylib5/src/raylib.h":
     # Model management functions
     cdef Model LoadModel(const char *fileName)                                                # Load model from files (meshes and materials)
     cdef Model LoadModelFromMesh(Mesh mesh)                                                   # Load model from generated mesh (default material)
-    cdef bool IsModelReady(Model model)                                                       # Check if a model is ready
+    cdef bint IsModelReady(Model model)                                                       # Check if a model is ready
     cdef void UnloadModel(Model model)                                                        # Unload model (including meshes) from memory (RAM and/or VRAM)
     cdef BoundingBox GetModelBoundingBox(Model model)                                         # Compute model bounding box limits (considers all meshes)
 
@@ -1328,15 +1328,15 @@ cdef extern from "../raylib5/src/raylib.h":
     cdef void DrawBillboardPro(Camera camera, Texture2D texture, Rectangle source, Vector3 position, Vector3 up, Vector2 size, Vector2 origin, float rotation, Color tint) # Draw a billboard texture defined by source and rotation
 
     # Mesh management functions
-    cdef void UploadMesh(Mesh *mesh, bool dynamic)                                            # Upload mesh vertex data in GPU and provide VAO/VBO ids
+    cdef void UploadMesh(Mesh *mesh, bint dynamic)                                            # Upload mesh vertex data in GPU and provide VAO/VBO ids
     cdef void UpdateMeshBuffer(Mesh mesh, int index, const void *data, int dataSize, int offset) # Update mesh vertex data in GPU for a specific buffer index
     cdef void UnloadMesh(Mesh mesh)                                                           # Unload mesh data from CPU and GPU
     cdef void DrawMesh(Mesh mesh, Material material, Matrix transform)                        # Draw a 3d mesh with material and transform
     cdef void DrawMeshInstanced(Mesh mesh, Material material, const Matrix *transforms, int instances) # Draw multiple mesh instances with material and different transforms
     cdef BoundingBox GetMeshBoundingBox(Mesh mesh)                                            # Compute mesh bounding box limits
     cdef void GenMeshTangents(Mesh *mesh)                                                     # Compute mesh tangents
-    cdef bool ExportMesh(Mesh mesh, const char *fileName)                                     # Export mesh data to file, returns true on success
-    cdef bool ExportMeshAsCode(Mesh mesh, const char *fileName)                               # Export mesh as code file (.h) defining multiple arrays of vertex attributes
+    cdef bint ExportMesh(Mesh mesh, const char *fileName)                                     # Export mesh data to file, returns true on success
+    cdef bint ExportMeshAsCode(Mesh mesh, const char *fileName)                               # Export mesh as code file (.h) defining multiple arrays of vertex attributes
 
     # Mesh generation functions
     cdef Mesh GenMeshPoly(int sides, float radius)                                            # Generate polygonal mesh
@@ -1353,8 +1353,8 @@ cdef extern from "../raylib5/src/raylib.h":
 
     # Material loading/unloading functions
     cdef Material *LoadMaterials(const char *fileName, int *materialCount)                    # Load materials from model file
-    cdef Material LoadMaterialDefault(void)                                                   # Load default material (Supports: DIFFUSE, SPECULAR, NORMAL maps)
-    cdef bool IsMaterialReady(Material material)                                              # Check if a material is ready
+    cdef Material LoadMaterialDefault()                                                   # Load default material (Supports: DIFFUSE, SPECULAR, NORMAL maps)
+    cdef bint IsMaterialReady(Material material)                                              # Check if a material is ready
     cdef void UnloadMaterial(Material material)                                               # Unload material from GPU memory (VRAM)
     cdef void SetMaterialTexture(Material *material, int mapType, Texture2D texture)          # Set texture for a material map type (MATERIAL_MAP_DIFFUSE, MATERIAL_MAP_SPECULAR...)
     cdef void SetModelMeshMaterial(Model *model, int meshId, int materialId)                  # Set material for a mesh
@@ -1364,12 +1364,12 @@ cdef extern from "../raylib5/src/raylib.h":
     cdef void UpdateModelAnimation(Model model, ModelAnimation anim, int frame)               # Update model animation pose
     cdef void UnloadModelAnimation(ModelAnimation anim)                                       # Unload animation data
     cdef void UnloadModelAnimations(ModelAnimation *animations, int animCount)                # Unload animation array data
-    cdef bool IsModelAnimationValid(Model model, ModelAnimation anim)                         # Check model animation skeleton match
+    cdef bint IsModelAnimationValid(Model model, ModelAnimation anim)                         # Check model animation skeleton match
 
     # Collision detection functions
-    cdef bool CheckCollisionSpheres(Vector3 center1, float radius1, Vector3 center2, float radius2)   # Check collision between two spheres
-    cdef bool CheckCollisionBoxes(BoundingBox box1, BoundingBox box2)                                 # Check collision between two bounding boxes
-    cdef bool CheckCollisionBoxSphere(BoundingBox box, Vector3 center, float radius)                  # Check collision between box and sphere
+    cdef bint CheckCollisionSpheres(Vector3 center1, float radius1, Vector3 center2, float radius2)   # Check collision between two spheres
+    cdef bint CheckCollisionBoxes(BoundingBox box1, BoundingBox box2)                                 # Check collision between two bounding boxes
+    cdef bint CheckCollisionBoxSphere(BoundingBox box, Vector3 center, float radius)                  # Check collision between box and sphere
     cdef RayCollision GetRayCollisionSphere(Ray ray, Vector3 center, float radius)                    # Get collision info between ray and sphere
     cdef RayCollision GetRayCollisionBox(Ray ray, BoundingBox box)                                    # Get collision info between ray and box
     cdef RayCollision GetRayCollisionMesh(Ray ray, Mesh mesh, Matrix transform)                       # Get collision info between ray and mesh
@@ -1382,33 +1382,33 @@ cdef extern from "../raylib5/src/raylib.h":
     ctypedef void (*AudioCallback)(void *bufferData, unsigned int frames)
 
     # Audio device management functions
-    cdef void InitAudioDevice(void)                                     # Initialize audio device and context
-    cdef void CloseAudioDevice(void)                                    # Close the audio device and context
-    cdef bool IsAudioDeviceReady(void)                                  # Check if audio device has been initialized successfully
+    cdef void InitAudioDevice()                                     # Initialize audio device and context
+    cdef void CloseAudioDevice()                                    # Close the audio device and context
+    cdef bint IsAudioDeviceReady()                                  # Check if audio device has been initialized successfully
     cdef void SetMasterVolume(float volume)                             # Set master volume (listener)
-    cdef float GetMasterVolume(void)                                    # Get master volume (listener)
+    cdef float GetMasterVolume()                                    # Get master volume (listener)
 
     # Wave/Sound loading/unloading functions
     cdef Wave LoadWave(const char *fileName)                            # Load wave data from file
     cdef Wave LoadWaveFromMemory(const char *fileType, const unsigned char *fileData, int dataSize) # Load wave from memory buffer, fileType refers to extension: i.e. '.wav'
-    cdef bool IsWaveReady(Wave wave)                                    # Checks if wave data is ready
+    cdef bint IsWaveReady(Wave wave)                                    # Checks if wave data is ready
     cdef Sound LoadSound(const char *fileName)                          # Load sound from file
     cdef Sound LoadSoundFromWave(Wave wave)                             # Load sound from wave data
     cdef Sound LoadSoundAlias(Sound source)                             # Create a new sound that shares the same sample data as the source sound, does not own the sound data
-    cdef bool IsSoundReady(Sound sound)                                 # Checks if a sound is ready
+    cdef bint IsSoundReady(Sound sound)                                 # Checks if a sound is ready
     cdef void UpdateSound(Sound sound, const void *data, int sampleCount) # Update sound buffer with new data
     cdef void UnloadWave(Wave wave)                                     # Unload wave data
     cdef void UnloadSound(Sound sound)                                  # Unload sound
     cdef void UnloadSoundAlias(Sound alias)                             # Unload a sound alias (does not deallocate sample data)
-    cdef bool ExportWave(Wave wave, const char *fileName)               # Export wave data to file, returns true on success
-    cdef bool ExportWaveAsCode(Wave wave, const char *fileName)         # Export wave sample data to code (.h), returns true on success
+    cdef bint ExportWave(Wave wave, const char *fileName)               # Export wave data to file, returns true on success
+    cdef bint ExportWaveAsCode(Wave wave, const char *fileName)         # Export wave sample data to code (.h), returns true on success
 
     # Wave/Sound management functions
     cdef void PlaySound(Sound sound)                                    # Play a sound
     cdef void StopSound(Sound sound)                                    # Stop playing a sound
     cdef void PauseSound(Sound sound)                                   # Pause a sound
     cdef void ResumeSound(Sound sound)                                  # Resume a paused sound
-    cdef bool IsSoundPlaying(Sound sound)                               # Check if a sound is currently playing
+    cdef bint IsSoundPlaying(Sound sound)                               # Check if a sound is currently playing
     cdef void SetSoundVolume(Sound sound, float volume)                 # Set volume for a sound (1.0 is max level)
     cdef void SetSoundPitch(Sound sound, float pitch)                   # Set pitch for a sound (1.0 is base level)
     cdef void SetSoundPan(Sound sound, float pan)                       # Set pan for a sound (0.5 is center)
@@ -1421,10 +1421,10 @@ cdef extern from "../raylib5/src/raylib.h":
     # Music management functions
     cdef Music LoadMusicStream(const char *fileName)                    # Load music stream from file
     cdef Music LoadMusicStreamFromMemory(const char *fileType, const unsigned char *data, int dataSize) # Load music stream from data
-    cdef bool IsMusicReady(Music music)                                 # Checks if a music stream is ready
+    cdef bint IsMusicReady(Music music)                                 # Checks if a music stream is ready
     cdef void UnloadMusicStream(Music music)                            # Unload music stream
     cdef void PlayMusicStream(Music music)                              # Start music playing
-    cdef bool IsMusicStreamPlaying(Music music)                         # Check if music is playing
+    cdef bint IsMusicStreamPlaying(Music music)                         # Check if music is playing
     cdef void UpdateMusicStream(Music music)                            # Updates buffers for music streaming
     cdef void StopMusicStream(Music music)                              # Stop music playing
     cdef void PauseMusicStream(Music music)                             # Pause music playing
@@ -1438,14 +1438,14 @@ cdef extern from "../raylib5/src/raylib.h":
 
     # AudioStream management functions
     cdef AudioStream LoadAudioStream(unsigned int sampleRate, unsigned int sampleSize, unsigned int channels) # Load audio stream (to stream raw audio pcm data)
-    cdef bool IsAudioStreamReady(AudioStream stream)                    # Checks if an audio stream is ready
+    cdef bint IsAudioStreamReady(AudioStream stream)                    # Checks if an audio stream is ready
     cdef void UnloadAudioStream(AudioStream stream)                     # Unload audio stream and free memory
     cdef void UpdateAudioStream(AudioStream stream, const void *data, int frameCount) # Update audio stream buffers with data
-    cdef bool IsAudioStreamProcessed(AudioStream stream)                # Check if any audio stream buffers requires refill
+    cdef bint IsAudioStreamProcessed(AudioStream stream)                # Check if any audio stream buffers requires refill
     cdef void PlayAudioStream(AudioStream stream)                       # Play audio stream
     cdef void PauseAudioStream(AudioStream stream)                      # Pause audio stream
     cdef void ResumeAudioStream(AudioStream stream)                     # Resume audio stream
-    cdef bool IsAudioStreamPlaying(AudioStream stream)                  # Check if audio stream is playing
+    cdef bint IsAudioStreamPlaying(AudioStream stream)                  # Check if audio stream is playing
     cdef void StopAudioStream(AudioStream stream)                       # Stop audio stream
     cdef void SetAudioStreamVolume(AudioStream stream, float volume)    # Set volume for audio stream (1.0 is max level)
     cdef void SetAudioStreamPitch(AudioStream stream, float pitch)      # Set pitch for audio stream (1.0 is base level)

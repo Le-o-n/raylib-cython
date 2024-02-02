@@ -1,2 +1,1 @@
-cimport raylib
-from raylib cimport LIGHTGRAY
+from .raylib cimport InitWindow
