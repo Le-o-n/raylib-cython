@@ -30,7 +30,7 @@
 *
 *   LICENSE: zlib/libpng
 *
-*   Copyright (c) 2015-2024 Ramon Santamaria (@raysan5)
+*   Copyright (c) 2015-2023 Ramon Santamaria (@raysan5)
 *
 *   This software is provided "as-is", without any express or implied warranty. In no event
 *   will the authors be held liable for any damages arising from the use of this software.
@@ -59,9 +59,7 @@
 // Function specifiers definition
 #if defined(RAYMATH_IMPLEMENTATION)
     #if defined(_WIN32) && defined(BUILD_LIBTYPE_SHARED)
-        #define RMAPI __declspec(dllexport) extern inline // We are building raylib as a Win32 shared library (.dll)
-    #elif defined(BUILD_LIBTYPE_SHARED)
-        #define RMAPI __attribute__((visibility("default"))) // We are building raylib as a Unix shared library (.so/.dylib)
+        #define RMAPI __declspec(dllexport) extern inline // We are building raylib as a Win32 shared library (.dll).
     #elif defined(_WIN32) && defined(USE_LIBTYPE_SHARED)
         #define RMAPI __declspec(dllimport)         // We are using raylib as a Win32 shared library (.dll)
     #else
@@ -174,7 +172,7 @@ typedef struct float16 {
 // Clamp float value
 RMAPI float Clamp(float value, float min, float max)
 {
-    float result = (value < min) ? min : value;
+    float result = (value < min)? min : value;
 
     if (result > max) result = max;
 
@@ -494,18 +492,18 @@ RMAPI Vector2 Vector2ClampValue(Vector2 v, float min, float max)
     {
         length = sqrtf(length);
 
-        float scale = 1;    // By default, 1 as the neutral element.
         if (length < min)
         {
-            scale = min/length;
+            float scale = min/length;
+            result.x = v.x*scale;
+            result.y = v.y*scale;
         }
         else if (length > max)
         {
-            scale = max/length;
+            float scale = max/length;
+            result.x = v.x*scale;
+            result.y = v.y*scale;
         }
-
-        result.x = v.x*scale;
-        result.y = v.y*scale;
     }
 
     return result;
@@ -834,7 +832,7 @@ RMAPI Vector3 Vector3RotateByAxisAngle(Vector3 v, Vector3 axis, float angle)
     // Vector3Normalize(axis);
     float length = sqrtf(axis.x*axis.x + axis.y*axis.y + axis.z*axis.z);
     if (length == 0.0f) length = 1.0f;
-    float ilength = 1.0f/length;
+    float ilength = 1.0f / length;
     axis.x *= ilength;
     axis.y *= ilength;
     axis.z *= ilength;
@@ -1080,19 +1078,20 @@ RMAPI Vector3 Vector3ClampValue(Vector3 v, float min, float max)
     {
         length = sqrtf(length);
 
-        float scale = 1;    // By default, 1 as the neutral element.
         if (length < min)
         {
-            scale = min/length;
+            float scale = min/length;
+            result.x = v.x*scale;
+            result.y = v.y*scale;
+            result.z = v.z*scale;
         }
         else if (length > max)
         {
-            scale = max/length;
+            float scale = max/length;
+            result.x = v.x*scale;
+            result.y = v.y*scale;
+            result.z = v.z*scale;
         }
-
-        result.x = v.x*scale;
-        result.y = v.y*scale;
-        result.z = v.z*scale;
     }
 
     return result;
@@ -1961,7 +1960,7 @@ RMAPI Quaternion QuaternionFromMatrix(Matrix mat)
     }
 
     float biggestVal = sqrtf(fourBiggestSquaredMinus1 + 1.0f)*0.5f;
-    float mult = 0.25f/biggestVal;
+    float mult = 0.25f / biggestVal;
 
     switch (biggestIndex)
     {

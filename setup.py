@@ -14,20 +14,20 @@ extensions = [
             "src/raylib_cython/raylib.pyx",
         ],
         include_dirs=["src/raylib5/src/"],
-        library_dirs=["src/raylib5/lib"],
+        library_dirs=["src/raylib5/libs"],
         libraries=["libraylib"],  # Add any necessary libraries here
         extra_compile_args=[],  # Add any necessary compile flags here
     ),
-    Extension(
-        "raylib_cython.test",
-        [
-            "src/raylib_cython/test.pyx",
-        ],
-        include_dirs=["src/raylib5/src/"],
-        library_dirs=["src/raylib5/lib/"],
-        libraries=["libraylib"],  # Add any necessary libraries here
-        extra_compile_args=[], 
-    )
+    # Extension(
+    #    "raylib_cython.test",
+    #    [
+    #        "src/raylib_cython/test.pyx",
+    #    ],
+    #    include_dirs=["src/raylib5/src"],
+    #    library_dirs=["src/raylib5/libs"],
+    #    libraries=["raylib"],  # Add any necessary libraries here
+    #    extra_compile_args=[],
+    # )
 ]
 
 setup(
