@@ -741,11 +741,12 @@ cdef extern from "../raylib5/src/raylib.h":
         NPATCH_THREE_PATCH_VERTICAL     = 1,    # Npatch layout: 1x3 tiles
         NPATCH_THREE_PATCH_HORIZONTAL   = 2     # Npatch layout: 3x1 tiles
     
-    cdef void TraceLogCallback(int logLevel, const char *text, va_list args)        # Logging: Redirect trace log messages
-    cdef unsigned char* LoadFileDataCallback(const char *fileName, int *dataSize)   # FileIO: Load binary data
-    cdef bool SaveFileDataCallback(const char *fileName, void *data, int dataSize)  # FileIO: Save binary data
-    cdef char* LoadFileTextCallback(const char *fileName)                           # FileIO: Load text data
-    cdef bool SaveFileTextCallback(const char *fileName, char *text)                # FileIO: Save text data
+    ctypedef void (*TraceLogCallback)(int logLevel, const char *text, va_list args) # Logging: Redirect trace log messages
+    ctypedef unsigned char *(*LoadFileDataCallback)(const char *fileName, int *dataSize) # FileIO: Load binary data
+    ctypedef bool (*SaveFileDataCallback)(const char *fileName, void *data, int dataSize) # FileIO: Save binary data
+    ctypedef char *(*LoadFileTextCallback)(const char *fileName) # FileIO: Load text data
+    ctypedef bool (*SaveFileTextCallback)(const char *fileName, char *text) # FileIO: Save text data
+
 
     # Window-related functions
     cdef void InitWindow(int width, int height, const char *title)  # Initialize window and OpenGL context
