@@ -70,9 +70,9 @@ setup(
             '*.pyx',
             '*.pxd',
             '*.pyi',
-            "./libs/*.dll",
-            "./libs/*.h"
-            "./libs/*.lib"
+            "./libs/**.dll",
+            "./libs/**.h",
+            "./libs/**.lib",
         ],
 
     },
