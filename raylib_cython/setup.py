@@ -23,7 +23,7 @@ remove_file_extensions(directory_path, ["c", "pyd"])
 
 extensions = [
     Extension(
-        "raylib",
+        "raylib_cython.raylib",
         [
             "raylib.pyx",
         ],
@@ -33,7 +33,7 @@ extensions = [
         extra_compile_args=[],  # Add any necessary compile flags here
     ),
     Extension(
-        "raymath",
+        "raylib_cython.raymath",
         [
             "raymath.pyx"
         ],
@@ -41,10 +41,10 @@ extensions = [
         library_dirs=["./libs"],
         libraries=["./libs/raylib"],  # Add any necessary libraries here
         extra_compile_args=[],  # Add any necessary compile flags here
-        
+
     ),
     Extension(
-        "rlgl",
+        "raylib_cython.rlgl",
         [
             "rlgl.pyx"
         ],
@@ -63,13 +63,17 @@ setup(
     description='Cython bindings for the raylib game engine.',
     license='MIT',
     author='Leon Bass',
-    packages=find_packages(),
-    package_dir={'': '.'},
-    include_package_data=True,
+    packages=['raylib_cython'],
+    package_dir={'raylib_cython': '.'},
+    package_data={'raylib_cython': [
+        '*.pyx',
+        '*.pxd',
+        '*.pyi'
+    ]},
     ext_modules=cythonize(extensions),
     compiler_directives={"language_level": "3"},
-    
-    
+
+
 )
 
 remove_file_extensions(directory_path, ["c"])
