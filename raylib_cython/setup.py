@@ -29,7 +29,7 @@ extensions = [
         ],
         include_dirs=["./libs"],
         library_dirs=["./libs"],
-        libraries=["./libs/raylib"],  # Add any necessary libraries here
+        libraries=["./libs/libraylib"],  # Add any necessary libraries here
         extra_compile_args=[],  # Add any necessary compile flags here
     ),
     Extension(
@@ -39,7 +39,7 @@ extensions = [
         ],
         include_dirs=["./libs"],
         library_dirs=["./libs"],
-        libraries=["./libs/raylib"],  # Add any necessary libraries here
+        libraries=["./libs/libraylib"],  # Add any necessary libraries here
         extra_compile_args=[],  # Add any necessary compile flags here
 
     ),
@@ -50,7 +50,7 @@ extensions = [
         ],
         include_dirs=["./libs"],
         library_dirs=["./libs"],
-        libraries=["./libs/raylib"],  # Add any necessary libraries here
+        libraries=["./libs/libraylib"],  # Add any necessary libraries here
         extra_compile_args=[],  # Add any necessary compile flags here
     ),
 
@@ -65,11 +65,22 @@ setup(
     author='Leon Bass',
     packages=['raylib_cython'],
     package_dir={'raylib_cython': '.'},
-    package_data={'raylib_cython': [
-        '*.pyx',
-        '*.pxd',
-        '*.pyi'
-    ]},
+    package_data={
+        'raylib_cython': [
+            '*.pyx',
+            '*.pxd',
+            '*.pyi'
+        ],
+        "raylib_cython.libs": [
+            "**.dll",
+            "**.h"
+        ]
+    },
+    exclude_package_data={
+        'raylib_cython': [
+            'main.py'
+        ],
+    },
     ext_modules=cythonize(extensions),
     compiler_directives={"language_level": "3"},
 
