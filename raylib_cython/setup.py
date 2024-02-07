@@ -29,7 +29,7 @@ extensions = [
         ],
         include_dirs=["./libs"],
         library_dirs=["./libs"],
-        libraries=["./libs/libraylib"],  # Add any necessary libraries here
+        libraries=["./libs/raylib"],  # Add any necessary libraries here
         extra_compile_args=[],  # Add any necessary compile flags here
     ),
     Extension(
@@ -39,7 +39,7 @@ extensions = [
         ],
         include_dirs=["./libs"],
         library_dirs=["./libs"],
-        libraries=["./libs/libraylib"],  # Add any necessary libraries here
+        libraries=["./libs/raylib"],  # Add any necessary libraries here
         extra_compile_args=[],  # Add any necessary compile flags here
 
     ),
@@ -50,7 +50,7 @@ extensions = [
         ],
         include_dirs=["./libs"],
         library_dirs=["./libs"],
-        libraries=["./libs/libraylib"],  # Add any necessary libraries here
+        libraries=["./libs/raylib"],  # Add any necessary libraries here
         extra_compile_args=[],  # Add any necessary compile flags here
     ),
 

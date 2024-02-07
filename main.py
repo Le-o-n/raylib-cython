@@ -1,3 +1,1 @@
-from raylib_cython import raylib
-
-raylib.main()
+import raylib_cython
