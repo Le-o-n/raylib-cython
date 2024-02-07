@@ -1,0 +1,2 @@
+recursive-include *.pyx
+recursive-include *.pyi
