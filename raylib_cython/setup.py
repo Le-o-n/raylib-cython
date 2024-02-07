@@ -69,12 +69,12 @@ setup(
         'raylib_cython': [
             '*.pyx',
             '*.pxd',
-            '*.pyi'
+            '*.pyi',
+            "./libs/*.dll",
+            "./libs/*.h"
+            "./libs/*.lib"
         ],
-        "raylib_cython.libs": [
-            "**.dll",
-            "**.h"
-        ]
+
     },
     exclude_package_data={
         'raylib_cython': [
