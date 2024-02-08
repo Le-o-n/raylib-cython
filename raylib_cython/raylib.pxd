@@ -744,13 +744,13 @@ cdef extern from "libs/raylib.h":
 
     # Window-related functions
     cpdef void InitWindow(int width, int height, const char *title)  # Initialize window and OpenGL context
-    cdef void CloseWindow()                                     # Close window and unload OpenGL context
-    cdef bint WindowShouldClose()                               # Check if application should close (KEY_ESCAPE pressed or windows close icon clicked)
-    cdef bint IsWindowReady()                                   # Check if window has been initialized successfully
-    cdef bint IsWindowFullscreen()                              # Check if window is currently fullscreen
-    cdef bint IsWindowHidden()                                  # Check if window is currently hidden (only PLATFORM_DESKTOP)
-    cdef bint IsWindowMinimized()                               # Check if window is currently minimized (only PLATFORM_DESKTOP)
-    cdef bint IsWindowMaximized()                               # Check if window is currently maximized (only PLATFORM_DESKTOP)
+    cpdef void CloseWindow()                                     # Close window and unload OpenGL context
+    cpdef bint WindowShouldClose()                               # Check if application should close (KEY_ESCAPE pressed or windows close icon clicked)
+    cpdef bint IsWindowReady()                                   # Check if window has been initialized successfully
+    cpdef bint IsWindowFullscreen()                              # Check if window is currently fullscreen
+    cpdef bint IsWindowHidden()                                  # Check if window is currently hidden (only PLATFORM_DESKTOP)
+    cpdef bint IsWindowMinimized()                               # Check if window is currently minimized (only PLATFORM_DESKTOP)
+    cpdef bint IsWindowMaximized()                               # Check if window is currently maximized (only PLATFORM_DESKTOP)
     cdef bint IsWindowFocused()                                 # Check if window is currently focused (only PLATFORM_DESKTOP)
     cdef bint IsWindowResized()                                 # Check if window has been resized last frame
     cdef bint IsWindowState(unsigned int flag)                      # Check if one specific window flag is enabled
@@ -802,8 +802,8 @@ cdef extern from "libs/raylib.h":
 
     # Drawing-related functions
     cdef void ClearBackground(Color color)                          # Set background color (framebuffer clear color)
-    cdef void BeginDrawing()                                    # Setup canvas (framebuffer) to start drawing
-    cdef void EndDrawing()                                      # End canvas drawing and swap buffers (double buffering)
+    cpdef void BeginDrawing()                                    # Setup canvas (framebuffer) to start drawing
+    cpdef void EndDrawing()                                      # End canvas drawing and swap buffers (double buffering)
     cdef void BeginMode2D(Camera2D camera)                          # Begin 2D mode with custom camera (2D)
     cdef void EndMode2D()                                       # Ends 2D mode with custom camera
     cdef void BeginMode3D(Camera3D camera)                          # Begin 3D mode with custom camera (3D)

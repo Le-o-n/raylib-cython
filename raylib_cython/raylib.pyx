@@ -13,7 +13,7 @@ cpdef int main():
         mouse_pos = raylib.GetMousePosition()
 
         raylib.DrawFPS(0, 0)
-        raylib.DrawText("Hello", <int>mouse_pos.x, <int>mouse_pos.y, 20, RED)
+        raylib.DrawText("Hello", <int>mouse_pos.x, <int>mouse_pos.y, 20, raylib.RED)
         raylib.EndDrawing()
 
     raylib.CloseWindow()
