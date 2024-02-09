@@ -18,6 +18,115 @@ cdef class CyVector2:
     cpdef void set_y(self, float y_new):
         self._vector.y = y_new
 
+    # TODO TEst
+    @staticmethod
+    cpdef CyVector2 zeros():
+        return CyVector2() 
+    
+    # TODO Test
+    @staticmethod
+    cpdef CyVector2 ones():
+        cdef CyVector2 vec = CyVector2.__new__(CyVector2)
+        vec._vector.x = 1
+        vec._vector.y = 1
+        return vec
+        
+    # TODO Test
+    cpdef CyVector2 add(self, CyVector2 other):
+        cdef CyVector2 result = CyVector2.__new__(CyVector2)
+        result._vector.x = self._vector.x + other._vector.x
+        result._vector.y = self._vector.y + other._vector.y
+        return result
+
+    # TODO Test 
+    cpdef CyVector2 add_inplace(self, CyVector2 other):
+        self._vector.x += other._vector.x
+        self._vector.y += other._vector.y
+        return self
+
+    # TODO Test
+    cpdef CyVector2 sub(self, CyVector2 other):
+        cdef CyVector2 result = CyVector2.__new__(CyVector2)
+        result._vector.x = self._vector.x - other._vector.x
+        result._vector.y = self._vector.y - other._vector.y
+        return result
+
+    # TODO Test 
+    cpdef CyVector2 sub_inplace(self, CyVector2 other):
+        self._vector.x -= other._vector.x
+        self._vector.y -= other._vector.y
+        return self
+
+    #TODO Test
+    cpdef CyVector2 add_value(self, float value):
+        cdef CyVector2 result = CyVector2.__new__(CyVector2)
+        result._vector.x = self._vector.x + value
+        result._vector.y = self._vector.y + value
+        return result
+    
+    #TODO TEST
+    cpdef void add_value_inplace(self, float other):
+        self._vector.x += other
+        self._vector.y += other
+
+    #TODO Test
+    cpdef CyVector2 sub_value(self, float value):
+        cdef CyVector2 result = CyVector2.__new__(CyVector2)
+        result._vector.x = self._vector.x - value
+        result._vector.y = self._vector.y - value
+        return result
+    
+    #TODO TEST
+    cpdef void sub_value_inplace(self, float other):
+        self._vector.x -= other
+        self._vector.y -= other
+
+    #TODO TEST
+    cpdef float get_length(self):
+        return Vector2Length(self._vector)
+
+    # TODO TEST
+    cpdef float get_length_sqr(self):
+        return Vector2LengthSqr(self._vector)
+
+    # TODO TEST
+    cpdef float get_dot_product(self, CyVector2 other):
+        return Vector2DotProduct(self._vector, other._vector)
+
+    # TODO TEST
+    # __iadd__ method for in-place addition
+    cpdef CyVector2 __iadd__(self, CyVector2 other):
+        self.add_inplace(other)
+        return self
+
+    # TODO TEST
+    # __iadd__ method for in-place value addition
+    cpdef CyVector2 __iadd__(self, float value):
+        self.add_value_inplace(value)
+
+    # TODO TEST
+    # __add__ method for non-inplace addition
+    cpdef CyVector2 __add__(self, CyVector2 other):
+        return self.add(other)
+    
+    # TODO TEST
+    # __isub__ method for in-place subtraction
+    cpdef CyVector2 __isub__(self, CyVector2 other):
+        self.sub_inplace(other)
+        return self
+
+    # TODO TEST
+    # __isub__ method for in-place value subtraction
+    cpdef CyVector2 __isub__(self, float value):
+        self.sub_value_inplace(value)
+
+    # TODO TEST
+    # __sub__ method for non-inplace addition
+    cpdef CyVector2 __sub__(self, CyVector2 other):
+        return self.sub(other)
+    
+    
+
 cdef class CyVector3:
     cdef Vector3 _vector
 

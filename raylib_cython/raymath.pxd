@@ -6,37 +6,37 @@ cdef extern from "libs/raymath.h":
     cdef double DEG2RAD
     cdef double RAD2DEG
 
-    ctypedef struct Vector2:
+    ctypedef struct Vector2: # DONE
         float x
         float y
 
-    ctypedef struct Vector3:
+    ctypedef struct Vector3: # DONE
         float x
         float y
         float z
     
-    ctypedef struct Vector4:
+    ctypedef struct Vector4: # DONE
         float x
         float y
         float z
         float w
 
-    ctypedef Vector4 Quaternion
+    ctypedef Vector4 Quaternion # DONE
 
-    ctypedef struct Matrix:
+    ctypedef struct Matrix: # DONE
         float m0, m4, m8, m12      # Matrix first row (4 components)
         float m1, m5, m9, m13      # Matrix second row (4 components)
         float m2, m6, m10, m14     # Matrix third row (4 components)
         float m3, m7, m11, m15     # Matrix fourth row (4 components)
 
-    ctypedef struct float3:
+    ctypedef struct float3: # DONE
         float v[3]
     
-    ctypedef struct float16:
+    ctypedef struct float16: # DONE
         float v[16]
     
-    cdef float16 MatrixToFloat(Matrix mat) # FROM HERE
-    cdef float3 Vector3ToFloat(Vector3 vec)
+    cdef float16 MatrixToFloat(Matrix mat) # DONE
+    cdef float3 Vector3ToFloat(Vector3 vec) # DONE
 
     cdef float Clamp(float value, float min, float max)
     cdef float Lerp(float start, float end, float amount)
@@ -44,15 +44,15 @@ cdef extern from "libs/raymath.h":
     cdef float Remap(float value, float inputStart, float inputEnd, float outputStart, float outputEnd)
     cdef float Wrap(float value, float min, float max)
     cdef int FloatEquals(float x, float y)
-    cdef Vector2 Vector2Zero()
-    cdef Vector2 Vector2One()
-    cdef Vector2 Vector2Add(Vector2 v1, Vector2 v2)
-    cdef Vector2 Vector2AddValue(Vector2 v, float add)
-    cdef Vector2 Vector2Subtract(Vector2 v1, Vector2 v2)
-    cdef Vector2 Vector2SubtractValue(Vector2 v, float sub)
-    cdef float Vector2Length(Vector2 v)
-    cdef float Vector2LengthSqr(Vector2 v)
-    cdef float Vector2DotProduct(Vector2 v1, Vector2 v2)
+    cdef Vector2 Vector2Zero() # DONE
+    cdef Vector2 Vector2One() # DONE
+    cdef Vector2 Vector2Add(Vector2 v1, Vector2 v2) # DONE
+    cdef Vector2 Vector2AddValue(Vector2 v, float add) # DONE
+    cdef Vector2 Vector2Subtract(Vector2 v1, Vector2 v2) # DONE
+    cdef Vector2 Vector2SubtractValue(Vector2 v, float sub) # DONE
+    cdef float Vector2Length(Vector2 v) # DONE
+    cdef float Vector2LengthSqr(Vector2 v) # DONE
+    cdef float Vector2DotProduct(Vector2 v1, Vector2 v2) # DONE
     cdef float Vector2Distance(Vector2 v1, Vector2 v2)
     cdef float Vector2DistanceSqr(Vector2 v1, Vector2 v2)
     cdef float Vector2Angle(Vector2 v1, Vector2 v2)
