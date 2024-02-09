@@ -44,6 +44,12 @@ cdef class CyVector3:
     cpdef void set_z(self, float z_new):
         self._vector.z = z_new
 
+    #TODO TEST this works
+    cpdef CyFloat3 to_float3(self):
+        cdef CyFloat3 float3_instance = CyFloat3.__new__(CyFloat3)
+        float3_instance._floats = (<float3*>(&self._vector[0]))[0]
+        return float3_instance
+
 cdef class CyVector4:
     cdef Vector4 _vector
 
@@ -110,6 +116,8 @@ cdef class CyMatrix:
 
     cpdef CyFloat16 to_float16(self):
         return CyFloat16.from_float16(<float16*>(&self._matrix.m0))
+
+
 cdef class CyFloat3:
     cdef float3 _floats
 
