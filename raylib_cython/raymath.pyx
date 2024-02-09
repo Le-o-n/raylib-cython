@@ -1,7 +1,6 @@
-cimport raymath
 
 cdef class CyVector2:
-    cdef raymath.Vector2 _vector
+    cdef Vector2 _vector
 
     def __cinit__(self):
         self._vector.x = 0.0
@@ -20,7 +19,7 @@ cdef class CyVector2:
         self._vector.y = y_new
 
 cdef class CyVector3:
-    cdef raymath.Vector3 _vector
+    cdef Vector3 _vector
 
     def __cinit__(self):
         self._vector.x = 0.0
@@ -46,7 +45,7 @@ cdef class CyVector3:
         self._vector.z = z_new
 
 cdef class CyVector4:
-    cdef raymath.Vector4 _vector
+    cdef Vector4 _vector
 
     def __cinit__(self):
         self._vector.x = 0.0
@@ -82,7 +81,7 @@ cdef class CyQuaternion(CyVector4):
     pass
 
 cdef class CyMatrix:
-    cdef raymath.Matrix _matrix
+    cdef Matrix _matrix
 
     def __cinit__(self):
         self._matrix.m0 = 0
