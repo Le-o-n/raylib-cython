@@ -60,16 +60,16 @@ cdef extern from "libs/raymath.h":
     cdef Vector2 Vector2Scale(Vector2 v, float scale) # DONE
     cdef Vector2 Vector2Multiply(Vector2 v1, Vector2 v2) # DONE
     cdef Vector2 Vector2Negate(Vector2 v) # DONE
-    cdef Vector2 Vector2Divide(Vector2 v1, Vector2 v2)
-    cdef Vector2 Vector2Normalize(Vector2 v)
-    cdef Vector2 Vector2Transform(Vector2 v, Matrix mat)
-    cdef Vector2 Vector2Lerp(Vector2 v1, Vector2 v2, float amount)
-    cdef Vector2 Vector2Reflect(Vector2 v, Vector2 normal)
-    cdef Vector2 Vector2Rotate(Vector2 v, float angle)
-    cdef Vector2 Vector2MoveTowards(Vector2 v, Vector2 target, float maxDistance)
-    cdef Vector2 Vector2Invert(Vector2 v)
-    cdef Vector2 Vector2Clamp(Vector2 v, Vector2 min, Vector2 max)
-    cdef Vector2 Vector2ClampValue(Vector2 v, float min, float max)
+    cdef Vector2 Vector2Divide(Vector2 v1, Vector2 v2) # DONE
+    cdef Vector2 Vector2Normalize(Vector2 v) # DONE
+    cdef Vector2 Vector2Transform(Vector2 v, Matrix mat) # DONE
+    cdef Vector2 Vector2Lerp(Vector2 v1, Vector2 v2, float amount) # DONE
+    cdef Vector2 Vector2Reflect(Vector2 v, Vector2 normal) # DONE
+    cdef Vector2 Vector2Rotate(Vector2 v, float angle) # DONE
+    cdef Vector2 Vector2MoveTowards(Vector2 v, Vector2 target, float maxDistance) # DONE
+    cdef Vector2 Vector2Invert(Vector2 v) # DONE
+    cdef Vector2 Vector2Clamp(Vector2 v, Vector2 min, Vector2 max) # DONE
+    cdef Vector2 Vector2ClampValue(Vector2 v, float min, float max) # DONE
     cdef int Vector2Equals(Vector2 p, Vector2 q)
     cdef Vector3 Vector3Zero()
     cdef Vector3 Vector3One()
