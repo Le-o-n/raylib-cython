@@ -70,7 +70,7 @@ cdef extern from "libs/raymath.h":
     cdef Vector2 Vector2Invert(Vector2 v) # DONE
     cdef Vector2 Vector2Clamp(Vector2 v, Vector2 min, Vector2 max) # DONE
     cdef Vector2 Vector2ClampValue(Vector2 v, float min, float max) # DONE
-    cdef int Vector2Equals(Vector2 p, Vector2 q)
+    cdef int Vector2Equals(Vector2 p, Vector2 q) # DONE
     cdef Vector3 Vector3Zero()
     cdef Vector3 Vector3One()
     cdef Vector3 Vector3Add(Vector3 v1, Vector3 v2)
