@@ -11,14 +11,19 @@ def main():
     #    raylib.EndDrawing()
     #
     # raylib.CloseWindow()
-    q: raymath.CyMatrix = raymath.CyMatrix()
+    vec: raymath.CyVector2 = raymath.CyVector2()
+    vec2: raymath.CyVector2 = raymath.CyVector2()
 
-    q.set_element(0, 0, 69.0)
+    vec.set_x(10)
+    vec.set_y(10)
+    vec2.set_x(1)
+    vec2.set_y(2)
 
-    f16: raymath.CyFloat16 = q.to_float16()
-
-    for i in range(16):
-        print(f16.get_float(i))
+    for i in range(20):
+        vec.add_inplace(vec2)
+        print(vec.get_x())
+        print(vec.get_y())
+        print("---")
 
 
 if __name__ == "__main__":

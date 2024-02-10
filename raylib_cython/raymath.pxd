@@ -44,8 +44,8 @@ cdef extern from "libs/raymath.h":
     cdef float Remap(float value, float inputStart, float inputEnd, float outputStart, float outputEnd)
     cdef float Wrap(float value, float min, float max)
     cdef int FloatEquals(float x, float y)
-    cdef Vector2 Vector2Zero() # DONE
-    cdef Vector2 Vector2One() # DONE
+    cdef Vector2 Vector2Zero() # X
+    cdef Vector2 Vector2One() # X
     cdef Vector2 Vector2Add(Vector2 v1, Vector2 v2) # DONE
     cdef Vector2 Vector2AddValue(Vector2 v, float add) # DONE
     cdef Vector2 Vector2Subtract(Vector2 v1, Vector2 v2) # DONE
