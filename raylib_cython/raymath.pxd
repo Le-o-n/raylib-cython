@@ -53,13 +53,13 @@ cdef extern from "libs/raymath.h":
     cdef float Vector2Length(Vector2 v) # DONE
     cdef float Vector2LengthSqr(Vector2 v) # DONE
     cdef float Vector2DotProduct(Vector2 v1, Vector2 v2) # DONE
-    cdef float Vector2Distance(Vector2 v1, Vector2 v2)
-    cdef float Vector2DistanceSqr(Vector2 v1, Vector2 v2)
-    cdef float Vector2Angle(Vector2 v1, Vector2 v2)
-    cdef float Vector2LineAngle(Vector2 start, Vector2 end)
-    cdef Vector2 Vector2Scale(Vector2 v, float scale)
-    cdef Vector2 Vector2Multiply(Vector2 v1, Vector2 v2)
-    cdef Vector2 Vector2Negate(Vector2 v)
+    cdef float Vector2Distance(Vector2 v1, Vector2 v2) # DONE
+    cdef float Vector2DistanceSqr(Vector2 v1, Vector2 v2) # DONE
+    cdef float Vector2Angle(Vector2 v1, Vector2 v2) # DONE
+    cdef float Vector2LineAngle(Vector2 start, Vector2 end) # DONE
+    cdef Vector2 Vector2Scale(Vector2 v, float scale) # DONE
+    cdef Vector2 Vector2Multiply(Vector2 v1, Vector2 v2) # DONE
+    cdef Vector2 Vector2Negate(Vector2 v) # DONE
     cdef Vector2 Vector2Divide(Vector2 v1, Vector2 v2)
     cdef Vector2 Vector2Normalize(Vector2 v)
     cdef Vector2 Vector2Transform(Vector2 v, Matrix mat)

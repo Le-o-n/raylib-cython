@@ -65,9 +65,10 @@ cdef class CyVector2:
         return result
     
     #TODO TEST
-    cpdef void add_value_inplace(self, float other):
+    cpdef CyVector2 add_value_inplace(self, float other):
         self._vector.x += other
         self._vector.y += other
+        return self
 
     #TODO Test
     cpdef CyVector2 sub_value(self, float value):
@@ -77,9 +78,40 @@ cdef class CyVector2:
         return result
     
     #TODO TEST
-    cpdef void sub_value_inplace(self, float other):
+    cpdef CyVector2 sub_value_inplace(self, float other):
         self._vector.x -= other
         self._vector.y -= other
+        return CyVector2
+
+    # TODO TEST
+    cpdef CyVector2 scale(self, float scale):
+        cdef CyVector2 vec = CyVector2.__new__(CyVector2)
+        vec._vector.x = self._vector.x * scale
+        return vec
+
+    # TODO TEST
+    cpdef CyVector2 scale_inplace(self, float scale):
+        self._vector.x *= scale
+        self._vector.y *= scale
+        return self
+
+    # TODO TEST~
+    cpdef CyVector2 mul(self, float value):
+        return self.scale(value)
+
+    # TODO TEST
+    cpdef CyVector2 mul(self, CyVector2 other):
+        return Vector2Multiply(self._vector, other._vector)
+
+    # TODO TEST
+    cpdef CyVector2 mul_inplace(self, float value):
+        return self.scale_inplace(value)
+
+    # TODO TEST
+    cpdef CyVector2 mul_inplace(self, CyVector2 other):
+        self._vector.x *= other._vector.x 
+        self._vector.y *= other._vector.y   
+        return self
 
     #TODO TEST
     cpdef float get_length(self):
@@ -94,6 +126,36 @@ cdef class CyVector2:
         return Vector2DotProduct(self._vector, other._vector)
 
     # TODO TEST
+    cpdef float distance(self, CyVector2 other):
+        return Vector2Distance(self._vector, other._vector)
+    
+    # TODO TEST
+    cpdef float distance_sqr(self, CyVector2 other):
+        return Vector2DistanceSqr(self._vector, other._vector)
+
+    # TODO TEST
+    cpdef float angle(self, CyVector2 other):
+        return Vector2Angle(self._vector, other._vector)
+
+    # TODO TEST
+    cpdef float line_angle(self, CyVector2 other):
+        return Vector2LineAngle(self._vector, other._vector)
+
+    # TODO TEST
+    cpdef CyVector2 negate(self):
+        cdef CyVector2 vec = CyVector2.__new__(CyVector2)
+        vec._vector.x = -self._vector.x
+        vec._vector.y = -self._vector.y
+        return vec
+    
+    # TODO TEST
+    cpdef CyVector2 negate_inplace(self):
+        self._vector.x = -self._vector.x
+        self._vector.y = -self._vector.y
+        return self
+    
+
+    # TODO TEST
     # __iadd__ method for in-place addition
     cpdef CyVector2 __iadd__(self, CyVector2 other):
         self.add_inplace(other)
@@ -103,6 +165,7 @@ cdef class CyVector2:
     # __iadd__ method for in-place value addition
     cpdef CyVector2 __iadd__(self, float value):
         self.add_value_inplace(value)
+        return self
 
     # TODO TEST
     # __add__ method for non-inplace addition
@@ -119,12 +182,32 @@ cdef class CyVector2:
     # __isub__ method for in-place value subtraction
     cpdef CyVector2 __isub__(self, float value):
         self.sub_value_inplace(value)
+        return self
 
     # TODO TEST
     # __sub__ method for non-inplace addition
     cpdef CyVector2 __sub__(self, CyVector2 other):
         return self.sub(other)
     
+    # TODO TEST
+    # __imul__ method for inplace multiplication (scale)
+    cpdef CyVector2 __imul__(self, float value):
+        return self.scale_inplace(value)
+    
+    # TODO TEST
+    # __imul__ method for inplace multiplication (scale)
+    cpdef CyVector2 __imul__(self, CyVector2 other):
+        return self.mul_inplace(other)
+    
+    # TODO TEST
+    # __mul__ method for non-inplace multiplication (scale)
+    cpdef CyVector2 __mul__(self, float value):
+        return self.scale(value)
+    
+    # TODO TEST
+    # __mul__ method for inplace multiplication (scale)
+    cpdef CyVector2 __mul__(self, CyVector2 other):
+        return self.mul(other)
     
 
 cdef class CyVector3:
