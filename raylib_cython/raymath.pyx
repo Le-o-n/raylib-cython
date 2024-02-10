@@ -2,9 +2,9 @@
 cdef class CyVector2:
     cdef Vector2 _vector
 
-    def __cinit__(self):
-        self._vector.x = 0.0
-        self._vector.y = 0.0
+    def __cinit__(self, float x = 0.0, float y = 0.0):
+        self._vector.x = x
+        self._vector.y = y
 
     cpdef float get_x(self):
         return self._vector.x
