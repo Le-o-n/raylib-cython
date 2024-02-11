@@ -71,15 +71,15 @@ cdef class CyVector2:
         return self
 
     # TODO TEST
-    cpdef CyVector2 scale(self, float scale):
+    cpdef CyVector2 scale(self, float scalar):
         cdef CyVector2 vec = CyVector2.__new__(CyVector2)
-        vec._vector.x = self._vector.x * scale
+        vec._vector.x = self._vector.x * scalar
         return vec
 
     # TODO TEST
-    cpdef CyVector2 scale_inplace(self, float scale):
-        self._vector.x *= scale
-        self._vector.y *= scale
+    cpdef CyVector2 scale_inplace(self, float scalar):
+        self._vector.x *= scalar
+        self._vector.y *= scalar
         return self
 
     # TODO TEST
@@ -95,35 +95,15 @@ cdef class CyVector2:
         return self
 
     # TODO TEST
-    cpdef CyVector2 div_value(self, float value):
-        return self.scale(1/value)
-    
-    # TODO TEST
-    cpdef CyVector2 div_value_inplace(self, float value):
-        return self.scale_inplace(1/value)
-
-    # TODO TEST
-    cpdef CyVector2 div(self, CyVector2 other):
-        cdef CyVector2 vec = CyVector2.__new__(CyVector2)
-        vec._vector = Vector2Divide(self._vector, other._vector)
-        return vec
-    
-    # TODO TEST
-    cpdef CyVector2 div_inplace(self, CyVector2 other):
-        self._vector.x /= other._vector.x
-        self._vector.y /= other._vector.y
-        return self
-
-    # TODO TEST
-    cpdef float get_length(self):
+    cpdef float length(self):
         return Vector2Length(self._vector)
 
     # TODO TEST
-    cpdef float get_length_sqr(self):
+    cpdef float length_sqr(self):
         return Vector2LengthSqr(self._vector)
 
     # TODO TEST
-    cpdef float get_dot_product(self, CyVector2 other):
+    cpdef float dot(self, CyVector2 other):
         return Vector2DotProduct(self._vector, other._vector)
 
     # TODO TEST
@@ -229,7 +209,8 @@ cdef class CyVector2:
 
     # TODO TEST
     cpdef CyVector2 invert_inplace(self):
-        self._vector = Vector2Invert(self._vector)
+        self._vector.x = 1/self._vector.x
+        self._vector.y = 1/self._vector.y
         return self
     
     # TODO TEST
@@ -260,10 +241,10 @@ cdef class CyVector2:
 cdef class CyVector3:
     cdef Vector3 _vector
 
-    def __cinit__(self):
-        self._vector.x = 0.0
-        self._vector.y = 0.0
-        self._vector.z = 0.0
+    def __cinit__(self, float x = 0.0, float y = 0.0, float z = 0.0):
+        self._vector.x = x
+        self._vector.y = y
+        self._vector.z = z
 
     cpdef float get_x(self):
         return self._vector.x
@@ -282,6 +263,122 @@ cdef class CyVector3:
     
     cpdef void set_z(self, float z_new):
         self._vector.z = z_new
+
+    # TODO TEST
+    cpdef CyVector3 add_value(self, float value):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector.x = self._vector.x + value 
+        vec._vector.y = self._vector.y + value
+        vec._vector.z = self._vector.z + value
+        return vec
+
+    # TODO TEST
+    cpdef CyVector3 add(self, CyVector3 other):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector.x += other._vector.x 
+        vec._vector.y += other._vector.y
+        vec._vector.z += other._vector.z
+        return vec
+
+    # TODO TEST 
+    cpdef CyVector3 add_value_inplace(self, float value):
+        self._vector.x += value
+        self._vector.y += value
+        self._vector.z += value
+        return self
+    
+    # TODO TEST 
+    cpdef CyVector3 add_inplace(self, CyVector3 other):
+        self._vector.x += other._vector.x
+        self._vector.y += other._vector.y
+        self._vector.z += other._vector.z
+        return self
+
+    # TODO TEST
+    cpdef CyVector3 sub_value(self, float value):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector.x = self._vector.x - value 
+        vec._vector.y = self._vector.y - value
+        vec._vector.z = self._vector.z - value
+        return vec
+
+    # TODO TEST
+    cpdef CyVector3 sub(self, CyVector3 other):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector.x -= other._vector.x 
+        vec._vector.y -= other._vector.y
+        vec._vector.z -= other._vector.z
+        return vec
+
+    # TODO TEST 
+    cpdef CyVector3 sub_value_inplace(self, float value):
+        self._vector.x -= value
+        self._vector.y -= value
+        self._vector.z -= value
+        return self
+    
+    # TODO TEST 
+    cpdef CyVector3 sub_inplace(self, CyVector3 other):
+        self._vector.x -= other._vector.x
+        self._vector.y -= other._vector.y
+        self._vector.z -= other._vector.z
+        return self
+
+    # TODO TEST
+    cpdef CyVector3 scale(self, float scalar):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector.x *= scalar
+        vec._vector.y *= scalar
+        vec._vector.z *= scalar
+        return vec
+    
+    # TODO TEST
+    cpdef CyVector3 scale_inplace(self, float scalar):
+        self._vector.x *= scalar
+        self._vector.y *= scalar
+        self._vector.z *= scalar
+        return self
+
+    # TODO TEST
+    cpdef CyVector3 mul(self, CyVector3 other):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector.x = self._vector.x * other._vector.x
+        vec._vector.y = self._vector.y * other._vector.y
+        vec._vector.z = self._vector.z * other._vector.z
+        return vec
+    
+    # TODO TEST
+    cpdef CyVector3 mul_inplace(self, CyVector3 other):
+        self._vector.x *= other._vector.x
+        self._vector.y *= other._vector.y
+        self._vector.z *= other._vector.z
+        return self
+    
+    # TODO TEST
+    cpdef CyVector3 cross_product(self, CyVector3 other):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3CrossProduct(self._vector, other._vector)
+        return vec
+    
+    # TODO TEST
+    cpdef CyVector3 cross_product_inplace(self, CyVector3 other):
+        self._vector = Vector3CrossProduct(self._vector, other._vector)
+        return self
+
+    # TODO TEST
+    cpdef CyVector3 perpendicular(self):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3Perpendicular(self._vector)
+        return vec
+
+    # TODO TEST
+    cpdef float length(self):
+        return Vector3Length(self._vector)
+
+    # TODO TEST
+    cpdef float length_sqr(self):
+        return Vector3LengthSqr(self._vector)
+
 
     #TODO TEST this works
     cpdef CyFloat3 to_float3(self):

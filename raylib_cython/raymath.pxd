@@ -71,18 +71,18 @@ cdef extern from "libs/raymath.h":
     cdef Vector2 Vector2Clamp(Vector2 v, Vector2 min, Vector2 max) # DONE
     cdef Vector2 Vector2ClampValue(Vector2 v, float min, float max) # DONE
     cdef int Vector2Equals(Vector2 p, Vector2 q) # DONE
-    cdef Vector3 Vector3Zero()
-    cdef Vector3 Vector3One()
-    cdef Vector3 Vector3Add(Vector3 v1, Vector3 v2)
-    cdef Vector3 Vector3AddValue(Vector3 v, float add)
-    cdef Vector3 Vector3Subtract(Vector3 v1, Vector3 v2)
-    cdef Vector3 Vector3SubtractValue(Vector3 v, float sub)
-    cdef Vector3 Vector3Scale(Vector3 v, float scalar)
-    cdef Vector3 Vector3Multiply(Vector3 v1, Vector3 v2)
-    cdef Vector3 Vector3CrossProduct(Vector3 v1, Vector3 v2)
-    cdef Vector3 Vector3Perpendicular(Vector3 v)
-    cdef float Vector3Length(const Vector3 v)
-    cdef float Vector3LengthSqr(const Vector3 v)
+    cdef Vector3 Vector3Zero() # DONE
+    cdef Vector3 Vector3One() # DONE
+    cdef Vector3 Vector3Add(Vector3 v1, Vector3 v2) # DONE
+    cdef Vector3 Vector3AddValue(Vector3 v, float add) # DONE
+    cdef Vector3 Vector3Subtract(Vector3 v1, Vector3 v2) # DONE
+    cdef Vector3 Vector3SubtractValue(Vector3 v, float sub) # DONE
+    cdef Vector3 Vector3Scale(Vector3 v, float scalar) # DONE
+    cdef Vector3 Vector3Multiply(Vector3 v1, Vector3 v2) # DONE
+    cdef Vector3 Vector3CrossProduct(Vector3 v1, Vector3 v2) # DONE
+    cdef Vector3 Vector3Perpendicular(Vector3 v) # DONE
+    cdef float Vector3Length(const Vector3 v) # DONE
+    cdef float Vector3LengthSqr(const Vector3 v) # DONE
     cdef float Vector3DotProduct(Vector3 v1, Vector3 v2)
     cdef float Vector3Distance(Vector3 v1, Vector3 v2)
     cdef float Vector3DistanceSqr(Vector3 v1, Vector3 v2)
