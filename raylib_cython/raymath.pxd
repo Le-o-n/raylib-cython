@@ -83,15 +83,15 @@ cdef extern from "libs/raymath.h":
     cdef Vector3 Vector3Perpendicular(Vector3 v) # DONE
     cdef float Vector3Length(const Vector3 v) # DONE
     cdef float Vector3LengthSqr(const Vector3 v) # DONE
-    cdef float Vector3DotProduct(Vector3 v1, Vector3 v2)
-    cdef float Vector3Distance(Vector3 v1, Vector3 v2)
-    cdef float Vector3DistanceSqr(Vector3 v1, Vector3 v2)
-    cdef float Vector3Angle(Vector3 v1, Vector3 v2)
-    cdef Vector3 Vector3Negate(Vector3 v)
-    cdef Vector3 Vector3Divide(Vector3 v1, Vector3 v2)
-    cdef Vector3 Vector3Normalize(Vector3 v)
-    cdef Vector3 Vector3Project(Vector3 v1, Vector3 v2)
-    cdef Vector3 Vector3Reject(Vector3 v1, Vector3 v2)
+    cdef float Vector3DotProduct(Vector3 v1, Vector3 v2) # DONE
+    cdef float Vector3Distance(Vector3 v1, Vector3 v2) # DONE
+    cdef float Vector3DistanceSqr(Vector3 v1, Vector3 v2) # DONE
+    cdef float Vector3Angle(Vector3 v1, Vector3 v2) #  DONE
+    cdef Vector3 Vector3Negate(Vector3 v) # DONE
+    cdef Vector3 Vector3Divide(Vector3 v1, Vector3 v2) # DONE
+    cdef Vector3 Vector3Normalize(Vector3 v) # DONE
+    cdef Vector3 Vector3Project(Vector3 v1, Vector3 v2) # DONE
+    cdef Vector3 Vector3Reject(Vector3 v1, Vector3 v2) # DONE
     cdef void Vector3OrthoNormalize(Vector3 *v1, Vector3 *v2)
     cdef Vector3 Vector3Transform(Vector3 v, Matrix mat)
     cdef Vector3 Vector3RotateByQuaternion(Vector3 v, Quaternion q)

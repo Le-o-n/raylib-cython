@@ -353,7 +353,20 @@ cdef class CyVector3:
         self._vector.y *= other._vector.y
         self._vector.z *= other._vector.z
         return self
-    
+
+    # TODO TEST
+    cpdef CyVector3 div(self, CyVector3 other):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector.x = self._vector.x / other._vector.x
+        vec._vector.y = self._vector.y / other._vector.y
+        return vec
+
+    # TODO TEST
+    cpdef CyVector3 div_inplace(self, CyVector3 other):
+        self._vector.x = self._vector.x / other._vector.x
+        self._vector.y = self._vector.y / other._vector.y
+        return self
+
     # TODO TEST
     cpdef CyVector3 cross_product(self, CyVector3 other):
         cdef CyVector3 vec = CyVector3.__new__(CyVector3)
@@ -370,6 +383,11 @@ cdef class CyVector3:
         cdef CyVector3 vec = CyVector3.__new__(CyVector3)
         vec._vector = Vector3Perpendicular(self._vector)
         return vec
+    
+    # TODO TEST
+    cpdef CyVector3 perpendicular_inplace(self):
+        self._vector = Vector3Perpendicular(self._vector)
+        return self
 
     # TODO TEST
     cpdef float length(self):
@@ -379,12 +397,75 @@ cdef class CyVector3:
     cpdef float length_sqr(self):
         return Vector3LengthSqr(self._vector)
 
+    # TODO TEST
+    cpdef float dot(self, CyVector3 other):
+        return Vector3DotProduct(self._vector, other._vector)
+        
+    # TODO TEST
+    cpdef float distance(self, CyVector3 other):
+        return Vector3Distance(self._vector, other._vector)
+
+    # TODO TEST
+    cpdef float distance_sqr(self, CyVector3 other):
+        return Vector3DistanceSqr(self._vector, other._vector)
+
+    # TODO TEST
+    cpdef float angle(self, CyVector3 other):
+        return Vector3Angle(self._vector, other._vector)
+
+    # TODO TEST
+    cpdef CyVector3 negate(self):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector.x = -self._vector.x
+        vec._vector.y = -self._vector.y
+        return vec
+
+    # TODO TEST
+    cpdef CyVector3 negate_inplace(self):
+        self._vector.x = -self._vector.x
+        self._vector.y = -self._vector.y
+        return self
+
+    
+    # TODO TEST
+    cpdef CyVector3 normalize(self):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3Normalize(self._vector)
+        return vec
+        
+    # TODO TEST
+    cpdef CyVector3 normalize_inplace(self):
+        self._vector = Vector3Normalize(self._vector)
+        return self
+    
+    # TODO TEST
+    cpdef CyVector3 project(self, CyVector3 other):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3Project(self._vector, other._vector)
+        return vec
+    
+    # TODO TEST
+    cpdef CyVector3 project_inplace(self, CyVector3 other):
+        self._vector = Vector3Project(self._vector, other._vector)
+        return self
+    
+    # TODO TEST
+    cpdef CyVector3 reject(self, CyVector3 other):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3Reject(self._vector, other._vector)
+        return vec
+    
+    # TODO TEST
+    cpdef CyVector3 reject_inplace(self, CyVector3 other):
+        self._vector = Vector3Reject(self._vector, other._vector)
+        return self
 
     #TODO TEST this works
     cpdef CyFloat3 to_float3(self):
         cdef CyFloat3 float3_instance = CyFloat3.__new__(CyFloat3)
         float3_instance._floats = (<float3*>(&self._vector.x))[0]
         return float3_instance
+
 
 cdef class CyVector4:
     cdef Vector4 _vector
