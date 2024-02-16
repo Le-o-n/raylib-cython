@@ -6,6 +6,12 @@ cdef class CyVector2:
         self._vector.x = x
         self._vector.y = y
 
+    cpdef CyVector2 copy(self):
+        cdef CyVector2 vec = CyVector2.__new__(CyVector2)
+        vec._vector.x = self._vector.x
+        vec._vector.y = self._vector.y
+        return vec
+
     cpdef float get_x(self):
         return self._vector.x
 
@@ -235,9 +241,7 @@ cdef class CyVector2:
         self._vector = Vector2ClampValue(self._vector, min, max)
         return self
         
-    
-
-
+        
 cdef class CyVector3:
     cdef Vector3 _vector
 
@@ -245,6 +249,13 @@ cdef class CyVector3:
         self._vector.x = x
         self._vector.y = y
         self._vector.z = z
+
+    cpdef CyVector3 copy(self):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector.x = self._vector.x
+        vec._vector.y = self._vector.y
+        vec._vector.z = self._vector.z
+        return vec
 
     cpdef float get_x(self):
         return self._vector.x
@@ -461,15 +472,18 @@ cdef class CyVector3:
         return self
 
     # TODO TEST
-    #cpdef CyVector3 ortho_normalize(self, CyVector3 other):
-    #    cdef CyVector3 vec = CyVector3.__new__(CyVector3)
-    #    vec._vector = Vector3OrthoNormalize(&self._vector, &other._vector)
-    #    return vec
+    cpdef CyVector3 ortho_normalize(self, CyVector3 other):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector.x = self._vector.x
+        vec._vector.y = self._vector.y
+        vec._vector.z = self._vector.z
+        Vector3OrthoNormalize(&vec._vector, &other._vector)
+        return vec
     
     # TODO TEST
-    #cpdef CyVector3 ortho_normalize_inplace(self, CyVector3 other):
-    #    self._vector = Vector3OrthoNormalize(&self._vector, &other._vector)
-    #    return self
+    cpdef CyVector3 ortho_normalize_inplace(self, CyVector3 other):
+        Vector3OrthoNormalize(&self._vector, &other._vector)
+        return self
     
     # TODO TEST
     cpdef CyVector3 transform(self, CyMatrix matrix):
@@ -621,27 +635,7 @@ cdef class CyVector3:
         self._vector = Vector3Refract(self._vector, normal._vector, r)
         return self
     
-    
-    
-def do_test():
-    cdef Vector3 vec1
-    vec1.x = 0
-    vec1.y = 1
-    vec1.z = 0
-
-    cdef Vector3 vec2 = Vector3Invert(vec1)
-
-    print(vec1.x)
-    print(vec1.y)
-    print(vec1.z)
-
-    print(vec2.x)
-    print(vec2.y)
-    print(vec2.z)
-
-     
-    
-    
+  
 
 cdef class CyVector4:
     cdef Vector4 _vector
