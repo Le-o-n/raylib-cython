@@ -241,7 +241,7 @@ cdef class CyVector2:
         self._vector = Vector2ClampValue(self._vector, min, max)
         return self
         
-        
+
 cdef class CyVector3:
     cdef Vector3 _vector
 
@@ -540,8 +540,6 @@ cdef class CyVector3:
         self._vector = Vector3Reflect(self._vector, normal._vector)
         return self
     
-    # INPLACE MAKE BELOW
-
     # TODO TEST
     cpdef CyVector3 min(self, CyVector3 other):
         cdef CyVector3 vec = CyVector3.__new__(CyVector3)
@@ -635,7 +633,6 @@ cdef class CyVector3:
         self._vector = Vector3Refract(self._vector, normal._vector, r)
         return self
     
-  
 
 cdef class CyVector4:
     cdef Vector4 _vector
@@ -646,6 +643,14 @@ cdef class CyVector4:
         self._vector.z = 0.0
         self._vector.w = 0.0
 
+    cpdef CyVector4 copy(self):
+        cdef CyVector4 vec = CyVector4.__new__(CyVector4)
+        vec._vector.x = self._vector.x
+        vec._vector.y = self._vector.y
+        vec._vector.z = self._vector.z
+        vec._vector.w = self._vector.w
+        return vec
+        
     cpdef float get_x(self):
         return self._vector.x
 
