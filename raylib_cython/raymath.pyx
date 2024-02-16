@@ -460,12 +460,188 @@ cdef class CyVector3:
         self._vector = Vector3Reject(self._vector, other._vector)
         return self
 
+    # TODO TEST
+    #cpdef CyVector3 ortho_normalize(self, CyVector3 other):
+    #    cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+    #    vec._vector = Vector3OrthoNormalize(&self._vector, &other._vector)
+    #    return vec
+    
+    # TODO TEST
+    #cpdef CyVector3 ortho_normalize_inplace(self, CyVector3 other):
+    #    self._vector = Vector3OrthoNormalize(&self._vector, &other._vector)
+    #    return self
+    
+    # TODO TEST
+    cpdef CyVector3 transform(self, CyMatrix matrix):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3Transform(self._vector, matrix._matrix)
+        return vec
+    
+    # TODO TEST
+    cpdef CyVector3 transform_inplace(self, CyMatrix matrix):
+        self._vector = Vector3Transform(self._vector, matrix._matrix)
+        return self
+
+    # TODO TEST
+    cpdef CyVector3 rotate_by_quaternion(self, CyQuaternion quaternion):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3RotateByQuaternion(self._vector, quaternion._vector)
+        return vec
+    
+    # TODO TEST
+    cpdef CyVector3 rotate_by_quaternion_inplace(self, CyQuaternion quaternion):
+        self._vector = Vector3RotateByQuaternion(self._vector, quaternion._vector)
+        return self
+    
+    # TODO TEST
+    cpdef CyVector3 rotate_by_axis_angle(self, CyVector3 axis, float angle):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3RotateByAxisAngle(self._vector, axis._vector, angle)
+        return vec
+    
+    # TODO TEST
+    cpdef CyVector3 rotate_by_axis_angle_inplace(self, CyVector3 axis, float angle):
+        self._vector = Vector3RotateByAxisAngle(self._vector, axis._vector, angle)
+        return self
+    
+    # TODO TEST
+    cpdef CyVector3 lerp(self, CyVector3 target, float amount):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3Lerp(self._vector, target._vector, amount)
+        return vec
+    
+    # TODO TEST
+    cpdef CyVector3 lerp_inplace(self, CyVector3 target, float amount):
+        self._vector = Vector3Lerp(self._vector, target._vector, amount)
+        return self
+    
+    # TODO TEST
+    cpdef CyVector3 reflect(self, CyVector3 normal):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3Reflect(self._vector, normal._vector)
+        return vec
+
+    # TODO TEST
+    cpdef CyVector3 reflect_inplace(self, CyVector3 normal):
+        self._vector = Vector3Reflect(self._vector, normal._vector)
+        return self
+    
+    # INPLACE MAKE BELOW
+
+    # TODO TEST
+    cpdef CyVector3 min(self, CyVector3 other):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3Min(self._vector, other._vector)
+        return vec
+    
+    # TODO TEST
+    cpdef CyVector3 min_inplace(self, CyVector3 other):
+        self._vector = Vector3Min(self._vector, other._vector)
+        return self
+    
+    # TODO TEST
+    cpdef CyVector3 max(self, CyVector3 other):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3Max(self._vector, other._vector)
+        return vec
+    
+    # TODO TEST
+    cpdef CyVector3 max_inplace(self, CyVector3 other):
+        self._vector = Vector3Max(self._vector, other._vector)
+        return self
+    
+    # TODO TEST 
+    cpdef CyVector3 barycenter(self, CyVector3 a, CyVector3 b, CyVector3 c):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3Barycenter(self._vector, a._vector, b._vector, c._vector)
+        return vec
+    
+    # TODO TEST 
+    cpdef CyVector3 barycenter_inplace(self, CyVector3 a, CyVector3 b, CyVector3 c):
+        self._vector = Vector3Barycenter(self._vector, a._vector, b._vector, c._vector)
+        return self
+    
+    # TODO TEST 
+    cpdef CyVector3 unproject(self, CyMatrix projection, CyMatrix view):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3Unproject(self._vector, projection._matrix, view._matrix)
+        return vec
+
+    # TODO TEST 
+    cpdef CyVector3 unproject_inplace(self, CyMatrix projection, CyMatrix view):
+        self._vector = Vector3Unproject(self._vector, projection._matrix, view._matrix)
+        return self
+
     #TODO TEST this works
     cpdef CyFloat3 to_float3(self):
         cdef CyFloat3 float3_instance = CyFloat3.__new__(CyFloat3)
         float3_instance._floats = (<float3*>(&self._vector.x))[0]
         return float3_instance
+    
+    #TODO TEST this works
+    cpdef CyVector3 invert(self):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3Invert(self._vector)
+        return vec
+    
+    #TODO TEST this works
+    cpdef CyVector3 invert_inplace(self):
+        self._vector = Vector3Invert(self._vector)
+        return self
+    
+    #TODO TEST this works
+    cpdef CyVector3 clamp(self, CyVector3 min, CyVector3 max):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3Clamp(self._vector, min._vector, max._vector)
+        return vec
+    
+    #TODO TEST this works
+    cpdef CyVector3 clamp_inplace(self, CyVector3 min, CyVector3 max):
+        self._vector = Vector3Clamp(self._vector, min._vector, max._vector)
+        return self
+    
+    #TODO TEST this works
+    cpdef CyVector3 clamp_value(self, float min, float max):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3ClampValue(self._vector, min, max)
+        return vec
+       
+    #TODO TEST this works
+    cpdef bint equals(self, CyVector3 other):
+        return Vector3Equals(self._vector, other._vector)
+    
+    #TODO TEST this works
+    cpdef CyVector3 refract(self, CyVector3 normal, float r):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = Vector3Refract(self._vector, normal._vector, r)
+        return vec
+    
+    #TODO TEST this works
+    cpdef CyVector3 refract_inplace(self, CyVector3 normal, float r):
+        self._vector = Vector3Refract(self._vector, normal._vector, r)
+        return self
+    
+    
+    
+def do_test():
+    cdef Vector3 vec1
+    vec1.x = 0
+    vec1.y = 1
+    vec1.z = 0
 
+    cdef Vector3 vec2 = Vector3Invert(vec1)
+
+    print(vec1.x)
+    print(vec1.y)
+    print(vec1.z)
+
+    print(vec2.x)
+    print(vec2.y)
+    print(vec2.z)
+
+     
+    
+    
 
 cdef class CyVector4:
     cdef Vector4 _vector

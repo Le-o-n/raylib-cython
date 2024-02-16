@@ -92,22 +92,22 @@ cdef extern from "libs/raymath.h":
     cdef Vector3 Vector3Normalize(Vector3 v) # DONE
     cdef Vector3 Vector3Project(Vector3 v1, Vector3 v2) # DONE
     cdef Vector3 Vector3Reject(Vector3 v1, Vector3 v2) # DONE
-    cdef void Vector3OrthoNormalize(Vector3 *v1, Vector3 *v2)
-    cdef Vector3 Vector3Transform(Vector3 v, Matrix mat)
-    cdef Vector3 Vector3RotateByQuaternion(Vector3 v, Quaternion q)
-    cdef Vector3 Vector3RotateByAxisAngle(Vector3 v, Vector3 axis, float angle)
-    cdef Vector3 Vector3Lerp(Vector3 v1, Vector3 v2, float amount)
-    cdef Vector3 Vector3Reflect(Vector3 v, Vector3 normal)
-    cdef Vector3 Vector3Min(Vector3 v1, Vector3 v2)
-    cdef Vector3 Vector3Max(Vector3 v1, Vector3 v2)
-    cdef Vector3 Vector3Barycenter(Vector3 p, Vector3 a, Vector3 b, Vector3 c)
-    cdef Vector3 Vector3Unproject(Vector3 source, Matrix projection, Matrix view)
-    cdef float3 Vector3ToFloatV(Vector3 v)
+    cdef void Vector3OrthoNormalize(Vector3 *v1, Vector3 *v2) # TODO
+    cdef Vector3 Vector3Transform(Vector3 v, Matrix mat) # DONE
+    cdef Vector3 Vector3RotateByQuaternion(Vector3 v, Quaternion q) # DONE
+    cdef Vector3 Vector3RotateByAxisAngle(Vector3 v, Vector3 axis, float angle) # DONE
+    cdef Vector3 Vector3Lerp(Vector3 v1, Vector3 v2, float amount) # DONE
+    cdef Vector3 Vector3Reflect(Vector3 v, Vector3 normal) # DONE
+    cdef Vector3 Vector3Min(Vector3 v1, Vector3 v2) # DONE
+    cdef Vector3 Vector3Max(Vector3 v1, Vector3 v2) # DONE
+    cdef Vector3 Vector3Barycenter(Vector3 p, Vector3 a, Vector3 b, Vector3 c) # DONE
+    cdef Vector3 Vector3Unproject(Vector3 source, Matrix projection, Matrix view) # DONE
+    cdef float3 Vector3ToFloatV(Vector3 v) # DONE
     cdef Vector3 Vector3Invert(Vector3 v)
-    cdef Vector3 Vector3Clamp(Vector3 v, Vector3 min, Vector3 max)
-    cdef Vector3 Vector3ClampValue(Vector3 v, float min, float max)
-    cdef int Vector3Equals(Vector3 p, Vector3 q)
-    cdef Vector3 Vector3Refract(Vector3 v, Vector3 n, float r)
+    cdef Vector3 Vector3Clamp(Vector3 v, Vector3 min, Vector3 max) # DONE
+    cdef Vector3 Vector3ClampValue(Vector3 v, float min, float max) # DONE
+    cdef int Vector3Equals(Vector3 p, Vector3 q) # DONE
+    cdef Vector3 Vector3Refract(Vector3 v, Vector3 n, float r) # DONE
     cdef float MatrixDeterminant(Matrix mat)
     cdef float MatrixTrace(Matrix mat)
     cdef Matrix MatrixTranspose(Matrix mat)
