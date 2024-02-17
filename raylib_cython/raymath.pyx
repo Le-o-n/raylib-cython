@@ -1,4 +1,22 @@
 
+def clamp(float value, float min, float max) -> float:
+    return Clamp(value, min, max)
+
+def lerp(float start, float end, float amount) -> float:
+    return Lerp(start, end, amount)
+
+def normalize(float value, float start, float end) -> float:
+    return Normalize(value, start, end)
+
+def remap(float value, float input_start, float input_end, float output_start, float output_end):
+    return Remap(value, input_start, input_end, output_start, output_end)
+
+def wrap(float value, float min, float max) -> float:
+    return Wrap(value, min, max)
+
+def float_equals(float x, float y) -> int:
+    return FloatEquals(x, y)
+
 cdef class CyVector2:
     cdef Vector2 _vector
 
@@ -11,6 +29,23 @@ cdef class CyVector2:
         vec._vector.x = self._vector.x
         vec._vector.y = self._vector.y
         return vec
+
+    @property
+    def x(self) -> float:
+        return self._vector.x
+
+    @x.setter
+    def x(self, value: float) -> None:
+        self._vector.x = value
+    
+    @property
+    def y(self) -> float:
+        return self._vector.y
+
+    @y.setter
+    def y(self, value: float) -> None:
+        self._vector.y = value
+    
 
     cpdef float get_x(self):
         return self._vector.x
