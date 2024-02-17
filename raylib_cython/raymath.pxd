@@ -1,4 +1,5 @@
 
+
 cdef extern from "libs/raymath.h":
     
     cdef double PI
@@ -129,26 +130,26 @@ cdef extern from "libs/raymath.h":
     cdef Matrix MatrixOrtho(double left, double right, double bottom, double top, double nearPlane, double farPlane) # DONE
     cdef Matrix MatrixLookAt(Vector3 eye, Vector3 target, Vector3 up) # DONE
     cdef float16 MatrixToFloatV(Matrix mat) # DONE
-    cdef Quaternion QuaternionAdd(Quaternion q1, Quaternion q2)
-    cdef Quaternion QuaternionAddValue(Quaternion q, float add)
-    cdef Quaternion QuaternionSubtract(Quaternion q1, Quaternion q2)
-    cdef Quaternion QuaternionSubtractValue(Quaternion q, float sub)
-    cdef Quaternion QuaternionIdentity()
-    cdef float QuaternionLength(Quaternion q)
-    cdef Quaternion QuaternionNormalize(Quaternion q)
-    cdef Quaternion QuaternionInvert(Quaternion q)
-    cdef Quaternion QuaternionMultiply(Quaternion q1, Quaternion q2)
-    cdef Quaternion QuaternionScale(Quaternion q, float mul)
-    cdef Quaternion QuaternionDivide(Quaternion q1, Quaternion q2)
-    cdef Quaternion QuaternionLerp(Quaternion q1, Quaternion q2, float amount)
-    cdef Quaternion QuaternionNlerp(Quaternion q1, Quaternion q2, float amount)
-    cdef Quaternion QuaternionSlerp(Quaternion q1, Quaternion q2, float amount)
-    cdef Quaternion QuaternionFromVector3ToVector3(Vector3 from_vec, Vector3 to_vec)
-    cdef Quaternion QuaternionFromMatrix(Matrix mat)
-    cdef Matrix QuaternionToMatrix(Quaternion q)
-    cdef Quaternion QuaternionFromAxisAngle(Vector3 axis, float angle)
-    cdef void QuaternionToAxisAngle(Quaternion q, Vector3 *outAxis, float *outAngle)
-    cdef Quaternion QuaternionFromEuler(float pitch, float yaw, float roll)
-    cdef Vector3 QuaternionToEuler(Quaternion q)
-    cdef Quaternion QuaternionTransform(Quaternion q, Matrix mat)
-    cdef int QuaternionEquals(Quaternion p, Quaternion q)
+    cdef Quaternion QuaternionAdd(Quaternion q1, Quaternion q2) # DONE
+    cdef Quaternion QuaternionAddValue(Quaternion q, float add) # DONE
+    cdef Quaternion QuaternionSubtract(Quaternion q1, Quaternion q2) # DONE
+    cdef Quaternion QuaternionSubtractValue(Quaternion q, float sub) # DONE
+    cdef Quaternion QuaternionIdentity() # DONE
+    cdef float QuaternionLength(Quaternion q) # DONE
+    cdef Quaternion QuaternionNormalize(Quaternion q) # DONE
+    cdef Quaternion QuaternionInvert(Quaternion q) # DONE
+    cdef Quaternion QuaternionMultiply(Quaternion q1, Quaternion q2) # DONE
+    cdef Quaternion QuaternionScale(Quaternion q, float mul) # DONE
+    cdef Quaternion QuaternionDivide(Quaternion q1, Quaternion q2) # DONE
+    cdef Quaternion QuaternionLerp(Quaternion q1, Quaternion q2, float amount) # DONE
+    cdef Quaternion QuaternionNlerp(Quaternion q1, Quaternion q2, float amount) # DONE
+    cdef Quaternion QuaternionSlerp(Quaternion q1, Quaternion q2, float amount) # DONE
+    cdef Quaternion QuaternionFromVector3ToVector3(Vector3 from_vec, Vector3 to_vec) # DONE
+    cdef Quaternion QuaternionFromMatrix(Matrix mat) # DONE
+    cdef Matrix QuaternionToMatrix(Quaternion q) # DONE
+    cdef Quaternion QuaternionFromAxisAngle(Vector3 axis, float angle) # DONE
+    cdef void QuaternionToAxisAngle(Quaternion q, Vector3 *outAxis, float *outAngle) # DONE
+    cdef Quaternion QuaternionFromEuler(float pitch, float yaw, float roll) # DONE
+    cdef Vector3 QuaternionToEuler(Quaternion q) # DONE
+    cdef Quaternion QuaternionTransform(Quaternion q, Matrix mat) # DONE
+    cdef int QuaternionEquals(Quaternion p, Quaternion q) # DONE

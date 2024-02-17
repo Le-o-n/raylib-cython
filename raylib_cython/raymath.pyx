@@ -675,8 +675,340 @@ cdef class CyVector4:
     cpdef void set_w(self, float w_new):
         self._vector.w = w_new
 
+    # TODO TEST
+    cpdef CyVector4 add(self, CyVector4 other):
+        cdef CyVector4 vec = CyVector4.__new__(CyVector4)
+        vec._vector.x = self._vector.x + other._vector.x
+        vec._vector.y = self._vector.y + other._vector.y 
+        vec._vector.z = self._vector.z + other._vector.z
+        vec._vector.w = self._vector.w + other._vector.w
+        return vec
+    
+    # TODO TEST
+    cpdef CyVector4 add_inplace(self, CyVector4 other):
+        self._vector.x = self._vector.x + other._vector.x
+        self._vector.y = self._vector.y + other._vector.y 
+        self._vector.z = self._vector.z + other._vector.z
+        self._vector.w = self._vector.w + other._vector.w
+        return self
+    
+    # TODO TEST
+    cpdef CyVector4 add_value(self, float value):
+        cdef CyVector4 vec = CyVector4.__new__(CyVector4)
+        vec._vector.x = self._vector.x + value
+        vec._vector.y = self._vector.y + value
+        vec._vector.z = self._vector.z + value
+        vec._vector.w = self._vector.w + value
+        return vec
+    
+    # TODO TEST
+    cpdef CyVector4 add_value_inplace(self, float value):
+        self._vector.x = self._vector.x + value
+        self._vector.y = self._vector.y + value
+        self._vector.z = self._vector.z + value
+        self._vector.w = self._vector.w + value
+        return self
+    
+    # TODO TEST
+    cpdef CyVector4 subtract(self, CyVector4 other):
+        cdef CyVector4 vec = CyVector4.__new__(CyVector4)
+        vec._vector.x = self._vector.x - other._vector.x
+        vec._vector.y = self._vector.y - other._vector.y 
+        vec._vector.z = self._vector.z - other._vector.z
+        vec._vector.w = self._vector.w - other._vector.w
+        return vec
+    
+    # TODO TEST
+    cpdef CyVector4 subtract_inplace(self, CyVector4 other):
+        self._vector.x = self._vector.x - other._vector.x
+        self._vector.y = self._vector.y - other._vector.y 
+        self._vector.z = self._vector.z - other._vector.z
+        self._vector.w = self._vector.w - other._vector.w
+        return self
+
+    # TODO TEST
+    cpdef CyVector4 subtract_value(self, float value):
+        cdef CyVector4 vec = CyVector4.__new__(CyVector4)
+        vec._vector.x = self._vector.x - value
+        vec._vector.y = self._vector.y - value
+        vec._vector.z = self._vector.z - value
+        vec._vector.w = self._vector.w - value
+        return vec
+
+    # TODO TEST
+    cpdef CyVector4 subtract_value_inplace(self, float value):
+        self._vector.x = self._vector.x - value
+        self._vector.y = self._vector.y - value
+        self._vector.z = self._vector.z - value
+        self._vector.w = self._vector.w - value
+        return self
+    
+
 cdef class CyQuaternion(CyVector4):
-    pass
+    # TODO TEST
+    cpdef CyQuaternion add(self, CyVector4 other):
+        cdef CyQuaternion vec = CyQuaternion.__new__(CyQuaternion)
+        vec._vector.x = self._vector.x + other._vector.x
+        vec._vector.y = self._vector.y + other._vector.y 
+        vec._vector.z = self._vector.z + other._vector.z
+        vec._vector.w = self._vector.w + other._vector.w
+        return vec
+    
+    # TODO TEST
+    cpdef CyQuaternion add_inplace(self, CyVector4 other):
+        self._vector.x = self._vector.x + other._vector.x
+        self._vector.y = self._vector.y + other._vector.y 
+        self._vector.z = self._vector.z + other._vector.z
+        self._vector.w = self._vector.w + other._vector.w
+        return self
+    
+    # TODO TEST
+    cpdef CyQuaternion add_value(self, float value):
+        cdef CyQuaternion vec = CyQuaternion.__new__(CyQuaternion)
+        vec._vector.x = self._vector.x + value
+        vec._vector.y = self._vector.y + value
+        vec._vector.z = self._vector.z + value
+        vec._vector.w = self._vector.w + value
+        return vec
+    
+    # TODO TEST
+    cpdef CyQuaternion add_value_inplace(self, float value):
+        self._vector.x = self._vector.x + value
+        self._vector.y = self._vector.y + value
+        self._vector.z = self._vector.z + value
+        self._vector.w = self._vector.w + value
+        return self
+    
+    # TODO TEST
+    cpdef CyQuaternion subtract(self, CyVector4 other):
+        cdef CyQuaternion vec = CyQuaternion.__new__(CyQuaternion)
+        vec._vector.x = self._vector.x - other._vector.x
+        vec._vector.y = self._vector.y - other._vector.y 
+        vec._vector.z = self._vector.z - other._vector.z
+        vec._vector.w = self._vector.w - other._vector.w
+        return vec
+    
+    # TODO TEST
+    cpdef CyQuaternion subtract_inplace(self, CyVector4 other):
+        self._vector.x = self._vector.x - other._vector.x
+        self._vector.y = self._vector.y - other._vector.y 
+        self._vector.z = self._vector.z - other._vector.z
+        self._vector.w = self._vector.w - other._vector.w
+        return self
+
+    # TODO TEST
+    cpdef CyQuaternion subtract_value(self, float value):
+        cdef CyQuaternion vec = CyQuaternion.__new__(CyQuaternion)
+        vec._vector.x = self._vector.x - value
+        vec._vector.y = self._vector.y - value
+        vec._vector.z = self._vector.z - value
+        vec._vector.w = self._vector.w - value
+        return vec
+
+    # TODO TEST
+    cpdef CyQuaternion subtract_value_inplace(self, float value):
+        self._vector.x = self._vector.x - value
+        self._vector.y = self._vector.y - value
+        self._vector.z = self._vector.z - value
+        self._vector.w = self._vector.w - value
+        return self
+    
+    @staticmethod
+    cdef CyQuaternion c_identity():
+        cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
+        q._vector = QuaternionIdentity()
+        return q
+
+    @staticmethod
+    def identity() -> CyQuaternion:
+        return CyQuaternion.c_identity()
+
+    # TODO TEST
+    cpdef float length(self):
+        return QuaternionLength(self._vector)
+
+    # TODO TEST
+    cpdef CyQuaternion normalize(self):
+        cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
+        q._vector = QuaternionNormalize(self._vector)
+        return q
+    
+    # TODO TEST
+    cpdef CyQuaternion normalize_inplace(self):
+        self._vector = QuaternionNormalize(self._vector)
+        return self
+    
+    # TODO TEST
+    cpdef CyQuaternion invert(self):
+        cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
+        q._vector = QuaternionInvert(self._vector)
+        return q
+    
+    # TODO TEST
+    cpdef CyQuaternion invert_inplace(self):
+        self._vector = QuaternionInvert(self._vector)
+        return self
+    
+    # TODO TEST
+    cpdef CyQuaternion multiply(self, CyVector4 other):
+        cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
+        q._vector = QuaternionMultiply(self._vector, other._vector)
+        return q
+    
+    # TODO TEST
+    cpdef CyQuaternion multiply_inplace(self, CyVector4 other):
+        cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
+        q._vector = QuaternionMultiply(self._vector, other._vector)
+        return q
+    
+    # TODO TEST
+    cpdef CyQuaternion scale(self, float mul):
+        cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
+        q._vector = QuaternionScale(self._vector, mul)
+        return q
+    
+    # TODO TEST
+    cpdef CyQuaternion scale_inplace(self, float mul):
+        self._vector = QuaternionScale(self._vector, mul)
+        return self
+    
+    # TODO TEST
+    cpdef CyQuaternion divide(self, CyVector4 other):
+        cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
+        q._vector = QuaternionDivide(self._vector, other._vector)
+        return q
+    
+    # TODO TEST
+    cpdef CyQuaternion divide_inplace(self, CyVector4 other):
+        self._vector = QuaternionDivide(self._vector, other._vector)
+        return self
+    
+    # TODO TEST
+    cpdef CyQuaternion lerp(self, CyVector4 other, float amount):
+        cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
+        q._vector = QuaternionLerp(self._vector, other._vector, amount)
+        return q
+    
+    # TODO TEST
+    cpdef CyQuaternion lerp_inplace(self, CyVector4 other, float amount):
+        self._vector = QuaternionLerp(self._vector, other._vector, amount)
+        return self
+    
+    # TODO TEST
+    cpdef CyQuaternion nlerp(self, CyVector4 other, float amount):
+        cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
+        q._vector = QuaternionNlerp(self._vector, other._vector, amount)
+        return q
+    
+    # TODO TEST
+    cpdef CyQuaternion nlerp_inplace(self, CyVector4 other, float amount):
+        self._vector = QuaternionNlerp(self._vector, other._vector, amount)
+        return self
+    
+    # TODO TEST
+    cpdef CyQuaternion slerp(self, CyVector4 other, float amount):
+        cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
+        q._vector = QuaternionSlerp(self._vector, other._vector, amount)
+        return q
+    
+    # TODO TEST
+    cpdef CyQuaternion slerp_inplace(self, CyVector4 other, float amount):
+        self._vector = QuaternionSlerp(self._vector, other._vector, amount)
+        return self
+    
+    # TODO TEST
+    @staticmethod
+    cdef CyQuaternion c_from_vector3_to_vector3(CyVector3 from_vec, CyVector3 to_vec):
+        cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
+        q._vector = QuaternionFromVector3ToVector3(from_vec._vector, to_vec._vector)
+        return q
+    
+    # TODO TEST
+    @staticmethod
+    def from_vector3_to_vector3(CyVector3 from_vec, CyVector3 to_vec) -> CyQuaternion:
+        return CyQuaternion.c_from_vector3_to_vector3(from_vec, to_vec)
+
+    # TODO TEST
+    @staticmethod
+    cdef CyQuaternion c_from_matrix(CyMatrix mat):
+        cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
+        q._vector = QuaternionFromMatrix(mat._matrix)
+        return q
+    
+    # TODO TEST
+    @staticmethod
+    def from_matrix(CyMatrix mat) -> CyQuaternion:
+        return CyQuaternion.c_from_matrix(mat)
+    
+    # TODO TEST
+    cpdef CyMatrix to_matrix(self):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix)
+        mat._matrix = QuaternionToMatrix(self._vector)
+        return mat
+
+    # TODO TEST
+    @staticmethod
+    cdef CyQuaternion c_from_axis_angle(CyVector3 axis, float angle):
+        cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
+        q._vector = QuaternionFromAxisAngle(axis._vector, angle)
+        return q
+    
+    # TODO TEST
+    @staticmethod
+    def from_axis_angle(CyVector3 axis, float angle) -> CyQuaternion:
+        return CyQuaternion.c_from_axis_angle(axis, angle)
+    
+    # TODO TEST
+    cdef void c_to_axis_angle(self, CyVector3 out_axis, float out_angle):
+        QuaternionToAxisAngle(
+            self._vector,
+             &out_axis._vector,
+             &out_angle
+        )
+    
+    # TODO TEST
+    def to_axis_angle(self) -> tuple[CyVector3, float]:
+        cdef CyVector3 out_axis = CyVector3.__new__(CyVector3)
+        cdef float out_angle
+        QuaternionToAxisAngle(self._vector, &out_axis._vector, &out_angle)
+        return (out_axis, out_angle)
+        
+    # TODO TEST
+    @staticmethod
+    cdef CyQuaternion c_from_euler(float pitch, float yaw, float roll):
+        cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
+        q._vector = QuaternionFromEuler(pitch, yaw, roll)
+        return q
+    
+    # TODO TEST
+    @staticmethod
+    def from_euler(float pitch, float yaw, float roll) -> CyQuaternion:
+        return CyQuaternion.c_from_euler(pitch, yaw, roll)
+    
+    # TODO TEST
+    cpdef CyVector3 to_euler(self):
+        cdef CyVector3 vec = CyVector3.__new__(CyVector3)
+        vec._vector = QuaternionToEuler(self._vector) 
+        return vec
+
+    # TODO TEST
+    cpdef CyQuaternion transform(self, CyMatrix mat):
+        cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
+        q._vector = QuaternionTransform(self._vector, mat._matrix) 
+        return q
+    
+    # TODO TEST
+    cpdef CyQuaternion transform_inplace(self, CyMatrix mat):
+        self._vector = QuaternionTransform(self._vector, mat._matrix) 
+        return self
+    
+    # TODO TEST
+    cpdef int equals(self, CyQuaternion other):
+        return QuaternionEquals(self._vector, other._vector)
+    
+    
+        
+
 
 cdef class CyMatrix:
     cdef Matrix _matrix
