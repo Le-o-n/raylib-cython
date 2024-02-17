@@ -699,7 +699,7 @@ cdef class CyMatrix:
         self._matrix.m14 = 0
         self._matrix.m15 = 0
     
-    cpdef Matrix copy(self):
+    cpdef CyMatrix copy(self):
         cdef CyMatrix mat = CyMatrix.__new__(CyMatrix)
         mat._matrix.m0 = self._matrix.m0
         mat._matrix.m1 = self._matrix.m1
@@ -738,12 +738,22 @@ cdef class CyMatrix:
         cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
         mat._matrix = MatrixTranspose(self._matrix)
         return mat
+    
+    # TODO TEST
+    cpdef CyMatrix transpose_inplace(self):
+        self._matrix = MatrixTranspose(self._matrix)
+        return self
 
     # TODO TEST
     cpdef CyMatrix invert(self):
         cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
         mat._matrix = MatrixInvert(self._matrix)
         return mat
+    
+    # TODO TEST
+    cpdef CyMatrix invert_inplace(self):
+        self._matrix = MatrixInvert(self._matrix)
+        return self
 
     # TODO TEST
     @staticmethod
@@ -763,16 +773,31 @@ cdef class CyMatrix:
         return mat
     
     # TODO TEST
+    cpdef CyMatrix add_inplace(self, CyMatrix right):
+        self._matrix = MatrixAdd(self._matrix, right._matrix)
+        return self
+    
+    # TODO TEST
     cpdef CyMatrix subtract(self, CyMatrix right):
         cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
         mat._matrix = MatrixSubtract(self._matrix, right._matrix)
         return mat
     
     # TODO TEST
+    cpdef CyMatrix subtract_inplace(self, CyMatrix right):
+        self._matrix = MatrixSubtract(self._matrix, right._matrix)
+        return self
+    
+    # TODO TEST
     cpdef CyMatrix multiply(self, CyMatrix right):
         cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
         mat._matrix = MatrixMultiply(self._matrix, right._matrix)
         return mat
+    
+    # TODO TEST
+    cpdef CyMatrix multiply_inplace(self, CyMatrix right):
+        self._matrix = MatrixMultiply(self._matrix, right._matrix)
+        return self
     
     # TODO TEST
     @staticmethod
