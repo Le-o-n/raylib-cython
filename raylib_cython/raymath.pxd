@@ -108,27 +108,27 @@ cdef extern from "libs/raymath.h":
     cdef Vector3 Vector3ClampValue(Vector3 v, float min, float max) # DONE
     cdef int Vector3Equals(Vector3 p, Vector3 q) # DONE
     cdef Vector3 Vector3Refract(Vector3 v, Vector3 n, float r) # DONE
-    cdef float MatrixDeterminant(Matrix mat)
-    cdef float MatrixTrace(Matrix mat)
-    cdef Matrix MatrixTranspose(Matrix mat)
-    cdef Matrix MatrixInvert(Matrix mat)
-    cdef Matrix MatrixIdentity()
-    cdef Matrix MatrixAdd(Matrix left, Matrix right)
-    cdef Matrix MatrixSubtract(Matrix left, Matrix right)
-    cdef Matrix MatrixMultiply(Matrix left, Matrix right)
-    cdef Matrix MatrixTranslate(float x, float y, float z)
-    cdef Matrix MatrixRotate(Vector3 axis, float angle)
-    cdef Matrix MatrixRotateX(float angle)
-    cdef Matrix MatrixRotateY(float angle)
-    cdef Matrix MatrixRotateZ(float angle)
-    cdef Matrix MatrixRotateXYZ(Vector3 angle)
-    cdef Matrix MatrixRotateZYX(Vector3 angle)
-    cdef Matrix MatrixScale(float x, float y, float z)
-    cdef Matrix MatrixFrustum(double left, double right, double bottom, double top, double near, double far)
-    cdef Matrix MatrixPerspective(double fovY, double aspect, double nearPlane, double farPlane)
-    cdef Matrix MatrixOrtho(double left, double right, double bottom, double top, double nearPlane, double farPlane)
-    cdef Matrix MatrixLookAt(Vector3 eye, Vector3 target, Vector3 up)
-    cdef float16 MatrixToFloatV(Matrix mat)
+    cdef float MatrixDeterminant(Matrix mat) # DONE
+    cdef float MatrixTrace(Matrix mat) # DONE
+    cdef Matrix MatrixTranspose(Matrix mat) # DONE
+    cdef Matrix MatrixInvert(Matrix mat) # DONE
+    cdef Matrix MatrixIdentity() # DONE
+    cdef Matrix MatrixAdd(Matrix left, Matrix right) # DONE
+    cdef Matrix MatrixSubtract(Matrix left, Matrix right) # DONE
+    cdef Matrix MatrixMultiply(Matrix left, Matrix right) # DONE
+    cdef Matrix MatrixTranslate(float x, float y, float z) # DONE
+    cdef Matrix MatrixRotate(Vector3 axis, float angle) # DONE
+    cdef Matrix MatrixRotateX(float angle) # DONE
+    cdef Matrix MatrixRotateY(float angle) # DONE
+    cdef Matrix MatrixRotateZ(float angle) # DONE
+    cdef Matrix MatrixRotateXYZ(Vector3 angle) # DONE
+    cdef Matrix MatrixRotateZYX(Vector3 angle) # DONE
+    cdef Matrix MatrixScale(float x, float y, float z) # DONE
+    cdef Matrix MatrixFrustum(double left, double right, double bottom, double top, double near, double far) # DONE
+    cdef Matrix MatrixPerspective(double fovY, double aspect, double nearPlane, double farPlane) # DONE
+    cdef Matrix MatrixOrtho(double left, double right, double bottom, double top, double nearPlane, double farPlane) # DONE
+    cdef Matrix MatrixLookAt(Vector3 eye, Vector3 target, Vector3 up) # DONE
+    cdef float16 MatrixToFloatV(Matrix mat) # DONE
     cdef Quaternion QuaternionAdd(Quaternion q1, Quaternion q2)
     cdef Quaternion QuaternionAddValue(Quaternion q, float add)
     cdef Quaternion QuaternionSubtract(Quaternion q1, Quaternion q2)

@@ -3,7 +3,7 @@ from raylib_cython import raymath
 
 
 def main():
-    raymath.do_test()
+    raymath.CyMatrix.scale(2, 2, 2)
 
 if __name__ == "__main__":
     main()

@@ -699,12 +699,224 @@ cdef class CyMatrix:
         self._matrix.m14 = 0
         self._matrix.m15 = 0
     
+    cpdef Matrix copy(self):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix)
+        mat._matrix.m0 = self._matrix.m0
+        mat._matrix.m1 = self._matrix.m1
+        mat._matrix.m2 = self._matrix.m2
+        mat._matrix.m3 = self._matrix.m3
+        mat._matrix.m4 = self._matrix.m4
+        mat._matrix.m5 = self._matrix.m5
+        mat._matrix.m6 = self._matrix.m6
+        mat._matrix.m7 = self._matrix.m7
+        mat._matrix.m8 = self._matrix.m8
+        mat._matrix.m9 = self._matrix.m9
+        mat._matrix.m10 = self._matrix.m10
+        mat._matrix.m11 = self._matrix.m11
+        mat._matrix.m12 = self._matrix.m12
+        mat._matrix.m13 = self._matrix.m13
+        mat._matrix.m14 = self._matrix.m14
+        mat._matrix.m15 = self._matrix.m15
+
     cpdef float get_element(self, int row, int col):
         return (&self._matrix.m0)[row * 4 + col]
     
     cpdef void set_element(self, int row, int col, float value):
         cdef float* float_ptr = &((<float*>&self._matrix.m0)[row * 4 + col])
         float_ptr[0] = value
+
+    # TODO TEST
+    cpdef float determinant(self):
+        return MatrixDeterminant(self._matrix)
+    
+    # TODO TEST
+    cpdef float trace(self):
+        return MatrixTrace(self._matrix)
+
+    # TODO TEST
+    cpdef CyMatrix transpose(self):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixTranspose(self._matrix)
+        return mat
+
+    # TODO TEST
+    cpdef CyMatrix invert(self):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixInvert(self._matrix)
+        return mat
+
+    # TODO TEST
+    @staticmethod
+    cdef CyMatrix c_identity():
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixIdentity()
+        return mat
+    
+    @staticmethod
+    def identity() -> CyMatrix:
+        return CyMatrix.c_identity()
+
+    # TODO TEST
+    cpdef CyMatrix add(self, CyMatrix right):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixAdd(self._matrix, right._matrix)
+        return mat
+    
+    # TODO TEST
+    cpdef CyMatrix subtract(self, CyMatrix right):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixSubtract(self._matrix, right._matrix)
+        return mat
+    
+    # TODO TEST
+    cpdef CyMatrix multiply(self, CyMatrix right):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixMultiply(self._matrix, right._matrix)
+        return mat
+    
+    # TODO TEST
+    @staticmethod
+    cdef CyMatrix c_translate(float x, float y, float z):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixTranslate(x, y, z)
+        return mat
+    
+    # TODO TEST
+    @staticmethod
+    def translate(float x, float y, float z) -> CyMatrix:
+        return CyMatrix.c_translate(x, y, z)
+
+    # TODO TEST
+    @staticmethod
+    cdef CyMatrix c_rotate(CyVector3 axis, float angle):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixRotate(axis._vector, angle)
+        return mat
+
+    # TODO TEST
+    @staticmethod
+    def rotate(CyVector3 axis, float angle) -> CyMatrix:
+        return CyMatrix.c_rotate(axis, angle)
+
+    # TODO TEST
+    @staticmethod
+    cdef CyMatrix c_rotate_x(float angle):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixRotateX(angle)
+        return mat
+
+    # TODO TEST
+    @staticmethod
+    def rotate_x(float angle) -> CyMatrix:
+        return CyMatrix.c_rotate_x(angle)
+
+    # TODO TEST
+    @staticmethod
+    cdef CyMatrix c_rotate_y(float angle):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixRotateY(angle)
+        return mat
+
+    # TODO TEST
+    @staticmethod
+    def rotate_y(float angle) -> CyMatrix:
+        return CyMatrix.c_rotate_y(angle)
+
+    # TODO TEST
+    @staticmethod
+    cdef CyMatrix c_rotate_z(float angle):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixRotateZ(angle)
+        return mat
+
+    # TODO TEST
+    @staticmethod
+    def rotate_z(float angle) -> CyMatrix:
+        return CyMatrix.c_rotate_z(angle)
+
+    # TODO TEST
+    @staticmethod
+    cdef CyMatrix c_rotate_xyz(CyVector3 angle):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixRotateXYZ(angle._vector)
+        return mat
+
+    # TODO TEST
+    @staticmethod
+    def rotate_xyz(CyVector3 angle) -> CyMatrix:
+        return CyMatrix.c_rotate_xyz(angle)
+
+    # TODO TEST
+    @staticmethod
+    cdef CyMatrix c_rotate_zyx(CyVector3 angle):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixRotateZYX(angle._vector)
+        return mat
+
+    # TODO TEST
+    @staticmethod
+    def rotate_zyx(CyVector3 angle) -> CyMatrix:
+        return CyMatrix.c_rotate_zyx(angle)
+
+    # TODO TEST
+    @staticmethod
+    cdef CyMatrix c_scale(float x, float y, float z):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixScale(x, y, z)
+        return mat
+
+    # TODO TEST
+    @staticmethod
+    def scale(float x, float y, float z) -> CyMatrix:
+        return CyMatrix.c_scale(x, y, z)
+    
+    # TODO TEST
+    @staticmethod
+    cdef CyMatrix c_frustrum(double left, double right, double bottom, double top, double near, double far):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixFrustum(left, right, bottom, top, near, far)
+        return mat
+
+    # TODO TEST
+    @staticmethod
+    def frustrum(double left, double right, double bottom, double top, double near, double far) -> CyMatrix:
+        return CyMatrix.c_frustrum(left, right, bottom, top, near, far)
+
+    # TODO TEST
+    @staticmethod
+    cdef CyMatrix c_perspective(double fov_y, double aspect, double near_plane, double far_plane):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixPerspective(fov_y, aspect, near_plane, far_plane)
+        return mat
+
+    # TODO TEST
+    @staticmethod
+    def perspective(double fov_y, double aspect, double near_plane, double far_plane) -> CyMatrix:
+        return CyMatrix.perspective(fov_y, aspect, near_plane, far_plane)
+
+    # TODO TEST
+    @staticmethod
+    cdef CyMatrix c_orthogonal(double left, double right, double bottom, double top, double nearPlane, double farPlane):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixOrtho(left, right, bottom, top, nearPlane, farPlane)
+        return mat
+
+    # TODO TEST
+    @staticmethod
+    def orthogonal(double left, double right, double bottom, double top, double nearPlane, double farPlane) -> CyMatrix:
+        return CyMatrix.c_orthogonal(left, right, bottom, top, nearPlane, farPlane)
+
+    # TODO TEST
+    @staticmethod
+    cdef CyMatrix c_look_at(CyVector3 eye, CyVector3 target, CyVector3 up):
+        cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
+        mat._matrix = MatrixLookAt(eye._vector, target._vector, up._vector)
+        return mat
+
+    # TODO TEST
+    @staticmethod
+    def look_at(CyVector3 eye, CyVector3 target, CyVector3 up) -> CyMatrix:
+        return CyMatrix.c_look_at(eye, target, up)
 
     cpdef CyFloat16 to_float16(self):
         return CyFloat16.from_float16(<float16*>(&self._matrix.m0))
