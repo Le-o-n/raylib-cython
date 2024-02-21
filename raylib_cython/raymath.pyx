@@ -695,7 +695,7 @@ cdef class CyVector3:
 cdef class CyVector4:
     cdef Vector4 _vector
 
-    def __cinit__(self):
+    def __cinit__(self, float x = 0.0, float y = 0.0, float z = 0.0, float w = 0.0):
         self._vector.x = 0.0
         self._vector.y = 0.0
         self._vector.z = 0.0
