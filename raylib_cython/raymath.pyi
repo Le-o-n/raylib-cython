@@ -1,10 +1,9 @@
 from typing import Union
 
-
 class CyVector2:
     x: float
     y: float
-    def __init__(self, x: float = 0.0, y: float = 0.0): ...
+    def __init__(self, x: float = 0.0, y: float = 0.0) -> CyVector2: ...
     def copy(self) -> CyVector2: ...
     def get_x(self) -> float: ...
     def get_y(self) -> float: ...
@@ -50,17 +49,80 @@ class CyVector2:
     def clamp_value(self, min: float, max: float) -> CyVector2: ...
     def clamp_value_inplace(self, min: float, max: float) -> CyVector2: ...    
         
-
 class CyVector3:
-    def __init__(self) -> 'CyVector3': ...
+    x: float
+    y: float
+    z: float
+    def __init__(self, x: float = 0.0, y: float = 0.0, z: float = 0.0) -> CyVector3: ...
+    def copy(self) -> CyVector3: ...
     def get_x(self) -> float: ...
     def get_y(self) -> float: ...
     def get_z(self) -> float: ...
     def set_x(self, x_new: float) -> None: ...
     def set_y(self, y_new: float) -> None: ...
     def set_z(self, z_new: float) -> None: ...
-
-
+    def add_value(self, value: float) -> CyVector3: ...
+    def add(self, other: CyVector3) -> CyVector3: ...     
+    def add_value_inplace(self, value: float) -> CyVector3: ...      
+    def add_inplace(self, other: CyVector3) -> CyVector3: ...
+    def sub_value(self, value: float) -> CyVector3: ...
+    def sub(self, other: CyVector3) -> CyVector3: ...
+    def CyVector3 sub_value_inplace(self, float value): # TODO
+    def CyVector3 sub_inplace(self, CyVector3 other):
+    def CyVector3 scale(self, float scalar):
+    def CyVector3 scale_inplace(self, float scalar):
+    def CyVector3 mul(self, CyVector3 other):
+    def CyVector3 mul_inplace(self, CyVector3 other):
+    def CyVector3 div(self, CyVector3 other):
+    def CyVector3 div_inplace(self, CyVector3 other):
+    def CyVector3 cross_product(self, CyVector3 other):
+    def CyVector3 cross_product_inplace(self, CyVector3 other):
+    def CyVector3 perpendicular(self):
+    def CyVector3 perpendicular_inplace(self):
+    def float length(self):
+    def float length_sqr(self):
+    def float dot(self, CyVector3 other):
+    def float distance(self, CyVector3 other):
+    def float distance_sqr(self, CyVector3 other):
+    def float angle(self, CyVector3 other):
+    def CyVector3 negate(self):
+    def CyVector3 negate_inplace(self):
+    def CyVector3 normalize(self):
+    def CyVector3 normalize_inplace(self):
+    def CyVector3 project(self, CyVector3 other):
+    def CyVector3 project_inplace(self, CyVector3 other):
+    def CyVector3 reject(self, CyVector3 other):
+    def CyVector3 reject_inplace(self, CyVector3 other):
+    def CyVector3 ortho_normalize(self, CyVector3 other):
+    def CyVector3 ortho_normalize_inplace(self, CyVector3 other):
+    def CyVector3 transform(self, CyMatrix matrix):
+    def CyVector3 transform_inplace(self, CyMatrix matrix):
+    def CyVector3 rotate_by_quaternion(self, CyQuaternion quaternion):
+    def CyVector3 rotate_by_quaternion_inplace(self, CyQuaternion quaternion):
+    def CyVector3 rotate_by_axis_angle(self, CyVector3 axis, float angle):
+    def CyVector3 rotate_by_axis_angle_inplace(self, CyVector3 axis, float angle):
+    def CyVector3 lerp(self, CyVector3 target, float amount):
+    def CyVector3 lerp_inplace(self, CyVector3 target, float amount):
+    def CyVector3 reflect(self, CyVector3 normal):
+    def CyVector3 reflect_inplace(self, CyVector3 normal):
+    def CyVector3 min(self, CyVector3 other):
+    def CyVector3 min_inplace(self, CyVector3 other):
+    def CyVector3 max(self, CyVector3 other):
+    def CyVector3 max_inplace(self, CyVector3 other):
+    def CyVector3 barycenter(self, CyVector3 a, CyVector3 b, CyVector3 c):
+    def CyVector3 barycenter_inplace(self, CyVector3 a, CyVector3 b, CyVector3 c):
+    def CyVector3 unproject(self, CyMatrix projection, CyMatrix view):
+    def CyVector3 unproject_inplace(self, CyMatrix projection, CyMatrix view):
+    def CyFloat3 to_float3(self):
+    def CyVector3 invert(self):
+    def CyVector3 invert_inplace(self):
+    def CyVector3 clamp(self, CyVector3 min, CyVector3 max):
+    def CyVector3 clamp_inplace(self, CyVector3 min, CyVector3 max):
+    def CyVector3 clamp_value(self, float min, float max):   
+    def bool equals(self, CyVector3 other):
+    def CyVector3 refract(self, CyVector3 normal, float r):
+    def CyVector3 refract_inplace(self, CyVector3 normal, float r):
+    
 class CyVector4:
     def __init__(self) -> 'CyVector4': ...
     def get_x(self) -> float: ...
@@ -72,21 +134,17 @@ class CyVector4:
     def set_z(self, z_new: float) -> None: ...
     def set_w(self, z_new: float) -> None: ...
 
-
 class CyQuaternion(CyVector4):
     ...
-
 
 class CyMatrix:
     def get_element(self, row: int, col: int) -> float: ...
     def set_element(self, row: int, col: int, value: float) -> None: ...
     def to_float16(self) -> CyFloat16: ...
 
-
 class CyFloat3:
     def get_float(self, index: int) -> float: ...
     def set_float(self, index: int, f: float) -> None: ...
-
 
 class CyFloat16:
     def get_float(self, index: int) -> float: ...

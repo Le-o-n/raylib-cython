@@ -292,6 +292,30 @@ cdef class CyVector3:
         vec._vector.z = self._vector.z
         return vec
 
+    @property
+    def x(self) -> float:
+        return self._vector.x
+
+    @x.setter
+    def x(self, value: float) -> None:
+        self._vector.x = value
+    
+    @property
+    def y(self) -> float:
+        return self._vector.y
+
+    @y.setter
+    def y(self, value: float) -> None:
+        self._vector.y = value
+    
+    @property
+    def z(self) -> float:
+        return self._vector.z
+
+    @y.setter
+    def z(self, value: float) -> None:
+        self._vector.z = value
+
     cpdef float get_x(self):
         return self._vector.x
 
@@ -472,7 +496,6 @@ cdef class CyVector3:
         self._vector.y = -self._vector.y
         return self
 
-    
     # TODO TEST
     cpdef CyVector3 normalize(self):
         cdef CyVector3 vec = CyVector3.__new__(CyVector3)
