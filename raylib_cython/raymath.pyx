@@ -1241,15 +1241,15 @@ cdef class CyMatrix:
 
     # TODO TEST
     @staticmethod
-    cdef CyMatrix c_orthogonal(double left, double right, double bottom, double top, double nearPlane, double farPlane):
+    cdef CyMatrix c_orthogonal(double left, double right, double bottom, double top, double near_plane, double far_plane):
         cdef CyMatrix mat = CyMatrix.__new__(CyMatrix) 
-        mat._matrix = MatrixOrtho(left, right, bottom, top, nearPlane, farPlane)
+        mat._matrix = MatrixOrtho(left, right, bottom, top, near_plane, far_plane)
         return mat
 
     # TODO TEST
     @staticmethod
-    def orthogonal(double left, double right, double bottom, double top, double nearPlane, double farPlane) -> CyMatrix:
-        return CyMatrix.c_orthogonal(left, right, bottom, top, nearPlane, farPlane)
+    def orthogonal(double left, double right, double bottom, double top, double near_plane, double far_plane) -> CyMatrix:
+        return CyMatrix.c_orthogonal(left, right, bottom, top, near_plane, far_plane)
 
     # TODO TEST
     @staticmethod
