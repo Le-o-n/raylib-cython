@@ -692,7 +692,7 @@ cdef class CyVector3:
         return self
     
 
-cdef class CyVector4:
+cdef class CyQuaternion:
     cdef Vector4 _vector
 
     def __cinit__(self, float x = 0.0, float y = 0.0, float z = 0.0, float w = 0.0):
@@ -701,8 +701,8 @@ cdef class CyVector4:
         self._vector.z = 0.0
         self._vector.w = 0.0
 
-    cpdef CyVector4 copy(self):
-        cdef CyVector4 vec = CyVector4.__new__(CyVector4)
+    cpdef CyQuaternion copy(self):
+        cdef CyQuaternion vec = CyQuaternion.__new__(CyQuaternion)
         vec._vector.x = self._vector.x
         vec._vector.y = self._vector.y
         vec._vector.z = self._vector.z
@@ -732,79 +732,8 @@ cdef class CyVector4:
     
     cpdef void set_w(self, float w_new):
         self._vector.w = w_new
-
     # TODO TEST
-    cpdef CyVector4 add(self, CyVector4 other):
-        cdef CyVector4 vec = CyVector4.__new__(CyVector4)
-        vec._vector.x = self._vector.x + other._vector.x
-        vec._vector.y = self._vector.y + other._vector.y 
-        vec._vector.z = self._vector.z + other._vector.z
-        vec._vector.w = self._vector.w + other._vector.w
-        return vec
-    
-    # TODO TEST
-    cpdef CyVector4 add_inplace(self, CyVector4 other):
-        self._vector.x = self._vector.x + other._vector.x
-        self._vector.y = self._vector.y + other._vector.y 
-        self._vector.z = self._vector.z + other._vector.z
-        self._vector.w = self._vector.w + other._vector.w
-        return self
-    
-    # TODO TEST
-    cpdef CyVector4 add_value(self, float value):
-        cdef CyVector4 vec = CyVector4.__new__(CyVector4)
-        vec._vector.x = self._vector.x + value
-        vec._vector.y = self._vector.y + value
-        vec._vector.z = self._vector.z + value
-        vec._vector.w = self._vector.w + value
-        return vec
-    
-    # TODO TEST
-    cpdef CyVector4 add_value_inplace(self, float value):
-        self._vector.x = self._vector.x + value
-        self._vector.y = self._vector.y + value
-        self._vector.z = self._vector.z + value
-        self._vector.w = self._vector.w + value
-        return self
-    
-    # TODO TEST
-    cpdef CyVector4 subtract(self, CyVector4 other):
-        cdef CyVector4 vec = CyVector4.__new__(CyVector4)
-        vec._vector.x = self._vector.x - other._vector.x
-        vec._vector.y = self._vector.y - other._vector.y 
-        vec._vector.z = self._vector.z - other._vector.z
-        vec._vector.w = self._vector.w - other._vector.w
-        return vec
-    
-    # TODO TEST
-    cpdef CyVector4 subtract_inplace(self, CyVector4 other):
-        self._vector.x = self._vector.x - other._vector.x
-        self._vector.y = self._vector.y - other._vector.y 
-        self._vector.z = self._vector.z - other._vector.z
-        self._vector.w = self._vector.w - other._vector.w
-        return self
-
-    # TODO TEST
-    cpdef CyVector4 subtract_value(self, float value):
-        cdef CyVector4 vec = CyVector4.__new__(CyVector4)
-        vec._vector.x = self._vector.x - value
-        vec._vector.y = self._vector.y - value
-        vec._vector.z = self._vector.z - value
-        vec._vector.w = self._vector.w - value
-        return vec
-
-    # TODO TEST
-    cpdef CyVector4 subtract_value_inplace(self, float value):
-        self._vector.x = self._vector.x - value
-        self._vector.y = self._vector.y - value
-        self._vector.z = self._vector.z - value
-        self._vector.w = self._vector.w - value
-        return self
-    
-
-cdef class CyQuaternion(CyVector4):
-    # TODO TEST
-    cpdef CyQuaternion add(self, CyVector4 other):
+    cpdef CyQuaternion add(self, CyQuaternion other):
         cdef CyQuaternion vec = CyQuaternion.__new__(CyQuaternion)
         vec._vector.x = self._vector.x + other._vector.x
         vec._vector.y = self._vector.y + other._vector.y 
@@ -813,7 +742,7 @@ cdef class CyQuaternion(CyVector4):
         return vec
     
     # TODO TEST
-    cpdef CyQuaternion add_inplace(self, CyVector4 other):
+    cpdef CyQuaternion add_inplace(self, CyQuaternion other):
         self._vector.x = self._vector.x + other._vector.x
         self._vector.y = self._vector.y + other._vector.y 
         self._vector.z = self._vector.z + other._vector.z
@@ -838,7 +767,7 @@ cdef class CyQuaternion(CyVector4):
         return self
     
     # TODO TEST
-    cpdef CyQuaternion subtract(self, CyVector4 other):
+    cpdef CyQuaternion subtract(self, CyQuaternion other):
         cdef CyQuaternion vec = CyQuaternion.__new__(CyQuaternion)
         vec._vector.x = self._vector.x - other._vector.x
         vec._vector.y = self._vector.y - other._vector.y 
@@ -847,7 +776,7 @@ cdef class CyQuaternion(CyVector4):
         return vec
     
     # TODO TEST
-    cpdef CyQuaternion subtract_inplace(self, CyVector4 other):
+    cpdef CyQuaternion subtract_inplace(self, CyQuaternion other):
         self._vector.x = self._vector.x - other._vector.x
         self._vector.y = self._vector.y - other._vector.y 
         self._vector.z = self._vector.z - other._vector.z
@@ -908,13 +837,13 @@ cdef class CyQuaternion(CyVector4):
         return self
     
     # TODO TEST
-    cpdef CyQuaternion multiply(self, CyVector4 other):
+    cpdef CyQuaternion multiply(self, CyQuaternion other):
         cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
         q._vector = QuaternionMultiply(self._vector, other._vector)
         return q
     
     # TODO TEST
-    cpdef CyQuaternion multiply_inplace(self, CyVector4 other):
+    cpdef CyQuaternion multiply_inplace(self, CyQuaternion other):
         cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
         q._vector = QuaternionMultiply(self._vector, other._vector)
         return q
@@ -931,46 +860,46 @@ cdef class CyQuaternion(CyVector4):
         return self
     
     # TODO TEST
-    cpdef CyQuaternion divide(self, CyVector4 other):
+    cpdef CyQuaternion divide(self, CyQuaternion other):
         cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
         q._vector = QuaternionDivide(self._vector, other._vector)
         return q
     
     # TODO TEST
-    cpdef CyQuaternion divide_inplace(self, CyVector4 other):
+    cpdef CyQuaternion divide_inplace(self, CyQuaternion other):
         self._vector = QuaternionDivide(self._vector, other._vector)
         return self
     
     # TODO TEST
-    cpdef CyQuaternion lerp(self, CyVector4 other, float amount):
+    cpdef CyQuaternion lerp(self, CyQuaternion other, float amount):
         cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
         q._vector = QuaternionLerp(self._vector, other._vector, amount)
         return q
     
     # TODO TEST
-    cpdef CyQuaternion lerp_inplace(self, CyVector4 other, float amount):
+    cpdef CyQuaternion lerp_inplace(self, CyQuaternion other, float amount):
         self._vector = QuaternionLerp(self._vector, other._vector, amount)
         return self
     
     # TODO TEST
-    cpdef CyQuaternion nlerp(self, CyVector4 other, float amount):
+    cpdef CyQuaternion nlerp(self, CyQuaternion other, float amount):
         cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
         q._vector = QuaternionNlerp(self._vector, other._vector, amount)
         return q
     
     # TODO TEST
-    cpdef CyQuaternion nlerp_inplace(self, CyVector4 other, float amount):
+    cpdef CyQuaternion nlerp_inplace(self, CyQuaternion other, float amount):
         self._vector = QuaternionNlerp(self._vector, other._vector, amount)
         return self
     
     # TODO TEST
-    cpdef CyQuaternion slerp(self, CyVector4 other, float amount):
+    cpdef CyQuaternion slerp(self, CyQuaternion other, float amount):
         cdef CyQuaternion q = CyQuaternion.__new__(CyQuaternion)
         q._vector = QuaternionSlerp(self._vector, other._vector, amount)
         return q
     
     # TODO TEST
-    cpdef CyQuaternion slerp_inplace(self, CyVector4 other, float amount):
+    cpdef CyQuaternion slerp_inplace(self, CyQuaternion other, float amount):
         self._vector = QuaternionSlerp(self._vector, other._vector, amount)
         return self
     
@@ -1065,7 +994,8 @@ cdef class CyQuaternion(CyVector4):
         return QuaternionEquals(self._vector, other._vector)
     
     
-        
+cdef class CyVector4(CyQuaternion):
+    ...
 
 
 cdef class CyMatrix:
