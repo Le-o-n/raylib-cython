@@ -312,7 +312,7 @@ cdef class CyVector3:
     def z(self) -> float:
         return self._vector.z
 
-    @y.setter
+    @z.setter
     def z(self, value: float) -> None:
         self._vector.z = value
 
@@ -1266,7 +1266,14 @@ cdef class CyMatrix:
     cpdef CyFloat16 to_float16(self):
         return CyFloat16.from_float16(<float16*>(&self._matrix.m0))
 
-
+    def __str__(self) -> str:
+        mat_string = f"Matrix["
+        mat_string = f"{mat_string}\n\t{self._matrix.m0}\t{self._matrix.m4}\t{self._matrix.m8}\t{self._matrix.m12}"
+        mat_string = f"{mat_string}\n\t{self._matrix.m1}\t{self._matrix.m5}\t{self._matrix.m9}\t{self._matrix.m13}"
+        mat_string = f"{mat_string}\n\t{self._matrix.m2}\t{self._matrix.m6}\t{self._matrix.m10}\t{self._matrix.m14}"
+        mat_string = f"{mat_string}\n\t{self._matrix.m3}\t{self._matrix.m7}\t{self._matrix.m11}\t{self._matrix.m15}"
+        mat_string = f"{mat_string}\n]"
+        return str(mat_string)
 cdef class CyFloat3:
     cdef float3 _floats
 
@@ -1314,4 +1321,5 @@ cdef class CyFloat16:
     
     cpdef void set_float(self, int index, float f):
         self._floats.v[index] = f
+    
 
