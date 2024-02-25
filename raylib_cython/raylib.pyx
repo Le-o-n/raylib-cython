@@ -1,5 +1,7 @@
 from libc.stdlib cimport malloc, free
+from libc.string cimport memcpy
 cimport raymath
+from cpython.bytes cimport PyBytes_AsString
 
 #
 #    # Vector2, 2 components
@@ -202,7 +204,7 @@ cdef class CyRectangle:
 
     @x.setter
     def x(self, value: float) -> None:
-        self._rect.x = value
+        self._rect.x = <float>value
 
     @property
     def y(self) -> float:
@@ -210,7 +212,7 @@ cdef class CyRectangle:
           
     @y.setter
     def y(self, value: float) -> None:
-        self._rect.y = value
+        self._rect.y = <float>value
     
     @property
     def height(self) -> float:
@@ -218,7 +220,7 @@ cdef class CyRectangle:
           
     @height.setter
     def height(self, value: float) -> None:
-        self._rect.height = value
+        self._rect.height = <float>value
     
     @property
     def width(self) -> float:
@@ -226,7 +228,7 @@ cdef class CyRectangle:
           
     @width.setter
     def width(self, value: float) -> None:
-        self._rect.width = value
+        self._rect.width = <float>value
     
 
     
@@ -238,16 +240,35 @@ cdef class CyRectangle:
 #        int mipmaps             # Mipmap levels, 1 by default
 #        int format              # Data format (PixelFormat type)
 
+# Define your Cython class
 cdef class CyImage:
     cdef Image _image
 
-    def __cinit__(self, data, width: int, height: int, mipmaps: int, format: int):
-        ...
-    
-    # TODO convert format to an enum?
-    # TODO convert data to be PIL Image?
-    # TODO extract width and height from pil image?
-    # TODO research what the fuck a mipmap is
+    def __cinit__(self, bytes data, int width, int height, int mipmaps, int format):
+        
+        cdef int data_size = data.count()
+        cdef char *data_ptr = PyBytes_AsString(data)
+        if data_ptr is NULL:
+            raise ValueError("Failed to get the pointer to the raw data of the bytes object")
+
+        # Allocate memory for the raylib Image data
+        self._image.data = <void*>malloc(data_size)
+        if self._image.data is NULL:
+            raise MemoryError("Failed to allocate memory for image data")
+
+        # Copy image data to raylib Image
+        memcpy(self._image.data, data_ptr, data_size)
+
+        # Set other image properties
+        self._image.width = width
+        self._image.height = height
+        self._image.mipmaps = mipmaps
+        self._image.format = format
+
+    def __dealloc__(self):
+        # Free allocated memory when the object is deleted
+        if self._image.data is not NULL:
+            free(self._image.data)
 
 
 #    # Texture, tex data stored in GPU memory (VRAM)
@@ -979,28 +1000,29 @@ cdef class Window:
 
     @staticmethod
     def set_window_icon(image: CyImage) -> None:
-        SetWindowIcon(image)
+        SetWindowIcon(image._image)
 
     @staticmethod
     def set_windows_icons(images: list[CyImage]) -> None:
-        cdef int count = len(images)
+        return
+        #cdef int count = len(images)
         
         # Allocate memory for an array of Image objects
-        cdef Image* image_array = <Image*>malloc(count * sizeof(Image))
-        if not image_array:
-            raise MemoryError("Failed to allocate memory for Image array")
-        
-        try:
-            # Populate the Image array with CyImage _image attributes
-            for i in range(count):
-                image_array[i] = images[i]._image
-            
-            # Call the C function with the Image array
-            SetWindowIcons(image_array, count)
-        
-        finally:
-            # Free the allocated memory
-            free(image_array)
+        #cdef Image* image_array = <Image*>malloc(count * sizeof(Image))
+        #if not image_array:
+        #    raise MemoryError("Failed to allocate memory for Image array")
+       # 
+        #try:
+        #    # Populate the Image array with CyImage _image attributes
+        #    for i in range(count):
+        #        image_array[i] = <Image>images[i]._image
+        #    
+        #    # Call the C function with the Image array
+        #    SetWindowIcons(image_array, count)
+       # 
+        #finally:
+        #    # Free the allocated memory
+        #    free(image_array)
 
     @staticmethod
     def set_window_title(title: str) -> None:
@@ -1028,7 +1050,7 @@ cdef class Window:
     
     @staticmethod
     def set_window_opacity(opacity: float) -> None:
-        SetWindowOpacity(opacity)
+        SetWindowOpacity(<float>opacity)
     
     @staticmethod
     def set_window_focused() -> None:
@@ -1036,7 +1058,7 @@ cdef class Window:
 
     @staticmethod
     def get_window_handle() -> int:
-        return <int>GetWindowHandle()
+        return <long>GetWindowHandle()
 
     @staticmethod
     def get_screen_width() -> int:

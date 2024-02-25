@@ -90,4 +90,4 @@ setup(
 
 )
 
-remove_file_extensions(directory_path, ["c"])
+#remove_file_extensions(directory_path, ["c"])
