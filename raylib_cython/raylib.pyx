@@ -2,7 +2,8 @@ from libc.stdlib cimport malloc, free
 from libc.string cimport memcpy
 cimport raymath
 from cpython.bytes cimport PyBytes_AsString
-
+cimport numpy as cnp
+import numpy as np
 #
 #    # Vector2, 2 components
 #    ctypedef struct Vector2:
@@ -278,22 +279,50 @@ cdef class CyImage:
 #        int height              # Texture base height
 #        int mipmaps             # Mipmap levels, 1 by default
 #        int format              # Data format (PixelFormat type)
-#
+
+cdef class CyTexture:
+    cdef Texture _texture
+
+    def __cinit__(self, unsigned int id, int width, int height, int mipmaps, int format):
+        self._texture.id = id
+        self._texture.width = width
+        self._texture.height = height
+        self._texture.mipmaps = mipmaps
+        self._texture.format = format
+    
+
 #    # Texture2D, same as Texture
 #    ctypedef Texture Texture2D
-#
+
+cdef class CyTexture2D(CyTexture):
+    ...
+
 #    ctypedef Texture TextureCubemap
-#
+
+cdef class CyTextureCubemap(CyTexture):
+    ...
+
 #    # RenderTexture, fbo for texture rendering
 #    ctypedef struct RenderTexture:
 #        unsigned int id         # OpenGL framebuffer object id
 #        Texture texture         # Color buffer attachment texture
 #        Texture depth           # Depth buffer attachment texture
-#    
+
+cdef class CyRenderTexture:
+    cdef RenderTexture _render_texture
+
+    def __cinit__(self, unsigned int id, CyTexture texture, CyTexture depth):
+        self._render_texture.texture = texture._texture
+        self._render_texture.depth = depth._texture
+        self._render_texture.id = id
+
 #    # RenderTexture2D, same as RenderTexture
 #    ctypedef RenderTexture RenderTexture2D
 #
-#    
+
+cdef class CyRenderTexture2D(CyRenderTexture):
+    ...
+
 #    # NPatchInfo, n-patch layout info
 #    ctypedef struct NPatchInfo:
 #        Rectangle source        # Texture source rectangle
@@ -302,7 +331,18 @@ cdef class CyImage:
 #        int right               # Right border offset
 #        int bottom              # Bottom border offset
 #        int layout              # Layout of the n-patch: 3x3, 1x3 or 3x1
-#
+
+cdef class CyNPatchInfo:
+    cdef NPatchInfo _n_patch_info
+
+    def __cinit__(self, CyRectangle rect, int left, int top, int right, int bottom, int layout):
+        self._n_patch_info.source = rect._rect
+        self._n_patch_info.left = left
+        self._n_patch_info.right = right
+        self._n_patch_info.top = top
+        self._n_patch_info.bottom = bottom
+        self._n_patch_info.layout = layout
+
 #    # GlyphInfo, font characters glyphs info
 #    ctypedef struct GlyphInfo:
 #        int value               # Character value (Unicode)
@@ -310,7 +350,18 @@ cdef class CyImage:
 #        int offsetY             # Character offset Y when drawing
 #        int advanceX            # Character advance position X
 #        Image image             # Character image data
-#    
+#
+
+cdef class CyGlyphInfo:
+    cdef GlyphInfo _glyph_info
+
+    def __cinit__(self, int value, int offset_x, int offset_y, int advance_x, CyImage image):
+        self._glyph_info.value = value
+        self._glyph_info.offsetX = offset_x
+        self._glyph_info.offsetY = offset_y
+        self._glyph_info.advanceX = advance_x
+        self._glyph_info.image = image._image
+
 #    # Font, font texture and GlyphInfo array data
 #    ctypedef struct Font:
 #        int baseSize            # Base size (default chars height)
@@ -320,6 +371,33 @@ cdef class CyImage:
 #        Rectangle *recs         # Rectangles in texture for the glyphs
 #        GlyphInfo *glyphs       # Glyphs info data
 #
+
+cdef class CyFont:
+    cdef Font _font
+
+    def __cinit__(
+        self, 
+        int base_size,
+        int glyph_count,
+        int glyph_padding,
+        CyTexture2D texture_2d,
+        CyRectangle[:] rectangles,
+        CyGlyphInfo[:] glyph_infos
+    ):
+        rectangles = np.ascontiguousarray(rectangles)  # Makes a contiguous copy of the numpy array.
+        glyph_infos = np.ascontiguousarray(glyph_infos)  # Makes a contiguous copy of the numpy array.
+
+        self._font.baseSize = base_size
+        self._font.glyphCount = glyph_count
+        self._font.glyphPadding = glyph_padding
+        self._font.texture = texture_2d
+        
+        cdef Rectangle[::1] rectangles_memview = rectangles 
+        self._font.recs = &rectangles_memview[0]
+    
+        cdef Rectangle[::1] glyph_infos_memview = glyph_infos
+        self._font.glyphs = &glyph_infos_memview[0]
+
 #    # Camera, defines position/orientation in 3d space
 #    ctypedef struct Camera3D:
 #        Vector3 position        # Camera position
