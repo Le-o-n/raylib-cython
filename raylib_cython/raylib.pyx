@@ -1,9 +1,8 @@
 from libc.stdlib cimport malloc, free
 from libc.string cimport memcpy
-cimport raymath
 from cpython.bytes cimport PyBytes_AsString
-cimport numpy as cnp
-import numpy as np
+
+
 #
 #    # Vector2, 2 components
 #    ctypedef struct Vector2:
@@ -245,32 +244,8 @@ cdef class CyRectangle:
 cdef class CyImage:
     cdef Image _image
 
-    def __cinit__(self, bytes data, int width, int height, int mipmaps, int format):
-        
-        cdef int data_size = data.count()
-        cdef char *data_ptr = PyBytes_AsString(data)
-        if data_ptr is NULL:
-            raise ValueError("Failed to get the pointer to the raw data of the bytes object")
-
-        # Allocate memory for the raylib Image data
-        self._image.data = <void*>malloc(data_size)
-        if self._image.data is NULL:
-            raise MemoryError("Failed to allocate memory for image data")
-
-        # Copy image data to raylib Image
-        memcpy(self._image.data, data_ptr, data_size)
-
-        # Set other image properties
-        self._image.width = width
-        self._image.height = height
-        self._image.mipmaps = mipmaps
-        self._image.format = format
-
-    def __dealloc__(self):
-        # Free allocated memory when the object is deleted
-        if self._image.data is not NULL:
-            free(self._image.data)
-
+    def __cinit__(self):
+        ...
 
 #    # Texture, tex data stored in GPU memory (VRAM)
 #    ctypedef struct Texture:
@@ -283,12 +258,8 @@ cdef class CyImage:
 cdef class CyTexture:
     cdef Texture _texture
 
-    def __cinit__(self, unsigned int id, int width, int height, int mipmaps, int format):
-        self._texture.id = id
-        self._texture.width = width
-        self._texture.height = height
-        self._texture.mipmaps = mipmaps
-        self._texture.format = format
+    def __cinit__(self):
+        ...
     
 
 #    # Texture2D, same as Texture
@@ -311,10 +282,8 @@ cdef class CyTextureCubemap(CyTexture):
 cdef class CyRenderTexture:
     cdef RenderTexture _render_texture
 
-    def __cinit__(self, unsigned int id, CyTexture texture, CyTexture depth):
-        self._render_texture.texture = texture._texture
-        self._render_texture.depth = depth._texture
-        self._render_texture.id = id
+    def __cinit__(self):
+        ...
 
 #    # RenderTexture2D, same as RenderTexture
 #    ctypedef RenderTexture RenderTexture2D
@@ -335,13 +304,8 @@ cdef class CyRenderTexture2D(CyRenderTexture):
 cdef class CyNPatchInfo:
     cdef NPatchInfo _n_patch_info
 
-    def __cinit__(self, CyRectangle rect, int left, int top, int right, int bottom, int layout):
-        self._n_patch_info.source = rect._rect
-        self._n_patch_info.left = left
-        self._n_patch_info.right = right
-        self._n_patch_info.top = top
-        self._n_patch_info.bottom = bottom
-        self._n_patch_info.layout = layout
+    def __cinit__(self):
+        ...
 
 #    # GlyphInfo, font characters glyphs info
 #    ctypedef struct GlyphInfo:
@@ -355,12 +319,8 @@ cdef class CyNPatchInfo:
 cdef class CyGlyphInfo:
     cdef GlyphInfo _glyph_info
 
-    def __cinit__(self, int value, int offset_x, int offset_y, int advance_x, CyImage image):
-        self._glyph_info.value = value
-        self._glyph_info.offsetX = offset_x
-        self._glyph_info.offsetY = offset_y
-        self._glyph_info.advanceX = advance_x
-        self._glyph_info.image = image._image
+    def __cinit__(self):
+        ...
 
 #    # Font, font texture and GlyphInfo array data
 #    ctypedef struct Font:
@@ -375,28 +335,18 @@ cdef class CyGlyphInfo:
 cdef class CyFont:
     cdef Font _font
 
-    def __cinit__(
-        self, 
-        int base_size,
-        int glyph_count,
-        int glyph_padding,
-        CyTexture2D texture_2d,
-        CyRectangle[:] rectangles,
-        CyGlyphInfo[:] glyph_infos
-    ):
-        rectangles = np.ascontiguousarray(rectangles)  # Makes a contiguous copy of the numpy array.
-        glyph_infos = np.ascontiguousarray(glyph_infos)  # Makes a contiguous copy of the numpy array.
-
-        self._font.baseSize = base_size
-        self._font.glyphCount = glyph_count
-        self._font.glyphPadding = glyph_padding
-        self._font.texture = texture_2d
-        
-        cdef Rectangle[::1] rectangles_memview = rectangles 
-        self._font.recs = &rectangles_memview[0]
+    def __cinit__(self):
+        ...
     
-        cdef Rectangle[::1] glyph_infos_memview = glyph_infos
-        self._font.glyphs = &glyph_infos_memview[0]
+    @staticmethod
+    def load_font(self, str path) -> 'CyFont':
+        ...
+
+    @staticmethod
+    cdef CyFont c_load_font(self, str path):
+        ...
+
+
 
 #    # Camera, defines position/orientation in 3d space
 #    ctypedef struct Camera3D:
@@ -407,7 +357,13 @@ cdef class CyFont:
 #        int projection          # Camera projection: CAMERA_PERSPECTIVE or CAMERA_ORTHOGRAPHIC
 #
 #    ctypedef Camera3D Camera    # Camera type fallback, defaults to Camera3D
-#
+
+cdef class CyCamera3D:
+    cdef Camera3D _camera3d
+
+    def __cinit__(self):
+        ...
+
 #    # Camera2D, defines position/orientation in 2d space
 #    ctypedef struct Camera2D:
 #        Vector2 offset          # Camera offset (displacement from target)
@@ -415,7 +371,13 @@ cdef class CyFont:
 #        float rotation          # Camera rotation in degrees
 #        float zoom              # Camera zoom (scaling), should be 1.0f by default
 #
-#
+
+cdef class CyCamera2D:
+    cdef Camera2D _camera2d
+
+    def __cinit__(self):
+        ...
+
 #    # Mesh, vertex data and vao/vbo
 #    ctypedef struct Mesh:
 #        int vertexCount         # Number of vertices stored in arrays
@@ -439,18 +401,39 @@ cdef class CyFont:
 #        # OpenGL identifiers
 #        unsigned int vaoId      # OpenGL Vertex Array Object id
 #        unsigned int *vboId     # OpenGL Vertex Buffer Objects id (default vertex data)
-#    
+
+cdef class CyMesh:
+    cdef Mesh _mesh
+
+    def __cinit__(self):
+        ...
+
+
 #    # Shader
 #    ctypedef struct Shader:
 #        unsigned int id         # Shader program id
 #        int *locs               # Shader locations array (RL_MAX_SHADER_LOCATIONS)
-#    
+
+cdef class CyShader:
+    cdef Shader _shader
+
+    def __cinit__(self):
+        ...
+
+
 #    # MaterialMap
 #    ctypedef struct MaterialMap:
 #        Texture2D texture       # Material map texture
 #        Color color             # Material map color
 #        float value             # Material map value
-#
+
+cdef class CyMaterialMap:
+    cdef MaterialMap _material_map
+
+    def __cinit__(self):
+        ...
+
+
 #    # Material, includes shader and maps
 #    ctypedef struct Material:
 #        Shader shader           # Material shader
@@ -1163,7 +1146,7 @@ cdef class Window:
         return GetCurrentMonitor()
     
     @staticmethod
-    def get_monitor_position(monitor: int) -> raymath.CyVector2:
+    def get_monitor_position(monitor: int):
         ...
     #cdef Vector2 GetMonitorPosition(int monitor)                    
     #cdef int GetMonitorWidth(int monitor)                           

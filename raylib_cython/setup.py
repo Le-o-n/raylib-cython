@@ -19,18 +19,8 @@ def remove_file_extensions(
                 print(f"Removed: {file_name}")
 
 
-remove_file_extensions(directory_path, ["c", "pyd"])
+# remove_file_extensions(directory_path, ["c", "pyd"])
 
-raylib_extension: Extension = Extension(
-    "raylib_cython.raylib",
-    [
-        "raylib.pyx",
-    ],
-    include_dirs=["./libs"],
-    library_dirs=["./libs"],
-    libraries=["./libs/raylib"],  # Add any necessary libraries here
-    extra_compile_args=[],  # Add any necessary compile flags here
-)
 raymath_extension: Extension = Extension(
     "raylib_cython.raymath",
     [
@@ -42,6 +32,17 @@ raymath_extension: Extension = Extension(
     extra_compile_args=[],  # Add any necessary compile flags here
 
 )
+raylib_extension: Extension = Extension(
+    "raylib_cython.raylib",
+    [
+        "raylib.pyx",
+    ],
+    include_dirs=["./libs", "."],
+    library_dirs=["./libs"],
+    libraries=["./libs/raylib"],  # Add any necessary libraries here
+    extra_compile_args=[],  # Add any necessary compile flags here
+)
+
 rlgl_extension: Extension = Extension(
     "raylib_cython.rlgl",
     [
@@ -54,8 +55,8 @@ rlgl_extension: Extension = Extension(
 )
 
 extensions = [
-    raylib_extension,
     raymath_extension,
+    raylib_extension,
     rlgl_extension,
 ]
 
@@ -90,4 +91,4 @@ setup(
 
 )
 
-#remove_file_extensions(directory_path, ["c"])
+# remove_file_extensions(directory_path, ["c"])
