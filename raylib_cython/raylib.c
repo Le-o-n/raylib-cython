@@ -4,11 +4,12 @@
 {
     "distutils": {
         "depends": [
-            "libs\\raylib.h"
+            "libs\\raylib.h",
+            "libs\\raymath.h"
         ],
         "include_dirs": [
-            "./libs",
-            "."
+            ".",
+            "./libs"
         ],
         "libraries": [
             "./libs/raylib"
@@ -770,6 +771,7 @@ static CYTHON_INLINE float __PYX_NAN() {
 #include <string.h>
 #include <stdio.h>
 #include "pythread.h"
+#include "libs/raymath.h"
 #include "libs/raylib.h"
 #include <stdlib.h>
 #ifdef _OPENMP
@@ -1812,6 +1814,8 @@ static PyTypeObject *__pyx_ptype_7cpython_7complex_complex = 0;
 /* Module declarations from 'cpython.pycapsule' */
 
 /* Module declarations from 'cpython' */
+
+/* Module declarations from 'raylib_cython.raymath' */
 
 /* Module declarations from 'libc.stdlib' */
 
@@ -17464,53 +17468,53 @@ if (!__Pyx_RefNanny) {
   /*--- Wrapped vars code ---*/
   {
     PyObject* wrapped = __Pyx_CFunc_void_______to_py(BeginDrawing);
-    if (unlikely(!wrapped)) __PYX_ERR(5, 805, __pyx_L1_error)
-    if (PyObject_SetAttrString(__pyx_m, "BeginDrawing", wrapped) < 0) __PYX_ERR(5, 805, __pyx_L1_error);
+    if (unlikely(!wrapped)) __PYX_ERR(5, 806, __pyx_L1_error)
+    if (PyObject_SetAttrString(__pyx_m, "BeginDrawing", wrapped) < 0) __PYX_ERR(5, 806, __pyx_L1_error);
   }
   {
     PyObject* wrapped = __Pyx_CFunc_void_______to_py(CloseWindow);
-    if (unlikely(!wrapped)) __PYX_ERR(5, 747, __pyx_L1_error)
-    if (PyObject_SetAttrString(__pyx_m, "CloseWindow", wrapped) < 0) __PYX_ERR(5, 747, __pyx_L1_error);
+    if (unlikely(!wrapped)) __PYX_ERR(5, 748, __pyx_L1_error)
+    if (PyObject_SetAttrString(__pyx_m, "CloseWindow", wrapped) < 0) __PYX_ERR(5, 748, __pyx_L1_error);
   }
   {
     PyObject* wrapped = __Pyx_CFunc_void_______to_py(EndDrawing);
-    if (unlikely(!wrapped)) __PYX_ERR(5, 806, __pyx_L1_error)
-    if (PyObject_SetAttrString(__pyx_m, "EndDrawing", wrapped) < 0) __PYX_ERR(5, 806, __pyx_L1_error);
+    if (unlikely(!wrapped)) __PYX_ERR(5, 807, __pyx_L1_error)
+    if (PyObject_SetAttrString(__pyx_m, "EndDrawing", wrapped) < 0) __PYX_ERR(5, 807, __pyx_L1_error);
   }
   {
     PyObject* wrapped = __Pyx_CFunc_void____int____int____const__char_______to_py(InitWindow);
-    if (unlikely(!wrapped)) __PYX_ERR(5, 746, __pyx_L1_error)
-    if (PyObject_SetAttrString(__pyx_m, "InitWindow", wrapped) < 0) __PYX_ERR(5, 746, __pyx_L1_error);
+    if (unlikely(!wrapped)) __PYX_ERR(5, 747, __pyx_L1_error)
+    if (PyObject_SetAttrString(__pyx_m, "InitWindow", wrapped) < 0) __PYX_ERR(5, 747, __pyx_L1_error);
   }
   {
     PyObject* wrapped = __Pyx_CFunc_bint_______to_py(IsWindowFullscreen);
-    if (unlikely(!wrapped)) __PYX_ERR(5, 750, __pyx_L1_error)
-    if (PyObject_SetAttrString(__pyx_m, "IsWindowFullscreen", wrapped) < 0) __PYX_ERR(5, 750, __pyx_L1_error);
+    if (unlikely(!wrapped)) __PYX_ERR(5, 751, __pyx_L1_error)
+    if (PyObject_SetAttrString(__pyx_m, "IsWindowFullscreen", wrapped) < 0) __PYX_ERR(5, 751, __pyx_L1_error);
   }
   {
     PyObject* wrapped = __Pyx_CFunc_bint_______to_py(IsWindowHidden);
-    if (unlikely(!wrapped)) __PYX_ERR(5, 751, __pyx_L1_error)
-    if (PyObject_SetAttrString(__pyx_m, "IsWindowHidden", wrapped) < 0) __PYX_ERR(5, 751, __pyx_L1_error);
+    if (unlikely(!wrapped)) __PYX_ERR(5, 752, __pyx_L1_error)
+    if (PyObject_SetAttrString(__pyx_m, "IsWindowHidden", wrapped) < 0) __PYX_ERR(5, 752, __pyx_L1_error);
   }
   {
     PyObject* wrapped = __Pyx_CFunc_bint_______to_py(IsWindowMaximized);
-    if (unlikely(!wrapped)) __PYX_ERR(5, 753, __pyx_L1_error)
-    if (PyObject_SetAttrString(__pyx_m, "IsWindowMaximized", wrapped) < 0) __PYX_ERR(5, 753, __pyx_L1_error);
+    if (unlikely(!wrapped)) __PYX_ERR(5, 754, __pyx_L1_error)
+    if (PyObject_SetAttrString(__pyx_m, "IsWindowMaximized", wrapped) < 0) __PYX_ERR(5, 754, __pyx_L1_error);
   }
   {
     PyObject* wrapped = __Pyx_CFunc_bint_______to_py(IsWindowMinimized);
-    if (unlikely(!wrapped)) __PYX_ERR(5, 752, __pyx_L1_error)
-    if (PyObject_SetAttrString(__pyx_m, "IsWindowMinimized", wrapped) < 0) __PYX_ERR(5, 752, __pyx_L1_error);
+    if (unlikely(!wrapped)) __PYX_ERR(5, 753, __pyx_L1_error)
+    if (PyObject_SetAttrString(__pyx_m, "IsWindowMinimized", wrapped) < 0) __PYX_ERR(5, 753, __pyx_L1_error);
   }
   {
     PyObject* wrapped = __Pyx_CFunc_bint_______to_py(IsWindowReady);
-    if (unlikely(!wrapped)) __PYX_ERR(5, 749, __pyx_L1_error)
-    if (PyObject_SetAttrString(__pyx_m, "IsWindowReady", wrapped) < 0) __PYX_ERR(5, 749, __pyx_L1_error);
+    if (unlikely(!wrapped)) __PYX_ERR(5, 750, __pyx_L1_error)
+    if (PyObject_SetAttrString(__pyx_m, "IsWindowReady", wrapped) < 0) __PYX_ERR(5, 750, __pyx_L1_error);
   }
   {
     PyObject* wrapped = __Pyx_CFunc_bint_______to_py(WindowShouldClose);
-    if (unlikely(!wrapped)) __PYX_ERR(5, 748, __pyx_L1_error)
-    if (PyObject_SetAttrString(__pyx_m, "WindowShouldClose", wrapped) < 0) __PYX_ERR(5, 748, __pyx_L1_error);
+    if (unlikely(!wrapped)) __PYX_ERR(5, 749, __pyx_L1_error)
+    if (PyObject_SetAttrString(__pyx_m, "WindowShouldClose", wrapped) < 0) __PYX_ERR(5, 749, __pyx_L1_error);
   }
 
   goto __pyx_L0;
