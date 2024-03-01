@@ -1,13 +1,17 @@
-import timeit
-from raylib_cython import raymath
+
+from raylib_cython import raylib
 
 
 def main():
 
-    x = raymath.CyVector2(69, 69)
-    y = raymath.CyVector2(100, 100)
+    raylib.CyWindow.init_window(1000, 500, "Hello World")
 
-    print(y.x)
+    while not raylib.CyWindow.window_should_close():
+        raylib.CyMode.begin_drawing()
+
+        raylib.CyMode.end_drawing()
+
+    raylib.CyWindow.close_window()
 
 
 if __name__ == "__main__":
