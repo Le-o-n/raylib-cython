@@ -174,15 +174,15 @@ cdef CyColor _MAGENTA   = CyColor(255, 0, 255, 255  )
 cdef CyColor _RAYWHITE  = CyColor(245, 245, 245, 255)
 
 
-#    # Rectangle, 4 components
-#    ctypedef struct Rectangle:
-#        float x                 # Rectangle top-left corner position x
-#        float y                 # Rectangle top-left corner position y
-#        float width             # Rectangle width
-#        float height            # Rectangle height
 
 cdef class CyRectangle:
     cdef Rectangle _rect
+    #    # Rectangle, 4 components
+    #    ctypedef struct Rectangle:
+    #        float x                 # Rectangle top-left corner position x
+    #        float y                 # Rectangle top-left corner position y
+    #        float width             # Rectangle width
+    #        float height            # Rectangle height
 
     def __cinit__(self, float x = 0.0, float y = 0.0, float width = 0.0, float height = 0.0):
         self._rect.x = x
@@ -223,18 +223,15 @@ cdef class CyRectangle:
         self._rect.width = <float>value
     
 
-    
-#    # Image, pixel data stored in CPU memory (RAM)
-#    ctypedef struct Image:
-#        void *data              # Image raw data
-#        int width               # Image base width
-#        int height              # Image base height
-#        int mipmaps             # Mipmap levels, 1 by default
-#        int format              # Data format (PixelFormat type)
-
-# Define your Cython class
 cdef class CyImage:
     cdef Image _image
+    #    # Image, pixel data stored in CPU memory (RAM)
+    #    ctypedef struct Image:
+    #        void *data              # Image raw data
+    #        int width               # Image base width
+    #        int height              # Image base height
+    #        int mipmaps             # Mipmap levels, 1 by default
+    #        int format              # Data format (PixelFormat type)
 
     def __cinit__(self):
         raise NotImplementedError("Not Implemented Yet!")
@@ -323,16 +320,16 @@ cdef class CyImage:
     #cdef void ImageDrawTextEx(Image *dst, Font font, const char *text, Vector2 position, float fontSize, float spacing, Color tint) # Draw text (custom sprite font) within an image (destination)
 #
 
-#    # Texture, tex data stored in GPU memory (VRAM)
-#    ctypedef struct Texture:
-#        unsigned int id         # OpenGL texture id
-#        int width               # Texture base width
-#        int height              # Texture base height
-#        int mipmaps             # Mipmap levels, 1 by default
-#        int format              # Data format (PixelFormat type)
 
 cdef class CyTexture:
     cdef Texture _texture
+    #    # Texture, tex data stored in GPU memory (VRAM)
+    #    ctypedef struct Texture:
+    #        unsigned int id         # OpenGL texture id
+    #        int width               # Texture base width
+    #        int height              # Texture base height
+    #        int mipmaps             # Mipmap levels, 1 by default
+    #        int format              # Data format (PixelFormat type)
 
     def __cinit__(self):
         raise NotImplementedError("Not Implemented Yet!")
@@ -365,48 +362,40 @@ cdef class CyTexture:
     #cdef void DrawTextureNPatch(Texture2D texture, NPatchInfo nPatchInfo, Rectangle dest, Vector2 origin, float rotation, Color tint) # Draws a texture (or part of it) that stretches or shrinks nicely
 #
 
-#    # Texture2D, same as Texture
-#    ctypedef Texture Texture2D
-
 cdef class CyTexture2D(CyTexture):
     pass
 
-#    ctypedef Texture TextureCubemap
 
 cdef class CyTextureCubemap(CyTexture):
     pass
 
-#    # RenderTexture, fbo for texture rendering
-#    ctypedef struct RenderTexture:
-#        unsigned int id         # OpenGL framebuffer object id
-#        Texture texture         # Color buffer attachment texture
-#        Texture depth           # Depth buffer attachment texture
 
 cdef class CyRenderTexture:
     cdef RenderTexture _render_texture
+    #    # RenderTexture, fbo for texture rendering
+    #    ctypedef struct RenderTexture:
+    #        unsigned int id         # OpenGL framebuffer object id
+    #        Texture texture         # Color buffer attachment texture
+    #        Texture depth           # Depth buffer attachment texture
 
     def __cinit__(self):
         raise NotImplementedError("Not Implemented Yet!")
         
 
-#    # RenderTexture2D, same as RenderTexture
-#    ctypedef RenderTexture RenderTexture2D
-#
-
 cdef class CyRenderTexture2D(CyRenderTexture):
     pass
 
-#    # NPatchInfo, n-patch layout info
-#    ctypedef struct NPatchInfo:
-#        Rectangle source        # Texture source rectangle
-#        int left                # Left border offset
-#        int top                 # Top border offset
-#        int right               # Right border offset
-#        int bottom              # Bottom border offset
-#        int layout              # Layout of the n-patch: 3x3, 1x3 or 3x1
 
 cdef class CyNPatchInfo:
     cdef NPatchInfo _n_patch_info
+    #    # NPatchInfo, n-patch layout info
+    #    ctypedef struct NPatchInfo:
+    #        Rectangle source        # Texture source rectangle
+    #        int left                # Left border offset
+    #        int top                 # Top border offset
+    #        int right               # Right border offset
+    #        int bottom              # Bottom border offset
+    #        int layout              # Layout of the n-patch: 3x3, 1x3 or 3x1
 
     def __cinit__(self):
         raise NotImplementedError("Not Implemented Yet!")
