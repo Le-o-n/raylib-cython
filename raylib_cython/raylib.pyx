@@ -2,93 +2,9 @@ from libc.stdlib cimport malloc, free
 from libc.string cimport memcpy
 from cpython.bytes cimport PyBytes_AsString
 
-
-#
-#    # Vector2, 2 components
-#    ctypedef struct Vector2:
-#        float x                 # Vector x component
-#        float y                 # Vector y component
+from raylib_cython cimport raymath
 
 
-cdef class CyVector2:
-    cdef Vector2 _vector
-
-    def __cinit__(self, float x = 0.0, float y = 0.0):
-        self._vector.x = x
-        self._vector.y = y
-    
-    def get_x(self) -> float:
-        return self._vector.x
-    
-    def get_y(self) -> float:
-        return self._vector.y
-        
-#    # Vector3, 3 components
-#    ctypedef struct Vector3:
-#        float x                 # Vector x component
-#        float y                 # Vector y component
-#        float z                 # Vector z component
-
-cdef class CyVector3:
-    cdef Vector3 _vector
-
-    def __cinit__(self, float x = 0.0, float y = 0.0, float z = 0.0):
-        self._vector.x = x
-        self._vector.y = y
-        self._vector.z = z
-
-#    # Quaternion, 4 components (Vector4 alias)
-#    ctypedef Vector4 Quaternion
-
-
-cdef class CyQuaternion:
-    cdef Vector4 _vector
-
-    def __cinit__(self, float x = 0.0, float y = 0.0, float z = 0.0, float w = 0.0):
-        self._vector.x = 0.0
-        self._vector.y = 0.0
-        self._vector.z = 0.0
-        self._vector.w = 0.0
-
-#    # Vector4, 4 components
-#    ctypedef struct Vector4:
-#        float x                 # Vector x component
-#        float y                 # Vector y component
-#        float z                 # Vector z component
-#        float w                 # Vector w component
-#
-
-cdef class CyVector4(CyQuaternion):
-    pass
-
-#    # Matrix, 4x4 components, column major, OpenGL style, right-handed
-#    ctypedef struct Matrix:
-#        float m0, m4, m8, m12   # Matrix first row (4 components)
-#        float m1, m5, m9, m13   # Matrix second row (4 components)
-#        float m2, m6, m10, m14  # Matrix third row (4 components)
-#        float m3, m7, m11, m15  # Matrix fourth row (4 components)
-
-
-cdef class CyMatrix:
-    cdef Matrix _matrix
-
-    def __cinit__(self):
-        self._matrix.m0 = 0
-        self._matrix.m1 = 0
-        self._matrix.m2 = 0
-        self._matrix.m3 = 0
-        self._matrix.m4 = 0
-        self._matrix.m5 = 0
-        self._matrix.m6 = 0
-        self._matrix.m7 = 0
-        self._matrix.m8 = 0
-        self._matrix.m9 = 0
-        self._matrix.m10 = 0
-        self._matrix.m11 = 0
-        self._matrix.m12 = 0
-        self._matrix.m13 = 0
-        self._matrix.m14 = 0
-        self._matrix.m15 = 0
 
 #    # Color, 4 components, R8G8B8A8 (32bit)
 #    ctypedef struct Color:
@@ -1225,8 +1141,8 @@ cdef class Window:
         return GetCurrentMonitor()
     
     @staticmethod
-    def get_monitor_position(int monitor) -> CyVector2:
-        cdef CyVector2 _vec = CyVector2.__new__(CyVector2)
+    def get_monitor_position(int monitor) -> raymath.CyVector2:
+        cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
         _vec._vector = GetMonitorPosition(monitor)
         return _vec
 
@@ -1251,14 +1167,14 @@ cdef class Window:
         return GetMonitorRefreshRate(monitor)      
 
     @staticmethod
-    def get_window_position() -> CyVector2:
-        cdef CyVector2 _vec = CyVector2.__new__(CyVector2)
+    def get_window_position() -> raymath.CyVector2:
+        cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
         _vec._vector = GetWindowPosition()
         return _vec  
     
     @staticmethod
-    def get_window_scale_dpi() -> CyVector2:
-        cdef CyVector2 _vec = CyVector2.__new__(CyVector2)
+    def get_window_scale_dpi() -> raymath.CyVector2:
+        cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
         _vec._vector = GetWindowScaleDPI()
         return _vec  
 
@@ -1528,8 +1444,8 @@ cdef class Input:
     #cdef int GetMouseY()                                    # Get mouse position Y
     #cdef Vector2 GetMousePosition()                         # Get mouse position XY
     @staticmethod
-    def get_mouse_position() -> CyVector2:
-        cdef CyVector2 vec = CyVector2.__new__(CyVector2)
+    def get_mouse_position() -> raymath.CyVector2:
+        cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
         vec._vector = GetMousePosition()
         return vec
     #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
@@ -1580,7 +1496,7 @@ cdef class Drawing:
         DrawPixel(pos_x, pos_y, color._color)
     #cdef void DrawPixelV(Vector2 position, Color color)
     @staticmethod
-    def draw_pixel_vector(CyVector2 position, CyColor color):
+    def draw_pixel_vector(raymath.CyVector2 position, CyColor color):
         DrawPixelV(position._vector, color._color)                                                    # Draw a pixel (Vector version)
     #cdef void DrawLine(int startPosX, int startPosY, int endPosX, int endPosY, Color color)                # Draw a line
     @staticmethod
@@ -1588,19 +1504,19 @@ cdef class Drawing:
         DrawLine(start_pos_x, start_pos_y, end_pos_x, end_pos_y, color._color)
     #cdef void DrawLineV(Vector2 startPos, Vector2 endPos, Color color)                                     # Draw a line (using gl lines)
     @staticmethod
-    def draw_line_vector(CyVector2 start_pos, CyVector2 end_pos, CyColor color):
+    def draw_line_vector(raymath.CyVector2 start_pos, raymath.CyVector2 end_pos, CyColor color):
         DrawLineV(start_pos._vector, end_pos._vector, color._color)
     #cdef void DrawLineEx(Vector2 startPos, Vector2 endPos, float thick, Color color)                      # Draw a line (using triangles/quads)
     @staticmethod
-    def draw_line_ex(CyVector2 start_pos, CyVector2 end_pos, float thickness, CyColor color):
+    def draw_line_ex(raymath.CyVector2 start_pos, raymath.CyVector2 end_pos, float thickness, CyColor color):
         DrawLineEx(start_pos._vector, end_pos._vector, thickness, color._color)
     #cdef void DrawLineStrip(Vector2 *points, int pointCount, Color color)                                  # Draw lines sequence (using gl lines)
     @staticmethod
-    def draw_line_strip(CyVector2[::1] points, CyColor color):
+    def draw_line_strip(raymath.CyVector2[::1] points, CyColor color):
         Drawing.c_draw_line_strip(points, color)
 
     @staticmethod
-    cdef void c_draw_line_strip(CyVector2[::1] points, CyColor color):
+    cdef void c_draw_line_strip(raymath.CyVector2[::1] points, CyColor color):
         # Create a C array to hold the data in a contiguous block of memory
         cdef Vector2 *c_points = <Vector2*> malloc(len(points) * sizeof(Vector2))
 
@@ -1787,6 +1703,3 @@ cdef class Text:
     #cdef const char *TextToPascal(const char *text)                     # Get Pascal case notation version of provided string
     #cdef int TextToInteger(const char *text)                            # Get integer value from text (negative values not supported)
     #cdef float TextToFloat(const char *text)                            # Get float value from text (negative values not supported)
-
-    
-    

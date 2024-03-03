@@ -26,7 +26,7 @@ raymath_extension: Extension = Extension(
     [
         "raymath.pyx"
     ],
-    include_dirs=["./libs"],
+    include_dirs=["./libs", "."],
     library_dirs=["./libs"],
     libraries=["./libs/raylib"],  # Add any necessary libraries here
     extra_compile_args=[],  # Add any necessary compile flags here
@@ -36,10 +36,11 @@ raylib_extension: Extension = Extension(
     "raylib_cython.raylib",
     [
         "raylib.pyx",
+        "raymath.pyx",
     ],
     include_dirs=["./libs", "."],
     library_dirs=["./libs"],
-    # sources=["raymath.pyx"],
+    
     libraries=["./libs/raylib"],  # Add any necessary libraries here
     extra_compile_args=[],  # Add any necessary compile flags here
 )
@@ -56,7 +57,7 @@ rlgl_extension: Extension = Extension(
 )
 
 extensions = [
-    raymath_extension,
+    #raymath_extension,
     raylib_extension,
     rlgl_extension,
 ]

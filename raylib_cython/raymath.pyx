@@ -19,7 +19,7 @@ def float_equals(float x, float y) -> int:
     return FloatEquals(x, y)
 
 cdef class CyVector2:
-    cdef Vector2 _vector
+    
 
     def __cinit__(self, float x = 0.0, float y = 0.0):
         self._vector.x = x
@@ -287,7 +287,6 @@ cdef class CyVector2:
 
 
 cdef class CyVector3:
-    cdef Vector3 _vector
 
     def __cinit__(self, float x = 0.0, float y = 0.0, float z = 0.0):
         self._vector.x = x
@@ -702,7 +701,6 @@ cdef class CyVector3:
     
 
 cdef class CyQuaternion:
-    cdef Vector4 _vector
 
     def __cinit__(self, float x = 0.0, float y = 0.0, float z = 0.0, float w = 0.0):
         self._vector.x = 0.0
@@ -1008,7 +1006,6 @@ cdef class CyVector4(CyQuaternion):
 
 
 cdef class CyMatrix:
-    cdef Matrix _matrix
 
     def __cinit__(self):
         self._matrix.m0 = 0
@@ -1046,6 +1043,7 @@ cdef class CyMatrix:
         mat._matrix.m13 = self._matrix.m13
         mat._matrix.m14 = self._matrix.m14
         mat._matrix.m15 = self._matrix.m15
+        return mat
 
     cpdef float get_element(self, int row, int col):
         return (&self._matrix.m0)[row * 4 + col]
@@ -1283,9 +1281,9 @@ cdef class CyMatrix:
         mat_string = f"{mat_string}\n\t{self._matrix.m3}\t{self._matrix.m7}\t{self._matrix.m11}\t{self._matrix.m15}"
         mat_string = f"{mat_string}\n]"
         return str(mat_string)
-cdef class CyFloat3:
-    cdef float3 _floats
 
+cdef class CyFloat3:
+    
     def __cinit__(self):
         self._floats.v[0] = 0
         self._floats.v[1] = 0
@@ -1299,8 +1297,7 @@ cdef class CyFloat3:
 
 
 cdef class CyFloat16:
-    cdef float16 _floats
-
+    
     def __cinit__(self):
         self._floats.v[0] = 0.0
         self._floats.v[1] = 0.0
