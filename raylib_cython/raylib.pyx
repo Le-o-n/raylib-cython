@@ -16,7 +16,13 @@ cdef class CyVector2:
     def __cinit__(self, float x = 0.0, float y = 0.0):
         self._vector.x = x
         self._vector.y = y
-
+    
+    def get_x(self) -> float:
+        return self._vector.x
+    
+    def get_y(self) -> float:
+        return self._vector.y
+        
 #    # Vector3, 3 components
 #    ctypedef struct Vector3:
 #        float x                 # Vector x component
@@ -545,45 +551,6 @@ cdef class CyFont:
     #cdef void UnloadFont(Font font)                                                           # Unload font from GPU memory (VRAM)
     #cdef bint ExportFontAsCode(Font font, const char *fileName)                               # Export font as code file, returns true on success
 #
-
-    ## Text font info functions
-    #cdef void SetTextLineSpacing(int spacing)                                                 # Set vertical line spacing when drawing with line-breaks
-    #cdef int MeasureText(const char *text, int fontSize)                                      # Measure string width for default font
-    #cdef Vector2 MeasureTextEx(Font font, const char *text, float fontSize, float spacing)    # Measure string size for Font
-    #cdef int GetGlyphIndex(Font font, int codepoint)                                          # Get glyph index position in font for a codepoint (unicode character), fallback to '?' if not found
-    #cdef GlyphInfo GetGlyphInfo(Font font, int codepoint)                                     # Get glyph font info data for a codepoint (unicode character), fallback to '?' if not found
-    #cdef Rectangle GetGlyphAtlasRec(Font font, int codepoint)                                 # Get glyph rectangle in font atlas for a codepoint (unicode character), fallback to '?' if not found
-#
-    ## Text codepoints management functions (unicode characters)
-    #cdef char *LoadUTF8(const int *codepoints, int length)                # Load UTF-8 text encoded from codepoints array
-    #cdef void UnloadUTF8(char *text)                                      # Unload UTF-8 text encoded from codepoints array
-    #cdef int *LoadCodepoints(const char *text, int *count)                # Load all codepoints from a UTF-8 text string, codepoints count returned by parameter
-    #cdef void UnloadCodepoints(int *codepoints)                           # Unload codepoints data from memory
-    #cdef int GetCodepointCount(const char *text)                          # Get total number of codepoints in a UTF-8 encoded string
-    #cdef int GetCodepoint(const char *text, int *codepointSize)           # Get next codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
-    #cdef int GetCodepointNext(const char *text, int *codepointSize)       # Get next codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
-    #cdef int GetCodepointPrevious(const char *text, int *codepointSize)   # Get previous codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
-    #cdef const char *CodepointToUTF8(int codepoint, int *utf8Size)        # Encode one codepoint into UTF-8 byte array (array length returned as parameter)
-#
-
-    ## Text strings management functions (no UTF-8 strings, only byte chars)
-    ## NOTE: Some strings allocate memory internally for returned strings, just be careful!
-    #cdef int TextCopy(char *dst, const char *src)                                             # Copy one string to another, returns bytes copied
-    #cdef bint TextIsEqual(const char *text1, const char *text2)                               # Check if two text string are equal
-    #cdef unsigned int TextLength(const char *text)                                            # Get text length, checks for '\0' ending
-    #cdef const char *TextFormat(const char *text, ...)                                        # Text formatting with variables (sprintf() style)
-    #cdef const char *TextSubtext(const char *text, int position, int length)                  # Get a piece of a text string
-    #cdef char *TextReplace(const char *text, const char *replace, const char *by)             # Replace text string (WARNING: memory must be freed!)
-    #cdef char *TextInsert(const char *text, const char *insert, int position)                 # Insert text in a position (WARNING: memory must be freed!)
-    #cdef const char *TextJoin(const char **textList, int count, const char *delimiter)        # Join text strings with delimiter
-    #cdef const char **TextSplit(const char *text, char delimiter, int *count)                 # Split text into multiple strings
-    #cdef void TextAppend(char *text, const char *append, int *position)                       # Append text at specific position and move cursor!
-    #cdef int TextFindIndex(const char *text, const char *find)                                # Find first text occurrence within a string
-    #cdef const char *TextToUpper(const char *text)                      # Get upper case version of provided string
-    #cdef const char *TextToLower(const char *text)                      # Get lower case version of provided string
-    #cdef const char *TextToPascal(const char *text)                     # Get Pascal case notation version of provided string
-    #cdef int TextToInteger(const char *text)                            # Get integer value from text (negative values not supported)
-    #cdef float TextToFloat(const char *text)                            # Get float value from text (negative values not supported)
 #
 
 
@@ -603,18 +570,23 @@ cdef class CyCamera3D:
 
     def __cinit__(self):
         raise NotImplementedError("Not Implemented Yet!")
-        
+    
+    #cdef void UpdateCamera(Camera *camera, int mode)      # Update camera position for selected mode
+    #cdef void UpdateCameraPro(Camera *camera, Vector3 movement, Vector3 rotation, float zoom) # Update camera movement/rotation
+#   
 
-#    # Camera2D, defines position/orientation in 2d space
+
+
+cdef class CyCamera2D:
+    cdef Camera2D _camera_2d
+
+    #    # Camera2D, defines position/orientation in 2d space
 #    ctypedef struct Camera2D:
 #        Vector2 offset          # Camera offset (displacement from target)
 #        Vector2 target          # Camera target (rotation and zoom origin)
 #        float rotation          # Camera rotation in degrees
 #        float zoom              # Camera zoom (scaling), should be 1.0f by default
 #
-
-cdef class CyCamera2D:
-    cdef Camera2D _camera_2d
 
     def __cinit__(self):
         raise NotImplementedError("Not Implemented Yet!")
@@ -1092,7 +1064,7 @@ cdef class CyAutomationEventList:
         
 
 
-cdef class CyWindow:
+cdef class Window:
 
     @staticmethod
     def init_window(width: int, height: int, title: str) -> None:
@@ -1172,7 +1144,7 @@ cdef class CyWindow:
 
     @staticmethod
     def set_windows_icons(images: list[CyImage]) -> None:
-        return
+        raise NotImplementedError("set_windows_icons is not implemented yet, use set_window_icon")
         #cdef int count = len(images)
         
         # Allocate memory for an array of Image objects
@@ -1310,7 +1282,7 @@ cdef class CyWindow:
     def disable_event_waiting() -> None:
         DisableEventWaiting()
 
-cdef class CyCursor:
+cdef class Cursor:
     @staticmethod
     def show_cursor() -> None:
         ShowCursor()
@@ -1352,11 +1324,8 @@ cdef class CyCursor:
         return GetFPS()
 
 
-cdef class CyMode:
+cdef class Mode:
 
-    @staticmethod
-    def clear_background(CyColor color) -> None:
-        ClearBackground(color._color)
     
     @staticmethod
     def begin_drawing() -> None:
@@ -1558,6 +1527,11 @@ cdef class Input:
     #cdef int GetMouseX()                                    # Get mouse position X
     #cdef int GetMouseY()                                    # Get mouse position Y
     #cdef Vector2 GetMousePosition()                         # Get mouse position XY
+    @staticmethod
+    def get_mouse_position() -> CyVector2:
+        cdef CyVector2 vec = CyVector2.__new__(CyVector2)
+        vec._vector = GetMousePosition()
+        return vec
     #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
     #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
     #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
@@ -1573,9 +1547,6 @@ cdef class Input:
     #cdef int GetTouchPointId(int index)                         # Get touch point identifier for given index
     #cdef int GetTouchPointCount()                           # Get number of touch points
 #
-    ##------------------------------------------------------------------------------------
-    ## Gestures and Touch Handling Functions (Module: rgestures)
-    ##------------------------------------------------------------------------------------
     #cdef void SetGesturesEnabled(unsigned int flags)      # Enable a set of gestures using flags
     #cdef bint IsGestureDetected(unsigned int gesture)     # Check if a gesture have been detected
     #cdef int GetGestureDetected()                     # Get latest detected gesture
@@ -1585,12 +1556,7 @@ cdef class Input:
     #cdef Vector2 GetGesturePinchVector()              # Get gesture pinch delta
     #cdef float GetGesturePinchAngle()                 # Get gesture pinch angle
 #
-    ##------------------------------------------------------------------------------------
-    ## Camera System Functions (Module: rcamera)
-    ##------------------------------------------------------------------------------------
-    #cdef void UpdateCamera(Camera *camera, int mode)      # Update camera position for selected mode
-    #cdef void UpdateCameraPro(Camera *camera, Vector3 movement, Vector3 rotation, float zoom) # Update camera movement/rotation
-#
+    
     ##------------------------------------------------------------------------------------
     ## Basic Shapes Drawing Functions (Module: shapes)
     ##------------------------------------------------------------------------------------
@@ -1603,14 +1569,51 @@ cdef class Input:
 #
 
 cdef class Drawing:
-    ...
-    ## Basic shapes drawing functions
-    #cdef void DrawPixel(int posX, int posY, Color color)                                                   # Draw a pixel
-    #cdef void DrawPixelV(Vector2 position, Color color)                                                    # Draw a pixel (Vector version)
+    
+    @staticmethod
+    def clear_background(CyColor color) -> None:
+        ClearBackground(color._color)
+    
+    #cdef void DrawPixel(int posX, int posY, Color color) 
+    @staticmethod                                                  # Draw a pixel
+    def draw_pixel(int pos_x, int pos_y, CyColor color) -> None:
+        DrawPixel(pos_x, pos_y, color._color)
+    #cdef void DrawPixelV(Vector2 position, Color color)
+    @staticmethod
+    def draw_pixel_vector(CyVector2 position, CyColor color):
+        DrawPixelV(position._vector, color._color)                                                    # Draw a pixel (Vector version)
     #cdef void DrawLine(int startPosX, int startPosY, int endPosX, int endPosY, Color color)                # Draw a line
+    @staticmethod
+    def draw_line(int start_pos_x, int start_pos_y, int end_pos_x, int end_pos_y, CyColor color):
+        DrawLine(start_pos_x, start_pos_y, end_pos_x, end_pos_y, color._color)
     #cdef void DrawLineV(Vector2 startPos, Vector2 endPos, Color color)                                     # Draw a line (using gl lines)
-    #cdef void DrawLineEx(Vector2 startPos, Vector2 endPos, float thick, Color color)                       # Draw a line (using triangles/quads)
+    @staticmethod
+    def draw_line_vector(CyVector2 start_pos, CyVector2 end_pos, CyColor color):
+        DrawLineV(start_pos._vector, end_pos._vector, color._color)
+    #cdef void DrawLineEx(Vector2 startPos, Vector2 endPos, float thick, Color color)                      # Draw a line (using triangles/quads)
+    @staticmethod
+    def draw_line_ex(CyVector2 start_pos, CyVector2 end_pos, float thickness, CyColor color):
+        DrawLineEx(start_pos._vector, end_pos._vector, thickness, color._color)
     #cdef void DrawLineStrip(Vector2 *points, int pointCount, Color color)                                  # Draw lines sequence (using gl lines)
+    @staticmethod
+    def draw_line_strip(CyVector2[::1] points, CyColor color):
+        Drawing.c_draw_line_strip(points, color)
+
+    @staticmethod
+    cdef void c_draw_line_strip(CyVector2[::1] points, CyColor color):
+        # Create a C array to hold the data in a contiguous block of memory
+        cdef Vector2 *c_points = <Vector2*> malloc(len(points) * sizeof(Vector2))
+
+        # Copy data from Python objects to C array
+        for i in range(len(points)):
+            c_points[i] = points[i]._vector
+
+        # Call the C function
+        DrawLineStrip(c_points, len(points), color._color)
+
+        # Free the allocated memory
+        free(c_points)
+
     #cdef void DrawLineBezier(Vector2 startPos, Vector2 endPos, float thick, Color color)                   # Draw line segment cubic-bezier in-out interpolation
     #cdef void DrawCircle(int centerX, int centerY, float radius, Color color)                              # Draw a color-filled circle
     #cdef void DrawCircleSector(Vector2 center, float radius, float startAngle, float endAngle, int segments, Color color)      # Draw a piece of a circle
@@ -1744,11 +1747,46 @@ cdef class Audio:
     #cdef float GetMasterVolume()                                    # Get master volume (listener)
 #   
     
-    
-    ##------------------------------------------------------------------------------------
-    ## Audio Loading and Playing Functions (Module: audio)
-    ##------------------------------------------------------------------------------------
-    #ctypedef void (*AudioCallback)(void *bufferData, unsigned int frames)
+cdef class Text:
+    ...
+    ## Text font info functions
+    #cdef void SetTextLineSpacing(int spacing)                                                 # Set vertical line spacing when drawing with line-breaks
+    #cdef int MeasureText(const char *text, int fontSize)                                      # Measure string width for default font
+    #cdef Vector2 MeasureTextEx(Font font, const char *text, float fontSize, float spacing)    # Measure string size for Font
+    #cdef int GetGlyphIndex(Font font, int codepoint)                                          # Get glyph index position in font for a codepoint (unicode character), fallback to '?' if not found
+    #cdef GlyphInfo GetGlyphInfo(Font font, int codepoint)                                     # Get glyph font info data for a codepoint (unicode character), fallback to '?' if not found
+    #cdef Rectangle GetGlyphAtlasRec(Font font, int codepoint)                                 # Get glyph rectangle in font atlas for a codepoint (unicode character), fallback to '?' if not found
+#
+    ## Text codepoints management functions (unicode characters)
+    #cdef char *LoadUTF8(const int *codepoints, int length)                # Load UTF-8 text encoded from codepoints array
+    #cdef void UnloadUTF8(char *text)                                      # Unload UTF-8 text encoded from codepoints array
+    #cdef int *LoadCodepoints(const char *text, int *count)                # Load all codepoints from a UTF-8 text string, codepoints count returned by parameter
+    #cdef void UnloadCodepoints(int *codepoints)                           # Unload codepoints data from memory
+    #cdef int GetCodepointCount(const char *text)                          # Get total number of codepoints in a UTF-8 encoded string
+    #cdef int GetCodepoint(const char *text, int *codepointSize)           # Get next codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
+    #cdef int GetCodepointNext(const char *text, int *codepointSize)       # Get next codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
+    #cdef int GetCodepointPrevious(const char *text, int *codepointSize)   # Get previous codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
+    #cdef const char *CodepointToUTF8(int codepoint, int *utf8Size)        # Encode one codepoint into UTF-8 byte array (array length returned as parameter)
+#
+
+    ## Text strings management functions (no UTF-8 strings, only byte chars)
+    ## NOTE: Some strings allocate memory internally for returned strings, just be careful!
+    #cdef int TextCopy(char *dst, const char *src)                                             # Copy one string to another, returns bytes copied
+    #cdef bint TextIsEqual(const char *text1, const char *text2)                               # Check if two text string are equal
+    #cdef unsigned int TextLength(const char *text)                                            # Get text length, checks for '\0' ending
+    #cdef const char *TextFormat(const char *text, ...)                                        # Text formatting with variables (sprintf() style)
+    #cdef const char *TextSubtext(const char *text, int position, int length)                  # Get a piece of a text string
+    #cdef char *TextReplace(const char *text, const char *replace, const char *by)             # Replace text string (WARNING: memory must be freed!)
+    #cdef char *TextInsert(const char *text, const char *insert, int position)                 # Insert text in a position (WARNING: memory must be freed!)
+    #cdef const char *TextJoin(const char **textList, int count, const char *delimiter)        # Join text strings with delimiter
+    #cdef const char **TextSplit(const char *text, char delimiter, int *count)                 # Split text into multiple strings
+    #cdef void TextAppend(char *text, const char *append, int *position)                       # Append text at specific position and move cursor!
+    #cdef int TextFindIndex(const char *text, const char *find)                                # Find first text occurrence within a string
+    #cdef const char *TextToUpper(const char *text)                      # Get upper case version of provided string
+    #cdef const char *TextToLower(const char *text)                      # Get lower case version of provided string
+    #cdef const char *TextToPascal(const char *text)                     # Get Pascal case notation version of provided string
+    #cdef int TextToInteger(const char *text)                            # Get integer value from text (negative values not supported)
+    #cdef float TextToFloat(const char *text)                            # Get float value from text (negative values not supported)
 
     
     

@@ -668,7 +668,7 @@ class CyAutomationEventList:
         ...
 
 
-class CyWindow:
+class Window:
 
     @staticmethod
     def init_window(width: int, height: int, title: str) -> None:
@@ -879,7 +879,7 @@ class CyWindow:
         ...
 
 
-class CyCursor:
+class Cursor:
     @staticmethod
     def show_cursor() -> None:
         ...
@@ -905,11 +905,7 @@ class CyCursor:
         ...
 
 
-class CyMode:
-
-    @staticmethod
-    def clear_background(color: CyColor) -> None:
-        ...
+class Mode:
 
     @staticmethod
     def begin_drawing() -> None:
@@ -974,3 +970,39 @@ class CyMode:
     @staticmethod
     def end_vr_stereo_mode() -> None:
         ...
+
+class Input:
+    @staticmethod
+    def get_mouse_position() -> CyVector2:
+        ...
+
+class Drawing:
+    
+    @staticmethod
+    def clear_background(color: CyColor) -> None:
+        ...
+        
+    @staticmethod                                                  # Draw a pixel
+    def draw_pixel(pos_x: int, pos_y: int, color: CyColor) -> None:
+        ...
+    #cdef void DrawPixelV(Vector2 position, Color color)
+    @staticmethod
+    def draw_pixel_vector(position: CyVector2, color: CyColor):
+        ...
+    #cdef void DrawLine(int startPosX, int startPosY, int endPosX, int endPosY, Color color)                # Draw a line
+    @staticmethod
+    def draw_line(start_pos_x: int, start_pos_y: int, end_pos_x: int, end_pos_y: int, color: CyColor):
+        ...
+    #cdef void DrawLineV(Vector2 startPos, Vector2 endPos, Color color)                                     # Draw a line (using gl lines)
+    @staticmethod
+    def draw_line_vector(start_pos: CyVector2, end_pos: CyVector2 , color: CyColor):
+        ...
+    #cdef void DrawLineEx(Vector2 startPos, Vector2 endPos, float thick, Color color)                      # Draw a line (using triangles/quads)
+    @staticmethod
+    def draw_line_ex(start_pos: CyVector2, end_pos: CyVector2, thickness: float, color: CyColor):
+        ...
+    #cdef void DrawLineStrip(Vector2 *points, int pointCount, Color color)                                  # Draw lines sequence (using gl lines)
+    @staticmethod
+    def draw_line_strip(points: list[CyVector2], point_count: int, color: CyColor):
+        ...
+    

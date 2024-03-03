@@ -276,7 +276,15 @@ cdef class CyVector2:
     cpdef CyVector2 clamp_value_inplace(self, float min, float max):
         self._vector = Vector2ClampValue(self._vector, min, max)
         return self
-        
+    
+    def __str__(self) -> str:
+        string = f"Vec2<{self._vector.x}, {self._vector.y}>" 
+        return string
+
+    def __repr__(self) -> str:
+        string = f"Vec2_{id(self)}<{self._vector.x}, {self._vector.y}>" 
+        return string
+
 
 cdef class CyVector3:
     cdef Vector3 _vector
