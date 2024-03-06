@@ -1,168 +1,63 @@
-class CyVector2:
-
-    def __init__(self, x: float = 0.0, y: float = 0.0):
-        ...
-#    # Vector3, 3 components
-#    ctypedef struct Vector3:
-#        float x                 # Vector x component
-#        float y                 # Vector y component
-#        float z                 # Vector z component
+from raylib_cython import raymath
 
 
-class CyVector3:
-
-    def __init__(self, x: float = 0.0, y: float = 0.0, z: float = 0.0):
-        ...
-#    # Quaternion, 4 components (Vector4 alias)
-#    ctypedef Vector4 Quaternion
-
-
-class CyQuaternion:
-
-    def __init__(self, x: float = 0.0, y: float = 0.0, z: float = 0.0, w: float = 0.0):
-        ...
-
-#    # Vector4, 4 components
-#    ctypedef struct Vector4:
-#        float x                 # Vector x component
-#        float y                 # Vector y component
-#        float z                 # Vector z component
-#        float w                 # Vector w component
-#
-
-
-class CyVector4(CyQuaternion):
-    ...
-
-#    # Matrix, 4x4 components, column major, OpenGL style, right-handed
-#    ctypedef struct Matrix:
-#        float m0, m4, m8, m12   # Matrix first row (4 components)
-#        float m1, m5, m9, m13   # Matrix second row (4 components)
-#        float m2, m6, m10, m14  # Matrix third row (4 components)
-#        float m3, m7, m11, m15  # Matrix fourth row (4 components)
-
-
-class CyMatrix:
-
-    def __init__(self):
-        ...
-
-#    # Color, 4 components, R8G8B8A8 (32bit)
-#    ctypedef struct Color:
-#        uint8_t r               # Color red value
-#        uint8_t g               # Color green value
-#        uint8_t b               # Color blue value
-#        uint8_t a               # Color alpha value
 
 
 class CyColor:
 
-    def __init__(self, r: int = 0, g: int = 0, b: int = 0, a: int = 0):
-        ...
-
+    def __init__(self, r: int = 0, g: int = 0, b: int = 0, a: int = 0): ...
     @staticmethod
-    def lightgray() -> 'CyColor':
-        ...
-
+    def lightgray() -> 'CyColor': ...
     @staticmethod
-    def gray() -> 'CyColor':
-        ...
-
+    def gray() -> 'CyColor': ...
     @staticmethod
-    def darkgray() -> 'CyColor':
-        ...
-
+    def darkgray() -> 'CyColor': ...
     @staticmethod
-    def yellow() -> 'CyColor':
-        ...
-
+    def yellow() -> 'CyColor': ...
     @staticmethod
-    def gold() -> 'CyColor':
-        ...
-
+    def gold() -> 'CyColor': ...
     @staticmethod
-    def orange() -> 'CyColor':
-        ...
-
+    def orange() -> 'CyColor': ...
     @staticmethod
-    def pink() -> 'CyColor':
-        ...
-
+    def pink() -> 'CyColor': ...
     @staticmethod
-    def red() -> 'CyColor':
-        ...
-
+    def red() -> 'CyColor': ...
     @staticmethod
-    def maroon() -> 'CyColor':
-        ...
-
+    def maroon() -> 'CyColor': ...
     @staticmethod
-    def green() -> 'CyColor':
-        ...
-
+    def green() -> 'CyColor': ...
     @staticmethod
-    def lime() -> 'CyColor':
-        ...
-
+    def lime() -> 'CyColor': ...
     @staticmethod
-    def darkgreen() -> 'CyColor':
-        ...
-
+    def darkgreen() -> 'CyColor': ...
     @staticmethod
-    def skyblue() -> 'CyColor':
-        ...
-
+    def skyblue() -> 'CyColor': ...
     @staticmethod
-    def blue() -> 'CyColor':
-        ...
-
+    def blue() -> 'CyColor': ...
     @staticmethod
-    def darkblue() -> 'CyColor':
-        ...
-
+    def darkblue() -> 'CyColor': ...
     @staticmethod
-    def purple() -> 'CyColor':
-        ...
-
+    def purple() -> 'CyColor': ...
     @staticmethod
-    def violet() -> 'CyColor':
-        ...
-
+    def violet() -> 'CyColor': ...
     @staticmethod
-    def darkpurple() -> 'CyColor':
-        ...
-
+    def darkpurple() -> 'CyColor': ...
     @staticmethod
-    def beige() -> 'CyColor':
-        ...
-
+    def beige() -> 'CyColor': ...
     @staticmethod
-    def brown() -> 'CyColor':
-        ...
-
+    def brown() -> 'CyColor': ...
     @staticmethod
-    def darkbrown() -> 'CyColor':
-        ...
-
+    def darkbrown() -> 'CyColor': ...
     @staticmethod
-    def white() -> 'CyColor':
-        ...
-
+    def white() -> 'CyColor': ...
     @staticmethod
-    def black() -> 'CyColor':
-        ...
-
+    def black() -> 'CyColor': ...
     @staticmethod
-    def blank() -> 'CyColor':
-        ...
-
+    def blank() -> 'CyColor': ...
     @staticmethod
-    def magenta() -> 'CyColor':
-        ...
-
+    def magenta() -> 'CyColor': ...
     @staticmethod
-    def raywhite() -> 'CyColor':
-        ...
+    def raywhite() -> 'CyColor': ...
 
 
 #    # Rectangle, 4 components
@@ -174,40 +69,31 @@ class CyColor:
 
 class CyRectangle:
 
-    def __init__(self, x: float = 0.0, y: float = 0.0, width: float = 0.0, height: float = 0.0):
-        ...
+    def __init__(self, x: float = 0.0, y: float = 0.0, width: float = 0.0, height: float = 0.0): ...
 
     @property
-    def x(self) -> float:
-        ...
+    def x(self) -> float: ...
 
     @x.setter
-    def x(self, value: float) -> None:
-        ...
+    def x(self, value: float) -> None: ...
 
     @property
-    def y(self) -> float:
-        ...
+    def y(self) -> float: ...
 
     @y.setter
-    def y(self, value: float) -> None:
-        ...
+    def y(self, value: float) -> None: ...
 
     @property
-    def height(self) -> float:
-        ...
+    def height(self) -> float: ...
 
     @height.setter
-    def height(self, value: float) -> None:
-        ...
+    def height(self, value: float) -> None: ...
 
     @property
-    def width(self) -> float:
-        ...
+    def width(self) -> float: ...
 
     @width.setter
-    def width(self, value: float) -> None:
-        ...
+    def width(self, value: float) -> None: ...
 
 
 #    # Image, pixel data stored in CPU memory (RAM)
@@ -221,8 +107,7 @@ class CyRectangle:
 # Define your Cython class
 class CyImage:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 #    # Texture, tex data stored in GPU memory (VRAM)
 #    ctypedef struct Texture:
@@ -235,8 +120,7 @@ class CyImage:
 
 class CyTexture:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 
 #    # Texture2D, same as Texture
@@ -260,8 +144,7 @@ class CyTextureCubemap(CyTexture):
 
 class CyRenderTexture:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 #    # RenderTexture2D, same as RenderTexture
 #    ctypedef RenderTexture RenderTexture2D
@@ -283,8 +166,7 @@ class CyRenderTexture2D(CyRenderTexture):
 
 class CyNPatchInfo:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 #    # GlyphInfo, font characters glyphs info
 #    ctypedef struct GlyphInfo:
@@ -298,8 +180,7 @@ class CyNPatchInfo:
 
 class CyGlyphInfo:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 #    # Font, font texture and GlyphInfo array data
 #    ctypedef struct Font:
@@ -314,16 +195,11 @@ class CyGlyphInfo:
 
 class CyFont:
 
-    def __init__(self):
-        ...
-
+    def __init__(self): ...
     @staticmethod
-    def load_font(self, path: str) -> 'CyFont':
-        ...
-
+    def load_font(self, path: str) -> 'CyFont': ...
     @staticmethod
-    def c_load_font(self, path: str) -> 'CyFont':
-        ...
+    def c_load_font(self, path: str) -> 'CyFont': ...
 
 
 #    # Camera, defines position/orientation in 3d space
@@ -338,8 +214,7 @@ class CyFont:
 
 class CyCamera3D:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 #    # Camera2D, defines position/orientation in 2d space
 #    ctypedef struct Camera2D:
@@ -352,8 +227,7 @@ class CyCamera3D:
 
 class CyCamera2D:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 #    # Mesh, vertex data and vao/vbo
 #    ctypedef struct Mesh:
@@ -382,8 +256,7 @@ class CyCamera2D:
 
 class CyMesh:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 
 #    # Shader
@@ -393,8 +266,7 @@ class CyMesh:
 
 class CyShader:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 
 #    # MaterialMap
@@ -405,8 +277,7 @@ class CyShader:
 
 class CyMaterialMap:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 
 #    # Material, includes shader and maps
@@ -417,8 +288,7 @@ class CyMaterialMap:
 
 class CyMaterial:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 #    # Transform, vertex transformation data
 #    ctypedef struct Transform:
@@ -429,8 +299,7 @@ class CyMaterial:
 
 class CyTransform:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 #
 #    # Bone, skeletal animation bone
@@ -441,8 +310,7 @@ class CyTransform:
 
 class CyBoneInfo:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 
 #
@@ -464,8 +332,7 @@ class CyBoneInfo:
 #
 class CyModel:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 
 #    # ModelAnimation
@@ -478,8 +345,7 @@ class CyModel:
 
 class CyModelAnimation:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 #
 #    # Ray, ray for raycasting
@@ -491,8 +357,7 @@ class CyModelAnimation:
 
 class CyRay:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 #
 #    # RayCollision, ray hit information
@@ -506,8 +371,7 @@ class CyRay:
 
 class CyRayCollision:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 
 #
@@ -519,8 +383,7 @@ class CyRayCollision:
 
 class CyBoundingBox:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 #
 #    # Wave, audio wave data
@@ -536,8 +399,7 @@ class CyBoundingBox:
 
 class CyWave:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 
 #    # AudioStream, custom audio stream
@@ -552,8 +414,7 @@ class CyWave:
 
 class CyAudioStream:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 
 #    # Sound
@@ -563,8 +424,7 @@ class CyAudioStream:
 #
 class CySound:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 #
 #    # Music, audio stream, anything longer than ~10 seconds should be streamed
@@ -581,8 +441,7 @@ class CySound:
 
 class CyMusic:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 
 #    # VrDeviceInfo, Head-Mounted-Display device parameters
@@ -599,8 +458,7 @@ class CyMusic:
 #
 class CyVrDeviceInfo:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 #
 #    # VrStereoConfig, VR stereo rendering configuration for simulator
@@ -618,15 +476,11 @@ class CyVrDeviceInfo:
 
 class CyVrStereoConfig:
 
-    def __init__(self):
-        ...
-
+    def __init__(self): ...
     @staticmethod
-    def load_vr_stereo_config(device: CyVrDeviceInfo) -> 'CyVrStereoConfig':
-        ...
+    def load_vr_stereo_config(device: CyVrDeviceInfo) -> 'CyVrStereoConfig': ...
 
-    def unload_vr_stereo_config(self) -> None:
-        ...
+    def unload_vr_stereo_config(self) -> None: ...
 
 #    # File path list
 #    ctypedef struct FilePathList:
@@ -638,8 +492,7 @@ class CyVrStereoConfig:
 
 class CyFilePathList:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 #    # Automation event
 #    ctypedef struct AutomationEvent:
@@ -651,8 +504,7 @@ class CyFilePathList:
 
 class CyAutomationEvent:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 #    # Automation event list
 #    ctypedef struct AutomationEventList:
@@ -664,345 +516,196 @@ class CyAutomationEvent:
 
 class CyAutomationEventList:
 
-    def __init__(self):
-        ...
+    def __init__(self): ...
 
 
 class Window:
 
     @staticmethod
-    def init_window(width: int, height: int, title: str) -> None:
-        ...
-
-    @staticmethod
-    def close_window() -> None:
-        ...
-
-    @staticmethod
-    def window_should_close() -> bool:
-        ...
-
-    @staticmethod
-    def is_window_ready() -> bool:
-        ...
-
-    @staticmethod
-    def is_window_fullscreen() -> bool:
-        ...
-
-    @staticmethod
-    def is_window_hidden() -> bool:
-        ...
-
-    @staticmethod
-    def is_window_minimized() -> bool:
-        ...
-
-    @staticmethod
-    def is_window_maximized() -> bool:
-        ...
-
-    @staticmethod
-    def is_window_focused() -> bool:
-        ...
-
-    @staticmethod
-    def is_window_resized() -> bool:
-        ...
-
-    @staticmethod
-    def is_window_state(flag: int) -> bool:
-        ...
-
-    @staticmethod
-    def set_window_state(flags: int) -> None:
-        ...
-
-    @staticmethod
-    def clear_window_state(flags: int) -> None:
-        ...
-
-    @staticmethod
-    def toggle_fullscreen() -> None:
-        ...
-
-    @staticmethod
-    def toggle_borderless_window() -> None:
-        ...
-
-    @staticmethod
-    def maximize_window() -> None:
-        ...
-
-    @staticmethod
-    def minimize_window() -> None:
-        ...
-
-    @staticmethod
-    def restore_window() -> None:
-        ...
-
-    @staticmethod
-    def set_window_icon(image: CyImage) -> None:
-        ...
-
-    @staticmethod
-    def set_windows_icons(images: list[CyImage]) -> None:
-        ...
-
-    @staticmethod
-    def set_window_title(title: str) -> None:
-        ...
-
-    @staticmethod
-    def set_window_position(x: int, y: int) -> None:
-        ...
-
-    @staticmethod
-    def set_window_monitor(monitor: int) -> None:
-        ...
-
-    @staticmethod
-    def set_window_min_size(width: int, height: int) -> None:
-        ...
-
-    @staticmethod
-    def set_window_max_size(width: int, height: int) -> None:
-        ...
-
-    @staticmethod
-    def set_window_size(width: int, height: int) -> None:
-        ...
-
-    @staticmethod
-    def set_window_opacity(opacity: float) -> None:
-        ...
-
-    @staticmethod
-    def set_window_focused() -> None:
-        ...
-
-    @staticmethod
-    def get_window_handle() -> int:
-        ...
-
-    @staticmethod
-    def get_screen_width() -> int:
-        ...
-
-    @staticmethod
-    def get_screen_height() -> int:
-        ...
-
-    @staticmethod
-    def get_render_width() -> int:
-        ...
-
-    @staticmethod
-    def get_render_height() -> int:
-        ...
-
-    @staticmethod
-    def get_monitor_count() -> int:
-        ...
-
-    @staticmethod
-    def get_current_monitor() -> int:
-        ...
-
-    @staticmethod
-    def get_monitor_position(monitor: int) -> CyVector2:
-        ...
-
-    @staticmethod
-    def get_monitor_width(monitor: int) -> int:
-        ...
-
-    @staticmethod
-    def get_monitor_height(monitor: int) -> int:
-        ...
-
-    @staticmethod
-    def get_monitor_physical_width(monitor: int) -> int:
-        ...
-
-    @staticmethod
-    def get_monitor_physical_height(monitor: int) -> int:
-        ...
-
-    @staticmethod
-    def get_monitor_refresh_rate(monitor: int) -> int:
-        ...
-
-    @staticmethod
-    def get_window_position() -> CyVector2:
-        ...
-
-    @staticmethod
-    def get_window_scale_dpi() -> CyVector2:
-        ...
-
-    @staticmethod
-    def get_monitor_name(monitor: int) -> bytes:
-        ...
-
-    @staticmethod
-    def set_clipboard_text(text: str) -> None:
-        ...
-
-    @staticmethod
-    def get_clipboard_text() -> bytes:
-        ...
-
-    @staticmethod
-    def enable_event_waiting() -> None:
-        ...
-
-    @staticmethod
-    def disable_event_waiting() -> None:
-        ...
-
-    @staticmethod
-    def set_target_fps(fps: int) -> None:
-        ...
-
-    @staticmethod
-    def get_frame_time() -> float:
-        ...
-
-    @staticmethod
-    def get_time() -> float:
-        ...
-
-    @staticmethod
-    def get_fps() -> int:
-        ...
-
-
-class Cursor:
-    @staticmethod
-    def show_cursor() -> None:
-        ...
-
-    @staticmethod
-    def hide_cursor() -> None:
-        ...
-
-    @staticmethod
-    def is_cursor_hidden() -> int:
-        ...
-
-    @staticmethod
-    def enable_cursor() -> None:
-        ...
-
-    @staticmethod
-    def disable_cursor() -> None:
-        ...
-
-    @staticmethod
-    def is_cursor_on_screen() -> int:
-        ...
-
-
-class Mode:
-
-    @staticmethod
-    def begin_drawing() -> None:
-        ...
-
-    @staticmethod
-    def end_drawing() -> None:
-        ...
-
-    @staticmethod
-    def begin_mode_2D(camera: CyCamera2D) -> None:
-        ...
-
-    @staticmethod
-    def end_mode_2d() -> None:
-        ...
-
-    @staticmethod
-    def begin_mode_3d(camera: CyCamera3D) -> None:
-        ...
-
-    @staticmethod
-    def end_mode_3d() -> None:
-        ...
-
-    @staticmethod
-    def begin_texture_mode(target: CyRenderTexture2D) -> None:
-        ...
-
-    @staticmethod
-    def end_texture_mode() -> None:
-        ...
-
-    @staticmethod
-    def begin_shader_mode(shader: CyShader) -> None:
-        ...
-
-    @staticmethod
-    def end_shader_mode() -> None:
-        ...
-
-    @staticmethod
-    def begin_blend_mode(mode: int) -> None:
-        ...
-
-    @staticmethod
-    def end_blend_mode() -> None:
-        ...
-
-    @staticmethod
-    def begin_scissor_mode(x: int, y: int, width: int, height: int) -> None:
-        ...
-
-    @staticmethod
-    def end_scissor_mode() -> None:
-        ...
-
-    @staticmethod
-    def begin_vr_stereo_mode(config: CyVrStereoConfig) -> None:
-        ...
-
-    @staticmethod
-    def end_vr_stereo_mode() -> None:
-        ...
+    def init_window(width: int, height: int, title: str) -> None: ...
+    @staticmethod
+    def close_window() -> None: ...
+    @staticmethod
+    def window_should_close() -> bool: ...
+    @staticmethod
+    def is_window_ready() -> bool: ...
+    @staticmethod
+    def is_window_fullscreen() -> bool: ...
+    @staticmethod
+    def is_window_hidden() -> bool: ...
+    @staticmethod
+    def is_window_minimized() -> bool: ...
+    @staticmethod
+    def is_window_maximized() -> bool: ...
+    @staticmethod
+    def is_window_focused() -> bool: ...
+    @staticmethod
+    def is_window_resized() -> bool: ...
+    @staticmethod
+    def is_window_state(flag: int) -> bool: ...
+    @staticmethod
+    def set_window_state(flags: int) -> None: ...
+    @staticmethod
+    def clear_window_state(flags: int) -> None: ...
+    @staticmethod
+    def toggle_fullscreen() -> None: ...
+    @staticmethod
+    def toggle_borderless_window() -> None: ...
+    @staticmethod
+    def maximize_window() -> None: ...
+    @staticmethod
+    def minimize_window() -> None: ...
+    @staticmethod
+    def restore_window() -> None: ...
+    @staticmethod
+    def set_window_icon(image: CyImage) -> None: ...
+    @staticmethod
+    def set_windows_icons(images: list[CyImage]) -> None: ...
+    @staticmethod
+    def set_window_title(title: str) -> None: ...
+    @staticmethod
+    def set_window_position(x: int, y: int) -> None: ...
+    @staticmethod
+    def set_window_monitor(monitor: int) -> None: ...
+    @staticmethod
+    def set_window_min_size(width: int, height: int) -> None: ...
+    @staticmethod
+    def set_window_max_size(width: int, height: int) -> None: ...
+    @staticmethod
+    def set_window_size(width: int, height: int) -> None: ...
+    @staticmethod
+    def set_window_opacity(opacity: float) -> None: ...
+    @staticmethod
+    def set_window_focused() -> None: ...
+    @staticmethod
+    def get_window_handle() -> int: ...
+    @staticmethod
+    def get_screen_width() -> int: ...
+    @staticmethod
+    def get_screen_height() -> int: ...
+    @staticmethod
+    def get_render_width() -> int: ...
+    @staticmethod
+    def get_render_height() -> int: ...
+    @staticmethod
+    def get_monitor_count() -> int: ...
+    @staticmethod
+    def get_current_monitor() -> int: ...
+    @staticmethod
+    def get_monitor_position(monitor: int) -> raymath.CyVector2: ...
+    @staticmethod
+    def get_monitor_width(monitor: int) -> int: ...
+    @staticmethod
+    def get_monitor_height(monitor: int) -> int: ...
+    @staticmethod
+    def get_monitor_physical_width(monitor: int) -> int: ...
+    @staticmethod
+    def get_monitor_physical_height(monitor: int) -> int: ...
+    @staticmethod
+    def get_monitor_refresh_rate(monitor: int) -> int: ...
+    @staticmethod
+    def get_window_position() -> raymath.CyVector2: ...
+    @staticmethod
+    def get_window_scale_dpi() -> raymath.CyVector2: ...
+    @staticmethod
+    def get_monitor_name(monitor: int) -> bytes: ...
+    @staticmethod
+    def set_clipboard_text(text: str) -> None: ...
+    @staticmethod
+    def get_clipboard_text() -> bytes: ...
+    @staticmethod
+    def enable_event_waiting() -> None: ...
+    @staticmethod
+    def disable_event_waiting() -> None: ...
+    @staticmethod
+    def set_target_fps(fps: int) -> None: ...
+    @staticmethod
+    def get_frame_time() -> float: ...
+    @staticmethod
+    def get_time() -> float: ...
+    @staticmethod
+    def get_fps() -> int: ...
+    @staticmethod
+    def show_cursor() -> None: ...
+    @staticmethod
+    def hide_cursor() -> None: ...
+    @staticmethod
+    def is_cursor_hidden() -> int: ...
+    @staticmethod
+    def enable_cursor() -> None: ...
+    @staticmethod
+    def disable_cursor() -> None: ...
+    @staticmethod
+    def is_cursor_on_screen() -> int: ...
+    @staticmethod
+    def begin_drawing() -> None: ...
+    @staticmethod
+    def end_drawing() -> None: ...
+    @staticmethod
+    def begin_mode_2D(camera: CyCamera2D) -> None: ...
+    @staticmethod
+    def end_mode_2d() -> None: ...
+    @staticmethod
+    def begin_mode_3d(camera: CyCamera3D) -> None: ...
+    @staticmethod
+    def end_mode_3d() -> None: ...
+    @staticmethod
+    def begin_texture_mode(target: CyRenderTexture2D) -> None: ...
+    @staticmethod
+    def end_texture_mode() -> None: ...
+    @staticmethod
+    def begin_shader_mode(shader: CyShader) -> None: ...
+    @staticmethod
+    def end_shader_mode() -> None: ...
+    @staticmethod
+    def begin_blend_mode(mode: int) -> None: ...
+    @staticmethod
+    def end_blend_mode() -> None: ...
+    @staticmethod
+    def begin_scissor_mode(x: int, y: int, width: int, height: int) -> None: ...
+    @staticmethod
+    def end_scissor_mode() -> None: ...
+    @staticmethod
+    def begin_vr_stereo_mode(config: CyVrStereoConfig) -> None: ...
+    @staticmethod
+    def end_vr_stereo_mode() -> None: ...
 
 class Input:
     @staticmethod
-    def get_mouse_position() -> CyVector2:
-        ...
-
+    def get_mouse_x() -> int: ...                                   # Get mouse position Y
+    @staticmethod
+    def get_mouse_y() -> int: ...
+    @staticmethod
+    def get_mouse_position() -> raymath.CyVector2: ...
+    @staticmethod
+    def get_mouse_delta() -> raymath.CyVector2: ...                   
+    @staticmethod
+    def set_mouse_position(x: int, y: int) -> None: ...
+    @staticmethod
+    def set_mouse_offset(offset_x: int, offset_y: int) -> None: ...
+    @staticmethod
+    def set_mouse_scale(scale_x: float, scale_y: float) -> None: ...
+    @staticmethod
+    def get_mouse_wheel_move() -> float: ...
+    @staticmethod
+    def get_mouse_wheel_move_vector() -> raymath.CyVector2: ...
+    @staticmethod
+    def set_mouse_cursor(cursor: int) -> None: ...
+    
 class Drawing:
     
     @staticmethod
-    def clear_background(color: CyColor) -> None:
-        ...
-        
+    def clear_background(color: CyColor) -> None: ...
     @staticmethod                                                  # Draw a pixel
-    def draw_pixel(pos_x: int, pos_y: int, color: CyColor) -> None:
-        ...
-    #cdef void DrawPixelV(Vector2 position, Color color)
+    def draw_pixel(pos_x: int, pos_y: int, color: CyColor) -> None: ...
     @staticmethod
-    def draw_pixel_vector(position: CyVector2, color: CyColor):
-        ...
-    #cdef void DrawLine(int startPosX, int startPosY, int endPosX, int endPosY, Color color)                # Draw a line
+    def draw_pixel_vector(position: raymath.CyVector2, color: CyColor): ...
     @staticmethod
-    def draw_line(start_pos_x: int, start_pos_y: int, end_pos_x: int, end_pos_y: int, color: CyColor):
-        ...
-    #cdef void DrawLineV(Vector2 startPos, Vector2 endPos, Color color)                                     # Draw a line (using gl lines)
+    def draw_line(start_pos_x: int, start_pos_y: int, end_pos_x: int, end_pos_y: int, color: CyColor): ...
     @staticmethod
-    def draw_line_vector(start_pos: CyVector2, end_pos: CyVector2 , color: CyColor):
-        ...
-    #cdef void DrawLineEx(Vector2 startPos, Vector2 endPos, float thick, Color color)                      # Draw a line (using triangles/quads)
+    def draw_line_vector(start_pos: raymath.CyVector2, end_pos: raymath.CyVector2 , color: CyColor): ...
     @staticmethod
-    def draw_line_ex(start_pos: CyVector2, end_pos: CyVector2, thickness: float, color: CyColor):
-        ...
-    #cdef void DrawLineStrip(Vector2 *points, int pointCount, Color color)                                  # Draw lines sequence (using gl lines)
+    def draw_line_ex(start_pos: raymath.CyVector2, end_pos: raymath.CyVector2, thickness: float, color: CyColor): ...
     @staticmethod
-    def draw_line_strip(points: list[CyVector2], point_count: int, color: CyColor):
-        ...
+    def draw_line_strip(points: list[raymath.CyVector2], point_count: int, color: CyColor): ...
     

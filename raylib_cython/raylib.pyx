@@ -478,7 +478,11 @@ cdef class CyCamera3D:
     
     #cdef void UpdateCamera(Camera *camera, int mode)      # Update camera position for selected mode
     #cdef void UpdateCameraPro(Camera *camera, Vector3 movement, Vector3 rotation, float zoom) # Update camera movement/rotation
-#   
+    #cdef Ray GetMouseRay(Vector2 mousePosition, Camera camera)      
+    #cdef Matrix GetCameraMatrix(Camera camera)                      
+    #cdef Vector2 GetWorldToScreen(Vector3 position, Camera camera)  
+    #cdef Vector2 GetWorldToScreenEx(Vector3 position, Camera camera, int width, int height) 
+    
 
 
 
@@ -492,6 +496,10 @@ cdef class CyCamera2D:
 #        float rotation          # Camera rotation in degrees
 #        float zoom              # Camera zoom (scaling), should be 1.0f by default
 #
+    
+    #cdef Matrix GetCameraMatrix2D(Camera2D camera)                  
+    #cdef Vector2 GetScreenToWorld2D(Vector2 position, Camera2D camera) 
+    #cdef Vector2 GetWorldToScreen2D(Vector2 position, Camera2D camera) 
 
     def __cinit__(self):
         raise NotImplementedError("Not Implemented Yet!")
@@ -1187,7 +1195,6 @@ cdef class Window:
     def disable_event_waiting() -> None:
         DisableEventWaiting()
 
-cdef class Cursor:
     @staticmethod
     def show_cursor() -> None:
         ShowCursor()
@@ -1228,10 +1235,6 @@ cdef class Cursor:
     def get_fps() -> int:
         return GetFPS()
 
-
-cdef class Mode:
-
-    
     @staticmethod
     def begin_drawing() -> None:
         BeginDrawing()
@@ -1301,14 +1304,7 @@ cdef class Mode:
 cdef class World3D:
     ...
     
-    #cdef Ray GetMouseRay(Vector2 mousePosition, Camera camera)      
-    #cdef Matrix GetCameraMatrix(Camera camera)                      
-    #cdef Matrix GetCameraMatrix2D(Camera2D camera)                  
-    #cdef Vector2 GetWorldToScreen(Vector3 position, Camera camera)  
-    #cdef Vector2 GetScreenToWorld2D(Vector2 position, Camera2D camera) 
-    #cdef Vector2 GetWorldToScreenEx(Vector3 position, Camera camera, int width, int height) 
-    #cdef Vector2 GetWorldToScreen2D(Vector2 position, Camera2D camera) 
-
+    
 
 cdef class Screen:  
     ...                              
@@ -1430,20 +1426,60 @@ cdef class Input:
     #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
     #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
     #cdef int GetMouseX()                                    # Get mouse position X
+    @staticmethod
+    def get_mouse_x() -> int:
+        return GetMouseX()
+
     #cdef int GetMouseY()                                    # Get mouse position Y
+    @staticmethod
+    def get_mouse_y() -> int:
+        return GetMouseY()
+
     #cdef Vector2 GetMousePosition()                         # Get mouse position XY
     @staticmethod
     def get_mouse_position() -> raymath.CyVector2:
         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
         vec._vector = GetMousePosition()
         return vec
+    
     #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
+    @staticmethod
+    def get_mouse_delta() -> raymath.CyVector2:
+        cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+        vec._vector = GetMouseDelta()
+        return vec
+    
     #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
+    @staticmethod
+    def set_mouse_position(int x, int y) -> None:
+        SetMousePosition(x, y)
+    
     #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
+    @staticmethod
+    def set_mouse_offset(int offset_x, int offset_y) -> None:
+        SetMouseOffset(offset_x, offset_y)
+
     #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
+    @staticmethod
+    def set_mouse_scale(float scale_x, float scale_y) -> None:
+        SetMouseScale(scale_x, scale_y)
+    
     #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
+    @staticmethod
+    def get_mouse_wheel_move() -> float:
+        return GetMouseWheelMove()
+    
     #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
+    @staticmethod
+    def get_mouse_wheel_move_vector() -> raymath.CyVector2:
+        cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+        vec._vector = GetMouseWheelMoveV()
+        return vec
+    
     #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
+    @staticmethod
+    def set_mouse_cursor(int cursor) -> None:
+        SetMouseCursor(cursor)
 #
     ## Input-related functions: touch
     #cdef int GetTouchX()                                    # Get touch position X for touch point 0 (relative to screen size)
@@ -1483,22 +1519,27 @@ cdef class Drawing:
     @staticmethod                                                  # Draw a pixel
     def draw_pixel(int pos_x, int pos_y, CyColor color) -> None:
         DrawPixel(pos_x, pos_y, color._color)
+    
     #cdef void DrawPixelV(Vector2 position, Color color)
     @staticmethod
     def draw_pixel_vector(raymath.CyVector2 position, CyColor color):
         DrawPixelV(position._vector, color._color)                                                    # Draw a pixel (Vector version)
+    
     #cdef void DrawLine(int startPosX, int startPosY, int endPosX, int endPosY, Color color)                # Draw a line
     @staticmethod
     def draw_line(int start_pos_x, int start_pos_y, int end_pos_x, int end_pos_y, CyColor color):
         DrawLine(start_pos_x, start_pos_y, end_pos_x, end_pos_y, color._color)
+    
     #cdef void DrawLineV(Vector2 startPos, Vector2 endPos, Color color)                                     # Draw a line (using gl lines)
     @staticmethod
     def draw_line_vector(raymath.CyVector2 start_pos, raymath.CyVector2 end_pos, CyColor color):
         DrawLineV(start_pos._vector, end_pos._vector, color._color)
+    
     #cdef void DrawLineEx(Vector2 startPos, Vector2 endPos, float thick, Color color)                      # Draw a line (using triangles/quads)
     @staticmethod
     def draw_line_ex(raymath.CyVector2 start_pos, raymath.CyVector2 end_pos, float thickness, CyColor color):
         DrawLineEx(start_pos._vector, end_pos._vector, thickness, color._color)
+    
     #cdef void DrawLineStrip(Vector2 *points, int pointCount, Color color)                                  # Draw lines sequence (using gl lines)
     @staticmethod
     def draw_line_strip(raymath.CyVector2[::1] points, CyColor color):

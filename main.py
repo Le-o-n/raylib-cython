@@ -3,27 +3,21 @@
 from raylib_cython import raylib
 from raylib_cython import raymath
 import numpy as np
-
-
+        
+    
 def main():
 
-    raylib.Window.init_window(1000, 500, "Hello World")
-
+    raylib.Window.init_window(1000, 900, "Hello World")
+    
     while not raylib.Window.window_should_close():
         raylib.Drawing.clear_background(raylib.CyColor.black())
         
-        raylib.Mode.begin_drawing()
-        m: raylib.CyVector2 =raylib.Input.get_mouse_position()
-        p1 = raymath.CyVector2(0, 0)
-        p2 = raymath.CyVector2(500, 100)
-        p3 = raylib.Input.get_mouse_position()
+        raylib.Window.begin_drawing()
         
-        points = [p1, p2, p3]
+        m: raymath.CyVector2 = raylib.Input.get_mouse_position()
         
-        p_list = np.ascontiguousarray(points)
-        raylib.Drawing.draw_line_strip(p_list, raylib.CyColor.green())
-        
-        raylib.Mode.end_drawing()
+        raylib.Drawing.draw_line_ex(raymath.CyVector2(0,0),m, 3, raylib.CyColor.green())
+        raylib.Window.end_drawing()
 
     raylib.Window.close_window()
 
