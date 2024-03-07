@@ -1,17 +1,13 @@
 from libc.stdlib cimport malloc, free
-from libc.string cimport memcpy
-from cpython.bytes cimport PyBytes_AsString
-
+from libc.string cimport strcpy
 from raylib_cython cimport raymath
 
+# TODO Move inputs to another MODULE
+# TODO move shapes to another MODULE?
+# TODO remove OS functions since python can do these
 
-
-#    # Color, 4 components, R8G8B8A8 (32bit)
-#    ctypedef struct Color:
-#        uint8_t r               # Color red value
-#        uint8_t g               # Color green value
-#        uint8_t b               # Color blue value
-#        uint8_t a               # Color alpha value
+  
+   
 
 cdef class CyColor:
     
@@ -222,6 +218,23 @@ cdef class CyRectangle:
     def width(self, value: float) -> None:
         self._rect.width = <float>value
     
+    #cdef Rectangle GetCollisionRec(Rectangle rec1, Rectangle rec2)                                         # Get collision rectangle for two rectangles collision
+    #cdef bint CheckCollisionRecs(Rectangle rec1, Rectangle rec2) 
+    #cdef bint CheckCollisionCircleRec(Vector2 center, float radius, Rectangle rec)                         # Check collision between circle and rectangle
+    #cdef bint CheckCollisionPointRec(Vector2 point, Rectangle rec)                                         # Check if point is inside rectangle
+    #cdef void DrawRectangle(int posX, int posY, int width, int height, Color color)                        # Draw a color-filled rectangle
+    #cdef void DrawRectangleV(Vector2 position, Vector2 size, Color color)                                  # Draw a color-filled rectangle (Vector version)
+    #cdef void DrawRectangleRec(Rectangle rec, Color color)                                                 # Draw a color-filled rectangle
+    #cdef void DrawRectanglePro(Rectangle rec, Vector2 origin, float rotation, Color color)                 # Draw a color-filled rectangle with pro parameters
+    #cdef void DrawRectangleGradientV(int posX, int posY, int width, int height, Color color1, Color color2)# Draw a vertical-gradient-filled rectangle
+    #cdef void DrawRectangleGradientH(int posX, int posY, int width, int height, Color color1, Color color2)# Draw a horizontal-gradient-filled rectangle
+    #cdef void DrawRectangleGradientEx(Rectangle rec, Color col1, Color col2, Color col3, Color col4)       # Draw a gradient-filled rectangle with custom vertex colors
+    #cdef void DrawRectangleLines(int posX, int posY, int width, int height, Color color)                   # Draw rectangle outline
+    #cdef void DrawRectangleLinesEx(Rectangle rec, float lineThick, Color color)                            # Draw rectangle outline with extended parameters
+    #cdef void DrawRectangleRounded(Rectangle rec, float roundness, int segments, Color color)              # Draw rectangle with rounded edges
+    #cdef void DrawRectangleRoundedLines(Rectangle rec, float roundness, int segments, float lineThick, Color color) # Draw rectangle with rounded edges outline
+    
+
 
 cdef class CyImage:
     cdef Image _image
@@ -364,6 +377,10 @@ cdef class CyTexture:
 
 cdef class CyTexture2D(CyTexture):
     pass
+    #cdef void SetShapesTexture(Texture2D texture, Rectangle source)       # Set texture and rectangle to be used on shapes drawing
+    #cdef Texture2D GetShapesTexture()                                 # Get texture that is used for shapes drawing
+    #cdef Rectangle GetShapesTextureRectangle()                        # Get texture source rectangle that is used for shapes drawing
+#
 
 
 cdef class CyTextureCubemap(CyTexture):
@@ -435,12 +452,12 @@ cdef class CyFont:
         
     
     @staticmethod
-    def load_font(self, str path) -> 'CyFont':
+    def load_font(str path) -> 'CyFont':
         raise NotImplementedError("Not Implemented Yet!")
         
 
     @staticmethod
-    cdef CyFont c_load_font(self, str path):
+    cdef CyFont c_load_font(str path):
         raise NotImplementedError("Not Implemented Yet!")
         
     ## Font loading/unloading functions
@@ -455,8 +472,9 @@ cdef class CyFont:
     #cdef void UnloadFontData(GlyphInfo *glyphs, int glyphCount)                               # Unload font chars info data (RAM)
     #cdef void UnloadFont(Font font)                                                           # Unload font from GPU memory (VRAM)
     #cdef bint ExportFontAsCode(Font font, const char *fileName)                               # Export font as code file, returns true on success
-#
-#
+    #cdef int GetGlyphIndex(Font font, int codepoint)                                          # Get glyph index position in font for a codepoint (unicode character), fallback to '?' if not found
+    #cdef GlyphInfo GetGlyphInfo(Font font, int codepoint)                                     # Get glyph font info data for a codepoint (unicode character), fallback to '?' if not found
+    #cdef Rectangle GetGlyphAtlasRec(Font font, int codepoint)                                 # Get glyph rectangle in font atlas for a codepoint (unicode character), fallback to '?' if not found
 
 
 cdef class CyCamera3D:
@@ -482,7 +500,10 @@ cdef class CyCamera3D:
     #cdef Matrix GetCameraMatrix(Camera camera)                      
     #cdef Vector2 GetWorldToScreen(Vector3 position, Camera camera)  
     #cdef Vector2 GetWorldToScreenEx(Vector3 position, Camera camera, int width, int height) 
-    
+    #cdef void DrawBillboard(Camera camera, Texture2D texture, Vector3 position, float size, Color tint)   # Draw a billboard texture
+    #cdef void DrawBillboardRec(Camera camera, Texture2D texture, Rectangle source, Vector3 position, Vector2 size, Color tint) # Draw a billboard texture defined by source
+    #cdef void DrawBillboardPro(Camera camera, Texture2D texture, Rectangle source, Vector3 position, Vector3 up, Vector2 size, Vector2 origin, float rotation, Color tint) # Draw a billboard texture defined by source and rotation
+#
 
 
 
@@ -679,7 +700,12 @@ cdef class CyModel:
         #cdef bint IsModelReady(Model model)                                                       # Check if a model is ready
         #cdef void UnloadModel(Model model)                                                        # Unload model (including meshes) from memory (RAM and/or VRAM)
         #cdef BoundingBox GetModelBoundingBox(Model model)                                         # Compute model bounding box limits (considers all meshes)
-    #
+        #cdef bint IsModelAnimationValid(Model model, ModelAnimation anim)
+        #cdef void DrawModel(Model model, Vector3 position, float scale, Color tint)               # Draw a model (with texture if set)
+        #cdef void DrawModelEx(Model model, Vector3 position, Vector3 rotationAxis, float rotationAngle, Vector3 scale, Color tint) # Draw a model with extended parameters
+        #cdef void DrawModelWires(Model model, Vector3 position, float scale, Color tint)          # Draw a model wires (with texture if set)
+        #cdef void DrawModelWiresEx(Model model, Vector3 position, Vector3 rotationAxis, float rotationAngle, Vector3 scale, Color tint) # Draw a model wires (with texture if set) with extended parameters
+        
 
 
 cdef class CyModelAnimation:
@@ -700,7 +726,7 @@ cdef class CyModelAnimation:
     #cdef void UpdateModelAnimation(Model model, ModelAnimation anim, int frame)               # Update model animation pose
     #cdef void UnloadModelAnimation(ModelAnimation anim)                                       # Unload animation data
     #cdef void UnloadModelAnimations(ModelAnimation *animations, int animCount)                # Unload animation array data
-    #cdef bint IsModelAnimationValid(Model model, ModelAnimation anim)                         # Check model animation skeleton match
+                             # Check model animation skeleton match
 #
 
 
@@ -715,7 +741,13 @@ cdef class CyRay:
     def __cinit__(self):
         raise NotImplementedError("Not Implemented Yet!")
         
-
+    #cdef void DrawRay(Ray ray, Color color)
+    #cdef RayCollision GetRayCollisionSphere(Ray ray, Vector3 center, float radius)                    # Get collision info between ray and sphere
+    #cdef RayCollision GetRayCollisionBox(Ray ray, BoundingBox box)                                    # Get collision info between ray and box
+    #cdef RayCollision GetRayCollisionMesh(Ray ray, Mesh mesh, Matrix transform)                       # Get collision info between ray and mesh
+    #cdef RayCollision GetRayCollisionTriangle(Ray ray, Vector3 p1, Vector3 p2, Vector3 p3)            # Get collision info between ray and triangle
+    #cdef RayCollision GetRayCollisionQuad(Ray ray, Vector3 p1, Vector3 p2, Vector3 p3, Vector3 p4)    # Get collision info between ray and quad
+# 
 
 cdef class CyRayCollision:
     cdef RayCollision _ray_collision
@@ -730,9 +762,9 @@ cdef class CyRayCollision:
 
     def __cinit__(self):
         raise NotImplementedError("Not Implemented Yet!")
-        
+    
 
-
+    
 
 
 cdef class CyBoundingBox:
@@ -746,7 +778,10 @@ cdef class CyBoundingBox:
     def __cinit__(self):
         raise NotImplementedError("Not Implemented Yet!")
         
-
+    #cdef bint CheckCollisionBoxes(BoundingBox box1, BoundingBox box2)                                 # Check collision between two bounding boxes
+    #cdef bint CheckCollisionBoxSphere(BoundingBox box, Vector3 center, float radius)                  # Check collision between box and sphere
+    #cdef void DrawBoundingBox(BoundingBox box, Color color)                                   # Draw bounding box (wires)
+    
 
 cdef class CyWave:
     cdef Wave _wave
@@ -976,513 +1011,662 @@ cdef class CyAutomationEventList:
         raise NotImplementedError("Not Implemented Yet!")
         
 
+cdef class CyPixel:
+    cdef raymath.CyVector2 pos
+    cdef CyColor color
 
-cdef class Window:
+    def __cinit__(self, raymath.CyVector2 pos, CyColor color):
+        self.pos = pos
+        self.color = self.color
+    def draw(self) -> None:
+        DrawPixel(<int>self.pos.x, <int>self.pos.y, self.color._color)
 
-    @staticmethod
-    def init_window(width: int, height: int, title: str) -> None:
-        InitWindow(width, height, str.encode(title))
+
+cdef class CyLine:
+    cdef raymath.CyVector2 p1
+    cdef raymath.CyVector2 p2
+    cdef CyColor color
+
+    def __cinit__(self, raymath.CyVector2 p1, raymath.CyVector2 p2, CyColor color, float thickness = 1.0):
+        self.p1 = p1
+        self.p2 = p2
+        self.thickness = thickness
+        self.color = color
+
+    def draw_line(self) -> None:
+        DrawLineEx(self.p1._vec, self.p2._vec, self.thickness, self.color._color)
+
+    #cdef bint CheckCollisionLines(Vector2 startPos1, Vector2 endPos1, Vector2 startPos2, Vector2 endPos2, Vector2 *collisionPoint) # Check the collision between two lines defined by two points each, returns collision point by reference
+    #cdef bint CheckCollisionPointLine(Vector2 point, Vector2 p1, Vector2 p2, int threshold)                # Check if point belongs to line created between two points [p1] and [p2] with defined margin in pixels [threshold]
     
-    @staticmethod
-    def close_window() -> None:
-        CloseWindow()
+cdef class CyLineStrip:
+    cdef raymath.CyVector2[::1] points
+    cdef CyColor color
+    cdef Vector2 *c_points
+
+
+    def __cinit__(self, raymath.CyVector2[::1] points, CyColor color):
+        self.points = points
+        self.c_points = <Vector2*> malloc(len(points) * sizeof(Vector2))
+        self.color = color
+
+    def draw(self) -> None:
+
+        # Copy data from Python objects to C array
+        for i in range(len(self.points)):
+            self.c_points[i] = self.points[i]._vector
+
+        # Call the C function
+        DrawLineStrip(self.c_points, len(self.points), self.color._color)
+
+    def set_point(self, int index, raymath.CyVector2 vec) -> None:
+        self.points[index] = vec
+
+    def __dealloc__(self):
+        if self.c_points is not NULL:
+            free(self.c_points)
+
+cdef class CyLineBezier:
+    ...
+
+    #cdef void DrawLineBezier(Vector2 startPos, Vector2 endPos, float thick, Color color)                   # Draw line segment cubic-bezier in-out interpolation
     
-    @staticmethod
-    def window_should_close() -> bool:
-        return WindowShouldClose()
+cdef class CyCircle:
+    ...
+    #cdef void DrawCircle(int centerX, int centerY, float radius, Color color)                              # Draw a color-filled circle
+    #cdef void DrawCircleSector(Vector2 center, float radius, float startAngle, float endAngle, int segments, Color color)      # Draw a piece of a circle
+    #cdef void DrawCircleSectorLines(Vector2 center, float radius, float startAngle, float endAngle, int segments, Color color) # Draw circle sector outline
+    #cdef void DrawCircleGradient(int centerX, int centerY, float radius, Color color1, Color color2)       # Draw a gradient-filled circle
+    #cdef void DrawCircleV(Vector2 center, float radius, Color color)                                       # Draw a color-filled circle (Vector version)
+    #cdef void DrawCircleLines(int centerX, int centerY, float radius, Color color)                         # Draw circle outline
+    #cdef void DrawCircleLinesV(Vector2 center, float radius, Color color)                                  # Draw circle outline (Vector version)
+    #cdef bint CheckCollisionCircles(Vector2 center1, float radius1, Vector2 center2, float radius2)        # Check collision between two circles
+    #cdef bint CheckCollisionPointCircle(Vector2 point, Vector2 center, float radius)                       # Check if point is inside circle
     
-    @staticmethod
-    def is_window_ready() -> bool:
-        return IsWindowReady() 
+cdef class CyEclypse:
+    ...
+    #cdef void DrawEllipse(int centerX, int centerY, float radiusH, float radiusV, Color color)             # Draw ellipse
+    #cdef void DrawEllipseLines(int centerX, int centerY, float radiusH, float radiusV, Color color)        # Draw ellipse outline
     
-    @staticmethod
-    def is_window_fullscreen() -> bool:
-        return IsWindowFullscreen()
+cdef class CyRing:
+    ...
+    #cdef void DrawRing(Vector2 center, float innerRadius, float outerRadius, float startAngle, float endAngle, int segments, Color color) # Draw ring
+    #cdef void DrawRingLines(Vector2 center, float innerRadius, float outerRadius, float startAngle, float endAngle, int segments, Color color)    # Draw ring outline
+
+cdef class CyTriangle:
+    ...
+    #cdef void DrawTriangle(Vector2 v1, Vector2 v2, Vector2 v3, Color color)                                # Draw a color-filled triangle (vertex in counter-clockwise order!)
+    #cdef void DrawTriangleLines(Vector2 v1, Vector2 v2, Vector2 v3, Color color)                           # Draw triangle outline (vertex in counter-clockwise order!)
+    #cdef void DrawTriangleFan(Vector2 *points, int pointCount, Color color)                                # Draw a triangle fan defined by points (first vertex is the center)
+    #cdef void DrawTriangleStrip(Vector2 *points, int pointCount, Color color)                              # Draw a triangle strip defined by points
+    #cdef bint CheckCollisionPointTriangle(Vector2 point, Vector2 p1, Vector2 p2, Vector2 p3)               # Check if point is inside a triangle
     
-    @staticmethod
-    def is_window_hidden() -> bool:
-        return IsWindowHidden()    
-
-    @staticmethod
-    def is_window_minimized() -> bool:
-        return IsWindowMinimized()
-
-    @staticmethod
-    def is_window_maximized() -> bool:
-        return IsWindowMaximized()
-
-    @staticmethod
-    def is_window_focused() -> bool:
-        return IsWindowFocused()
-
-    @staticmethod
-    def is_window_resized() -> bool:
-        return IsWindowResized()
+cdef class CyPolygon:
+    ...
+    #cdef void DrawPoly(Vector2 center, int sides, float radius, float rotation, Color color)               # Draw a regular polygon (Vector version)
+    #cdef void DrawPolyLines(Vector2 center, int sides, float radius, float rotation, Color color)          # Draw a polygon outline of n sides
+    #cdef void DrawPolyLinesEx(Vector2 center, int sides, float radius, float rotation, float lineThick, Color color) # Draw a polygon outline of n sides with extended parameters
+    #cdef bint CheckCollisionPointPoly(Vector2 point, Vector2 *points, int pointCount)                      # Check if point is within a polygon described by array of vertices
     
-    @staticmethod
-    def is_window_state(flag: int) -> bool:
-        return IsWindowState(flag)
+#
 
-    @staticmethod
-    def set_window_state(flags: int) -> None:
-        SetWindowState(flags)
+cdef class CySpline:
+    ...
+    #cdef void DrawSplineLinear(Vector2 *points, int pointCount, float thick, Color color)                  # Draw spline: Linear, minimum 2 points
+    #cdef void DrawSplineBasis(Vector2 *points, int pointCount, float thick, Color color)                   # Draw spline: B-Spline, minimum 4 points
+    #cdef void DrawSplineCatmullRom(Vector2 *points, int pointCount, float thick, Color color)              # Draw spline: Catmull-Rom, minimum 4 points
+    #cdef void DrawSplineBezierQuadratic(Vector2 *points, int pointCount, float thick, Color color)         # Draw spline: Quadratic Bezier, minimum 3 points (1 control point): [p1, c2, p3, c4...]
+    #cdef void DrawSplineBezierCubic(Vector2 *points, int pointCount, float thick, Color color)             # Draw spline: Cubic Bezier, minimum 4 points (2 control points): [p1, c2, c3, p4, c5, c6...]
+    #cdef void DrawSplineSegmentLinear(Vector2 p1, Vector2 p2, float thick, Color color)                    # Draw spline segment: Linear, 2 points
+    #cdef void DrawSplineSegmentBasis(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float thick, Color color) # Draw spline segment: B-Spline, 4 points
+    #cdef void DrawSplineSegmentCatmullRom(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float thick, Color color) # Draw spline segment: Catmull-Rom, 4 points
+    #cdef void DrawSplineSegmentBezierQuadratic(Vector2 p1, Vector2 c2, Vector2 p3, float thick, Color color) # Draw spline segment: Quadratic Bezier, 2 points, 1 control point
+    #cdef void DrawSplineSegmentBezierCubic(Vector2 p1, Vector2 c2, Vector2 c3, Vector2 p4, float thick, Color color) # Draw spline segment: Cubic Bezier, 2 points, 2 control points
+#
+    ## Spline segment point evaluation functions, for a given t [0.0f .. 1.0f]
+    #cdef Vector2 GetSplinePointLinear(Vector2 startPos, Vector2 endPos, float t)                           # Get (evaluate) spline point: Linear
+    #cdef Vector2 GetSplinePointBasis(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float t)              # Get (evaluate) spline point: B-Spline
+    #cdef Vector2 GetSplinePointCatmullRom(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float t)         # Get (evaluate) spline point: Catmull-Rom
+    #cdef Vector2 GetSplinePointBezierQuad(Vector2 p1, Vector2 c2, Vector2 p3, float t)                     # Get (evaluate) spline point: Quadratic Bezier
+    #cdef Vector2 GetSplinePointBezierCubic(Vector2 p1, Vector2 c2, Vector2 c3, Vector2 p4, float t)        # Get (evaluate) spline point: Cubic Bezier
+#
 
-    @staticmethod
-    def clear_window_state(flags: int) -> None:
-        ClearWindowState(flags)
+cdef class CyText:
+    cdef char* text
+    cdef raymath.CyVector2 pos
+    cdef int font_size
+    cdef CyColor color
 
-    @staticmethod
-    def toggle_fullscreen() -> None:
-        ToggleFullscreen()
-    
-    @staticmethod
-    def toggle_borderless_window() -> None:
-        ToggleBorderlessWindowed()
-    
-    @staticmethod
-    def maximize_window() -> None:
-        MaximizeWindow()
-
-    @staticmethod
-    def minimize_window() -> None:
-        MinimizeWindow()
-
-    @staticmethod
-    def restore_window() -> None:
-        RestoreWindow()
-
-    @staticmethod
-    def set_window_icon(image: CyImage) -> None:
-        SetWindowIcon(image._image)
-
-    @staticmethod
-    def set_windows_icons(images: list[CyImage]) -> None:
-        raise NotImplementedError("set_windows_icons is not implemented yet, use set_window_icon")
-        #cdef int count = len(images)
+    def __cinit__(self, char* text, raymath.CyVector2 pos, int font_size, CyColor color):
         
-        # Allocate memory for an array of Image objects
-        #cdef Image* image_array = <Image*>malloc(count * sizeof(Image))
-        #if not image_array:
-        #    raise MemoryError("Failed to allocate memory for Image array")
-       # 
-        #try:
-        #    # Populate the Image array with CyImage _image attributes
-        #    for i in range(count):
-        #        image_array[i] = <Image>images[i]._image
-        #    
-        #    # Call the C function with the Image array
-        #    SetWindowIcons(image_array, count)
-       # 
-        #finally:
-        #    # Free the allocated memory
-        #    free(image_array)
+        self.text = <char*>malloc((len(text) + 1) * sizeof(char))
+        if self.text is NULL:
+            raise MemoryError("Failed to allocate memory for text")
 
-    @staticmethod
-    def set_window_title(title: str) -> None:
-        SetWindowTitle(str.encode(title))
-    
-    @staticmethod
-    def set_window_position(x: int, y: int) -> None:
-        SetWindowPosition(x, y)
-    
-    @staticmethod
-    def set_window_monitor(monitor: int) -> None:
-        SetWindowMonitor(monitor)
-    
-    @staticmethod
-    def set_window_min_size(width: int, height: int) -> None:
-        SetWindowMinSize(width, height)
-    
-    @staticmethod
-    def set_window_max_size(width: int, height: int) -> None:
-        SetWindowMaxSize(width, height)
-    
-    @staticmethod
-    def set_window_size(width: int, height: int) -> None:
-        SetWindowSize(width, height)
-    
-    @staticmethod
-    def set_window_opacity(opacity: float) -> None:
-        SetWindowOpacity(<float>opacity)
-    
-    @staticmethod
-    def set_window_focused() -> None:
-        SetWindowFocused()
+        strcpy(self.text, text)
 
-    @staticmethod
-    def get_window_handle() -> int:
-        return <long>GetWindowHandle()
+        self.pos = pos
+        self.font_size = font_size
+        self.color = color
 
-    @staticmethod
-    def get_screen_width() -> int:
-        return GetScreenWidth()
-    
-    @staticmethod
-    def get_screen_height() -> int:
-        return GetScreenHeight()
-    
-    @staticmethod
-    def get_render_width() -> int:
-        return GetRenderWidth()
-    
-    @staticmethod
-    def get_render_height() -> int:
-        return GetRenderHeight()
-    
-    @staticmethod
-    def get_monitor_count() -> int:
-        return GetMonitorCount()
+    def update_text(self, char* new_text) -> None:
+        # If new size > old size:
+        #   allocate 2^k mem that encapsulates the new string
+        #   free old mem
+        #   copy new string into new allocated mem
+        # else:
+        #   copy new text into current mem, end with null byte
+        ...
 
-    @staticmethod
-    def get_current_monitor() -> int:
-        return GetCurrentMonitor()
-    
-    @staticmethod
-    def get_monitor_position(int monitor) -> raymath.CyVector2:
-        cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
-        _vec._vector = GetMonitorPosition(monitor)
-        return _vec
+    def update_pos(self, raymath.CyVector2 pos) -> None:
+        self.pos.x = pos.x
+        self.pos.y = pos.y
+        
+    def draw(self) -> None:
+        DrawText(<const char*> self.text, <int>self.pos.x, <int>self.pos.y, self.font_size, self.color._color)
 
-    @staticmethod
-    def get_monitor_width(int monitor) -> int:
-        return GetMonitorWidth(monitor)
-    
-    @staticmethod
-    def get_monitor_height(int monitor) -> int:
-        return GetMonitorHeight(monitor)
+    def __dealloc__(self):
+        free(self.text)
 
-    @staticmethod
-    def get_monitor_physical_width(int monitor) -> int:
-        return GetMonitorPhysicalWidth(monitor)
-    
-    @staticmethod
-    def get_monitor_physical_height(int monitor) -> int:
-        return GetMonitorPhysicalHeight(monitor)      
+    #cdef void DrawText(const char *text, int posX, int posY, int fontSize, Color color)       # Draw text (using default font)
+    #cdef void DrawTextEx(Font font, const char *text, Vector2 position, float fontSize, float spacing, Color tint) # Draw text using font and additional parameters
+    #cdef void DrawTextPro(Font font, const char *text, Vector2 position, Vector2 origin, float rotation, float fontSize, float spacing, Color tint) # Draw text using Font and pro parameters (rotation)
+    #cdef void DrawTextCodepoint(Font font, int codepoint, Vector2 position, float fontSize, Color tint) # Draw one character (codepoint)
+    #cdef void DrawTextCodepoints(Font font, const int *codepoints, int codepointCount, Vector2 position, float fontSize, float spacing, Color tint) # Draw multiple character (codepoint)
+    #cdef void SetTextLineSpacing(int spacing)                                                 # Set vertical line spacing when drawing with line-breaks
+    #cdef int MeasureText(const char *text, int fontSize)                                      # Measure string width for default font
+    #cdef Vector2 MeasureTextEx(Font font, const char *text, float fontSize, float spacing)    # Measure string size for Font
+    #cdef char *LoadUTF8(const int *codepoints, int length)                # Load UTF-8 text encoded from codepoints array
+    #cdef void UnloadUTF8(char *text)                                      # Unload UTF-8 text encoded from codepoints array
+    #cdef int *LoadCodepoints(const char *text, int *count)                # Load all codepoints from a UTF-8 text string, codepoints count returned by parameter
+    #cdef void UnloadCodepoints(int *codepoints)                           # Unload codepoints data from memory
+    #cdef int GetCodepointCount(const char *text)                          # Get total number of codepoints in a UTF-8 encoded string
+    #cdef int GetCodepoint(const char *text, int *codepointSize)           # Get next codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
+    #cdef int GetCodepointNext(const char *text, int *codepointSize)       # Get next codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
+    #cdef int GetCodepointPrevious(const char *text, int *codepointSize)   # Get previous codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
+    #cdef const char *CodepointToUTF8(int codepoint, int *utf8Size)        # Encode one codepoint into UTF-8 byte array (array length returned as parameter)
 
-    @staticmethod
-    def get_monitor_refresh_rate(int monitor) -> int:
-        return GetMonitorRefreshRate(monitor)      
+    #cdef int TextCopy(char *dst, const char *src)                                             # Copy one string to another, returns bytes copied
+    #cdef bint TextIsEqual(const char *text1, const char *text2)                               # Check if two text string are equal
+    #cdef unsigned int TextLength(const char *text)                                            # Get text length, checks for '\0' ending
+    #cdef const char *TextFormat(const char *text, ...)                                        # Text formatting with variables (sprintf() style)
+    #cdef const char *TextSubtext(const char *text, int position, int length)                  # Get a piece of a text string
+    #cdef char *TextReplace(const char *text, const char *replace, const char *by)             # Replace text string (WARNING: memory must be freed!)
+    #cdef char *TextInsert(const char *text, const char *insert, int position)                 # Insert text in a position (WARNING: memory must be freed!)
+    #cdef const char *TextJoin(const char **textList, int count, const char *delimiter)        # Join text strings with delimiter
+    #cdef const char **TextSplit(const char *text, char delimiter, int *count)                 # Split text into multiple strings
+    #cdef void TextAppend(char *text, const char *append, int *position)                       # Append text at specific position and move cursor!
+    #cdef int TextFindIndex(const char *text, const char *find)                                # Find first text occurrence within a string
+    #cdef const char *TextToUpper(const char *text)                      # Get upper case version of provided string
+    #cdef const char *TextToLower(const char *text)                      # Get lower case version of provided string
+    #cdef const char *TextToPascal(const char *text)                     # Get Pascal case notation version of provided string
+    #cdef int TextToInteger(const char *text)                            # Get integer value from text (negative values not supported)
+    #cdef float TextToFloat(const char *text)                            # Get float value from text (negative values not supported)
 
-    @staticmethod
-    def get_window_position() -> raymath.CyVector2:
-        cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
-        _vec._vector = GetWindowPosition()
-        return _vec  
-    
-    @staticmethod
-    def get_window_scale_dpi() -> raymath.CyVector2:
-        cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
-        _vec._vector = GetWindowScaleDPI()
-        return _vec  
-
-    @staticmethod
-    def get_monitor_name(int monitor) -> bytes:
-        return GetMonitorName(monitor)   
-
-    @staticmethod
-    def set_clipboard_text(str text) -> None:
-        SetClipboardText(text)
-
-    @staticmethod
-    def get_clipboard_text() -> bytes:
-        return GetClipboardText()
-
-    @staticmethod
-    def enable_event_waiting() -> None:
-        EnableEventWaiting()
-
-    @staticmethod
-    def disable_event_waiting() -> None:
-        DisableEventWaiting()
-
-    @staticmethod
-    def show_cursor() -> None:
-        ShowCursor()
-    
-    @staticmethod
-    def hide_cursor() -> None:
-        HideCursor()
-    
-    @staticmethod
-    def is_cursor_hidden() -> bint:
-        return IsCursorHidden()
-    
-    @staticmethod
-    def enable_cursor() -> None:
-        EnableCursor()
-    
-    @staticmethod
-    def disable_cursor() -> None:
-        DisableCursor()
-
-    @staticmethod
-    def is_cursor_on_screen() -> bint:
-        return IsCursorOnScreen()                             
-
-    @staticmethod
-    def set_target_fps(int fps) -> None:
-        SetTargetFPS(fps)
-    
-    @staticmethod
-    def get_frame_time() -> float:
-        return GetFrameTime()
-    
-    @staticmethod
-    def get_time() -> float:
-        return GetTime()
-    
-    @staticmethod
-    def get_fps() -> int:
-        return GetFPS()
-
-    @staticmethod
-    def begin_drawing() -> None:
-        BeginDrawing()
-    
-    @staticmethod
-    def end_drawing() -> None:
-        EndDrawing()
-
-    @staticmethod
-    def begin_mode_2D(CyCamera2D camera) -> None:
-        BeginMode2D(camera._camera_2d)
-
-    @staticmethod
-    def end_mode_2d() -> None:
-        EndMode2D()
-
-    @staticmethod
-    def begin_mode_3d(CyCamera3D camera) -> None:
-        BeginMode3D(camera._camera_3d) 
-
-    @staticmethod
-    def end_mode_3d() -> None:
-        EndMode3D()
-
-    @staticmethod
-    def begin_texture_mode(CyRenderTexture2D target) -> None:
-        BeginTextureMode(target._render_texture) 
-                                        
-    @staticmethod
-    def end_texture_mode() -> None:
-        EndTextureMode()
-
-    @staticmethod
-    def begin_shader_mode(CyShader shader) -> None:
-        BeginShaderMode(shader._shader)
-
-    @staticmethod
-    def end_shader_mode() -> None:
-        EndShaderMode()
-
-    @staticmethod
-    def begin_blend_mode(int mode) -> None:
-        BeginBlendMode(mode)
-
-    @staticmethod
-    def end_blend_mode() -> None:
-        EndBlendMode()                            
-
-    @staticmethod
-    def begin_scissor_mode(int x, int y, int width, int height) -> None:
-        BeginScissorMode(x, y, width, height)
-    
-    @staticmethod
-    def end_scissor_mode() -> None:
-        EndScissorMode()
-
-    @staticmethod
-    def begin_vr_stereo_mode(CyVrStereoConfig config) -> None:
-        BeginVrStereoMode(config._vr_stereo_config)
-
-    @staticmethod
-    def end_vr_stereo_mode() -> None:
-        EndVrStereoMode()
-
-    
-# NAMESPACES                               
-cdef class World3D:
+cdef class CyLine3D:
     ...
+    #cdef void DrawLine3D(Vector3 startPos, Vector3 endPos, Color color)                                    # Draw a line in 3D world space
+
+cdef class CyPoint3D:
+    ...
+    #cdef void DrawPoint3D(Vector3 position, Color color)                                                   # Draw a point in 3D space, actually a small line
+
+cdef class CyCircle3D:
+    ...
+    #cdef void DrawCircle3D(Vector3 center, float radius, Vector3 rotationAxis, float rotationAngle, Color color) # Draw a circle in 3D world space
+
+cdef class CyTriangle3D:
+    ...
+    #cdef void DrawTriangle3D(Vector3 v1, Vector3 v2, Vector3 v3, Color color)                              # Draw a color-filled triangle (vertex in counter-clockwise order!)
+
+cdef class CyTriangleStrip3D:
+    ...
+    #cdef void DrawTriangleStrip3D(Vector3 *points, int pointCount, Color color)                            # Draw a triangle strip defined by points
+
+cdef class CyCube:
+    ...
+    #cdef void DrawCube(Vector3 position, float width, float height, float length, Color color)             # Draw cube
+    #cdef void DrawCubeV(Vector3 position, Vector3 size, Color color)                                       # Draw cube (Vector version)
+    #cdef void DrawCubeWires(Vector3 position, float width, float height, float length, Color color)        # Draw cube wires
+    #cdef void DrawCubeWiresV(Vector3 position, Vector3 size, Color color)                                  # Draw cube wires (Vector version)
+
+cdef class CySphere:
+    ...
+    #cdef void DrawSphere(Vector3 centerPos, float radius, Color color)                                     # Draw sphere
+    #cdef void DrawSphereEx(Vector3 centerPos, float radius, int rings, int slices, Color color)            # Draw sphere with extended parameters
+    #cdef void DrawSphereWires(Vector3 centerPos, float radius, int rings, int slices, Color color)         # Draw sphere wires
+    #cdef bint CheckCollisionSpheres(Vector3 center1, float radius1, Vector3 center2, float radius2)   # Check collision between two spheres
     
+cdef class CyCylinder:
+    ...
+    #cdef void DrawCylinder(Vector3 position, float radiusTop, float radiusBottom, float height, int slices, Color color) # Draw a cylinder/cone
+    #cdef void DrawCylinderEx(Vector3 startPos, Vector3 endPos, float startRadius, float endRadius, int sides, Color color) # Draw a cylinder with base at startPos and top at endPos
+    #cdef void DrawCylinderWires(Vector3 position, float radiusTop, float radiusBottom, float height, int slices, Color color) # Draw a cylinder/cone wires
+    #cdef void DrawCylinderWiresEx(Vector3 startPos, Vector3 endPos, float startRadius, float endRadius, int sides, Color color) # Draw a cylinder wires with base at startPos and top at endPos
+
+cdef class CyCapsule:
+    ...
+    #cdef void DrawCapsule(Vector3 startPos, Vector3 endPos, float radius, int slices, int rings, Color color) # Draw a capsule with the center of its sphere caps at startPos and endPos
+    #cdef void DrawCapsuleWires(Vector3 startPos, Vector3 endPos, float radius, int slices, int rings, Color color) # Draw capsule wireframe with the center of its sphere caps at startPos and endPos
     
-
-cdef class Screen:  
-    ...                              
-    #cdef void SwapScreenBuffer()                                
-    #cdef void PollInputEvents()                                 
-    #cdef void WaitTime(double seconds)                              
-    #cdef void TakeScreenshot(const char *fileName)                  
-    #cdef void SetConfigFlags(unsigned int flags) 
-
-cdef class Random:
+cdef class CyPlane:
     ...
-    #cdef void SetRandomSeed(unsigned int seed)                      
-    #cdef int GetRandomValue(int min, int max)                       
-    #cdef int *LoadRandomSequence(unsigned int count, int min, int max) 
-    #cdef void UnloadRandomSequence(int *sequence)                   
+    #cdef void DrawPlane(Vector3 centerPos, Vector2 size, Color color)                                      # Draw a plane XZ
 
-
-                       
-cdef class Log:
+cdef class CyGrid:
     ...
-    #cdef void TraceLog(int logLevel, const char *text, ...)         
-    #cdef void SetTraceLogLevel(int logLevel)
-
-cdef class Memory:  
-    ...                    
-    #cdef void *MemAlloc(unsigned int size)                          
-    #cdef void *MemRealloc(void *ptr, unsigned int size)             
-    #cdef void MemFree(void *ptr)                                    
-
-    
-
-cdef class Callback:
-    ...
-    #cdef void SetTraceLogCallback(TraceLogCallback callback)         
-    #cdef void SetLoadFileDataCallback(LoadFileDataCallback callback) 
-    #cdef void SetSaveFileDataCallback(SaveFileDataCallback callback) 
-    #cdef void SetLoadFileTextCallback(LoadFileTextCallback callback) 
-    #cdef void SetSaveFileTextCallback(SaveFileTextCallback callback) 
-
-cdef class OS: 
-    ...
-    #cdef unsigned char *LoadFileData(const char *fileName, int *dataSize) 
-    #cdef void UnloadFileData(unsigned char *data)                   
-    #cdef bint SaveFileData(const char *fileName, void *data, int dataSize) 
-    #cdef bint ExportDataAsCode(const unsigned char *data, int dataSize, const char *fileName) 
-    #cdef char *LoadFileText(const char *fileName)                   '\0' terminated string
-    #cdef void UnloadFileText(char *text)                            
-    #cdef bint SaveFileText(const char *fileName, char *text)        '\0' terminated, returns true on success
-    #cdef void OpenURL(const char *url)   
-    #cdef bint FileExists(const char *fileName)                      
-    #cdef bint DirectoryExists(const char *dirPath)                  
-    #cdef bint IsFileExtension(const char *fileName, const char *ext) 
-    #cdef int GetFileLength(const char *fileName)                    
-    #cdef const char *GetFileExtension(const char *fileName)         '.png')
-    #cdef const char *GetFileName(const char *filePath)              
-    #cdef const char *GetFileNameWithoutExt(const char *filePath)    
-    #cdef const char *GetDirectoryPath(const char *filePath)         
-    #cdef const char *GetPrevDirectoryPath(const char *dirPath)      
-    #cdef const char *GetWorkingDirectory()                      
-    #cdef const char *GetApplicationDirectory()                  
-    #cdef bint ChangeDirectory(const char *dir)                      
-    #cdef bint IsPathFile(const char *path)                          
-    #cdef FilePathList LoadDirectoryFiles(const char *dirPath)       
-    #cdef FilePathList LoadDirectoryFilesEx(const char *basePath, const char *filter, bint scanSubdirs) 
-    #cdef void UnloadDirectoryFiles(FilePathList files)              
-    #cdef bint IsFileDropped()                                   
-    #cdef FilePathList LoadDroppedFiles()                        
-    #cdef void UnloadDroppedFiles(FilePathList files)                
-    #cdef long GetFileModTime(const char *fileName)                  
-    #cdef unsigned char *CompressData(const unsigned char *data, int dataSize, int *compDataSize)        
-    #cdef unsigned char *DecompressData(const unsigned char *compData, int compDataSize, int *dataSize)  
-    #cdef char *EncodeDataBase64(const unsigned char *data, int dataSize, int *outputSize)               
-    #cdef unsigned char *DecodeDataBase64(const unsigned char *data, int *outputSize)                    
-
-    
-cdef class Event:
-    ...
-    #cdef AutomationEventList LoadAutomationEventList(const char *fileName)                = MAX_AUTOMATION_EVENTS
-    #cdef void UnloadAutomationEventList(AutomationEventList list)                        
-    #cdef bint ExportAutomationEventList(AutomationEventList list, const char *fileName)   
-    #cdef void SetAutomationEventList(AutomationEventList *list)                           
-    #cdef void SetAutomationEventBaseFrame(int frame)                                      
-    #cdef void StartAutomationEventRecording()                                         
-    #cdef void StopAutomationEventRecording()                                          
-    #cdef void PlayAutomationEvent(AutomationEvent event)                                  
-
-    
-    #------------------------------------------------------------------------------------
-    # Input Handling Functions (Module: core)
-    #------------------------------------------------------------------------------------
-
-cdef class Input:
-    ...
-    # Input-related functions: keyboard
-    #cdef bint IsKeyPressed(int key)                             # Check if a key has been pressed once
-    #cdef bint IsKeyPressedRepeat(int key)                       # Check if a key has been pressed again (Only PLATFORM_DESKTOP)
-    #cdef bint IsKeyDown(int key)                                # Check if a key is being pressed
-    #cdef bint IsKeyReleased(int key)                            # Check if a key has been released once
-    #cdef bint IsKeyUp(int key)                                  # Check if a key is NOT being pressed
-    #cdef int GetKeyPressed()                                # Get key pressed (keycode), call it multiple times for keys queued, returns 0 when the queue is empty
-    #cdef int GetCharPressed()                               # Get char pressed (unicode), call it multiple times for chars queued, returns 0 when the queue is empty
-    #cdef void SetExitKey(int key)                               # Set a custom key to exit program (default is ESC)
+    #cdef void DrawGrid(int slices, float spacing)                                                          # Draw a grid (centered at (0, 0, 0))
 #
-    ## Input-related functions: gamepads
-    #cdef bint IsGamepadAvailable(int gamepad)                   # Check if a gamepad is available
-    #cdef const char *GetGamepadName(int gamepad)                # Get gamepad internal name id
-    #cdef bint IsGamepadButtonPressed(int gamepad, int button)   # Check if a gamepad button has been pressed once
-    #cdef bint IsGamepadButtonDown(int gamepad, int button)      # Check if a gamepad button is being pressed
-    #cdef bint IsGamepadButtonReleased(int gamepad, int button)  # Check if a gamepad button has been released once
-    #cdef bint IsGamepadButtonUp(int gamepad, int button)        # Check if a gamepad button is NOT being pressed
-    #cdef int GetGamepadButtonPressed()                      # Get the last gamepad button pressed
-    #cdef int GetGamepadAxisCount(int gamepad)                   # Get gamepad axis count for a gamepad
-    #cdef float GetGamepadAxisMovement(int gamepad, int axis)    # Get axis movement value for a gamepad axis
-    #cdef int SetGamepadMappings(const char *mappings)           # Set internal gamepad mappings (SDL_GameControllerDB)
+
+cdef class CyAudioDeviceManager:
+    ...
 #
-    ## Input-related functions: mouse
-    #cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
-    #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
-    #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
-    #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
-    #cdef int GetMouseX()                                    # Get mouse position X
-    @staticmethod
-    def get_mouse_x() -> int:
-        return GetMouseX()
+    #cdef void InitAudioDevice()                                     # Initialize audio device and context
+    #cdef void CloseAudioDevice()                                    # Close the audio device and context
+    #cdef bint IsAudioDeviceReady()                                  # Check if audio device has been initialized successfully
+    #cdef void SetMasterVolume(float volume)                             # Set master volume (listener)
+    #cdef float GetMasterVolume()                                    # Get master volume (listener)
+#   
+    
 
-    #cdef int GetMouseY()                                    # Get mouse position Y
-    @staticmethod
-    def get_mouse_y() -> int:
-        return GetMouseY()
+    
 
-    #cdef Vector2 GetMousePosition()                         # Get mouse position XY
-    @staticmethod
-    def get_mouse_position() -> raymath.CyVector2:
-        cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
-        vec._vector = GetMousePosition()
-        return vec
-    
-    #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
-    @staticmethod
-    def get_mouse_delta() -> raymath.CyVector2:
-        cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
-        vec._vector = GetMouseDelta()
-        return vec
-    
-    #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
-    @staticmethod
-    def set_mouse_position(int x, int y) -> None:
-        SetMousePosition(x, y)
-    
-    #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
-    @staticmethod
-    def set_mouse_offset(int offset_x, int offset_y) -> None:
-        SetMouseOffset(offset_x, offset_y)
 
-    #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
-    @staticmethod
-    def set_mouse_scale(float scale_x, float scale_y) -> None:
-        SetMouseScale(scale_x, scale_y)
+
+
+
+
+
+
+  
+def init_window(width: int, height: int, title: str) -> None:
+    InitWindow(width, height, str.encode(title))
+
+def close_window() -> None:
+    CloseWindow()
+
+def window_should_close() -> bool:
+    return WindowShouldClose()
+
+def is_window_ready() -> bool:
+    return IsWindowReady() 
+
+def is_window_fullscreen() -> bool:
+    return IsWindowFullscreen()
+
+def is_window_hidden() -> bool:
+    return IsWindowHidden()    
+
+def is_window_minimized() -> bool:
+    return IsWindowMinimized()
+
+def is_window_maximized() -> bool:
+    return IsWindowMaximized()
+
+def is_window_focused() -> bool:
+    return IsWindowFocused()
+
+def is_window_resized() -> bool:
+    return IsWindowResized()
+
+def is_window_state(flag: int) -> bool:
+    return IsWindowState(flag)
+
+def set_window_state(flags: int) -> None:
+    SetWindowState(flags)
+
+def clear_window_state(flags: int) -> None:
+    ClearWindowState(flags)
+
+def toggle_fullscreen() -> None:
+    ToggleFullscreen()
+
+def toggle_borderless_window() -> None:
+    ToggleBorderlessWindowed()
+
+def maximize_window() -> None:
+    MaximizeWindow()
+
+def minimize_window() -> None:
+    MinimizeWindow()
+
+def restore_window() -> None:
+    RestoreWindow()
+
+def set_window_icon(image: CyImage) -> None:
+    SetWindowIcon(image._image)
+
+def set_windows_icons(images: list[CyImage]) -> None:
+    raise NotImplementedError("set_windows_icons is not implemented yet, use set_window_icon")
+    #cdef int count = len(images)
     
-    #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
-    @staticmethod
-    def get_mouse_wheel_move() -> float:
-        return GetMouseWheelMove()
-    
-    #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
-    @staticmethod
-    def get_mouse_wheel_move_vector() -> raymath.CyVector2:
-        cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
-        vec._vector = GetMouseWheelMoveV()
-        return vec
-    
-    #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
-    @staticmethod
-    def set_mouse_cursor(int cursor) -> None:
-        SetMouseCursor(cursor)
+    # Allocate memory for an array of Image objects
+    #cdef Image* image_array = <Image*>malloc(count * sizeof(Image))
+    #if not image_array:
+    #    raise MemoryError("Failed to allocate memory for Image array")
+    # 
+    #try:
+    #    # Populate the Image array with CyImage _image attributes
+    #    for i in range(count):
+    #        image_array[i] = <Image>images[i]._image
+    #    
+    #    # Call the C function with the Image array
+    #    SetWindowIcons(image_array, count)
+    # 
+    #finally:
+    #    # Free the allocated memory
+    #    free(image_array)
+
+def set_window_title(title: str) -> None:
+    SetWindowTitle(str.encode(title))
+
+def set_window_position(x: int, y: int) -> None:
+    SetWindowPosition(x, y)
+
+def set_window_monitor(monitor: int) -> None:
+    SetWindowMonitor(monitor)
+
+def set_window_min_size(width: int, height: int) -> None:
+    SetWindowMinSize(width, height)
+
+def set_window_max_size(width: int, height: int) -> None:
+    SetWindowMaxSize(width, height)
+
+def set_window_size(width: int, height: int) -> None:
+    SetWindowSize(width, height)
+
+def set_window_opacity(opacity: float) -> None:
+    SetWindowOpacity(<float>opacity)
+
+def set_window_focused() -> None:
+    SetWindowFocused()
+
+def get_window_handle() -> int:
+    return <long>GetWindowHandle()
+
+def get_screen_width() -> int:
+    return GetScreenWidth()
+
+def get_screen_height() -> int:
+    return GetScreenHeight()
+
+def get_render_width() -> int:
+    return GetRenderWidth()
+
+def get_render_height() -> int:
+    return GetRenderHeight()
+
+def get_monitor_count() -> int:
+    return GetMonitorCount()
+
+def get_current_monitor() -> int:
+    return GetCurrentMonitor()
+
+def get_monitor_position(int monitor) -> raymath.CyVector2:
+    cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
+    _vec._vector = GetMonitorPosition(monitor)
+    return _vec
+
+def get_monitor_width(int monitor) -> int:
+    return GetMonitorWidth(monitor)
+
+def get_monitor_height(int monitor) -> int:
+    return GetMonitorHeight(monitor)
+
+def get_monitor_physical_width(int monitor) -> int:
+    return GetMonitorPhysicalWidth(monitor)
+
+def get_monitor_physical_height(int monitor) -> int:
+    return GetMonitorPhysicalHeight(monitor)      
+
+def get_monitor_refresh_rate(int monitor) -> int:
+    return GetMonitorRefreshRate(monitor)      
+
+def get_window_position() -> raymath.CyVector2:
+    cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
+    _vec._vector = GetWindowPosition()
+    return _vec  
+
+def get_window_scale_dpi() -> raymath.CyVector2:
+    cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
+    _vec._vector = GetWindowScaleDPI()
+    return _vec  
+
+def get_monitor_name(int monitor) -> bytes:
+    return GetMonitorName(monitor)   
+
+def set_clipboard_text(str text) -> None:
+    SetClipboardText(text)
+
+def get_clipboard_text() -> bytes:
+    return GetClipboardText()
+
+def enable_event_waiting() -> None:
+    EnableEventWaiting()
+
+def disable_event_waiting() -> None:
+    DisableEventWaiting()
+
+def show_cursor() -> None:
+    ShowCursor()
+
+def hide_cursor() -> None:
+    HideCursor()
+
+def is_cursor_hidden() -> bint:
+    return IsCursorHidden()
+
+def enable_cursor() -> None:
+    EnableCursor()
+
+def disable_cursor() -> None:
+    DisableCursor()
+
+def is_cursor_on_screen() -> bint:
+    return IsCursorOnScreen()                             
+
+def set_target_fps(int fps) -> None:
+    SetTargetFPS(fps)
+
+def get_delta_time() -> float:
+    return GetFrameTime()
+
+def get_frame_time() -> float:
+    return GetFrameTime()
+
+def get_time() -> float:
+    return GetTime()
+
+def get_fps() -> int:
+    return GetFPS()
+
+def begin_drawing() -> None:
+    BeginDrawing()
+
+def end_drawing() -> None:
+    EndDrawing()
+
+def begin_mode_2D(CyCamera2D camera) -> None:
+    BeginMode2D(camera._camera_2d)
+
+def end_mode_2d() -> None:
+    EndMode2D()
+
+def begin_mode_3d(CyCamera3D camera) -> None:
+    BeginMode3D(camera._camera_3d) 
+
+def end_mode_3d() -> None:
+    EndMode3D()
+
+def begin_texture_mode(CyRenderTexture2D target) -> None:
+    BeginTextureMode(target._render_texture) 
+                                    
+def end_texture_mode() -> None:
+    EndTextureMode()
+
+def begin_shader_mode(CyShader shader) -> None:
+    BeginShaderMode(shader._shader)
+
+def end_shader_mode() -> None:
+    EndShaderMode()
+
+def begin_blend_mode(int mode) -> None:
+    BeginBlendMode(mode)
+
+def end_blend_mode() -> None:
+    EndBlendMode()                            
+
+def begin_scissor_mode(int x, int y, int width, int height) -> None:
+    BeginScissorMode(x, y, width, height)
+
+def end_scissor_mode() -> None:
+    EndScissorMode()
+
+def begin_vr_stereo_mode(CyVrStereoConfig config) -> None:
+    BeginVrStereoMode(config._vr_stereo_config)
+
+def end_vr_stereo_mode() -> None:
+    EndVrStereoMode()
+#cdef void SwapScreenBuffer()                                
+#cdef void PollInputEvents()                                 
+#cdef void WaitTime(double seconds)                              
+#cdef void TakeScreenshot(const char *fileName)                  
+#cdef void SetConfigFlags(unsigned int flags) 
+
+#cdef void SetRandomSeed(unsigned int seed)                      
+#cdef int GetRandomValue(int min, int max)                       
+#cdef int *LoadRandomSequence(unsigned int count, int min, int max) 
+#cdef void UnloadRandomSequence(int *sequence)                   
+
+                    
+#cdef void TraceLog(int logLevel, const char *text, ...)         
+#cdef void SetTraceLogLevel(int logLevel)
+                            
+#cdef void SetTraceLogCallback(TraceLogCallback callback)         
+#cdef void SetLoadFileDataCallback(LoadFileDataCallback callback) 
+#cdef void SetSaveFileDataCallback(SaveFileDataCallback callback) 
+#cdef void SetLoadFileTextCallback(LoadFileTextCallback callback) 
+#cdef void SetSaveFileTextCallback(SaveFileTextCallback callback) 
+#cdef unsigned char *LoadFileData(const char *fileName, int *dataSize) 
+#cdef void UnloadFileData(unsigned char *data)                   
+#cdef bint SaveFileData(const char *fileName, void *data, int dataSize) 
+#cdef bint ExportDataAsCode(const unsigned char *data, int dataSize, const char *fileName) 
+#cdef char *LoadFileText(const char *fileName)                   '\0' terminated string
+#cdef void UnloadFileText(char *text)                            
+#cdef bint SaveFileText(const char *fileName, char *text)        '\0' terminated, returns true on success
+#cdef void OpenURL(const char *url)   
+#cdef bint FileExists(const char *fileName)                      
+#cdef bint DirectoryExists(const char *dirPath)                  
+#cdef bint IsFileExtension(const char *fileName, const char *ext) 
+#cdef int GetFileLength(const char *fileName)                    
+#cdef const char *GetFileExtension(const char *fileName)         '.png')
+#cdef const char *GetFileName(const char *filePath)              
+#cdef const char *GetFileNameWithoutExt(const char *filePath)    
+#cdef const char *GetDirectoryPath(const char *filePath)         
+#cdef const char *GetPrevDirectoryPath(const char *dirPath)      
+#cdef const char *GetWorkingDirectory()                      
+#cdef const char *GetApplicationDirectory()                  
+#cdef bint ChangeDirectory(const char *dir)                      
+#cdef bint IsPathFile(const char *path)                          
+#cdef FilePathList LoadDirectoryFiles(const char *dirPath)       
+#cdef FilePathList LoadDirectoryFilesEx(const char *basePath, const char *filter, bint scanSubdirs) 
+#cdef void UnloadDirectoryFiles(FilePathList files)              
+#cdef bint IsFileDropped()                                   
+#cdef FilePathList LoadDroppedFiles()                        
+#cdef void UnloadDroppedFiles(FilePathList files)                
+#cdef long GetFileModTime(const char *fileName)                  
+#cdef unsigned char *CompressData(const unsigned char *data, int dataSize, int *compDataSize)        
+#cdef unsigned char *DecompressData(const unsigned char *compData, int compDataSize, int *dataSize)  
+#cdef char *EncodeDataBase64(const unsigned char *data, int dataSize, int *outputSize)               
+#cdef unsigned char *DecodeDataBase64(const unsigned char *data, int *outputSize)                    
+
+#cdef AutomationEventList LoadAutomationEventList(const char *fileName)                = MAX_AUTOMATION_EVENTS
+#cdef void UnloadAutomationEventList(AutomationEventList list)                        
+#cdef bint ExportAutomationEventList(AutomationEventList list, const char *fileName)   
+#cdef void SetAutomationEventList(AutomationEventList *list)                           
+#cdef void SetAutomationEventBaseFrame(int frame)                                      
+#cdef void StartAutomationEventRecording()                                         
+#cdef void StopAutomationEventRecording()                                          
+#cdef void PlayAutomationEvent(AutomationEvent event)                                  
+
+
+
+#cdef bint IsKeyPressed(int key)                             # Check if a key has been pressed once
+#cdef bint IsKeyPressedRepeat(int key)                       # Check if a key has been pressed again (Only PLATFORM_DESKTOP)
+#cdef bint IsKeyDown(int key)                                # Check if a key is being pressed
+#cdef bint IsKeyReleased(int key)                            # Check if a key has been released once
+#cdef bint IsKeyUp(int key)                                  # Check if a key is NOT being pressed
+#cdef int GetKeyPressed()                                # Get key pressed (keycode), call it multiple times for keys queued, returns 0 when the queue is empty
+#cdef int GetCharPressed()                               # Get char pressed (unicode), call it multiple times for chars queued, returns 0 when the queue is empty
+#cdef void SetExitKey(int key)                               # Set a custom key to exit program (default is ESC)
 #
-    ## Input-related functions: touch
-    #cdef int GetTouchX()                                    # Get touch position X for touch point 0 (relative to screen size)
+## Input-related functions: gamepads
+#cdef bint IsGamepadAvailable(int gamepad)                   # Check if a gamepad is available
+#cdef const char *GetGamepadName(int gamepad)                # Get gamepad internal name id
+#cdef bint IsGamepadButtonPressed(int gamepad, int button)   # Check if a gamepad button has been pressed once
+#cdef bint IsGamepadButtonDown(int gamepad, int button)      # Check if a gamepad button is being pressed
+#cdef bint IsGamepadButtonReleased(int gamepad, int button)  # Check if a gamepad button has been released once
+#cdef bint IsGamepadButtonUp(int gamepad, int button)        # Check if a gamepad button is NOT being pressed
+#cdef int GetGamepadButtonPressed()                      # Get the last gamepad button pressed
+#cdef int GetGamepadAxisCount(int gamepad)                   # Get gamepad axis count for a gamepad
+#cdef float GetGamepadAxisMovement(int gamepad, int axis)    # Get axis movement value for a gamepad axis
+#cdef int SetGamepadMappings(const char *mappings)           # Set internal gamepad mappings (SDL_GameControllerDB)
+#
+## Input-related functions: mouse
+#cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
+#cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
+#cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
+#cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
+
+#cdef int GetMouseX()                                    # Get mouse position X
+
+def get_mouse_x() -> int:
+    return GetMouseX()
+
+#cdef int GetMouseY()                                    # Get mouse position Y
+def get_mouse_y() -> int:
+    return GetMouseY()
+
+#cdef Vector2 GetMousePosition()                         # Get mouse position XY
+def get_mouse_position() -> raymath.CyVector2:
+    cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+    vec._vector = GetMousePosition()
+    return vec
+
+#cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
+def get_mouse_delta() -> raymath.CyVector2:
+    cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+    vec._vector = GetMouseDelta()
+    return vec
+#cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
+def set_mouse_position(int x, int y) -> None:
+    SetMousePosition(x, y)
+
+#cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
+def set_mouse_offset(int offset_x, int offset_y) -> None:
+    SetMouseOffset(offset_x, offset_y)
+
+#cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
+def set_mouse_scale(float scale_x, float scale_y) -> None:
+    SetMouseScale(scale_x, scale_y)
+
+#cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
+def get_mouse_wheel_move() -> float:
+    return GetMouseWheelMove()
+
+#cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
+def get_mouse_wheel_move_vector() -> raymath.CyVector2:
+    cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+    vec._vector = GetMouseWheelMoveV()
+    return vec
+
+#cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
+def set_mouse_cursor(int cursor) -> None:
+    SetMouseCursor(cursor)
+
+#cdef int GetTouchX()                                    # Get touch position X for touch point 0 (relative to screen size)
+def get_touch_x() -> int:
+    return GetTouchX()
     #cdef int GetTouchY()                                    # Get touch position Y for touch point 0 (relative to screen size)
     #cdef Vector2 GetTouchPosition(int index)                    # Get touch position XY for a touch point index (relative to screen size)
     #cdef int GetTouchPointId(int index)                         # Get touch point identifier for given index
@@ -1504,232 +1688,10 @@ cdef class Input:
     ## Set texture and rectangle to be used on shapes drawing
     ## NOTE: It can be useful when using basic shapes and one single font,
     ## defining a font char white rectangle would allow drawing everything in a single draw call
-    #cdef void SetShapesTexture(Texture2D texture, Rectangle source)       # Set texture and rectangle to be used on shapes drawing
-    #cdef Texture2D GetShapesTexture()                                 # Get texture that is used for shapes drawing
-    #cdef Rectangle GetShapesTextureRectangle()                        # Get texture source rectangle that is used for shapes drawing
-#
-
-cdef class Drawing:
     
-    @staticmethod
-    def clear_background(CyColor color) -> None:
-        ClearBackground(color._color)
-    
-    #cdef void DrawPixel(int posX, int posY, Color color) 
-    @staticmethod                                                  # Draw a pixel
-    def draw_pixel(int pos_x, int pos_y, CyColor color) -> None:
-        DrawPixel(pos_x, pos_y, color._color)
-    
-    #cdef void DrawPixelV(Vector2 position, Color color)
-    @staticmethod
-    def draw_pixel_vector(raymath.CyVector2 position, CyColor color):
-        DrawPixelV(position._vector, color._color)                                                    # Draw a pixel (Vector version)
-    
-    #cdef void DrawLine(int startPosX, int startPosY, int endPosX, int endPosY, Color color)                # Draw a line
-    @staticmethod
-    def draw_line(int start_pos_x, int start_pos_y, int end_pos_x, int end_pos_y, CyColor color):
-        DrawLine(start_pos_x, start_pos_y, end_pos_x, end_pos_y, color._color)
-    
-    #cdef void DrawLineV(Vector2 startPos, Vector2 endPos, Color color)                                     # Draw a line (using gl lines)
-    @staticmethod
-    def draw_line_vector(raymath.CyVector2 start_pos, raymath.CyVector2 end_pos, CyColor color):
-        DrawLineV(start_pos._vector, end_pos._vector, color._color)
-    
-    #cdef void DrawLineEx(Vector2 startPos, Vector2 endPos, float thick, Color color)                      # Draw a line (using triangles/quads)
-    @staticmethod
-    def draw_line_ex(raymath.CyVector2 start_pos, raymath.CyVector2 end_pos, float thickness, CyColor color):
-        DrawLineEx(start_pos._vector, end_pos._vector, thickness, color._color)
-    
-    #cdef void DrawLineStrip(Vector2 *points, int pointCount, Color color)                                  # Draw lines sequence (using gl lines)
-    @staticmethod
-    def draw_line_strip(raymath.CyVector2[::1] points, CyColor color):
-        Drawing.c_draw_line_strip(points, color)
 
-    @staticmethod
-    cdef void c_draw_line_strip(raymath.CyVector2[::1] points, CyColor color):
-        # Create a C array to hold the data in a contiguous block of memory
-        cdef Vector2 *c_points = <Vector2*> malloc(len(points) * sizeof(Vector2))
+def clear_background(CyColor color) -> None:
+    ClearBackground(color._color)
 
-        # Copy data from Python objects to C array
-        for i in range(len(points)):
-            c_points[i] = points[i]._vector
-
-        # Call the C function
-        DrawLineStrip(c_points, len(points), color._color)
-
-        # Free the allocated memory
-        free(c_points)
-
-    #cdef void DrawLineBezier(Vector2 startPos, Vector2 endPos, float thick, Color color)                   # Draw line segment cubic-bezier in-out interpolation
-    #cdef void DrawCircle(int centerX, int centerY, float radius, Color color)                              # Draw a color-filled circle
-    #cdef void DrawCircleSector(Vector2 center, float radius, float startAngle, float endAngle, int segments, Color color)      # Draw a piece of a circle
-    #cdef void DrawCircleSectorLines(Vector2 center, float radius, float startAngle, float endAngle, int segments, Color color) # Draw circle sector outline
-    #cdef void DrawCircleGradient(int centerX, int centerY, float radius, Color color1, Color color2)       # Draw a gradient-filled circle
-    #cdef void DrawCircleV(Vector2 center, float radius, Color color)                                       # Draw a color-filled circle (Vector version)
-    #cdef void DrawCircleLines(int centerX, int centerY, float radius, Color color)                         # Draw circle outline
-    #cdef void DrawCircleLinesV(Vector2 center, float radius, Color color)                                  # Draw circle outline (Vector version)
-    #cdef void DrawEllipse(int centerX, int centerY, float radiusH, float radiusV, Color color)             # Draw ellipse
-    #cdef void DrawEllipseLines(int centerX, int centerY, float radiusH, float radiusV, Color color)        # Draw ellipse outline
-    #cdef void DrawRing(Vector2 center, float innerRadius, float outerRadius, float startAngle, float endAngle, int segments, Color color) # Draw ring
-    #cdef void DrawRingLines(Vector2 center, float innerRadius, float outerRadius, float startAngle, float endAngle, int segments, Color color)    # Draw ring outline
-    #cdef void DrawRectangle(int posX, int posY, int width, int height, Color color)                        # Draw a color-filled rectangle
-    #cdef void DrawRectangleV(Vector2 position, Vector2 size, Color color)                                  # Draw a color-filled rectangle (Vector version)
-    #cdef void DrawRectangleRec(Rectangle rec, Color color)                                                 # Draw a color-filled rectangle
-    #cdef void DrawRectanglePro(Rectangle rec, Vector2 origin, float rotation, Color color)                 # Draw a color-filled rectangle with pro parameters
-    #cdef void DrawRectangleGradientV(int posX, int posY, int width, int height, Color color1, Color color2)# Draw a vertical-gradient-filled rectangle
-    #cdef void DrawRectangleGradientH(int posX, int posY, int width, int height, Color color1, Color color2)# Draw a horizontal-gradient-filled rectangle
-    #cdef void DrawRectangleGradientEx(Rectangle rec, Color col1, Color col2, Color col3, Color col4)       # Draw a gradient-filled rectangle with custom vertex colors
-    #cdef void DrawRectangleLines(int posX, int posY, int width, int height, Color color)                   # Draw rectangle outline
-    #cdef void DrawRectangleLinesEx(Rectangle rec, float lineThick, Color color)                            # Draw rectangle outline with extended parameters
-    #cdef void DrawRectangleRounded(Rectangle rec, float roundness, int segments, Color color)              # Draw rectangle with rounded edges
-    #cdef void DrawRectangleRoundedLines(Rectangle rec, float roundness, int segments, float lineThick, Color color) # Draw rectangle with rounded edges outline
-    #cdef void DrawTriangle(Vector2 v1, Vector2 v2, Vector2 v3, Color color)                                # Draw a color-filled triangle (vertex in counter-clockwise order!)
-    #cdef void DrawTriangleLines(Vector2 v1, Vector2 v2, Vector2 v3, Color color)                           # Draw triangle outline (vertex in counter-clockwise order!)
-    #cdef void DrawTriangleFan(Vector2 *points, int pointCount, Color color)                                # Draw a triangle fan defined by points (first vertex is the center)
-    #cdef void DrawTriangleStrip(Vector2 *points, int pointCount, Color color)                              # Draw a triangle strip defined by points
-    #cdef void DrawPoly(Vector2 center, int sides, float radius, float rotation, Color color)               # Draw a regular polygon (Vector version)
-    #cdef void DrawPolyLines(Vector2 center, int sides, float radius, float rotation, Color color)          # Draw a polygon outline of n sides
-    #cdef void DrawPolyLinesEx(Vector2 center, int sides, float radius, float rotation, float lineThick, Color color) # Draw a polygon outline of n sides with extended parameters
-#
-    ## Splines drawing functions
-    #cdef void DrawSplineLinear(Vector2 *points, int pointCount, float thick, Color color)                  # Draw spline: Linear, minimum 2 points
-    #cdef void DrawSplineBasis(Vector2 *points, int pointCount, float thick, Color color)                   # Draw spline: B-Spline, minimum 4 points
-    #cdef void DrawSplineCatmullRom(Vector2 *points, int pointCount, float thick, Color color)              # Draw spline: Catmull-Rom, minimum 4 points
-    #cdef void DrawSplineBezierQuadratic(Vector2 *points, int pointCount, float thick, Color color)         # Draw spline: Quadratic Bezier, minimum 3 points (1 control point): [p1, c2, p3, c4...]
-    #cdef void DrawSplineBezierCubic(Vector2 *points, int pointCount, float thick, Color color)             # Draw spline: Cubic Bezier, minimum 4 points (2 control points): [p1, c2, c3, p4, c5, c6...]
-    #cdef void DrawSplineSegmentLinear(Vector2 p1, Vector2 p2, float thick, Color color)                    # Draw spline segment: Linear, 2 points
-    #cdef void DrawSplineSegmentBasis(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float thick, Color color) # Draw spline segment: B-Spline, 4 points
-    #cdef void DrawSplineSegmentCatmullRom(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float thick, Color color) # Draw spline segment: Catmull-Rom, 4 points
-    #cdef void DrawSplineSegmentBezierQuadratic(Vector2 p1, Vector2 c2, Vector2 p3, float thick, Color color) # Draw spline segment: Quadratic Bezier, 2 points, 1 control point
-    #cdef void DrawSplineSegmentBezierCubic(Vector2 p1, Vector2 c2, Vector2 c3, Vector2 p4, float thick, Color color) # Draw spline segment: Cubic Bezier, 2 points, 2 control points
-#
-
-    ## Text drawing functions
-    #cdef void DrawFPS(int posX, int posY)                                                     # Draw current FPS
-    #cdef void DrawText(const char *text, int posX, int posY, int fontSize, Color color)       # Draw text (using default font)
-    #cdef void DrawTextEx(Font font, const char *text, Vector2 position, float fontSize, float spacing, Color tint) # Draw text using font and additional parameters
-    #cdef void DrawTextPro(Font font, const char *text, Vector2 position, Vector2 origin, float rotation, float fontSize, float spacing, Color tint) # Draw text using Font and pro parameters (rotation)
-    #cdef void DrawTextCodepoint(Font font, int codepoint, Vector2 position, float fontSize, Color tint) # Draw one character (codepoint)
-    #cdef void DrawTextCodepoints(Font font, const int *codepoints, int codepointCount, Vector2 position, float fontSize, float spacing, Color tint) # Draw multiple character (codepoint)
-#
-#
-    ## Basic geometric 3D shapes drawing functions
-    #cdef void DrawLine3D(Vector3 startPos, Vector3 endPos, Color color)                                    # Draw a line in 3D world space
-    #cdef void DrawPoint3D(Vector3 position, Color color)                                                   # Draw a point in 3D space, actually a small line
-    #cdef void DrawCircle3D(Vector3 center, float radius, Vector3 rotationAxis, float rotationAngle, Color color) # Draw a circle in 3D world space
-    #cdef void DrawTriangle3D(Vector3 v1, Vector3 v2, Vector3 v3, Color color)                              # Draw a color-filled triangle (vertex in counter-clockwise order!)
-    #cdef void DrawTriangleStrip3D(Vector3 *points, int pointCount, Color color)                            # Draw a triangle strip defined by points
-    #cdef void DrawCube(Vector3 position, float width, float height, float length, Color color)             # Draw cube
-    #cdef void DrawCubeV(Vector3 position, Vector3 size, Color color)                                       # Draw cube (Vector version)
-    #cdef void DrawCubeWires(Vector3 position, float width, float height, float length, Color color)        # Draw cube wires
-    #cdef void DrawCubeWiresV(Vector3 position, Vector3 size, Color color)                                  # Draw cube wires (Vector version)
-    #cdef void DrawSphere(Vector3 centerPos, float radius, Color color)                                     # Draw sphere
-    #cdef void DrawSphereEx(Vector3 centerPos, float radius, int rings, int slices, Color color)            # Draw sphere with extended parameters
-    #cdef void DrawSphereWires(Vector3 centerPos, float radius, int rings, int slices, Color color)         # Draw sphere wires
-    #cdef void DrawCylinder(Vector3 position, float radiusTop, float radiusBottom, float height, int slices, Color color) # Draw a cylinder/cone
-    #cdef void DrawCylinderEx(Vector3 startPos, Vector3 endPos, float startRadius, float endRadius, int sides, Color color) # Draw a cylinder with base at startPos and top at endPos
-    #cdef void DrawCylinderWires(Vector3 position, float radiusTop, float radiusBottom, float height, int slices, Color color) # Draw a cylinder/cone wires
-    #cdef void DrawCylinderWiresEx(Vector3 startPos, Vector3 endPos, float startRadius, float endRadius, int sides, Color color) # Draw a cylinder wires with base at startPos and top at endPos
-    #cdef void DrawCapsule(Vector3 startPos, Vector3 endPos, float radius, int slices, int rings, Color color) # Draw a capsule with the center of its sphere caps at startPos and endPos
-    #cdef void DrawCapsuleWires(Vector3 startPos, Vector3 endPos, float radius, int slices, int rings, Color color) # Draw capsule wireframe with the center of its sphere caps at startPos and endPos
-    #cdef void DrawPlane(Vector3 centerPos, Vector2 size, Color color)                                      # Draw a plane XZ
-    #cdef void DrawRay(Ray ray, Color color)                                                                # Draw a ray line
-    #cdef void DrawGrid(int slices, float spacing)                                                          # Draw a grid (centered at (0, 0, 0))
-#
-      ## Model drawing functions
-    #cdef void DrawModel(Model model, Vector3 position, float scale, Color tint)               # Draw a model (with texture if set)
-    #cdef void DrawModelEx(Model model, Vector3 position, Vector3 rotationAxis, float rotationAngle, Vector3 scale, Color tint) # Draw a model with extended parameters
-    #cdef void DrawModelWires(Model model, Vector3 position, float scale, Color tint)          # Draw a model wires (with texture if set)
-    #cdef void DrawModelWiresEx(Model model, Vector3 position, Vector3 rotationAxis, float rotationAngle, Vector3 scale, Color tint) # Draw a model wires (with texture if set) with extended parameters
-    #cdef void DrawBoundingBox(BoundingBox box, Color color)                                   # Draw bounding box (wires)
-    #cdef void DrawBillboard(Camera camera, Texture2D texture, Vector3 position, float size, Color tint)   # Draw a billboard texture
-    #cdef void DrawBillboardRec(Camera camera, Texture2D texture, Rectangle source, Vector3 position, Vector2 size, Color tint) # Draw a billboard texture defined by source
-    #cdef void DrawBillboardPro(Camera camera, Texture2D texture, Rectangle source, Vector3 position, Vector3 up, Vector2 size, Vector2 origin, float rotation, Color tint) # Draw a billboard texture defined by source and rotation
-#
-
-cdef class Geometry2D:
-    ...
-    ## Spline segment point evaluation functions, for a given t [0.0f .. 1.0f]
-    #cdef Vector2 GetSplinePointLinear(Vector2 startPos, Vector2 endPos, float t)                           # Get (evaluate) spline point: Linear
-    #cdef Vector2 GetSplinePointBasis(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float t)              # Get (evaluate) spline point: B-Spline
-    #cdef Vector2 GetSplinePointCatmullRom(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float t)         # Get (evaluate) spline point: Catmull-Rom
-    #cdef Vector2 GetSplinePointBezierQuad(Vector2 p1, Vector2 c2, Vector2 p3, float t)                     # Get (evaluate) spline point: Quadratic Bezier
-    #cdef Vector2 GetSplinePointBezierCubic(Vector2 p1, Vector2 c2, Vector2 c3, Vector2 p4, float t)        # Get (evaluate) spline point: Cubic Bezier
-#
-    ## Basic shapes collision detection functions
-    #cdef bint CheckCollisionRecs(Rectangle rec1, Rectangle rec2)                                           # Check collision between two rectangles
-    #cdef bint CheckCollisionCircles(Vector2 center1, float radius1, Vector2 center2, float radius2)        # Check collision between two circles
-    #cdef bint CheckCollisionCircleRec(Vector2 center, float radius, Rectangle rec)                         # Check collision between circle and rectangle
-    #cdef bint CheckCollisionPointRec(Vector2 point, Rectangle rec)                                         # Check if point is inside rectangle
-    #cdef bint CheckCollisionPointCircle(Vector2 point, Vector2 center, float radius)                       # Check if point is inside circle
-    #cdef bint CheckCollisionPointTriangle(Vector2 point, Vector2 p1, Vector2 p2, Vector2 p3)               # Check if point is inside a triangle
-    #cdef bint CheckCollisionPointPoly(Vector2 point, Vector2 *points, int pointCount)                      # Check if point is within a polygon described by array of vertices
-    #cdef bint CheckCollisionLines(Vector2 startPos1, Vector2 endPos1, Vector2 startPos2, Vector2 endPos2, Vector2 *collisionPoint) # Check the collision between two lines defined by two points each, returns collision point by reference
-    #cdef bint CheckCollisionPointLine(Vector2 point, Vector2 p1, Vector2 p2, int threshold)                # Check if point belongs to line created between two points [p1] and [p2] with defined margin in pixels [threshold]
-    #cdef Rectangle GetCollisionRec(Rectangle rec1, Rectangle rec2)                                         # Get collision rectangle for two rectangles collision
-#
-
-cdef class Geometry3D:
-    ...
-## Collision detection functions
-    #cdef bint CheckCollisionSpheres(Vector3 center1, float radius1, Vector3 center2, float radius2)   # Check collision between two spheres
-    #cdef bint CheckCollisionBoxes(BoundingBox box1, BoundingBox box2)                                 # Check collision between two bounding boxes
-    #cdef bint CheckCollisionBoxSphere(BoundingBox box, Vector3 center, float radius)                  # Check collision between box and sphere
-    #cdef RayCollision GetRayCollisionSphere(Ray ray, Vector3 center, float radius)                    # Get collision info between ray and sphere
-    #cdef RayCollision GetRayCollisionBox(Ray ray, BoundingBox box)                                    # Get collision info between ray and box
-    #cdef RayCollision GetRayCollisionMesh(Ray ray, Mesh mesh, Matrix transform)                       # Get collision info between ray and mesh
-    #cdef RayCollision GetRayCollisionTriangle(Ray ray, Vector3 p1, Vector3 p2, Vector3 p3)            # Get collision info between ray and triangle
-    #cdef RayCollision GetRayCollisionQuad(Ray ray, Vector3 p1, Vector3 p2, Vector3 p3, Vector3 p4)    # Get collision info between ray and quad
-#
-
-cdef class Audio:
-    ...
-#
-    ## Audio device management functions
-    #cdef void InitAudioDevice()                                     # Initialize audio device and context
-    #cdef void CloseAudioDevice()                                    # Close the audio device and context
-    #cdef bint IsAudioDeviceReady()                                  # Check if audio device has been initialized successfully
-    #cdef void SetMasterVolume(float volume)                             # Set master volume (listener)
-    #cdef float GetMasterVolume()                                    # Get master volume (listener)
-#   
-    
-cdef class Text:
-    ...
-    ## Text font info functions
-    #cdef void SetTextLineSpacing(int spacing)                                                 # Set vertical line spacing when drawing with line-breaks
-    #cdef int MeasureText(const char *text, int fontSize)                                      # Measure string width for default font
-    #cdef Vector2 MeasureTextEx(Font font, const char *text, float fontSize, float spacing)    # Measure string size for Font
-    #cdef int GetGlyphIndex(Font font, int codepoint)                                          # Get glyph index position in font for a codepoint (unicode character), fallback to '?' if not found
-    #cdef GlyphInfo GetGlyphInfo(Font font, int codepoint)                                     # Get glyph font info data for a codepoint (unicode character), fallback to '?' if not found
-    #cdef Rectangle GetGlyphAtlasRec(Font font, int codepoint)                                 # Get glyph rectangle in font atlas for a codepoint (unicode character), fallback to '?' if not found
-#
-    ## Text codepoints management functions (unicode characters)
-    #cdef char *LoadUTF8(const int *codepoints, int length)                # Load UTF-8 text encoded from codepoints array
-    #cdef void UnloadUTF8(char *text)                                      # Unload UTF-8 text encoded from codepoints array
-    #cdef int *LoadCodepoints(const char *text, int *count)                # Load all codepoints from a UTF-8 text string, codepoints count returned by parameter
-    #cdef void UnloadCodepoints(int *codepoints)                           # Unload codepoints data from memory
-    #cdef int GetCodepointCount(const char *text)                          # Get total number of codepoints in a UTF-8 encoded string
-    #cdef int GetCodepoint(const char *text, int *codepointSize)           # Get next codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
-    #cdef int GetCodepointNext(const char *text, int *codepointSize)       # Get next codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
-    #cdef int GetCodepointPrevious(const char *text, int *codepointSize)   # Get previous codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
-    #cdef const char *CodepointToUTF8(int codepoint, int *utf8Size)        # Encode one codepoint into UTF-8 byte array (array length returned as parameter)
-#
-
-    ## Text strings management functions (no UTF-8 strings, only byte chars)
-    ## NOTE: Some strings allocate memory internally for returned strings, just be careful!
-    #cdef int TextCopy(char *dst, const char *src)                                             # Copy one string to another, returns bytes copied
-    #cdef bint TextIsEqual(const char *text1, const char *text2)                               # Check if two text string are equal
-    #cdef unsigned int TextLength(const char *text)                                            # Get text length, checks for '\0' ending
-    #cdef const char *TextFormat(const char *text, ...)                                        # Text formatting with variables (sprintf() style)
-    #cdef const char *TextSubtext(const char *text, int position, int length)                  # Get a piece of a text string
-    #cdef char *TextReplace(const char *text, const char *replace, const char *by)             # Replace text string (WARNING: memory must be freed!)
-    #cdef char *TextInsert(const char *text, const char *insert, int position)                 # Insert text in a position (WARNING: memory must be freed!)
-    #cdef const char *TextJoin(const char **textList, int count, const char *delimiter)        # Join text strings with delimiter
-    #cdef const char **TextSplit(const char *text, char delimiter, int *count)                 # Split text into multiple strings
-    #cdef void TextAppend(char *text, const char *append, int *position)                       # Append text at specific position and move cursor!
-    #cdef int TextFindIndex(const char *text, const char *find)                                # Find first text occurrence within a string
-    #cdef const char *TextToUpper(const char *text)                      # Get upper case version of provided string
-    #cdef const char *TextToLower(const char *text)                      # Get lower case version of provided string
-    #cdef const char *TextToPascal(const char *text)                     # Get Pascal case notation version of provided string
-    #cdef int TextToInteger(const char *text)                            # Get integer value from text (negative values not supported)
-    #cdef float TextToFloat(const char *text)                            # Get float value from text (negative values not supported)
+def draw_fps(int x, int y) -> None:
+    DrawFPS(x, y)

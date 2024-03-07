@@ -40,7 +40,7 @@ raylib_extension: Extension = Extension(
     ],
     include_dirs=["./libs", "."],
     library_dirs=["./libs"],
-    
+
     libraries=["./libs/raylib"],  # Add any necessary libraries here
     extra_compile_args=[],  # Add any necessary compile flags here
 )
@@ -57,7 +57,7 @@ rlgl_extension: Extension = Extension(
 )
 
 extensions = [
-    #raymath_extension,
+    # raymath_extension,
     raylib_extension,
     rlgl_extension,
 ]
@@ -87,8 +87,11 @@ setup(
             'main.py'
         ],
     },
-    ext_modules=cythonize(extensions),
-    
+    ext_modules=cythonize(
+        extensions,
+        language_level="3"
+    ),
+
 
 )
 
