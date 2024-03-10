@@ -1,5 +1,5 @@
-from libc.stdlib cimport malloc, free
-from libc.string cimport strcpy
+from libc.stdlib cimport malloc, free, realloc
+from libc.string cimport strcpy, strlen
 from raylib_cython cimport raymath
 
 # TODO Move inputs to another MODULE
@@ -1133,13 +1133,16 @@ cdef class CySpline:
 
 cdef class CyText:
     cdef char* text
+    cdef int text_buffer_size
     cdef raymath.CyVector2 pos
     cdef int font_size
     cdef CyColor color
 
     def __cinit__(self, char* text, raymath.CyVector2 pos, int font_size, CyColor color):
         
-        self.text = <char*>malloc((len(text) + 1) * sizeof(char))
+        self.text_buffer_size = len(text) + 1
+        self.text = <char*>malloc(self.text_buffer_size * sizeof(char))
+        self.text[self.text_buffer_size] = 0
         if self.text is NULL:
             raise MemoryError("Failed to allocate memory for text")
 
@@ -1150,13 +1153,34 @@ cdef class CyText:
         self.color = color
 
     def update_text(self, char* new_text) -> None:
-        # If new size > old size:
-        #   allocate 2^k mem that encapsulates the new string
-        #   free old mem
-        #   copy new string into new allocated mem
-        # else:
-        #   copy new text into current mem, end with null byte
-        ...
+        
+        cdef int new_text_len = len(new_text)
+        cdef int new_buffer_size = 1
+        
+        if new_text_len + 1 < self.text_buffer_size:
+            strcpy(self.text, new_text)
+            self.text[new_text_len + 1] = 0
+
+        else:
+            if new_text_len + 1 > self.text_buffer_size:
+                
+                while new_buffer_size <= new_text_len:  
+                    new_buffer_size <<= 1
+
+                self.text = <char*>realloc(self.text, new_buffer_size * sizeof(char))
+
+                if self.text is NULL:
+                    raise MemoryError("Failed to reallocate memory for text")
+                self.text_buffer_size = new_buffer_size 
+
+            strcpy(self.text, new_text)
+            self.text[new_text_len] = 0
+        
+    def get_text(self) -> str:
+        if self.text is NULL:
+            return ''  
+        cdef str py_str = self.text[:].decode('utf-8')
+        return py_str
 
     def update_pos(self, raymath.CyVector2 pos) -> None:
         self.pos.x = pos.x
