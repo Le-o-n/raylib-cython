@@ -1046,6 +1046,7 @@ cdef class CyLine:
     #cdef bint CheckCollisionLines(Vector2 startPos1, Vector2 endPos1, Vector2 startPos2, Vector2 endPos2, Vector2 *collisionPoint) # Check the collision between two lines defined by two points each, returns collision point by reference
     #cdef bint CheckCollisionPointLine(Vector2 point, Vector2 p1, Vector2 p2, int threshold)                # Check if point belongs to line created between two points [p1] and [p2] with defined margin in pixels [threshold]
     
+# TODO make this class inherit fro meither std::vector<CyVector2> or my own arraylist
 cdef class CyLineStrip:
     cdef raymath.CyVector2[::1] points
     cdef CyColor color
@@ -1056,7 +1057,10 @@ cdef class CyLineStrip:
         self.points = points
         self.c_points = <Vector2*> malloc(len(points) * sizeof(Vector2))
         self.color = color
+    
 
+
+    # TODO remove the creation of a temp array fro mhere to be in an append method
     def draw(self) -> None:
 
         # Copy data from Python objects to C array
@@ -1066,6 +1070,7 @@ cdef class CyLineStrip:
         # Call the C function
         DrawLineStrip(self.c_points, len(self.points), self.color._color)
 
+    # TODO change to use python indexing
     def set_point(self, int index, raymath.CyVector2 vec) -> None:
         self.points[index] = vec
 
@@ -1150,16 +1155,7 @@ cdef class CyText:
     cdef float _rotation
     cdef CyColor _tint
  
-    #cdef void DrawTextPro(
-    #    Font font, 
-    #    const char *text, 
-    #    Vector2 position, 
-    #    Vector2 origin, 
-    #    float rotation, 
-    #    float fontSize, 
-    #    float spacing, 
-    #    Color tint
-    #) # Draw text using Font and pro parameters (rotation)
+
     def __cinit__(
         self, 
         char* text, 
