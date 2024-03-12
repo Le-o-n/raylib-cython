@@ -774,6 +774,7 @@ static CYTHON_INLINE float __PYX_NAN() {
 #include "libs/raylib.h"
 #include <stdlib.h>
 #include "libs/raymath.h"
+#include <math.h>
 #include "pystate.h"
 #ifdef _OPENMP
 #include <omp.h>
@@ -1252,7 +1253,7 @@ struct __pyx_obj_13raylib_cython_7raymath_CyVector2 {
 };
 
 
-/* "raylib.pyx":12
+/* "raylib.pyx":13
  * 
  * 
  * cdef class CyColor:             # <<<<<<<<<<<<<<
@@ -1265,7 +1266,7 @@ struct __pyx_obj_6raylib_CyColor {
 };
 
 
-/* "raylib.pyx":174
+/* "raylib.pyx":175
  * 
  * 
  * cdef class CyRectangle:             # <<<<<<<<<<<<<<
@@ -1278,7 +1279,7 @@ struct __pyx_obj_6raylib_CyRectangle {
 };
 
 
-/* "raylib.pyx":239
+/* "raylib.pyx":240
  * 
  * 
  * cdef class CyImage:             # <<<<<<<<<<<<<<
@@ -1291,7 +1292,7 @@ struct __pyx_obj_6raylib_CyImage {
 };
 
 
-/* "raylib.pyx":337
+/* "raylib.pyx":338
  * 
  * 
  * cdef class CyTexture:             # <<<<<<<<<<<<<<
@@ -1304,7 +1305,7 @@ struct __pyx_obj_6raylib_CyTexture {
 };
 
 
-/* "raylib.pyx":378
+/* "raylib.pyx":379
  * #
  * 
  * cdef class CyTexture2D(CyTexture):             # <<<<<<<<<<<<<<
@@ -1316,7 +1317,7 @@ struct __pyx_obj_6raylib_CyTexture2D {
 };
 
 
-/* "raylib.pyx":386
+/* "raylib.pyx":387
  * 
  * 
  * cdef class CyTextureCubemap(CyTexture):             # <<<<<<<<<<<<<<
@@ -1328,7 +1329,7 @@ struct __pyx_obj_6raylib_CyTextureCubemap {
 };
 
 
-/* "raylib.pyx":390
+/* "raylib.pyx":391
  * 
  * 
  * cdef class CyRenderTexture:             # <<<<<<<<<<<<<<
@@ -1341,7 +1342,7 @@ struct __pyx_obj_6raylib_CyRenderTexture {
 };
 
 
-/* "raylib.pyx":402
+/* "raylib.pyx":403
  * 
  * 
  * cdef class CyRenderTexture2D(CyRenderTexture):             # <<<<<<<<<<<<<<
@@ -1353,7 +1354,7 @@ struct __pyx_obj_6raylib_CyRenderTexture2D {
 };
 
 
-/* "raylib.pyx":406
+/* "raylib.pyx":407
  * 
  * 
  * cdef class CyNPatchInfo:             # <<<<<<<<<<<<<<
@@ -1366,7 +1367,7 @@ struct __pyx_obj_6raylib_CyNPatchInfo {
 };
 
 
-/* "raylib.pyx":430
+/* "raylib.pyx":431
  * #
  * 
  * cdef class CyGlyphInfo:             # <<<<<<<<<<<<<<
@@ -1379,7 +1380,7 @@ struct __pyx_obj_6raylib_CyGlyphInfo {
 };
 
 
-/* "raylib.pyx":439
+/* "raylib.pyx":440
  * 
  * 
  * cdef class CyFont:             # <<<<<<<<<<<<<<
@@ -1393,7 +1394,7 @@ struct __pyx_obj_6raylib_CyFont {
 };
 
 
-/* "raylib.pyx":480
+/* "raylib.pyx":487
  * 
  * 
  * cdef class CyCamera3D:             # <<<<<<<<<<<<<<
@@ -1406,7 +1407,7 @@ struct __pyx_obj_6raylib_CyCamera3D {
 };
 
 
-/* "raylib.pyx":510
+/* "raylib.pyx":517
  * 
  * 
  * cdef class CyCamera2D:             # <<<<<<<<<<<<<<
@@ -1419,7 +1420,7 @@ struct __pyx_obj_6raylib_CyCamera2D {
 };
 
 
-/* "raylib.pyx":553
+/* "raylib.pyx":560
  * #        unsigned int *vboId     # OpenGL Vertex Buffer Objects id (default vertex data)
  * 
  * cdef class CyMesh:             # <<<<<<<<<<<<<<
@@ -1432,7 +1433,7 @@ struct __pyx_obj_6raylib_CyMesh {
 };
 
 
-/* "raylib.pyx":589
+/* "raylib.pyx":596
  * #        int *locs               # Shader locations array (RL_MAX_SHADER_LOCATIONS)
  * 
  * cdef class CyShader:             # <<<<<<<<<<<<<<
@@ -1445,7 +1446,7 @@ struct __pyx_obj_6raylib_CyShader {
 };
 
 
-/* "raylib.pyx":614
+/* "raylib.pyx":621
  * #        float value             # Material map value
  * 
  * cdef class CyMaterialMap:             # <<<<<<<<<<<<<<
@@ -1458,7 +1459,7 @@ struct __pyx_obj_6raylib_CyMaterialMap {
 };
 
 
-/* "raylib.pyx":624
+/* "raylib.pyx":631
  * 
  * 
  * cdef class CyMaterial:             # <<<<<<<<<<<<<<
@@ -1471,7 +1472,7 @@ struct __pyx_obj_6raylib_CyMaterial {
 };
 
 
-/* "raylib.pyx":644
+/* "raylib.pyx":651
  * 
  * 
  * cdef class CyTransform:             # <<<<<<<<<<<<<<
@@ -1484,7 +1485,7 @@ struct __pyx_obj_6raylib_CyTransform {
 };
 
 
-/* "raylib.pyx":659
+/* "raylib.pyx":666
  * 
  * 
  * cdef class CyBoneInfo:             # <<<<<<<<<<<<<<
@@ -1497,7 +1498,7 @@ struct __pyx_obj_6raylib_CyBoneInfo {
 };
 
 
-/* "raylib.pyx":674
+/* "raylib.pyx":681
  * 
  * 
  * cdef class CyModel:             # <<<<<<<<<<<<<<
@@ -1510,7 +1511,7 @@ struct __pyx_obj_6raylib_CyModel {
 };
 
 
-/* "raylib.pyx":711
+/* "raylib.pyx":718
  * 
  * 
  * cdef class CyModelAnimation:             # <<<<<<<<<<<<<<
@@ -1523,7 +1524,7 @@ struct __pyx_obj_6raylib_CyModelAnimation {
 };
 
 
-/* "raylib.pyx":733
+/* "raylib.pyx":740
  * 
  * 
  * cdef class CyRay:             # <<<<<<<<<<<<<<
@@ -1536,7 +1537,7 @@ struct __pyx_obj_6raylib_CyRay {
 };
 
 
-/* "raylib.pyx":752
+/* "raylib.pyx":759
  * #
  * 
  * cdef class CyRayCollision:             # <<<<<<<<<<<<<<
@@ -1549,7 +1550,7 @@ struct __pyx_obj_6raylib_CyRayCollision {
 };
 
 
-/* "raylib.pyx":770
+/* "raylib.pyx":777
  * 
  * 
  * cdef class CyBoundingBox:             # <<<<<<<<<<<<<<
@@ -1562,7 +1563,7 @@ struct __pyx_obj_6raylib_CyBoundingBox {
 };
 
 
-/* "raylib.pyx":786
+/* "raylib.pyx":793
  * 
  * 
  * cdef class CyWave:             # <<<<<<<<<<<<<<
@@ -1575,7 +1576,7 @@ struct __pyx_obj_6raylib_CyWave {
 };
 
 
-/* "raylib.pyx":820
+/* "raylib.pyx":827
  * 
  * 
  * cdef class CyAudioStream:             # <<<<<<<<<<<<<<
@@ -1588,7 +1589,7 @@ struct __pyx_obj_6raylib_CyAudioStream {
 };
 
 
-/* "raylib.pyx":862
+/* "raylib.pyx":869
  * 
  * 
  * cdef class CySound:             # <<<<<<<<<<<<<<
@@ -1601,7 +1602,7 @@ struct __pyx_obj_6raylib_CySound {
 };
 
 
-/* "raylib.pyx":889
+/* "raylib.pyx":896
  * 
  * 
  * cdef class CyMusic:             # <<<<<<<<<<<<<<
@@ -1614,7 +1615,7 @@ struct __pyx_obj_6raylib_CyMusic {
 };
 
 
-/* "raylib.pyx":925
+/* "raylib.pyx":932
  * 
  * 
  * cdef class CyVrDeviceInfo:             # <<<<<<<<<<<<<<
@@ -1627,7 +1628,7 @@ struct __pyx_obj_6raylib_CyVrDeviceInfo {
 };
 
 
-/* "raylib.pyx":944
+/* "raylib.pyx":951
  * 
  * 
  * cdef class CyVrStereoConfig:             # <<<<<<<<<<<<<<
@@ -1640,7 +1641,7 @@ struct __pyx_obj_6raylib_CyVrStereoConfig {
 };
 
 
-/* "raylib.pyx":974
+/* "raylib.pyx":981
  * 
  * 
  * cdef class CyFilePathList:             # <<<<<<<<<<<<<<
@@ -1653,7 +1654,7 @@ struct __pyx_obj_6raylib_CyFilePathList {
 };
 
 
-/* "raylib.pyx":987
+/* "raylib.pyx":994
  * 
  * 
  * cdef class CyAutomationEvent:             # <<<<<<<<<<<<<<
@@ -1666,7 +1667,7 @@ struct __pyx_obj_6raylib_CyAutomationEvent {
 };
 
 
-/* "raylib.pyx":1002
+/* "raylib.pyx":1009
  * 
  * 
  * cdef class CyAutomationEventList:             # <<<<<<<<<<<<<<
@@ -1679,7 +1680,7 @@ struct __pyx_obj_6raylib_CyAutomationEventList {
 };
 
 
-/* "raylib.pyx":1014
+/* "raylib.pyx":1021
  * 
  * 
  * cdef class CyPixel:             # <<<<<<<<<<<<<<
@@ -1693,7 +1694,7 @@ struct __pyx_obj_6raylib_CyPixel {
 };
 
 
-/* "raylib.pyx":1025
+/* "raylib.pyx":1032
  * 
  * 
  * cdef class CyLine:             # <<<<<<<<<<<<<<
@@ -1708,7 +1709,7 @@ struct __pyx_obj_6raylib_CyLine {
 };
 
 
-/* "raylib.pyx":1042
+/* "raylib.pyx":1049
  *     #cdef bint CheckCollisionPointLine(Vector2 point, Vector2 p1, Vector2 p2, int threshold)                # Check if point belongs to line created between two points [p1] and [p2] with defined margin in pixels [threshold]
  * 
  * cdef class CyLineStrip:             # <<<<<<<<<<<<<<
@@ -1723,7 +1724,7 @@ struct __pyx_obj_6raylib_CyLineStrip {
 };
 
 
-/* "raylib.pyx":1069
+/* "raylib.pyx":1076
  *             free(self.c_points)
  * 
  * cdef class CyLineBezier:             # <<<<<<<<<<<<<<
@@ -1735,7 +1736,7 @@ struct __pyx_obj_6raylib_CyLineBezier {
 };
 
 
-/* "raylib.pyx":1074
+/* "raylib.pyx":1081
  *     #cdef void DrawLineBezier(Vector2 startPos, Vector2 endPos, float thick, Color color)                   # Draw line segment cubic-bezier in-out interpolation
  * 
  * cdef class CyCircle:             # <<<<<<<<<<<<<<
@@ -1747,7 +1748,7 @@ struct __pyx_obj_6raylib_CyCircle {
 };
 
 
-/* "raylib.pyx":1086
+/* "raylib.pyx":1093
  *     #cdef bint CheckCollisionPointCircle(Vector2 point, Vector2 center, float radius)                       # Check if point is inside circle
  * 
  * cdef class CyEclypse:             # <<<<<<<<<<<<<<
@@ -1759,7 +1760,7 @@ struct __pyx_obj_6raylib_CyEclypse {
 };
 
 
-/* "raylib.pyx":1091
+/* "raylib.pyx":1098
  *     #cdef void DrawEllipseLines(int centerX, int centerY, float radiusH, float radiusV, Color color)        # Draw ellipse outline
  * 
  * cdef class CyRing:             # <<<<<<<<<<<<<<
@@ -1771,7 +1772,7 @@ struct __pyx_obj_6raylib_CyRing {
 };
 
 
-/* "raylib.pyx":1096
+/* "raylib.pyx":1103
  *     #cdef void DrawRingLines(Vector2 center, float innerRadius, float outerRadius, float startAngle, float endAngle, int segments, Color color)    # Draw ring outline
  * 
  * cdef class CyTriangle:             # <<<<<<<<<<<<<<
@@ -1783,7 +1784,7 @@ struct __pyx_obj_6raylib_CyTriangle {
 };
 
 
-/* "raylib.pyx":1104
+/* "raylib.pyx":1111
  *     #cdef bint CheckCollisionPointTriangle(Vector2 point, Vector2 p1, Vector2 p2, Vector2 p3)               # Check if point is inside a triangle
  * 
  * cdef class CyPolygon:             # <<<<<<<<<<<<<<
@@ -1795,7 +1796,7 @@ struct __pyx_obj_6raylib_CyPolygon {
 };
 
 
-/* "raylib.pyx":1113
+/* "raylib.pyx":1120
  * #
  * 
  * cdef class CySpline:             # <<<<<<<<<<<<<<
@@ -1807,24 +1808,29 @@ struct __pyx_obj_6raylib_CySpline {
 };
 
 
-/* "raylib.pyx":1134
+/* "raylib.pyx":1141
  * #
  * 
  * cdef class CyText:             # <<<<<<<<<<<<<<
- *     cdef char* text
- *     cdef int text_buffer_size
+ *     cdef char* _text
+ *     cdef int _text_buffer_size
  */
 struct __pyx_obj_6raylib_CyText {
   PyObject_HEAD
-  char *text;
-  int text_buffer_size;
-  struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *pos;
-  int font_size;
-  struct __pyx_obj_6raylib_CyColor *color;
+  char *_text;
+  int _text_buffer_size;
+  struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *_pos;
+  float _font_size;
+  struct __pyx_obj_6raylib_CyColor *_color;
+  struct __pyx_obj_6raylib_CyFont *_font;
+  float _spacing;
+  struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *_origin;
+  float _rotation;
+  struct __pyx_obj_6raylib_CyColor *_tint;
 };
 
 
-/* "raylib.pyx":1228
+/* "raylib.pyx":1342
  *     #cdef float TextToFloat(const char *text)                            # Get float value from text (negative values not supported)
  * 
  * cdef class CyLine3D:             # <<<<<<<<<<<<<<
@@ -1836,7 +1842,7 @@ struct __pyx_obj_6raylib_CyLine3D {
 };
 
 
-/* "raylib.pyx":1232
+/* "raylib.pyx":1346
  *     #cdef void DrawLine3D(Vector3 startPos, Vector3 endPos, Color color)                                    # Draw a line in 3D world space
  * 
  * cdef class CyPoint3D:             # <<<<<<<<<<<<<<
@@ -1848,7 +1854,7 @@ struct __pyx_obj_6raylib_CyPoint3D {
 };
 
 
-/* "raylib.pyx":1236
+/* "raylib.pyx":1350
  *     #cdef void DrawPoint3D(Vector3 position, Color color)                                                   # Draw a point in 3D space, actually a small line
  * 
  * cdef class CyCircle3D:             # <<<<<<<<<<<<<<
@@ -1860,7 +1866,7 @@ struct __pyx_obj_6raylib_CyCircle3D {
 };
 
 
-/* "raylib.pyx":1240
+/* "raylib.pyx":1354
  *     #cdef void DrawCircle3D(Vector3 center, float radius, Vector3 rotationAxis, float rotationAngle, Color color) # Draw a circle in 3D world space
  * 
  * cdef class CyTriangle3D:             # <<<<<<<<<<<<<<
@@ -1872,7 +1878,7 @@ struct __pyx_obj_6raylib_CyTriangle3D {
 };
 
 
-/* "raylib.pyx":1244
+/* "raylib.pyx":1358
  *     #cdef void DrawTriangle3D(Vector3 v1, Vector3 v2, Vector3 v3, Color color)                              # Draw a color-filled triangle (vertex in counter-clockwise order!)
  * 
  * cdef class CyTriangleStrip3D:             # <<<<<<<<<<<<<<
@@ -1884,7 +1890,7 @@ struct __pyx_obj_6raylib_CyTriangleStrip3D {
 };
 
 
-/* "raylib.pyx":1248
+/* "raylib.pyx":1362
  *     #cdef void DrawTriangleStrip3D(Vector3 *points, int pointCount, Color color)                            # Draw a triangle strip defined by points
  * 
  * cdef class CyCube:             # <<<<<<<<<<<<<<
@@ -1896,7 +1902,7 @@ struct __pyx_obj_6raylib_CyCube {
 };
 
 
-/* "raylib.pyx":1255
+/* "raylib.pyx":1369
  *     #cdef void DrawCubeWiresV(Vector3 position, Vector3 size, Color color)                                  # Draw cube wires (Vector version)
  * 
  * cdef class CySphere:             # <<<<<<<<<<<<<<
@@ -1908,7 +1914,7 @@ struct __pyx_obj_6raylib_CySphere {
 };
 
 
-/* "raylib.pyx":1262
+/* "raylib.pyx":1376
  *     #cdef bint CheckCollisionSpheres(Vector3 center1, float radius1, Vector3 center2, float radius2)   # Check collision between two spheres
  * 
  * cdef class CyCylinder:             # <<<<<<<<<<<<<<
@@ -1920,7 +1926,7 @@ struct __pyx_obj_6raylib_CyCylinder {
 };
 
 
-/* "raylib.pyx":1269
+/* "raylib.pyx":1383
  *     #cdef void DrawCylinderWiresEx(Vector3 startPos, Vector3 endPos, float startRadius, float endRadius, int sides, Color color) # Draw a cylinder wires with base at startPos and top at endPos
  * 
  * cdef class CyCapsule:             # <<<<<<<<<<<<<<
@@ -1932,7 +1938,7 @@ struct __pyx_obj_6raylib_CyCapsule {
 };
 
 
-/* "raylib.pyx":1274
+/* "raylib.pyx":1388
  *     #cdef void DrawCapsuleWires(Vector3 startPos, Vector3 endPos, float radius, int slices, int rings, Color color) # Draw capsule wireframe with the center of its sphere caps at startPos and endPos
  * 
  * cdef class CyPlane:             # <<<<<<<<<<<<<<
@@ -1944,7 +1950,7 @@ struct __pyx_obj_6raylib_CyPlane {
 };
 
 
-/* "raylib.pyx":1278
+/* "raylib.pyx":1392
  *     #cdef void DrawPlane(Vector3 centerPos, Vector2 size, Color color)                                      # Draw a plane XZ
  * 
  * cdef class CyGrid:             # <<<<<<<<<<<<<<
@@ -1956,7 +1962,7 @@ struct __pyx_obj_6raylib_CyGrid {
 };
 
 
-/* "raylib.pyx":1283
+/* "raylib.pyx":1397
  * #
  * 
  * cdef class CyAudioDeviceManager:             # <<<<<<<<<<<<<<
@@ -2338,7 +2344,7 @@ struct __pyx_vtabstruct_13raylib_cython_7raymath_CyVector2 {
 static struct __pyx_vtabstruct_13raylib_cython_7raymath_CyVector2 *__pyx_vtabptr_13raylib_cython_7raymath_CyVector2;
 
 
-/* "raylib.pyx":439
+/* "raylib.pyx":440
  * 
  * 
  * cdef class CyFont:             # <<<<<<<<<<<<<<
@@ -2642,17 +2648,25 @@ static CYTHON_INLINE PyObject *__Pyx__GetModuleGlobalName(PyObject *name);
 /* IncludeStringH.proto */
 #include <string.h>
 
-/* GCCDiagnostics.proto */
-#if defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6))
-#define __Pyx_HAS_GCC_DIAGNOSTIC
-#endif
+/* decode_c_string_utf16.proto */
+static CYTHON_INLINE PyObject *__Pyx_PyUnicode_DecodeUTF16(const char *s, Py_ssize_t size, const char *errors) {
+    int byteorder = 0;
+    return PyUnicode_DecodeUTF16(s, size, errors, &byteorder);
+}
+static CYTHON_INLINE PyObject *__Pyx_PyUnicode_DecodeUTF16LE(const char *s, Py_ssize_t size, const char *errors) {
+    int byteorder = -1;
+    return PyUnicode_DecodeUTF16(s, size, errors, &byteorder);
+}
+static CYTHON_INLINE PyObject *__Pyx_PyUnicode_DecodeUTF16BE(const char *s, Py_ssize_t size, const char *errors) {
+    int byteorder = 1;
+    return PyUnicode_DecodeUTF16(s, size, errors, &byteorder);
+}
 
-/* BuildPyUnicode.proto */
-static PyObject* __Pyx_PyUnicode_BuildFromAscii(Py_ssize_t ulength, char* chars, int clength,
-                                                int prepend_sign, char padding_char);
-
-/* CIntToPyUnicode.proto */
-static CYTHON_INLINE PyObject* __Pyx_PyUnicode_From_int(int value, Py_ssize_t width, char padding_char, char format_char);
+/* decode_c_string.proto */
+static CYTHON_INLINE PyObject* __Pyx_decode_c_string(
+         const char* cstring, Py_ssize_t start, Py_ssize_t stop,
+         const char* encoding, const char* errors,
+         PyObject* (*decode_func)(const char *s, Py_ssize_t size, const char *errors));
 
 /* PyCFunctionFastCall.proto */
 #if CYTHON_FAST_PYCCALL
@@ -2692,6 +2706,9 @@ static PyObject *__Pyx_PyFunction_FastCallDict(PyObject *func, PyObject **args, 
 #endif // CYTHON_FAST_PYCALL
 #endif
 
+/* PyObjectCall2Args.proto */
+static CYTHON_UNUSED PyObject* __Pyx_PyObject_Call2Args(PyObject* function, PyObject* arg1, PyObject* arg2);
+
 /* PyObjectCallMethO.proto */
 #if CYTHON_COMPILING_IN_CPYTHON
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg);
@@ -2699,29 +2716,6 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject
 
 /* PyObjectCallOneArg.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
-
-/* decode_c_string_utf16.proto */
-static CYTHON_INLINE PyObject *__Pyx_PyUnicode_DecodeUTF16(const char *s, Py_ssize_t size, const char *errors) {
-    int byteorder = 0;
-    return PyUnicode_DecodeUTF16(s, size, errors, &byteorder);
-}
-static CYTHON_INLINE PyObject *__Pyx_PyUnicode_DecodeUTF16LE(const char *s, Py_ssize_t size, const char *errors) {
-    int byteorder = -1;
-    return PyUnicode_DecodeUTF16(s, size, errors, &byteorder);
-}
-static CYTHON_INLINE PyObject *__Pyx_PyUnicode_DecodeUTF16BE(const char *s, Py_ssize_t size, const char *errors) {
-    int byteorder = 1;
-    return PyUnicode_DecodeUTF16(s, size, errors, &byteorder);
-}
-
-/* decode_c_string.proto */
-static CYTHON_INLINE PyObject* __Pyx_decode_c_string(
-         const char* cstring, Py_ssize_t start, Py_ssize_t stop,
-         const char* encoding, const char* errors,
-         PyObject* (*decode_func)(const char *s, Py_ssize_t size, const char *errors));
-
-/* PyObjectCall2Args.proto */
-static CYTHON_UNUSED PyObject* __Pyx_PyObject_Call2Args(PyObject* function, PyObject* arg1, PyObject* arg2);
 
 /* tp_new.proto */
 #define __Pyx_tp_new(type_obj, args) __Pyx_tp_new_kwargs(type_obj, args, NULL)
@@ -3029,6 +3023,13 @@ static void* __Pyx_GetVtable(PyObject *dict);
 #define __Pyx_GetNameInClass(var, nmspace, name)  (var) = __Pyx__GetNameInClass(nmspace, name)
 static PyObject *__Pyx__GetNameInClass(PyObject *nmspace, PyObject *name);
 
+/* PyObjectCallNoArg.proto */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func);
+#else
+#define __Pyx_PyObject_CallNoArg(func) __Pyx_PyObject_Call(func, __pyx_empty_tuple, NULL)
+#endif
+
 /* CLineInTraceback.proto */
 #ifdef CYTHON_CLINE_IN_TRACEBACK
 #define __Pyx_CLineForTraceback(tstate, c_line)  (((CYTHON_CLINE_IN_TRACEBACK)) ? c_line : 0)
@@ -3054,6 +3055,11 @@ static void __pyx_insert_code_object(int code_line, PyCodeObject* code_object);
 /* AddTraceback.proto */
 static void __Pyx_AddTraceback(const char *funcname, int c_line,
                                int py_line, const char *filename);
+
+/* GCCDiagnostics.proto */
+#if defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6))
+#define __Pyx_HAS_GCC_DIAGNOSTIC
+#endif
 
 #if PY_MAJOR_VERSION < 3
     static int __Pyx_GetBuffer(PyObject *obj, Py_buffer *view, int flags);
@@ -3262,6 +3268,8 @@ static PyTypeObject *__pyx_ptype_13raylib_cython_7raymath_CyFloat16 = 0;
 static PyTypeObject *__pyx_ptype_13raylib_cython_7raymath_CyMatrix = 0;
 static PyTypeObject *__pyx_ptype_13raylib_cython_7raymath_CyVector2 = 0;
 
+/* Module declarations from 'libc.math' */
+
 /* Module declarations from 'raylib' */
 static PyTypeObject *__pyx_ptype_6raylib_CyColor = 0;
 static PyTypeObject *__pyx_ptype_6raylib_CyRectangle = 0;
@@ -3426,7 +3434,6 @@ static PyObject *__pyx_builtin_TypeError;
 static PyObject *__pyx_builtin_NotImplementedError;
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_MemoryError;
-static PyObject *__pyx_builtin_print;
 static PyObject *__pyx_builtin_KeyError;
 static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_enumerate;
@@ -3444,9 +3451,9 @@ static const char __pyx_k_y[] = "y";
 static const char __pyx_k_id[] = "id";
 static const char __pyx_k_p1[] = "p1";
 static const char __pyx_k_p2[] = "p2";
-static const char __pyx_k__76[] = "";
+static const char __pyx_k__78[] = "";
 static const char __pyx_k_fps[] = "fps";
-static const char __pyx_k_new[] = "new ";
+static const char __pyx_k_new[] = "__new__";
 static const char __pyx_k_obj[] = "obj";
 static const char __pyx_k_pos[] = "pos";
 static const char __pyx_k_red[] = "red";
@@ -3455,6 +3462,7 @@ static const char __pyx_k_base[] = "base";
 static const char __pyx_k_blue[] = "blue";
 static const char __pyx_k_dict[] = "__dict__";
 static const char __pyx_k_flag[] = "flag";
+static const char __pyx_k_font[] = "font";
 static const char __pyx_k_gold[] = "gold";
 static const char __pyx_k_gray[] = "gray";
 static const char __pyx_k_lime[] = "lime";
@@ -3470,6 +3478,7 @@ static const char __pyx_k_step[] = "step";
 static const char __pyx_k_stop[] = "stop";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_text[] = "text";
+static const char __pyx_k_tint[] = "tint";
 static const char __pyx_k_wrap[] = "wrap";
 static const char __pyx_k_ASCII[] = "ASCII";
 static const char __pyx_k_CyRay[] = "CyRay";
@@ -3484,8 +3493,6 @@ static const char __pyx_k_flags[] = "flags";
 static const char __pyx_k_green[] = "green";
 static const char __pyx_k_image[] = "image";
 static const char __pyx_k_index[] = "index";
-static const char __pyx_k_new_2[] = "__new__";
-static const char __pyx_k_print[] = "print";
 static const char __pyx_k_range[] = "range";
 static const char __pyx_k_shape[] = "shape";
 static const char __pyx_k_start[] = "start";
@@ -3513,6 +3520,7 @@ static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_maroon[] = "maroon";
 static const char __pyx_k_name_2[] = "__name__";
 static const char __pyx_k_orange[] = "orange";
+static const char __pyx_k_origin[] = "origin";
 static const char __pyx_k_pickle[] = "pickle";
 static const char __pyx_k_points[] = "points";
 static const char __pyx_k_purple[] = "purple";
@@ -3541,6 +3549,7 @@ static const char __pyx_k_opacity[] = "opacity";
 static const char __pyx_k_scale_x[] = "scale_x";
 static const char __pyx_k_scale_y[] = "scale_y";
 static const char __pyx_k_skyblue[] = "skyblue";
+static const char __pyx_k_spacing[] = "spacing";
 static const char __pyx_k_CyCircle[] = "CyCircle";
 static const char __pyx_k_CyLine3D[] = "CyLine3D";
 static const char __pyx_k_CyShader[] = "CyShader";
@@ -3558,6 +3567,7 @@ static const char __pyx_k_offset_x[] = "offset_x";
 static const char __pyx_k_offset_y[] = "offset_y";
 static const char __pyx_k_pyx_type[] = "__pyx_type";
 static const char __pyx_k_raywhite[] = "raywhite";
+static const char __pyx_k_rotation[] = "rotation";
 static const char __pyx_k_setstate[] = "__setstate__";
 static const char __pyx_k_CyCapsule[] = "CyCapsule";
 static const char __pyx_k_CyEclypse[] = "CyEclypse";
@@ -3652,6 +3662,7 @@ static const char __pyx_k_begin_blend_mode[] = "begin_blend_mode";
 static const char __pyx_k_clear_background[] = "clear_background";
 static const char __pyx_k_end_scissor_mode[] = "end_scissor_mode";
 static const char __pyx_k_end_texture_mode[] = "end_texture_mode";
+static const char __pyx_k_get_font_default[] = "get_font_default";
 static const char __pyx_k_get_monitor_name[] = "get_monitor_name";
 static const char __pyx_k_get_render_width[] = "get_render_width";
 static const char __pyx_k_get_screen_width[] = "get_screen_width";
@@ -3737,7 +3748,6 @@ static const char __pyx_k_Invalid_shape_in_axis_d_d[] = "Invalid shape in axis %
 static const char __pyx_k_pyx_unpickle_CyLineBezier[] = "__pyx_unpickle_CyLineBezier";
 static const char __pyx_k_pyx_unpickle_CyTriangle3D[] = "__pyx_unpickle_CyTriangle3D";
 static const char __pyx_k_get_monitor_physical_width[] = "get_monitor_physical_width";
-static const char __pyx_k_reallcate_new_mem_old_size[] = "reallcate new mem old size = ";
 static const char __pyx_k_get_monitor_physical_height[] = "get_monitor_physical_height";
 static const char __pyx_k_get_mouse_wheel_move_vector[] = "get_mouse_wheel_move_vector";
 static const char __pyx_k_itemsize_0_for_cython_array[] = "itemsize <= 0 for cython.array";
@@ -3857,7 +3867,7 @@ static PyObject *__pyx_n_s_TypeError;
 static PyObject *__pyx_kp_s_Unable_to_convert_item_to_object;
 static PyObject *__pyx_n_s_ValueError;
 static PyObject *__pyx_n_s_View_MemoryView;
-static PyObject *__pyx_kp_u__76;
+static PyObject *__pyx_kp_u__78;
 static PyObject *__pyx_n_s_a;
 static PyObject *__pyx_n_s_allocate_buffer;
 static PyObject *__pyx_n_s_b;
@@ -3915,6 +3925,7 @@ static PyObject *__pyx_n_s_enumerate;
 static PyObject *__pyx_n_s_error;
 static PyObject *__pyx_n_s_flag;
 static PyObject *__pyx_n_s_flags;
+static PyObject *__pyx_n_s_font;
 static PyObject *__pyx_n_s_font_size;
 static PyObject *__pyx_n_s_format;
 static PyObject *__pyx_n_s_fortran;
@@ -3924,6 +3935,7 @@ static PyObject *__pyx_n_s_g;
 static PyObject *__pyx_n_s_get_clipboard_text;
 static PyObject *__pyx_n_s_get_current_monitor;
 static PyObject *__pyx_n_s_get_delta_time;
+static PyObject *__pyx_n_s_get_font_default;
 static PyObject *__pyx_n_s_get_fps;
 static PyObject *__pyx_n_s_get_frame_time;
 static PyObject *__pyx_n_s_get_monitor_count;
@@ -3989,14 +4001,14 @@ static PyObject *__pyx_n_s_monitor;
 static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_name_2;
 static PyObject *__pyx_n_s_ndim;
-static PyObject *__pyx_kp_u_new;
-static PyObject *__pyx_n_s_new_2;
+static PyObject *__pyx_n_s_new;
 static PyObject *__pyx_kp_s_no_default___reduce___due_to_non;
 static PyObject *__pyx_n_s_obj;
 static PyObject *__pyx_n_s_offset_x;
 static PyObject *__pyx_n_s_offset_y;
 static PyObject *__pyx_n_s_opacity;
 static PyObject *__pyx_n_s_orange;
+static PyObject *__pyx_n_s_origin;
 static PyObject *__pyx_n_s_p1;
 static PyObject *__pyx_n_s_p2;
 static PyObject *__pyx_n_s_pack;
@@ -4005,7 +4017,6 @@ static PyObject *__pyx_n_s_pickle;
 static PyObject *__pyx_n_s_pink;
 static PyObject *__pyx_n_s_points;
 static PyObject *__pyx_n_s_pos;
-static PyObject *__pyx_n_s_print;
 static PyObject *__pyx_n_s_purple;
 static PyObject *__pyx_n_s_pyx_PickleError;
 static PyObject *__pyx_n_s_pyx_checksum;
@@ -4039,12 +4050,12 @@ static PyObject *__pyx_n_s_range;
 static PyObject *__pyx_n_s_raylib;
 static PyObject *__pyx_kp_s_raylib_pyx;
 static PyObject *__pyx_n_s_raywhite;
-static PyObject *__pyx_kp_u_reallcate_new_mem_old_size;
 static PyObject *__pyx_n_s_red;
 static PyObject *__pyx_n_s_reduce;
 static PyObject *__pyx_n_s_reduce_cython;
 static PyObject *__pyx_n_s_reduce_ex;
 static PyObject *__pyx_n_s_restore_window;
+static PyObject *__pyx_n_s_rotation;
 static PyObject *__pyx_n_s_scale_x;
 static PyObject *__pyx_n_s_scale_y;
 static PyObject *__pyx_n_s_set_clipboard_text;
@@ -4072,6 +4083,7 @@ static PyObject *__pyx_n_s_shape;
 static PyObject *__pyx_n_s_show_cursor;
 static PyObject *__pyx_n_s_size;
 static PyObject *__pyx_n_s_skyblue;
+static PyObject *__pyx_n_s_spacing;
 static PyObject *__pyx_n_s_start;
 static PyObject *__pyx_n_s_staticmethod;
 static PyObject *__pyx_n_s_step;
@@ -4086,6 +4098,7 @@ static PyObject *__pyx_n_s_target;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_text;
 static PyObject *__pyx_n_s_thickness;
+static PyObject *__pyx_n_s_tint;
 static PyObject *__pyx_n_s_title;
 static PyObject *__pyx_n_s_toggle_borderless_window;
 static PyObject *__pyx_n_s_toggle_fullscreen;
@@ -4166,8 +4179,9 @@ static PyObject *__pyx_pf_6raylib_11CyGlyphInfo_2__reduce_cython__(CYTHON_UNUSED
 static PyObject *__pyx_pf_6raylib_11CyGlyphInfo_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyGlyphInfo *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
 static int __pyx_pf_6raylib_6CyFont___cinit__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyFont *__pyx_v_self); /* proto */
 static struct __pyx_obj_6raylib_CyFont *__pyx_pf_6raylib_6CyFont_2load_font(CYTHON_UNUSED PyObject *__pyx_v_path); /* proto */
-static PyObject *__pyx_pf_6raylib_6CyFont_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyFont *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6raylib_6CyFont_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyFont *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static struct __pyx_obj_6raylib_CyFont *__pyx_pf_6raylib_6CyFont_4get_font_default(void); /* proto */
+static PyObject *__pyx_pf_6raylib_6CyFont_6__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyFont *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6raylib_6CyFont_8__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyFont *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
 static int __pyx_pf_6raylib_10CyCamera3D___cinit__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyCamera3D *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6raylib_10CyCamera3D_2__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyCamera3D *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6raylib_10CyCamera3D_4__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyCamera3D *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
@@ -4264,14 +4278,27 @@ static PyObject *__pyx_pf_6raylib_9CyPolygon___reduce_cython__(struct __pyx_obj_
 static PyObject *__pyx_pf_6raylib_9CyPolygon_2__setstate_cython__(struct __pyx_obj_6raylib_CyPolygon *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_pf_6raylib_8CySpline___reduce_cython__(struct __pyx_obj_6raylib_CySpline *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6raylib_8CySpline_2__setstate_cython__(struct __pyx_obj_6raylib_CySpline *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_6raylib_6CyText___cinit__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, char *__pyx_v_text, struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_pos, int __pyx_v_font_size, struct __pyx_obj_6raylib_CyColor *__pyx_v_color); /* proto */
-static PyObject *__pyx_pf_6raylib_6CyText_2update_text(struct __pyx_obj_6raylib_CyText *__pyx_v_self, char *__pyx_v_new_text); /* proto */
-static PyObject *__pyx_pf_6raylib_6CyText_4get_text(struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6raylib_6CyText_6update_pos(struct __pyx_obj_6raylib_CyText *__pyx_v_self, struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_pos); /* proto */
-static PyObject *__pyx_pf_6raylib_6CyText_8draw(struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
-static void __pyx_pf_6raylib_6CyText_10__dealloc__(struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6raylib_6CyText_12__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6raylib_6CyText_14__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyText *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static int __pyx_pf_6raylib_6CyText___cinit__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, char *__pyx_v_text, int __pyx_v_font_size, struct __pyx_obj_6raylib_CyColor *__pyx_v_tint, struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_pos, struct __pyx_obj_6raylib_CyFont *__pyx_v_font, float __pyx_v_spacing, struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_origin, float __pyx_v_rotation); /* proto */
+static PyObject *__pyx_pf_6raylib_6CyText_4text___get__(struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
+static int __pyx_pf_6raylib_6CyText_4text_2__set__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, char *__pyx_v_new_text); /* proto */
+static PyObject *__pyx_pf_6raylib_6CyText_3pos___get__(struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
+static int __pyx_pf_6raylib_6CyText_3pos_2__set__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_6raylib_6CyText_9font_size___get__(struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
+static int __pyx_pf_6raylib_6CyText_9font_size_2__set__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, float __pyx_v_value); /* proto */
+static PyObject *__pyx_pf_6raylib_6CyText_7spacing___get__(struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
+static int __pyx_pf_6raylib_6CyText_7spacing_2__set__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, float __pyx_v_value); /* proto */
+static PyObject *__pyx_pf_6raylib_6CyText_6origin___get__(struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
+static int __pyx_pf_6raylib_6CyText_6origin_2__set__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_6raylib_6CyText_8rotation___get__(struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
+static int __pyx_pf_6raylib_6CyText_8rotation_2__set__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, float __pyx_v_value); /* proto */
+static PyObject *__pyx_pf_6raylib_6CyText_4tint___get__(struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
+static int __pyx_pf_6raylib_6CyText_4tint_2__set__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, struct __pyx_obj_6raylib_CyColor *__pyx_v_value); /* proto */
+static PyObject *__pyx_pf_6raylib_6CyText_2draw(struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6raylib_6CyText_4draw_pro(struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6raylib_6CyText_6draw_ex(struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
+static void __pyx_pf_6raylib_6CyText_8__dealloc__(struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6raylib_6CyText_10__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyText *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6raylib_6CyText_12__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyText *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_pf_6raylib_8CyLine3D___reduce_cython__(struct __pyx_obj_6raylib_CyLine3D *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6raylib_8CyLine3D_2__setstate_cython__(struct __pyx_obj_6raylib_CyLine3D *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_pf_6raylib_9CyPoint3D___reduce_cython__(struct __pyx_obj_6raylib_CyPoint3D *__pyx_v_self); /* proto */
@@ -4562,6 +4589,9 @@ static PyObject *__pyx_int_222419149;
 static PyObject *__pyx_int_228825662;
 static PyObject *__pyx_int_238750788;
 static PyObject *__pyx_int_neg_1;
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_k__74;
+static struct __pyx_obj_6raylib_CyFont *__pyx_k__75;
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_k__76;
 static PyObject *__pyx_tuple_;
 static PyObject *__pyx_tuple__2;
 static PyObject *__pyx_tuple__3;
@@ -4635,16 +4665,13 @@ static PyObject *__pyx_tuple__70;
 static PyObject *__pyx_tuple__71;
 static PyObject *__pyx_tuple__72;
 static PyObject *__pyx_tuple__73;
-static PyObject *__pyx_tuple__74;
-static PyObject *__pyx_tuple__75;
 static PyObject *__pyx_tuple__77;
-static PyObject *__pyx_tuple__78;
 static PyObject *__pyx_tuple__79;
 static PyObject *__pyx_tuple__80;
 static PyObject *__pyx_tuple__81;
-static PyObject *__pyx_tuple__85;
-static PyObject *__pyx_tuple__86;
-static PyObject *__pyx_tuple__87;
+static PyObject *__pyx_tuple__82;
+static PyObject *__pyx_tuple__83;
+static PyObject *__pyx_tuple__84;
 static PyObject *__pyx_tuple__88;
 static PyObject *__pyx_tuple__89;
 static PyObject *__pyx_tuple__90;
@@ -4657,15 +4684,15 @@ static PyObject *__pyx_tuple__96;
 static PyObject *__pyx_tuple__97;
 static PyObject *__pyx_tuple__98;
 static PyObject *__pyx_tuple__99;
-static PyObject *__pyx_slice__101;
+static PyObject *__pyx_slice__104;
 static PyObject *__pyx_tuple__100;
+static PyObject *__pyx_tuple__101;
 static PyObject *__pyx_tuple__102;
 static PyObject *__pyx_tuple__103;
-static PyObject *__pyx_tuple__104;
 static PyObject *__pyx_tuple__105;
-static PyObject *__pyx_tuple__132;
-static PyObject *__pyx_tuple__133;
-static PyObject *__pyx_tuple__134;
+static PyObject *__pyx_tuple__106;
+static PyObject *__pyx_tuple__107;
+static PyObject *__pyx_tuple__108;
 static PyObject *__pyx_tuple__135;
 static PyObject *__pyx_tuple__136;
 static PyObject *__pyx_tuple__137;
@@ -4690,23 +4717,25 @@ static PyObject *__pyx_tuple__155;
 static PyObject *__pyx_tuple__156;
 static PyObject *__pyx_tuple__157;
 static PyObject *__pyx_tuple__158;
+static PyObject *__pyx_tuple__159;
 static PyObject *__pyx_tuple__160;
-static PyObject *__pyx_tuple__162;
-static PyObject *__pyx_tuple__173;
-static PyObject *__pyx_tuple__175;
-static PyObject *__pyx_tuple__177;
-static PyObject *__pyx_tuple__184;
-static PyObject *__pyx_tuple__186;
-static PyObject *__pyx_tuple__188;
+static PyObject *__pyx_tuple__161;
+static PyObject *__pyx_tuple__163;
+static PyObject *__pyx_tuple__165;
+static PyObject *__pyx_tuple__167;
+static PyObject *__pyx_tuple__168;
+static PyObject *__pyx_tuple__179;
+static PyObject *__pyx_tuple__181;
+static PyObject *__pyx_tuple__183;
 static PyObject *__pyx_tuple__190;
 static PyObject *__pyx_tuple__192;
 static PyObject *__pyx_tuple__194;
 static PyObject *__pyx_tuple__196;
 static PyObject *__pyx_tuple__198;
 static PyObject *__pyx_tuple__200;
-static PyObject *__pyx_tuple__210;
-static PyObject *__pyx_tuple__212;
-static PyObject *__pyx_tuple__214;
+static PyObject *__pyx_tuple__202;
+static PyObject *__pyx_tuple__204;
+static PyObject *__pyx_tuple__206;
 static PyObject *__pyx_tuple__216;
 static PyObject *__pyx_tuple__218;
 static PyObject *__pyx_tuple__220;
@@ -4714,24 +4743,24 @@ static PyObject *__pyx_tuple__222;
 static PyObject *__pyx_tuple__224;
 static PyObject *__pyx_tuple__226;
 static PyObject *__pyx_tuple__228;
-static PyObject *__pyx_tuple__239;
-static PyObject *__pyx_tuple__247;
-static PyObject *__pyx_tuple__250;
+static PyObject *__pyx_tuple__230;
+static PyObject *__pyx_tuple__232;
+static PyObject *__pyx_tuple__234;
+static PyObject *__pyx_tuple__245;
 static PyObject *__pyx_tuple__253;
 static PyObject *__pyx_tuple__256;
 static PyObject *__pyx_tuple__259;
 static PyObject *__pyx_tuple__262;
 static PyObject *__pyx_tuple__265;
-static PyObject *__pyx_tuple__270;
-static PyObject *__pyx_tuple__272;
-static PyObject *__pyx_tuple__274;
+static PyObject *__pyx_tuple__268;
+static PyObject *__pyx_tuple__271;
 static PyObject *__pyx_tuple__276;
 static PyObject *__pyx_tuple__278;
-static PyObject *__pyx_tuple__281;
-static PyObject *__pyx_tuple__283;
-static PyObject *__pyx_tuple__286;
-static PyObject *__pyx_tuple__288;
-static PyObject *__pyx_tuple__290;
+static PyObject *__pyx_tuple__280;
+static PyObject *__pyx_tuple__282;
+static PyObject *__pyx_tuple__284;
+static PyObject *__pyx_tuple__287;
+static PyObject *__pyx_tuple__289;
 static PyObject *__pyx_tuple__292;
 static PyObject *__pyx_tuple__294;
 static PyObject *__pyx_tuple__296;
@@ -4751,17 +4780,17 @@ static PyObject *__pyx_tuple__322;
 static PyObject *__pyx_tuple__324;
 static PyObject *__pyx_tuple__326;
 static PyObject *__pyx_tuple__328;
-static PyObject *__pyx_tuple__329;
 static PyObject *__pyx_tuple__330;
-static PyObject *__pyx_tuple__331;
 static PyObject *__pyx_tuple__332;
-static PyObject *__pyx_tuple__333;
-static PyObject *__pyx_codeobj__82;
-static PyObject *__pyx_codeobj__83;
-static PyObject *__pyx_codeobj__84;
-static PyObject *__pyx_codeobj__106;
-static PyObject *__pyx_codeobj__107;
-static PyObject *__pyx_codeobj__108;
+static PyObject *__pyx_tuple__334;
+static PyObject *__pyx_tuple__335;
+static PyObject *__pyx_tuple__336;
+static PyObject *__pyx_tuple__337;
+static PyObject *__pyx_tuple__338;
+static PyObject *__pyx_tuple__339;
+static PyObject *__pyx_codeobj__85;
+static PyObject *__pyx_codeobj__86;
+static PyObject *__pyx_codeobj__87;
 static PyObject *__pyx_codeobj__109;
 static PyObject *__pyx_codeobj__110;
 static PyObject *__pyx_codeobj__111;
@@ -4785,28 +4814,29 @@ static PyObject *__pyx_codeobj__128;
 static PyObject *__pyx_codeobj__129;
 static PyObject *__pyx_codeobj__130;
 static PyObject *__pyx_codeobj__131;
-static PyObject *__pyx_codeobj__159;
-static PyObject *__pyx_codeobj__161;
-static PyObject *__pyx_codeobj__163;
+static PyObject *__pyx_codeobj__132;
+static PyObject *__pyx_codeobj__133;
+static PyObject *__pyx_codeobj__134;
+static PyObject *__pyx_codeobj__162;
 static PyObject *__pyx_codeobj__164;
-static PyObject *__pyx_codeobj__165;
 static PyObject *__pyx_codeobj__166;
-static PyObject *__pyx_codeobj__167;
-static PyObject *__pyx_codeobj__168;
 static PyObject *__pyx_codeobj__169;
 static PyObject *__pyx_codeobj__170;
 static PyObject *__pyx_codeobj__171;
 static PyObject *__pyx_codeobj__172;
+static PyObject *__pyx_codeobj__173;
 static PyObject *__pyx_codeobj__174;
+static PyObject *__pyx_codeobj__175;
 static PyObject *__pyx_codeobj__176;
+static PyObject *__pyx_codeobj__177;
 static PyObject *__pyx_codeobj__178;
-static PyObject *__pyx_codeobj__179;
 static PyObject *__pyx_codeobj__180;
-static PyObject *__pyx_codeobj__181;
 static PyObject *__pyx_codeobj__182;
-static PyObject *__pyx_codeobj__183;
+static PyObject *__pyx_codeobj__184;
 static PyObject *__pyx_codeobj__185;
+static PyObject *__pyx_codeobj__186;
 static PyObject *__pyx_codeobj__187;
+static PyObject *__pyx_codeobj__188;
 static PyObject *__pyx_codeobj__189;
 static PyObject *__pyx_codeobj__191;
 static PyObject *__pyx_codeobj__193;
@@ -4814,16 +4844,16 @@ static PyObject *__pyx_codeobj__195;
 static PyObject *__pyx_codeobj__197;
 static PyObject *__pyx_codeobj__199;
 static PyObject *__pyx_codeobj__201;
-static PyObject *__pyx_codeobj__202;
 static PyObject *__pyx_codeobj__203;
-static PyObject *__pyx_codeobj__204;
 static PyObject *__pyx_codeobj__205;
-static PyObject *__pyx_codeobj__206;
 static PyObject *__pyx_codeobj__207;
 static PyObject *__pyx_codeobj__208;
 static PyObject *__pyx_codeobj__209;
+static PyObject *__pyx_codeobj__210;
 static PyObject *__pyx_codeobj__211;
+static PyObject *__pyx_codeobj__212;
 static PyObject *__pyx_codeobj__213;
+static PyObject *__pyx_codeobj__214;
 static PyObject *__pyx_codeobj__215;
 static PyObject *__pyx_codeobj__217;
 static PyObject *__pyx_codeobj__219;
@@ -4832,24 +4862,23 @@ static PyObject *__pyx_codeobj__223;
 static PyObject *__pyx_codeobj__225;
 static PyObject *__pyx_codeobj__227;
 static PyObject *__pyx_codeobj__229;
-static PyObject *__pyx_codeobj__230;
 static PyObject *__pyx_codeobj__231;
-static PyObject *__pyx_codeobj__232;
 static PyObject *__pyx_codeobj__233;
-static PyObject *__pyx_codeobj__234;
 static PyObject *__pyx_codeobj__235;
 static PyObject *__pyx_codeobj__236;
 static PyObject *__pyx_codeobj__237;
 static PyObject *__pyx_codeobj__238;
+static PyObject *__pyx_codeobj__239;
 static PyObject *__pyx_codeobj__240;
 static PyObject *__pyx_codeobj__241;
 static PyObject *__pyx_codeobj__242;
 static PyObject *__pyx_codeobj__243;
 static PyObject *__pyx_codeobj__244;
-static PyObject *__pyx_codeobj__245;
 static PyObject *__pyx_codeobj__246;
+static PyObject *__pyx_codeobj__247;
 static PyObject *__pyx_codeobj__248;
 static PyObject *__pyx_codeobj__249;
+static PyObject *__pyx_codeobj__250;
 static PyObject *__pyx_codeobj__251;
 static PyObject *__pyx_codeobj__252;
 static PyObject *__pyx_codeobj__254;
@@ -4862,19 +4891,20 @@ static PyObject *__pyx_codeobj__263;
 static PyObject *__pyx_codeobj__264;
 static PyObject *__pyx_codeobj__266;
 static PyObject *__pyx_codeobj__267;
-static PyObject *__pyx_codeobj__268;
 static PyObject *__pyx_codeobj__269;
-static PyObject *__pyx_codeobj__271;
+static PyObject *__pyx_codeobj__270;
+static PyObject *__pyx_codeobj__272;
 static PyObject *__pyx_codeobj__273;
+static PyObject *__pyx_codeobj__274;
 static PyObject *__pyx_codeobj__275;
 static PyObject *__pyx_codeobj__277;
 static PyObject *__pyx_codeobj__279;
-static PyObject *__pyx_codeobj__280;
-static PyObject *__pyx_codeobj__282;
-static PyObject *__pyx_codeobj__284;
+static PyObject *__pyx_codeobj__281;
+static PyObject *__pyx_codeobj__283;
 static PyObject *__pyx_codeobj__285;
-static PyObject *__pyx_codeobj__287;
-static PyObject *__pyx_codeobj__289;
+static PyObject *__pyx_codeobj__286;
+static PyObject *__pyx_codeobj__288;
+static PyObject *__pyx_codeobj__290;
 static PyObject *__pyx_codeobj__291;
 static PyObject *__pyx_codeobj__293;
 static PyObject *__pyx_codeobj__295;
@@ -4894,10 +4924,13 @@ static PyObject *__pyx_codeobj__321;
 static PyObject *__pyx_codeobj__323;
 static PyObject *__pyx_codeobj__325;
 static PyObject *__pyx_codeobj__327;
-static PyObject *__pyx_codeobj__334;
+static PyObject *__pyx_codeobj__329;
+static PyObject *__pyx_codeobj__331;
+static PyObject *__pyx_codeobj__333;
+static PyObject *__pyx_codeobj__340;
 /* Late includes */
 
-/* "raylib.pyx":16
+/* "raylib.pyx":17
  *     cdef Color _color
  * 
  *     def __cinit__(self, uint8_t r = 0, uint8_t g = 0, uint8_t b = 0, uint8_t a = 0):             # <<<<<<<<<<<<<<
@@ -4963,7 +4996,7 @@ static int __pyx_pw_6raylib_7CyColor_1__cinit__(PyObject *__pyx_v_self, PyObject
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 16, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 17, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -4980,29 +5013,29 @@ static int __pyx_pw_6raylib_7CyColor_1__cinit__(PyObject *__pyx_v_self, PyObject
       }
     }
     if (values[0]) {
-      __pyx_v_r = __Pyx_PyInt_As_uint8_t(values[0]); if (unlikely((__pyx_v_r == ((uint8_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 16, __pyx_L3_error)
+      __pyx_v_r = __Pyx_PyInt_As_uint8_t(values[0]); if (unlikely((__pyx_v_r == ((uint8_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 17, __pyx_L3_error)
     } else {
       __pyx_v_r = ((uint8_t)0);
     }
     if (values[1]) {
-      __pyx_v_g = __Pyx_PyInt_As_uint8_t(values[1]); if (unlikely((__pyx_v_g == ((uint8_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 16, __pyx_L3_error)
+      __pyx_v_g = __Pyx_PyInt_As_uint8_t(values[1]); if (unlikely((__pyx_v_g == ((uint8_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 17, __pyx_L3_error)
     } else {
       __pyx_v_g = ((uint8_t)0);
     }
     if (values[2]) {
-      __pyx_v_b = __Pyx_PyInt_As_uint8_t(values[2]); if (unlikely((__pyx_v_b == ((uint8_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 16, __pyx_L3_error)
+      __pyx_v_b = __Pyx_PyInt_As_uint8_t(values[2]); if (unlikely((__pyx_v_b == ((uint8_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 17, __pyx_L3_error)
     } else {
       __pyx_v_b = ((uint8_t)0);
     }
     if (values[3]) {
-      __pyx_v_a = __Pyx_PyInt_As_uint8_t(values[3]); if (unlikely((__pyx_v_a == ((uint8_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 16, __pyx_L3_error)
+      __pyx_v_a = __Pyx_PyInt_As_uint8_t(values[3]); if (unlikely((__pyx_v_a == ((uint8_t)-1)) && PyErr_Occurred())) __PYX_ERR(0, 17, __pyx_L3_error)
     } else {
       __pyx_v_a = ((uint8_t)0);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 16, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 17, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.CyColor.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -5020,7 +5053,7 @@ static int __pyx_pf_6raylib_7CyColor___cinit__(struct __pyx_obj_6raylib_CyColor 
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":17
+  /* "raylib.pyx":18
  * 
  *     def __cinit__(self, uint8_t r = 0, uint8_t g = 0, uint8_t b = 0, uint8_t a = 0):
  *         self._color.r = r             # <<<<<<<<<<<<<<
@@ -5029,7 +5062,7 @@ static int __pyx_pf_6raylib_7CyColor___cinit__(struct __pyx_obj_6raylib_CyColor 
  */
   __pyx_v_self->_color.r = __pyx_v_r;
 
-  /* "raylib.pyx":18
+  /* "raylib.pyx":19
  *     def __cinit__(self, uint8_t r = 0, uint8_t g = 0, uint8_t b = 0, uint8_t a = 0):
  *         self._color.r = r
  *         self._color.g = g             # <<<<<<<<<<<<<<
@@ -5038,7 +5071,7 @@ static int __pyx_pf_6raylib_7CyColor___cinit__(struct __pyx_obj_6raylib_CyColor 
  */
   __pyx_v_self->_color.g = __pyx_v_g;
 
-  /* "raylib.pyx":19
+  /* "raylib.pyx":20
  *         self._color.r = r
  *         self._color.g = g
  *         self._color.b = b             # <<<<<<<<<<<<<<
@@ -5047,7 +5080,7 @@ static int __pyx_pf_6raylib_7CyColor___cinit__(struct __pyx_obj_6raylib_CyColor 
  */
   __pyx_v_self->_color.b = __pyx_v_b;
 
-  /* "raylib.pyx":20
+  /* "raylib.pyx":21
  *         self._color.g = g
  *         self._color.b = b
  *         self._color.a = a             # <<<<<<<<<<<<<<
@@ -5056,7 +5089,7 @@ static int __pyx_pf_6raylib_7CyColor___cinit__(struct __pyx_obj_6raylib_CyColor 
  */
   __pyx_v_self->_color.a = __pyx_v_a;
 
-  /* "raylib.pyx":16
+  /* "raylib.pyx":17
  *     cdef Color _color
  * 
  *     def __cinit__(self, uint8_t r = 0, uint8_t g = 0, uint8_t b = 0, uint8_t a = 0):             # <<<<<<<<<<<<<<
@@ -5070,7 +5103,7 @@ static int __pyx_pf_6raylib_7CyColor___cinit__(struct __pyx_obj_6raylib_CyColor 
   return __pyx_r;
 }
 
-/* "raylib.pyx":23
+/* "raylib.pyx":24
  * 
  *     @staticmethod
  *     def lightgray() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5100,7 +5133,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_2lightgray(vo
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("lightgray", 0);
 
-  /* "raylib.pyx":24
+  /* "raylib.pyx":25
  *     @staticmethod
  *     def lightgray() -> 'CyColor':
  *         return _LIGHTGRAY             # <<<<<<<<<<<<<<
@@ -5112,7 +5145,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_2lightgray(vo
   __pyx_r = __pyx_v_6raylib__LIGHTGRAY;
   goto __pyx_L0;
 
-  /* "raylib.pyx":23
+  /* "raylib.pyx":24
  * 
  *     @staticmethod
  *     def lightgray() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5127,7 +5160,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_2lightgray(vo
   return __pyx_r;
 }
 
-/* "raylib.pyx":27
+/* "raylib.pyx":28
  * 
  *     @staticmethod
  *     def gray() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5157,7 +5190,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_4gray(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("gray", 0);
 
-  /* "raylib.pyx":28
+  /* "raylib.pyx":29
  *     @staticmethod
  *     def gray() -> 'CyColor':
  *         return _GRAY             # <<<<<<<<<<<<<<
@@ -5169,7 +5202,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_4gray(void) {
   __pyx_r = __pyx_v_6raylib__GRAY;
   goto __pyx_L0;
 
-  /* "raylib.pyx":27
+  /* "raylib.pyx":28
  * 
  *     @staticmethod
  *     def gray() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5184,7 +5217,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_4gray(void) {
   return __pyx_r;
 }
 
-/* "raylib.pyx":31
+/* "raylib.pyx":32
  * 
  *     @staticmethod
  *     def darkgray() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5214,7 +5247,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_6darkgray(voi
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("darkgray", 0);
 
-  /* "raylib.pyx":32
+  /* "raylib.pyx":33
  *     @staticmethod
  *     def darkgray() -> 'CyColor':
  *         return _DARKGRAY             # <<<<<<<<<<<<<<
@@ -5226,7 +5259,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_6darkgray(voi
   __pyx_r = __pyx_v_6raylib__DARKGRAY;
   goto __pyx_L0;
 
-  /* "raylib.pyx":31
+  /* "raylib.pyx":32
  * 
  *     @staticmethod
  *     def darkgray() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5241,7 +5274,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_6darkgray(voi
   return __pyx_r;
 }
 
-/* "raylib.pyx":35
+/* "raylib.pyx":36
  * 
  *     @staticmethod
  *     def yellow() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5271,7 +5304,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_8yellow(void)
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("yellow", 0);
 
-  /* "raylib.pyx":36
+  /* "raylib.pyx":37
  *     @staticmethod
  *     def yellow() -> 'CyColor':
  *         return _YELLOW             # <<<<<<<<<<<<<<
@@ -5283,7 +5316,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_8yellow(void)
   __pyx_r = __pyx_v_6raylib__YELLOW;
   goto __pyx_L0;
 
-  /* "raylib.pyx":35
+  /* "raylib.pyx":36
  * 
  *     @staticmethod
  *     def yellow() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5298,7 +5331,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_8yellow(void)
   return __pyx_r;
 }
 
-/* "raylib.pyx":39
+/* "raylib.pyx":40
  * 
  *     @staticmethod
  *     def gold() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5328,7 +5361,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_10gold(void) 
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("gold", 0);
 
-  /* "raylib.pyx":40
+  /* "raylib.pyx":41
  *     @staticmethod
  *     def gold() -> 'CyColor':
  *         return _GOLD             # <<<<<<<<<<<<<<
@@ -5340,7 +5373,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_10gold(void) 
   __pyx_r = __pyx_v_6raylib__GOLD;
   goto __pyx_L0;
 
-  /* "raylib.pyx":39
+  /* "raylib.pyx":40
  * 
  *     @staticmethod
  *     def gold() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5355,7 +5388,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_10gold(void) 
   return __pyx_r;
 }
 
-/* "raylib.pyx":43
+/* "raylib.pyx":44
  * 
  *     @staticmethod
  *     def orange() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5385,7 +5418,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_12orange(void
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("orange", 0);
 
-  /* "raylib.pyx":44
+  /* "raylib.pyx":45
  *     @staticmethod
  *     def orange() -> 'CyColor':
  *         return _ORANGE             # <<<<<<<<<<<<<<
@@ -5397,7 +5430,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_12orange(void
   __pyx_r = __pyx_v_6raylib__ORANGE;
   goto __pyx_L0;
 
-  /* "raylib.pyx":43
+  /* "raylib.pyx":44
  * 
  *     @staticmethod
  *     def orange() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5412,7 +5445,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_12orange(void
   return __pyx_r;
 }
 
-/* "raylib.pyx":47
+/* "raylib.pyx":48
  * 
  *     @staticmethod
  *     def pink() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5442,7 +5475,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_14pink(void) 
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("pink", 0);
 
-  /* "raylib.pyx":48
+  /* "raylib.pyx":49
  *     @staticmethod
  *     def pink() -> 'CyColor':
  *         return _PINK             # <<<<<<<<<<<<<<
@@ -5454,7 +5487,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_14pink(void) 
   __pyx_r = __pyx_v_6raylib__PINK;
   goto __pyx_L0;
 
-  /* "raylib.pyx":47
+  /* "raylib.pyx":48
  * 
  *     @staticmethod
  *     def pink() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5469,7 +5502,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_14pink(void) 
   return __pyx_r;
 }
 
-/* "raylib.pyx":51
+/* "raylib.pyx":52
  * 
  *     @staticmethod
  *     def red() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5499,7 +5532,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_16red(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("red", 0);
 
-  /* "raylib.pyx":52
+  /* "raylib.pyx":53
  *     @staticmethod
  *     def red() -> 'CyColor':
  *         return _RED             # <<<<<<<<<<<<<<
@@ -5511,7 +5544,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_16red(void) {
   __pyx_r = __pyx_v_6raylib__RED;
   goto __pyx_L0;
 
-  /* "raylib.pyx":51
+  /* "raylib.pyx":52
  * 
  *     @staticmethod
  *     def red() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5526,7 +5559,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_16red(void) {
   return __pyx_r;
 }
 
-/* "raylib.pyx":55
+/* "raylib.pyx":56
  * 
  *     @staticmethod
  *     def maroon() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5556,7 +5589,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_18maroon(void
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("maroon", 0);
 
-  /* "raylib.pyx":56
+  /* "raylib.pyx":57
  *     @staticmethod
  *     def maroon() -> 'CyColor':
  *         return _MAROON             # <<<<<<<<<<<<<<
@@ -5568,7 +5601,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_18maroon(void
   __pyx_r = __pyx_v_6raylib__MAROON;
   goto __pyx_L0;
 
-  /* "raylib.pyx":55
+  /* "raylib.pyx":56
  * 
  *     @staticmethod
  *     def maroon() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5583,7 +5616,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_18maroon(void
   return __pyx_r;
 }
 
-/* "raylib.pyx":59
+/* "raylib.pyx":60
  * 
  *     @staticmethod
  *     def green() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5613,7 +5646,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_20green(void)
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("green", 0);
 
-  /* "raylib.pyx":60
+  /* "raylib.pyx":61
  *     @staticmethod
  *     def green() -> 'CyColor':
  *         return _GREEN             # <<<<<<<<<<<<<<
@@ -5625,7 +5658,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_20green(void)
   __pyx_r = __pyx_v_6raylib__GREEN;
   goto __pyx_L0;
 
-  /* "raylib.pyx":59
+  /* "raylib.pyx":60
  * 
  *     @staticmethod
  *     def green() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5640,7 +5673,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_20green(void)
   return __pyx_r;
 }
 
-/* "raylib.pyx":63
+/* "raylib.pyx":64
  * 
  *     @staticmethod
  *     def lime() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5670,7 +5703,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_22lime(void) 
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("lime", 0);
 
-  /* "raylib.pyx":64
+  /* "raylib.pyx":65
  *     @staticmethod
  *     def lime() -> 'CyColor':
  *         return _LIME             # <<<<<<<<<<<<<<
@@ -5682,7 +5715,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_22lime(void) 
   __pyx_r = __pyx_v_6raylib__LIME;
   goto __pyx_L0;
 
-  /* "raylib.pyx":63
+  /* "raylib.pyx":64
  * 
  *     @staticmethod
  *     def lime() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5697,7 +5730,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_22lime(void) 
   return __pyx_r;
 }
 
-/* "raylib.pyx":67
+/* "raylib.pyx":68
  * 
  *     @staticmethod
  *     def darkgreen() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5727,7 +5760,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_24darkgreen(v
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("darkgreen", 0);
 
-  /* "raylib.pyx":68
+  /* "raylib.pyx":69
  *     @staticmethod
  *     def darkgreen() -> 'CyColor':
  *         return _DARKGREEN             # <<<<<<<<<<<<<<
@@ -5739,7 +5772,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_24darkgreen(v
   __pyx_r = __pyx_v_6raylib__DARKGREEN;
   goto __pyx_L0;
 
-  /* "raylib.pyx":67
+  /* "raylib.pyx":68
  * 
  *     @staticmethod
  *     def darkgreen() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5754,7 +5787,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_24darkgreen(v
   return __pyx_r;
 }
 
-/* "raylib.pyx":71
+/* "raylib.pyx":72
  * 
  *     @staticmethod
  *     def skyblue() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5784,7 +5817,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_26skyblue(voi
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("skyblue", 0);
 
-  /* "raylib.pyx":72
+  /* "raylib.pyx":73
  *     @staticmethod
  *     def skyblue() -> 'CyColor':
  *         return _SKYBLUE             # <<<<<<<<<<<<<<
@@ -5796,7 +5829,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_26skyblue(voi
   __pyx_r = __pyx_v_6raylib__SKYBLUE;
   goto __pyx_L0;
 
-  /* "raylib.pyx":71
+  /* "raylib.pyx":72
  * 
  *     @staticmethod
  *     def skyblue() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5811,7 +5844,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_26skyblue(voi
   return __pyx_r;
 }
 
-/* "raylib.pyx":75
+/* "raylib.pyx":76
  * 
  *     @staticmethod
  *     def blue() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5841,7 +5874,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_28blue(void) 
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("blue", 0);
 
-  /* "raylib.pyx":76
+  /* "raylib.pyx":77
  *     @staticmethod
  *     def blue() -> 'CyColor':
  *         return _BLUE             # <<<<<<<<<<<<<<
@@ -5853,7 +5886,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_28blue(void) 
   __pyx_r = __pyx_v_6raylib__BLUE;
   goto __pyx_L0;
 
-  /* "raylib.pyx":75
+  /* "raylib.pyx":76
  * 
  *     @staticmethod
  *     def blue() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5868,7 +5901,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_28blue(void) 
   return __pyx_r;
 }
 
-/* "raylib.pyx":79
+/* "raylib.pyx":80
  * 
  *     @staticmethod
  *     def darkblue() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5898,7 +5931,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_30darkblue(vo
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("darkblue", 0);
 
-  /* "raylib.pyx":80
+  /* "raylib.pyx":81
  *     @staticmethod
  *     def darkblue() -> 'CyColor':
  *         return _DARKBLUE             # <<<<<<<<<<<<<<
@@ -5910,7 +5943,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_30darkblue(vo
   __pyx_r = __pyx_v_6raylib__DARKBLUE;
   goto __pyx_L0;
 
-  /* "raylib.pyx":79
+  /* "raylib.pyx":80
  * 
  *     @staticmethod
  *     def darkblue() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5925,7 +5958,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_30darkblue(vo
   return __pyx_r;
 }
 
-/* "raylib.pyx":83
+/* "raylib.pyx":84
  * 
  *     @staticmethod
  *     def purple() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5955,7 +5988,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_32purple(void
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("purple", 0);
 
-  /* "raylib.pyx":84
+  /* "raylib.pyx":85
  *     @staticmethod
  *     def purple() -> 'CyColor':
  *         return _PURPLE             # <<<<<<<<<<<<<<
@@ -5967,7 +6000,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_32purple(void
   __pyx_r = __pyx_v_6raylib__PURPLE;
   goto __pyx_L0;
 
-  /* "raylib.pyx":83
+  /* "raylib.pyx":84
  * 
  *     @staticmethod
  *     def purple() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -5982,7 +6015,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_32purple(void
   return __pyx_r;
 }
 
-/* "raylib.pyx":87
+/* "raylib.pyx":88
  * 
  *     @staticmethod
  *     def violet() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6012,7 +6045,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_34violet(void
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("violet", 0);
 
-  /* "raylib.pyx":88
+  /* "raylib.pyx":89
  *     @staticmethod
  *     def violet() -> 'CyColor':
  *         return _VIOLET             # <<<<<<<<<<<<<<
@@ -6024,7 +6057,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_34violet(void
   __pyx_r = __pyx_v_6raylib__VIOLET;
   goto __pyx_L0;
 
-  /* "raylib.pyx":87
+  /* "raylib.pyx":88
  * 
  *     @staticmethod
  *     def violet() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6039,7 +6072,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_34violet(void
   return __pyx_r;
 }
 
-/* "raylib.pyx":91
+/* "raylib.pyx":92
  * 
  *     @staticmethod
  *     def darkpurple() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6069,7 +6102,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_36darkpurple(
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("darkpurple", 0);
 
-  /* "raylib.pyx":92
+  /* "raylib.pyx":93
  *     @staticmethod
  *     def darkpurple() -> 'CyColor':
  *         return _DARKPURPLE             # <<<<<<<<<<<<<<
@@ -6081,7 +6114,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_36darkpurple(
   __pyx_r = __pyx_v_6raylib__DARKPURPLE;
   goto __pyx_L0;
 
-  /* "raylib.pyx":91
+  /* "raylib.pyx":92
  * 
  *     @staticmethod
  *     def darkpurple() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6096,7 +6129,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_36darkpurple(
   return __pyx_r;
 }
 
-/* "raylib.pyx":95
+/* "raylib.pyx":96
  * 
  *     @staticmethod
  *     def beige() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6126,7 +6159,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_38beige(void)
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("beige", 0);
 
-  /* "raylib.pyx":96
+  /* "raylib.pyx":97
  *     @staticmethod
  *     def beige() -> 'CyColor':
  *         return _BEIGE             # <<<<<<<<<<<<<<
@@ -6138,7 +6171,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_38beige(void)
   __pyx_r = __pyx_v_6raylib__BEIGE;
   goto __pyx_L0;
 
-  /* "raylib.pyx":95
+  /* "raylib.pyx":96
  * 
  *     @staticmethod
  *     def beige() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6153,7 +6186,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_38beige(void)
   return __pyx_r;
 }
 
-/* "raylib.pyx":99
+/* "raylib.pyx":100
  * 
  *     @staticmethod
  *     def brown() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6183,7 +6216,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_40brown(void)
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("brown", 0);
 
-  /* "raylib.pyx":100
+  /* "raylib.pyx":101
  *     @staticmethod
  *     def brown() -> 'CyColor':
  *         return _BROWN             # <<<<<<<<<<<<<<
@@ -6195,7 +6228,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_40brown(void)
   __pyx_r = __pyx_v_6raylib__BROWN;
   goto __pyx_L0;
 
-  /* "raylib.pyx":99
+  /* "raylib.pyx":100
  * 
  *     @staticmethod
  *     def brown() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6210,7 +6243,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_40brown(void)
   return __pyx_r;
 }
 
-/* "raylib.pyx":103
+/* "raylib.pyx":104
  * 
  *     @staticmethod
  *     def darkbrown() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6240,7 +6273,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_42darkbrown(v
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("darkbrown", 0);
 
-  /* "raylib.pyx":104
+  /* "raylib.pyx":105
  *     @staticmethod
  *     def darkbrown() -> 'CyColor':
  *         return _DARKBROWN             # <<<<<<<<<<<<<<
@@ -6252,7 +6285,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_42darkbrown(v
   __pyx_r = __pyx_v_6raylib__DARKBROWN;
   goto __pyx_L0;
 
-  /* "raylib.pyx":103
+  /* "raylib.pyx":104
  * 
  *     @staticmethod
  *     def darkbrown() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6267,7 +6300,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_42darkbrown(v
   return __pyx_r;
 }
 
-/* "raylib.pyx":107
+/* "raylib.pyx":108
  * 
  *     @staticmethod
  *     def white() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6297,7 +6330,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_44white(void)
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("white", 0);
 
-  /* "raylib.pyx":108
+  /* "raylib.pyx":109
  *     @staticmethod
  *     def white() -> 'CyColor':
  *         return _WHITE             # <<<<<<<<<<<<<<
@@ -6309,7 +6342,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_44white(void)
   __pyx_r = __pyx_v_6raylib__WHITE;
   goto __pyx_L0;
 
-  /* "raylib.pyx":107
+  /* "raylib.pyx":108
  * 
  *     @staticmethod
  *     def white() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6324,7 +6357,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_44white(void)
   return __pyx_r;
 }
 
-/* "raylib.pyx":111
+/* "raylib.pyx":112
  * 
  *     @staticmethod
  *     def black() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6354,7 +6387,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_46black(void)
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("black", 0);
 
-  /* "raylib.pyx":112
+  /* "raylib.pyx":113
  *     @staticmethod
  *     def black() -> 'CyColor':
  *         return _BLACK             # <<<<<<<<<<<<<<
@@ -6366,7 +6399,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_46black(void)
   __pyx_r = __pyx_v_6raylib__BLACK;
   goto __pyx_L0;
 
-  /* "raylib.pyx":111
+  /* "raylib.pyx":112
  * 
  *     @staticmethod
  *     def black() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6381,7 +6414,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_46black(void)
   return __pyx_r;
 }
 
-/* "raylib.pyx":115
+/* "raylib.pyx":116
  * 
  *     @staticmethod
  *     def blank() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6411,7 +6444,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_48blank(void)
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("blank", 0);
 
-  /* "raylib.pyx":116
+  /* "raylib.pyx":117
  *     @staticmethod
  *     def blank() -> 'CyColor':
  *         return _BLANK             # <<<<<<<<<<<<<<
@@ -6423,7 +6456,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_48blank(void)
   __pyx_r = __pyx_v_6raylib__BLANK;
   goto __pyx_L0;
 
-  /* "raylib.pyx":115
+  /* "raylib.pyx":116
  * 
  *     @staticmethod
  *     def blank() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6438,7 +6471,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_48blank(void)
   return __pyx_r;
 }
 
-/* "raylib.pyx":119
+/* "raylib.pyx":120
  * 
  *     @staticmethod
  *     def magenta() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6468,7 +6501,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_50magenta(voi
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("magenta", 0);
 
-  /* "raylib.pyx":120
+  /* "raylib.pyx":121
  *     @staticmethod
  *     def magenta() -> 'CyColor':
  *         return _MAGENTA             # <<<<<<<<<<<<<<
@@ -6480,7 +6513,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_50magenta(voi
   __pyx_r = __pyx_v_6raylib__MAGENTA;
   goto __pyx_L0;
 
-  /* "raylib.pyx":119
+  /* "raylib.pyx":120
  * 
  *     @staticmethod
  *     def magenta() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6495,7 +6528,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_50magenta(voi
   return __pyx_r;
 }
 
-/* "raylib.pyx":123
+/* "raylib.pyx":124
  * 
  *     @staticmethod
  *     def raywhite() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6525,7 +6558,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_52raywhite(vo
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("raywhite", 0);
 
-  /* "raylib.pyx":124
+  /* "raylib.pyx":125
  *     @staticmethod
  *     def raywhite() -> 'CyColor':
  *         return _RAYWHITE             # <<<<<<<<<<<<<<
@@ -6537,7 +6570,7 @@ static struct __pyx_obj_6raylib_CyColor *__pyx_pf_6raylib_7CyColor_52raywhite(vo
   __pyx_r = __pyx_v_6raylib__RAYWHITE;
   goto __pyx_L0;
 
-  /* "raylib.pyx":123
+  /* "raylib.pyx":124
  * 
  *     @staticmethod
  *     def raywhite() -> 'CyColor':             # <<<<<<<<<<<<<<
@@ -6665,7 +6698,7 @@ static PyObject *__pyx_pf_6raylib_7CyColor_56__setstate_cython__(CYTHON_UNUSED s
   return __pyx_r;
 }
 
-/* "raylib.pyx":183
+/* "raylib.pyx":184
  *     #        float height            # Rectangle height
  * 
  *     def __cinit__(self, float x = 0.0, float y = 0.0, float width = 0.0, float height = 0.0):             # <<<<<<<<<<<<<<
@@ -6731,7 +6764,7 @@ static int __pyx_pw_6raylib_11CyRectangle_1__cinit__(PyObject *__pyx_v_self, PyO
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 183, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 184, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -6748,29 +6781,29 @@ static int __pyx_pw_6raylib_11CyRectangle_1__cinit__(PyObject *__pyx_v_self, PyO
       }
     }
     if (values[0]) {
-      __pyx_v_x = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_x == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 183, __pyx_L3_error)
+      __pyx_v_x = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_x == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 184, __pyx_L3_error)
     } else {
       __pyx_v_x = ((float)0.0);
     }
     if (values[1]) {
-      __pyx_v_y = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_y == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 183, __pyx_L3_error)
+      __pyx_v_y = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_y == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 184, __pyx_L3_error)
     } else {
       __pyx_v_y = ((float)0.0);
     }
     if (values[2]) {
-      __pyx_v_width = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_width == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 183, __pyx_L3_error)
+      __pyx_v_width = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_width == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 184, __pyx_L3_error)
     } else {
       __pyx_v_width = ((float)0.0);
     }
     if (values[3]) {
-      __pyx_v_height = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 183, __pyx_L3_error)
+      __pyx_v_height = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_height == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 184, __pyx_L3_error)
     } else {
       __pyx_v_height = ((float)0.0);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 183, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 0, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 184, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.CyRectangle.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -6788,7 +6821,7 @@ static int __pyx_pf_6raylib_11CyRectangle___cinit__(struct __pyx_obj_6raylib_CyR
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":184
+  /* "raylib.pyx":185
  * 
  *     def __cinit__(self, float x = 0.0, float y = 0.0, float width = 0.0, float height = 0.0):
  *         self._rect.x = x             # <<<<<<<<<<<<<<
@@ -6797,7 +6830,7 @@ static int __pyx_pf_6raylib_11CyRectangle___cinit__(struct __pyx_obj_6raylib_CyR
  */
   __pyx_v_self->_rect.x = __pyx_v_x;
 
-  /* "raylib.pyx":185
+  /* "raylib.pyx":186
  *     def __cinit__(self, float x = 0.0, float y = 0.0, float width = 0.0, float height = 0.0):
  *         self._rect.x = x
  *         self._rect.y = y             # <<<<<<<<<<<<<<
@@ -6806,7 +6839,7 @@ static int __pyx_pf_6raylib_11CyRectangle___cinit__(struct __pyx_obj_6raylib_CyR
  */
   __pyx_v_self->_rect.y = __pyx_v_y;
 
-  /* "raylib.pyx":186
+  /* "raylib.pyx":187
  *         self._rect.x = x
  *         self._rect.y = y
  *         self._rect.height = height             # <<<<<<<<<<<<<<
@@ -6815,7 +6848,7 @@ static int __pyx_pf_6raylib_11CyRectangle___cinit__(struct __pyx_obj_6raylib_CyR
  */
   __pyx_v_self->_rect.height = __pyx_v_height;
 
-  /* "raylib.pyx":187
+  /* "raylib.pyx":188
  *         self._rect.y = y
  *         self._rect.height = height
  *         self._rect.width = width             # <<<<<<<<<<<<<<
@@ -6824,7 +6857,7 @@ static int __pyx_pf_6raylib_11CyRectangle___cinit__(struct __pyx_obj_6raylib_CyR
  */
   __pyx_v_self->_rect.width = __pyx_v_width;
 
-  /* "raylib.pyx":183
+  /* "raylib.pyx":184
  *     #        float height            # Rectangle height
  * 
  *     def __cinit__(self, float x = 0.0, float y = 0.0, float width = 0.0, float height = 0.0):             # <<<<<<<<<<<<<<
@@ -6838,7 +6871,7 @@ static int __pyx_pf_6raylib_11CyRectangle___cinit__(struct __pyx_obj_6raylib_CyR
   return __pyx_r;
 }
 
-/* "raylib.pyx":190
+/* "raylib.pyx":191
  * 
  *     @property
  *     def x(self) -> float:             # <<<<<<<<<<<<<<
@@ -6868,7 +6901,7 @@ static PyObject *__pyx_pf_6raylib_11CyRectangle_1x___get__(struct __pyx_obj_6ray
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "raylib.pyx":191
+  /* "raylib.pyx":192
  *     @property
  *     def x(self) -> float:
  *         return self._rect.x             # <<<<<<<<<<<<<<
@@ -6876,13 +6909,13 @@ static PyObject *__pyx_pf_6raylib_11CyRectangle_1x___get__(struct __pyx_obj_6ray
  *     @x.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->_rect.x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 191, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->_rect.x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 192, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":190
+  /* "raylib.pyx":191
  * 
  *     @property
  *     def x(self) -> float:             # <<<<<<<<<<<<<<
@@ -6901,7 +6934,7 @@ static PyObject *__pyx_pf_6raylib_11CyRectangle_1x___get__(struct __pyx_obj_6ray
   return __pyx_r;
 }
 
-/* "raylib.pyx":194
+/* "raylib.pyx":195
  * 
  *     @x.setter
  *     def x(self, value: float) -> None:             # <<<<<<<<<<<<<<
@@ -6920,7 +6953,7 @@ static int __pyx_pw_6raylib_11CyRectangle_1x_3__set__(PyObject *__pyx_v_self, Py
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_value); {
-    __pyx_v_value = __pyx_PyFloat_AsDouble(__pyx_arg_value); if (unlikely((__pyx_v_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 194, __pyx_L3_error)
+    __pyx_v_value = __pyx_PyFloat_AsDouble(__pyx_arg_value); if (unlikely((__pyx_v_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 195, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6940,7 +6973,7 @@ static int __pyx_pf_6raylib_11CyRectangle_1x_2__set__(struct __pyx_obj_6raylib_C
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "raylib.pyx":195
+  /* "raylib.pyx":196
  *     @x.setter
  *     def x(self, value: float) -> None:
  *         self._rect.x = <float>value             # <<<<<<<<<<<<<<
@@ -6949,7 +6982,7 @@ static int __pyx_pf_6raylib_11CyRectangle_1x_2__set__(struct __pyx_obj_6raylib_C
  */
   __pyx_v_self->_rect.x = ((float)__pyx_v_value);
 
-  /* "raylib.pyx":194
+  /* "raylib.pyx":195
  * 
  *     @x.setter
  *     def x(self, value: float) -> None:             # <<<<<<<<<<<<<<
@@ -6963,7 +6996,7 @@ static int __pyx_pf_6raylib_11CyRectangle_1x_2__set__(struct __pyx_obj_6raylib_C
   return __pyx_r;
 }
 
-/* "raylib.pyx":198
+/* "raylib.pyx":199
  * 
  *     @property
  *     def y(self) -> float:             # <<<<<<<<<<<<<<
@@ -6993,7 +7026,7 @@ static PyObject *__pyx_pf_6raylib_11CyRectangle_1y___get__(struct __pyx_obj_6ray
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "raylib.pyx":199
+  /* "raylib.pyx":200
  *     @property
  *     def y(self) -> float:
  *         return self._rect.y             # <<<<<<<<<<<<<<
@@ -7001,13 +7034,13 @@ static PyObject *__pyx_pf_6raylib_11CyRectangle_1y___get__(struct __pyx_obj_6ray
  *     @y.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->_rect.y); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 199, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->_rect.y); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 200, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":198
+  /* "raylib.pyx":199
  * 
  *     @property
  *     def y(self) -> float:             # <<<<<<<<<<<<<<
@@ -7026,7 +7059,7 @@ static PyObject *__pyx_pf_6raylib_11CyRectangle_1y___get__(struct __pyx_obj_6ray
   return __pyx_r;
 }
 
-/* "raylib.pyx":202
+/* "raylib.pyx":203
  * 
  *     @y.setter
  *     def y(self, value: float) -> None:             # <<<<<<<<<<<<<<
@@ -7045,7 +7078,7 @@ static int __pyx_pw_6raylib_11CyRectangle_1y_3__set__(PyObject *__pyx_v_self, Py
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_value); {
-    __pyx_v_value = __pyx_PyFloat_AsDouble(__pyx_arg_value); if (unlikely((__pyx_v_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 202, __pyx_L3_error)
+    __pyx_v_value = __pyx_PyFloat_AsDouble(__pyx_arg_value); if (unlikely((__pyx_v_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 203, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7065,7 +7098,7 @@ static int __pyx_pf_6raylib_11CyRectangle_1y_2__set__(struct __pyx_obj_6raylib_C
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "raylib.pyx":203
+  /* "raylib.pyx":204
  *     @y.setter
  *     def y(self, value: float) -> None:
  *         self._rect.y = <float>value             # <<<<<<<<<<<<<<
@@ -7074,7 +7107,7 @@ static int __pyx_pf_6raylib_11CyRectangle_1y_2__set__(struct __pyx_obj_6raylib_C
  */
   __pyx_v_self->_rect.y = ((float)__pyx_v_value);
 
-  /* "raylib.pyx":202
+  /* "raylib.pyx":203
  * 
  *     @y.setter
  *     def y(self, value: float) -> None:             # <<<<<<<<<<<<<<
@@ -7088,7 +7121,7 @@ static int __pyx_pf_6raylib_11CyRectangle_1y_2__set__(struct __pyx_obj_6raylib_C
   return __pyx_r;
 }
 
-/* "raylib.pyx":206
+/* "raylib.pyx":207
  * 
  *     @property
  *     def height(self) -> float:             # <<<<<<<<<<<<<<
@@ -7118,7 +7151,7 @@ static PyObject *__pyx_pf_6raylib_11CyRectangle_6height___get__(struct __pyx_obj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "raylib.pyx":207
+  /* "raylib.pyx":208
  *     @property
  *     def height(self) -> float:
  *         return self._rect.height             # <<<<<<<<<<<<<<
@@ -7126,13 +7159,13 @@ static PyObject *__pyx_pf_6raylib_11CyRectangle_6height___get__(struct __pyx_obj
  *     @height.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->_rect.height); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 207, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->_rect.height); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 208, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":206
+  /* "raylib.pyx":207
  * 
  *     @property
  *     def height(self) -> float:             # <<<<<<<<<<<<<<
@@ -7151,7 +7184,7 @@ static PyObject *__pyx_pf_6raylib_11CyRectangle_6height___get__(struct __pyx_obj
   return __pyx_r;
 }
 
-/* "raylib.pyx":210
+/* "raylib.pyx":211
  * 
  *     @height.setter
  *     def height(self, value: float) -> None:             # <<<<<<<<<<<<<<
@@ -7170,7 +7203,7 @@ static int __pyx_pw_6raylib_11CyRectangle_6height_3__set__(PyObject *__pyx_v_sel
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_value); {
-    __pyx_v_value = __pyx_PyFloat_AsDouble(__pyx_arg_value); if (unlikely((__pyx_v_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 210, __pyx_L3_error)
+    __pyx_v_value = __pyx_PyFloat_AsDouble(__pyx_arg_value); if (unlikely((__pyx_v_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 211, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7190,7 +7223,7 @@ static int __pyx_pf_6raylib_11CyRectangle_6height_2__set__(struct __pyx_obj_6ray
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "raylib.pyx":211
+  /* "raylib.pyx":212
  *     @height.setter
  *     def height(self, value: float) -> None:
  *         self._rect.height = <float>value             # <<<<<<<<<<<<<<
@@ -7199,7 +7232,7 @@ static int __pyx_pf_6raylib_11CyRectangle_6height_2__set__(struct __pyx_obj_6ray
  */
   __pyx_v_self->_rect.height = ((float)__pyx_v_value);
 
-  /* "raylib.pyx":210
+  /* "raylib.pyx":211
  * 
  *     @height.setter
  *     def height(self, value: float) -> None:             # <<<<<<<<<<<<<<
@@ -7213,7 +7246,7 @@ static int __pyx_pf_6raylib_11CyRectangle_6height_2__set__(struct __pyx_obj_6ray
   return __pyx_r;
 }
 
-/* "raylib.pyx":214
+/* "raylib.pyx":215
  * 
  *     @property
  *     def width(self) -> float:             # <<<<<<<<<<<<<<
@@ -7243,7 +7276,7 @@ static PyObject *__pyx_pf_6raylib_11CyRectangle_5width___get__(struct __pyx_obj_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "raylib.pyx":215
+  /* "raylib.pyx":216
  *     @property
  *     def width(self) -> float:
  *         return self._rect.y             # <<<<<<<<<<<<<<
@@ -7251,13 +7284,13 @@ static PyObject *__pyx_pf_6raylib_11CyRectangle_5width___get__(struct __pyx_obj_
  *     @width.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->_rect.y); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 215, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->_rect.y); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 216, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":214
+  /* "raylib.pyx":215
  * 
  *     @property
  *     def width(self) -> float:             # <<<<<<<<<<<<<<
@@ -7276,7 +7309,7 @@ static PyObject *__pyx_pf_6raylib_11CyRectangle_5width___get__(struct __pyx_obj_
   return __pyx_r;
 }
 
-/* "raylib.pyx":218
+/* "raylib.pyx":219
  * 
  *     @width.setter
  *     def width(self, value: float) -> None:             # <<<<<<<<<<<<<<
@@ -7295,7 +7328,7 @@ static int __pyx_pw_6raylib_11CyRectangle_5width_3__set__(PyObject *__pyx_v_self
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_value); {
-    __pyx_v_value = __pyx_PyFloat_AsDouble(__pyx_arg_value); if (unlikely((__pyx_v_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 218, __pyx_L3_error)
+    __pyx_v_value = __pyx_PyFloat_AsDouble(__pyx_arg_value); if (unlikely((__pyx_v_value == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 219, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7315,7 +7348,7 @@ static int __pyx_pf_6raylib_11CyRectangle_5width_2__set__(struct __pyx_obj_6rayl
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "raylib.pyx":219
+  /* "raylib.pyx":220
  *     @width.setter
  *     def width(self, value: float) -> None:
  *         self._rect.width = <float>value             # <<<<<<<<<<<<<<
@@ -7324,7 +7357,7 @@ static int __pyx_pf_6raylib_11CyRectangle_5width_2__set__(struct __pyx_obj_6rayl
  */
   __pyx_v_self->_rect.width = ((float)__pyx_v_value);
 
-  /* "raylib.pyx":218
+  /* "raylib.pyx":219
  * 
  *     @width.setter
  *     def width(self, value: float) -> None:             # <<<<<<<<<<<<<<
@@ -7451,7 +7484,7 @@ static PyObject *__pyx_pf_6raylib_11CyRectangle_4__setstate_cython__(CYTHON_UNUS
   return __pyx_r;
 }
 
-/* "raylib.pyx":249
+/* "raylib.pyx":250
  *     #        int format              # Data format (PixelFormat type)
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -7484,20 +7517,20 @@ static int __pyx_pf_6raylib_7CyImage___cinit__(CYTHON_UNUSED struct __pyx_obj_6r
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":250
+  /* "raylib.pyx":251
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  *     ## Image loading functions
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 250, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 250, __pyx_L1_error)
+  __PYX_ERR(0, 251, __pyx_L1_error)
 
-  /* "raylib.pyx":249
+  /* "raylib.pyx":250
  *     #        int format              # Data format (PixelFormat type)
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -7627,7 +7660,7 @@ static PyObject *__pyx_pf_6raylib_7CyImage_4__setstate_cython__(CYTHON_UNUSED st
   return __pyx_r;
 }
 
-/* "raylib.pyx":347
+/* "raylib.pyx":348
  *     #        int format              # Data format (PixelFormat type)
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -7660,20 +7693,20 @@ static int __pyx_pf_6raylib_9CyTexture___cinit__(CYTHON_UNUSED struct __pyx_obj_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":348
+  /* "raylib.pyx":349
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 348, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 349, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 348, __pyx_L1_error)
+  __PYX_ERR(0, 349, __pyx_L1_error)
 
-  /* "raylib.pyx":347
+  /* "raylib.pyx":348
  *     #        int format              # Data format (PixelFormat type)
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -8029,7 +8062,7 @@ static PyObject *__pyx_pf_6raylib_16CyTextureCubemap_2__setstate_cython__(CYTHON
   return __pyx_r;
 }
 
-/* "raylib.pyx":398
+/* "raylib.pyx":399
  *     #        Texture depth           # Depth buffer attachment texture
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -8062,20 +8095,20 @@ static int __pyx_pf_6raylib_15CyRenderTexture___cinit__(CYTHON_UNUSED struct __p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":399
+  /* "raylib.pyx":400
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 399, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 400, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 399, __pyx_L1_error)
+  __PYX_ERR(0, 400, __pyx_L1_error)
 
-  /* "raylib.pyx":398
+  /* "raylib.pyx":399
  *     #        Texture depth           # Depth buffer attachment texture
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -8318,7 +8351,7 @@ static PyObject *__pyx_pf_6raylib_17CyRenderTexture2D_2__setstate_cython__(CYTHO
   return __pyx_r;
 }
 
-/* "raylib.pyx":417
+/* "raylib.pyx":418
  *     #        int layout              # Layout of the n-patch: 3x3, 1x3 or 3x1
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -8351,20 +8384,20 @@ static int __pyx_pf_6raylib_12CyNPatchInfo___cinit__(CYTHON_UNUSED struct __pyx_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":418
+  /* "raylib.pyx":419
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 418, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 419, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 418, __pyx_L1_error)
+  __PYX_ERR(0, 419, __pyx_L1_error)
 
-  /* "raylib.pyx":417
+  /* "raylib.pyx":418
  *     #        int layout              # Layout of the n-patch: 3x3, 1x3 or 3x1
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -8494,7 +8527,7 @@ static PyObject *__pyx_pf_6raylib_12CyNPatchInfo_4__setstate_cython__(CYTHON_UNU
   return __pyx_r;
 }
 
-/* "raylib.pyx":433
+/* "raylib.pyx":434
  *     cdef GlyphInfo _glyph_info
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -8527,20 +8560,20 @@ static int __pyx_pf_6raylib_11CyGlyphInfo___cinit__(CYTHON_UNUSED struct __pyx_o
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":434
+  /* "raylib.pyx":435
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 434, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 435, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 434, __pyx_L1_error)
+  __PYX_ERR(0, 435, __pyx_L1_error)
 
-  /* "raylib.pyx":433
+  /* "raylib.pyx":434
  *     cdef GlyphInfo _glyph_info
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -8670,11 +8703,11 @@ static PyObject *__pyx_pf_6raylib_11CyGlyphInfo_4__setstate_cython__(CYTHON_UNUS
   return __pyx_r;
 }
 
-/* "raylib.pyx":450
+/* "raylib.pyx":451
  *     #        GlyphInfo *glyphs       # Glyphs info data
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
- *         raise NotImplementedError("Not Implemented Yet!")
+ *         ...
  * 
  */
 
@@ -8697,43 +8730,15 @@ static int __pyx_pw_6raylib_6CyFont_1__cinit__(PyObject *__pyx_v_self, PyObject 
 static int __pyx_pf_6raylib_6CyFont___cinit__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyFont *__pyx_v_self) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":451
- *     #
- *     def __cinit__(self):
- *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
- * 
- * 
- */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 451, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_Raise(__pyx_t_1, 0, 0, 0);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 451, __pyx_L1_error)
-
-  /* "raylib.pyx":450
- *     #        GlyphInfo *glyphs       # Glyphs info data
- *     #
- *     def __cinit__(self):             # <<<<<<<<<<<<<<
- *         raise NotImplementedError("Not Implemented Yet!")
- * 
- */
-
   /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("raylib.CyFont.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = -1;
+  __pyx_r = 0;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "raylib.pyx":455
+/* "raylib.pyx":456
  * 
  *     @staticmethod
  *     def load_font(str path) -> 'CyFont':             # <<<<<<<<<<<<<<
@@ -8771,7 +8776,7 @@ static struct __pyx_obj_6raylib_CyFont *__pyx_pw_6raylib_6CyFont_3load_font(CYTH
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "load_font") < 0)) __PYX_ERR(0, 455, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "load_font") < 0)) __PYX_ERR(0, 456, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
       goto __pyx_L5_argtuple_error;
@@ -8782,13 +8787,13 @@ static struct __pyx_obj_6raylib_CyFont *__pyx_pw_6raylib_6CyFont_3load_font(CYTH
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("load_font", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 455, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("load_font", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 456, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.CyFont.load_font", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_path), (&PyUnicode_Type), 1, "path", 1))) __PYX_ERR(0, 455, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_path), (&PyUnicode_Type), 1, "path", 1))) __PYX_ERR(0, 456, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_6CyFont_2load_font(__pyx_v_path);
 
   /* function exit code */
@@ -8809,20 +8814,20 @@ static struct __pyx_obj_6raylib_CyFont *__pyx_pf_6raylib_6CyFont_2load_font(CYTH
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("load_font", 0);
 
-  /* "raylib.pyx":456
+  /* "raylib.pyx":457
  *     @staticmethod
  *     def load_font(str path) -> 'CyFont':
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 456, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 457, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 456, __pyx_L1_error)
+  __PYX_ERR(0, 457, __pyx_L1_error)
 
-  /* "raylib.pyx":455
+  /* "raylib.pyx":456
  * 
  *     @staticmethod
  *     def load_font(str path) -> 'CyFont':             # <<<<<<<<<<<<<<
@@ -8840,7 +8845,7 @@ static struct __pyx_obj_6raylib_CyFont *__pyx_pf_6raylib_6CyFont_2load_font(CYTH
   return __pyx_r;
 }
 
-/* "raylib.pyx":460
+/* "raylib.pyx":461
  * 
  *     @staticmethod
  *     cdef CyFont c_load_font(str path):             # <<<<<<<<<<<<<<
@@ -8857,20 +8862,20 @@ static struct __pyx_obj_6raylib_CyFont *__pyx_f_6raylib_6CyFont_c_load_font(CYTH
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("c_load_font", 0);
 
-  /* "raylib.pyx":461
+  /* "raylib.pyx":462
  *     @staticmethod
  *     cdef CyFont c_load_font(str path):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  *     ## Font loading/unloading functions
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 461, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 462, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 461, __pyx_L1_error)
+  __PYX_ERR(0, 462, __pyx_L1_error)
 
-  /* "raylib.pyx":460
+  /* "raylib.pyx":461
  * 
  *     @staticmethod
  *     cdef CyFont c_load_font(str path):             # <<<<<<<<<<<<<<
@@ -8888,6 +8893,94 @@ static struct __pyx_obj_6raylib_CyFont *__pyx_f_6raylib_6CyFont_c_load_font(CYTH
   return __pyx_r;
 }
 
+/* "raylib.pyx":467
+ *     #cdef Font GetFontDefault()                                                            # Get the default Font
+ *     @staticmethod
+ *     def get_font_default() -> 'CyFont':             # <<<<<<<<<<<<<<
+ *         cdef CyFont font = CyFont.__new__(CyFont)
+ *         font._font = GetFontDefault()
+ */
+
+/* Python wrapper */
+static struct __pyx_obj_6raylib_CyFont *__pyx_pw_6raylib_6CyFont_5get_font_default(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_6CyFont_5get_font_default = {"get_font_default", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_6CyFont_5get_font_default, METH_VARARGS|METH_KEYWORDS, 0};
+static struct __pyx_obj_6raylib_CyFont *__pyx_pw_6raylib_6CyFont_5get_font_default(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  struct __pyx_obj_6raylib_CyFont *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("get_font_default (wrapper)", 0);
+  if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
+    __Pyx_RaiseArgtupleInvalid("get_font_default", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return NULL;}
+  if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "get_font_default", 0))) return NULL;
+  __pyx_r = __pyx_pf_6raylib_6CyFont_4get_font_default();
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static struct __pyx_obj_6raylib_CyFont *__pyx_pf_6raylib_6CyFont_4get_font_default(void) {
+  struct __pyx_obj_6raylib_CyFont *__pyx_v_font = 0;
+  struct __pyx_obj_6raylib_CyFont *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("get_font_default", 0);
+
+  /* "raylib.pyx":468
+ *     @staticmethod
+ *     def get_font_default() -> 'CyFont':
+ *         cdef CyFont font = CyFont.__new__(CyFont)             # <<<<<<<<<<<<<<
+ *         font._font = GetFontDefault()
+ *         return font
+ */
+  __pyx_t_1 = ((PyObject *)__pyx_tp_new_6raylib_CyFont(((PyTypeObject *)__pyx_ptype_6raylib_CyFont), __pyx_empty_tuple, NULL)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 468, __pyx_L1_error)
+  __Pyx_GOTREF(((PyObject *)__pyx_t_1));
+  __pyx_v_font = ((struct __pyx_obj_6raylib_CyFont *)__pyx_t_1);
+  __pyx_t_1 = 0;
+
+  /* "raylib.pyx":469
+ *     def get_font_default() -> 'CyFont':
+ *         cdef CyFont font = CyFont.__new__(CyFont)
+ *         font._font = GetFontDefault()             # <<<<<<<<<<<<<<
+ *         return font
+ * 
+ */
+  __pyx_v_font->_font = GetFontDefault();
+
+  /* "raylib.pyx":470
+ *         cdef CyFont font = CyFont.__new__(CyFont)
+ *         font._font = GetFontDefault()
+ *         return font             # <<<<<<<<<<<<<<
+ * 
+ *     #cdef Font LoadFont(const char *fileName)                                                  # Load font from file into GPU memory (VRAM)
+ */
+  __Pyx_XDECREF(((PyObject *)__pyx_r));
+  __Pyx_INCREF(((PyObject *)__pyx_v_font));
+  __pyx_r = __pyx_v_font;
+  goto __pyx_L0;
+
+  /* "raylib.pyx":467
+ *     #cdef Font GetFontDefault()                                                            # Get the default Font
+ *     @staticmethod
+ *     def get_font_default() -> 'CyFont':             # <<<<<<<<<<<<<<
+ *         cdef CyFont font = CyFont.__new__(CyFont)
+ *         font._font = GetFontDefault()
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("raylib.CyFont.get_font_default", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XDECREF((PyObject *)__pyx_v_font);
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
 /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
@@ -8895,19 +8988,19 @@ static struct __pyx_obj_6raylib_CyFont *__pyx_f_6raylib_6CyFont_c_load_font(CYTH
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_6CyFont_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6raylib_6CyFont_5__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_6raylib_6CyFont_7__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_6raylib_6CyFont_7__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_6CyFont_4__reduce_cython__(((struct __pyx_obj_6raylib_CyFont *)__pyx_v_self));
+  __pyx_r = __pyx_pf_6raylib_6CyFont_6__reduce_cython__(((struct __pyx_obj_6raylib_CyFont *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_6CyFont_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyFont *__pyx_v_self) {
+static PyObject *__pyx_pf_6raylib_6CyFont_6__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyFont *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -8952,19 +9045,19 @@ static PyObject *__pyx_pf_6raylib_6CyFont_4__reduce_cython__(CYTHON_UNUSED struc
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_6CyFont_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static PyObject *__pyx_pw_6raylib_6CyFont_7__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_6raylib_6CyFont_9__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static PyObject *__pyx_pw_6raylib_6CyFont_9__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_6CyFont_6__setstate_cython__(((struct __pyx_obj_6raylib_CyFont *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_6raylib_6CyFont_8__setstate_cython__(((struct __pyx_obj_6raylib_CyFont *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_6CyFont_6__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyFont *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_6CyFont_8__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyFont *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -9001,7 +9094,7 @@ static PyObject *__pyx_pf_6raylib_6CyFont_6__setstate_cython__(CYTHON_UNUSED str
   return __pyx_r;
 }
 
-/* "raylib.pyx":494
+/* "raylib.pyx":501
  *     cdef Camera3D _camera_3d
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -9034,20 +9127,20 @@ static int __pyx_pf_6raylib_10CyCamera3D___cinit__(CYTHON_UNUSED struct __pyx_ob
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":495
+  /* "raylib.pyx":502
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  *     #cdef void UpdateCamera(Camera *camera, int mode)      # Update camera position for selected mode
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 495, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 502, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 495, __pyx_L1_error)
+  __PYX_ERR(0, 502, __pyx_L1_error)
 
-  /* "raylib.pyx":494
+  /* "raylib.pyx":501
  *     cdef Camera3D _camera_3d
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -9177,7 +9270,7 @@ static PyObject *__pyx_pf_6raylib_10CyCamera3D_4__setstate_cython__(CYTHON_UNUSE
   return __pyx_r;
 }
 
-/* "raylib.pyx":525
+/* "raylib.pyx":532
  *     #cdef Vector2 GetWorldToScreen2D(Vector2 position, Camera2D camera)
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -9210,20 +9303,20 @@ static int __pyx_pf_6raylib_10CyCamera2D___cinit__(CYTHON_UNUSED struct __pyx_ob
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":526
+  /* "raylib.pyx":533
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 526, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 533, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 526, __pyx_L1_error)
+  __PYX_ERR(0, 533, __pyx_L1_error)
 
-  /* "raylib.pyx":525
+  /* "raylib.pyx":532
  *     #cdef Vector2 GetWorldToScreen2D(Vector2 position, Camera2D camera)
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -9353,7 +9446,7 @@ static PyObject *__pyx_pf_6raylib_10CyCamera2D_4__setstate_cython__(CYTHON_UNUSE
   return __pyx_r;
 }
 
-/* "raylib.pyx":556
+/* "raylib.pyx":563
  *     cdef Mesh _mesh
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -9386,20 +9479,20 @@ static int __pyx_pf_6raylib_6CyMesh___cinit__(CYTHON_UNUSED struct __pyx_obj_6ra
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":557
+  /* "raylib.pyx":564
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  *     ## Mesh management functions
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 557, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 564, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 557, __pyx_L1_error)
+  __PYX_ERR(0, 564, __pyx_L1_error)
 
-  /* "raylib.pyx":556
+  /* "raylib.pyx":563
  *     cdef Mesh _mesh
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -9529,7 +9622,7 @@ static PyObject *__pyx_pf_6raylib_6CyMesh_4__setstate_cython__(CYTHON_UNUSED str
   return __pyx_r;
 }
 
-/* "raylib.pyx":592
+/* "raylib.pyx":599
  *     cdef Shader _shader
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -9562,20 +9655,20 @@ static int __pyx_pf_6raylib_8CyShader___cinit__(CYTHON_UNUSED struct __pyx_obj_6
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":593
+  /* "raylib.pyx":600
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  *     #cdef Shader LoadShader(const char *vsFileName, const char *fsFileName)
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 593, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 600, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 593, __pyx_L1_error)
+  __PYX_ERR(0, 600, __pyx_L1_error)
 
-  /* "raylib.pyx":592
+  /* "raylib.pyx":599
  *     cdef Shader _shader
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -9705,7 +9798,7 @@ static PyObject *__pyx_pf_6raylib_8CyShader_4__setstate_cython__(CYTHON_UNUSED s
   return __pyx_r;
 }
 
-/* "raylib.pyx":617
+/* "raylib.pyx":624
  *     cdef MaterialMap _material_map
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -9738,20 +9831,20 @@ static int __pyx_pf_6raylib_13CyMaterialMap___cinit__(CYTHON_UNUSED struct __pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":618
+  /* "raylib.pyx":625
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 618, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 625, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 618, __pyx_L1_error)
+  __PYX_ERR(0, 625, __pyx_L1_error)
 
-  /* "raylib.pyx":617
+  /* "raylib.pyx":624
  *     cdef MaterialMap _material_map
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -9881,7 +9974,7 @@ static PyObject *__pyx_pf_6raylib_13CyMaterialMap_4__setstate_cython__(CYTHON_UN
   return __pyx_r;
 }
 
-/* "raylib.pyx":632
+/* "raylib.pyx":639
  *     #        float params[4]         # Material generic parameters (if required)
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -9914,20 +10007,20 @@ static int __pyx_pf_6raylib_10CyMaterial___cinit__(CYTHON_UNUSED struct __pyx_ob
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":633
+  /* "raylib.pyx":640
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  *     ## Material loading/unloading functions
  *     #cdef Material *LoadMaterials(const char *fileName, int *materialCount)                    # Load materials from model file
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 633, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 640, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 633, __pyx_L1_error)
+  __PYX_ERR(0, 640, __pyx_L1_error)
 
-  /* "raylib.pyx":632
+  /* "raylib.pyx":639
  *     #        float params[4]         # Material generic parameters (if required)
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -10057,7 +10150,7 @@ static PyObject *__pyx_pf_6raylib_10CyMaterial_4__setstate_cython__(CYTHON_UNUSE
   return __pyx_r;
 }
 
-/* "raylib.pyx":654
+/* "raylib.pyx":661
  * 
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -10090,20 +10183,20 @@ static int __pyx_pf_6raylib_11CyTransform___cinit__(CYTHON_UNUSED struct __pyx_o
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":655
+  /* "raylib.pyx":662
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 655, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 662, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 655, __pyx_L1_error)
+  __PYX_ERR(0, 662, __pyx_L1_error)
 
-  /* "raylib.pyx":654
+  /* "raylib.pyx":661
  * 
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -10233,7 +10326,7 @@ static PyObject *__pyx_pf_6raylib_11CyTransform_4__setstate_cython__(CYTHON_UNUS
   return __pyx_r;
 }
 
-/* "raylib.pyx":668
+/* "raylib.pyx":675
  * 
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -10266,20 +10359,20 @@ static int __pyx_pf_6raylib_10CyBoneInfo___cinit__(CYTHON_UNUSED struct __pyx_ob
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":669
+  /* "raylib.pyx":676
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 669, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 676, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 669, __pyx_L1_error)
+  __PYX_ERR(0, 676, __pyx_L1_error)
 
-  /* "raylib.pyx":668
+  /* "raylib.pyx":675
  * 
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -10409,7 +10502,7 @@ static PyObject *__pyx_pf_6raylib_10CyBoneInfo_4__setstate_cython__(CYTHON_UNUSE
   return __pyx_r;
 }
 
-/* "raylib.pyx":693
+/* "raylib.pyx":700
  *     #
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -10442,20 +10535,20 @@ static int __pyx_pf_6raylib_7CyModel___cinit__(CYTHON_UNUSED struct __pyx_obj_6r
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":694
+  /* "raylib.pyx":701
  *     #
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  *     #
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 694, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 701, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 694, __pyx_L1_error)
+  __PYX_ERR(0, 701, __pyx_L1_error)
 
-  /* "raylib.pyx":693
+  /* "raylib.pyx":700
  *     #
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -10585,7 +10678,7 @@ static PyObject *__pyx_pf_6raylib_7CyModel_4__setstate_cython__(CYTHON_UNUSED st
   return __pyx_r;
 }
 
-/* "raylib.pyx":721
+/* "raylib.pyx":728
  *     #        char name[32]          # Animation name
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -10618,20 +10711,20 @@ static int __pyx_pf_6raylib_16CyModelAnimation___cinit__(CYTHON_UNUSED struct __
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":722
+  /* "raylib.pyx":729
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  *     ## Model animations loading/unloading functions
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 722, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 729, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 722, __pyx_L1_error)
+  __PYX_ERR(0, 729, __pyx_L1_error)
 
-  /* "raylib.pyx":721
+  /* "raylib.pyx":728
  *     #        char name[32]          # Animation name
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -10761,7 +10854,7 @@ static PyObject *__pyx_pf_6raylib_16CyModelAnimation_4__setstate_cython__(CYTHON
   return __pyx_r;
 }
 
-/* "raylib.pyx":741
+/* "raylib.pyx":748
  *     #        Vector3 direction      # Ray direction
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -10794,20 +10887,20 @@ static int __pyx_pf_6raylib_5CyRay___cinit__(CYTHON_UNUSED struct __pyx_obj_6ray
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":742
+  /* "raylib.pyx":749
  *     #
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  *     #cdef void DrawRay(Ray ray, Color color)
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 742, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 749, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 742, __pyx_L1_error)
+  __PYX_ERR(0, 749, __pyx_L1_error)
 
-  /* "raylib.pyx":741
+  /* "raylib.pyx":748
  *     #        Vector3 direction      # Ray direction
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -10937,7 +11030,7 @@ static PyObject *__pyx_pf_6raylib_5CyRay_4__setstate_cython__(CYTHON_UNUSED stru
   return __pyx_r;
 }
 
-/* "raylib.pyx":763
+/* "raylib.pyx":770
  *     #
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -10970,20 +11063,20 @@ static int __pyx_pf_6raylib_14CyRayCollision___cinit__(CYTHON_UNUSED struct __py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":764
+  /* "raylib.pyx":771
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 764, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 771, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 764, __pyx_L1_error)
+  __PYX_ERR(0, 771, __pyx_L1_error)
 
-  /* "raylib.pyx":763
+  /* "raylib.pyx":770
  *     #
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -11113,7 +11206,7 @@ static PyObject *__pyx_pf_6raylib_14CyRayCollision_4__setstate_cython__(CYTHON_U
   return __pyx_r;
 }
 
-/* "raylib.pyx":778
+/* "raylib.pyx":785
  *     #        Vector3 max            # Maximum vertex box-corner
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -11146,20 +11239,20 @@ static int __pyx_pf_6raylib_13CyBoundingBox___cinit__(CYTHON_UNUSED struct __pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":779
+  /* "raylib.pyx":786
  *     #
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  *     #cdef bint CheckCollisionBoxes(BoundingBox box1, BoundingBox box2)                                 # Check collision between two bounding boxes
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 779, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 786, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 779, __pyx_L1_error)
+  __PYX_ERR(0, 786, __pyx_L1_error)
 
-  /* "raylib.pyx":778
+  /* "raylib.pyx":785
  *     #        Vector3 max            # Maximum vertex box-corner
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -11289,7 +11382,7 @@ static PyObject *__pyx_pf_6raylib_13CyBoundingBox_4__setstate_cython__(CYTHON_UN
   return __pyx_r;
 }
 
-/* "raylib.pyx":799
+/* "raylib.pyx":806
  *     #
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -11322,20 +11415,20 @@ static int __pyx_pf_6raylib_6CyWave___cinit__(CYTHON_UNUSED struct __pyx_obj_6ra
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":800
+  /* "raylib.pyx":807
  *     #
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 800, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 807, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 800, __pyx_L1_error)
+  __PYX_ERR(0, 807, __pyx_L1_error)
 
-  /* "raylib.pyx":799
+  /* "raylib.pyx":806
  *     #
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -11465,7 +11558,7 @@ static PyObject *__pyx_pf_6raylib_6CyWave_4__setstate_cython__(CYTHON_UNUSED str
   return __pyx_r;
 }
 
-/* "raylib.pyx":832
+/* "raylib.pyx":839
  *     #
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -11498,20 +11591,20 @@ static int __pyx_pf_6raylib_13CyAudioStream___cinit__(CYTHON_UNUSED struct __pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":833
+  /* "raylib.pyx":840
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  *     ## AudioStream management functions
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 833, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 840, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 833, __pyx_L1_error)
+  __PYX_ERR(0, 840, __pyx_L1_error)
 
-  /* "raylib.pyx":832
+  /* "raylib.pyx":839
  *     #
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -11641,7 +11734,7 @@ static PyObject *__pyx_pf_6raylib_13CyAudioStream_4__setstate_cython__(CYTHON_UN
   return __pyx_r;
 }
 
-/* "raylib.pyx":869
+/* "raylib.pyx":876
  *     #        unsigned int frameCount    # Total number of frames (considering channels)
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -11674,20 +11767,20 @@ static int __pyx_pf_6raylib_7CySound___cinit__(CYTHON_UNUSED struct __pyx_obj_6r
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":870
+  /* "raylib.pyx":877
  *     #
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  *     ## Wave/Sound management functions
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 870, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 877, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 870, __pyx_L1_error)
+  __PYX_ERR(0, 877, __pyx_L1_error)
 
-  /* "raylib.pyx":869
+  /* "raylib.pyx":876
  *     #        unsigned int frameCount    # Total number of frames (considering channels)
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -11817,7 +11910,7 @@ static PyObject *__pyx_pf_6raylib_7CySound_4__setstate_cython__(CYTHON_UNUSED st
   return __pyx_r;
 }
 
-/* "raylib.pyx":902
+/* "raylib.pyx":909
  *     #
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -11850,20 +11943,20 @@ static int __pyx_pf_6raylib_7CyMusic___cinit__(CYTHON_UNUSED struct __pyx_obj_6r
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":903
+  /* "raylib.pyx":910
  *     #
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  *     ## Music management functions
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 903, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 910, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 903, __pyx_L1_error)
+  __PYX_ERR(0, 910, __pyx_L1_error)
 
-  /* "raylib.pyx":902
+  /* "raylib.pyx":909
  *     #
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -11993,7 +12086,7 @@ static PyObject *__pyx_pf_6raylib_7CyMusic_4__setstate_cython__(CYTHON_UNUSED st
   return __pyx_r;
 }
 
-/* "raylib.pyx":939
+/* "raylib.pyx":946
  *     #        float chromaAbCorrection[4]    # Chromatic aberration correction parameters
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -12026,20 +12119,20 @@ static int __pyx_pf_6raylib_14CyVrDeviceInfo___cinit__(CYTHON_UNUSED struct __py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":940
+  /* "raylib.pyx":947
  *     #
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 940, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 947, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 940, __pyx_L1_error)
+  __PYX_ERR(0, 947, __pyx_L1_error)
 
-  /* "raylib.pyx":939
+  /* "raylib.pyx":946
  *     #        float chromaAbCorrection[4]    # Chromatic aberration correction parameters
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -12169,7 +12262,7 @@ static PyObject *__pyx_pf_6raylib_14CyVrDeviceInfo_4__setstate_cython__(CYTHON_U
   return __pyx_r;
 }
 
-/* "raylib.pyx":958
+/* "raylib.pyx":965
  *     #        float scaleIn[2]               # VR distortion scale in
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -12202,20 +12295,20 @@ static int __pyx_pf_6raylib_16CyVrStereoConfig___cinit__(CYTHON_UNUSED struct __
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":959
+  /* "raylib.pyx":966
  *     #
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  *     @staticmethod
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 959, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 966, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 959, __pyx_L1_error)
+  __PYX_ERR(0, 966, __pyx_L1_error)
 
-  /* "raylib.pyx":958
+  /* "raylib.pyx":965
  *     #        float scaleIn[2]               # VR distortion scale in
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -12232,7 +12325,7 @@ static int __pyx_pf_6raylib_16CyVrStereoConfig___cinit__(CYTHON_UNUSED struct __
   return __pyx_r;
 }
 
-/* "raylib.pyx":962
+/* "raylib.pyx":969
  * 
  *     @staticmethod
  *     def load_vr_stereo_config(CyVrDeviceInfo device) -> 'CyVrStereoConfig':             # <<<<<<<<<<<<<<
@@ -12270,7 +12363,7 @@ static struct __pyx_obj_6raylib_CyVrStereoConfig *__pyx_pw_6raylib_16CyVrStereoC
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "load_vr_stereo_config") < 0)) __PYX_ERR(0, 962, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "load_vr_stereo_config") < 0)) __PYX_ERR(0, 969, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
       goto __pyx_L5_argtuple_error;
@@ -12281,13 +12374,13 @@ static struct __pyx_obj_6raylib_CyVrStereoConfig *__pyx_pw_6raylib_16CyVrStereoC
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("load_vr_stereo_config", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 962, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("load_vr_stereo_config", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 969, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.CyVrStereoConfig.load_vr_stereo_config", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_device), __pyx_ptype_6raylib_CyVrDeviceInfo, 1, "device", 0))) __PYX_ERR(0, 962, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_device), __pyx_ptype_6raylib_CyVrDeviceInfo, 1, "device", 0))) __PYX_ERR(0, 969, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_16CyVrStereoConfig_2load_vr_stereo_config(__pyx_v_device);
 
   /* function exit code */
@@ -12309,19 +12402,19 @@ static struct __pyx_obj_6raylib_CyVrStereoConfig *__pyx_pf_6raylib_16CyVrStereoC
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("load_vr_stereo_config", 0);
 
-  /* "raylib.pyx":963
+  /* "raylib.pyx":970
  *     @staticmethod
  *     def load_vr_stereo_config(CyVrDeviceInfo device) -> 'CyVrStereoConfig':
  *         cdef CyVrStereoConfig stereo_config = CyVrStereoConfig.__new__(CyVrStereoConfig)             # <<<<<<<<<<<<<<
  *         stereo_config._vr_stereo_config = LoadVrStereoConfig(device._vr_device_info)
  *         return stereo_config
  */
-  __pyx_t_1 = ((PyObject *)__pyx_tp_new_6raylib_CyVrStereoConfig(((PyTypeObject *)__pyx_ptype_6raylib_CyVrStereoConfig), __pyx_empty_tuple, NULL)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 963, __pyx_L1_error)
+  __pyx_t_1 = ((PyObject *)__pyx_tp_new_6raylib_CyVrStereoConfig(((PyTypeObject *)__pyx_ptype_6raylib_CyVrStereoConfig), __pyx_empty_tuple, NULL)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 970, __pyx_L1_error)
   __Pyx_GOTREF(((PyObject *)__pyx_t_1));
   __pyx_v_stereo_config = ((struct __pyx_obj_6raylib_CyVrStereoConfig *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":964
+  /* "raylib.pyx":971
  *     def load_vr_stereo_config(CyVrDeviceInfo device) -> 'CyVrStereoConfig':
  *         cdef CyVrStereoConfig stereo_config = CyVrStereoConfig.__new__(CyVrStereoConfig)
  *         stereo_config._vr_stereo_config = LoadVrStereoConfig(device._vr_device_info)             # <<<<<<<<<<<<<<
@@ -12330,7 +12423,7 @@ static struct __pyx_obj_6raylib_CyVrStereoConfig *__pyx_pf_6raylib_16CyVrStereoC
  */
   __pyx_v_stereo_config->_vr_stereo_config = LoadVrStereoConfig(__pyx_v_device->_vr_device_info);
 
-  /* "raylib.pyx":965
+  /* "raylib.pyx":972
  *         cdef CyVrStereoConfig stereo_config = CyVrStereoConfig.__new__(CyVrStereoConfig)
  *         stereo_config._vr_stereo_config = LoadVrStereoConfig(device._vr_device_info)
  *         return stereo_config             # <<<<<<<<<<<<<<
@@ -12342,7 +12435,7 @@ static struct __pyx_obj_6raylib_CyVrStereoConfig *__pyx_pf_6raylib_16CyVrStereoC
   __pyx_r = __pyx_v_stereo_config;
   goto __pyx_L0;
 
-  /* "raylib.pyx":962
+  /* "raylib.pyx":969
  * 
  *     @staticmethod
  *     def load_vr_stereo_config(CyVrDeviceInfo device) -> 'CyVrStereoConfig':             # <<<<<<<<<<<<<<
@@ -12362,7 +12455,7 @@ static struct __pyx_obj_6raylib_CyVrStereoConfig *__pyx_pf_6raylib_16CyVrStereoC
   return __pyx_r;
 }
 
-/* "raylib.pyx":968
+/* "raylib.pyx":975
  * 
  * 
  *     def unload_vr_stereo_config(self) -> None:             # <<<<<<<<<<<<<<
@@ -12389,7 +12482,7 @@ static PyObject *__pyx_pf_6raylib_16CyVrStereoConfig_4unload_vr_stereo_config(st
   __Pyx_RefNannySetupContext("unload_vr_stereo_config", 0);
   __Pyx_INCREF((PyObject *)__pyx_v_self);
 
-  /* "raylib.pyx":969
+  /* "raylib.pyx":976
  * 
  *     def unload_vr_stereo_config(self) -> None:
  *         UnloadVrStereoConfig(self._vr_stereo_config)             # <<<<<<<<<<<<<<
@@ -12398,7 +12491,7 @@ static PyObject *__pyx_pf_6raylib_16CyVrStereoConfig_4unload_vr_stereo_config(st
  */
   UnloadVrStereoConfig(__pyx_v_self->_vr_stereo_config);
 
-  /* "raylib.pyx":970
+  /* "raylib.pyx":977
  *     def unload_vr_stereo_config(self) -> None:
  *         UnloadVrStereoConfig(self._vr_stereo_config)
  *         del self             # <<<<<<<<<<<<<<
@@ -12408,7 +12501,7 @@ static PyObject *__pyx_pf_6raylib_16CyVrStereoConfig_4unload_vr_stereo_config(st
   __Pyx_DECREF(((PyObject *)__pyx_v_self));
   __pyx_v_self = NULL;
 
-  /* "raylib.pyx":968
+  /* "raylib.pyx":975
  * 
  * 
  *     def unload_vr_stereo_config(self) -> None:             # <<<<<<<<<<<<<<
@@ -12537,7 +12630,7 @@ static PyObject *__pyx_pf_6raylib_16CyVrStereoConfig_8__setstate_cython__(CYTHON
   return __pyx_r;
 }
 
-/* "raylib.pyx":982
+/* "raylib.pyx":989
  *     #        char **paths                   # Filepaths entries
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -12570,20 +12663,20 @@ static int __pyx_pf_6raylib_14CyFilePathList___cinit__(CYTHON_UNUSED struct __py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":983
+  /* "raylib.pyx":990
  *     #
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 983, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 990, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 983, __pyx_L1_error)
+  __PYX_ERR(0, 990, __pyx_L1_error)
 
-  /* "raylib.pyx":982
+  /* "raylib.pyx":989
  *     #        char **paths                   # Filepaths entries
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -12713,7 +12806,7 @@ static PyObject *__pyx_pf_6raylib_14CyFilePathList_4__setstate_cython__(CYTHON_U
   return __pyx_r;
 }
 
-/* "raylib.pyx":996
+/* "raylib.pyx":1003
  *     #
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -12746,20 +12839,20 @@ static int __pyx_pf_6raylib_17CyAutomationEvent___cinit__(CYTHON_UNUSED struct _
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":997
+  /* "raylib.pyx":1004
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 997, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1004, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 997, __pyx_L1_error)
+  __PYX_ERR(0, 1004, __pyx_L1_error)
 
-  /* "raylib.pyx":996
+  /* "raylib.pyx":1003
  *     #
  * 
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -12889,7 +12982,7 @@ static PyObject *__pyx_pf_6raylib_17CyAutomationEvent_4__setstate_cython__(CYTHO
   return __pyx_r;
 }
 
-/* "raylib.pyx":1010
+/* "raylib.pyx":1017
  *     #        AutomationEvent *events        # Events entries
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -12922,20 +13015,20 @@ static int __pyx_pf_6raylib_21CyAutomationEventList___cinit__(CYTHON_UNUSED stru
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":1011
+  /* "raylib.pyx":1018
  *     #
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1011, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1018, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 1011, __pyx_L1_error)
+  __PYX_ERR(0, 1018, __pyx_L1_error)
 
-  /* "raylib.pyx":1010
+  /* "raylib.pyx":1017
  *     #        AutomationEvent *events        # Events entries
  *     #
  *     def __cinit__(self):             # <<<<<<<<<<<<<<
@@ -13065,7 +13158,7 @@ static PyObject *__pyx_pf_6raylib_21CyAutomationEventList_4__setstate_cython__(C
   return __pyx_r;
 }
 
-/* "raylib.pyx":1018
+/* "raylib.pyx":1025
  *     cdef CyColor color
  * 
  *     def __cinit__(self, raymath.CyVector2 pos, CyColor color):             # <<<<<<<<<<<<<<
@@ -13107,11 +13200,11 @@ static int __pyx_pw_6raylib_7CyPixel_1__cinit__(PyObject *__pyx_v_self, PyObject
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_color)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(0, 1018, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(0, 1025, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 1018, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 1025, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -13124,14 +13217,14 @@ static int __pyx_pw_6raylib_7CyPixel_1__cinit__(PyObject *__pyx_v_self, PyObject
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1018, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1025, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.CyPixel.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_pos), __pyx_ptype_13raylib_cython_7raymath_CyVector2, 1, "pos", 0))) __PYX_ERR(0, 1018, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_color), __pyx_ptype_6raylib_CyColor, 1, "color", 0))) __PYX_ERR(0, 1018, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_pos), __pyx_ptype_13raylib_cython_7raymath_CyVector2, 1, "pos", 0))) __PYX_ERR(0, 1025, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_color), __pyx_ptype_6raylib_CyColor, 1, "color", 0))) __PYX_ERR(0, 1025, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_7CyPixel___cinit__(((struct __pyx_obj_6raylib_CyPixel *)__pyx_v_self), __pyx_v_pos, __pyx_v_color);
 
   /* function exit code */
@@ -13149,7 +13242,7 @@ static int __pyx_pf_6raylib_7CyPixel___cinit__(struct __pyx_obj_6raylib_CyPixel 
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":1019
+  /* "raylib.pyx":1026
  * 
  *     def __cinit__(self, raymath.CyVector2 pos, CyColor color):
  *         self.pos = pos             # <<<<<<<<<<<<<<
@@ -13162,7 +13255,7 @@ static int __pyx_pf_6raylib_7CyPixel___cinit__(struct __pyx_obj_6raylib_CyPixel 
   __Pyx_DECREF(((PyObject *)__pyx_v_self->pos));
   __pyx_v_self->pos = __pyx_v_pos;
 
-  /* "raylib.pyx":1020
+  /* "raylib.pyx":1027
  *     def __cinit__(self, raymath.CyVector2 pos, CyColor color):
  *         self.pos = pos
  *         self.color = self.color             # <<<<<<<<<<<<<<
@@ -13177,7 +13270,7 @@ static int __pyx_pf_6raylib_7CyPixel___cinit__(struct __pyx_obj_6raylib_CyPixel 
   __pyx_v_self->color = ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1018
+  /* "raylib.pyx":1025
  *     cdef CyColor color
  * 
  *     def __cinit__(self, raymath.CyVector2 pos, CyColor color):             # <<<<<<<<<<<<<<
@@ -13191,7 +13284,7 @@ static int __pyx_pf_6raylib_7CyPixel___cinit__(struct __pyx_obj_6raylib_CyPixel 
   return __pyx_r;
 }
 
-/* "raylib.pyx":1021
+/* "raylib.pyx":1028
  *         self.pos = pos
  *         self.color = self.color
  *     def draw(self) -> None:             # <<<<<<<<<<<<<<
@@ -13223,24 +13316,24 @@ static PyObject *__pyx_pf_6raylib_7CyPixel_2draw(struct __pyx_obj_6raylib_CyPixe
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("draw", 0);
 
-  /* "raylib.pyx":1022
+  /* "raylib.pyx":1029
  *         self.color = self.color
  *     def draw(self) -> None:
  *         DrawPixel(<int>self.pos.x, <int>self.pos.y, self.color._color)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->pos), __pyx_n_s_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1022, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->pos), __pyx_n_s_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1029, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1022, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1029, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->pos), __pyx_n_s_y); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1022, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->pos), __pyx_n_s_y); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1029, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_3 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1022, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_3 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1029, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   DrawPixel(((int)__pyx_t_2), ((int)__pyx_t_3), __pyx_v_self->color->_color);
 
-  /* "raylib.pyx":1021
+  /* "raylib.pyx":1028
  *         self.pos = pos
  *         self.color = self.color
  *     def draw(self) -> None:             # <<<<<<<<<<<<<<
@@ -13374,7 +13467,7 @@ static PyObject *__pyx_pf_6raylib_7CyPixel_6__setstate_cython__(CYTHON_UNUSED st
   return __pyx_r;
 }
 
-/* "raylib.pyx":1030
+/* "raylib.pyx":1037
  *     cdef CyColor color
  * 
  *     def __cinit__(self, raymath.CyVector2 p1, raymath.CyVector2 p2, CyColor color, float thickness = 1.0):             # <<<<<<<<<<<<<<
@@ -13422,13 +13515,13 @@ static int __pyx_pw_6raylib_6CyLine_1__cinit__(PyObject *__pyx_v_self, PyObject 
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_p2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 3, 4, 1); __PYX_ERR(0, 1030, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 3, 4, 1); __PYX_ERR(0, 1037, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_color)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 3, 4, 2); __PYX_ERR(0, 1030, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 3, 4, 2); __PYX_ERR(0, 1037, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
@@ -13438,7 +13531,7 @@ static int __pyx_pw_6raylib_6CyLine_1__cinit__(PyObject *__pyx_v_self, PyObject 
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 1030, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 1037, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -13455,22 +13548,22 @@ static int __pyx_pw_6raylib_6CyLine_1__cinit__(PyObject *__pyx_v_self, PyObject 
     __pyx_v_p2 = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)values[1]);
     __pyx_v_color = ((struct __pyx_obj_6raylib_CyColor *)values[2]);
     if (values[3]) {
-      __pyx_v_thickness = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_thickness == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 1030, __pyx_L3_error)
+      __pyx_v_thickness = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_thickness == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 1037, __pyx_L3_error)
     } else {
       __pyx_v_thickness = ((float)1.0);
     }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 3, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1030, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 3, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1037, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.CyLine.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p1), __pyx_ptype_13raylib_cython_7raymath_CyVector2, 1, "p1", 0))) __PYX_ERR(0, 1030, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p2), __pyx_ptype_13raylib_cython_7raymath_CyVector2, 1, "p2", 0))) __PYX_ERR(0, 1030, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_color), __pyx_ptype_6raylib_CyColor, 1, "color", 0))) __PYX_ERR(0, 1030, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p1), __pyx_ptype_13raylib_cython_7raymath_CyVector2, 1, "p1", 0))) __PYX_ERR(0, 1037, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_p2), __pyx_ptype_13raylib_cython_7raymath_CyVector2, 1, "p2", 0))) __PYX_ERR(0, 1037, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_color), __pyx_ptype_6raylib_CyColor, 1, "color", 0))) __PYX_ERR(0, 1037, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_6CyLine___cinit__(((struct __pyx_obj_6raylib_CyLine *)__pyx_v_self), __pyx_v_p1, __pyx_v_p2, __pyx_v_color, __pyx_v_thickness);
 
   /* function exit code */
@@ -13491,7 +13584,7 @@ static int __pyx_pf_6raylib_6CyLine___cinit__(struct __pyx_obj_6raylib_CyLine *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":1031
+  /* "raylib.pyx":1038
  * 
  *     def __cinit__(self, raymath.CyVector2 p1, raymath.CyVector2 p2, CyColor color, float thickness = 1.0):
  *         self.p1 = p1             # <<<<<<<<<<<<<<
@@ -13504,7 +13597,7 @@ static int __pyx_pf_6raylib_6CyLine___cinit__(struct __pyx_obj_6raylib_CyLine *_
   __Pyx_DECREF(((PyObject *)__pyx_v_self->p1));
   __pyx_v_self->p1 = __pyx_v_p1;
 
-  /* "raylib.pyx":1032
+  /* "raylib.pyx":1039
  *     def __cinit__(self, raymath.CyVector2 p1, raymath.CyVector2 p2, CyColor color, float thickness = 1.0):
  *         self.p1 = p1
  *         self.p2 = p2             # <<<<<<<<<<<<<<
@@ -13517,19 +13610,19 @@ static int __pyx_pf_6raylib_6CyLine___cinit__(struct __pyx_obj_6raylib_CyLine *_
   __Pyx_DECREF(((PyObject *)__pyx_v_self->p2));
   __pyx_v_self->p2 = __pyx_v_p2;
 
-  /* "raylib.pyx":1033
+  /* "raylib.pyx":1040
  *         self.p1 = p1
  *         self.p2 = p2
  *         self.thickness = thickness             # <<<<<<<<<<<<<<
  *         self.color = color
  * 
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_thickness); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1033, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_thickness); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1040, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_thickness, __pyx_t_1) < 0) __PYX_ERR(0, 1033, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_thickness, __pyx_t_1) < 0) __PYX_ERR(0, 1040, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1034
+  /* "raylib.pyx":1041
  *         self.p2 = p2
  *         self.thickness = thickness
  *         self.color = color             # <<<<<<<<<<<<<<
@@ -13542,7 +13635,7 @@ static int __pyx_pf_6raylib_6CyLine___cinit__(struct __pyx_obj_6raylib_CyLine *_
   __Pyx_DECREF(((PyObject *)__pyx_v_self->color));
   __pyx_v_self->color = __pyx_v_color;
 
-  /* "raylib.pyx":1030
+  /* "raylib.pyx":1037
  *     cdef CyColor color
  * 
  *     def __cinit__(self, raymath.CyVector2 p1, raymath.CyVector2 p2, CyColor color, float thickness = 1.0):             # <<<<<<<<<<<<<<
@@ -13562,7 +13655,7 @@ static int __pyx_pf_6raylib_6CyLine___cinit__(struct __pyx_obj_6raylib_CyLine *_
   return __pyx_r;
 }
 
-/* "raylib.pyx":1036
+/* "raylib.pyx":1043
  *         self.color = color
  * 
  *     def draw_line(self) -> None:             # <<<<<<<<<<<<<<
@@ -13595,28 +13688,28 @@ static PyObject *__pyx_pf_6raylib_6CyLine_2draw_line(struct __pyx_obj_6raylib_Cy
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("draw_line", 0);
 
-  /* "raylib.pyx":1037
+  /* "raylib.pyx":1044
  * 
  *     def draw_line(self) -> None:
  *         DrawLineEx(self.p1._vec, self.p2._vec, self.thickness, self.color._color)             # <<<<<<<<<<<<<<
  * 
  *     #cdef bint CheckCollisionLines(Vector2 startPos1, Vector2 endPos1, Vector2 startPos2, Vector2 endPos2, Vector2 *collisionPoint) # Check the collision between two lines defined by two points each, returns collision point by reference
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->p1), __pyx_n_s_vec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1037, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->p1), __pyx_n_s_vec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1044, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __pyx_convert__from_py_Vector2(__pyx_t_1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 1037, __pyx_L1_error)
+  __pyx_t_2 = __pyx_convert__from_py_Vector2(__pyx_t_1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 1044, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->p2), __pyx_n_s_vec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1037, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->p2), __pyx_n_s_vec); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1044, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __pyx_convert__from_py_Vector2(__pyx_t_1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 1037, __pyx_L1_error)
+  __pyx_t_3 = __pyx_convert__from_py_Vector2(__pyx_t_1); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 1044, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_thickness); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1037, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_thickness); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1044, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_1); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 1037, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_t_1); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 1044, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   DrawLineEx(__pyx_t_2, __pyx_t_3, __pyx_t_4, __pyx_v_self->color->_color);
 
-  /* "raylib.pyx":1036
+  /* "raylib.pyx":1043
  *         self.color = color
  * 
  *     def draw_line(self) -> None:             # <<<<<<<<<<<<<<
@@ -13750,7 +13843,7 @@ static PyObject *__pyx_pf_6raylib_6CyLine_6__setstate_cython__(CYTHON_UNUSED str
   return __pyx_r;
 }
 
-/* "raylib.pyx":1048
+/* "raylib.pyx":1055
  * 
  * 
  *     def __cinit__(self, raymath.CyVector2[::1] points, CyColor color):             # <<<<<<<<<<<<<<
@@ -13792,11 +13885,11 @@ static int __pyx_pw_6raylib_11CyLineStrip_1__cinit__(PyObject *__pyx_v_self, PyO
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_color)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(0, 1048, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(0, 1055, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 1048, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 1055, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -13804,18 +13897,18 @@ static int __pyx_pw_6raylib_11CyLineStrip_1__cinit__(PyObject *__pyx_v_self, PyO
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_points = __Pyx_PyObject_to_MemoryviewSlice_dc_object(values[0], PyBUF_WRITABLE); if (unlikely(!__pyx_v_points.memview)) __PYX_ERR(0, 1048, __pyx_L3_error)
+    __pyx_v_points = __Pyx_PyObject_to_MemoryviewSlice_dc_object(values[0], PyBUF_WRITABLE); if (unlikely(!__pyx_v_points.memview)) __PYX_ERR(0, 1055, __pyx_L3_error)
     __pyx_v_color = ((struct __pyx_obj_6raylib_CyColor *)values[1]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1048, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1055, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.CyLineStrip.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_color), __pyx_ptype_6raylib_CyColor, 1, "color", 0))) __PYX_ERR(0, 1048, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_color), __pyx_ptype_6raylib_CyColor, 1, "color", 0))) __PYX_ERR(0, 1055, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_11CyLineStrip___cinit__(((struct __pyx_obj_6raylib_CyLineStrip *)__pyx_v_self), __pyx_v_points, __pyx_v_color);
 
   /* function exit code */
@@ -13833,7 +13926,7 @@ static int __pyx_pf_6raylib_11CyLineStrip___cinit__(struct __pyx_obj_6raylib_CyL
   size_t __pyx_t_1;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":1049
+  /* "raylib.pyx":1056
  * 
  *     def __cinit__(self, raymath.CyVector2[::1] points, CyColor color):
  *         self.points = points             # <<<<<<<<<<<<<<
@@ -13844,7 +13937,7 @@ static int __pyx_pf_6raylib_11CyLineStrip___cinit__(struct __pyx_obj_6raylib_CyL
   __PYX_INC_MEMVIEW(&__pyx_v_points, 0);
   __pyx_v_self->points = __pyx_v_points;
 
-  /* "raylib.pyx":1050
+  /* "raylib.pyx":1057
  *     def __cinit__(self, raymath.CyVector2[::1] points, CyColor color):
  *         self.points = points
  *         self.c_points = <Vector2*> malloc(len(points) * sizeof(Vector2))             # <<<<<<<<<<<<<<
@@ -13854,7 +13947,7 @@ static int __pyx_pf_6raylib_11CyLineStrip___cinit__(struct __pyx_obj_6raylib_CyL
   __pyx_t_1 = __Pyx_MemoryView_Len(__pyx_v_points); 
   __pyx_v_self->c_points = ((Vector2 *)malloc((__pyx_t_1 * (sizeof(Vector2)))));
 
-  /* "raylib.pyx":1051
+  /* "raylib.pyx":1058
  *         self.points = points
  *         self.c_points = <Vector2*> malloc(len(points) * sizeof(Vector2))
  *         self.color = color             # <<<<<<<<<<<<<<
@@ -13867,7 +13960,7 @@ static int __pyx_pf_6raylib_11CyLineStrip___cinit__(struct __pyx_obj_6raylib_CyL
   __Pyx_DECREF(((PyObject *)__pyx_v_self->color));
   __pyx_v_self->color = __pyx_v_color;
 
-  /* "raylib.pyx":1048
+  /* "raylib.pyx":1055
  * 
  * 
  *     def __cinit__(self, raymath.CyVector2[::1] points, CyColor color):             # <<<<<<<<<<<<<<
@@ -13882,7 +13975,7 @@ static int __pyx_pf_6raylib_11CyLineStrip___cinit__(struct __pyx_obj_6raylib_CyL
   return __pyx_r;
 }
 
-/* "raylib.pyx":1053
+/* "raylib.pyx":1060
  *         self.color = color
  * 
  *     def draw(self) -> None:             # <<<<<<<<<<<<<<
@@ -13919,27 +14012,27 @@ static PyObject *__pyx_pf_6raylib_11CyLineStrip_2draw(struct __pyx_obj_6raylib_C
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("draw", 0);
 
-  /* "raylib.pyx":1056
+  /* "raylib.pyx":1063
  * 
  *         # Copy data from Python objects to C array
  *         for i in range(len(self.points)):             # <<<<<<<<<<<<<<
  *             self.c_points[i] = self.points[i]._vector
  * 
  */
-  if (unlikely(!__pyx_v_self->points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 1056, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 1063, __pyx_L1_error)}
   __pyx_t_1 = __Pyx_MemoryView_Len(__pyx_v_self->points); 
   __pyx_t_2 = __pyx_t_1;
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
-    /* "raylib.pyx":1057
+    /* "raylib.pyx":1064
  *         # Copy data from Python objects to C array
  *         for i in range(len(self.points)):
  *             self.c_points[i] = self.points[i]._vector             # <<<<<<<<<<<<<<
  * 
  *         # Call the C function
  */
-    if (unlikely(!__pyx_v_self->points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 1057, __pyx_L1_error)}
+    if (unlikely(!__pyx_v_self->points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 1064, __pyx_L1_error)}
     __pyx_t_5 = __pyx_v_i;
     __pyx_t_6 = -1;
     if (__pyx_t_5 < 0) {
@@ -13948,7 +14041,7 @@ static PyObject *__pyx_pf_6raylib_11CyLineStrip_2draw(struct __pyx_obj_6raylib_C
     } else if (unlikely(__pyx_t_5 >= __pyx_v_self->points.shape[0])) __pyx_t_6 = 0;
     if (unlikely(__pyx_t_6 != -1)) {
       __Pyx_RaiseBufferIndexError(__pyx_t_6);
-      __PYX_ERR(0, 1057, __pyx_L1_error)
+      __PYX_ERR(0, 1064, __pyx_L1_error)
     }
     __pyx_t_4 = (PyObject *) *((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 * *) ( /* dim=0 */ ((char *) (((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 * *) __pyx_v_self->points.data) + __pyx_t_5)) ));
     if (unlikely(__pyx_t_4 == NULL)) __pyx_t_4 = Py_None;
@@ -13958,18 +14051,18 @@ static PyObject *__pyx_pf_6raylib_11CyLineStrip_2draw(struct __pyx_obj_6raylib_C
     (__pyx_v_self->c_points[__pyx_v_i]) = __pyx_t_7;
   }
 
-  /* "raylib.pyx":1060
+  /* "raylib.pyx":1067
  * 
  *         # Call the C function
  *         DrawLineStrip(self.c_points, len(self.points), self.color._color)             # <<<<<<<<<<<<<<
  * 
  *     def set_point(self, int index, raymath.CyVector2 vec) -> None:
  */
-  if (unlikely(!__pyx_v_self->points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 1060, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 1067, __pyx_L1_error)}
   __pyx_t_1 = __Pyx_MemoryView_Len(__pyx_v_self->points); 
   DrawLineStrip(__pyx_v_self->c_points, __pyx_t_1, __pyx_v_self->color->_color);
 
-  /* "raylib.pyx":1053
+  /* "raylib.pyx":1060
  *         self.color = color
  * 
  *     def draw(self) -> None:             # <<<<<<<<<<<<<<
@@ -13990,7 +14083,7 @@ static PyObject *__pyx_pf_6raylib_11CyLineStrip_2draw(struct __pyx_obj_6raylib_C
   return __pyx_r;
 }
 
-/* "raylib.pyx":1062
+/* "raylib.pyx":1069
  *         DrawLineStrip(self.c_points, len(self.points), self.color._color)
  * 
  *     def set_point(self, int index, raymath.CyVector2 vec) -> None:             # <<<<<<<<<<<<<<
@@ -14032,11 +14125,11 @@ static PyObject *__pyx_pw_6raylib_11CyLineStrip_5set_point(PyObject *__pyx_v_sel
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_vec_2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_point", 1, 2, 2, 1); __PYX_ERR(0, 1062, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_point", 1, 2, 2, 1); __PYX_ERR(0, 1069, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_point") < 0)) __PYX_ERR(0, 1062, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_point") < 0)) __PYX_ERR(0, 1069, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -14044,18 +14137,18 @@ static PyObject *__pyx_pw_6raylib_11CyLineStrip_5set_point(PyObject *__pyx_v_sel
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_index = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_index == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1062, __pyx_L3_error)
+    __pyx_v_index = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_index == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1069, __pyx_L3_error)
     __pyx_v_vec = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)values[1]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_point", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1062, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_point", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1069, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.CyLineStrip.set_point", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vec), __pyx_ptype_13raylib_cython_7raymath_CyVector2, 1, "vec", 0))) __PYX_ERR(0, 1062, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_vec), __pyx_ptype_13raylib_cython_7raymath_CyVector2, 1, "vec", 0))) __PYX_ERR(0, 1069, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_11CyLineStrip_4set_point(((struct __pyx_obj_6raylib_CyLineStrip *)__pyx_v_self), __pyx_v_index, __pyx_v_vec);
 
   /* function exit code */
@@ -14078,14 +14171,14 @@ static PyObject *__pyx_pf_6raylib_11CyLineStrip_4set_point(struct __pyx_obj_6ray
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("set_point", 0);
 
-  /* "raylib.pyx":1063
+  /* "raylib.pyx":1070
  * 
  *     def set_point(self, int index, raymath.CyVector2 vec) -> None:
  *         self.points[index] = vec             # <<<<<<<<<<<<<<
  * 
  *     def __dealloc__(self):
  */
-  if (unlikely(!__pyx_v_self->points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 1063, __pyx_L1_error)}
+  if (unlikely(!__pyx_v_self->points.memview)) {PyErr_SetString(PyExc_AttributeError,"Memoryview is not initialized");__PYX_ERR(0, 1070, __pyx_L1_error)}
   __pyx_t_1 = __pyx_v_index;
   __pyx_t_2 = -1;
   if (__pyx_t_1 < 0) {
@@ -14094,7 +14187,7 @@ static PyObject *__pyx_pf_6raylib_11CyLineStrip_4set_point(struct __pyx_obj_6ray
   } else if (unlikely(__pyx_t_1 >= __pyx_v_self->points.shape[0])) __pyx_t_2 = 0;
   if (unlikely(__pyx_t_2 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_2);
-    __PYX_ERR(0, 1063, __pyx_L1_error)
+    __PYX_ERR(0, 1070, __pyx_L1_error)
   }
   __pyx_t_3 = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 * *) ( /* dim=0 */ ((char *) (((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 * *) __pyx_v_self->points.data) + __pyx_t_1)) ));
   __Pyx_XGOTREF(*__pyx_t_3);
@@ -14102,7 +14195,7 @@ static PyObject *__pyx_pf_6raylib_11CyLineStrip_4set_point(struct __pyx_obj_6ray
   *__pyx_t_3 = __pyx_v_vec;
   __Pyx_XGIVEREF(*__pyx_t_3);
 
-  /* "raylib.pyx":1062
+  /* "raylib.pyx":1069
  *         DrawLineStrip(self.c_points, len(self.points), self.color._color)
  * 
  *     def set_point(self, int index, raymath.CyVector2 vec) -> None:             # <<<<<<<<<<<<<<
@@ -14122,7 +14215,7 @@ static PyObject *__pyx_pf_6raylib_11CyLineStrip_4set_point(struct __pyx_obj_6ray
   return __pyx_r;
 }
 
-/* "raylib.pyx":1065
+/* "raylib.pyx":1072
  *         self.points[index] = vec
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -14146,7 +14239,7 @@ static void __pyx_pf_6raylib_11CyLineStrip_6__dealloc__(struct __pyx_obj_6raylib
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "raylib.pyx":1066
+  /* "raylib.pyx":1073
  * 
  *     def __dealloc__(self):
  *         if self.c_points is not NULL:             # <<<<<<<<<<<<<<
@@ -14156,7 +14249,7 @@ static void __pyx_pf_6raylib_11CyLineStrip_6__dealloc__(struct __pyx_obj_6raylib
   __pyx_t_1 = ((__pyx_v_self->c_points != NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "raylib.pyx":1067
+    /* "raylib.pyx":1074
  *     def __dealloc__(self):
  *         if self.c_points is not NULL:
  *             free(self.c_points)             # <<<<<<<<<<<<<<
@@ -14165,7 +14258,7 @@ static void __pyx_pf_6raylib_11CyLineStrip_6__dealloc__(struct __pyx_obj_6raylib
  */
     free(__pyx_v_self->c_points);
 
-    /* "raylib.pyx":1066
+    /* "raylib.pyx":1073
  * 
  *     def __dealloc__(self):
  *         if self.c_points is not NULL:             # <<<<<<<<<<<<<<
@@ -14174,7 +14267,7 @@ static void __pyx_pf_6raylib_11CyLineStrip_6__dealloc__(struct __pyx_obj_6raylib
  */
   }
 
-  /* "raylib.pyx":1065
+  /* "raylib.pyx":1072
  *         self.points[index] = vec
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -16308,21 +16401,25 @@ static PyObject *__pyx_pf_6raylib_8CySpline_2__setstate_cython__(struct __pyx_ob
   return __pyx_r;
 }
 
-/* "raylib.pyx":1141
- *     cdef CyColor color
- * 
- *     def __cinit__(self, char* text, raymath.CyVector2 pos, int font_size, CyColor color):             # <<<<<<<<<<<<<<
- * 
- *         self.text_buffer_size = len(text) + 1
+/* "raylib.pyx":1163
+ *     #    Color tint
+ *     #) # Draw text using Font and pro parameters (rotation)
+ *     def __cinit__(             # <<<<<<<<<<<<<<
+ *         self,
+ *         char* text,
  */
 
 /* Python wrapper */
 static int __pyx_pw_6raylib_6CyText_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
 static int __pyx_pw_6raylib_6CyText_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   char *__pyx_v_text;
-  struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_pos = 0;
   int __pyx_v_font_size;
-  struct __pyx_obj_6raylib_CyColor *__pyx_v_color = 0;
+  struct __pyx_obj_6raylib_CyColor *__pyx_v_tint = 0;
+  struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_pos = 0;
+  struct __pyx_obj_6raylib_CyFont *__pyx_v_font = 0;
+  float __pyx_v_spacing;
+  struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_origin = 0;
+  float __pyx_v_rotation;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -16330,12 +16427,32 @@ static int __pyx_pw_6raylib_6CyText_1__cinit__(PyObject *__pyx_v_self, PyObject 
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_text,&__pyx_n_s_pos,&__pyx_n_s_font_size,&__pyx_n_s_color,0};
-    PyObject* values[4] = {0,0,0,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_text,&__pyx_n_s_font_size,&__pyx_n_s_tint,&__pyx_n_s_pos,&__pyx_n_s_font,&__pyx_n_s_spacing,&__pyx_n_s_origin,&__pyx_n_s_rotation,0};
+    PyObject* values[8] = {0,0,0,0,0,0,0,0};
+
+    /* "raylib.pyx":1167
+ *         char* text,
+ *         int font_size,
+ *         CyColor tint = None,             # <<<<<<<<<<<<<<
+ *         raymath.CyVector2 pos = raymath.CyVector2(0, 0),
+ *         CyFont font = CyFont.get_font_default(),
+ */
+    values[2] = (PyObject *)((struct __pyx_obj_6raylib_CyColor *)Py_None);
+    values[3] = (PyObject *)__pyx_k__74;
+    values[4] = (PyObject *)__pyx_k__75;
+    values[6] = (PyObject *)__pyx_k__76;
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
       const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
       switch (pos_args) {
+        case  8: values[7] = PyTuple_GET_ITEM(__pyx_args, 7);
+        CYTHON_FALLTHROUGH;
+        case  7: values[6] = PyTuple_GET_ITEM(__pyx_args, 6);
+        CYTHON_FALLTHROUGH;
+        case  6: values[5] = PyTuple_GET_ITEM(__pyx_args, 5);
+        CYTHON_FALLTHROUGH;
+        case  5: values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
+        CYTHON_FALLTHROUGH;
         case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
         CYTHON_FALLTHROUGH;
         case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
@@ -16354,50 +16471,108 @@ static int __pyx_pw_6raylib_6CyText_1__cinit__(PyObject *__pyx_v_self, PyObject 
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
-        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_pos)) != 0)) kw_args--;
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_font_size)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 4, 4, 1); __PYX_ERR(0, 1141, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 2, 8, 1); __PYX_ERR(0, 1163, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
-        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_font_size)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 4, 4, 2); __PYX_ERR(0, 1141, __pyx_L3_error)
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_tint);
+          if (value) { values[2] = value; kw_args--; }
         }
         CYTHON_FALLTHROUGH;
         case  3:
-        if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_color)) != 0)) kw_args--;
-        else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 4, 4, 3); __PYX_ERR(0, 1141, __pyx_L3_error)
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_pos);
+          if (value) { values[3] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  4:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_font);
+          if (value) { values[4] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  5:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_spacing);
+          if (value) { values[5] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  6:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_origin);
+          if (value) { values[6] = value; kw_args--; }
+        }
+        CYTHON_FALLTHROUGH;
+        case  7:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_rotation);
+          if (value) { values[7] = value; kw_args--; }
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 1141, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 1163, __pyx_L3_error)
       }
-    } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
-      goto __pyx_L5_argtuple_error;
     } else {
-      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
-      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
-      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
-      values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+      switch (PyTuple_GET_SIZE(__pyx_args)) {
+        case  8: values[7] = PyTuple_GET_ITEM(__pyx_args, 7);
+        CYTHON_FALLTHROUGH;
+        case  7: values[6] = PyTuple_GET_ITEM(__pyx_args, 6);
+        CYTHON_FALLTHROUGH;
+        case  6: values[5] = PyTuple_GET_ITEM(__pyx_args, 5);
+        CYTHON_FALLTHROUGH;
+        case  5: values[4] = PyTuple_GET_ITEM(__pyx_args, 4);
+        CYTHON_FALLTHROUGH;
+        case  4: values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        break;
+        default: goto __pyx_L5_argtuple_error;
+      }
     }
-    __pyx_v_text = __Pyx_PyObject_AsWritableString(values[0]); if (unlikely((!__pyx_v_text) && PyErr_Occurred())) __PYX_ERR(0, 1141, __pyx_L3_error)
-    __pyx_v_pos = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)values[1]);
-    __pyx_v_font_size = __Pyx_PyInt_As_int(values[2]); if (unlikely((__pyx_v_font_size == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1141, __pyx_L3_error)
-    __pyx_v_color = ((struct __pyx_obj_6raylib_CyColor *)values[3]);
+    __pyx_v_text = __Pyx_PyObject_AsWritableString(values[0]); if (unlikely((!__pyx_v_text) && PyErr_Occurred())) __PYX_ERR(0, 1165, __pyx_L3_error)
+    __pyx_v_font_size = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_font_size == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1166, __pyx_L3_error)
+    __pyx_v_tint = ((struct __pyx_obj_6raylib_CyColor *)values[2]);
+    __pyx_v_pos = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)values[3]);
+    __pyx_v_font = ((struct __pyx_obj_6raylib_CyFont *)values[4]);
+    if (values[5]) {
+      __pyx_v_spacing = __pyx_PyFloat_AsFloat(values[5]); if (unlikely((__pyx_v_spacing == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 1170, __pyx_L3_error)
+    } else {
+      __pyx_v_spacing = ((float)0.0);
+    }
+    __pyx_v_origin = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)values[6]);
+    if (values[7]) {
+      __pyx_v_rotation = __pyx_PyFloat_AsFloat(values[7]); if (unlikely((__pyx_v_rotation == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 1172, __pyx_L3_error)
+    } else {
+      __pyx_v_rotation = ((float)0.0);
+    }
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1141, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 0, 2, 8, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1163, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.CyText.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_pos), __pyx_ptype_13raylib_cython_7raymath_CyVector2, 1, "pos", 0))) __PYX_ERR(0, 1141, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_color), __pyx_ptype_6raylib_CyColor, 1, "color", 0))) __PYX_ERR(0, 1141, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6raylib_6CyText___cinit__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self), __pyx_v_text, __pyx_v_pos, __pyx_v_font_size, __pyx_v_color);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_tint), __pyx_ptype_6raylib_CyColor, 1, "tint", 0))) __PYX_ERR(0, 1167, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_pos), __pyx_ptype_13raylib_cython_7raymath_CyVector2, 1, "pos", 0))) __PYX_ERR(0, 1168, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_font), __pyx_ptype_6raylib_CyFont, 1, "font", 0))) __PYX_ERR(0, 1169, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_origin), __pyx_ptype_13raylib_cython_7raymath_CyVector2, 1, "origin", 0))) __PYX_ERR(0, 1171, __pyx_L1_error)
+  __pyx_r = __pyx_pf_6raylib_6CyText___cinit__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self), __pyx_v_text, __pyx_v_font_size, __pyx_v_tint, __pyx_v_pos, __pyx_v_font, __pyx_v_spacing, __pyx_v_origin, __pyx_v_rotation);
+
+  /* "raylib.pyx":1163
+ *     #    Color tint
+ *     #) # Draw text using Font and pro parameters (rotation)
+ *     def __cinit__(             # <<<<<<<<<<<<<<
+ *         self,
+ *         char* text,
+ */
 
   /* function exit code */
   goto __pyx_L0;
@@ -16408,7 +16583,7 @@ static int __pyx_pw_6raylib_6CyText_1__cinit__(PyObject *__pyx_v_self, PyObject 
   return __pyx_r;
 }
 
-static int __pyx_pf_6raylib_6CyText___cinit__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, char *__pyx_v_text, struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_pos, int __pyx_v_font_size, struct __pyx_obj_6raylib_CyColor *__pyx_v_color) {
+static int __pyx_pf_6raylib_6CyText___cinit__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, char *__pyx_v_text, int __pyx_v_font_size, struct __pyx_obj_6raylib_CyColor *__pyx_v_tint, struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_pos, struct __pyx_obj_6raylib_CyFont *__pyx_v_font, float __pyx_v_spacing, struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_origin, float __pyx_v_rotation) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   size_t __pyx_t_1;
@@ -16419,116 +16594,160 @@ static int __pyx_pf_6raylib_6CyText___cinit__(struct __pyx_obj_6raylib_CyText *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "raylib.pyx":1143
- *     def __cinit__(self, char* text, raymath.CyVector2 pos, int font_size, CyColor color):
+  /* "raylib.pyx":1177
+ *     ):
  * 
- *         self.text_buffer_size = len(text) + 1             # <<<<<<<<<<<<<<
- *         self.text = <char*>malloc(self.text_buffer_size * sizeof(char))
- *         self.text[self.text_buffer_size] = 0
+ *         self._text_buffer_size = len(text) + 1             # <<<<<<<<<<<<<<
+ *         self._text = <char*>malloc(self._text_buffer_size * sizeof(char))
+ *         self._text[self._text_buffer_size] = 0
  */
   __pyx_t_1 = strlen(__pyx_v_text); 
-  __pyx_v_self->text_buffer_size = (__pyx_t_1 + 1);
+  __pyx_v_self->_text_buffer_size = (__pyx_t_1 + 1);
 
-  /* "raylib.pyx":1144
+  /* "raylib.pyx":1178
  * 
- *         self.text_buffer_size = len(text) + 1
- *         self.text = <char*>malloc(self.text_buffer_size * sizeof(char))             # <<<<<<<<<<<<<<
- *         self.text[self.text_buffer_size] = 0
- *         if self.text is NULL:
+ *         self._text_buffer_size = len(text) + 1
+ *         self._text = <char*>malloc(self._text_buffer_size * sizeof(char))             # <<<<<<<<<<<<<<
+ *         self._text[self._text_buffer_size] = 0
+ *         if self._text is NULL:
  */
-  __pyx_v_self->text = ((char *)malloc((__pyx_v_self->text_buffer_size * (sizeof(char)))));
+  __pyx_v_self->_text = ((char *)malloc((__pyx_v_self->_text_buffer_size * (sizeof(char)))));
 
-  /* "raylib.pyx":1145
- *         self.text_buffer_size = len(text) + 1
- *         self.text = <char*>malloc(self.text_buffer_size * sizeof(char))
- *         self.text[self.text_buffer_size] = 0             # <<<<<<<<<<<<<<
- *         if self.text is NULL:
+  /* "raylib.pyx":1179
+ *         self._text_buffer_size = len(text) + 1
+ *         self._text = <char*>malloc(self._text_buffer_size * sizeof(char))
+ *         self._text[self._text_buffer_size] = 0             # <<<<<<<<<<<<<<
+ *         if self._text is NULL:
  *             raise MemoryError("Failed to allocate memory for text")
  */
-  (__pyx_v_self->text[__pyx_v_self->text_buffer_size]) = 0;
+  (__pyx_v_self->_text[__pyx_v_self->_text_buffer_size]) = 0;
 
-  /* "raylib.pyx":1146
- *         self.text = <char*>malloc(self.text_buffer_size * sizeof(char))
- *         self.text[self.text_buffer_size] = 0
- *         if self.text is NULL:             # <<<<<<<<<<<<<<
+  /* "raylib.pyx":1180
+ *         self._text = <char*>malloc(self._text_buffer_size * sizeof(char))
+ *         self._text[self._text_buffer_size] = 0
+ *         if self._text is NULL:             # <<<<<<<<<<<<<<
  *             raise MemoryError("Failed to allocate memory for text")
  * 
  */
-  __pyx_t_2 = ((__pyx_v_self->text == NULL) != 0);
+  __pyx_t_2 = ((__pyx_v_self->_text == NULL) != 0);
   if (unlikely(__pyx_t_2)) {
 
-    /* "raylib.pyx":1147
- *         self.text[self.text_buffer_size] = 0
- *         if self.text is NULL:
+    /* "raylib.pyx":1181
+ *         self._text[self._text_buffer_size] = 0
+ *         if self._text is NULL:
  *             raise MemoryError("Failed to allocate memory for text")             # <<<<<<<<<<<<<<
  * 
- *         strcpy(self.text, text)
+ *         strcpy(self._text, text)
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__74, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1147, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__77, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1181, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __PYX_ERR(0, 1147, __pyx_L1_error)
+    __PYX_ERR(0, 1181, __pyx_L1_error)
 
-    /* "raylib.pyx":1146
- *         self.text = <char*>malloc(self.text_buffer_size * sizeof(char))
- *         self.text[self.text_buffer_size] = 0
- *         if self.text is NULL:             # <<<<<<<<<<<<<<
+    /* "raylib.pyx":1180
+ *         self._text = <char*>malloc(self._text_buffer_size * sizeof(char))
+ *         self._text[self._text_buffer_size] = 0
+ *         if self._text is NULL:             # <<<<<<<<<<<<<<
  *             raise MemoryError("Failed to allocate memory for text")
  * 
  */
   }
 
-  /* "raylib.pyx":1149
+  /* "raylib.pyx":1183
  *             raise MemoryError("Failed to allocate memory for text")
  * 
- *         strcpy(self.text, text)             # <<<<<<<<<<<<<<
+ *         strcpy(self._text, text)             # <<<<<<<<<<<<<<
  * 
- *         self.pos = pos
+ *         self._pos = pos
  */
-  (void)(strcpy(__pyx_v_self->text, __pyx_v_text));
+  (void)(strcpy(__pyx_v_self->_text, __pyx_v_text));
 
-  /* "raylib.pyx":1151
- *         strcpy(self.text, text)
+  /* "raylib.pyx":1185
+ *         strcpy(self._text, text)
  * 
- *         self.pos = pos             # <<<<<<<<<<<<<<
- *         self.font_size = font_size
- *         self.color = color
+ *         self._pos = pos             # <<<<<<<<<<<<<<
+ *         self._font_size = font_size
+ *         self._font = font
  */
   __Pyx_INCREF(((PyObject *)__pyx_v_pos));
   __Pyx_GIVEREF(((PyObject *)__pyx_v_pos));
-  __Pyx_GOTREF(__pyx_v_self->pos);
-  __Pyx_DECREF(((PyObject *)__pyx_v_self->pos));
-  __pyx_v_self->pos = __pyx_v_pos;
+  __Pyx_GOTREF(__pyx_v_self->_pos);
+  __Pyx_DECREF(((PyObject *)__pyx_v_self->_pos));
+  __pyx_v_self->_pos = __pyx_v_pos;
 
-  /* "raylib.pyx":1152
+  /* "raylib.pyx":1186
  * 
- *         self.pos = pos
- *         self.font_size = font_size             # <<<<<<<<<<<<<<
- *         self.color = color
+ *         self._pos = pos
+ *         self._font_size = font_size             # <<<<<<<<<<<<<<
+ *         self._font = font
+ *         self._spacing = spacing
+ */
+  __pyx_v_self->_font_size = __pyx_v_font_size;
+
+  /* "raylib.pyx":1187
+ *         self._pos = pos
+ *         self._font_size = font_size
+ *         self._font = font             # <<<<<<<<<<<<<<
+ *         self._spacing = spacing
+ *         self._origin = origin
+ */
+  __Pyx_INCREF(((PyObject *)__pyx_v_font));
+  __Pyx_GIVEREF(((PyObject *)__pyx_v_font));
+  __Pyx_GOTREF(__pyx_v_self->_font);
+  __Pyx_DECREF(((PyObject *)__pyx_v_self->_font));
+  __pyx_v_self->_font = __pyx_v_font;
+
+  /* "raylib.pyx":1188
+ *         self._font_size = font_size
+ *         self._font = font
+ *         self._spacing = spacing             # <<<<<<<<<<<<<<
+ *         self._origin = origin
+ *         self._rotation = rotation
+ */
+  __pyx_v_self->_spacing = __pyx_v_spacing;
+
+  /* "raylib.pyx":1189
+ *         self._font = font
+ *         self._spacing = spacing
+ *         self._origin = origin             # <<<<<<<<<<<<<<
+ *         self._rotation = rotation
+ *         self._tint = tint
+ */
+  __Pyx_INCREF(((PyObject *)__pyx_v_origin));
+  __Pyx_GIVEREF(((PyObject *)__pyx_v_origin));
+  __Pyx_GOTREF(__pyx_v_self->_origin);
+  __Pyx_DECREF(((PyObject *)__pyx_v_self->_origin));
+  __pyx_v_self->_origin = __pyx_v_origin;
+
+  /* "raylib.pyx":1190
+ *         self._spacing = spacing
+ *         self._origin = origin
+ *         self._rotation = rotation             # <<<<<<<<<<<<<<
+ *         self._tint = tint
  * 
  */
-  __pyx_v_self->font_size = __pyx_v_font_size;
+  __pyx_v_self->_rotation = __pyx_v_rotation;
 
-  /* "raylib.pyx":1153
- *         self.pos = pos
- *         self.font_size = font_size
- *         self.color = color             # <<<<<<<<<<<<<<
+  /* "raylib.pyx":1191
+ *         self._origin = origin
+ *         self._rotation = rotation
+ *         self._tint = tint             # <<<<<<<<<<<<<<
  * 
- *     def update_text(self, char* new_text) -> None:
+ * 
  */
-  __Pyx_INCREF(((PyObject *)__pyx_v_color));
-  __Pyx_GIVEREF(((PyObject *)__pyx_v_color));
-  __Pyx_GOTREF(__pyx_v_self->color);
-  __Pyx_DECREF(((PyObject *)__pyx_v_self->color));
-  __pyx_v_self->color = __pyx_v_color;
+  __Pyx_INCREF(((PyObject *)__pyx_v_tint));
+  __Pyx_GIVEREF(((PyObject *)__pyx_v_tint));
+  __Pyx_GOTREF(__pyx_v_self->_tint);
+  __Pyx_DECREF(((PyObject *)__pyx_v_self->_tint));
+  __pyx_v_self->_tint = __pyx_v_tint;
 
-  /* "raylib.pyx":1141
- *     cdef CyColor color
- * 
- *     def __cinit__(self, char* text, raymath.CyVector2 pos, int font_size, CyColor color):             # <<<<<<<<<<<<<<
- * 
- *         self.text_buffer_size = len(text) + 1
+  /* "raylib.pyx":1163
+ *     #    Color tint
+ *     #) # Draw text using Font and pro parameters (rotation)
+ *     def __cinit__(             # <<<<<<<<<<<<<<
+ *         self,
+ *         char* text,
  */
 
   /* function exit code */
@@ -16543,301 +16762,28 @@ static int __pyx_pf_6raylib_6CyText___cinit__(struct __pyx_obj_6raylib_CyText *_
   return __pyx_r;
 }
 
-/* "raylib.pyx":1155
- *         self.color = color
+/* "raylib.pyx":1195
  * 
- *     def update_text(self, char* new_text) -> None:             # <<<<<<<<<<<<<<
- * 
- *         cdef int new_text_len = len(new_text)
+ *     @property
+ *     def text(self):             # <<<<<<<<<<<<<<
+ *         if self._text is NULL:
+ *             return ''
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_6CyText_3update_text(PyObject *__pyx_v_self, PyObject *__pyx_arg_new_text); /*proto*/
-static PyObject *__pyx_pw_6raylib_6CyText_3update_text(PyObject *__pyx_v_self, PyObject *__pyx_arg_new_text) {
-  char *__pyx_v_new_text;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
+static PyObject *__pyx_pw_6raylib_6CyText_4text_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_6raylib_6CyText_4text_1__get__(PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("update_text (wrapper)", 0);
-  assert(__pyx_arg_new_text); {
-    __pyx_v_new_text = __Pyx_PyObject_AsWritableString(__pyx_arg_new_text); if (unlikely((!__pyx_v_new_text) && PyErr_Occurred())) __PYX_ERR(0, 1155, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("raylib.CyText.update_text", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_6CyText_2update_text(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self), ((char *)__pyx_v_new_text));
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_6CyText_4text___get__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_6CyText_2update_text(struct __pyx_obj_6raylib_CyText *__pyx_v_self, char *__pyx_v_new_text) {
-  int __pyx_v_new_text_len;
-  int __pyx_v_new_buffer_size;
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  size_t __pyx_t_1;
-  int __pyx_t_2;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("update_text", 0);
-
-  /* "raylib.pyx":1157
- *     def update_text(self, char* new_text) -> None:
- * 
- *         cdef int new_text_len = len(new_text)             # <<<<<<<<<<<<<<
- *         cdef int new_buffer_size = 1
- *         if new_text_len + 1 < self.text_buffer_size:
- */
-  __pyx_t_1 = strlen(__pyx_v_new_text); 
-  __pyx_v_new_text_len = __pyx_t_1;
-
-  /* "raylib.pyx":1158
- * 
- *         cdef int new_text_len = len(new_text)
- *         cdef int new_buffer_size = 1             # <<<<<<<<<<<<<<
- *         if new_text_len + 1 < self.text_buffer_size:
- *             strcpy(self.text, new_text)
- */
-  __pyx_v_new_buffer_size = 1;
-
-  /* "raylib.pyx":1159
- *         cdef int new_text_len = len(new_text)
- *         cdef int new_buffer_size = 1
- *         if new_text_len + 1 < self.text_buffer_size:             # <<<<<<<<<<<<<<
- *             strcpy(self.text, new_text)
- *             self.text[new_text_len + 1] = 0
- */
-  __pyx_t_2 = (((__pyx_v_new_text_len + 1) < __pyx_v_self->text_buffer_size) != 0);
-  if (__pyx_t_2) {
-
-    /* "raylib.pyx":1160
- *         cdef int new_buffer_size = 1
- *         if new_text_len + 1 < self.text_buffer_size:
- *             strcpy(self.text, new_text)             # <<<<<<<<<<<<<<
- *             self.text[new_text_len + 1] = 0
- *         else:
- */
-    (void)(strcpy(__pyx_v_self->text, __pyx_v_new_text));
-
-    /* "raylib.pyx":1161
- *         if new_text_len + 1 < self.text_buffer_size:
- *             strcpy(self.text, new_text)
- *             self.text[new_text_len + 1] = 0             # <<<<<<<<<<<<<<
- *         else:
- *             print(f"reallcate new mem old size = {self.text_buffer_size}")
- */
-    (__pyx_v_self->text[(__pyx_v_new_text_len + 1)]) = 0;
-
-    /* "raylib.pyx":1159
- *         cdef int new_text_len = len(new_text)
- *         cdef int new_buffer_size = 1
- *         if new_text_len + 1 < self.text_buffer_size:             # <<<<<<<<<<<<<<
- *             strcpy(self.text, new_text)
- *             self.text[new_text_len + 1] = 0
- */
-    goto __pyx_L3;
-  }
-
-  /* "raylib.pyx":1163
- *             self.text[new_text_len + 1] = 0
- *         else:
- *             print(f"reallcate new mem old size = {self.text_buffer_size}")             # <<<<<<<<<<<<<<
- *             if new_text_len + 1 > self.text_buffer_size:
- * 
- */
-  /*else*/ {
-    __pyx_t_3 = __Pyx_PyUnicode_From_int(__pyx_v_self->text_buffer_size, 0, ' ', 'd'); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1163, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyUnicode_Concat(__pyx_kp_u_reallcate_new_mem_old_size, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1163, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1163, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-
-    /* "raylib.pyx":1164
- *         else:
- *             print(f"reallcate new mem old size = {self.text_buffer_size}")
- *             if new_text_len + 1 > self.text_buffer_size:             # <<<<<<<<<<<<<<
- * 
- * 
- */
-    __pyx_t_2 = (((__pyx_v_new_text_len + 1) > __pyx_v_self->text_buffer_size) != 0);
-    if (__pyx_t_2) {
-
-      /* "raylib.pyx":1167
- * 
- * 
- *                 while new_buffer_size <= new_text_len:             # <<<<<<<<<<<<<<
- *                     new_buffer_size <<= 1
- *                 self.text = <char*>realloc(self.text, new_buffer_size * sizeof(char))
- */
-      while (1) {
-        __pyx_t_2 = ((__pyx_v_new_buffer_size <= __pyx_v_new_text_len) != 0);
-        if (!__pyx_t_2) break;
-
-        /* "raylib.pyx":1168
- * 
- *                 while new_buffer_size <= new_text_len:
- *                     new_buffer_size <<= 1             # <<<<<<<<<<<<<<
- *                 self.text = <char*>realloc(self.text, new_buffer_size * sizeof(char))
- *                 if self.text is NULL:
- */
-        __pyx_v_new_buffer_size = (__pyx_v_new_buffer_size << 1);
-      }
-
-      /* "raylib.pyx":1169
- *                 while new_buffer_size <= new_text_len:
- *                     new_buffer_size <<= 1
- *                 self.text = <char*>realloc(self.text, new_buffer_size * sizeof(char))             # <<<<<<<<<<<<<<
- *                 if self.text is NULL:
- *                     raise MemoryError("Failed to reallocate memory for text")
- */
-      __pyx_v_self->text = ((char *)realloc(__pyx_v_self->text, (__pyx_v_new_buffer_size * (sizeof(char)))));
-
-      /* "raylib.pyx":1170
- *                     new_buffer_size <<= 1
- *                 self.text = <char*>realloc(self.text, new_buffer_size * sizeof(char))
- *                 if self.text is NULL:             # <<<<<<<<<<<<<<
- *                     raise MemoryError("Failed to reallocate memory for text")
- *                 self.text_buffer_size = new_buffer_size
- */
-      __pyx_t_2 = ((__pyx_v_self->text == NULL) != 0);
-      if (unlikely(__pyx_t_2)) {
-
-        /* "raylib.pyx":1171
- *                 self.text = <char*>realloc(self.text, new_buffer_size * sizeof(char))
- *                 if self.text is NULL:
- *                     raise MemoryError("Failed to reallocate memory for text")             # <<<<<<<<<<<<<<
- *                 self.text_buffer_size = new_buffer_size
- *             print(f"new {self.text_buffer_size}")
- */
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__75, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1171, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_Raise(__pyx_t_3, 0, 0, 0);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __PYX_ERR(0, 1171, __pyx_L1_error)
-
-        /* "raylib.pyx":1170
- *                     new_buffer_size <<= 1
- *                 self.text = <char*>realloc(self.text, new_buffer_size * sizeof(char))
- *                 if self.text is NULL:             # <<<<<<<<<<<<<<
- *                     raise MemoryError("Failed to reallocate memory for text")
- *                 self.text_buffer_size = new_buffer_size
- */
-      }
-
-      /* "raylib.pyx":1172
- *                 if self.text is NULL:
- *                     raise MemoryError("Failed to reallocate memory for text")
- *                 self.text_buffer_size = new_buffer_size             # <<<<<<<<<<<<<<
- *             print(f"new {self.text_buffer_size}")
- *             strcpy(self.text, new_text)
- */
-      __pyx_v_self->text_buffer_size = __pyx_v_new_buffer_size;
-
-      /* "raylib.pyx":1164
- *         else:
- *             print(f"reallcate new mem old size = {self.text_buffer_size}")
- *             if new_text_len + 1 > self.text_buffer_size:             # <<<<<<<<<<<<<<
- * 
- * 
- */
-    }
-
-    /* "raylib.pyx":1173
- *                     raise MemoryError("Failed to reallocate memory for text")
- *                 self.text_buffer_size = new_buffer_size
- *             print(f"new {self.text_buffer_size}")             # <<<<<<<<<<<<<<
- *             strcpy(self.text, new_text)
- *             self.text[new_text_len] = 0
- */
-    __pyx_t_3 = __Pyx_PyUnicode_From_int(__pyx_v_self->text_buffer_size, 0, ' ', 'd'); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1173, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyUnicode_Concat(__pyx_kp_u_new, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1173, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1173, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-
-    /* "raylib.pyx":1174
- *                 self.text_buffer_size = new_buffer_size
- *             print(f"new {self.text_buffer_size}")
- *             strcpy(self.text, new_text)             # <<<<<<<<<<<<<<
- *             self.text[new_text_len] = 0
- * 
- */
-    (void)(strcpy(__pyx_v_self->text, __pyx_v_new_text));
-
-    /* "raylib.pyx":1175
- *             print(f"new {self.text_buffer_size}")
- *             strcpy(self.text, new_text)
- *             self.text[new_text_len] = 0             # <<<<<<<<<<<<<<
- * 
- *     def get_text(self) -> str:
- */
-    (__pyx_v_self->text[__pyx_v_new_text_len]) = 0;
-  }
-  __pyx_L3:;
-
-  /* "raylib.pyx":1155
- *         self.color = color
- * 
- *     def update_text(self, char* new_text) -> None:             # <<<<<<<<<<<<<<
- * 
- *         cdef int new_text_len = len(new_text)
- */
-
-  /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
-  goto __pyx_L0;
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("raylib.CyText.update_text", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "raylib.pyx":1177
- *             self.text[new_text_len] = 0
- * 
- *     def get_text(self) -> str:             # <<<<<<<<<<<<<<
- *         if self.text is NULL:
- *             return ''  # Return empty bytes if there's no text
- */
-
-/* Python wrapper */
-static PyObject *__pyx_pw_6raylib_6CyText_5get_text(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6raylib_6CyText_5get_text(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("get_text (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_6CyText_4get_text(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_6raylib_6CyText_4get_text(struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
-  PyObject *__pyx_v_py_str = 0;
+static PyObject *__pyx_pf_6raylib_6CyText_4text___get__(struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -16846,162 +16792,500 @@ static PyObject *__pyx_pf_6raylib_6CyText_4get_text(struct __pyx_obj_6raylib_CyT
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("get_text", 0);
+  __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "raylib.pyx":1178
- * 
- *     def get_text(self) -> str:
- *         if self.text is NULL:             # <<<<<<<<<<<<<<
- *             return ''  # Return empty bytes if there's no text
- *         # Assuming self.text is null-terminated; create a Python bytes object from the C string.
+  /* "raylib.pyx":1196
+ *     @property
+ *     def text(self):
+ *         if self._text is NULL:             # <<<<<<<<<<<<<<
+ *             return ''
+ *         return self._text[:].decode('utf-8')
  */
-  __pyx_t_1 = ((__pyx_v_self->text == NULL) != 0);
+  __pyx_t_1 = ((__pyx_v_self->_text == NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "raylib.pyx":1179
- *     def get_text(self) -> str:
- *         if self.text is NULL:
- *             return ''  # Return empty bytes if there's no text             # <<<<<<<<<<<<<<
- *         # Assuming self.text is null-terminated; create a Python bytes object from the C string.
- *         cdef str py_str = self.text[:].decode('utf-8')  # Assuming text is UTF-8 encoded; adjust as necessary.
+    /* "raylib.pyx":1197
+ *     def text(self):
+ *         if self._text is NULL:
+ *             return ''             # <<<<<<<<<<<<<<
+ *         return self._text[:].decode('utf-8')
+ * 
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_INCREF(__pyx_kp_u__76);
-    __pyx_r = __pyx_kp_u__76;
+    __Pyx_INCREF(__pyx_kp_u__78);
+    __pyx_r = __pyx_kp_u__78;
     goto __pyx_L0;
 
-    /* "raylib.pyx":1178
- * 
- *     def get_text(self) -> str:
- *         if self.text is NULL:             # <<<<<<<<<<<<<<
- *             return ''  # Return empty bytes if there's no text
- *         # Assuming self.text is null-terminated; create a Python bytes object from the C string.
+    /* "raylib.pyx":1196
+ *     @property
+ *     def text(self):
+ *         if self._text is NULL:             # <<<<<<<<<<<<<<
+ *             return ''
+ *         return self._text[:].decode('utf-8')
  */
   }
 
-  /* "raylib.pyx":1181
- *             return ''  # Return empty bytes if there's no text
- *         # Assuming self.text is null-terminated; create a Python bytes object from the C string.
- *         cdef str py_str = self.text[:].decode('utf-8')  # Assuming text is UTF-8 encoded; adjust as necessary.             # <<<<<<<<<<<<<<
- *         return py_str
- *     def update_pos(self, raymath.CyVector2 pos) -> None:
- */
-  __pyx_t_2 = __pyx_v_self->text;
-  __pyx_t_3 = __Pyx_decode_c_string(__pyx_t_2, 0, strlen(__pyx_t_2), NULL, NULL, PyUnicode_DecodeUTF8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1181, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  if (!(likely(PyUnicode_CheckExact(__pyx_t_3))||((void)PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "unicode", Py_TYPE(__pyx_t_3)->tp_name), 0))) __PYX_ERR(0, 1181, __pyx_L1_error)
-  __Pyx_INCREF(__pyx_t_3);
-  __pyx_v_py_str = ((PyObject*)__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-
-  /* "raylib.pyx":1182
- *         # Assuming self.text is null-terminated; create a Python bytes object from the C string.
- *         cdef str py_str = self.text[:].decode('utf-8')  # Assuming text is UTF-8 encoded; adjust as necessary.
- *         return py_str             # <<<<<<<<<<<<<<
- *     def update_pos(self, raymath.CyVector2 pos) -> None:
- *         self.pos.x = pos.x
+  /* "raylib.pyx":1198
+ *         if self._text is NULL:
+ *             return ''
+ *         return self._text[:].decode('utf-8')             # <<<<<<<<<<<<<<
+ * 
+ *     @text.setter
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_INCREF(__pyx_v_py_str);
-  __pyx_r = __pyx_v_py_str;
+  __pyx_t_2 = __pyx_v_self->_text;
+  __pyx_t_3 = __Pyx_decode_c_string(__pyx_t_2, 0, strlen(__pyx_t_2), NULL, NULL, PyUnicode_DecodeUTF8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1198, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_INCREF(__pyx_t_3);
+  __pyx_r = __pyx_t_3;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1177
- *             self.text[new_text_len] = 0
+  /* "raylib.pyx":1195
  * 
- *     def get_text(self) -> str:             # <<<<<<<<<<<<<<
- *         if self.text is NULL:
- *             return ''  # Return empty bytes if there's no text
+ *     @property
+ *     def text(self):             # <<<<<<<<<<<<<<
+ *         if self._text is NULL:
+ *             return ''
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("raylib.CyText.get_text", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyText.text.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_py_str);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "raylib.pyx":1183
- *         cdef str py_str = self.text[:].decode('utf-8')  # Assuming text is UTF-8 encoded; adjust as necessary.
- *         return py_str
- *     def update_pos(self, raymath.CyVector2 pos) -> None:             # <<<<<<<<<<<<<<
- *         self.pos.x = pos.x
- *         self.pos.y = pos.y
+/* "raylib.pyx":1201
+ * 
+ *     @text.setter
+ *     def text(self, char* new_text):             # <<<<<<<<<<<<<<
+ *         cdef int new_text_len = len(new_text)
+ *         cdef int new_buffer_size = 1
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_6CyText_7update_pos(PyObject *__pyx_v_self, PyObject *__pyx_v_pos); /*proto*/
-static PyObject *__pyx_pw_6raylib_6CyText_7update_pos(PyObject *__pyx_v_self, PyObject *__pyx_v_pos) {
+static int __pyx_pw_6raylib_6CyText_4text_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_arg_new_text); /*proto*/
+static int __pyx_pw_6raylib_6CyText_4text_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_arg_new_text) {
+  char *__pyx_v_new_text;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  PyObject *__pyx_r = 0;
+  int __pyx_r;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("update_pos (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_pos), __pyx_ptype_13raylib_cython_7raymath_CyVector2, 1, "pos", 0))) __PYX_ERR(0, 1183, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6raylib_6CyText_6update_pos(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self), ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_v_pos));
+  __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
+  assert(__pyx_arg_new_text); {
+    __pyx_v_new_text = __Pyx_PyObject_AsWritableString(__pyx_arg_new_text); if (unlikely((!__pyx_v_new_text) && PyErr_Occurred())) __PYX_ERR(0, 1201, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("raylib.CyText.text.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6raylib_6CyText_4text_2__set__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self), ((char *)__pyx_v_new_text));
 
   /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_6raylib_6CyText_4text_2__set__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, char *__pyx_v_new_text) {
+  int __pyx_v_new_text_len;
+  int __pyx_v_new_buffer_size;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  size_t __pyx_t_1;
+  int __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__set__", 0);
+
+  /* "raylib.pyx":1202
+ *     @text.setter
+ *     def text(self, char* new_text):
+ *         cdef int new_text_len = len(new_text)             # <<<<<<<<<<<<<<
+ *         cdef int new_buffer_size = 1
+ *         if new_text_len + 1 < self._text_buffer_size:
+ */
+  __pyx_t_1 = strlen(__pyx_v_new_text); 
+  __pyx_v_new_text_len = __pyx_t_1;
+
+  /* "raylib.pyx":1203
+ *     def text(self, char* new_text):
+ *         cdef int new_text_len = len(new_text)
+ *         cdef int new_buffer_size = 1             # <<<<<<<<<<<<<<
+ *         if new_text_len + 1 < self._text_buffer_size:
+ *             strcpy(self._text, new_text)
+ */
+  __pyx_v_new_buffer_size = 1;
+
+  /* "raylib.pyx":1204
+ *         cdef int new_text_len = len(new_text)
+ *         cdef int new_buffer_size = 1
+ *         if new_text_len + 1 < self._text_buffer_size:             # <<<<<<<<<<<<<<
+ *             strcpy(self._text, new_text)
+ *             self._text[new_text_len + 1] = 0
+ */
+  __pyx_t_2 = (((__pyx_v_new_text_len + 1) < __pyx_v_self->_text_buffer_size) != 0);
+  if (__pyx_t_2) {
+
+    /* "raylib.pyx":1205
+ *         cdef int new_buffer_size = 1
+ *         if new_text_len + 1 < self._text_buffer_size:
+ *             strcpy(self._text, new_text)             # <<<<<<<<<<<<<<
+ *             self._text[new_text_len + 1] = 0
+ *         else:
+ */
+    (void)(strcpy(__pyx_v_self->_text, __pyx_v_new_text));
+
+    /* "raylib.pyx":1206
+ *         if new_text_len + 1 < self._text_buffer_size:
+ *             strcpy(self._text, new_text)
+ *             self._text[new_text_len + 1] = 0             # <<<<<<<<<<<<<<
+ *         else:
+ *             if new_text_len + 1 > self._text_buffer_size:
+ */
+    (__pyx_v_self->_text[(__pyx_v_new_text_len + 1)]) = 0;
+
+    /* "raylib.pyx":1204
+ *         cdef int new_text_len = len(new_text)
+ *         cdef int new_buffer_size = 1
+ *         if new_text_len + 1 < self._text_buffer_size:             # <<<<<<<<<<<<<<
+ *             strcpy(self._text, new_text)
+ *             self._text[new_text_len + 1] = 0
+ */
+    goto __pyx_L3;
+  }
+
+  /* "raylib.pyx":1208
+ *             self._text[new_text_len + 1] = 0
+ *         else:
+ *             if new_text_len + 1 > self._text_buffer_size:             # <<<<<<<<<<<<<<
+ *                 while new_buffer_size <= new_text_len:
+ *                     new_buffer_size = new_buffer_size << 1
+ */
+  /*else*/ {
+    __pyx_t_2 = (((__pyx_v_new_text_len + 1) > __pyx_v_self->_text_buffer_size) != 0);
+    if (__pyx_t_2) {
+
+      /* "raylib.pyx":1209
+ *         else:
+ *             if new_text_len + 1 > self._text_buffer_size:
+ *                 while new_buffer_size <= new_text_len:             # <<<<<<<<<<<<<<
+ *                     new_buffer_size = new_buffer_size << 1
+ *                 self._text = <char*>realloc(self._text, new_buffer_size * sizeof(char))
+ */
+      while (1) {
+        __pyx_t_2 = ((__pyx_v_new_buffer_size <= __pyx_v_new_text_len) != 0);
+        if (!__pyx_t_2) break;
+
+        /* "raylib.pyx":1210
+ *             if new_text_len + 1 > self._text_buffer_size:
+ *                 while new_buffer_size <= new_text_len:
+ *                     new_buffer_size = new_buffer_size << 1             # <<<<<<<<<<<<<<
+ *                 self._text = <char*>realloc(self._text, new_buffer_size * sizeof(char))
+ *                 if self._text is NULL:
+ */
+        __pyx_v_new_buffer_size = (__pyx_v_new_buffer_size << 1);
+      }
+
+      /* "raylib.pyx":1211
+ *                 while new_buffer_size <= new_text_len:
+ *                     new_buffer_size = new_buffer_size << 1
+ *                 self._text = <char*>realloc(self._text, new_buffer_size * sizeof(char))             # <<<<<<<<<<<<<<
+ *                 if self._text is NULL:
+ *                     raise MemoryError("Failed to reallocate memory for text")
+ */
+      __pyx_v_self->_text = ((char *)realloc(__pyx_v_self->_text, (__pyx_v_new_buffer_size * (sizeof(char)))));
+
+      /* "raylib.pyx":1212
+ *                     new_buffer_size = new_buffer_size << 1
+ *                 self._text = <char*>realloc(self._text, new_buffer_size * sizeof(char))
+ *                 if self._text is NULL:             # <<<<<<<<<<<<<<
+ *                     raise MemoryError("Failed to reallocate memory for text")
+ *                 self._text_buffer_size = new_buffer_size
+ */
+      __pyx_t_2 = ((__pyx_v_self->_text == NULL) != 0);
+      if (unlikely(__pyx_t_2)) {
+
+        /* "raylib.pyx":1213
+ *                 self._text = <char*>realloc(self._text, new_buffer_size * sizeof(char))
+ *                 if self._text is NULL:
+ *                     raise MemoryError("Failed to reallocate memory for text")             # <<<<<<<<<<<<<<
+ *                 self._text_buffer_size = new_buffer_size
+ *             strcpy(self._text, new_text)
+ */
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__79, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1213, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_Raise(__pyx_t_3, 0, 0, 0);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __PYX_ERR(0, 1213, __pyx_L1_error)
+
+        /* "raylib.pyx":1212
+ *                     new_buffer_size = new_buffer_size << 1
+ *                 self._text = <char*>realloc(self._text, new_buffer_size * sizeof(char))
+ *                 if self._text is NULL:             # <<<<<<<<<<<<<<
+ *                     raise MemoryError("Failed to reallocate memory for text")
+ *                 self._text_buffer_size = new_buffer_size
+ */
+      }
+
+      /* "raylib.pyx":1214
+ *                 if self._text is NULL:
+ *                     raise MemoryError("Failed to reallocate memory for text")
+ *                 self._text_buffer_size = new_buffer_size             # <<<<<<<<<<<<<<
+ *             strcpy(self._text, new_text)
+ *             self._text[new_text_len] = 0
+ */
+      __pyx_v_self->_text_buffer_size = __pyx_v_new_buffer_size;
+
+      /* "raylib.pyx":1208
+ *             self._text[new_text_len + 1] = 0
+ *         else:
+ *             if new_text_len + 1 > self._text_buffer_size:             # <<<<<<<<<<<<<<
+ *                 while new_buffer_size <= new_text_len:
+ *                     new_buffer_size = new_buffer_size << 1
+ */
+    }
+
+    /* "raylib.pyx":1215
+ *                     raise MemoryError("Failed to reallocate memory for text")
+ *                 self._text_buffer_size = new_buffer_size
+ *             strcpy(self._text, new_text)             # <<<<<<<<<<<<<<
+ *             self._text[new_text_len] = 0
+ * 
+ */
+    (void)(strcpy(__pyx_v_self->_text, __pyx_v_new_text));
+
+    /* "raylib.pyx":1216
+ *                 self._text_buffer_size = new_buffer_size
+ *             strcpy(self._text, new_text)
+ *             self._text[new_text_len] = 0             # <<<<<<<<<<<<<<
+ * 
+ *     @property
+ */
+    (__pyx_v_self->_text[__pyx_v_new_text_len]) = 0;
+  }
+  __pyx_L3:;
+
+  /* "raylib.pyx":1201
+ * 
+ *     @text.setter
+ *     def text(self, char* new_text):             # <<<<<<<<<<<<<<
+ *         cdef int new_text_len = len(new_text)
+ *         cdef int new_buffer_size = 1
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
-  __pyx_r = NULL;
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_AddTraceback("raylib.CyText.text.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_6CyText_6update_pos(struct __pyx_obj_6raylib_CyText *__pyx_v_self, struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_pos) {
+/* "raylib.pyx":1219
+ * 
+ *     @property
+ *     def pos(self):             # <<<<<<<<<<<<<<
+ *         return self._pos
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_6CyText_3pos_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_6raylib_6CyText_3pos_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_6CyText_3pos___get__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_6CyText_3pos___get__(struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__", 0);
+
+  /* "raylib.pyx":1220
+ *     @property
+ *     def pos(self):
+ *         return self._pos             # <<<<<<<<<<<<<<
+ * 
+ *     @pos.setter
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(((PyObject *)__pyx_v_self->_pos));
+  __pyx_r = ((PyObject *)__pyx_v_self->_pos);
+  goto __pyx_L0;
+
+  /* "raylib.pyx":1219
+ * 
+ *     @property
+ *     def pos(self):             # <<<<<<<<<<<<<<
+ *         return self._pos
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":1223
+ * 
+ *     @pos.setter
+ *     def pos(self, raymath.CyVector2 value):             # <<<<<<<<<<<<<<
+ *         self._pos.x = value.x
+ *         self._pos.y = value.y
+ */
+
+/* Python wrapper */
+static int __pyx_pw_6raylib_6CyText_3pos_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_6raylib_6CyText_3pos_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_value), __pyx_ptype_13raylib_cython_7raymath_CyVector2, 1, "value", 0))) __PYX_ERR(0, 1223, __pyx_L1_error)
+  __pyx_r = __pyx_pf_6raylib_6CyText_3pos_2__set__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self), ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_v_value));
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_6raylib_6CyText_3pos_2__set__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_value) {
+  int __pyx_r;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("update_pos", 0);
+  __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "raylib.pyx":1184
- *         return py_str
- *     def update_pos(self, raymath.CyVector2 pos) -> None:
- *         self.pos.x = pos.x             # <<<<<<<<<<<<<<
- *         self.pos.y = pos.y
+  /* "raylib.pyx":1224
+ *     @pos.setter
+ *     def pos(self, raymath.CyVector2 value):
+ *         self._pos.x = value.x             # <<<<<<<<<<<<<<
+ *         self._pos.y = value.y
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_pos), __pyx_n_s_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1184, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_value), __pyx_n_s_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1224, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(((PyObject *)__pyx_v_self->pos), __pyx_n_s_x, __pyx_t_1) < 0) __PYX_ERR(0, 1184, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(((PyObject *)__pyx_v_self->_pos), __pyx_n_s_x, __pyx_t_1) < 0) __PYX_ERR(0, 1224, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1185
- *     def update_pos(self, raymath.CyVector2 pos) -> None:
- *         self.pos.x = pos.x
- *         self.pos.y = pos.y             # <<<<<<<<<<<<<<
+  /* "raylib.pyx":1225
+ *     def pos(self, raymath.CyVector2 value):
+ *         self._pos.x = value.x
+ *         self._pos.y = value.y             # <<<<<<<<<<<<<<
  * 
- *     def draw(self) -> None:
+ *     @property
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_pos), __pyx_n_s_y); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1185, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_value), __pyx_n_s_y); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1225, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(((PyObject *)__pyx_v_self->pos), __pyx_n_s_y, __pyx_t_1) < 0) __PYX_ERR(0, 1185, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(((PyObject *)__pyx_v_self->_pos), __pyx_n_s_y, __pyx_t_1) < 0) __PYX_ERR(0, 1225, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1183
- *         cdef str py_str = self.text[:].decode('utf-8')  # Assuming text is UTF-8 encoded; adjust as necessary.
- *         return py_str
- *     def update_pos(self, raymath.CyVector2 pos) -> None:             # <<<<<<<<<<<<<<
- *         self.pos.x = pos.x
- *         self.pos.y = pos.y
+  /* "raylib.pyx":1223
+ * 
+ *     @pos.setter
+ *     def pos(self, raymath.CyVector2 value):             # <<<<<<<<<<<<<<
+ *         self._pos.x = value.x
+ *         self._pos.y = value.y
  */
 
   /* function exit code */
-  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  __pyx_r = 0;
   goto __pyx_L0;
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("raylib.CyText.update_pos", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyText.pos.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":1228
+ * 
+ *     @property
+ *     def font_size(self):             # <<<<<<<<<<<<<<
+ *         return self._font_size
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_6CyText_9font_size_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_6raylib_6CyText_9font_size_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_6CyText_9font_size___get__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_6CyText_9font_size___get__(struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__get__", 0);
+
+  /* "raylib.pyx":1229
+ *     @property
+ *     def font_size(self):
+ *         return self._font_size             # <<<<<<<<<<<<<<
+ * 
+ *     @font_size.setter
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->_font_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1229, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "raylib.pyx":1228
+ * 
+ *     @property
+ *     def font_size(self):             # <<<<<<<<<<<<<<
+ *         return self._font_size
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("raylib.CyText.font_size.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -17009,61 +17293,645 @@ static PyObject *__pyx_pf_6raylib_6CyText_6update_pos(struct __pyx_obj_6raylib_C
   return __pyx_r;
 }
 
-/* "raylib.pyx":1187
- *         self.pos.y = pos.y
+/* "raylib.pyx":1232
  * 
- *     def draw(self) -> None:             # <<<<<<<<<<<<<<
- *         DrawText(<const char*> self.text, <int>self.pos.x, <int>self.pos.y, self.font_size, self.color._color)
+ *     @font_size.setter
+ *     def font_size(self, float value):             # <<<<<<<<<<<<<<
+ *         self._font_size = value
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_6CyText_9draw(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6raylib_6CyText_9draw(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
-  PyObject *__pyx_r = 0;
+static int __pyx_pw_6raylib_6CyText_9font_size_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_arg_value); /*proto*/
+static int __pyx_pw_6raylib_6CyText_9font_size_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_arg_value) {
+  float __pyx_v_value;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  int __pyx_r;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("draw (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_6CyText_8draw(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
+  __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
+  assert(__pyx_arg_value); {
+    __pyx_v_value = __pyx_PyFloat_AsFloat(__pyx_arg_value); if (unlikely((__pyx_v_value == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 1232, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("raylib.CyText.font_size.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6raylib_6CyText_9font_size_2__set__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self), ((float)__pyx_v_value));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_6CyText_8draw(struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
+static int __pyx_pf_6raylib_6CyText_9font_size_2__set__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, float __pyx_v_value) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__set__", 0);
+
+  /* "raylib.pyx":1233
+ *     @font_size.setter
+ *     def font_size(self, float value):
+ *         self._font_size = value             # <<<<<<<<<<<<<<
+ * 
+ *     @property
+ */
+  __pyx_v_self->_font_size = __pyx_v_value;
+
+  /* "raylib.pyx":1232
+ * 
+ *     @font_size.setter
+ *     def font_size(self, float value):             # <<<<<<<<<<<<<<
+ *         self._font_size = value
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":1236
+ * 
+ *     @property
+ *     def spacing(self):             # <<<<<<<<<<<<<<
+ *         return self._spacing
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_6CyText_7spacing_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_6raylib_6CyText_7spacing_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_6CyText_7spacing___get__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_6CyText_7spacing___get__(struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  int __pyx_t_2;
-  int __pyx_t_3;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__get__", 0);
+
+  /* "raylib.pyx":1237
+ *     @property
+ *     def spacing(self):
+ *         return self._spacing             # <<<<<<<<<<<<<<
+ * 
+ *     @spacing.setter
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->_spacing); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1237, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "raylib.pyx":1236
+ * 
+ *     @property
+ *     def spacing(self):             # <<<<<<<<<<<<<<
+ *         return self._spacing
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("raylib.CyText.spacing.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":1240
+ * 
+ *     @spacing.setter
+ *     def spacing(self, float value):             # <<<<<<<<<<<<<<
+ *         self._spacing = value
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_6raylib_6CyText_7spacing_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_arg_value); /*proto*/
+static int __pyx_pw_6raylib_6CyText_7spacing_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_arg_value) {
+  float __pyx_v_value;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
+  assert(__pyx_arg_value); {
+    __pyx_v_value = __pyx_PyFloat_AsFloat(__pyx_arg_value); if (unlikely((__pyx_v_value == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 1240, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("raylib.CyText.spacing.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6raylib_6CyText_7spacing_2__set__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self), ((float)__pyx_v_value));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_6raylib_6CyText_7spacing_2__set__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, float __pyx_v_value) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__set__", 0);
+
+  /* "raylib.pyx":1241
+ *     @spacing.setter
+ *     def spacing(self, float value):
+ *         self._spacing = value             # <<<<<<<<<<<<<<
+ * 
+ *     @property
+ */
+  __pyx_v_self->_spacing = __pyx_v_value;
+
+  /* "raylib.pyx":1240
+ * 
+ *     @spacing.setter
+ *     def spacing(self, float value):             # <<<<<<<<<<<<<<
+ *         self._spacing = value
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":1244
+ * 
+ *     @property
+ *     def origin(self):             # <<<<<<<<<<<<<<
+ *         return self._origin
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_6CyText_6origin_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_6raylib_6CyText_6origin_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_6CyText_6origin___get__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_6CyText_6origin___get__(struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__", 0);
+
+  /* "raylib.pyx":1245
+ *     @property
+ *     def origin(self):
+ *         return self._origin             # <<<<<<<<<<<<<<
+ * 
+ *     @origin.setter
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(((PyObject *)__pyx_v_self->_origin));
+  __pyx_r = ((PyObject *)__pyx_v_self->_origin);
+  goto __pyx_L0;
+
+  /* "raylib.pyx":1244
+ * 
+ *     @property
+ *     def origin(self):             # <<<<<<<<<<<<<<
+ *         return self._origin
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":1248
+ * 
+ *     @origin.setter
+ *     def origin(self, raymath.CyVector2 value):             # <<<<<<<<<<<<<<
+ *         self._origin = value
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_6raylib_6CyText_6origin_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_6raylib_6CyText_6origin_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_value), __pyx_ptype_13raylib_cython_7raymath_CyVector2, 1, "value", 0))) __PYX_ERR(0, 1248, __pyx_L1_error)
+  __pyx_r = __pyx_pf_6raylib_6CyText_6origin_2__set__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self), ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_v_value));
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_6raylib_6CyText_6origin_2__set__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_value) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__set__", 0);
+
+  /* "raylib.pyx":1249
+ *     @origin.setter
+ *     def origin(self, raymath.CyVector2 value):
+ *         self._origin = value             # <<<<<<<<<<<<<<
+ * 
+ *     @property
+ */
+  __Pyx_INCREF(((PyObject *)__pyx_v_value));
+  __Pyx_GIVEREF(((PyObject *)__pyx_v_value));
+  __Pyx_GOTREF(__pyx_v_self->_origin);
+  __Pyx_DECREF(((PyObject *)__pyx_v_self->_origin));
+  __pyx_v_self->_origin = __pyx_v_value;
+
+  /* "raylib.pyx":1248
+ * 
+ *     @origin.setter
+ *     def origin(self, raymath.CyVector2 value):             # <<<<<<<<<<<<<<
+ *         self._origin = value
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":1252
+ * 
+ *     @property
+ *     def rotation(self):             # <<<<<<<<<<<<<<
+ *         return self._rotation
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_6CyText_8rotation_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_6raylib_6CyText_8rotation_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_6CyText_8rotation___get__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_6CyText_8rotation___get__(struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__get__", 0);
+
+  /* "raylib.pyx":1253
+ *     @property
+ *     def rotation(self):
+ *         return self._rotation             # <<<<<<<<<<<<<<
+ * 
+ *     @rotation.setter
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->_rotation); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1253, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "raylib.pyx":1252
+ * 
+ *     @property
+ *     def rotation(self):             # <<<<<<<<<<<<<<
+ *         return self._rotation
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("raylib.CyText.rotation.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":1256
+ * 
+ *     @rotation.setter
+ *     def rotation(self, float value):             # <<<<<<<<<<<<<<
+ *         self._rotation = value
+ * 
+ */
+
+/* Python wrapper */
+static int __pyx_pw_6raylib_6CyText_8rotation_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_arg_value); /*proto*/
+static int __pyx_pw_6raylib_6CyText_8rotation_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_arg_value) {
+  float __pyx_v_value;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
+  assert(__pyx_arg_value); {
+    __pyx_v_value = __pyx_PyFloat_AsFloat(__pyx_arg_value); if (unlikely((__pyx_v_value == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 1256, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("raylib.CyText.rotation.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6raylib_6CyText_8rotation_2__set__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self), ((float)__pyx_v_value));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_6raylib_6CyText_8rotation_2__set__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, float __pyx_v_value) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__set__", 0);
+
+  /* "raylib.pyx":1257
+ *     @rotation.setter
+ *     def rotation(self, float value):
+ *         self._rotation = value             # <<<<<<<<<<<<<<
+ * 
+ *     @property
+ */
+  __pyx_v_self->_rotation = __pyx_v_value;
+
+  /* "raylib.pyx":1256
+ * 
+ *     @rotation.setter
+ *     def rotation(self, float value):             # <<<<<<<<<<<<<<
+ *         self._rotation = value
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":1260
+ * 
+ *     @property
+ *     def tint(self):             # <<<<<<<<<<<<<<
+ *         return self._tint
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_6CyText_4tint_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_6raylib_6CyText_4tint_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_6CyText_4tint___get__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_6CyText_4tint___get__(struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__", 0);
+
+  /* "raylib.pyx":1261
+ *     @property
+ *     def tint(self):
+ *         return self._tint             # <<<<<<<<<<<<<<
+ * 
+ *     @tint.setter
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(((PyObject *)__pyx_v_self->_tint));
+  __pyx_r = ((PyObject *)__pyx_v_self->_tint);
+  goto __pyx_L0;
+
+  /* "raylib.pyx":1260
+ * 
+ *     @property
+ *     def tint(self):             # <<<<<<<<<<<<<<
+ *         return self._tint
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":1264
+ * 
+ *     @tint.setter
+ *     def tint(self, CyColor value):             # <<<<<<<<<<<<<<
+ *         self._tint._color.a = value._color.a
+ *         self._tint._color.r = value._color.r
+ */
+
+/* Python wrapper */
+static int __pyx_pw_6raylib_6CyText_4tint_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value); /*proto*/
+static int __pyx_pw_6raylib_6CyText_4tint_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_v_value) {
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_value), __pyx_ptype_6raylib_CyColor, 1, "value", 0))) __PYX_ERR(0, 1264, __pyx_L1_error)
+  __pyx_r = __pyx_pf_6raylib_6CyText_4tint_2__set__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self), ((struct __pyx_obj_6raylib_CyColor *)__pyx_v_value));
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_6raylib_6CyText_4tint_2__set__(struct __pyx_obj_6raylib_CyText *__pyx_v_self, struct __pyx_obj_6raylib_CyColor *__pyx_v_value) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  uint8_t __pyx_t_1;
+  __Pyx_RefNannySetupContext("__set__", 0);
+
+  /* "raylib.pyx":1265
+ *     @tint.setter
+ *     def tint(self, CyColor value):
+ *         self._tint._color.a = value._color.a             # <<<<<<<<<<<<<<
+ *         self._tint._color.r = value._color.r
+ *         self._tint._color.g = value._color.g
+ */
+  __pyx_t_1 = __pyx_v_value->_color.a;
+  __pyx_v_self->_tint->_color.a = __pyx_t_1;
+
+  /* "raylib.pyx":1266
+ *     def tint(self, CyColor value):
+ *         self._tint._color.a = value._color.a
+ *         self._tint._color.r = value._color.r             # <<<<<<<<<<<<<<
+ *         self._tint._color.g = value._color.g
+ *         self._tint._color.b = value._color.b
+ */
+  __pyx_t_1 = __pyx_v_value->_color.r;
+  __pyx_v_self->_tint->_color.r = __pyx_t_1;
+
+  /* "raylib.pyx":1267
+ *         self._tint._color.a = value._color.a
+ *         self._tint._color.r = value._color.r
+ *         self._tint._color.g = value._color.g             # <<<<<<<<<<<<<<
+ *         self._tint._color.b = value._color.b
+ * 
+ */
+  __pyx_t_1 = __pyx_v_value->_color.g;
+  __pyx_v_self->_tint->_color.g = __pyx_t_1;
+
+  /* "raylib.pyx":1268
+ *         self._tint._color.r = value._color.r
+ *         self._tint._color.g = value._color.g
+ *         self._tint._color.b = value._color.b             # <<<<<<<<<<<<<<
+ * 
+ *     #cdef void DrawText(const char *text, int posX, int posY, int fontSize, Color color)       # Draw text (using default font)
+ */
+  __pyx_t_1 = __pyx_v_value->_color.b;
+  __pyx_v_self->_tint->_color.b = __pyx_t_1;
+
+  /* "raylib.pyx":1264
+ * 
+ *     @tint.setter
+ *     def tint(self, CyColor value):             # <<<<<<<<<<<<<<
+ *         self._tint._color.a = value._color.a
+ *         self._tint._color.r = value._color.r
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":1273
+ *     #cdef void DrawTextEx(Font font, const char *text, Vector2 position, float fontSize, float spacing, Color tint) # Draw text using font and additional parameters
+ *     #cdef void DrawTextPro(Font font, const char *text, Vector2 position, Vector2 origin, float rotation, float fontSize, float spacing, Color tint) # Draw text using Font and pro parameters (rotation)
+ *     def draw(self) -> None:             # <<<<<<<<<<<<<<
+ *         DrawText(
+ *             <const char*> self._text,
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_6CyText_3draw(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_6raylib_6CyText_3draw(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("draw (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_6CyText_2draw(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_6CyText_2draw(struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  double __pyx_t_2;
+  double __pyx_t_3;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("draw", 0);
 
-  /* "raylib.pyx":1188
- * 
- *     def draw(self) -> None:
- *         DrawText(<const char*> self.text, <int>self.pos.x, <int>self.pos.y, self.font_size, self.color._color)             # <<<<<<<<<<<<<<
- * 
- *     def __dealloc__(self):
+  /* "raylib.pyx":1276
+ *         DrawText(
+ *             <const char*> self._text,
+ *             <int>round(self._pos.x),             # <<<<<<<<<<<<<<
+ *             <int>round(self._pos.y),
+ *             <int>round(self._font_size),
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->pos), __pyx_n_s_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1188, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->_pos), __pyx_n_s_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1276, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1188, __pyx_L1_error)
+  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 1276, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->pos), __pyx_n_s_y); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1188, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_3 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1188, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  DrawText(((char const *)__pyx_v_self->text), ((int)__pyx_t_2), ((int)__pyx_t_3), __pyx_v_self->font_size, __pyx_v_self->color->_color);
 
-  /* "raylib.pyx":1187
- *         self.pos.y = pos.y
- * 
+  /* "raylib.pyx":1277
+ *             <const char*> self._text,
+ *             <int>round(self._pos.x),
+ *             <int>round(self._pos.y),             # <<<<<<<<<<<<<<
+ *             <int>round(self._font_size),
+ *             self._tint._color
+ */
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self->_pos), __pyx_n_s_y); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1277, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 1277, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "raylib.pyx":1274
+ *     #cdef void DrawTextPro(Font font, const char *text, Vector2 position, Vector2 origin, float rotation, float fontSize, float spacing, Color tint) # Draw text using Font and pro parameters (rotation)
+ *     def draw(self) -> None:
+ *         DrawText(             # <<<<<<<<<<<<<<
+ *             <const char*> self._text,
+ *             <int>round(self._pos.x),
+ */
+  DrawText(((char const *)__pyx_v_self->_text), ((int)round(__pyx_t_2)), ((int)round(__pyx_t_3)), ((int)round(__pyx_v_self->_font_size)), __pyx_v_self->_tint->_color);
+
+  /* "raylib.pyx":1273
+ *     #cdef void DrawTextEx(Font font, const char *text, Vector2 position, float fontSize, float spacing, Color tint) # Draw text using font and additional parameters
+ *     #cdef void DrawTextPro(Font font, const char *text, Vector2 position, Vector2 origin, float rotation, float fontSize, float spacing, Color tint) # Draw text using Font and pro parameters (rotation)
  *     def draw(self) -> None:             # <<<<<<<<<<<<<<
- *         DrawText(<const char*> self.text, <int>self.pos.x, <int>self.pos.y, self.font_size, self.color._color)
- * 
+ *         DrawText(
+ *             <const char*> self._text,
  */
 
   /* function exit code */
@@ -17079,43 +17947,143 @@ static PyObject *__pyx_pf_6raylib_6CyText_8draw(struct __pyx_obj_6raylib_CyText 
   return __pyx_r;
 }
 
-/* "raylib.pyx":1190
- *         DrawText(<const char*> self.text, <int>self.pos.x, <int>self.pos.y, self.font_size, self.color._color)
+/* "raylib.pyx":1282
+ *         )
+ * 
+ *     def draw_pro(self) -> None:             # <<<<<<<<<<<<<<
+ *         DrawTextPro(
+ *             self._font._font,
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_6CyText_5draw_pro(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_6raylib_6CyText_5draw_pro(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("draw_pro (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_6CyText_4draw_pro(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_6CyText_4draw_pro(struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("draw_pro", 0);
+
+  /* "raylib.pyx":1283
+ * 
+ *     def draw_pro(self) -> None:
+ *         DrawTextPro(             # <<<<<<<<<<<<<<
+ *             self._font._font,
+ *             <const char *> self._text,
+ */
+  DrawTextPro(__pyx_v_self->_font->_font, ((char const *)__pyx_v_self->_text), __pyx_v_self->_pos->_vector, __pyx_v_self->_origin->_vector, __pyx_v_self->_rotation, __pyx_v_self->_font_size, __pyx_v_self->_spacing, __pyx_v_self->_tint->_color);
+
+  /* "raylib.pyx":1282
+ *         )
+ * 
+ *     def draw_pro(self) -> None:             # <<<<<<<<<<<<<<
+ *         DrawTextPro(
+ *             self._font._font,
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":1295
+ * 
+ * 
+ *     def draw_ex(self) -> None:             # <<<<<<<<<<<<<<
+ *         DrawTextEx(
+ *             self._font._font,
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_6CyText_7draw_ex(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_6raylib_6CyText_7draw_ex(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("draw_ex (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_6CyText_6draw_ex(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_6CyText_6draw_ex(struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("draw_ex", 0);
+
+  /* "raylib.pyx":1296
+ * 
+ *     def draw_ex(self) -> None:
+ *         DrawTextEx(             # <<<<<<<<<<<<<<
+ *             self._font._font,
+ *             <const char *> self._text,
+ */
+  DrawTextEx(__pyx_v_self->_font->_font, ((char const *)__pyx_v_self->_text), __pyx_v_self->_pos->_vector, __pyx_v_self->_font_size, __pyx_v_self->_spacing, __pyx_v_self->_tint->_color);
+
+  /* "raylib.pyx":1295
+ * 
+ * 
+ *     def draw_ex(self) -> None:             # <<<<<<<<<<<<<<
+ *         DrawTextEx(
+ *             self._font._font,
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":1307
+ * 
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
- *         free(self.text)
+ *         free(self._text)
  * 
  */
 
 /* Python wrapper */
-static void __pyx_pw_6raylib_6CyText_11__dealloc__(PyObject *__pyx_v_self); /*proto*/
-static void __pyx_pw_6raylib_6CyText_11__dealloc__(PyObject *__pyx_v_self) {
+static void __pyx_pw_6raylib_6CyText_9__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_6raylib_6CyText_9__dealloc__(PyObject *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
-  __pyx_pf_6raylib_6CyText_10__dealloc__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
+  __pyx_pf_6raylib_6CyText_8__dealloc__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
 }
 
-static void __pyx_pf_6raylib_6CyText_10__dealloc__(struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
+static void __pyx_pf_6raylib_6CyText_8__dealloc__(struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "raylib.pyx":1191
+  /* "raylib.pyx":1308
  * 
  *     def __dealloc__(self):
- *         free(self.text)             # <<<<<<<<<<<<<<
+ *         free(self._text)             # <<<<<<<<<<<<<<
  * 
- *     #cdef void DrawText(const char *text, int posX, int posY, int fontSize, Color color)       # Draw text (using default font)
+ *     #cdef void DrawTextCodepoint(Font font, int codepoint, Vector2 position, float fontSize, Color tint) # Draw one character (codepoint)
  */
-  free(__pyx_v_self->text);
+  free(__pyx_v_self->_text);
 
-  /* "raylib.pyx":1190
- *         DrawText(<const char*> self.text, <int>self.pos.x, <int>self.pos.y, self.font_size, self.color._color)
+  /* "raylib.pyx":1307
+ * 
  * 
  *     def __dealloc__(self):             # <<<<<<<<<<<<<<
- *         free(self.text)
+ *         free(self._text)
  * 
  */
 
@@ -17130,19 +18098,19 @@ static void __pyx_pf_6raylib_6CyText_10__dealloc__(struct __pyx_obj_6raylib_CyTe
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_6CyText_13__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6raylib_6CyText_13__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_6raylib_6CyText_11__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_6raylib_6CyText_11__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_6CyText_12__reduce_cython__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
+  __pyx_r = __pyx_pf_6raylib_6CyText_10__reduce_cython__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_6CyText_12__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
+static PyObject *__pyx_pf_6raylib_6CyText_10__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyText *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -17157,7 +18125,7 @@ static PyObject *__pyx_pf_6raylib_6CyText_12__reduce_cython__(CYTHON_UNUSED stru
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__77, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__80, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -17187,19 +18155,19 @@ static PyObject *__pyx_pf_6raylib_6CyText_12__reduce_cython__(CYTHON_UNUSED stru
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_6CyText_15__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static PyObject *__pyx_pw_6raylib_6CyText_15__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_6raylib_6CyText_13__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static PyObject *__pyx_pw_6raylib_6CyText_13__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_6CyText_14__setstate_cython__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_6raylib_6CyText_12__setstate_cython__(((struct __pyx_obj_6raylib_CyText *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_6CyText_14__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyText *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_6CyText_12__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyText *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -17213,7 +18181,7 @@ static PyObject *__pyx_pf_6raylib_6CyText_14__setstate_cython__(CYTHON_UNUSED st
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__78, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__81, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -20680,7 +21648,7 @@ static PyObject *__pyx_pf_6raylib_20CyAudioDeviceManager_2__setstate_cython__(st
   return __pyx_r;
 }
 
-/* "raylib.pyx":1304
+/* "raylib.pyx":1418
  * 
  * 
  * def init_window(width: int, height: int, title: str) -> None:             # <<<<<<<<<<<<<<
@@ -20726,17 +21694,17 @@ static PyObject *__pyx_pw_6raylib_1init_window(PyObject *__pyx_self, PyObject *_
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_height)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("init_window", 1, 3, 3, 1); __PYX_ERR(0, 1304, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("init_window", 1, 3, 3, 1); __PYX_ERR(0, 1418, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_title)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("init_window", 1, 3, 3, 2); __PYX_ERR(0, 1304, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("init_window", 1, 3, 3, 2); __PYX_ERR(0, 1418, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "init_window") < 0)) __PYX_ERR(0, 1304, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "init_window") < 0)) __PYX_ERR(0, 1418, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -20751,13 +21719,13 @@ static PyObject *__pyx_pw_6raylib_1init_window(PyObject *__pyx_self, PyObject *_
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("init_window", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1304, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("init_window", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1418, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.init_window", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_title), (&PyUnicode_Type), 1, "title", 1))) __PYX_ERR(0, 1304, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_title), (&PyUnicode_Type), 1, "title", 1))) __PYX_ERR(0, 1418, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_init_window(__pyx_self, __pyx_v_width, __pyx_v_height, __pyx_v_title);
 
   /* function exit code */
@@ -20783,16 +21751,16 @@ static PyObject *__pyx_pf_6raylib_init_window(CYTHON_UNUSED PyObject *__pyx_self
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("init_window", 0);
 
-  /* "raylib.pyx":1305
+  /* "raylib.pyx":1419
  * 
  * def init_window(width: int, height: int, title: str) -> None:
  *     InitWindow(width, height, str.encode(title))             # <<<<<<<<<<<<<<
  * 
  * def close_window() -> None:
  */
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_width); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1305, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_v_height); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1305, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)(&PyUnicode_Type)), __pyx_n_s_encode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1305, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_width); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1419, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_v_height); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1419, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(((PyObject *)(&PyUnicode_Type)), __pyx_n_s_encode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 1419, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -20806,14 +21774,14 @@ static PyObject *__pyx_pf_6raylib_init_window(CYTHON_UNUSED PyObject *__pyx_self
   }
   __pyx_t_3 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_v_title) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_title);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1305, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1419, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_6 = __Pyx_PyObject_AsString(__pyx_t_3); if (unlikely((!__pyx_t_6) && PyErr_Occurred())) __PYX_ERR(0, 1305, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_AsString(__pyx_t_3); if (unlikely((!__pyx_t_6) && PyErr_Occurred())) __PYX_ERR(0, 1419, __pyx_L1_error)
   InitWindow(__pyx_t_1, __pyx_t_2, __pyx_t_6);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "raylib.pyx":1304
+  /* "raylib.pyx":1418
  * 
  * 
  * def init_window(width: int, height: int, title: str) -> None:             # <<<<<<<<<<<<<<
@@ -20836,7 +21804,7 @@ static PyObject *__pyx_pf_6raylib_init_window(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "raylib.pyx":1307
+/* "raylib.pyx":1421
  *     InitWindow(width, height, str.encode(title))
  * 
  * def close_window() -> None:             # <<<<<<<<<<<<<<
@@ -20863,7 +21831,7 @@ static PyObject *__pyx_pf_6raylib_2close_window(CYTHON_UNUSED PyObject *__pyx_se
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("close_window", 0);
 
-  /* "raylib.pyx":1308
+  /* "raylib.pyx":1422
  * 
  * def close_window() -> None:
  *     CloseWindow()             # <<<<<<<<<<<<<<
@@ -20872,7 +21840,7 @@ static PyObject *__pyx_pf_6raylib_2close_window(CYTHON_UNUSED PyObject *__pyx_se
  */
   CloseWindow();
 
-  /* "raylib.pyx":1307
+  /* "raylib.pyx":1421
  *     InitWindow(width, height, str.encode(title))
  * 
  * def close_window() -> None:             # <<<<<<<<<<<<<<
@@ -20887,7 +21855,7 @@ static PyObject *__pyx_pf_6raylib_2close_window(CYTHON_UNUSED PyObject *__pyx_se
   return __pyx_r;
 }
 
-/* "raylib.pyx":1310
+/* "raylib.pyx":1424
  *     CloseWindow()
  * 
  * def window_should_close() -> bool:             # <<<<<<<<<<<<<<
@@ -20918,7 +21886,7 @@ static PyObject *__pyx_pf_6raylib_4window_should_close(CYTHON_UNUSED PyObject *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("window_should_close", 0);
 
-  /* "raylib.pyx":1311
+  /* "raylib.pyx":1425
  * 
  * def window_should_close() -> bool:
  *     return WindowShouldClose()             # <<<<<<<<<<<<<<
@@ -20926,13 +21894,13 @@ static PyObject *__pyx_pf_6raylib_4window_should_close(CYTHON_UNUSED PyObject *_
  * def is_window_ready() -> bool:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(WindowShouldClose()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1311, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(WindowShouldClose()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1425, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1310
+  /* "raylib.pyx":1424
  *     CloseWindow()
  * 
  * def window_should_close() -> bool:             # <<<<<<<<<<<<<<
@@ -20951,7 +21919,7 @@ static PyObject *__pyx_pf_6raylib_4window_should_close(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "raylib.pyx":1313
+/* "raylib.pyx":1427
  *     return WindowShouldClose()
  * 
  * def is_window_ready() -> bool:             # <<<<<<<<<<<<<<
@@ -20982,7 +21950,7 @@ static PyObject *__pyx_pf_6raylib_6is_window_ready(CYTHON_UNUSED PyObject *__pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("is_window_ready", 0);
 
-  /* "raylib.pyx":1314
+  /* "raylib.pyx":1428
  * 
  * def is_window_ready() -> bool:
  *     return IsWindowReady()             # <<<<<<<<<<<<<<
@@ -20990,13 +21958,13 @@ static PyObject *__pyx_pf_6raylib_6is_window_ready(CYTHON_UNUSED PyObject *__pyx
  * def is_window_fullscreen() -> bool:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(IsWindowReady()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1314, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(IsWindowReady()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1428, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1313
+  /* "raylib.pyx":1427
  *     return WindowShouldClose()
  * 
  * def is_window_ready() -> bool:             # <<<<<<<<<<<<<<
@@ -21015,7 +21983,7 @@ static PyObject *__pyx_pf_6raylib_6is_window_ready(CYTHON_UNUSED PyObject *__pyx
   return __pyx_r;
 }
 
-/* "raylib.pyx":1316
+/* "raylib.pyx":1430
  *     return IsWindowReady()
  * 
  * def is_window_fullscreen() -> bool:             # <<<<<<<<<<<<<<
@@ -21046,7 +22014,7 @@ static PyObject *__pyx_pf_6raylib_8is_window_fullscreen(CYTHON_UNUSED PyObject *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("is_window_fullscreen", 0);
 
-  /* "raylib.pyx":1317
+  /* "raylib.pyx":1431
  * 
  * def is_window_fullscreen() -> bool:
  *     return IsWindowFullscreen()             # <<<<<<<<<<<<<<
@@ -21054,13 +22022,13 @@ static PyObject *__pyx_pf_6raylib_8is_window_fullscreen(CYTHON_UNUSED PyObject *
  * def is_window_hidden() -> bool:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(IsWindowFullscreen()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1317, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(IsWindowFullscreen()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1431, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1316
+  /* "raylib.pyx":1430
  *     return IsWindowReady()
  * 
  * def is_window_fullscreen() -> bool:             # <<<<<<<<<<<<<<
@@ -21079,7 +22047,7 @@ static PyObject *__pyx_pf_6raylib_8is_window_fullscreen(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "raylib.pyx":1319
+/* "raylib.pyx":1433
  *     return IsWindowFullscreen()
  * 
  * def is_window_hidden() -> bool:             # <<<<<<<<<<<<<<
@@ -21110,7 +22078,7 @@ static PyObject *__pyx_pf_6raylib_10is_window_hidden(CYTHON_UNUSED PyObject *__p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("is_window_hidden", 0);
 
-  /* "raylib.pyx":1320
+  /* "raylib.pyx":1434
  * 
  * def is_window_hidden() -> bool:
  *     return IsWindowHidden()             # <<<<<<<<<<<<<<
@@ -21118,13 +22086,13 @@ static PyObject *__pyx_pf_6raylib_10is_window_hidden(CYTHON_UNUSED PyObject *__p
  * def is_window_minimized() -> bool:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(IsWindowHidden()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1320, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(IsWindowHidden()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1434, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1319
+  /* "raylib.pyx":1433
  *     return IsWindowFullscreen()
  * 
  * def is_window_hidden() -> bool:             # <<<<<<<<<<<<<<
@@ -21143,7 +22111,7 @@ static PyObject *__pyx_pf_6raylib_10is_window_hidden(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "raylib.pyx":1322
+/* "raylib.pyx":1436
  *     return IsWindowHidden()
  * 
  * def is_window_minimized() -> bool:             # <<<<<<<<<<<<<<
@@ -21174,7 +22142,7 @@ static PyObject *__pyx_pf_6raylib_12is_window_minimized(CYTHON_UNUSED PyObject *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("is_window_minimized", 0);
 
-  /* "raylib.pyx":1323
+  /* "raylib.pyx":1437
  * 
  * def is_window_minimized() -> bool:
  *     return IsWindowMinimized()             # <<<<<<<<<<<<<<
@@ -21182,13 +22150,13 @@ static PyObject *__pyx_pf_6raylib_12is_window_minimized(CYTHON_UNUSED PyObject *
  * def is_window_maximized() -> bool:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(IsWindowMinimized()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1323, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(IsWindowMinimized()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1437, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1322
+  /* "raylib.pyx":1436
  *     return IsWindowHidden()
  * 
  * def is_window_minimized() -> bool:             # <<<<<<<<<<<<<<
@@ -21207,7 +22175,7 @@ static PyObject *__pyx_pf_6raylib_12is_window_minimized(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "raylib.pyx":1325
+/* "raylib.pyx":1439
  *     return IsWindowMinimized()
  * 
  * def is_window_maximized() -> bool:             # <<<<<<<<<<<<<<
@@ -21238,7 +22206,7 @@ static PyObject *__pyx_pf_6raylib_14is_window_maximized(CYTHON_UNUSED PyObject *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("is_window_maximized", 0);
 
-  /* "raylib.pyx":1326
+  /* "raylib.pyx":1440
  * 
  * def is_window_maximized() -> bool:
  *     return IsWindowMaximized()             # <<<<<<<<<<<<<<
@@ -21246,13 +22214,13 @@ static PyObject *__pyx_pf_6raylib_14is_window_maximized(CYTHON_UNUSED PyObject *
  * def is_window_focused() -> bool:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(IsWindowMaximized()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1326, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(IsWindowMaximized()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1440, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1325
+  /* "raylib.pyx":1439
  *     return IsWindowMinimized()
  * 
  * def is_window_maximized() -> bool:             # <<<<<<<<<<<<<<
@@ -21271,7 +22239,7 @@ static PyObject *__pyx_pf_6raylib_14is_window_maximized(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "raylib.pyx":1328
+/* "raylib.pyx":1442
  *     return IsWindowMaximized()
  * 
  * def is_window_focused() -> bool:             # <<<<<<<<<<<<<<
@@ -21302,7 +22270,7 @@ static PyObject *__pyx_pf_6raylib_16is_window_focused(CYTHON_UNUSED PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("is_window_focused", 0);
 
-  /* "raylib.pyx":1329
+  /* "raylib.pyx":1443
  * 
  * def is_window_focused() -> bool:
  *     return IsWindowFocused()             # <<<<<<<<<<<<<<
@@ -21310,13 +22278,13 @@ static PyObject *__pyx_pf_6raylib_16is_window_focused(CYTHON_UNUSED PyObject *__
  * def is_window_resized() -> bool:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(IsWindowFocused()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1329, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(IsWindowFocused()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1443, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1328
+  /* "raylib.pyx":1442
  *     return IsWindowMaximized()
  * 
  * def is_window_focused() -> bool:             # <<<<<<<<<<<<<<
@@ -21335,7 +22303,7 @@ static PyObject *__pyx_pf_6raylib_16is_window_focused(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1331
+/* "raylib.pyx":1445
  *     return IsWindowFocused()
  * 
  * def is_window_resized() -> bool:             # <<<<<<<<<<<<<<
@@ -21366,7 +22334,7 @@ static PyObject *__pyx_pf_6raylib_18is_window_resized(CYTHON_UNUSED PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("is_window_resized", 0);
 
-  /* "raylib.pyx":1332
+  /* "raylib.pyx":1446
  * 
  * def is_window_resized() -> bool:
  *     return IsWindowResized()             # <<<<<<<<<<<<<<
@@ -21374,13 +22342,13 @@ static PyObject *__pyx_pf_6raylib_18is_window_resized(CYTHON_UNUSED PyObject *__
  * def is_window_state(flag: int) -> bool:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(IsWindowResized()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1332, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(IsWindowResized()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1446, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1331
+  /* "raylib.pyx":1445
  *     return IsWindowFocused()
  * 
  * def is_window_resized() -> bool:             # <<<<<<<<<<<<<<
@@ -21399,7 +22367,7 @@ static PyObject *__pyx_pf_6raylib_18is_window_resized(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1334
+/* "raylib.pyx":1448
  *     return IsWindowResized()
  * 
  * def is_window_state(flag: int) -> bool:             # <<<<<<<<<<<<<<
@@ -21431,7 +22399,7 @@ static PyObject *__pyx_pf_6raylib_20is_window_state(CYTHON_UNUSED PyObject *__py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("is_window_state", 0);
 
-  /* "raylib.pyx":1335
+  /* "raylib.pyx":1449
  * 
  * def is_window_state(flag: int) -> bool:
  *     return IsWindowState(flag)             # <<<<<<<<<<<<<<
@@ -21439,14 +22407,14 @@ static PyObject *__pyx_pf_6raylib_20is_window_state(CYTHON_UNUSED PyObject *__py
  * def set_window_state(flags: int) -> None:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_As_unsigned_int(__pyx_v_flag); if (unlikely((__pyx_t_1 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1335, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyBool_FromLong(IsWindowState(__pyx_t_1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1335, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_unsigned_int(__pyx_v_flag); if (unlikely((__pyx_t_1 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1449, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyBool_FromLong(IsWindowState(__pyx_t_1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1449, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1334
+  /* "raylib.pyx":1448
  *     return IsWindowResized()
  * 
  * def is_window_state(flag: int) -> bool:             # <<<<<<<<<<<<<<
@@ -21465,7 +22433,7 @@ static PyObject *__pyx_pf_6raylib_20is_window_state(CYTHON_UNUSED PyObject *__py
   return __pyx_r;
 }
 
-/* "raylib.pyx":1337
+/* "raylib.pyx":1451
  *     return IsWindowState(flag)
  * 
  * def set_window_state(flags: int) -> None:             # <<<<<<<<<<<<<<
@@ -21496,17 +22464,17 @@ static PyObject *__pyx_pf_6raylib_22set_window_state(CYTHON_UNUSED PyObject *__p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("set_window_state", 0);
 
-  /* "raylib.pyx":1338
+  /* "raylib.pyx":1452
  * 
  * def set_window_state(flags: int) -> None:
  *     SetWindowState(flags)             # <<<<<<<<<<<<<<
  * 
  * def clear_window_state(flags: int) -> None:
  */
-  __pyx_t_1 = __Pyx_PyInt_As_unsigned_int(__pyx_v_flags); if (unlikely((__pyx_t_1 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1338, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_unsigned_int(__pyx_v_flags); if (unlikely((__pyx_t_1 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1452, __pyx_L1_error)
   SetWindowState(__pyx_t_1);
 
-  /* "raylib.pyx":1337
+  /* "raylib.pyx":1451
  *     return IsWindowState(flag)
  * 
  * def set_window_state(flags: int) -> None:             # <<<<<<<<<<<<<<
@@ -21526,7 +22494,7 @@ static PyObject *__pyx_pf_6raylib_22set_window_state(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "raylib.pyx":1340
+/* "raylib.pyx":1454
  *     SetWindowState(flags)
  * 
  * def clear_window_state(flags: int) -> None:             # <<<<<<<<<<<<<<
@@ -21557,17 +22525,17 @@ static PyObject *__pyx_pf_6raylib_24clear_window_state(CYTHON_UNUSED PyObject *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("clear_window_state", 0);
 
-  /* "raylib.pyx":1341
+  /* "raylib.pyx":1455
  * 
  * def clear_window_state(flags: int) -> None:
  *     ClearWindowState(flags)             # <<<<<<<<<<<<<<
  * 
  * def toggle_fullscreen() -> None:
  */
-  __pyx_t_1 = __Pyx_PyInt_As_unsigned_int(__pyx_v_flags); if (unlikely((__pyx_t_1 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1341, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_unsigned_int(__pyx_v_flags); if (unlikely((__pyx_t_1 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1455, __pyx_L1_error)
   ClearWindowState(__pyx_t_1);
 
-  /* "raylib.pyx":1340
+  /* "raylib.pyx":1454
  *     SetWindowState(flags)
  * 
  * def clear_window_state(flags: int) -> None:             # <<<<<<<<<<<<<<
@@ -21587,7 +22555,7 @@ static PyObject *__pyx_pf_6raylib_24clear_window_state(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "raylib.pyx":1343
+/* "raylib.pyx":1457
  *     ClearWindowState(flags)
  * 
  * def toggle_fullscreen() -> None:             # <<<<<<<<<<<<<<
@@ -21614,7 +22582,7 @@ static PyObject *__pyx_pf_6raylib_26toggle_fullscreen(CYTHON_UNUSED PyObject *__
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("toggle_fullscreen", 0);
 
-  /* "raylib.pyx":1344
+  /* "raylib.pyx":1458
  * 
  * def toggle_fullscreen() -> None:
  *     ToggleFullscreen()             # <<<<<<<<<<<<<<
@@ -21623,7 +22591,7 @@ static PyObject *__pyx_pf_6raylib_26toggle_fullscreen(CYTHON_UNUSED PyObject *__
  */
   ToggleFullscreen();
 
-  /* "raylib.pyx":1343
+  /* "raylib.pyx":1457
  *     ClearWindowState(flags)
  * 
  * def toggle_fullscreen() -> None:             # <<<<<<<<<<<<<<
@@ -21638,7 +22606,7 @@ static PyObject *__pyx_pf_6raylib_26toggle_fullscreen(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1346
+/* "raylib.pyx":1460
  *     ToggleFullscreen()
  * 
  * def toggle_borderless_window() -> None:             # <<<<<<<<<<<<<<
@@ -21665,7 +22633,7 @@ static PyObject *__pyx_pf_6raylib_28toggle_borderless_window(CYTHON_UNUSED PyObj
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("toggle_borderless_window", 0);
 
-  /* "raylib.pyx":1347
+  /* "raylib.pyx":1461
  * 
  * def toggle_borderless_window() -> None:
  *     ToggleBorderlessWindowed()             # <<<<<<<<<<<<<<
@@ -21674,7 +22642,7 @@ static PyObject *__pyx_pf_6raylib_28toggle_borderless_window(CYTHON_UNUSED PyObj
  */
   ToggleBorderlessWindowed();
 
-  /* "raylib.pyx":1346
+  /* "raylib.pyx":1460
  *     ToggleFullscreen()
  * 
  * def toggle_borderless_window() -> None:             # <<<<<<<<<<<<<<
@@ -21689,7 +22657,7 @@ static PyObject *__pyx_pf_6raylib_28toggle_borderless_window(CYTHON_UNUSED PyObj
   return __pyx_r;
 }
 
-/* "raylib.pyx":1349
+/* "raylib.pyx":1463
  *     ToggleBorderlessWindowed()
  * 
  * def maximize_window() -> None:             # <<<<<<<<<<<<<<
@@ -21716,7 +22684,7 @@ static PyObject *__pyx_pf_6raylib_30maximize_window(CYTHON_UNUSED PyObject *__py
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("maximize_window", 0);
 
-  /* "raylib.pyx":1350
+  /* "raylib.pyx":1464
  * 
  * def maximize_window() -> None:
  *     MaximizeWindow()             # <<<<<<<<<<<<<<
@@ -21725,7 +22693,7 @@ static PyObject *__pyx_pf_6raylib_30maximize_window(CYTHON_UNUSED PyObject *__py
  */
   MaximizeWindow();
 
-  /* "raylib.pyx":1349
+  /* "raylib.pyx":1463
  *     ToggleBorderlessWindowed()
  * 
  * def maximize_window() -> None:             # <<<<<<<<<<<<<<
@@ -21740,7 +22708,7 @@ static PyObject *__pyx_pf_6raylib_30maximize_window(CYTHON_UNUSED PyObject *__py
   return __pyx_r;
 }
 
-/* "raylib.pyx":1352
+/* "raylib.pyx":1466
  *     MaximizeWindow()
  * 
  * def minimize_window() -> None:             # <<<<<<<<<<<<<<
@@ -21767,7 +22735,7 @@ static PyObject *__pyx_pf_6raylib_32minimize_window(CYTHON_UNUSED PyObject *__py
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("minimize_window", 0);
 
-  /* "raylib.pyx":1353
+  /* "raylib.pyx":1467
  * 
  * def minimize_window() -> None:
  *     MinimizeWindow()             # <<<<<<<<<<<<<<
@@ -21776,7 +22744,7 @@ static PyObject *__pyx_pf_6raylib_32minimize_window(CYTHON_UNUSED PyObject *__py
  */
   MinimizeWindow();
 
-  /* "raylib.pyx":1352
+  /* "raylib.pyx":1466
  *     MaximizeWindow()
  * 
  * def minimize_window() -> None:             # <<<<<<<<<<<<<<
@@ -21791,7 +22759,7 @@ static PyObject *__pyx_pf_6raylib_32minimize_window(CYTHON_UNUSED PyObject *__py
   return __pyx_r;
 }
 
-/* "raylib.pyx":1355
+/* "raylib.pyx":1469
  *     MinimizeWindow()
  * 
  * def restore_window() -> None:             # <<<<<<<<<<<<<<
@@ -21818,7 +22786,7 @@ static PyObject *__pyx_pf_6raylib_34restore_window(CYTHON_UNUSED PyObject *__pyx
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("restore_window", 0);
 
-  /* "raylib.pyx":1356
+  /* "raylib.pyx":1470
  * 
  * def restore_window() -> None:
  *     RestoreWindow()             # <<<<<<<<<<<<<<
@@ -21827,7 +22795,7 @@ static PyObject *__pyx_pf_6raylib_34restore_window(CYTHON_UNUSED PyObject *__pyx
  */
   RestoreWindow();
 
-  /* "raylib.pyx":1355
+  /* "raylib.pyx":1469
  *     MinimizeWindow()
  * 
  * def restore_window() -> None:             # <<<<<<<<<<<<<<
@@ -21842,7 +22810,7 @@ static PyObject *__pyx_pf_6raylib_34restore_window(CYTHON_UNUSED PyObject *__pyx
   return __pyx_r;
 }
 
-/* "raylib.pyx":1358
+/* "raylib.pyx":1472
  *     RestoreWindow()
  * 
  * def set_window_icon(image: CyImage) -> None:             # <<<<<<<<<<<<<<
@@ -21860,7 +22828,7 @@ static PyObject *__pyx_pw_6raylib_37set_window_icon(PyObject *__pyx_self, PyObje
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_window_icon (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_image), __pyx_ptype_6raylib_CyImage, 1, "image", 0))) __PYX_ERR(0, 1358, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_image), __pyx_ptype_6raylib_CyImage, 1, "image", 0))) __PYX_ERR(0, 1472, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_36set_window_icon(__pyx_self, ((struct __pyx_obj_6raylib_CyImage *)__pyx_v_image));
 
   /* function exit code */
@@ -21877,7 +22845,7 @@ static PyObject *__pyx_pf_6raylib_36set_window_icon(CYTHON_UNUSED PyObject *__py
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_window_icon", 0);
 
-  /* "raylib.pyx":1359
+  /* "raylib.pyx":1473
  * 
  * def set_window_icon(image: CyImage) -> None:
  *     SetWindowIcon(image._image)             # <<<<<<<<<<<<<<
@@ -21886,7 +22854,7 @@ static PyObject *__pyx_pf_6raylib_36set_window_icon(CYTHON_UNUSED PyObject *__py
  */
   SetWindowIcon(__pyx_v_image->_image);
 
-  /* "raylib.pyx":1358
+  /* "raylib.pyx":1472
  *     RestoreWindow()
  * 
  * def set_window_icon(image: CyImage) -> None:             # <<<<<<<<<<<<<<
@@ -21901,7 +22869,7 @@ static PyObject *__pyx_pf_6raylib_36set_window_icon(CYTHON_UNUSED PyObject *__py
   return __pyx_r;
 }
 
-/* "raylib.pyx":1361
+/* "raylib.pyx":1475
  *     SetWindowIcon(image._image)
  * 
  * def set_windows_icons(images: list[CyImage]) -> None:             # <<<<<<<<<<<<<<
@@ -21932,20 +22900,20 @@ static PyObject *__pyx_pf_6raylib_38set_windows_icons(CYTHON_UNUSED PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("set_windows_icons", 0);
 
-  /* "raylib.pyx":1362
+  /* "raylib.pyx":1476
  * 
  * def set_windows_icons(images: list[CyImage]) -> None:
  *     raise NotImplementedError("set_windows_icons is not implemented yet, use set_window_icon")             # <<<<<<<<<<<<<<
  *     #cdef int count = len(images)
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__79, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1362, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_NotImplementedError, __pyx_tuple__82, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1476, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __PYX_ERR(0, 1362, __pyx_L1_error)
+  __PYX_ERR(0, 1476, __pyx_L1_error)
 
-  /* "raylib.pyx":1361
+  /* "raylib.pyx":1475
  *     SetWindowIcon(image._image)
  * 
  * def set_windows_icons(images: list[CyImage]) -> None:             # <<<<<<<<<<<<<<
@@ -21963,7 +22931,7 @@ static PyObject *__pyx_pf_6raylib_38set_windows_icons(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1382
+/* "raylib.pyx":1496
  *     #    free(image_array)
  * 
  * def set_window_title(title: str) -> None:             # <<<<<<<<<<<<<<
@@ -21981,7 +22949,7 @@ static PyObject *__pyx_pw_6raylib_41set_window_title(PyObject *__pyx_self, PyObj
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_window_title (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_title), (&PyUnicode_Type), 1, "title", 1))) __PYX_ERR(0, 1382, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_title), (&PyUnicode_Type), 1, "title", 1))) __PYX_ERR(0, 1496, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_40set_window_title(__pyx_self, ((PyObject*)__pyx_v_title));
 
   /* function exit code */
@@ -22005,14 +22973,14 @@ static PyObject *__pyx_pf_6raylib_40set_window_title(CYTHON_UNUSED PyObject *__p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("set_window_title", 0);
 
-  /* "raylib.pyx":1383
+  /* "raylib.pyx":1497
  * 
  * def set_window_title(title: str) -> None:
  *     SetWindowTitle(str.encode(title))             # <<<<<<<<<<<<<<
  * 
  * def set_window_position(x: int, y: int) -> None:
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)(&PyUnicode_Type)), __pyx_n_s_encode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1383, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)(&PyUnicode_Type)), __pyx_n_s_encode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1497, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -22026,14 +22994,14 @@ static PyObject *__pyx_pf_6raylib_40set_window_title(CYTHON_UNUSED PyObject *__p
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_title) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_title);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1383, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1497, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __Pyx_PyObject_AsString(__pyx_t_1); if (unlikely((!__pyx_t_4) && PyErr_Occurred())) __PYX_ERR(0, 1383, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_AsString(__pyx_t_1); if (unlikely((!__pyx_t_4) && PyErr_Occurred())) __PYX_ERR(0, 1497, __pyx_L1_error)
   SetWindowTitle(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1382
+  /* "raylib.pyx":1496
  *     #    free(image_array)
  * 
  * def set_window_title(title: str) -> None:             # <<<<<<<<<<<<<<
@@ -22056,7 +23024,7 @@ static PyObject *__pyx_pf_6raylib_40set_window_title(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "raylib.pyx":1385
+/* "raylib.pyx":1499
  *     SetWindowTitle(str.encode(title))
  * 
  * def set_window_position(x: int, y: int) -> None:             # <<<<<<<<<<<<<<
@@ -22099,11 +23067,11 @@ static PyObject *__pyx_pw_6raylib_43set_window_position(PyObject *__pyx_self, Py
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_y)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_window_position", 1, 2, 2, 1); __PYX_ERR(0, 1385, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_window_position", 1, 2, 2, 1); __PYX_ERR(0, 1499, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_window_position") < 0)) __PYX_ERR(0, 1385, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_window_position") < 0)) __PYX_ERR(0, 1499, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -22116,7 +23084,7 @@ static PyObject *__pyx_pw_6raylib_43set_window_position(PyObject *__pyx_self, Py
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_window_position", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1385, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_window_position", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1499, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.set_window_position", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -22139,18 +23107,18 @@ static PyObject *__pyx_pf_6raylib_42set_window_position(CYTHON_UNUSED PyObject *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("set_window_position", 0);
 
-  /* "raylib.pyx":1386
+  /* "raylib.pyx":1500
  * 
  * def set_window_position(x: int, y: int) -> None:
  *     SetWindowPosition(x, y)             # <<<<<<<<<<<<<<
  * 
  * def set_window_monitor(monitor: int) -> None:
  */
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_x); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1386, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_v_y); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1386, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_x); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1500, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_v_y); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1500, __pyx_L1_error)
   SetWindowPosition(__pyx_t_1, __pyx_t_2);
 
-  /* "raylib.pyx":1385
+  /* "raylib.pyx":1499
  *     SetWindowTitle(str.encode(title))
  * 
  * def set_window_position(x: int, y: int) -> None:             # <<<<<<<<<<<<<<
@@ -22170,7 +23138,7 @@ static PyObject *__pyx_pf_6raylib_42set_window_position(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "raylib.pyx":1388
+/* "raylib.pyx":1502
  *     SetWindowPosition(x, y)
  * 
  * def set_window_monitor(monitor: int) -> None:             # <<<<<<<<<<<<<<
@@ -22201,17 +23169,17 @@ static PyObject *__pyx_pf_6raylib_44set_window_monitor(CYTHON_UNUSED PyObject *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("set_window_monitor", 0);
 
-  /* "raylib.pyx":1389
+  /* "raylib.pyx":1503
  * 
  * def set_window_monitor(monitor: int) -> None:
  *     SetWindowMonitor(monitor)             # <<<<<<<<<<<<<<
  * 
  * def set_window_min_size(width: int, height: int) -> None:
  */
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_monitor); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1389, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_monitor); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1503, __pyx_L1_error)
   SetWindowMonitor(__pyx_t_1);
 
-  /* "raylib.pyx":1388
+  /* "raylib.pyx":1502
  *     SetWindowPosition(x, y)
  * 
  * def set_window_monitor(monitor: int) -> None:             # <<<<<<<<<<<<<<
@@ -22231,7 +23199,7 @@ static PyObject *__pyx_pf_6raylib_44set_window_monitor(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "raylib.pyx":1391
+/* "raylib.pyx":1505
  *     SetWindowMonitor(monitor)
  * 
  * def set_window_min_size(width: int, height: int) -> None:             # <<<<<<<<<<<<<<
@@ -22274,11 +23242,11 @@ static PyObject *__pyx_pw_6raylib_47set_window_min_size(PyObject *__pyx_self, Py
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_height)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_window_min_size", 1, 2, 2, 1); __PYX_ERR(0, 1391, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_window_min_size", 1, 2, 2, 1); __PYX_ERR(0, 1505, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_window_min_size") < 0)) __PYX_ERR(0, 1391, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_window_min_size") < 0)) __PYX_ERR(0, 1505, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -22291,7 +23259,7 @@ static PyObject *__pyx_pw_6raylib_47set_window_min_size(PyObject *__pyx_self, Py
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_window_min_size", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1391, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_window_min_size", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1505, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.set_window_min_size", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -22314,18 +23282,18 @@ static PyObject *__pyx_pf_6raylib_46set_window_min_size(CYTHON_UNUSED PyObject *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("set_window_min_size", 0);
 
-  /* "raylib.pyx":1392
+  /* "raylib.pyx":1506
  * 
  * def set_window_min_size(width: int, height: int) -> None:
  *     SetWindowMinSize(width, height)             # <<<<<<<<<<<<<<
  * 
  * def set_window_max_size(width: int, height: int) -> None:
  */
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_width); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1392, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_v_height); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1392, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_width); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1506, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_v_height); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1506, __pyx_L1_error)
   SetWindowMinSize(__pyx_t_1, __pyx_t_2);
 
-  /* "raylib.pyx":1391
+  /* "raylib.pyx":1505
  *     SetWindowMonitor(monitor)
  * 
  * def set_window_min_size(width: int, height: int) -> None:             # <<<<<<<<<<<<<<
@@ -22345,7 +23313,7 @@ static PyObject *__pyx_pf_6raylib_46set_window_min_size(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "raylib.pyx":1394
+/* "raylib.pyx":1508
  *     SetWindowMinSize(width, height)
  * 
  * def set_window_max_size(width: int, height: int) -> None:             # <<<<<<<<<<<<<<
@@ -22388,11 +23356,11 @@ static PyObject *__pyx_pw_6raylib_49set_window_max_size(PyObject *__pyx_self, Py
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_height)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_window_max_size", 1, 2, 2, 1); __PYX_ERR(0, 1394, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_window_max_size", 1, 2, 2, 1); __PYX_ERR(0, 1508, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_window_max_size") < 0)) __PYX_ERR(0, 1394, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_window_max_size") < 0)) __PYX_ERR(0, 1508, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -22405,7 +23373,7 @@ static PyObject *__pyx_pw_6raylib_49set_window_max_size(PyObject *__pyx_self, Py
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_window_max_size", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1394, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_window_max_size", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1508, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.set_window_max_size", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -22428,18 +23396,18 @@ static PyObject *__pyx_pf_6raylib_48set_window_max_size(CYTHON_UNUSED PyObject *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("set_window_max_size", 0);
 
-  /* "raylib.pyx":1395
+  /* "raylib.pyx":1509
  * 
  * def set_window_max_size(width: int, height: int) -> None:
  *     SetWindowMaxSize(width, height)             # <<<<<<<<<<<<<<
  * 
  * def set_window_size(width: int, height: int) -> None:
  */
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_width); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1395, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_v_height); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1395, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_width); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1509, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_v_height); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1509, __pyx_L1_error)
   SetWindowMaxSize(__pyx_t_1, __pyx_t_2);
 
-  /* "raylib.pyx":1394
+  /* "raylib.pyx":1508
  *     SetWindowMinSize(width, height)
  * 
  * def set_window_max_size(width: int, height: int) -> None:             # <<<<<<<<<<<<<<
@@ -22459,7 +23427,7 @@ static PyObject *__pyx_pf_6raylib_48set_window_max_size(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "raylib.pyx":1397
+/* "raylib.pyx":1511
  *     SetWindowMaxSize(width, height)
  * 
  * def set_window_size(width: int, height: int) -> None:             # <<<<<<<<<<<<<<
@@ -22502,11 +23470,11 @@ static PyObject *__pyx_pw_6raylib_51set_window_size(PyObject *__pyx_self, PyObje
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_height)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_window_size", 1, 2, 2, 1); __PYX_ERR(0, 1397, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_window_size", 1, 2, 2, 1); __PYX_ERR(0, 1511, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_window_size") < 0)) __PYX_ERR(0, 1397, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_window_size") < 0)) __PYX_ERR(0, 1511, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -22519,7 +23487,7 @@ static PyObject *__pyx_pw_6raylib_51set_window_size(PyObject *__pyx_self, PyObje
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_window_size", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1397, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_window_size", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1511, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.set_window_size", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -22542,18 +23510,18 @@ static PyObject *__pyx_pf_6raylib_50set_window_size(CYTHON_UNUSED PyObject *__py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("set_window_size", 0);
 
-  /* "raylib.pyx":1398
+  /* "raylib.pyx":1512
  * 
  * def set_window_size(width: int, height: int) -> None:
  *     SetWindowSize(width, height)             # <<<<<<<<<<<<<<
  * 
  * def set_window_opacity(opacity: float) -> None:
  */
-  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_width); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1398, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_v_height); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1398, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_As_int(__pyx_v_width); if (unlikely((__pyx_t_1 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1512, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_int(__pyx_v_height); if (unlikely((__pyx_t_2 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1512, __pyx_L1_error)
   SetWindowSize(__pyx_t_1, __pyx_t_2);
 
-  /* "raylib.pyx":1397
+  /* "raylib.pyx":1511
  *     SetWindowMaxSize(width, height)
  * 
  * def set_window_size(width: int, height: int) -> None:             # <<<<<<<<<<<<<<
@@ -22573,7 +23541,7 @@ static PyObject *__pyx_pf_6raylib_50set_window_size(CYTHON_UNUSED PyObject *__py
   return __pyx_r;
 }
 
-/* "raylib.pyx":1400
+/* "raylib.pyx":1514
  *     SetWindowSize(width, height)
  * 
  * def set_window_opacity(opacity: float) -> None:             # <<<<<<<<<<<<<<
@@ -22593,7 +23561,7 @@ static PyObject *__pyx_pw_6raylib_53set_window_opacity(PyObject *__pyx_self, PyO
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_window_opacity (wrapper)", 0);
   assert(__pyx_arg_opacity); {
-    __pyx_v_opacity = __pyx_PyFloat_AsDouble(__pyx_arg_opacity); if (unlikely((__pyx_v_opacity == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 1400, __pyx_L3_error)
+    __pyx_v_opacity = __pyx_PyFloat_AsDouble(__pyx_arg_opacity); if (unlikely((__pyx_v_opacity == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 1514, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -22613,7 +23581,7 @@ static PyObject *__pyx_pf_6raylib_52set_window_opacity(CYTHON_UNUSED PyObject *_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_window_opacity", 0);
 
-  /* "raylib.pyx":1401
+  /* "raylib.pyx":1515
  * 
  * def set_window_opacity(opacity: float) -> None:
  *     SetWindowOpacity(<float>opacity)             # <<<<<<<<<<<<<<
@@ -22622,7 +23590,7 @@ static PyObject *__pyx_pf_6raylib_52set_window_opacity(CYTHON_UNUSED PyObject *_
  */
   SetWindowOpacity(((float)__pyx_v_opacity));
 
-  /* "raylib.pyx":1400
+  /* "raylib.pyx":1514
  *     SetWindowSize(width, height)
  * 
  * def set_window_opacity(opacity: float) -> None:             # <<<<<<<<<<<<<<
@@ -22637,7 +23605,7 @@ static PyObject *__pyx_pf_6raylib_52set_window_opacity(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "raylib.pyx":1403
+/* "raylib.pyx":1517
  *     SetWindowOpacity(<float>opacity)
  * 
  * def set_window_focused() -> None:             # <<<<<<<<<<<<<<
@@ -22664,7 +23632,7 @@ static PyObject *__pyx_pf_6raylib_54set_window_focused(CYTHON_UNUSED PyObject *_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_window_focused", 0);
 
-  /* "raylib.pyx":1404
+  /* "raylib.pyx":1518
  * 
  * def set_window_focused() -> None:
  *     SetWindowFocused()             # <<<<<<<<<<<<<<
@@ -22673,7 +23641,7 @@ static PyObject *__pyx_pf_6raylib_54set_window_focused(CYTHON_UNUSED PyObject *_
  */
   SetWindowFocused();
 
-  /* "raylib.pyx":1403
+  /* "raylib.pyx":1517
  *     SetWindowOpacity(<float>opacity)
  * 
  * def set_window_focused() -> None:             # <<<<<<<<<<<<<<
@@ -22688,7 +23656,7 @@ static PyObject *__pyx_pf_6raylib_54set_window_focused(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "raylib.pyx":1406
+/* "raylib.pyx":1520
  *     SetWindowFocused()
  * 
  * def get_window_handle() -> int:             # <<<<<<<<<<<<<<
@@ -22719,7 +23687,7 @@ static PyObject *__pyx_pf_6raylib_56get_window_handle(CYTHON_UNUSED PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_window_handle", 0);
 
-  /* "raylib.pyx":1407
+  /* "raylib.pyx":1521
  * 
  * def get_window_handle() -> int:
  *     return <long>GetWindowHandle()             # <<<<<<<<<<<<<<
@@ -22727,13 +23695,13 @@ static PyObject *__pyx_pf_6raylib_56get_window_handle(CYTHON_UNUSED PyObject *__
  * def get_screen_width() -> int:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_long(((long)GetWindowHandle())); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1407, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_long(((long)GetWindowHandle())); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1521, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1406
+  /* "raylib.pyx":1520
  *     SetWindowFocused()
  * 
  * def get_window_handle() -> int:             # <<<<<<<<<<<<<<
@@ -22752,7 +23720,7 @@ static PyObject *__pyx_pf_6raylib_56get_window_handle(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1409
+/* "raylib.pyx":1523
  *     return <long>GetWindowHandle()
  * 
  * def get_screen_width() -> int:             # <<<<<<<<<<<<<<
@@ -22783,7 +23751,7 @@ static PyObject *__pyx_pf_6raylib_58get_screen_width(CYTHON_UNUSED PyObject *__p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_screen_width", 0);
 
-  /* "raylib.pyx":1410
+  /* "raylib.pyx":1524
  * 
  * def get_screen_width() -> int:
  *     return GetScreenWidth()             # <<<<<<<<<<<<<<
@@ -22791,13 +23759,13 @@ static PyObject *__pyx_pf_6raylib_58get_screen_width(CYTHON_UNUSED PyObject *__p
  * def get_screen_height() -> int:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetScreenWidth()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1410, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetScreenWidth()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1524, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1409
+  /* "raylib.pyx":1523
  *     return <long>GetWindowHandle()
  * 
  * def get_screen_width() -> int:             # <<<<<<<<<<<<<<
@@ -22816,7 +23784,7 @@ static PyObject *__pyx_pf_6raylib_58get_screen_width(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "raylib.pyx":1412
+/* "raylib.pyx":1526
  *     return GetScreenWidth()
  * 
  * def get_screen_height() -> int:             # <<<<<<<<<<<<<<
@@ -22847,7 +23815,7 @@ static PyObject *__pyx_pf_6raylib_60get_screen_height(CYTHON_UNUSED PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_screen_height", 0);
 
-  /* "raylib.pyx":1413
+  /* "raylib.pyx":1527
  * 
  * def get_screen_height() -> int:
  *     return GetScreenHeight()             # <<<<<<<<<<<<<<
@@ -22855,13 +23823,13 @@ static PyObject *__pyx_pf_6raylib_60get_screen_height(CYTHON_UNUSED PyObject *__
  * def get_render_width() -> int:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetScreenHeight()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1413, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetScreenHeight()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1527, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1412
+  /* "raylib.pyx":1526
  *     return GetScreenWidth()
  * 
  * def get_screen_height() -> int:             # <<<<<<<<<<<<<<
@@ -22880,7 +23848,7 @@ static PyObject *__pyx_pf_6raylib_60get_screen_height(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1415
+/* "raylib.pyx":1529
  *     return GetScreenHeight()
  * 
  * def get_render_width() -> int:             # <<<<<<<<<<<<<<
@@ -22911,7 +23879,7 @@ static PyObject *__pyx_pf_6raylib_62get_render_width(CYTHON_UNUSED PyObject *__p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_render_width", 0);
 
-  /* "raylib.pyx":1416
+  /* "raylib.pyx":1530
  * 
  * def get_render_width() -> int:
  *     return GetRenderWidth()             # <<<<<<<<<<<<<<
@@ -22919,13 +23887,13 @@ static PyObject *__pyx_pf_6raylib_62get_render_width(CYTHON_UNUSED PyObject *__p
  * def get_render_height() -> int:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetRenderWidth()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1416, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetRenderWidth()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1530, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1415
+  /* "raylib.pyx":1529
  *     return GetScreenHeight()
  * 
  * def get_render_width() -> int:             # <<<<<<<<<<<<<<
@@ -22944,7 +23912,7 @@ static PyObject *__pyx_pf_6raylib_62get_render_width(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "raylib.pyx":1418
+/* "raylib.pyx":1532
  *     return GetRenderWidth()
  * 
  * def get_render_height() -> int:             # <<<<<<<<<<<<<<
@@ -22975,7 +23943,7 @@ static PyObject *__pyx_pf_6raylib_64get_render_height(CYTHON_UNUSED PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_render_height", 0);
 
-  /* "raylib.pyx":1419
+  /* "raylib.pyx":1533
  * 
  * def get_render_height() -> int:
  *     return GetRenderHeight()             # <<<<<<<<<<<<<<
@@ -22983,13 +23951,13 @@ static PyObject *__pyx_pf_6raylib_64get_render_height(CYTHON_UNUSED PyObject *__
  * def get_monitor_count() -> int:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetRenderHeight()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1419, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetRenderHeight()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1533, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1418
+  /* "raylib.pyx":1532
  *     return GetRenderWidth()
  * 
  * def get_render_height() -> int:             # <<<<<<<<<<<<<<
@@ -23008,7 +23976,7 @@ static PyObject *__pyx_pf_6raylib_64get_render_height(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1421
+/* "raylib.pyx":1535
  *     return GetRenderHeight()
  * 
  * def get_monitor_count() -> int:             # <<<<<<<<<<<<<<
@@ -23039,7 +24007,7 @@ static PyObject *__pyx_pf_6raylib_66get_monitor_count(CYTHON_UNUSED PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_monitor_count", 0);
 
-  /* "raylib.pyx":1422
+  /* "raylib.pyx":1536
  * 
  * def get_monitor_count() -> int:
  *     return GetMonitorCount()             # <<<<<<<<<<<<<<
@@ -23047,13 +24015,13 @@ static PyObject *__pyx_pf_6raylib_66get_monitor_count(CYTHON_UNUSED PyObject *__
  * def get_current_monitor() -> int:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetMonitorCount()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1422, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetMonitorCount()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1536, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1421
+  /* "raylib.pyx":1535
  *     return GetRenderHeight()
  * 
  * def get_monitor_count() -> int:             # <<<<<<<<<<<<<<
@@ -23072,7 +24040,7 @@ static PyObject *__pyx_pf_6raylib_66get_monitor_count(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1424
+/* "raylib.pyx":1538
  *     return GetMonitorCount()
  * 
  * def get_current_monitor() -> int:             # <<<<<<<<<<<<<<
@@ -23103,7 +24071,7 @@ static PyObject *__pyx_pf_6raylib_68get_current_monitor(CYTHON_UNUSED PyObject *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_current_monitor", 0);
 
-  /* "raylib.pyx":1425
+  /* "raylib.pyx":1539
  * 
  * def get_current_monitor() -> int:
  *     return GetCurrentMonitor()             # <<<<<<<<<<<<<<
@@ -23111,13 +24079,13 @@ static PyObject *__pyx_pf_6raylib_68get_current_monitor(CYTHON_UNUSED PyObject *
  * def get_monitor_position(int monitor) -> raymath.CyVector2:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetCurrentMonitor()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1425, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetCurrentMonitor()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1539, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1424
+  /* "raylib.pyx":1538
  *     return GetMonitorCount()
  * 
  * def get_current_monitor() -> int:             # <<<<<<<<<<<<<<
@@ -23136,7 +24104,7 @@ static PyObject *__pyx_pf_6raylib_68get_current_monitor(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "raylib.pyx":1427
+/* "raylib.pyx":1541
  *     return GetCurrentMonitor()
  * 
  * def get_monitor_position(int monitor) -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -23156,7 +24124,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_71g
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_monitor_position (wrapper)", 0);
   assert(__pyx_arg_monitor); {
-    __pyx_v_monitor = __Pyx_PyInt_As_int(__pyx_arg_monitor); if (unlikely((__pyx_v_monitor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1427, __pyx_L3_error)
+    __pyx_v_monitor = __Pyx_PyInt_As_int(__pyx_arg_monitor); if (unlikely((__pyx_v_monitor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1541, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23181,20 +24149,20 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_70g
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_monitor_position", 0);
 
-  /* "raylib.pyx":1428
+  /* "raylib.pyx":1542
  * 
  * def get_monitor_position(int monitor) -> raymath.CyVector2:
  *     cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)             # <<<<<<<<<<<<<<
  *     _vec._vector = GetMonitorPosition(monitor)
  *     return _vec
  */
-  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1428, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1542, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 1428, __pyx_L1_error)
+  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 1542, __pyx_L1_error)
   __pyx_v__vec = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1429
+  /* "raylib.pyx":1543
  * def get_monitor_position(int monitor) -> raymath.CyVector2:
  *     cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     _vec._vector = GetMonitorPosition(monitor)             # <<<<<<<<<<<<<<
@@ -23203,7 +24171,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_70g
  */
   __pyx_v__vec->_vector = GetMonitorPosition(__pyx_v_monitor);
 
-  /* "raylib.pyx":1430
+  /* "raylib.pyx":1544
  *     cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     _vec._vector = GetMonitorPosition(monitor)
  *     return _vec             # <<<<<<<<<<<<<<
@@ -23215,7 +24183,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_70g
   __pyx_r = __pyx_v__vec;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1427
+  /* "raylib.pyx":1541
  *     return GetCurrentMonitor()
  * 
  * def get_monitor_position(int monitor) -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -23235,7 +24203,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_70g
   return __pyx_r;
 }
 
-/* "raylib.pyx":1432
+/* "raylib.pyx":1546
  *     return _vec
  * 
  * def get_monitor_width(int monitor) -> int:             # <<<<<<<<<<<<<<
@@ -23255,7 +24223,7 @@ static PyObject *__pyx_pw_6raylib_73get_monitor_width(PyObject *__pyx_self, PyOb
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_monitor_width (wrapper)", 0);
   assert(__pyx_arg_monitor); {
-    __pyx_v_monitor = __Pyx_PyInt_As_int(__pyx_arg_monitor); if (unlikely((__pyx_v_monitor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1432, __pyx_L3_error)
+    __pyx_v_monitor = __Pyx_PyInt_As_int(__pyx_arg_monitor); if (unlikely((__pyx_v_monitor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1546, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23279,7 +24247,7 @@ static PyObject *__pyx_pf_6raylib_72get_monitor_width(CYTHON_UNUSED PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_monitor_width", 0);
 
-  /* "raylib.pyx":1433
+  /* "raylib.pyx":1547
  * 
  * def get_monitor_width(int monitor) -> int:
  *     return GetMonitorWidth(monitor)             # <<<<<<<<<<<<<<
@@ -23287,13 +24255,13 @@ static PyObject *__pyx_pf_6raylib_72get_monitor_width(CYTHON_UNUSED PyObject *__
  * def get_monitor_height(int monitor) -> int:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetMonitorWidth(__pyx_v_monitor)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1433, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetMonitorWidth(__pyx_v_monitor)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1547, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1432
+  /* "raylib.pyx":1546
  *     return _vec
  * 
  * def get_monitor_width(int monitor) -> int:             # <<<<<<<<<<<<<<
@@ -23312,7 +24280,7 @@ static PyObject *__pyx_pf_6raylib_72get_monitor_width(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1435
+/* "raylib.pyx":1549
  *     return GetMonitorWidth(monitor)
  * 
  * def get_monitor_height(int monitor) -> int:             # <<<<<<<<<<<<<<
@@ -23332,7 +24300,7 @@ static PyObject *__pyx_pw_6raylib_75get_monitor_height(PyObject *__pyx_self, PyO
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_monitor_height (wrapper)", 0);
   assert(__pyx_arg_monitor); {
-    __pyx_v_monitor = __Pyx_PyInt_As_int(__pyx_arg_monitor); if (unlikely((__pyx_v_monitor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1435, __pyx_L3_error)
+    __pyx_v_monitor = __Pyx_PyInt_As_int(__pyx_arg_monitor); if (unlikely((__pyx_v_monitor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1549, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23356,7 +24324,7 @@ static PyObject *__pyx_pf_6raylib_74get_monitor_height(CYTHON_UNUSED PyObject *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_monitor_height", 0);
 
-  /* "raylib.pyx":1436
+  /* "raylib.pyx":1550
  * 
  * def get_monitor_height(int monitor) -> int:
  *     return GetMonitorHeight(monitor)             # <<<<<<<<<<<<<<
@@ -23364,13 +24332,13 @@ static PyObject *__pyx_pf_6raylib_74get_monitor_height(CYTHON_UNUSED PyObject *_
  * def get_monitor_physical_width(int monitor) -> int:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetMonitorHeight(__pyx_v_monitor)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1436, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetMonitorHeight(__pyx_v_monitor)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1550, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1435
+  /* "raylib.pyx":1549
  *     return GetMonitorWidth(monitor)
  * 
  * def get_monitor_height(int monitor) -> int:             # <<<<<<<<<<<<<<
@@ -23389,7 +24357,7 @@ static PyObject *__pyx_pf_6raylib_74get_monitor_height(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "raylib.pyx":1438
+/* "raylib.pyx":1552
  *     return GetMonitorHeight(monitor)
  * 
  * def get_monitor_physical_width(int monitor) -> int:             # <<<<<<<<<<<<<<
@@ -23409,7 +24377,7 @@ static PyObject *__pyx_pw_6raylib_77get_monitor_physical_width(PyObject *__pyx_s
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_monitor_physical_width (wrapper)", 0);
   assert(__pyx_arg_monitor); {
-    __pyx_v_monitor = __Pyx_PyInt_As_int(__pyx_arg_monitor); if (unlikely((__pyx_v_monitor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1438, __pyx_L3_error)
+    __pyx_v_monitor = __Pyx_PyInt_As_int(__pyx_arg_monitor); if (unlikely((__pyx_v_monitor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1552, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23433,7 +24401,7 @@ static PyObject *__pyx_pf_6raylib_76get_monitor_physical_width(CYTHON_UNUSED PyO
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_monitor_physical_width", 0);
 
-  /* "raylib.pyx":1439
+  /* "raylib.pyx":1553
  * 
  * def get_monitor_physical_width(int monitor) -> int:
  *     return GetMonitorPhysicalWidth(monitor)             # <<<<<<<<<<<<<<
@@ -23441,13 +24409,13 @@ static PyObject *__pyx_pf_6raylib_76get_monitor_physical_width(CYTHON_UNUSED PyO
  * def get_monitor_physical_height(int monitor) -> int:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetMonitorPhysicalWidth(__pyx_v_monitor)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1439, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetMonitorPhysicalWidth(__pyx_v_monitor)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1553, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1438
+  /* "raylib.pyx":1552
  *     return GetMonitorHeight(monitor)
  * 
  * def get_monitor_physical_width(int monitor) -> int:             # <<<<<<<<<<<<<<
@@ -23466,7 +24434,7 @@ static PyObject *__pyx_pf_6raylib_76get_monitor_physical_width(CYTHON_UNUSED PyO
   return __pyx_r;
 }
 
-/* "raylib.pyx":1441
+/* "raylib.pyx":1555
  *     return GetMonitorPhysicalWidth(monitor)
  * 
  * def get_monitor_physical_height(int monitor) -> int:             # <<<<<<<<<<<<<<
@@ -23486,7 +24454,7 @@ static PyObject *__pyx_pw_6raylib_79get_monitor_physical_height(PyObject *__pyx_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_monitor_physical_height (wrapper)", 0);
   assert(__pyx_arg_monitor); {
-    __pyx_v_monitor = __Pyx_PyInt_As_int(__pyx_arg_monitor); if (unlikely((__pyx_v_monitor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1441, __pyx_L3_error)
+    __pyx_v_monitor = __Pyx_PyInt_As_int(__pyx_arg_monitor); if (unlikely((__pyx_v_monitor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1555, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23510,7 +24478,7 @@ static PyObject *__pyx_pf_6raylib_78get_monitor_physical_height(CYTHON_UNUSED Py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_monitor_physical_height", 0);
 
-  /* "raylib.pyx":1442
+  /* "raylib.pyx":1556
  * 
  * def get_monitor_physical_height(int monitor) -> int:
  *     return GetMonitorPhysicalHeight(monitor)             # <<<<<<<<<<<<<<
@@ -23518,13 +24486,13 @@ static PyObject *__pyx_pf_6raylib_78get_monitor_physical_height(CYTHON_UNUSED Py
  * def get_monitor_refresh_rate(int monitor) -> int:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetMonitorPhysicalHeight(__pyx_v_monitor)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1442, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetMonitorPhysicalHeight(__pyx_v_monitor)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1556, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1441
+  /* "raylib.pyx":1555
  *     return GetMonitorPhysicalWidth(monitor)
  * 
  * def get_monitor_physical_height(int monitor) -> int:             # <<<<<<<<<<<<<<
@@ -23543,7 +24511,7 @@ static PyObject *__pyx_pf_6raylib_78get_monitor_physical_height(CYTHON_UNUSED Py
   return __pyx_r;
 }
 
-/* "raylib.pyx":1444
+/* "raylib.pyx":1558
  *     return GetMonitorPhysicalHeight(monitor)
  * 
  * def get_monitor_refresh_rate(int monitor) -> int:             # <<<<<<<<<<<<<<
@@ -23563,7 +24531,7 @@ static PyObject *__pyx_pw_6raylib_81get_monitor_refresh_rate(PyObject *__pyx_sel
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_monitor_refresh_rate (wrapper)", 0);
   assert(__pyx_arg_monitor); {
-    __pyx_v_monitor = __Pyx_PyInt_As_int(__pyx_arg_monitor); if (unlikely((__pyx_v_monitor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1444, __pyx_L3_error)
+    __pyx_v_monitor = __Pyx_PyInt_As_int(__pyx_arg_monitor); if (unlikely((__pyx_v_monitor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1558, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23587,7 +24555,7 @@ static PyObject *__pyx_pf_6raylib_80get_monitor_refresh_rate(CYTHON_UNUSED PyObj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_monitor_refresh_rate", 0);
 
-  /* "raylib.pyx":1445
+  /* "raylib.pyx":1559
  * 
  * def get_monitor_refresh_rate(int monitor) -> int:
  *     return GetMonitorRefreshRate(monitor)             # <<<<<<<<<<<<<<
@@ -23595,13 +24563,13 @@ static PyObject *__pyx_pf_6raylib_80get_monitor_refresh_rate(CYTHON_UNUSED PyObj
  * def get_window_position() -> raymath.CyVector2:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetMonitorRefreshRate(__pyx_v_monitor)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1445, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetMonitorRefreshRate(__pyx_v_monitor)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1559, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1444
+  /* "raylib.pyx":1558
  *     return GetMonitorPhysicalHeight(monitor)
  * 
  * def get_monitor_refresh_rate(int monitor) -> int:             # <<<<<<<<<<<<<<
@@ -23620,7 +24588,7 @@ static PyObject *__pyx_pf_6raylib_80get_monitor_refresh_rate(CYTHON_UNUSED PyObj
   return __pyx_r;
 }
 
-/* "raylib.pyx":1447
+/* "raylib.pyx":1561
  *     return GetMonitorRefreshRate(monitor)
  * 
  * def get_window_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -23652,20 +24620,20 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_82g
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_window_position", 0);
 
-  /* "raylib.pyx":1448
+  /* "raylib.pyx":1562
  * 
  * def get_window_position() -> raymath.CyVector2:
  *     cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)             # <<<<<<<<<<<<<<
  *     _vec._vector = GetWindowPosition()
  *     return _vec
  */
-  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1448, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1562, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 1448, __pyx_L1_error)
+  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 1562, __pyx_L1_error)
   __pyx_v__vec = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1449
+  /* "raylib.pyx":1563
  * def get_window_position() -> raymath.CyVector2:
  *     cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     _vec._vector = GetWindowPosition()             # <<<<<<<<<<<<<<
@@ -23674,7 +24642,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_82g
  */
   __pyx_v__vec->_vector = GetWindowPosition();
 
-  /* "raylib.pyx":1450
+  /* "raylib.pyx":1564
  *     cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     _vec._vector = GetWindowPosition()
  *     return _vec             # <<<<<<<<<<<<<<
@@ -23686,7 +24654,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_82g
   __pyx_r = __pyx_v__vec;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1447
+  /* "raylib.pyx":1561
  *     return GetMonitorRefreshRate(monitor)
  * 
  * def get_window_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -23706,7 +24674,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_82g
   return __pyx_r;
 }
 
-/* "raylib.pyx":1452
+/* "raylib.pyx":1566
  *     return _vec
  * 
  * def get_window_scale_dpi() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -23738,20 +24706,20 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_84g
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_window_scale_dpi", 0);
 
-  /* "raylib.pyx":1453
+  /* "raylib.pyx":1567
  * 
  * def get_window_scale_dpi() -> raymath.CyVector2:
  *     cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)             # <<<<<<<<<<<<<<
  *     _vec._vector = GetWindowScaleDPI()
  *     return _vec
  */
-  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1453, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1567, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 1453, __pyx_L1_error)
+  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 1567, __pyx_L1_error)
   __pyx_v__vec = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1454
+  /* "raylib.pyx":1568
  * def get_window_scale_dpi() -> raymath.CyVector2:
  *     cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     _vec._vector = GetWindowScaleDPI()             # <<<<<<<<<<<<<<
@@ -23760,7 +24728,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_84g
  */
   __pyx_v__vec->_vector = GetWindowScaleDPI();
 
-  /* "raylib.pyx":1455
+  /* "raylib.pyx":1569
  *     cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     _vec._vector = GetWindowScaleDPI()
  *     return _vec             # <<<<<<<<<<<<<<
@@ -23772,7 +24740,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_84g
   __pyx_r = __pyx_v__vec;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1452
+  /* "raylib.pyx":1566
  *     return _vec
  * 
  * def get_window_scale_dpi() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -23792,7 +24760,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_84g
   return __pyx_r;
 }
 
-/* "raylib.pyx":1457
+/* "raylib.pyx":1571
  *     return _vec
  * 
  * def get_monitor_name(int monitor) -> bytes:             # <<<<<<<<<<<<<<
@@ -23812,7 +24780,7 @@ static PyObject *__pyx_pw_6raylib_87get_monitor_name(PyObject *__pyx_self, PyObj
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_monitor_name (wrapper)", 0);
   assert(__pyx_arg_monitor); {
-    __pyx_v_monitor = __Pyx_PyInt_As_int(__pyx_arg_monitor); if (unlikely((__pyx_v_monitor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1457, __pyx_L3_error)
+    __pyx_v_monitor = __Pyx_PyInt_As_int(__pyx_arg_monitor); if (unlikely((__pyx_v_monitor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1571, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -23836,7 +24804,7 @@ static PyObject *__pyx_pf_6raylib_86get_monitor_name(CYTHON_UNUSED PyObject *__p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_monitor_name", 0);
 
-  /* "raylib.pyx":1458
+  /* "raylib.pyx":1572
  * 
  * def get_monitor_name(int monitor) -> bytes:
  *     return GetMonitorName(monitor)             # <<<<<<<<<<<<<<
@@ -23844,13 +24812,13 @@ static PyObject *__pyx_pf_6raylib_86get_monitor_name(CYTHON_UNUSED PyObject *__p
  * def set_clipboard_text(str text) -> None:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBytes_FromString(GetMonitorName(__pyx_v_monitor)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1458, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBytes_FromString(GetMonitorName(__pyx_v_monitor)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1572, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1457
+  /* "raylib.pyx":1571
  *     return _vec
  * 
  * def get_monitor_name(int monitor) -> bytes:             # <<<<<<<<<<<<<<
@@ -23869,7 +24837,7 @@ static PyObject *__pyx_pf_6raylib_86get_monitor_name(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "raylib.pyx":1460
+/* "raylib.pyx":1574
  *     return GetMonitorName(monitor)
  * 
  * def set_clipboard_text(str text) -> None:             # <<<<<<<<<<<<<<
@@ -23887,7 +24855,7 @@ static PyObject *__pyx_pw_6raylib_89set_clipboard_text(PyObject *__pyx_self, PyO
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_clipboard_text (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_text), (&PyUnicode_Type), 1, "text", 1))) __PYX_ERR(0, 1460, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_text), (&PyUnicode_Type), 1, "text", 1))) __PYX_ERR(0, 1574, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_88set_clipboard_text(__pyx_self, ((PyObject*)__pyx_v_text));
 
   /* function exit code */
@@ -23908,17 +24876,17 @@ static PyObject *__pyx_pf_6raylib_88set_clipboard_text(CYTHON_UNUSED PyObject *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("set_clipboard_text", 0);
 
-  /* "raylib.pyx":1461
+  /* "raylib.pyx":1575
  * 
  * def set_clipboard_text(str text) -> None:
  *     SetClipboardText(text)             # <<<<<<<<<<<<<<
  * 
  * def get_clipboard_text() -> bytes:
  */
-  __pyx_t_1 = __Pyx_PyObject_AsString(__pyx_v_text); if (unlikely((!__pyx_t_1) && PyErr_Occurred())) __PYX_ERR(0, 1461, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_AsString(__pyx_v_text); if (unlikely((!__pyx_t_1) && PyErr_Occurred())) __PYX_ERR(0, 1575, __pyx_L1_error)
   SetClipboardText(__pyx_t_1);
 
-  /* "raylib.pyx":1460
+  /* "raylib.pyx":1574
  *     return GetMonitorName(monitor)
  * 
  * def set_clipboard_text(str text) -> None:             # <<<<<<<<<<<<<<
@@ -23938,7 +24906,7 @@ static PyObject *__pyx_pf_6raylib_88set_clipboard_text(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "raylib.pyx":1463
+/* "raylib.pyx":1577
  *     SetClipboardText(text)
  * 
  * def get_clipboard_text() -> bytes:             # <<<<<<<<<<<<<<
@@ -23969,7 +24937,7 @@ static PyObject *__pyx_pf_6raylib_90get_clipboard_text(CYTHON_UNUSED PyObject *_
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_clipboard_text", 0);
 
-  /* "raylib.pyx":1464
+  /* "raylib.pyx":1578
  * 
  * def get_clipboard_text() -> bytes:
  *     return GetClipboardText()             # <<<<<<<<<<<<<<
@@ -23977,13 +24945,13 @@ static PyObject *__pyx_pf_6raylib_90get_clipboard_text(CYTHON_UNUSED PyObject *_
  * def enable_event_waiting() -> None:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBytes_FromString(GetClipboardText()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1464, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBytes_FromString(GetClipboardText()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1578, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1463
+  /* "raylib.pyx":1577
  *     SetClipboardText(text)
  * 
  * def get_clipboard_text() -> bytes:             # <<<<<<<<<<<<<<
@@ -24002,7 +24970,7 @@ static PyObject *__pyx_pf_6raylib_90get_clipboard_text(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "raylib.pyx":1466
+/* "raylib.pyx":1580
  *     return GetClipboardText()
  * 
  * def enable_event_waiting() -> None:             # <<<<<<<<<<<<<<
@@ -24029,7 +24997,7 @@ static PyObject *__pyx_pf_6raylib_92enable_event_waiting(CYTHON_UNUSED PyObject 
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("enable_event_waiting", 0);
 
-  /* "raylib.pyx":1467
+  /* "raylib.pyx":1581
  * 
  * def enable_event_waiting() -> None:
  *     EnableEventWaiting()             # <<<<<<<<<<<<<<
@@ -24038,7 +25006,7 @@ static PyObject *__pyx_pf_6raylib_92enable_event_waiting(CYTHON_UNUSED PyObject 
  */
   EnableEventWaiting();
 
-  /* "raylib.pyx":1466
+  /* "raylib.pyx":1580
  *     return GetClipboardText()
  * 
  * def enable_event_waiting() -> None:             # <<<<<<<<<<<<<<
@@ -24053,7 +25021,7 @@ static PyObject *__pyx_pf_6raylib_92enable_event_waiting(CYTHON_UNUSED PyObject 
   return __pyx_r;
 }
 
-/* "raylib.pyx":1469
+/* "raylib.pyx":1583
  *     EnableEventWaiting()
  * 
  * def disable_event_waiting() -> None:             # <<<<<<<<<<<<<<
@@ -24080,7 +25048,7 @@ static PyObject *__pyx_pf_6raylib_94disable_event_waiting(CYTHON_UNUSED PyObject
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("disable_event_waiting", 0);
 
-  /* "raylib.pyx":1470
+  /* "raylib.pyx":1584
  * 
  * def disable_event_waiting() -> None:
  *     DisableEventWaiting()             # <<<<<<<<<<<<<<
@@ -24089,7 +25057,7 @@ static PyObject *__pyx_pf_6raylib_94disable_event_waiting(CYTHON_UNUSED PyObject
  */
   DisableEventWaiting();
 
-  /* "raylib.pyx":1469
+  /* "raylib.pyx":1583
  *     EnableEventWaiting()
  * 
  * def disable_event_waiting() -> None:             # <<<<<<<<<<<<<<
@@ -24104,7 +25072,7 @@ static PyObject *__pyx_pf_6raylib_94disable_event_waiting(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "raylib.pyx":1472
+/* "raylib.pyx":1586
  *     DisableEventWaiting()
  * 
  * def show_cursor() -> None:             # <<<<<<<<<<<<<<
@@ -24131,7 +25099,7 @@ static PyObject *__pyx_pf_6raylib_96show_cursor(CYTHON_UNUSED PyObject *__pyx_se
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("show_cursor", 0);
 
-  /* "raylib.pyx":1473
+  /* "raylib.pyx":1587
  * 
  * def show_cursor() -> None:
  *     ShowCursor()             # <<<<<<<<<<<<<<
@@ -24140,7 +25108,7 @@ static PyObject *__pyx_pf_6raylib_96show_cursor(CYTHON_UNUSED PyObject *__pyx_se
  */
   ShowCursor();
 
-  /* "raylib.pyx":1472
+  /* "raylib.pyx":1586
  *     DisableEventWaiting()
  * 
  * def show_cursor() -> None:             # <<<<<<<<<<<<<<
@@ -24155,7 +25123,7 @@ static PyObject *__pyx_pf_6raylib_96show_cursor(CYTHON_UNUSED PyObject *__pyx_se
   return __pyx_r;
 }
 
-/* "raylib.pyx":1475
+/* "raylib.pyx":1589
  *     ShowCursor()
  * 
  * def hide_cursor() -> None:             # <<<<<<<<<<<<<<
@@ -24182,7 +25150,7 @@ static PyObject *__pyx_pf_6raylib_98hide_cursor(CYTHON_UNUSED PyObject *__pyx_se
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("hide_cursor", 0);
 
-  /* "raylib.pyx":1476
+  /* "raylib.pyx":1590
  * 
  * def hide_cursor() -> None:
  *     HideCursor()             # <<<<<<<<<<<<<<
@@ -24191,7 +25159,7 @@ static PyObject *__pyx_pf_6raylib_98hide_cursor(CYTHON_UNUSED PyObject *__pyx_se
  */
   HideCursor();
 
-  /* "raylib.pyx":1475
+  /* "raylib.pyx":1589
  *     ShowCursor()
  * 
  * def hide_cursor() -> None:             # <<<<<<<<<<<<<<
@@ -24206,7 +25174,7 @@ static PyObject *__pyx_pf_6raylib_98hide_cursor(CYTHON_UNUSED PyObject *__pyx_se
   return __pyx_r;
 }
 
-/* "raylib.pyx":1478
+/* "raylib.pyx":1592
  *     HideCursor()
  * 
  * def is_cursor_hidden() -> bint:             # <<<<<<<<<<<<<<
@@ -24237,7 +25205,7 @@ static PyObject *__pyx_pf_6raylib_100is_cursor_hidden(CYTHON_UNUSED PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("is_cursor_hidden", 0);
 
-  /* "raylib.pyx":1479
+  /* "raylib.pyx":1593
  * 
  * def is_cursor_hidden() -> bint:
  *     return IsCursorHidden()             # <<<<<<<<<<<<<<
@@ -24245,13 +25213,13 @@ static PyObject *__pyx_pf_6raylib_100is_cursor_hidden(CYTHON_UNUSED PyObject *__
  * def enable_cursor() -> None:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(IsCursorHidden()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1479, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(IsCursorHidden()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1593, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1478
+  /* "raylib.pyx":1592
  *     HideCursor()
  * 
  * def is_cursor_hidden() -> bint:             # <<<<<<<<<<<<<<
@@ -24270,7 +25238,7 @@ static PyObject *__pyx_pf_6raylib_100is_cursor_hidden(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1481
+/* "raylib.pyx":1595
  *     return IsCursorHidden()
  * 
  * def enable_cursor() -> None:             # <<<<<<<<<<<<<<
@@ -24297,7 +25265,7 @@ static PyObject *__pyx_pf_6raylib_102enable_cursor(CYTHON_UNUSED PyObject *__pyx
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("enable_cursor", 0);
 
-  /* "raylib.pyx":1482
+  /* "raylib.pyx":1596
  * 
  * def enable_cursor() -> None:
  *     EnableCursor()             # <<<<<<<<<<<<<<
@@ -24306,7 +25274,7 @@ static PyObject *__pyx_pf_6raylib_102enable_cursor(CYTHON_UNUSED PyObject *__pyx
  */
   EnableCursor();
 
-  /* "raylib.pyx":1481
+  /* "raylib.pyx":1595
  *     return IsCursorHidden()
  * 
  * def enable_cursor() -> None:             # <<<<<<<<<<<<<<
@@ -24321,7 +25289,7 @@ static PyObject *__pyx_pf_6raylib_102enable_cursor(CYTHON_UNUSED PyObject *__pyx
   return __pyx_r;
 }
 
-/* "raylib.pyx":1484
+/* "raylib.pyx":1598
  *     EnableCursor()
  * 
  * def disable_cursor() -> None:             # <<<<<<<<<<<<<<
@@ -24348,7 +25316,7 @@ static PyObject *__pyx_pf_6raylib_104disable_cursor(CYTHON_UNUSED PyObject *__py
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("disable_cursor", 0);
 
-  /* "raylib.pyx":1485
+  /* "raylib.pyx":1599
  * 
  * def disable_cursor() -> None:
  *     DisableCursor()             # <<<<<<<<<<<<<<
@@ -24357,7 +25325,7 @@ static PyObject *__pyx_pf_6raylib_104disable_cursor(CYTHON_UNUSED PyObject *__py
  */
   DisableCursor();
 
-  /* "raylib.pyx":1484
+  /* "raylib.pyx":1598
  *     EnableCursor()
  * 
  * def disable_cursor() -> None:             # <<<<<<<<<<<<<<
@@ -24372,7 +25340,7 @@ static PyObject *__pyx_pf_6raylib_104disable_cursor(CYTHON_UNUSED PyObject *__py
   return __pyx_r;
 }
 
-/* "raylib.pyx":1487
+/* "raylib.pyx":1601
  *     DisableCursor()
  * 
  * def is_cursor_on_screen() -> bint:             # <<<<<<<<<<<<<<
@@ -24403,7 +25371,7 @@ static PyObject *__pyx_pf_6raylib_106is_cursor_on_screen(CYTHON_UNUSED PyObject 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("is_cursor_on_screen", 0);
 
-  /* "raylib.pyx":1488
+  /* "raylib.pyx":1602
  * 
  * def is_cursor_on_screen() -> bint:
  *     return IsCursorOnScreen()             # <<<<<<<<<<<<<<
@@ -24411,13 +25379,13 @@ static PyObject *__pyx_pf_6raylib_106is_cursor_on_screen(CYTHON_UNUSED PyObject 
  * def set_target_fps(int fps) -> None:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(IsCursorOnScreen()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1488, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(IsCursorOnScreen()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1602, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1487
+  /* "raylib.pyx":1601
  *     DisableCursor()
  * 
  * def is_cursor_on_screen() -> bint:             # <<<<<<<<<<<<<<
@@ -24436,7 +25404,7 @@ static PyObject *__pyx_pf_6raylib_106is_cursor_on_screen(CYTHON_UNUSED PyObject 
   return __pyx_r;
 }
 
-/* "raylib.pyx":1490
+/* "raylib.pyx":1604
  *     return IsCursorOnScreen()
  * 
  * def set_target_fps(int fps) -> None:             # <<<<<<<<<<<<<<
@@ -24456,7 +25424,7 @@ static PyObject *__pyx_pw_6raylib_109set_target_fps(PyObject *__pyx_self, PyObje
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_target_fps (wrapper)", 0);
   assert(__pyx_arg_fps); {
-    __pyx_v_fps = __Pyx_PyInt_As_int(__pyx_arg_fps); if (unlikely((__pyx_v_fps == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1490, __pyx_L3_error)
+    __pyx_v_fps = __Pyx_PyInt_As_int(__pyx_arg_fps); if (unlikely((__pyx_v_fps == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1604, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -24476,7 +25444,7 @@ static PyObject *__pyx_pf_6raylib_108set_target_fps(CYTHON_UNUSED PyObject *__py
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_target_fps", 0);
 
-  /* "raylib.pyx":1491
+  /* "raylib.pyx":1605
  * 
  * def set_target_fps(int fps) -> None:
  *     SetTargetFPS(fps)             # <<<<<<<<<<<<<<
@@ -24485,7 +25453,7 @@ static PyObject *__pyx_pf_6raylib_108set_target_fps(CYTHON_UNUSED PyObject *__py
  */
   SetTargetFPS(__pyx_v_fps);
 
-  /* "raylib.pyx":1490
+  /* "raylib.pyx":1604
  *     return IsCursorOnScreen()
  * 
  * def set_target_fps(int fps) -> None:             # <<<<<<<<<<<<<<
@@ -24500,7 +25468,7 @@ static PyObject *__pyx_pf_6raylib_108set_target_fps(CYTHON_UNUSED PyObject *__py
   return __pyx_r;
 }
 
-/* "raylib.pyx":1493
+/* "raylib.pyx":1607
  *     SetTargetFPS(fps)
  * 
  * def get_delta_time() -> float:             # <<<<<<<<<<<<<<
@@ -24531,7 +25499,7 @@ static PyObject *__pyx_pf_6raylib_110get_delta_time(CYTHON_UNUSED PyObject *__py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_delta_time", 0);
 
-  /* "raylib.pyx":1494
+  /* "raylib.pyx":1608
  * 
  * def get_delta_time() -> float:
  *     return GetFrameTime()             # <<<<<<<<<<<<<<
@@ -24539,13 +25507,13 @@ static PyObject *__pyx_pf_6raylib_110get_delta_time(CYTHON_UNUSED PyObject *__py
  * def get_frame_time() -> float:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(GetFrameTime()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1494, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(GetFrameTime()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1608, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1493
+  /* "raylib.pyx":1607
  *     SetTargetFPS(fps)
  * 
  * def get_delta_time() -> float:             # <<<<<<<<<<<<<<
@@ -24564,7 +25532,7 @@ static PyObject *__pyx_pf_6raylib_110get_delta_time(CYTHON_UNUSED PyObject *__py
   return __pyx_r;
 }
 
-/* "raylib.pyx":1496
+/* "raylib.pyx":1610
  *     return GetFrameTime()
  * 
  * def get_frame_time() -> float:             # <<<<<<<<<<<<<<
@@ -24595,7 +25563,7 @@ static PyObject *__pyx_pf_6raylib_112get_frame_time(CYTHON_UNUSED PyObject *__py
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_frame_time", 0);
 
-  /* "raylib.pyx":1497
+  /* "raylib.pyx":1611
  * 
  * def get_frame_time() -> float:
  *     return GetFrameTime()             # <<<<<<<<<<<<<<
@@ -24603,13 +25571,13 @@ static PyObject *__pyx_pf_6raylib_112get_frame_time(CYTHON_UNUSED PyObject *__py
  * def get_time() -> float:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(GetFrameTime()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1497, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(GetFrameTime()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1611, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1496
+  /* "raylib.pyx":1610
  *     return GetFrameTime()
  * 
  * def get_frame_time() -> float:             # <<<<<<<<<<<<<<
@@ -24628,7 +25596,7 @@ static PyObject *__pyx_pf_6raylib_112get_frame_time(CYTHON_UNUSED PyObject *__py
   return __pyx_r;
 }
 
-/* "raylib.pyx":1499
+/* "raylib.pyx":1613
  *     return GetFrameTime()
  * 
  * def get_time() -> float:             # <<<<<<<<<<<<<<
@@ -24659,7 +25627,7 @@ static PyObject *__pyx_pf_6raylib_114get_time(CYTHON_UNUSED PyObject *__pyx_self
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_time", 0);
 
-  /* "raylib.pyx":1500
+  /* "raylib.pyx":1614
  * 
  * def get_time() -> float:
  *     return GetTime()             # <<<<<<<<<<<<<<
@@ -24667,13 +25635,13 @@ static PyObject *__pyx_pf_6raylib_114get_time(CYTHON_UNUSED PyObject *__pyx_self
  * def get_fps() -> int:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(GetTime()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1500, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(GetTime()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1614, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1499
+  /* "raylib.pyx":1613
  *     return GetFrameTime()
  * 
  * def get_time() -> float:             # <<<<<<<<<<<<<<
@@ -24692,7 +25660,7 @@ static PyObject *__pyx_pf_6raylib_114get_time(CYTHON_UNUSED PyObject *__pyx_self
   return __pyx_r;
 }
 
-/* "raylib.pyx":1502
+/* "raylib.pyx":1616
  *     return GetTime()
  * 
  * def get_fps() -> int:             # <<<<<<<<<<<<<<
@@ -24723,7 +25691,7 @@ static PyObject *__pyx_pf_6raylib_116get_fps(CYTHON_UNUSED PyObject *__pyx_self)
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_fps", 0);
 
-  /* "raylib.pyx":1503
+  /* "raylib.pyx":1617
  * 
  * def get_fps() -> int:
  *     return GetFPS()             # <<<<<<<<<<<<<<
@@ -24731,13 +25699,13 @@ static PyObject *__pyx_pf_6raylib_116get_fps(CYTHON_UNUSED PyObject *__pyx_self)
  * def begin_drawing() -> None:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetFPS()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1503, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetFPS()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1617, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1502
+  /* "raylib.pyx":1616
  *     return GetTime()
  * 
  * def get_fps() -> int:             # <<<<<<<<<<<<<<
@@ -24756,7 +25724,7 @@ static PyObject *__pyx_pf_6raylib_116get_fps(CYTHON_UNUSED PyObject *__pyx_self)
   return __pyx_r;
 }
 
-/* "raylib.pyx":1505
+/* "raylib.pyx":1619
  *     return GetFPS()
  * 
  * def begin_drawing() -> None:             # <<<<<<<<<<<<<<
@@ -24783,7 +25751,7 @@ static PyObject *__pyx_pf_6raylib_118begin_drawing(CYTHON_UNUSED PyObject *__pyx
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("begin_drawing", 0);
 
-  /* "raylib.pyx":1506
+  /* "raylib.pyx":1620
  * 
  * def begin_drawing() -> None:
  *     BeginDrawing()             # <<<<<<<<<<<<<<
@@ -24792,7 +25760,7 @@ static PyObject *__pyx_pf_6raylib_118begin_drawing(CYTHON_UNUSED PyObject *__pyx
  */
   BeginDrawing();
 
-  /* "raylib.pyx":1505
+  /* "raylib.pyx":1619
  *     return GetFPS()
  * 
  * def begin_drawing() -> None:             # <<<<<<<<<<<<<<
@@ -24807,7 +25775,7 @@ static PyObject *__pyx_pf_6raylib_118begin_drawing(CYTHON_UNUSED PyObject *__pyx
   return __pyx_r;
 }
 
-/* "raylib.pyx":1508
+/* "raylib.pyx":1622
  *     BeginDrawing()
  * 
  * def end_drawing() -> None:             # <<<<<<<<<<<<<<
@@ -24834,7 +25802,7 @@ static PyObject *__pyx_pf_6raylib_120end_drawing(CYTHON_UNUSED PyObject *__pyx_s
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("end_drawing", 0);
 
-  /* "raylib.pyx":1509
+  /* "raylib.pyx":1623
  * 
  * def end_drawing() -> None:
  *     EndDrawing()             # <<<<<<<<<<<<<<
@@ -24843,7 +25811,7 @@ static PyObject *__pyx_pf_6raylib_120end_drawing(CYTHON_UNUSED PyObject *__pyx_s
  */
   EndDrawing();
 
-  /* "raylib.pyx":1508
+  /* "raylib.pyx":1622
  *     BeginDrawing()
  * 
  * def end_drawing() -> None:             # <<<<<<<<<<<<<<
@@ -24858,7 +25826,7 @@ static PyObject *__pyx_pf_6raylib_120end_drawing(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "raylib.pyx":1511
+/* "raylib.pyx":1625
  *     EndDrawing()
  * 
  * def begin_mode_2D(CyCamera2D camera) -> None:             # <<<<<<<<<<<<<<
@@ -24876,7 +25844,7 @@ static PyObject *__pyx_pw_6raylib_123begin_mode_2D(PyObject *__pyx_self, PyObjec
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("begin_mode_2D (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_camera), __pyx_ptype_6raylib_CyCamera2D, 1, "camera", 0))) __PYX_ERR(0, 1511, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_camera), __pyx_ptype_6raylib_CyCamera2D, 1, "camera", 0))) __PYX_ERR(0, 1625, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_122begin_mode_2D(__pyx_self, ((struct __pyx_obj_6raylib_CyCamera2D *)__pyx_v_camera));
 
   /* function exit code */
@@ -24893,7 +25861,7 @@ static PyObject *__pyx_pf_6raylib_122begin_mode_2D(CYTHON_UNUSED PyObject *__pyx
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("begin_mode_2D", 0);
 
-  /* "raylib.pyx":1512
+  /* "raylib.pyx":1626
  * 
  * def begin_mode_2D(CyCamera2D camera) -> None:
  *     BeginMode2D(camera._camera_2d)             # <<<<<<<<<<<<<<
@@ -24902,7 +25870,7 @@ static PyObject *__pyx_pf_6raylib_122begin_mode_2D(CYTHON_UNUSED PyObject *__pyx
  */
   BeginMode2D(__pyx_v_camera->_camera_2d);
 
-  /* "raylib.pyx":1511
+  /* "raylib.pyx":1625
  *     EndDrawing()
  * 
  * def begin_mode_2D(CyCamera2D camera) -> None:             # <<<<<<<<<<<<<<
@@ -24917,7 +25885,7 @@ static PyObject *__pyx_pf_6raylib_122begin_mode_2D(CYTHON_UNUSED PyObject *__pyx
   return __pyx_r;
 }
 
-/* "raylib.pyx":1514
+/* "raylib.pyx":1628
  *     BeginMode2D(camera._camera_2d)
  * 
  * def end_mode_2d() -> None:             # <<<<<<<<<<<<<<
@@ -24944,7 +25912,7 @@ static PyObject *__pyx_pf_6raylib_124end_mode_2d(CYTHON_UNUSED PyObject *__pyx_s
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("end_mode_2d", 0);
 
-  /* "raylib.pyx":1515
+  /* "raylib.pyx":1629
  * 
  * def end_mode_2d() -> None:
  *     EndMode2D()             # <<<<<<<<<<<<<<
@@ -24953,7 +25921,7 @@ static PyObject *__pyx_pf_6raylib_124end_mode_2d(CYTHON_UNUSED PyObject *__pyx_s
  */
   EndMode2D();
 
-  /* "raylib.pyx":1514
+  /* "raylib.pyx":1628
  *     BeginMode2D(camera._camera_2d)
  * 
  * def end_mode_2d() -> None:             # <<<<<<<<<<<<<<
@@ -24968,7 +25936,7 @@ static PyObject *__pyx_pf_6raylib_124end_mode_2d(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "raylib.pyx":1517
+/* "raylib.pyx":1631
  *     EndMode2D()
  * 
  * def begin_mode_3d(CyCamera3D camera) -> None:             # <<<<<<<<<<<<<<
@@ -24986,7 +25954,7 @@ static PyObject *__pyx_pw_6raylib_127begin_mode_3d(PyObject *__pyx_self, PyObjec
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("begin_mode_3d (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_camera), __pyx_ptype_6raylib_CyCamera3D, 1, "camera", 0))) __PYX_ERR(0, 1517, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_camera), __pyx_ptype_6raylib_CyCamera3D, 1, "camera", 0))) __PYX_ERR(0, 1631, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_126begin_mode_3d(__pyx_self, ((struct __pyx_obj_6raylib_CyCamera3D *)__pyx_v_camera));
 
   /* function exit code */
@@ -25003,7 +25971,7 @@ static PyObject *__pyx_pf_6raylib_126begin_mode_3d(CYTHON_UNUSED PyObject *__pyx
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("begin_mode_3d", 0);
 
-  /* "raylib.pyx":1518
+  /* "raylib.pyx":1632
  * 
  * def begin_mode_3d(CyCamera3D camera) -> None:
  *     BeginMode3D(camera._camera_3d)             # <<<<<<<<<<<<<<
@@ -25012,7 +25980,7 @@ static PyObject *__pyx_pf_6raylib_126begin_mode_3d(CYTHON_UNUSED PyObject *__pyx
  */
   BeginMode3D(__pyx_v_camera->_camera_3d);
 
-  /* "raylib.pyx":1517
+  /* "raylib.pyx":1631
  *     EndMode2D()
  * 
  * def begin_mode_3d(CyCamera3D camera) -> None:             # <<<<<<<<<<<<<<
@@ -25027,7 +25995,7 @@ static PyObject *__pyx_pf_6raylib_126begin_mode_3d(CYTHON_UNUSED PyObject *__pyx
   return __pyx_r;
 }
 
-/* "raylib.pyx":1520
+/* "raylib.pyx":1634
  *     BeginMode3D(camera._camera_3d)
  * 
  * def end_mode_3d() -> None:             # <<<<<<<<<<<<<<
@@ -25054,7 +26022,7 @@ static PyObject *__pyx_pf_6raylib_128end_mode_3d(CYTHON_UNUSED PyObject *__pyx_s
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("end_mode_3d", 0);
 
-  /* "raylib.pyx":1521
+  /* "raylib.pyx":1635
  * 
  * def end_mode_3d() -> None:
  *     EndMode3D()             # <<<<<<<<<<<<<<
@@ -25063,7 +26031,7 @@ static PyObject *__pyx_pf_6raylib_128end_mode_3d(CYTHON_UNUSED PyObject *__pyx_s
  */
   EndMode3D();
 
-  /* "raylib.pyx":1520
+  /* "raylib.pyx":1634
  *     BeginMode3D(camera._camera_3d)
  * 
  * def end_mode_3d() -> None:             # <<<<<<<<<<<<<<
@@ -25078,7 +26046,7 @@ static PyObject *__pyx_pf_6raylib_128end_mode_3d(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "raylib.pyx":1523
+/* "raylib.pyx":1637
  *     EndMode3D()
  * 
  * def begin_texture_mode(CyRenderTexture2D target) -> None:             # <<<<<<<<<<<<<<
@@ -25096,7 +26064,7 @@ static PyObject *__pyx_pw_6raylib_131begin_texture_mode(PyObject *__pyx_self, Py
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("begin_texture_mode (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_target), __pyx_ptype_6raylib_CyRenderTexture2D, 1, "target", 0))) __PYX_ERR(0, 1523, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_target), __pyx_ptype_6raylib_CyRenderTexture2D, 1, "target", 0))) __PYX_ERR(0, 1637, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_130begin_texture_mode(__pyx_self, ((struct __pyx_obj_6raylib_CyRenderTexture2D *)__pyx_v_target));
 
   /* function exit code */
@@ -25113,7 +26081,7 @@ static PyObject *__pyx_pf_6raylib_130begin_texture_mode(CYTHON_UNUSED PyObject *
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("begin_texture_mode", 0);
 
-  /* "raylib.pyx":1524
+  /* "raylib.pyx":1638
  * 
  * def begin_texture_mode(CyRenderTexture2D target) -> None:
  *     BeginTextureMode(target._render_texture)             # <<<<<<<<<<<<<<
@@ -25122,7 +26090,7 @@ static PyObject *__pyx_pf_6raylib_130begin_texture_mode(CYTHON_UNUSED PyObject *
  */
   BeginTextureMode(__pyx_v_target->__pyx_base._render_texture);
 
-  /* "raylib.pyx":1523
+  /* "raylib.pyx":1637
  *     EndMode3D()
  * 
  * def begin_texture_mode(CyRenderTexture2D target) -> None:             # <<<<<<<<<<<<<<
@@ -25137,7 +26105,7 @@ static PyObject *__pyx_pf_6raylib_130begin_texture_mode(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "raylib.pyx":1526
+/* "raylib.pyx":1640
  *     BeginTextureMode(target._render_texture)
  * 
  * def end_texture_mode() -> None:             # <<<<<<<<<<<<<<
@@ -25164,7 +26132,7 @@ static PyObject *__pyx_pf_6raylib_132end_texture_mode(CYTHON_UNUSED PyObject *__
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("end_texture_mode", 0);
 
-  /* "raylib.pyx":1527
+  /* "raylib.pyx":1641
  * 
  * def end_texture_mode() -> None:
  *     EndTextureMode()             # <<<<<<<<<<<<<<
@@ -25173,7 +26141,7 @@ static PyObject *__pyx_pf_6raylib_132end_texture_mode(CYTHON_UNUSED PyObject *__
  */
   EndTextureMode();
 
-  /* "raylib.pyx":1526
+  /* "raylib.pyx":1640
  *     BeginTextureMode(target._render_texture)
  * 
  * def end_texture_mode() -> None:             # <<<<<<<<<<<<<<
@@ -25188,7 +26156,7 @@ static PyObject *__pyx_pf_6raylib_132end_texture_mode(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1529
+/* "raylib.pyx":1643
  *     EndTextureMode()
  * 
  * def begin_shader_mode(CyShader shader) -> None:             # <<<<<<<<<<<<<<
@@ -25206,7 +26174,7 @@ static PyObject *__pyx_pw_6raylib_135begin_shader_mode(PyObject *__pyx_self, PyO
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("begin_shader_mode (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_shader), __pyx_ptype_6raylib_CyShader, 1, "shader", 0))) __PYX_ERR(0, 1529, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_shader), __pyx_ptype_6raylib_CyShader, 1, "shader", 0))) __PYX_ERR(0, 1643, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_134begin_shader_mode(__pyx_self, ((struct __pyx_obj_6raylib_CyShader *)__pyx_v_shader));
 
   /* function exit code */
@@ -25223,7 +26191,7 @@ static PyObject *__pyx_pf_6raylib_134begin_shader_mode(CYTHON_UNUSED PyObject *_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("begin_shader_mode", 0);
 
-  /* "raylib.pyx":1530
+  /* "raylib.pyx":1644
  * 
  * def begin_shader_mode(CyShader shader) -> None:
  *     BeginShaderMode(shader._shader)             # <<<<<<<<<<<<<<
@@ -25232,7 +26200,7 @@ static PyObject *__pyx_pf_6raylib_134begin_shader_mode(CYTHON_UNUSED PyObject *_
  */
   BeginShaderMode(__pyx_v_shader->_shader);
 
-  /* "raylib.pyx":1529
+  /* "raylib.pyx":1643
  *     EndTextureMode()
  * 
  * def begin_shader_mode(CyShader shader) -> None:             # <<<<<<<<<<<<<<
@@ -25247,7 +26215,7 @@ static PyObject *__pyx_pf_6raylib_134begin_shader_mode(CYTHON_UNUSED PyObject *_
   return __pyx_r;
 }
 
-/* "raylib.pyx":1532
+/* "raylib.pyx":1646
  *     BeginShaderMode(shader._shader)
  * 
  * def end_shader_mode() -> None:             # <<<<<<<<<<<<<<
@@ -25274,7 +26242,7 @@ static PyObject *__pyx_pf_6raylib_136end_shader_mode(CYTHON_UNUSED PyObject *__p
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("end_shader_mode", 0);
 
-  /* "raylib.pyx":1533
+  /* "raylib.pyx":1647
  * 
  * def end_shader_mode() -> None:
  *     EndShaderMode()             # <<<<<<<<<<<<<<
@@ -25283,7 +26251,7 @@ static PyObject *__pyx_pf_6raylib_136end_shader_mode(CYTHON_UNUSED PyObject *__p
  */
   EndShaderMode();
 
-  /* "raylib.pyx":1532
+  /* "raylib.pyx":1646
  *     BeginShaderMode(shader._shader)
  * 
  * def end_shader_mode() -> None:             # <<<<<<<<<<<<<<
@@ -25298,7 +26266,7 @@ static PyObject *__pyx_pf_6raylib_136end_shader_mode(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "raylib.pyx":1535
+/* "raylib.pyx":1649
  *     EndShaderMode()
  * 
  * def begin_blend_mode(int mode) -> None:             # <<<<<<<<<<<<<<
@@ -25318,7 +26286,7 @@ static PyObject *__pyx_pw_6raylib_139begin_blend_mode(PyObject *__pyx_self, PyOb
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("begin_blend_mode (wrapper)", 0);
   assert(__pyx_arg_mode); {
-    __pyx_v_mode = __Pyx_PyInt_As_int(__pyx_arg_mode); if (unlikely((__pyx_v_mode == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1535, __pyx_L3_error)
+    __pyx_v_mode = __Pyx_PyInt_As_int(__pyx_arg_mode); if (unlikely((__pyx_v_mode == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1649, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -25338,7 +26306,7 @@ static PyObject *__pyx_pf_6raylib_138begin_blend_mode(CYTHON_UNUSED PyObject *__
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("begin_blend_mode", 0);
 
-  /* "raylib.pyx":1536
+  /* "raylib.pyx":1650
  * 
  * def begin_blend_mode(int mode) -> None:
  *     BeginBlendMode(mode)             # <<<<<<<<<<<<<<
@@ -25347,7 +26315,7 @@ static PyObject *__pyx_pf_6raylib_138begin_blend_mode(CYTHON_UNUSED PyObject *__
  */
   BeginBlendMode(__pyx_v_mode);
 
-  /* "raylib.pyx":1535
+  /* "raylib.pyx":1649
  *     EndShaderMode()
  * 
  * def begin_blend_mode(int mode) -> None:             # <<<<<<<<<<<<<<
@@ -25362,7 +26330,7 @@ static PyObject *__pyx_pf_6raylib_138begin_blend_mode(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1538
+/* "raylib.pyx":1652
  *     BeginBlendMode(mode)
  * 
  * def end_blend_mode() -> None:             # <<<<<<<<<<<<<<
@@ -25389,7 +26357,7 @@ static PyObject *__pyx_pf_6raylib_140end_blend_mode(CYTHON_UNUSED PyObject *__py
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("end_blend_mode", 0);
 
-  /* "raylib.pyx":1539
+  /* "raylib.pyx":1653
  * 
  * def end_blend_mode() -> None:
  *     EndBlendMode()             # <<<<<<<<<<<<<<
@@ -25398,7 +26366,7 @@ static PyObject *__pyx_pf_6raylib_140end_blend_mode(CYTHON_UNUSED PyObject *__py
  */
   EndBlendMode();
 
-  /* "raylib.pyx":1538
+  /* "raylib.pyx":1652
  *     BeginBlendMode(mode)
  * 
  * def end_blend_mode() -> None:             # <<<<<<<<<<<<<<
@@ -25413,7 +26381,7 @@ static PyObject *__pyx_pf_6raylib_140end_blend_mode(CYTHON_UNUSED PyObject *__py
   return __pyx_r;
 }
 
-/* "raylib.pyx":1541
+/* "raylib.pyx":1655
  *     EndBlendMode()
  * 
  * def begin_scissor_mode(int x, int y, int width, int height) -> None:             # <<<<<<<<<<<<<<
@@ -25462,23 +26430,23 @@ static PyObject *__pyx_pw_6raylib_143begin_scissor_mode(PyObject *__pyx_self, Py
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_y)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("begin_scissor_mode", 1, 4, 4, 1); __PYX_ERR(0, 1541, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("begin_scissor_mode", 1, 4, 4, 1); __PYX_ERR(0, 1655, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_width)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("begin_scissor_mode", 1, 4, 4, 2); __PYX_ERR(0, 1541, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("begin_scissor_mode", 1, 4, 4, 2); __PYX_ERR(0, 1655, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_height)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("begin_scissor_mode", 1, 4, 4, 3); __PYX_ERR(0, 1541, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("begin_scissor_mode", 1, 4, 4, 3); __PYX_ERR(0, 1655, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "begin_scissor_mode") < 0)) __PYX_ERR(0, 1541, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "begin_scissor_mode") < 0)) __PYX_ERR(0, 1655, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
       goto __pyx_L5_argtuple_error;
@@ -25488,14 +26456,14 @@ static PyObject *__pyx_pw_6raylib_143begin_scissor_mode(PyObject *__pyx_self, Py
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
       values[3] = PyTuple_GET_ITEM(__pyx_args, 3);
     }
-    __pyx_v_x = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_x == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1541, __pyx_L3_error)
-    __pyx_v_y = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_y == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1541, __pyx_L3_error)
-    __pyx_v_width = __Pyx_PyInt_As_int(values[2]); if (unlikely((__pyx_v_width == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1541, __pyx_L3_error)
-    __pyx_v_height = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_height == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1541, __pyx_L3_error)
+    __pyx_v_x = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_x == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1655, __pyx_L3_error)
+    __pyx_v_y = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_y == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1655, __pyx_L3_error)
+    __pyx_v_width = __Pyx_PyInt_As_int(values[2]); if (unlikely((__pyx_v_width == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1655, __pyx_L3_error)
+    __pyx_v_height = __Pyx_PyInt_As_int(values[3]); if (unlikely((__pyx_v_height == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1655, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("begin_scissor_mode", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1541, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("begin_scissor_mode", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1655, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.begin_scissor_mode", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -25513,7 +26481,7 @@ static PyObject *__pyx_pf_6raylib_142begin_scissor_mode(CYTHON_UNUSED PyObject *
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("begin_scissor_mode", 0);
 
-  /* "raylib.pyx":1542
+  /* "raylib.pyx":1656
  * 
  * def begin_scissor_mode(int x, int y, int width, int height) -> None:
  *     BeginScissorMode(x, y, width, height)             # <<<<<<<<<<<<<<
@@ -25522,7 +26490,7 @@ static PyObject *__pyx_pf_6raylib_142begin_scissor_mode(CYTHON_UNUSED PyObject *
  */
   BeginScissorMode(__pyx_v_x, __pyx_v_y, __pyx_v_width, __pyx_v_height);
 
-  /* "raylib.pyx":1541
+  /* "raylib.pyx":1655
  *     EndBlendMode()
  * 
  * def begin_scissor_mode(int x, int y, int width, int height) -> None:             # <<<<<<<<<<<<<<
@@ -25537,7 +26505,7 @@ static PyObject *__pyx_pf_6raylib_142begin_scissor_mode(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "raylib.pyx":1544
+/* "raylib.pyx":1658
  *     BeginScissorMode(x, y, width, height)
  * 
  * def end_scissor_mode() -> None:             # <<<<<<<<<<<<<<
@@ -25564,7 +26532,7 @@ static PyObject *__pyx_pf_6raylib_144end_scissor_mode(CYTHON_UNUSED PyObject *__
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("end_scissor_mode", 0);
 
-  /* "raylib.pyx":1545
+  /* "raylib.pyx":1659
  * 
  * def end_scissor_mode() -> None:
  *     EndScissorMode()             # <<<<<<<<<<<<<<
@@ -25573,7 +26541,7 @@ static PyObject *__pyx_pf_6raylib_144end_scissor_mode(CYTHON_UNUSED PyObject *__
  */
   EndScissorMode();
 
-  /* "raylib.pyx":1544
+  /* "raylib.pyx":1658
  *     BeginScissorMode(x, y, width, height)
  * 
  * def end_scissor_mode() -> None:             # <<<<<<<<<<<<<<
@@ -25588,7 +26556,7 @@ static PyObject *__pyx_pf_6raylib_144end_scissor_mode(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1547
+/* "raylib.pyx":1661
  *     EndScissorMode()
  * 
  * def begin_vr_stereo_mode(CyVrStereoConfig config) -> None:             # <<<<<<<<<<<<<<
@@ -25606,7 +26574,7 @@ static PyObject *__pyx_pw_6raylib_147begin_vr_stereo_mode(PyObject *__pyx_self, 
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("begin_vr_stereo_mode (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_config), __pyx_ptype_6raylib_CyVrStereoConfig, 1, "config", 0))) __PYX_ERR(0, 1547, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_config), __pyx_ptype_6raylib_CyVrStereoConfig, 1, "config", 0))) __PYX_ERR(0, 1661, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_146begin_vr_stereo_mode(__pyx_self, ((struct __pyx_obj_6raylib_CyVrStereoConfig *)__pyx_v_config));
 
   /* function exit code */
@@ -25623,7 +26591,7 @@ static PyObject *__pyx_pf_6raylib_146begin_vr_stereo_mode(CYTHON_UNUSED PyObject
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("begin_vr_stereo_mode", 0);
 
-  /* "raylib.pyx":1548
+  /* "raylib.pyx":1662
  * 
  * def begin_vr_stereo_mode(CyVrStereoConfig config) -> None:
  *     BeginVrStereoMode(config._vr_stereo_config)             # <<<<<<<<<<<<<<
@@ -25632,7 +26600,7 @@ static PyObject *__pyx_pf_6raylib_146begin_vr_stereo_mode(CYTHON_UNUSED PyObject
  */
   BeginVrStereoMode(__pyx_v_config->_vr_stereo_config);
 
-  /* "raylib.pyx":1547
+  /* "raylib.pyx":1661
  *     EndScissorMode()
  * 
  * def begin_vr_stereo_mode(CyVrStereoConfig config) -> None:             # <<<<<<<<<<<<<<
@@ -25647,7 +26615,7 @@ static PyObject *__pyx_pf_6raylib_146begin_vr_stereo_mode(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "raylib.pyx":1550
+/* "raylib.pyx":1664
  *     BeginVrStereoMode(config._vr_stereo_config)
  * 
  * def end_vr_stereo_mode() -> None:             # <<<<<<<<<<<<<<
@@ -25674,7 +26642,7 @@ static PyObject *__pyx_pf_6raylib_148end_vr_stereo_mode(CYTHON_UNUSED PyObject *
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("end_vr_stereo_mode", 0);
 
-  /* "raylib.pyx":1551
+  /* "raylib.pyx":1665
  * 
  * def end_vr_stereo_mode() -> None:
  *     EndVrStereoMode()             # <<<<<<<<<<<<<<
@@ -25683,7 +26651,7 @@ static PyObject *__pyx_pf_6raylib_148end_vr_stereo_mode(CYTHON_UNUSED PyObject *
  */
   EndVrStereoMode();
 
-  /* "raylib.pyx":1550
+  /* "raylib.pyx":1664
  *     BeginVrStereoMode(config._vr_stereo_config)
  * 
  * def end_vr_stereo_mode() -> None:             # <<<<<<<<<<<<<<
@@ -25698,7 +26666,7 @@ static PyObject *__pyx_pf_6raylib_148end_vr_stereo_mode(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "raylib.pyx":1645
+/* "raylib.pyx":1759
  * #cdef int GetMouseX()                                    # Get mouse position X
  * 
  * def get_mouse_x() -> int:             # <<<<<<<<<<<<<<
@@ -25729,7 +26697,7 @@ static PyObject *__pyx_pf_6raylib_150get_mouse_x(CYTHON_UNUSED PyObject *__pyx_s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_mouse_x", 0);
 
-  /* "raylib.pyx":1646
+  /* "raylib.pyx":1760
  * 
  * def get_mouse_x() -> int:
  *     return GetMouseX()             # <<<<<<<<<<<<<<
@@ -25737,13 +26705,13 @@ static PyObject *__pyx_pf_6raylib_150get_mouse_x(CYTHON_UNUSED PyObject *__pyx_s
  * #cdef int GetMouseY()                                    # Get mouse position Y
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetMouseX()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1646, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetMouseX()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1760, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1645
+  /* "raylib.pyx":1759
  * #cdef int GetMouseX()                                    # Get mouse position X
  * 
  * def get_mouse_x() -> int:             # <<<<<<<<<<<<<<
@@ -25762,7 +26730,7 @@ static PyObject *__pyx_pf_6raylib_150get_mouse_x(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "raylib.pyx":1649
+/* "raylib.pyx":1763
  * 
  * #cdef int GetMouseY()                                    # Get mouse position Y
  * def get_mouse_y() -> int:             # <<<<<<<<<<<<<<
@@ -25793,7 +26761,7 @@ static PyObject *__pyx_pf_6raylib_152get_mouse_y(CYTHON_UNUSED PyObject *__pyx_s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_mouse_y", 0);
 
-  /* "raylib.pyx":1650
+  /* "raylib.pyx":1764
  * #cdef int GetMouseY()                                    # Get mouse position Y
  * def get_mouse_y() -> int:
  *     return GetMouseY()             # <<<<<<<<<<<<<<
@@ -25801,13 +26769,13 @@ static PyObject *__pyx_pf_6raylib_152get_mouse_y(CYTHON_UNUSED PyObject *__pyx_s
  * #cdef Vector2 GetMousePosition()                         # Get mouse position XY
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetMouseY()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1650, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetMouseY()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1764, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1649
+  /* "raylib.pyx":1763
  * 
  * #cdef int GetMouseY()                                    # Get mouse position Y
  * def get_mouse_y() -> int:             # <<<<<<<<<<<<<<
@@ -25826,7 +26794,7 @@ static PyObject *__pyx_pf_6raylib_152get_mouse_y(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "raylib.pyx":1653
+/* "raylib.pyx":1767
  * 
  * #cdef Vector2 GetMousePosition()                         # Get mouse position XY
  * def get_mouse_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -25858,20 +26826,20 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_154
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_mouse_position", 0);
 
-  /* "raylib.pyx":1654
+  /* "raylib.pyx":1768
  * #cdef Vector2 GetMousePosition()                         # Get mouse position XY
  * def get_mouse_position() -> raymath.CyVector2:
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)             # <<<<<<<<<<<<<<
  *     vec._vector = GetMousePosition()
  *     return vec
  */
-  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1654, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1768, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 1654, __pyx_L1_error)
+  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 1768, __pyx_L1_error)
   __pyx_v_vec = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1655
+  /* "raylib.pyx":1769
  * def get_mouse_position() -> raymath.CyVector2:
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetMousePosition()             # <<<<<<<<<<<<<<
@@ -25880,7 +26848,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_154
  */
   __pyx_v_vec->_vector = GetMousePosition();
 
-  /* "raylib.pyx":1656
+  /* "raylib.pyx":1770
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetMousePosition()
  *     return vec             # <<<<<<<<<<<<<<
@@ -25892,7 +26860,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_154
   __pyx_r = __pyx_v_vec;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1653
+  /* "raylib.pyx":1767
  * 
  * #cdef Vector2 GetMousePosition()                         # Get mouse position XY
  * def get_mouse_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -25912,7 +26880,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_154
   return __pyx_r;
 }
 
-/* "raylib.pyx":1659
+/* "raylib.pyx":1773
  * 
  * #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
  * def get_mouse_delta() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -25944,20 +26912,20 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_156
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_mouse_delta", 0);
 
-  /* "raylib.pyx":1660
+  /* "raylib.pyx":1774
  * #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
  * def get_mouse_delta() -> raymath.CyVector2:
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)             # <<<<<<<<<<<<<<
  *     vec._vector = GetMouseDelta()
  *     return vec
  */
-  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1660, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1774, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 1660, __pyx_L1_error)
+  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 1774, __pyx_L1_error)
   __pyx_v_vec = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1661
+  /* "raylib.pyx":1775
  * def get_mouse_delta() -> raymath.CyVector2:
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetMouseDelta()             # <<<<<<<<<<<<<<
@@ -25966,7 +26934,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_156
  */
   __pyx_v_vec->_vector = GetMouseDelta();
 
-  /* "raylib.pyx":1662
+  /* "raylib.pyx":1776
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetMouseDelta()
  *     return vec             # <<<<<<<<<<<<<<
@@ -25978,7 +26946,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_156
   __pyx_r = __pyx_v_vec;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1659
+  /* "raylib.pyx":1773
  * 
  * #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
  * def get_mouse_delta() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -25998,7 +26966,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_156
   return __pyx_r;
 }
 
-/* "raylib.pyx":1664
+/* "raylib.pyx":1778
  *     return vec
  * #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
  * def set_mouse_position(int x, int y) -> None:             # <<<<<<<<<<<<<<
@@ -26041,11 +27009,11 @@ static PyObject *__pyx_pw_6raylib_159set_mouse_position(PyObject *__pyx_self, Py
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_y)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_mouse_position", 1, 2, 2, 1); __PYX_ERR(0, 1664, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_mouse_position", 1, 2, 2, 1); __PYX_ERR(0, 1778, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_mouse_position") < 0)) __PYX_ERR(0, 1664, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_mouse_position") < 0)) __PYX_ERR(0, 1778, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -26053,12 +27021,12 @@ static PyObject *__pyx_pw_6raylib_159set_mouse_position(PyObject *__pyx_self, Py
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_x = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_x == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1664, __pyx_L3_error)
-    __pyx_v_y = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_y == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1664, __pyx_L3_error)
+    __pyx_v_x = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_x == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1778, __pyx_L3_error)
+    __pyx_v_y = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_y == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1778, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_mouse_position", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1664, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_mouse_position", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1778, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.set_mouse_position", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -26076,7 +27044,7 @@ static PyObject *__pyx_pf_6raylib_158set_mouse_position(CYTHON_UNUSED PyObject *
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_mouse_position", 0);
 
-  /* "raylib.pyx":1665
+  /* "raylib.pyx":1779
  * #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
  * def set_mouse_position(int x, int y) -> None:
  *     SetMousePosition(x, y)             # <<<<<<<<<<<<<<
@@ -26085,7 +27053,7 @@ static PyObject *__pyx_pf_6raylib_158set_mouse_position(CYTHON_UNUSED PyObject *
  */
   SetMousePosition(__pyx_v_x, __pyx_v_y);
 
-  /* "raylib.pyx":1664
+  /* "raylib.pyx":1778
  *     return vec
  * #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
  * def set_mouse_position(int x, int y) -> None:             # <<<<<<<<<<<<<<
@@ -26100,7 +27068,7 @@ static PyObject *__pyx_pf_6raylib_158set_mouse_position(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "raylib.pyx":1668
+/* "raylib.pyx":1782
  * 
  * #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
  * def set_mouse_offset(int offset_x, int offset_y) -> None:             # <<<<<<<<<<<<<<
@@ -26143,11 +27111,11 @@ static PyObject *__pyx_pw_6raylib_161set_mouse_offset(PyObject *__pyx_self, PyOb
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_offset_y)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_mouse_offset", 1, 2, 2, 1); __PYX_ERR(0, 1668, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_mouse_offset", 1, 2, 2, 1); __PYX_ERR(0, 1782, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_mouse_offset") < 0)) __PYX_ERR(0, 1668, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_mouse_offset") < 0)) __PYX_ERR(0, 1782, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -26155,12 +27123,12 @@ static PyObject *__pyx_pw_6raylib_161set_mouse_offset(PyObject *__pyx_self, PyOb
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_offset_x = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_offset_x == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1668, __pyx_L3_error)
-    __pyx_v_offset_y = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_offset_y == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1668, __pyx_L3_error)
+    __pyx_v_offset_x = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_offset_x == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1782, __pyx_L3_error)
+    __pyx_v_offset_y = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_offset_y == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1782, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_mouse_offset", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1668, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_mouse_offset", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1782, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.set_mouse_offset", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -26178,7 +27146,7 @@ static PyObject *__pyx_pf_6raylib_160set_mouse_offset(CYTHON_UNUSED PyObject *__
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_mouse_offset", 0);
 
-  /* "raylib.pyx":1669
+  /* "raylib.pyx":1783
  * #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
  * def set_mouse_offset(int offset_x, int offset_y) -> None:
  *     SetMouseOffset(offset_x, offset_y)             # <<<<<<<<<<<<<<
@@ -26187,7 +27155,7 @@ static PyObject *__pyx_pf_6raylib_160set_mouse_offset(CYTHON_UNUSED PyObject *__
  */
   SetMouseOffset(__pyx_v_offset_x, __pyx_v_offset_y);
 
-  /* "raylib.pyx":1668
+  /* "raylib.pyx":1782
  * 
  * #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
  * def set_mouse_offset(int offset_x, int offset_y) -> None:             # <<<<<<<<<<<<<<
@@ -26202,7 +27170,7 @@ static PyObject *__pyx_pf_6raylib_160set_mouse_offset(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1672
+/* "raylib.pyx":1786
  * 
  * #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
  * def set_mouse_scale(float scale_x, float scale_y) -> None:             # <<<<<<<<<<<<<<
@@ -26245,11 +27213,11 @@ static PyObject *__pyx_pw_6raylib_163set_mouse_scale(PyObject *__pyx_self, PyObj
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_scale_y)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_mouse_scale", 1, 2, 2, 1); __PYX_ERR(0, 1672, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_mouse_scale", 1, 2, 2, 1); __PYX_ERR(0, 1786, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_mouse_scale") < 0)) __PYX_ERR(0, 1672, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_mouse_scale") < 0)) __PYX_ERR(0, 1786, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -26257,12 +27225,12 @@ static PyObject *__pyx_pw_6raylib_163set_mouse_scale(PyObject *__pyx_self, PyObj
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_scale_x = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_scale_x == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 1672, __pyx_L3_error)
-    __pyx_v_scale_y = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_scale_y == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 1672, __pyx_L3_error)
+    __pyx_v_scale_x = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_scale_x == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 1786, __pyx_L3_error)
+    __pyx_v_scale_y = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_scale_y == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 1786, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_mouse_scale", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1672, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_mouse_scale", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1786, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.set_mouse_scale", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -26280,7 +27248,7 @@ static PyObject *__pyx_pf_6raylib_162set_mouse_scale(CYTHON_UNUSED PyObject *__p
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_mouse_scale", 0);
 
-  /* "raylib.pyx":1673
+  /* "raylib.pyx":1787
  * #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
  * def set_mouse_scale(float scale_x, float scale_y) -> None:
  *     SetMouseScale(scale_x, scale_y)             # <<<<<<<<<<<<<<
@@ -26289,7 +27257,7 @@ static PyObject *__pyx_pf_6raylib_162set_mouse_scale(CYTHON_UNUSED PyObject *__p
  */
   SetMouseScale(__pyx_v_scale_x, __pyx_v_scale_y);
 
-  /* "raylib.pyx":1672
+  /* "raylib.pyx":1786
  * 
  * #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
  * def set_mouse_scale(float scale_x, float scale_y) -> None:             # <<<<<<<<<<<<<<
@@ -26304,7 +27272,7 @@ static PyObject *__pyx_pf_6raylib_162set_mouse_scale(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "raylib.pyx":1676
+/* "raylib.pyx":1790
  * 
  * #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
  * def get_mouse_wheel_move() -> float:             # <<<<<<<<<<<<<<
@@ -26335,7 +27303,7 @@ static PyObject *__pyx_pf_6raylib_164get_mouse_wheel_move(CYTHON_UNUSED PyObject
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_mouse_wheel_move", 0);
 
-  /* "raylib.pyx":1677
+  /* "raylib.pyx":1791
  * #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
  * def get_mouse_wheel_move() -> float:
  *     return GetMouseWheelMove()             # <<<<<<<<<<<<<<
@@ -26343,13 +27311,13 @@ static PyObject *__pyx_pf_6raylib_164get_mouse_wheel_move(CYTHON_UNUSED PyObject
  * #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(GetMouseWheelMove()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1677, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(GetMouseWheelMove()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1791, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1676
+  /* "raylib.pyx":1790
  * 
  * #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
  * def get_mouse_wheel_move() -> float:             # <<<<<<<<<<<<<<
@@ -26368,7 +27336,7 @@ static PyObject *__pyx_pf_6raylib_164get_mouse_wheel_move(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "raylib.pyx":1680
+/* "raylib.pyx":1794
  * 
  * #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
  * def get_mouse_wheel_move_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -26400,20 +27368,20 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_166
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_mouse_wheel_move_vector", 0);
 
-  /* "raylib.pyx":1681
+  /* "raylib.pyx":1795
  * #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
  * def get_mouse_wheel_move_vector() -> raymath.CyVector2:
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)             # <<<<<<<<<<<<<<
  *     vec._vector = GetMouseWheelMoveV()
  *     return vec
  */
-  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1681, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1795, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 1681, __pyx_L1_error)
+  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 1795, __pyx_L1_error)
   __pyx_v_vec = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1682
+  /* "raylib.pyx":1796
  * def get_mouse_wheel_move_vector() -> raymath.CyVector2:
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetMouseWheelMoveV()             # <<<<<<<<<<<<<<
@@ -26422,7 +27390,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_166
  */
   __pyx_v_vec->_vector = GetMouseWheelMoveV();
 
-  /* "raylib.pyx":1683
+  /* "raylib.pyx":1797
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetMouseWheelMoveV()
  *     return vec             # <<<<<<<<<<<<<<
@@ -26434,7 +27402,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_166
   __pyx_r = __pyx_v_vec;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1680
+  /* "raylib.pyx":1794
  * 
  * #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
  * def get_mouse_wheel_move_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -26454,7 +27422,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_166
   return __pyx_r;
 }
 
-/* "raylib.pyx":1686
+/* "raylib.pyx":1800
  * 
  * #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
  * def set_mouse_cursor(int cursor) -> None:             # <<<<<<<<<<<<<<
@@ -26474,7 +27442,7 @@ static PyObject *__pyx_pw_6raylib_169set_mouse_cursor(PyObject *__pyx_self, PyOb
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_mouse_cursor (wrapper)", 0);
   assert(__pyx_arg_cursor); {
-    __pyx_v_cursor = __Pyx_PyInt_As_int(__pyx_arg_cursor); if (unlikely((__pyx_v_cursor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1686, __pyx_L3_error)
+    __pyx_v_cursor = __Pyx_PyInt_As_int(__pyx_arg_cursor); if (unlikely((__pyx_v_cursor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1800, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -26494,7 +27462,7 @@ static PyObject *__pyx_pf_6raylib_168set_mouse_cursor(CYTHON_UNUSED PyObject *__
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_mouse_cursor", 0);
 
-  /* "raylib.pyx":1687
+  /* "raylib.pyx":1801
  * #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
  * def set_mouse_cursor(int cursor) -> None:
  *     SetMouseCursor(cursor)             # <<<<<<<<<<<<<<
@@ -26503,7 +27471,7 @@ static PyObject *__pyx_pf_6raylib_168set_mouse_cursor(CYTHON_UNUSED PyObject *__
  */
   SetMouseCursor(__pyx_v_cursor);
 
-  /* "raylib.pyx":1686
+  /* "raylib.pyx":1800
  * 
  * #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
  * def set_mouse_cursor(int cursor) -> None:             # <<<<<<<<<<<<<<
@@ -26518,7 +27486,7 @@ static PyObject *__pyx_pf_6raylib_168set_mouse_cursor(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1690
+/* "raylib.pyx":1804
  * 
  * #cdef int GetTouchX()                                    # Get touch position X for touch point 0 (relative to screen size)
  * def get_touch_x() -> int:             # <<<<<<<<<<<<<<
@@ -26549,7 +27517,7 @@ static PyObject *__pyx_pf_6raylib_170get_touch_x(CYTHON_UNUSED PyObject *__pyx_s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_touch_x", 0);
 
-  /* "raylib.pyx":1691
+  /* "raylib.pyx":1805
  * #cdef int GetTouchX()                                    # Get touch position X for touch point 0 (relative to screen size)
  * def get_touch_x() -> int:
  *     return GetTouchX()             # <<<<<<<<<<<<<<
@@ -26557,13 +27525,13 @@ static PyObject *__pyx_pf_6raylib_170get_touch_x(CYTHON_UNUSED PyObject *__pyx_s
  *     #cdef Vector2 GetTouchPosition(int index)                    # Get touch position XY for a touch point index (relative to screen size)
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetTouchX()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1691, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetTouchX()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1805, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":1690
+  /* "raylib.pyx":1804
  * 
  * #cdef int GetTouchX()                                    # Get touch position X for touch point 0 (relative to screen size)
  * def get_touch_x() -> int:             # <<<<<<<<<<<<<<
@@ -26582,7 +27550,7 @@ static PyObject *__pyx_pf_6raylib_170get_touch_x(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "raylib.pyx":1715
+/* "raylib.pyx":1829
  * 
  * 
  * def clear_background(CyColor color) -> None:             # <<<<<<<<<<<<<<
@@ -26600,7 +27568,7 @@ static PyObject *__pyx_pw_6raylib_173clear_background(PyObject *__pyx_self, PyOb
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("clear_background (wrapper)", 0);
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_color), __pyx_ptype_6raylib_CyColor, 1, "color", 0))) __PYX_ERR(0, 1715, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_color), __pyx_ptype_6raylib_CyColor, 1, "color", 0))) __PYX_ERR(0, 1829, __pyx_L1_error)
   __pyx_r = __pyx_pf_6raylib_172clear_background(__pyx_self, ((struct __pyx_obj_6raylib_CyColor *)__pyx_v_color));
 
   /* function exit code */
@@ -26617,7 +27585,7 @@ static PyObject *__pyx_pf_6raylib_172clear_background(CYTHON_UNUSED PyObject *__
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("clear_background", 0);
 
-  /* "raylib.pyx":1716
+  /* "raylib.pyx":1830
  * 
  * def clear_background(CyColor color) -> None:
  *     ClearBackground(color._color)             # <<<<<<<<<<<<<<
@@ -26626,7 +27594,7 @@ static PyObject *__pyx_pf_6raylib_172clear_background(CYTHON_UNUSED PyObject *__
  */
   ClearBackground(__pyx_v_color->_color);
 
-  /* "raylib.pyx":1715
+  /* "raylib.pyx":1829
  * 
  * 
  * def clear_background(CyColor color) -> None:             # <<<<<<<<<<<<<<
@@ -26641,7 +27609,7 @@ static PyObject *__pyx_pf_6raylib_172clear_background(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":1718
+/* "raylib.pyx":1832
  *     ClearBackground(color._color)
  * 
  * def draw_fps(int x, int y) -> None:             # <<<<<<<<<<<<<<
@@ -26683,11 +27651,11 @@ static PyObject *__pyx_pw_6raylib_175draw_fps(PyObject *__pyx_self, PyObject *__
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_y)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("draw_fps", 1, 2, 2, 1); __PYX_ERR(0, 1718, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("draw_fps", 1, 2, 2, 1); __PYX_ERR(0, 1832, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "draw_fps") < 0)) __PYX_ERR(0, 1718, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "draw_fps") < 0)) __PYX_ERR(0, 1832, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -26695,12 +27663,12 @@ static PyObject *__pyx_pw_6raylib_175draw_fps(PyObject *__pyx_self, PyObject *__
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_x = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_x == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1718, __pyx_L3_error)
-    __pyx_v_y = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_y == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1718, __pyx_L3_error)
+    __pyx_v_x = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_x == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1832, __pyx_L3_error)
+    __pyx_v_y = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_y == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 1832, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("draw_fps", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1718, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("draw_fps", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 1832, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("raylib.draw_fps", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -26718,14 +27686,14 @@ static PyObject *__pyx_pf_6raylib_174draw_fps(CYTHON_UNUSED PyObject *__pyx_self
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("draw_fps", 0);
 
-  /* "raylib.pyx":1719
+  /* "raylib.pyx":1833
  * 
  * def draw_fps(int x, int y) -> None:
  *     DrawFPS(x, y)             # <<<<<<<<<<<<<<
  */
   DrawFPS(__pyx_v_x, __pyx_v_y);
 
-  /* "raylib.pyx":1718
+  /* "raylib.pyx":1832
  *     ClearBackground(color._color)
  * 
  * def draw_fps(int x, int y) -> None:             # <<<<<<<<<<<<<<
@@ -26846,7 +27814,7 @@ static PyObject *__pyx_pf_6raylib_176__pyx_unpickle_CyLineBezier(CYTHON_UNUSED P
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -26922,7 +27890,7 @@ static PyObject *__pyx_pf_6raylib_176__pyx_unpickle_CyLineBezier(CYTHON_UNUSED P
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyLineBezier__set_state(<CyLineBezier> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyLineBezier), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyLineBezier), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -27228,7 +28196,7 @@ static PyObject *__pyx_pf_6raylib_178__pyx_unpickle_CyCircle(CYTHON_UNUSED PyObj
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -27304,7 +28272,7 @@ static PyObject *__pyx_pf_6raylib_178__pyx_unpickle_CyCircle(CYTHON_UNUSED PyObj
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyCircle__set_state(<CyCircle> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyCircle), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyCircle), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -27610,7 +28578,7 @@ static PyObject *__pyx_pf_6raylib_180__pyx_unpickle_CyEclypse(CYTHON_UNUSED PyOb
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -27686,7 +28654,7 @@ static PyObject *__pyx_pf_6raylib_180__pyx_unpickle_CyEclypse(CYTHON_UNUSED PyOb
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyEclypse__set_state(<CyEclypse> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyEclypse), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyEclypse), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -27992,7 +28960,7 @@ static PyObject *__pyx_pf_6raylib_182__pyx_unpickle_CyRing(CYTHON_UNUSED PyObjec
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -28068,7 +29036,7 @@ static PyObject *__pyx_pf_6raylib_182__pyx_unpickle_CyRing(CYTHON_UNUSED PyObjec
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyRing__set_state(<CyRing> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyRing), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyRing), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -28374,7 +29342,7 @@ static PyObject *__pyx_pf_6raylib_184__pyx_unpickle_CyTriangle(CYTHON_UNUSED PyO
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -28450,7 +29418,7 @@ static PyObject *__pyx_pf_6raylib_184__pyx_unpickle_CyTriangle(CYTHON_UNUSED PyO
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyTriangle__set_state(<CyTriangle> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyTriangle), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyTriangle), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -28756,7 +29724,7 @@ static PyObject *__pyx_pf_6raylib_186__pyx_unpickle_CyPolygon(CYTHON_UNUSED PyOb
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -28832,7 +29800,7 @@ static PyObject *__pyx_pf_6raylib_186__pyx_unpickle_CyPolygon(CYTHON_UNUSED PyOb
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyPolygon__set_state(<CyPolygon> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyPolygon), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyPolygon), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -29138,7 +30106,7 @@ static PyObject *__pyx_pf_6raylib_188__pyx_unpickle_CySpline(CYTHON_UNUSED PyObj
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -29214,7 +30182,7 @@ static PyObject *__pyx_pf_6raylib_188__pyx_unpickle_CySpline(CYTHON_UNUSED PyObj
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CySpline__set_state(<CySpline> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CySpline), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CySpline), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -29520,7 +30488,7 @@ static PyObject *__pyx_pf_6raylib_190__pyx_unpickle_CyLine3D(CYTHON_UNUSED PyObj
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -29596,7 +30564,7 @@ static PyObject *__pyx_pf_6raylib_190__pyx_unpickle_CyLine3D(CYTHON_UNUSED PyObj
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyLine3D__set_state(<CyLine3D> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyLine3D), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyLine3D), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -29902,7 +30870,7 @@ static PyObject *__pyx_pf_6raylib_192__pyx_unpickle_CyPoint3D(CYTHON_UNUSED PyOb
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -29978,7 +30946,7 @@ static PyObject *__pyx_pf_6raylib_192__pyx_unpickle_CyPoint3D(CYTHON_UNUSED PyOb
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyPoint3D__set_state(<CyPoint3D> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyPoint3D), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyPoint3D), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -30284,7 +31252,7 @@ static PyObject *__pyx_pf_6raylib_194__pyx_unpickle_CyCircle3D(CYTHON_UNUSED PyO
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -30360,7 +31328,7 @@ static PyObject *__pyx_pf_6raylib_194__pyx_unpickle_CyCircle3D(CYTHON_UNUSED PyO
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyCircle3D__set_state(<CyCircle3D> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyCircle3D), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyCircle3D), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -30666,7 +31634,7 @@ static PyObject *__pyx_pf_6raylib_196__pyx_unpickle_CyTriangle3D(CYTHON_UNUSED P
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -30742,7 +31710,7 @@ static PyObject *__pyx_pf_6raylib_196__pyx_unpickle_CyTriangle3D(CYTHON_UNUSED P
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyTriangle3D__set_state(<CyTriangle3D> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyTriangle3D), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyTriangle3D), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -31048,7 +32016,7 @@ static PyObject *__pyx_pf_6raylib_198__pyx_unpickle_CyTriangleStrip3D(CYTHON_UNU
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -31124,7 +32092,7 @@ static PyObject *__pyx_pf_6raylib_198__pyx_unpickle_CyTriangleStrip3D(CYTHON_UNU
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyTriangleStrip3D__set_state(<CyTriangleStrip3D> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyTriangleStrip3D), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyTriangleStrip3D), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -31430,7 +32398,7 @@ static PyObject *__pyx_pf_6raylib_200__pyx_unpickle_CyCube(CYTHON_UNUSED PyObjec
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -31506,7 +32474,7 @@ static PyObject *__pyx_pf_6raylib_200__pyx_unpickle_CyCube(CYTHON_UNUSED PyObjec
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyCube__set_state(<CyCube> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyCube), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyCube), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -31812,7 +32780,7 @@ static PyObject *__pyx_pf_6raylib_202__pyx_unpickle_CySphere(CYTHON_UNUSED PyObj
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -31888,7 +32856,7 @@ static PyObject *__pyx_pf_6raylib_202__pyx_unpickle_CySphere(CYTHON_UNUSED PyObj
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CySphere__set_state(<CySphere> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CySphere), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CySphere), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -32194,7 +33162,7 @@ static PyObject *__pyx_pf_6raylib_204__pyx_unpickle_CyCylinder(CYTHON_UNUSED PyO
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -32270,7 +33238,7 @@ static PyObject *__pyx_pf_6raylib_204__pyx_unpickle_CyCylinder(CYTHON_UNUSED PyO
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyCylinder__set_state(<CyCylinder> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyCylinder), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyCylinder), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -32576,7 +33544,7 @@ static PyObject *__pyx_pf_6raylib_206__pyx_unpickle_CyCapsule(CYTHON_UNUSED PyOb
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -32652,7 +33620,7 @@ static PyObject *__pyx_pf_6raylib_206__pyx_unpickle_CyCapsule(CYTHON_UNUSED PyOb
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyCapsule__set_state(<CyCapsule> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyCapsule), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyCapsule), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -32958,7 +33926,7 @@ static PyObject *__pyx_pf_6raylib_208__pyx_unpickle_CyPlane(CYTHON_UNUSED PyObje
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -33034,7 +34002,7 @@ static PyObject *__pyx_pf_6raylib_208__pyx_unpickle_CyPlane(CYTHON_UNUSED PyObje
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyPlane__set_state(<CyPlane> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyPlane), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyPlane), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -33340,7 +34308,7 @@ static PyObject *__pyx_pf_6raylib_210__pyx_unpickle_CyGrid(CYTHON_UNUSED PyObjec
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -33416,7 +34384,7 @@ static PyObject *__pyx_pf_6raylib_210__pyx_unpickle_CyGrid(CYTHON_UNUSED PyObjec
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyGrid__set_state(<CyGrid> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyGrid), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyGrid), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -33722,7 +34690,7 @@ static PyObject *__pyx_pf_6raylib_212__pyx_unpickle_CyAudioDeviceManager(CYTHON_
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__80, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__83, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -33798,7 +34766,7 @@ static PyObject *__pyx_pf_6raylib_212__pyx_unpickle_CyAudioDeviceManager(CYTHON_
  *     if __pyx_state is not None:
  *         __pyx_unpickle_CyAudioDeviceManager__set_state(<CyAudioDeviceManager> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyAudioDeviceManager), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyAudioDeviceManager), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -34158,7 +35126,7 @@ static PyObject *__Pyx_CFunc_void____int____int____const__char_______to_py(void 
  *         """wrap(width: 'int', height: 'int', title: 'const char *') -> 'void'"""
  *         f(width, height, title)
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_11cfunc_dot_to_py_57__Pyx_CFunc_void____int____int____const__char_______to_py_1wrap, 0, __pyx_n_s_Pyx_CFunc_void____int____int, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cfunc_to_py, __pyx_d, ((PyObject *)__pyx_codeobj__82)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 65, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_11cfunc_dot_to_py_57__Pyx_CFunc_void____int____int____const__char_______to_py_1wrap, 0, __pyx_n_s_Pyx_CFunc_void____int____int, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cfunc_to_py, __pyx_d, ((PyObject *)__pyx_codeobj__85)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 65, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_wrap = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -34295,7 +35263,7 @@ static PyObject *__Pyx_CFunc_void_______to_py(void (*__pyx_v_f)(void)) {
  *         """wrap() -> 'void'"""
  *         f()
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_11cfunc_dot_to_py_28__Pyx_CFunc_void_______to_py_1wrap, 0, __pyx_n_s_Pyx_CFunc_void_______to_py_loc, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cfunc_to_py, __pyx_d, ((PyObject *)__pyx_codeobj__83)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 65, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_11cfunc_dot_to_py_28__Pyx_CFunc_void_______to_py_1wrap, 0, __pyx_n_s_Pyx_CFunc_void_______to_py_loc, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cfunc_to_py, __pyx_d, ((PyObject *)__pyx_codeobj__86)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 65, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_wrap = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -34439,7 +35407,7 @@ static PyObject *__Pyx_CFunc_bint_______to_py(int (*__pyx_v_f)(void)) {
  *         """wrap() -> bool"""
  *         return f()
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_11cfunc_dot_to_py_28__Pyx_CFunc_bint_______to_py_1wrap, 0, __pyx_n_s_Pyx_CFunc_bint_______to_py_loc, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cfunc_to_py, __pyx_d, ((PyObject *)__pyx_codeobj__84)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 65, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_11cfunc_dot_to_py_28__Pyx_CFunc_bint_______to_py_1wrap, 0, __pyx_n_s_Pyx_CFunc_bint_______to_py_loc, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cfunc_to_py, __pyx_d, ((PyObject *)__pyx_codeobj__87)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 65, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_wrap = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -34600,7 +35568,7 @@ static Vector2 __pyx_convert__from_py_Vector2(PyObject *__pyx_v_obj) {
  *     result.x = value
  *     try:
  */
-      __pyx_t_9 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__85, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 19, __pyx_L6_except_error)
+      __pyx_t_9 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__88, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 19, __pyx_L6_except_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_Raise(__pyx_t_9, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -34702,7 +35670,7 @@ static Vector2 __pyx_convert__from_py_Vector2(PyObject *__pyx_v_obj) {
  *     result.y = value
  *     return result
  */
-      __pyx_t_9 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__86, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 24, __pyx_L14_except_error)
+      __pyx_t_9 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__89, NULL); if (unlikely(!__pyx_t_9)) __PYX_ERR(1, 24, __pyx_L14_except_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_Raise(__pyx_t_9, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -34971,7 +35939,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *         if itemsize <= 0:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__87, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 134, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__90, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 134, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -35003,7 +35971,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *         if not isinstance(format, bytes):
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__88, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 137, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__91, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 137, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -35130,7 +36098,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  * 
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__89, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 149, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__92, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 149, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -35404,7 +36372,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __
  * 
  *             if self.dtype_is_object:
  */
-      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__90, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 177, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__93, NULL); if (unlikely(!__pyx_t_10)) __PYX_ERR(1, 177, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_Raise(__pyx_t_10, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -35648,7 +36616,7 @@ static int __pyx_array___pyx_pf_15View_dot_MemoryView_5array_2__getbuffer__(stru
  *         info.buf = self.data
  *         info.len = self.len
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__91, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 193, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__94, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 193, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -36382,7 +37350,7 @@ static PyObject *__pyx_pf___pyx_array___reduce_cython__(CYTHON_UNUSED struct __p
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__92, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__95, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -36438,7 +37406,7 @@ static PyObject *__pyx_pf___pyx_array_2__setstate_cython__(CYTHON_UNUSED struct 
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__93, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__96, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -38167,7 +39135,7 @@ static int __pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_6__setit
  * 
  *         have_slices, index = _unellipsify(index, self.view.ndim)
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__94, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 420, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__97, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 420, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -39215,7 +40183,7 @@ static PyObject *__pyx_memoryview_convert_item_to_object(struct __pyx_memoryview
  *         else:
  *             if len(self.view.format) == 1:
  */
-      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__95, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 497, __pyx_L5_except_error)
+      __pyx_t_6 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__98, NULL); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 497, __pyx_L5_except_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_Raise(__pyx_t_6, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -39577,7 +40545,7 @@ static int __pyx_memoryview___pyx_pf_15View_dot_MemoryView_10memoryview_8__getbu
  * 
  *         if flags & PyBUF_ND:
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__96, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 522, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__99, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 522, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -40126,7 +41094,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView_10memoryview_7strides___get__(st
  * 
  *         return tuple([stride for stride in self.view.strides[:self.view.ndim]])
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__97, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 572, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__100, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 572, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -40243,7 +41211,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView_10memoryview_10suboffsets___get_
     __Pyx_XDECREF(__pyx_r);
     __pyx_t_2 = __Pyx_PyInt_From_int(__pyx_v_self->view.ndim); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 579, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PyNumber_Multiply(__pyx_tuple__98, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 579, __pyx_L1_error)
+    __pyx_t_3 = PyNumber_Multiply(__pyx_tuple__101, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 579, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_r = __pyx_t_3;
@@ -41281,7 +42249,7 @@ static PyObject *__pyx_pf___pyx_memoryview___reduce_cython__(CYTHON_UNUSED struc
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__99, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__102, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -41337,7 +42305,7 @@ static PyObject *__pyx_pf___pyx_memoryview_2__setstate_cython__(CYTHON_UNUSED st
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__100, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__103, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -41694,9 +42662,9 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
         __Pyx_GOTREF(__pyx_t_7);
         { Py_ssize_t __pyx_temp;
           for (__pyx_temp=0; __pyx_temp < ((__pyx_v_ndim - __pyx_t_8) + 1); __pyx_temp++) {
-            __Pyx_INCREF(__pyx_slice__101);
-            __Pyx_GIVEREF(__pyx_slice__101);
-            PyList_SET_ITEM(__pyx_t_7, __pyx_temp, __pyx_slice__101);
+            __Pyx_INCREF(__pyx_slice__104);
+            __Pyx_GIVEREF(__pyx_slice__104);
+            PyList_SET_ITEM(__pyx_t_7, __pyx_temp, __pyx_slice__104);
           }
         }
         __pyx_t_9 = __Pyx_PyList_Extend(__pyx_v_result, __pyx_t_7); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 684, __pyx_L1_error)
@@ -41729,7 +42697,7 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
  *         else:
  */
       /*else*/ {
-        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_result, __pyx_slice__101); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 687, __pyx_L1_error)
+        __pyx_t_9 = __Pyx_PyList_Append(__pyx_v_result, __pyx_slice__104); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 687, __pyx_L1_error)
       }
       __pyx_L7:;
 
@@ -41869,9 +42837,9 @@ static PyObject *_unellipsify(PyObject *__pyx_v_index, int __pyx_v_ndim) {
     __Pyx_GOTREF(__pyx_t_3);
     { Py_ssize_t __pyx_temp;
       for (__pyx_temp=0; __pyx_temp < __pyx_v_nslices; __pyx_temp++) {
-        __Pyx_INCREF(__pyx_slice__101);
-        __Pyx_GIVEREF(__pyx_slice__101);
-        PyList_SET_ITEM(__pyx_t_3, __pyx_temp, __pyx_slice__101);
+        __Pyx_INCREF(__pyx_slice__104);
+        __Pyx_GIVEREF(__pyx_slice__104);
+        PyList_SET_ITEM(__pyx_t_3, __pyx_temp, __pyx_slice__104);
       }
     }
     __pyx_t_9 = __Pyx_PyList_Extend(__pyx_v_result, __pyx_t_3); if (unlikely(__pyx_t_9 == ((int)-1))) __PYX_ERR(1, 698, __pyx_L1_error)
@@ -41998,7 +42966,7 @@ static PyObject *assert_direct_dimensions(Py_ssize_t *__pyx_v_suboffsets, int __
  * 
  * 
  */
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__102, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 705, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple__105, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 705, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_Raise(__pyx_t_5, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -44182,7 +45150,7 @@ static PyObject *__pyx_pf___pyx_memoryviewslice___reduce_cython__(CYTHON_UNUSED 
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__103, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__106, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -44238,7 +45206,7 @@ static PyObject *__pyx_pf___pyx_memoryviewslice_2__setstate_cython__(CYTHON_UNUS
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__104, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_TypeError, __pyx_tuple__107, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_Raise(__pyx_t_1, 0, 0, 0);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -47515,7 +48483,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView___pyx_unpickle_Enum(CYTHON_UNUSE
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__105, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__108, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_3 = (__pyx_t_2 != 0);
   if (__pyx_t_3) {
@@ -47591,7 +48559,7 @@ static PyObject *__pyx_pf_15View_dot_MemoryView___pyx_unpickle_Enum(CYTHON_UNUSE
  *     if __pyx_state is not None:
  *         __pyx_unpickle_Enum__set_state(<Enum> __pyx_result, __pyx_state)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_MemviewEnum_type), __pyx_n_s_new_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_MemviewEnum_type), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -48895,8 +49863,9 @@ static void __pyx_tp_dealloc_6raylib_CyFont(PyObject *o) {
 
 static PyMethodDef __pyx_methods_6raylib_CyFont[] = {
   {"load_font", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_6CyFont_3load_font, METH_VARARGS|METH_KEYWORDS, 0},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_6raylib_6CyFont_5__reduce_cython__, METH_NOARGS, 0},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_6raylib_6CyFont_7__setstate_cython__, METH_O, 0},
+  {"get_font_default", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_6CyFont_5get_font_default, METH_VARARGS|METH_KEYWORDS, 0},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_6raylib_6CyFont_7__reduce_cython__, METH_NOARGS, 0},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_6raylib_6CyFont_9__setstate_cython__, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -52331,8 +53300,11 @@ static PyObject *__pyx_tp_new_6raylib_CyText(PyTypeObject *t, PyObject *a, PyObj
   }
   if (unlikely(!o)) return 0;
   p = ((struct __pyx_obj_6raylib_CyText *)o);
-  p->pos = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)Py_None); Py_INCREF(Py_None);
-  p->color = ((struct __pyx_obj_6raylib_CyColor *)Py_None); Py_INCREF(Py_None);
+  p->_pos = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)Py_None); Py_INCREF(Py_None);
+  p->_color = ((struct __pyx_obj_6raylib_CyColor *)Py_None); Py_INCREF(Py_None);
+  p->_font = ((struct __pyx_obj_6raylib_CyFont *)Py_None); Py_INCREF(Py_None);
+  p->_origin = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)Py_None); Py_INCREF(Py_None);
+  p->_tint = ((struct __pyx_obj_6raylib_CyColor *)Py_None); Py_INCREF(Py_None);
   if (unlikely(__pyx_pw_6raylib_6CyText_1__cinit__(o, a, k) < 0)) goto bad;
   return o;
   bad:
@@ -52352,23 +53324,35 @@ static void __pyx_tp_dealloc_6raylib_CyText(PyObject *o) {
     PyObject *etype, *eval, *etb;
     PyErr_Fetch(&etype, &eval, &etb);
     __Pyx_SET_REFCNT(o, Py_REFCNT(o) + 1);
-    __pyx_pw_6raylib_6CyText_11__dealloc__(o);
+    __pyx_pw_6raylib_6CyText_9__dealloc__(o);
     __Pyx_SET_REFCNT(o, Py_REFCNT(o) - 1);
     PyErr_Restore(etype, eval, etb);
   }
-  Py_CLEAR(p->pos);
-  Py_CLEAR(p->color);
+  Py_CLEAR(p->_pos);
+  Py_CLEAR(p->_color);
+  Py_CLEAR(p->_font);
+  Py_CLEAR(p->_origin);
+  Py_CLEAR(p->_tint);
   (*Py_TYPE(o)->tp_free)(o);
 }
 
 static int __pyx_tp_traverse_6raylib_CyText(PyObject *o, visitproc v, void *a) {
   int e;
   struct __pyx_obj_6raylib_CyText *p = (struct __pyx_obj_6raylib_CyText *)o;
-  if (p->pos) {
-    e = (*v)(((PyObject *)p->pos), a); if (e) return e;
+  if (p->_pos) {
+    e = (*v)(((PyObject *)p->_pos), a); if (e) return e;
   }
-  if (p->color) {
-    e = (*v)(((PyObject *)p->color), a); if (e) return e;
+  if (p->_color) {
+    e = (*v)(((PyObject *)p->_color), a); if (e) return e;
+  }
+  if (p->_font) {
+    e = (*v)(((PyObject *)p->_font), a); if (e) return e;
+  }
+  if (p->_origin) {
+    e = (*v)(((PyObject *)p->_origin), a); if (e) return e;
+  }
+  if (p->_tint) {
+    e = (*v)(((PyObject *)p->_tint), a); if (e) return e;
   }
   return 0;
 }
@@ -52376,23 +53360,140 @@ static int __pyx_tp_traverse_6raylib_CyText(PyObject *o, visitproc v, void *a) {
 static int __pyx_tp_clear_6raylib_CyText(PyObject *o) {
   PyObject* tmp;
   struct __pyx_obj_6raylib_CyText *p = (struct __pyx_obj_6raylib_CyText *)o;
-  tmp = ((PyObject*)p->pos);
-  p->pos = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)Py_None); Py_INCREF(Py_None);
+  tmp = ((PyObject*)p->_pos);
+  p->_pos = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)Py_None); Py_INCREF(Py_None);
   Py_XDECREF(tmp);
-  tmp = ((PyObject*)p->color);
-  p->color = ((struct __pyx_obj_6raylib_CyColor *)Py_None); Py_INCREF(Py_None);
+  tmp = ((PyObject*)p->_color);
+  p->_color = ((struct __pyx_obj_6raylib_CyColor *)Py_None); Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  tmp = ((PyObject*)p->_font);
+  p->_font = ((struct __pyx_obj_6raylib_CyFont *)Py_None); Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  tmp = ((PyObject*)p->_origin);
+  p->_origin = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)Py_None); Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  tmp = ((PyObject*)p->_tint);
+  p->_tint = ((struct __pyx_obj_6raylib_CyColor *)Py_None); Py_INCREF(Py_None);
   Py_XDECREF(tmp);
   return 0;
 }
 
+static PyObject *__pyx_getprop_6raylib_6CyText_text(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_6raylib_6CyText_4text_1__get__(o);
+}
+
+static int __pyx_setprop_6raylib_6CyText_text(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+  if (v) {
+    return __pyx_pw_6raylib_6CyText_4text_3__set__(o, v);
+  }
+  else {
+    PyErr_SetString(PyExc_NotImplementedError, "__del__");
+    return -1;
+  }
+}
+
+static PyObject *__pyx_getprop_6raylib_6CyText_pos(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_6raylib_6CyText_3pos_1__get__(o);
+}
+
+static int __pyx_setprop_6raylib_6CyText_pos(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+  if (v) {
+    return __pyx_pw_6raylib_6CyText_3pos_3__set__(o, v);
+  }
+  else {
+    PyErr_SetString(PyExc_NotImplementedError, "__del__");
+    return -1;
+  }
+}
+
+static PyObject *__pyx_getprop_6raylib_6CyText_font_size(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_6raylib_6CyText_9font_size_1__get__(o);
+}
+
+static int __pyx_setprop_6raylib_6CyText_font_size(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+  if (v) {
+    return __pyx_pw_6raylib_6CyText_9font_size_3__set__(o, v);
+  }
+  else {
+    PyErr_SetString(PyExc_NotImplementedError, "__del__");
+    return -1;
+  }
+}
+
+static PyObject *__pyx_getprop_6raylib_6CyText_spacing(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_6raylib_6CyText_7spacing_1__get__(o);
+}
+
+static int __pyx_setprop_6raylib_6CyText_spacing(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+  if (v) {
+    return __pyx_pw_6raylib_6CyText_7spacing_3__set__(o, v);
+  }
+  else {
+    PyErr_SetString(PyExc_NotImplementedError, "__del__");
+    return -1;
+  }
+}
+
+static PyObject *__pyx_getprop_6raylib_6CyText_origin(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_6raylib_6CyText_6origin_1__get__(o);
+}
+
+static int __pyx_setprop_6raylib_6CyText_origin(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+  if (v) {
+    return __pyx_pw_6raylib_6CyText_6origin_3__set__(o, v);
+  }
+  else {
+    PyErr_SetString(PyExc_NotImplementedError, "__del__");
+    return -1;
+  }
+}
+
+static PyObject *__pyx_getprop_6raylib_6CyText_rotation(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_6raylib_6CyText_8rotation_1__get__(o);
+}
+
+static int __pyx_setprop_6raylib_6CyText_rotation(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+  if (v) {
+    return __pyx_pw_6raylib_6CyText_8rotation_3__set__(o, v);
+  }
+  else {
+    PyErr_SetString(PyExc_NotImplementedError, "__del__");
+    return -1;
+  }
+}
+
+static PyObject *__pyx_getprop_6raylib_6CyText_tint(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_6raylib_6CyText_4tint_1__get__(o);
+}
+
+static int __pyx_setprop_6raylib_6CyText_tint(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+  if (v) {
+    return __pyx_pw_6raylib_6CyText_4tint_3__set__(o, v);
+  }
+  else {
+    PyErr_SetString(PyExc_NotImplementedError, "__del__");
+    return -1;
+  }
+}
+
 static PyMethodDef __pyx_methods_6raylib_CyText[] = {
-  {"update_text", (PyCFunction)__pyx_pw_6raylib_6CyText_3update_text, METH_O, 0},
-  {"get_text", (PyCFunction)__pyx_pw_6raylib_6CyText_5get_text, METH_NOARGS, 0},
-  {"update_pos", (PyCFunction)__pyx_pw_6raylib_6CyText_7update_pos, METH_O, 0},
-  {"draw", (PyCFunction)__pyx_pw_6raylib_6CyText_9draw, METH_NOARGS, 0},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_6raylib_6CyText_13__reduce_cython__, METH_NOARGS, 0},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_6raylib_6CyText_15__setstate_cython__, METH_O, 0},
+  {"draw", (PyCFunction)__pyx_pw_6raylib_6CyText_3draw, METH_NOARGS, 0},
+  {"draw_pro", (PyCFunction)__pyx_pw_6raylib_6CyText_5draw_pro, METH_NOARGS, 0},
+  {"draw_ex", (PyCFunction)__pyx_pw_6raylib_6CyText_7draw_ex, METH_NOARGS, 0},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_6raylib_6CyText_11__reduce_cython__, METH_NOARGS, 0},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_6raylib_6CyText_13__setstate_cython__, METH_O, 0},
   {0, 0, 0, 0}
+};
+
+static struct PyGetSetDef __pyx_getsets_6raylib_CyText[] = {
+  {(char *)"text", __pyx_getprop_6raylib_6CyText_text, __pyx_setprop_6raylib_6CyText_text, (char *)0, 0},
+  {(char *)"pos", __pyx_getprop_6raylib_6CyText_pos, __pyx_setprop_6raylib_6CyText_pos, (char *)0, 0},
+  {(char *)"font_size", __pyx_getprop_6raylib_6CyText_font_size, __pyx_setprop_6raylib_6CyText_font_size, (char *)0, 0},
+  {(char *)"spacing", __pyx_getprop_6raylib_6CyText_spacing, __pyx_setprop_6raylib_6CyText_spacing, (char *)0, 0},
+  {(char *)"origin", __pyx_getprop_6raylib_6CyText_origin, __pyx_setprop_6raylib_6CyText_origin, (char *)0, 0},
+  {(char *)"rotation", __pyx_getprop_6raylib_6CyText_rotation, __pyx_setprop_6raylib_6CyText_rotation, (char *)0, 0},
+  {(char *)"tint", __pyx_getprop_6raylib_6CyText_tint, __pyx_setprop_6raylib_6CyText_tint, (char *)0, 0},
+  {0, 0, 0, 0, 0}
 };
 
 static PyTypeObject __pyx_type_6raylib_CyText = {
@@ -52435,7 +53536,7 @@ static PyTypeObject __pyx_type_6raylib_CyText = {
   0, /*tp_iternext*/
   __pyx_methods_6raylib_CyText, /*tp_methods*/
   0, /*tp_members*/
-  0, /*tp_getset*/
+  __pyx_getsets_6raylib_CyText, /*tp_getset*/
   0, /*tp_base*/
   0, /*tp_dict*/
   0, /*tp_descr_get*/
@@ -54794,7 +55895,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_Unable_to_convert_item_to_object, __pyx_k_Unable_to_convert_item_to_object, sizeof(__pyx_k_Unable_to_convert_item_to_object), 0, 0, 1, 0},
   {&__pyx_n_s_ValueError, __pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 0, 1, 1},
   {&__pyx_n_s_View_MemoryView, __pyx_k_View_MemoryView, sizeof(__pyx_k_View_MemoryView), 0, 0, 1, 1},
-  {&__pyx_kp_u__76, __pyx_k__76, sizeof(__pyx_k__76), 0, 1, 0, 0},
+  {&__pyx_kp_u__78, __pyx_k__78, sizeof(__pyx_k__78), 0, 1, 0, 0},
   {&__pyx_n_s_a, __pyx_k_a, sizeof(__pyx_k_a), 0, 0, 1, 1},
   {&__pyx_n_s_allocate_buffer, __pyx_k_allocate_buffer, sizeof(__pyx_k_allocate_buffer), 0, 0, 1, 1},
   {&__pyx_n_s_b, __pyx_k_b, sizeof(__pyx_k_b), 0, 0, 1, 1},
@@ -54852,6 +55953,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_error, __pyx_k_error, sizeof(__pyx_k_error), 0, 0, 1, 1},
   {&__pyx_n_s_flag, __pyx_k_flag, sizeof(__pyx_k_flag), 0, 0, 1, 1},
   {&__pyx_n_s_flags, __pyx_k_flags, sizeof(__pyx_k_flags), 0, 0, 1, 1},
+  {&__pyx_n_s_font, __pyx_k_font, sizeof(__pyx_k_font), 0, 0, 1, 1},
   {&__pyx_n_s_font_size, __pyx_k_font_size, sizeof(__pyx_k_font_size), 0, 0, 1, 1},
   {&__pyx_n_s_format, __pyx_k_format, sizeof(__pyx_k_format), 0, 0, 1, 1},
   {&__pyx_n_s_fortran, __pyx_k_fortran, sizeof(__pyx_k_fortran), 0, 0, 1, 1},
@@ -54861,6 +55963,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_get_clipboard_text, __pyx_k_get_clipboard_text, sizeof(__pyx_k_get_clipboard_text), 0, 0, 1, 1},
   {&__pyx_n_s_get_current_monitor, __pyx_k_get_current_monitor, sizeof(__pyx_k_get_current_monitor), 0, 0, 1, 1},
   {&__pyx_n_s_get_delta_time, __pyx_k_get_delta_time, sizeof(__pyx_k_get_delta_time), 0, 0, 1, 1},
+  {&__pyx_n_s_get_font_default, __pyx_k_get_font_default, sizeof(__pyx_k_get_font_default), 0, 0, 1, 1},
   {&__pyx_n_s_get_fps, __pyx_k_get_fps, sizeof(__pyx_k_get_fps), 0, 0, 1, 1},
   {&__pyx_n_s_get_frame_time, __pyx_k_get_frame_time, sizeof(__pyx_k_get_frame_time), 0, 0, 1, 1},
   {&__pyx_n_s_get_monitor_count, __pyx_k_get_monitor_count, sizeof(__pyx_k_get_monitor_count), 0, 0, 1, 1},
@@ -54926,14 +56029,14 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
   {&__pyx_n_s_name_2, __pyx_k_name_2, sizeof(__pyx_k_name_2), 0, 0, 1, 1},
   {&__pyx_n_s_ndim, __pyx_k_ndim, sizeof(__pyx_k_ndim), 0, 0, 1, 1},
-  {&__pyx_kp_u_new, __pyx_k_new, sizeof(__pyx_k_new), 0, 1, 0, 0},
-  {&__pyx_n_s_new_2, __pyx_k_new_2, sizeof(__pyx_k_new_2), 0, 0, 1, 1},
+  {&__pyx_n_s_new, __pyx_k_new, sizeof(__pyx_k_new), 0, 0, 1, 1},
   {&__pyx_kp_s_no_default___reduce___due_to_non, __pyx_k_no_default___reduce___due_to_non, sizeof(__pyx_k_no_default___reduce___due_to_non), 0, 0, 1, 0},
   {&__pyx_n_s_obj, __pyx_k_obj, sizeof(__pyx_k_obj), 0, 0, 1, 1},
   {&__pyx_n_s_offset_x, __pyx_k_offset_x, sizeof(__pyx_k_offset_x), 0, 0, 1, 1},
   {&__pyx_n_s_offset_y, __pyx_k_offset_y, sizeof(__pyx_k_offset_y), 0, 0, 1, 1},
   {&__pyx_n_s_opacity, __pyx_k_opacity, sizeof(__pyx_k_opacity), 0, 0, 1, 1},
   {&__pyx_n_s_orange, __pyx_k_orange, sizeof(__pyx_k_orange), 0, 0, 1, 1},
+  {&__pyx_n_s_origin, __pyx_k_origin, sizeof(__pyx_k_origin), 0, 0, 1, 1},
   {&__pyx_n_s_p1, __pyx_k_p1, sizeof(__pyx_k_p1), 0, 0, 1, 1},
   {&__pyx_n_s_p2, __pyx_k_p2, sizeof(__pyx_k_p2), 0, 0, 1, 1},
   {&__pyx_n_s_pack, __pyx_k_pack, sizeof(__pyx_k_pack), 0, 0, 1, 1},
@@ -54942,7 +56045,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_pink, __pyx_k_pink, sizeof(__pyx_k_pink), 0, 0, 1, 1},
   {&__pyx_n_s_points, __pyx_k_points, sizeof(__pyx_k_points), 0, 0, 1, 1},
   {&__pyx_n_s_pos, __pyx_k_pos, sizeof(__pyx_k_pos), 0, 0, 1, 1},
-  {&__pyx_n_s_print, __pyx_k_print, sizeof(__pyx_k_print), 0, 0, 1, 1},
   {&__pyx_n_s_purple, __pyx_k_purple, sizeof(__pyx_k_purple), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_PickleError, __pyx_k_pyx_PickleError, sizeof(__pyx_k_pyx_PickleError), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_checksum, __pyx_k_pyx_checksum, sizeof(__pyx_k_pyx_checksum), 0, 0, 1, 1},
@@ -54976,12 +56078,12 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_raylib, __pyx_k_raylib, sizeof(__pyx_k_raylib), 0, 0, 1, 1},
   {&__pyx_kp_s_raylib_pyx, __pyx_k_raylib_pyx, sizeof(__pyx_k_raylib_pyx), 0, 0, 1, 0},
   {&__pyx_n_s_raywhite, __pyx_k_raywhite, sizeof(__pyx_k_raywhite), 0, 0, 1, 1},
-  {&__pyx_kp_u_reallcate_new_mem_old_size, __pyx_k_reallcate_new_mem_old_size, sizeof(__pyx_k_reallcate_new_mem_old_size), 0, 1, 0, 0},
   {&__pyx_n_s_red, __pyx_k_red, sizeof(__pyx_k_red), 0, 0, 1, 1},
   {&__pyx_n_s_reduce, __pyx_k_reduce, sizeof(__pyx_k_reduce), 0, 0, 1, 1},
   {&__pyx_n_s_reduce_cython, __pyx_k_reduce_cython, sizeof(__pyx_k_reduce_cython), 0, 0, 1, 1},
   {&__pyx_n_s_reduce_ex, __pyx_k_reduce_ex, sizeof(__pyx_k_reduce_ex), 0, 0, 1, 1},
   {&__pyx_n_s_restore_window, __pyx_k_restore_window, sizeof(__pyx_k_restore_window), 0, 0, 1, 1},
+  {&__pyx_n_s_rotation, __pyx_k_rotation, sizeof(__pyx_k_rotation), 0, 0, 1, 1},
   {&__pyx_n_s_scale_x, __pyx_k_scale_x, sizeof(__pyx_k_scale_x), 0, 0, 1, 1},
   {&__pyx_n_s_scale_y, __pyx_k_scale_y, sizeof(__pyx_k_scale_y), 0, 0, 1, 1},
   {&__pyx_n_s_set_clipboard_text, __pyx_k_set_clipboard_text, sizeof(__pyx_k_set_clipboard_text), 0, 0, 1, 1},
@@ -55009,6 +56111,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_show_cursor, __pyx_k_show_cursor, sizeof(__pyx_k_show_cursor), 0, 0, 1, 1},
   {&__pyx_n_s_size, __pyx_k_size, sizeof(__pyx_k_size), 0, 0, 1, 1},
   {&__pyx_n_s_skyblue, __pyx_k_skyblue, sizeof(__pyx_k_skyblue), 0, 0, 1, 1},
+  {&__pyx_n_s_spacing, __pyx_k_spacing, sizeof(__pyx_k_spacing), 0, 0, 1, 1},
   {&__pyx_n_s_start, __pyx_k_start, sizeof(__pyx_k_start), 0, 0, 1, 1},
   {&__pyx_n_s_staticmethod, __pyx_k_staticmethod, sizeof(__pyx_k_staticmethod), 0, 0, 1, 1},
   {&__pyx_n_s_step, __pyx_k_step, sizeof(__pyx_k_step), 0, 0, 1, 1},
@@ -55023,6 +56126,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_text, __pyx_k_text, sizeof(__pyx_k_text), 0, 0, 1, 1},
   {&__pyx_n_s_thickness, __pyx_k_thickness, sizeof(__pyx_k_thickness), 0, 0, 1, 1},
+  {&__pyx_n_s_tint, __pyx_k_tint, sizeof(__pyx_k_tint), 0, 0, 1, 1},
   {&__pyx_n_s_title, __pyx_k_title, sizeof(__pyx_k_title), 0, 0, 1, 1},
   {&__pyx_n_s_toggle_borderless_window, __pyx_k_toggle_borderless_window, sizeof(__pyx_k_toggle_borderless_window), 0, 0, 1, 1},
   {&__pyx_n_s_toggle_fullscreen, __pyx_k_toggle_fullscreen, sizeof(__pyx_k_toggle_fullscreen), 0, 0, 1, 1},
@@ -55043,12 +56147,11 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_staticmethod = __Pyx_GetBuiltinName(__pyx_n_s_staticmethod); if (!__pyx_builtin_staticmethod) __PYX_ERR(0, 22, __pyx_L1_error)
+  __pyx_builtin_staticmethod = __Pyx_GetBuiltinName(__pyx_n_s_staticmethod); if (!__pyx_builtin_staticmethod) __PYX_ERR(0, 23, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
-  __pyx_builtin_NotImplementedError = __Pyx_GetBuiltinName(__pyx_n_s_NotImplementedError); if (!__pyx_builtin_NotImplementedError) __PYX_ERR(0, 250, __pyx_L1_error)
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 1056, __pyx_L1_error)
-  __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(0, 1147, __pyx_L1_error)
-  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_n_s_print); if (!__pyx_builtin_print) __PYX_ERR(0, 1163, __pyx_L1_error)
+  __pyx_builtin_NotImplementedError = __Pyx_GetBuiltinName(__pyx_n_s_NotImplementedError); if (!__pyx_builtin_NotImplementedError) __PYX_ERR(0, 251, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 1063, __pyx_L1_error)
+  __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_n_s_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(0, 1181, __pyx_L1_error)
   __pyx_builtin_KeyError = __Pyx_GetBuiltinName(__pyx_n_s_KeyError); if (!__pyx_builtin_KeyError) __PYX_ERR(1, 18, __pyx_L1_error)
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(1, 19, __pyx_L1_error)
   __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(1, 152, __pyx_L1_error)
@@ -55102,14 +56205,14 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "raylib.pyx":250
+  /* "raylib.pyx":251
  * 
  *     def __cinit__(self):
  *         raise NotImplementedError("Not Implemented Yet!")             # <<<<<<<<<<<<<<
  * 
  *     ## Image loading functions
  */
-  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_u_Not_Implemented_Yet); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 250, __pyx_L1_error)
+  __pyx_tuple__5 = PyTuple_Pack(1, __pyx_kp_u_Not_Implemented_Yet); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 251, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
 
@@ -55759,27 +56862,27 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__73);
   __Pyx_GIVEREF(__pyx_tuple__73);
 
-  /* "raylib.pyx":1147
- *         self.text[self.text_buffer_size] = 0
- *         if self.text is NULL:
+  /* "raylib.pyx":1181
+ *         self._text[self._text_buffer_size] = 0
+ *         if self._text is NULL:
  *             raise MemoryError("Failed to allocate memory for text")             # <<<<<<<<<<<<<<
  * 
- *         strcpy(self.text, text)
+ *         strcpy(self._text, text)
  */
-  __pyx_tuple__74 = PyTuple_Pack(1, __pyx_kp_u_Failed_to_allocate_memory_for_te); if (unlikely(!__pyx_tuple__74)) __PYX_ERR(0, 1147, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__74);
-  __Pyx_GIVEREF(__pyx_tuple__74);
+  __pyx_tuple__77 = PyTuple_Pack(1, __pyx_kp_u_Failed_to_allocate_memory_for_te); if (unlikely(!__pyx_tuple__77)) __PYX_ERR(0, 1181, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__77);
+  __Pyx_GIVEREF(__pyx_tuple__77);
 
-  /* "raylib.pyx":1171
- *                 self.text = <char*>realloc(self.text, new_buffer_size * sizeof(char))
- *                 if self.text is NULL:
+  /* "raylib.pyx":1213
+ *                 self._text = <char*>realloc(self._text, new_buffer_size * sizeof(char))
+ *                 if self._text is NULL:
  *                     raise MemoryError("Failed to reallocate memory for text")             # <<<<<<<<<<<<<<
- *                 self.text_buffer_size = new_buffer_size
- *             print(f"new {self.text_buffer_size}")
+ *                 self._text_buffer_size = new_buffer_size
+ *             strcpy(self._text, new_text)
  */
-  __pyx_tuple__75 = PyTuple_Pack(1, __pyx_kp_u_Failed_to_reallocate_memory_for); if (unlikely(!__pyx_tuple__75)) __PYX_ERR(0, 1171, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__75);
-  __Pyx_GIVEREF(__pyx_tuple__75);
+  __pyx_tuple__79 = PyTuple_Pack(1, __pyx_kp_u_Failed_to_reallocate_memory_for); if (unlikely(!__pyx_tuple__79)) __PYX_ERR(0, 1213, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__79);
+  __Pyx_GIVEREF(__pyx_tuple__79);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -55787,29 +56890,29 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__77 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__77)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__77);
-  __Pyx_GIVEREF(__pyx_tuple__77);
+  __pyx_tuple__80 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__80)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__80);
+  __Pyx_GIVEREF(__pyx_tuple__80);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__78 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__78)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__78);
-  __Pyx_GIVEREF(__pyx_tuple__78);
+  __pyx_tuple__81 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__81)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__81);
+  __Pyx_GIVEREF(__pyx_tuple__81);
 
-  /* "raylib.pyx":1362
+  /* "raylib.pyx":1476
  * 
  * def set_windows_icons(images: list[CyImage]) -> None:
  *     raise NotImplementedError("set_windows_icons is not implemented yet, use set_window_icon")             # <<<<<<<<<<<<<<
  *     #cdef int count = len(images)
  * 
  */
-  __pyx_tuple__79 = PyTuple_Pack(1, __pyx_kp_u_set_windows_icons_is_not_impleme); if (unlikely(!__pyx_tuple__79)) __PYX_ERR(0, 1362, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__79);
-  __Pyx_GIVEREF(__pyx_tuple__79);
+  __pyx_tuple__82 = PyTuple_Pack(1, __pyx_kp_u_set_windows_icons_is_not_impleme); if (unlikely(!__pyx_tuple__82)) __PYX_ERR(0, 1476, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__82);
+  __Pyx_GIVEREF(__pyx_tuple__82);
 
   /* "(tree fragment)":4
  *     cdef object __pyx_PickleError
@@ -55818,9 +56921,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         from pickle import PickleError as __pyx_PickleError
  *         raise __pyx_PickleError("Incompatible checksums (0x%x vs (0xd41d8cd, 0xe3b0c44, 0xda39a3e) = ())" % __pyx_checksum)
  */
-  __pyx_tuple__80 = PyTuple_Pack(3, __pyx_int_222419149, __pyx_int_238750788, __pyx_int_228825662); if (unlikely(!__pyx_tuple__80)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__80);
-  __Pyx_GIVEREF(__pyx_tuple__80);
+  __pyx_tuple__83 = PyTuple_Pack(3, __pyx_int_222419149, __pyx_int_238750788, __pyx_int_228825662); if (unlikely(!__pyx_tuple__83)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__83);
+  __Pyx_GIVEREF(__pyx_tuple__83);
 
   /* "cfunc.to_py":65
  * @cname("__Pyx_CFunc_void____int____int____const__char_______to_py")
@@ -55829,12 +56932,12 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         """wrap(width: 'int', height: 'int', title: 'const char *') -> 'void'"""
  *         f(width, height, title)
  */
-  __pyx_tuple__81 = PyTuple_Pack(3, __pyx_n_s_width, __pyx_n_s_height, __pyx_n_s_title); if (unlikely(!__pyx_tuple__81)) __PYX_ERR(1, 65, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__81);
-  __Pyx_GIVEREF(__pyx_tuple__81);
-  __pyx_codeobj__82 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__81, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_wrap, 65, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__82)) __PYX_ERR(1, 65, __pyx_L1_error)
-  __pyx_codeobj__83 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_wrap, 65, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__83)) __PYX_ERR(1, 65, __pyx_L1_error)
-  __pyx_codeobj__84 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_wrap, 65, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__84)) __PYX_ERR(1, 65, __pyx_L1_error)
+  __pyx_tuple__84 = PyTuple_Pack(3, __pyx_n_s_width, __pyx_n_s_height, __pyx_n_s_title); if (unlikely(!__pyx_tuple__84)) __PYX_ERR(1, 65, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__84);
+  __Pyx_GIVEREF(__pyx_tuple__84);
+  __pyx_codeobj__85 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__84, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_wrap, 65, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__85)) __PYX_ERR(1, 65, __pyx_L1_error)
+  __pyx_codeobj__86 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_wrap, 65, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__86)) __PYX_ERR(1, 65, __pyx_L1_error)
+  __pyx_codeobj__87 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_wrap, 65, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__87)) __PYX_ERR(1, 65, __pyx_L1_error)
 
   /* "FromPyStructUtility":19
  *         value = obj['x']
@@ -55843,9 +56946,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     result.x = value
  *     try:
  */
-  __pyx_tuple__85 = PyTuple_Pack(1, __pyx_kp_s_No_value_specified_for_struct_at); if (unlikely(!__pyx_tuple__85)) __PYX_ERR(1, 19, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__85);
-  __Pyx_GIVEREF(__pyx_tuple__85);
+  __pyx_tuple__88 = PyTuple_Pack(1, __pyx_kp_s_No_value_specified_for_struct_at); if (unlikely(!__pyx_tuple__88)) __PYX_ERR(1, 19, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__88);
+  __Pyx_GIVEREF(__pyx_tuple__88);
 
   /* "FromPyStructUtility":24
  *         value = obj['y']
@@ -55854,9 +56957,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     result.y = value
  *     return result
  */
-  __pyx_tuple__86 = PyTuple_Pack(1, __pyx_kp_s_No_value_specified_for_struct_at_2); if (unlikely(!__pyx_tuple__86)) __PYX_ERR(1, 24, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__86);
-  __Pyx_GIVEREF(__pyx_tuple__86);
+  __pyx_tuple__89 = PyTuple_Pack(1, __pyx_kp_s_No_value_specified_for_struct_at_2); if (unlikely(!__pyx_tuple__89)) __PYX_ERR(1, 24, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__89);
+  __Pyx_GIVEREF(__pyx_tuple__89);
 
   /* "View.MemoryView":134
  * 
@@ -55865,9 +56968,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if itemsize <= 0:
  */
-  __pyx_tuple__87 = PyTuple_Pack(1, __pyx_kp_s_Empty_shape_tuple_for_cython_arr); if (unlikely(!__pyx_tuple__87)) __PYX_ERR(1, 134, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__87);
-  __Pyx_GIVEREF(__pyx_tuple__87);
+  __pyx_tuple__90 = PyTuple_Pack(1, __pyx_kp_s_Empty_shape_tuple_for_cython_arr); if (unlikely(!__pyx_tuple__90)) __PYX_ERR(1, 134, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__90);
+  __Pyx_GIVEREF(__pyx_tuple__90);
 
   /* "View.MemoryView":137
  * 
@@ -55876,9 +56979,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if not isinstance(format, bytes):
  */
-  __pyx_tuple__88 = PyTuple_Pack(1, __pyx_kp_s_itemsize_0_for_cython_array); if (unlikely(!__pyx_tuple__88)) __PYX_ERR(1, 137, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__88);
-  __Pyx_GIVEREF(__pyx_tuple__88);
+  __pyx_tuple__91 = PyTuple_Pack(1, __pyx_kp_s_itemsize_0_for_cython_array); if (unlikely(!__pyx_tuple__91)) __PYX_ERR(1, 137, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__91);
+  __Pyx_GIVEREF(__pyx_tuple__91);
 
   /* "View.MemoryView":149
  * 
@@ -55887,9 +56990,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__89 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_shape_and_str); if (unlikely(!__pyx_tuple__89)) __PYX_ERR(1, 149, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__89);
-  __Pyx_GIVEREF(__pyx_tuple__89);
+  __pyx_tuple__92 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_shape_and_str); if (unlikely(!__pyx_tuple__92)) __PYX_ERR(1, 149, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__92);
+  __Pyx_GIVEREF(__pyx_tuple__92);
 
   /* "View.MemoryView":177
  *             self.data = <char *>malloc(self.len)
@@ -55898,9 +57001,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *             if self.dtype_is_object:
  */
-  __pyx_tuple__90 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_array_data); if (unlikely(!__pyx_tuple__90)) __PYX_ERR(1, 177, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__90);
-  __Pyx_GIVEREF(__pyx_tuple__90);
+  __pyx_tuple__93 = PyTuple_Pack(1, __pyx_kp_s_unable_to_allocate_array_data); if (unlikely(!__pyx_tuple__93)) __PYX_ERR(1, 177, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__93);
+  __Pyx_GIVEREF(__pyx_tuple__93);
 
   /* "View.MemoryView":193
  *             bufmode = PyBUF_F_CONTIGUOUS | PyBUF_ANY_CONTIGUOUS
@@ -55909,9 +57012,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         info.buf = self.data
  *         info.len = self.len
  */
-  __pyx_tuple__91 = PyTuple_Pack(1, __pyx_kp_s_Can_only_create_a_buffer_that_is); if (unlikely(!__pyx_tuple__91)) __PYX_ERR(1, 193, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__91);
-  __Pyx_GIVEREF(__pyx_tuple__91);
+  __pyx_tuple__94 = PyTuple_Pack(1, __pyx_kp_s_Can_only_create_a_buffer_that_is); if (unlikely(!__pyx_tuple__94)) __PYX_ERR(1, 193, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__94);
+  __Pyx_GIVEREF(__pyx_tuple__94);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -55919,18 +57022,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__92 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__92)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__92);
-  __Pyx_GIVEREF(__pyx_tuple__92);
+  __pyx_tuple__95 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__95)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__95);
+  __Pyx_GIVEREF(__pyx_tuple__95);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__93 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__93)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__93);
-  __Pyx_GIVEREF(__pyx_tuple__93);
+  __pyx_tuple__96 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__96)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__96);
+  __Pyx_GIVEREF(__pyx_tuple__96);
 
   /* "View.MemoryView":420
  *     def __setitem__(memoryview self, object index, object value):
@@ -55939,9 +57042,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         have_slices, index = _unellipsify(index, self.view.ndim)
  */
-  __pyx_tuple__94 = PyTuple_Pack(1, __pyx_kp_s_Cannot_assign_to_read_only_memor); if (unlikely(!__pyx_tuple__94)) __PYX_ERR(1, 420, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__94);
-  __Pyx_GIVEREF(__pyx_tuple__94);
+  __pyx_tuple__97 = PyTuple_Pack(1, __pyx_kp_s_Cannot_assign_to_read_only_memor); if (unlikely(!__pyx_tuple__97)) __PYX_ERR(1, 420, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__97);
+  __Pyx_GIVEREF(__pyx_tuple__97);
 
   /* "View.MemoryView":497
  *             result = struct.unpack(self.view.format, bytesitem)
@@ -55950,9 +57053,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         else:
  *             if len(self.view.format) == 1:
  */
-  __pyx_tuple__95 = PyTuple_Pack(1, __pyx_kp_s_Unable_to_convert_item_to_object); if (unlikely(!__pyx_tuple__95)) __PYX_ERR(1, 497, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__95);
-  __Pyx_GIVEREF(__pyx_tuple__95);
+  __pyx_tuple__98 = PyTuple_Pack(1, __pyx_kp_s_Unable_to_convert_item_to_object); if (unlikely(!__pyx_tuple__98)) __PYX_ERR(1, 497, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__98);
+  __Pyx_GIVEREF(__pyx_tuple__98);
 
   /* "View.MemoryView":522
  *     def __getbuffer__(self, Py_buffer *info, int flags):
@@ -55961,9 +57064,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         if flags & PyBUF_ND:
  */
-  __pyx_tuple__96 = PyTuple_Pack(1, __pyx_kp_s_Cannot_create_writable_memory_vi); if (unlikely(!__pyx_tuple__96)) __PYX_ERR(1, 522, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__96);
-  __Pyx_GIVEREF(__pyx_tuple__96);
+  __pyx_tuple__99 = PyTuple_Pack(1, __pyx_kp_s_Cannot_create_writable_memory_vi); if (unlikely(!__pyx_tuple__99)) __PYX_ERR(1, 522, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__99);
+  __Pyx_GIVEREF(__pyx_tuple__99);
 
   /* "View.MemoryView":572
  *         if self.view.strides == NULL:
@@ -55972,9 +57075,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         return tuple([stride for stride in self.view.strides[:self.view.ndim]])
  */
-  __pyx_tuple__97 = PyTuple_Pack(1, __pyx_kp_s_Buffer_view_does_not_expose_stri); if (unlikely(!__pyx_tuple__97)) __PYX_ERR(1, 572, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__97);
-  __Pyx_GIVEREF(__pyx_tuple__97);
+  __pyx_tuple__100 = PyTuple_Pack(1, __pyx_kp_s_Buffer_view_does_not_expose_stri); if (unlikely(!__pyx_tuple__100)) __PYX_ERR(1, 572, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__100);
+  __Pyx_GIVEREF(__pyx_tuple__100);
 
   /* "View.MemoryView":579
  *     def suboffsets(self):
@@ -55983,12 +57086,12 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         return tuple([suboffset for suboffset in self.view.suboffsets[:self.view.ndim]])
  */
-  __pyx_tuple__98 = PyTuple_New(1); if (unlikely(!__pyx_tuple__98)) __PYX_ERR(1, 579, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__98);
+  __pyx_tuple__101 = PyTuple_New(1); if (unlikely(!__pyx_tuple__101)) __PYX_ERR(1, 579, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__101);
   __Pyx_INCREF(__pyx_int_neg_1);
   __Pyx_GIVEREF(__pyx_int_neg_1);
-  PyTuple_SET_ITEM(__pyx_tuple__98, 0, __pyx_int_neg_1);
-  __Pyx_GIVEREF(__pyx_tuple__98);
+  PyTuple_SET_ITEM(__pyx_tuple__101, 0, __pyx_int_neg_1);
+  __Pyx_GIVEREF(__pyx_tuple__101);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -55996,18 +57099,18 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__99 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__99)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__99);
-  __Pyx_GIVEREF(__pyx_tuple__99);
+  __pyx_tuple__102 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__102)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__102);
+  __Pyx_GIVEREF(__pyx_tuple__102);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__100 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__100)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__100);
-  __Pyx_GIVEREF(__pyx_tuple__100);
+  __pyx_tuple__103 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__103)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__103);
+  __Pyx_GIVEREF(__pyx_tuple__103);
 
   /* "View.MemoryView":684
  *         if item is Ellipsis:
@@ -56016,9 +57119,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *                 seen_ellipsis = True
  *             else:
  */
-  __pyx_slice__101 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__101)) __PYX_ERR(1, 684, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_slice__101);
-  __Pyx_GIVEREF(__pyx_slice__101);
+  __pyx_slice__104 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__104)) __PYX_ERR(1, 684, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_slice__104);
+  __Pyx_GIVEREF(__pyx_slice__104);
 
   /* "View.MemoryView":705
  *     for suboffset in suboffsets[:ndim]:
@@ -56027,9 +57130,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__102 = PyTuple_Pack(1, __pyx_kp_s_Indirect_dimensions_not_supporte); if (unlikely(!__pyx_tuple__102)) __PYX_ERR(1, 705, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__102);
-  __Pyx_GIVEREF(__pyx_tuple__102);
+  __pyx_tuple__105 = PyTuple_Pack(1, __pyx_kp_s_Indirect_dimensions_not_supporte); if (unlikely(!__pyx_tuple__105)) __PYX_ERR(1, 705, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__105);
+  __Pyx_GIVEREF(__pyx_tuple__105);
 
   /* "(tree fragment)":2
  * def __reduce_cython__(self):
@@ -56037,1558 +57140,1581 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  */
-  __pyx_tuple__103 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__103)) __PYX_ERR(1, 2, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__103);
-  __Pyx_GIVEREF(__pyx_tuple__103);
+  __pyx_tuple__106 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__106)) __PYX_ERR(1, 2, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__106);
+  __Pyx_GIVEREF(__pyx_tuple__106);
 
   /* "(tree fragment)":4
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")
  * def __setstate_cython__(self, __pyx_state):
  *     raise TypeError("no default __reduce__ due to non-trivial __cinit__")             # <<<<<<<<<<<<<<
  */
-  __pyx_tuple__104 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__104)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__104);
-  __Pyx_GIVEREF(__pyx_tuple__104);
-  __pyx_tuple__105 = PyTuple_Pack(3, __pyx_int_184977713, __pyx_int_136983863, __pyx_int_112105877); if (unlikely(!__pyx_tuple__105)) __PYX_ERR(1, 4, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__105);
-  __Pyx_GIVEREF(__pyx_tuple__105);
+  __pyx_tuple__107 = PyTuple_Pack(1, __pyx_kp_s_no_default___reduce___due_to_non); if (unlikely(!__pyx_tuple__107)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__107);
+  __Pyx_GIVEREF(__pyx_tuple__107);
+  __pyx_tuple__108 = PyTuple_Pack(3, __pyx_int_184977713, __pyx_int_136983863, __pyx_int_112105877); if (unlikely(!__pyx_tuple__108)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__108);
+  __Pyx_GIVEREF(__pyx_tuple__108);
 
-  /* "raylib.pyx":23
+  /* "raylib.pyx":24
  * 
  *     @staticmethod
  *     def lightgray() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _LIGHTGRAY
  * 
  */
-  __pyx_codeobj__106 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_lightgray, 23, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__106)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_codeobj__109 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_lightgray, 24, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__109)) __PYX_ERR(0, 24, __pyx_L1_error)
 
-  /* "raylib.pyx":27
+  /* "raylib.pyx":28
  * 
  *     @staticmethod
  *     def gray() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _GRAY
  * 
  */
-  __pyx_codeobj__107 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_gray, 27, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__107)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_codeobj__110 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_gray, 28, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__110)) __PYX_ERR(0, 28, __pyx_L1_error)
 
-  /* "raylib.pyx":31
+  /* "raylib.pyx":32
  * 
  *     @staticmethod
  *     def darkgray() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _DARKGRAY
  * 
  */
-  __pyx_codeobj__108 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_darkgray, 31, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__108)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __pyx_codeobj__111 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_darkgray, 32, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__111)) __PYX_ERR(0, 32, __pyx_L1_error)
 
-  /* "raylib.pyx":35
+  /* "raylib.pyx":36
  * 
  *     @staticmethod
  *     def yellow() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _YELLOW
  * 
  */
-  __pyx_codeobj__109 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_yellow, 35, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__109)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_codeobj__112 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_yellow, 36, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__112)) __PYX_ERR(0, 36, __pyx_L1_error)
 
-  /* "raylib.pyx":39
+  /* "raylib.pyx":40
  * 
  *     @staticmethod
  *     def gold() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _GOLD
  * 
  */
-  __pyx_codeobj__110 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_gold, 39, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__110)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __pyx_codeobj__113 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_gold, 40, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__113)) __PYX_ERR(0, 40, __pyx_L1_error)
 
-  /* "raylib.pyx":43
+  /* "raylib.pyx":44
  * 
  *     @staticmethod
  *     def orange() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _ORANGE
  * 
  */
-  __pyx_codeobj__111 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_orange, 43, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__111)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __pyx_codeobj__114 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_orange, 44, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__114)) __PYX_ERR(0, 44, __pyx_L1_error)
 
-  /* "raylib.pyx":47
+  /* "raylib.pyx":48
  * 
  *     @staticmethod
  *     def pink() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _PINK
  * 
  */
-  __pyx_codeobj__112 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_pink, 47, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__112)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_codeobj__115 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_pink, 48, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__115)) __PYX_ERR(0, 48, __pyx_L1_error)
 
-  /* "raylib.pyx":51
+  /* "raylib.pyx":52
  * 
  *     @staticmethod
  *     def red() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _RED
  * 
  */
-  __pyx_codeobj__113 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_red, 51, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__113)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_codeobj__116 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_red, 52, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__116)) __PYX_ERR(0, 52, __pyx_L1_error)
 
-  /* "raylib.pyx":55
+  /* "raylib.pyx":56
  * 
  *     @staticmethod
  *     def maroon() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _MAROON
  * 
  */
-  __pyx_codeobj__114 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_maroon, 55, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__114)) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_codeobj__117 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_maroon, 56, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__117)) __PYX_ERR(0, 56, __pyx_L1_error)
 
-  /* "raylib.pyx":59
+  /* "raylib.pyx":60
  * 
  *     @staticmethod
  *     def green() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _GREEN
  * 
  */
-  __pyx_codeobj__115 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_green, 59, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__115)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_codeobj__118 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_green, 60, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__118)) __PYX_ERR(0, 60, __pyx_L1_error)
 
-  /* "raylib.pyx":63
+  /* "raylib.pyx":64
  * 
  *     @staticmethod
  *     def lime() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _LIME
  * 
  */
-  __pyx_codeobj__116 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_lime, 63, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__116)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_codeobj__119 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_lime, 64, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__119)) __PYX_ERR(0, 64, __pyx_L1_error)
 
-  /* "raylib.pyx":67
+  /* "raylib.pyx":68
  * 
  *     @staticmethod
  *     def darkgreen() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _DARKGREEN
  * 
  */
-  __pyx_codeobj__117 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_darkgreen, 67, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__117)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __pyx_codeobj__120 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_darkgreen, 68, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__120)) __PYX_ERR(0, 68, __pyx_L1_error)
 
-  /* "raylib.pyx":71
+  /* "raylib.pyx":72
  * 
  *     @staticmethod
  *     def skyblue() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _SKYBLUE
  * 
  */
-  __pyx_codeobj__118 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_skyblue, 71, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__118)) __PYX_ERR(0, 71, __pyx_L1_error)
+  __pyx_codeobj__121 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_skyblue, 72, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__121)) __PYX_ERR(0, 72, __pyx_L1_error)
 
-  /* "raylib.pyx":75
+  /* "raylib.pyx":76
  * 
  *     @staticmethod
  *     def blue() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _BLUE
  * 
  */
-  __pyx_codeobj__119 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_blue, 75, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__119)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_codeobj__122 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_blue, 76, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__122)) __PYX_ERR(0, 76, __pyx_L1_error)
 
-  /* "raylib.pyx":79
+  /* "raylib.pyx":80
  * 
  *     @staticmethod
  *     def darkblue() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _DARKBLUE
  * 
  */
-  __pyx_codeobj__120 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_darkblue, 79, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__120)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __pyx_codeobj__123 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_darkblue, 80, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__123)) __PYX_ERR(0, 80, __pyx_L1_error)
 
-  /* "raylib.pyx":83
+  /* "raylib.pyx":84
  * 
  *     @staticmethod
  *     def purple() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _PURPLE
  * 
  */
-  __pyx_codeobj__121 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_purple, 83, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__121)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __pyx_codeobj__124 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_purple, 84, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__124)) __PYX_ERR(0, 84, __pyx_L1_error)
 
-  /* "raylib.pyx":87
+  /* "raylib.pyx":88
  * 
  *     @staticmethod
  *     def violet() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _VIOLET
  * 
  */
-  __pyx_codeobj__122 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_violet, 87, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__122)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_codeobj__125 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_violet, 88, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__125)) __PYX_ERR(0, 88, __pyx_L1_error)
 
-  /* "raylib.pyx":91
+  /* "raylib.pyx":92
  * 
  *     @staticmethod
  *     def darkpurple() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _DARKPURPLE
  * 
  */
-  __pyx_codeobj__123 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_darkpurple, 91, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__123)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __pyx_codeobj__126 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_darkpurple, 92, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__126)) __PYX_ERR(0, 92, __pyx_L1_error)
 
-  /* "raylib.pyx":95
+  /* "raylib.pyx":96
  * 
  *     @staticmethod
  *     def beige() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _BEIGE
  * 
  */
-  __pyx_codeobj__124 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_beige, 95, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__124)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_codeobj__127 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_beige, 96, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__127)) __PYX_ERR(0, 96, __pyx_L1_error)
 
-  /* "raylib.pyx":99
+  /* "raylib.pyx":100
  * 
  *     @staticmethod
  *     def brown() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _BROWN
  * 
  */
-  __pyx_codeobj__125 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_brown, 99, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__125)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __pyx_codeobj__128 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_brown, 100, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__128)) __PYX_ERR(0, 100, __pyx_L1_error)
 
-  /* "raylib.pyx":103
+  /* "raylib.pyx":104
  * 
  *     @staticmethod
  *     def darkbrown() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _DARKBROWN
  * 
  */
-  __pyx_codeobj__126 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_darkbrown, 103, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__126)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_codeobj__129 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_darkbrown, 104, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__129)) __PYX_ERR(0, 104, __pyx_L1_error)
 
-  /* "raylib.pyx":107
+  /* "raylib.pyx":108
  * 
  *     @staticmethod
  *     def white() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _WHITE
  * 
  */
-  __pyx_codeobj__127 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_white, 107, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__127)) __PYX_ERR(0, 107, __pyx_L1_error)
+  __pyx_codeobj__130 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_white, 108, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__130)) __PYX_ERR(0, 108, __pyx_L1_error)
 
-  /* "raylib.pyx":111
+  /* "raylib.pyx":112
  * 
  *     @staticmethod
  *     def black() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _BLACK
  * 
  */
-  __pyx_codeobj__128 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_black, 111, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__128)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_codeobj__131 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_black, 112, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__131)) __PYX_ERR(0, 112, __pyx_L1_error)
 
-  /* "raylib.pyx":115
+  /* "raylib.pyx":116
  * 
  *     @staticmethod
  *     def blank() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _BLANK
  * 
  */
-  __pyx_codeobj__129 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_blank, 115, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__129)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_codeobj__132 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_blank, 116, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__132)) __PYX_ERR(0, 116, __pyx_L1_error)
 
-  /* "raylib.pyx":119
+  /* "raylib.pyx":120
  * 
  *     @staticmethod
  *     def magenta() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _MAGENTA
  * 
  */
-  __pyx_codeobj__130 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_magenta, 119, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__130)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __pyx_codeobj__133 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_magenta, 120, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__133)) __PYX_ERR(0, 120, __pyx_L1_error)
 
-  /* "raylib.pyx":123
+  /* "raylib.pyx":124
  * 
  *     @staticmethod
  *     def raywhite() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _RAYWHITE
  * 
  */
-  __pyx_codeobj__131 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_raywhite, 123, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__131)) __PYX_ERR(0, 123, __pyx_L1_error)
+  __pyx_codeobj__134 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_raywhite, 124, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__134)) __PYX_ERR(0, 124, __pyx_L1_error)
 
-  /* "raylib.pyx":145
+  /* "raylib.pyx":146
  * #
  * 
  * cdef CyColor _LIGHTGRAY = CyColor(200, 200, 200, 255)             # <<<<<<<<<<<<<<
  * cdef CyColor _GRAY      = CyColor(130, 130, 130, 255)
  * cdef CyColor _DARKGRAY  = CyColor(80, 80, 80, 255   )
  */
-  __pyx_tuple__132 = PyTuple_Pack(4, __pyx_int_200, __pyx_int_200, __pyx_int_200, __pyx_int_255); if (unlikely(!__pyx_tuple__132)) __PYX_ERR(0, 145, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__132);
-  __Pyx_GIVEREF(__pyx_tuple__132);
+  __pyx_tuple__135 = PyTuple_Pack(4, __pyx_int_200, __pyx_int_200, __pyx_int_200, __pyx_int_255); if (unlikely(!__pyx_tuple__135)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__135);
+  __Pyx_GIVEREF(__pyx_tuple__135);
 
-  /* "raylib.pyx":146
+  /* "raylib.pyx":147
  * 
  * cdef CyColor _LIGHTGRAY = CyColor(200, 200, 200, 255)
  * cdef CyColor _GRAY      = CyColor(130, 130, 130, 255)             # <<<<<<<<<<<<<<
  * cdef CyColor _DARKGRAY  = CyColor(80, 80, 80, 255   )
  * cdef CyColor _YELLOW    = CyColor(253, 249, 0, 255  )
  */
-  __pyx_tuple__133 = PyTuple_Pack(4, __pyx_int_130, __pyx_int_130, __pyx_int_130, __pyx_int_255); if (unlikely(!__pyx_tuple__133)) __PYX_ERR(0, 146, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__133);
-  __Pyx_GIVEREF(__pyx_tuple__133);
+  __pyx_tuple__136 = PyTuple_Pack(4, __pyx_int_130, __pyx_int_130, __pyx_int_130, __pyx_int_255); if (unlikely(!__pyx_tuple__136)) __PYX_ERR(0, 147, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__136);
+  __Pyx_GIVEREF(__pyx_tuple__136);
 
-  /* "raylib.pyx":147
+  /* "raylib.pyx":148
  * cdef CyColor _LIGHTGRAY = CyColor(200, 200, 200, 255)
  * cdef CyColor _GRAY      = CyColor(130, 130, 130, 255)
  * cdef CyColor _DARKGRAY  = CyColor(80, 80, 80, 255   )             # <<<<<<<<<<<<<<
  * cdef CyColor _YELLOW    = CyColor(253, 249, 0, 255  )
  * cdef CyColor _GOLD      = CyColor(255, 203, 0, 255  )
  */
-  __pyx_tuple__134 = PyTuple_Pack(4, __pyx_int_80, __pyx_int_80, __pyx_int_80, __pyx_int_255); if (unlikely(!__pyx_tuple__134)) __PYX_ERR(0, 147, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__134);
-  __Pyx_GIVEREF(__pyx_tuple__134);
+  __pyx_tuple__137 = PyTuple_Pack(4, __pyx_int_80, __pyx_int_80, __pyx_int_80, __pyx_int_255); if (unlikely(!__pyx_tuple__137)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__137);
+  __Pyx_GIVEREF(__pyx_tuple__137);
 
-  /* "raylib.pyx":148
+  /* "raylib.pyx":149
  * cdef CyColor _GRAY      = CyColor(130, 130, 130, 255)
  * cdef CyColor _DARKGRAY  = CyColor(80, 80, 80, 255   )
  * cdef CyColor _YELLOW    = CyColor(253, 249, 0, 255  )             # <<<<<<<<<<<<<<
  * cdef CyColor _GOLD      = CyColor(255, 203, 0, 255  )
  * cdef CyColor _ORANGE    = CyColor(255, 161, 0, 255  )
  */
-  __pyx_tuple__135 = PyTuple_Pack(4, __pyx_int_253, __pyx_int_249, __pyx_int_0, __pyx_int_255); if (unlikely(!__pyx_tuple__135)) __PYX_ERR(0, 148, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__135);
-  __Pyx_GIVEREF(__pyx_tuple__135);
+  __pyx_tuple__138 = PyTuple_Pack(4, __pyx_int_253, __pyx_int_249, __pyx_int_0, __pyx_int_255); if (unlikely(!__pyx_tuple__138)) __PYX_ERR(0, 149, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__138);
+  __Pyx_GIVEREF(__pyx_tuple__138);
 
-  /* "raylib.pyx":149
+  /* "raylib.pyx":150
  * cdef CyColor _DARKGRAY  = CyColor(80, 80, 80, 255   )
  * cdef CyColor _YELLOW    = CyColor(253, 249, 0, 255  )
  * cdef CyColor _GOLD      = CyColor(255, 203, 0, 255  )             # <<<<<<<<<<<<<<
  * cdef CyColor _ORANGE    = CyColor(255, 161, 0, 255  )
  * cdef CyColor _PINK      = CyColor(255, 109, 194, 255)
  */
-  __pyx_tuple__136 = PyTuple_Pack(4, __pyx_int_255, __pyx_int_203, __pyx_int_0, __pyx_int_255); if (unlikely(!__pyx_tuple__136)) __PYX_ERR(0, 149, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__136);
-  __Pyx_GIVEREF(__pyx_tuple__136);
+  __pyx_tuple__139 = PyTuple_Pack(4, __pyx_int_255, __pyx_int_203, __pyx_int_0, __pyx_int_255); if (unlikely(!__pyx_tuple__139)) __PYX_ERR(0, 150, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__139);
+  __Pyx_GIVEREF(__pyx_tuple__139);
 
-  /* "raylib.pyx":150
+  /* "raylib.pyx":151
  * cdef CyColor _YELLOW    = CyColor(253, 249, 0, 255  )
  * cdef CyColor _GOLD      = CyColor(255, 203, 0, 255  )
  * cdef CyColor _ORANGE    = CyColor(255, 161, 0, 255  )             # <<<<<<<<<<<<<<
  * cdef CyColor _PINK      = CyColor(255, 109, 194, 255)
  * cdef CyColor _RED       = CyColor(230, 41, 55, 255  )
  */
-  __pyx_tuple__137 = PyTuple_Pack(4, __pyx_int_255, __pyx_int_161, __pyx_int_0, __pyx_int_255); if (unlikely(!__pyx_tuple__137)) __PYX_ERR(0, 150, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__137);
-  __Pyx_GIVEREF(__pyx_tuple__137);
+  __pyx_tuple__140 = PyTuple_Pack(4, __pyx_int_255, __pyx_int_161, __pyx_int_0, __pyx_int_255); if (unlikely(!__pyx_tuple__140)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__140);
+  __Pyx_GIVEREF(__pyx_tuple__140);
 
-  /* "raylib.pyx":151
+  /* "raylib.pyx":152
  * cdef CyColor _GOLD      = CyColor(255, 203, 0, 255  )
  * cdef CyColor _ORANGE    = CyColor(255, 161, 0, 255  )
  * cdef CyColor _PINK      = CyColor(255, 109, 194, 255)             # <<<<<<<<<<<<<<
  * cdef CyColor _RED       = CyColor(230, 41, 55, 255  )
  * cdef CyColor _MAROON    = CyColor(190, 33, 55, 255  )
  */
-  __pyx_tuple__138 = PyTuple_Pack(4, __pyx_int_255, __pyx_int_109, __pyx_int_194, __pyx_int_255); if (unlikely(!__pyx_tuple__138)) __PYX_ERR(0, 151, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__138);
-  __Pyx_GIVEREF(__pyx_tuple__138);
+  __pyx_tuple__141 = PyTuple_Pack(4, __pyx_int_255, __pyx_int_109, __pyx_int_194, __pyx_int_255); if (unlikely(!__pyx_tuple__141)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__141);
+  __Pyx_GIVEREF(__pyx_tuple__141);
 
-  /* "raylib.pyx":152
+  /* "raylib.pyx":153
  * cdef CyColor _ORANGE    = CyColor(255, 161, 0, 255  )
  * cdef CyColor _PINK      = CyColor(255, 109, 194, 255)
  * cdef CyColor _RED       = CyColor(230, 41, 55, 255  )             # <<<<<<<<<<<<<<
  * cdef CyColor _MAROON    = CyColor(190, 33, 55, 255  )
  * cdef CyColor _GREEN     = CyColor(0, 228, 48, 255   )
  */
-  __pyx_tuple__139 = PyTuple_Pack(4, __pyx_int_230, __pyx_int_41, __pyx_int_55, __pyx_int_255); if (unlikely(!__pyx_tuple__139)) __PYX_ERR(0, 152, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__139);
-  __Pyx_GIVEREF(__pyx_tuple__139);
+  __pyx_tuple__142 = PyTuple_Pack(4, __pyx_int_230, __pyx_int_41, __pyx_int_55, __pyx_int_255); if (unlikely(!__pyx_tuple__142)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__142);
+  __Pyx_GIVEREF(__pyx_tuple__142);
 
-  /* "raylib.pyx":153
+  /* "raylib.pyx":154
  * cdef CyColor _PINK      = CyColor(255, 109, 194, 255)
  * cdef CyColor _RED       = CyColor(230, 41, 55, 255  )
  * cdef CyColor _MAROON    = CyColor(190, 33, 55, 255  )             # <<<<<<<<<<<<<<
  * cdef CyColor _GREEN     = CyColor(0, 228, 48, 255   )
  * cdef CyColor _LIME      = CyColor(0, 158, 47, 255   )
  */
-  __pyx_tuple__140 = PyTuple_Pack(4, __pyx_int_190, __pyx_int_33, __pyx_int_55, __pyx_int_255); if (unlikely(!__pyx_tuple__140)) __PYX_ERR(0, 153, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__140);
-  __Pyx_GIVEREF(__pyx_tuple__140);
+  __pyx_tuple__143 = PyTuple_Pack(4, __pyx_int_190, __pyx_int_33, __pyx_int_55, __pyx_int_255); if (unlikely(!__pyx_tuple__143)) __PYX_ERR(0, 154, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__143);
+  __Pyx_GIVEREF(__pyx_tuple__143);
 
-  /* "raylib.pyx":154
+  /* "raylib.pyx":155
  * cdef CyColor _RED       = CyColor(230, 41, 55, 255  )
  * cdef CyColor _MAROON    = CyColor(190, 33, 55, 255  )
  * cdef CyColor _GREEN     = CyColor(0, 228, 48, 255   )             # <<<<<<<<<<<<<<
  * cdef CyColor _LIME      = CyColor(0, 158, 47, 255   )
  * cdef CyColor _DARKGREEN = CyColor(0, 117, 44, 255   )
  */
-  __pyx_tuple__141 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_228, __pyx_int_48, __pyx_int_255); if (unlikely(!__pyx_tuple__141)) __PYX_ERR(0, 154, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__141);
-  __Pyx_GIVEREF(__pyx_tuple__141);
+  __pyx_tuple__144 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_228, __pyx_int_48, __pyx_int_255); if (unlikely(!__pyx_tuple__144)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__144);
+  __Pyx_GIVEREF(__pyx_tuple__144);
 
-  /* "raylib.pyx":155
+  /* "raylib.pyx":156
  * cdef CyColor _MAROON    = CyColor(190, 33, 55, 255  )
  * cdef CyColor _GREEN     = CyColor(0, 228, 48, 255   )
  * cdef CyColor _LIME      = CyColor(0, 158, 47, 255   )             # <<<<<<<<<<<<<<
  * cdef CyColor _DARKGREEN = CyColor(0, 117, 44, 255   )
  * cdef CyColor _SKYBLUE   = CyColor(102, 191, 255, 255)
  */
-  __pyx_tuple__142 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_158, __pyx_int_47, __pyx_int_255); if (unlikely(!__pyx_tuple__142)) __PYX_ERR(0, 155, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__142);
-  __Pyx_GIVEREF(__pyx_tuple__142);
+  __pyx_tuple__145 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_158, __pyx_int_47, __pyx_int_255); if (unlikely(!__pyx_tuple__145)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__145);
+  __Pyx_GIVEREF(__pyx_tuple__145);
 
-  /* "raylib.pyx":156
+  /* "raylib.pyx":157
  * cdef CyColor _GREEN     = CyColor(0, 228, 48, 255   )
  * cdef CyColor _LIME      = CyColor(0, 158, 47, 255   )
  * cdef CyColor _DARKGREEN = CyColor(0, 117, 44, 255   )             # <<<<<<<<<<<<<<
  * cdef CyColor _SKYBLUE   = CyColor(102, 191, 255, 255)
  * cdef CyColor _BLUE      = CyColor(0, 121, 241, 255  )
  */
-  __pyx_tuple__143 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_117, __pyx_int_44, __pyx_int_255); if (unlikely(!__pyx_tuple__143)) __PYX_ERR(0, 156, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__143);
-  __Pyx_GIVEREF(__pyx_tuple__143);
+  __pyx_tuple__146 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_117, __pyx_int_44, __pyx_int_255); if (unlikely(!__pyx_tuple__146)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__146);
+  __Pyx_GIVEREF(__pyx_tuple__146);
 
-  /* "raylib.pyx":157
+  /* "raylib.pyx":158
  * cdef CyColor _LIME      = CyColor(0, 158, 47, 255   )
  * cdef CyColor _DARKGREEN = CyColor(0, 117, 44, 255   )
  * cdef CyColor _SKYBLUE   = CyColor(102, 191, 255, 255)             # <<<<<<<<<<<<<<
  * cdef CyColor _BLUE      = CyColor(0, 121, 241, 255  )
  * cdef CyColor _DARKBLUE  = CyColor(0, 82, 172, 255   )
  */
-  __pyx_tuple__144 = PyTuple_Pack(4, __pyx_int_102, __pyx_int_191, __pyx_int_255, __pyx_int_255); if (unlikely(!__pyx_tuple__144)) __PYX_ERR(0, 157, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__144);
-  __Pyx_GIVEREF(__pyx_tuple__144);
+  __pyx_tuple__147 = PyTuple_Pack(4, __pyx_int_102, __pyx_int_191, __pyx_int_255, __pyx_int_255); if (unlikely(!__pyx_tuple__147)) __PYX_ERR(0, 158, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__147);
+  __Pyx_GIVEREF(__pyx_tuple__147);
 
-  /* "raylib.pyx":158
+  /* "raylib.pyx":159
  * cdef CyColor _DARKGREEN = CyColor(0, 117, 44, 255   )
  * cdef CyColor _SKYBLUE   = CyColor(102, 191, 255, 255)
  * cdef CyColor _BLUE      = CyColor(0, 121, 241, 255  )             # <<<<<<<<<<<<<<
  * cdef CyColor _DARKBLUE  = CyColor(0, 82, 172, 255   )
  * cdef CyColor _PURPLE    = CyColor(200, 122, 255, 255)
  */
-  __pyx_tuple__145 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_121, __pyx_int_241, __pyx_int_255); if (unlikely(!__pyx_tuple__145)) __PYX_ERR(0, 158, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__145);
-  __Pyx_GIVEREF(__pyx_tuple__145);
+  __pyx_tuple__148 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_121, __pyx_int_241, __pyx_int_255); if (unlikely(!__pyx_tuple__148)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__148);
+  __Pyx_GIVEREF(__pyx_tuple__148);
 
-  /* "raylib.pyx":159
+  /* "raylib.pyx":160
  * cdef CyColor _SKYBLUE   = CyColor(102, 191, 255, 255)
  * cdef CyColor _BLUE      = CyColor(0, 121, 241, 255  )
  * cdef CyColor _DARKBLUE  = CyColor(0, 82, 172, 255   )             # <<<<<<<<<<<<<<
  * cdef CyColor _PURPLE    = CyColor(200, 122, 255, 255)
  * cdef CyColor _VIOLET    = CyColor(135, 60, 190, 255 )
  */
-  __pyx_tuple__146 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_82, __pyx_int_172, __pyx_int_255); if (unlikely(!__pyx_tuple__146)) __PYX_ERR(0, 159, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__146);
-  __Pyx_GIVEREF(__pyx_tuple__146);
+  __pyx_tuple__149 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_82, __pyx_int_172, __pyx_int_255); if (unlikely(!__pyx_tuple__149)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__149);
+  __Pyx_GIVEREF(__pyx_tuple__149);
 
-  /* "raylib.pyx":160
+  /* "raylib.pyx":161
  * cdef CyColor _BLUE      = CyColor(0, 121, 241, 255  )
  * cdef CyColor _DARKBLUE  = CyColor(0, 82, 172, 255   )
  * cdef CyColor _PURPLE    = CyColor(200, 122, 255, 255)             # <<<<<<<<<<<<<<
  * cdef CyColor _VIOLET    = CyColor(135, 60, 190, 255 )
  * cdef CyColor _DARKPURPLE= CyColor(112, 31, 126, 255 )
  */
-  __pyx_tuple__147 = PyTuple_Pack(4, __pyx_int_200, __pyx_int_122, __pyx_int_255, __pyx_int_255); if (unlikely(!__pyx_tuple__147)) __PYX_ERR(0, 160, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__147);
-  __Pyx_GIVEREF(__pyx_tuple__147);
+  __pyx_tuple__150 = PyTuple_Pack(4, __pyx_int_200, __pyx_int_122, __pyx_int_255, __pyx_int_255); if (unlikely(!__pyx_tuple__150)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__150);
+  __Pyx_GIVEREF(__pyx_tuple__150);
 
-  /* "raylib.pyx":161
+  /* "raylib.pyx":162
  * cdef CyColor _DARKBLUE  = CyColor(0, 82, 172, 255   )
  * cdef CyColor _PURPLE    = CyColor(200, 122, 255, 255)
  * cdef CyColor _VIOLET    = CyColor(135, 60, 190, 255 )             # <<<<<<<<<<<<<<
  * cdef CyColor _DARKPURPLE= CyColor(112, 31, 126, 255 )
  * cdef CyColor _BEIGE     = CyColor(211, 176, 131, 255)
  */
-  __pyx_tuple__148 = PyTuple_Pack(4, __pyx_int_135, __pyx_int_60, __pyx_int_190, __pyx_int_255); if (unlikely(!__pyx_tuple__148)) __PYX_ERR(0, 161, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__148);
-  __Pyx_GIVEREF(__pyx_tuple__148);
+  __pyx_tuple__151 = PyTuple_Pack(4, __pyx_int_135, __pyx_int_60, __pyx_int_190, __pyx_int_255); if (unlikely(!__pyx_tuple__151)) __PYX_ERR(0, 162, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__151);
+  __Pyx_GIVEREF(__pyx_tuple__151);
 
-  /* "raylib.pyx":162
+  /* "raylib.pyx":163
  * cdef CyColor _PURPLE    = CyColor(200, 122, 255, 255)
  * cdef CyColor _VIOLET    = CyColor(135, 60, 190, 255 )
  * cdef CyColor _DARKPURPLE= CyColor(112, 31, 126, 255 )             # <<<<<<<<<<<<<<
  * cdef CyColor _BEIGE     = CyColor(211, 176, 131, 255)
  * cdef CyColor _BROWN     = CyColor(127, 106, 79, 255 )
  */
-  __pyx_tuple__149 = PyTuple_Pack(4, __pyx_int_112, __pyx_int_31, __pyx_int_126, __pyx_int_255); if (unlikely(!__pyx_tuple__149)) __PYX_ERR(0, 162, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__149);
-  __Pyx_GIVEREF(__pyx_tuple__149);
+  __pyx_tuple__152 = PyTuple_Pack(4, __pyx_int_112, __pyx_int_31, __pyx_int_126, __pyx_int_255); if (unlikely(!__pyx_tuple__152)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__152);
+  __Pyx_GIVEREF(__pyx_tuple__152);
 
-  /* "raylib.pyx":163
+  /* "raylib.pyx":164
  * cdef CyColor _VIOLET    = CyColor(135, 60, 190, 255 )
  * cdef CyColor _DARKPURPLE= CyColor(112, 31, 126, 255 )
  * cdef CyColor _BEIGE     = CyColor(211, 176, 131, 255)             # <<<<<<<<<<<<<<
  * cdef CyColor _BROWN     = CyColor(127, 106, 79, 255 )
  * cdef CyColor _DARKBROWN = CyColor(76, 63, 47, 255   )
  */
-  __pyx_tuple__150 = PyTuple_Pack(4, __pyx_int_211, __pyx_int_176, __pyx_int_131, __pyx_int_255); if (unlikely(!__pyx_tuple__150)) __PYX_ERR(0, 163, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__150);
-  __Pyx_GIVEREF(__pyx_tuple__150);
+  __pyx_tuple__153 = PyTuple_Pack(4, __pyx_int_211, __pyx_int_176, __pyx_int_131, __pyx_int_255); if (unlikely(!__pyx_tuple__153)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__153);
+  __Pyx_GIVEREF(__pyx_tuple__153);
 
-  /* "raylib.pyx":164
+  /* "raylib.pyx":165
  * cdef CyColor _DARKPURPLE= CyColor(112, 31, 126, 255 )
  * cdef CyColor _BEIGE     = CyColor(211, 176, 131, 255)
  * cdef CyColor _BROWN     = CyColor(127, 106, 79, 255 )             # <<<<<<<<<<<<<<
  * cdef CyColor _DARKBROWN = CyColor(76, 63, 47, 255   )
  * cdef CyColor _WHITE     = CyColor(255, 255, 255, 255)
  */
-  __pyx_tuple__151 = PyTuple_Pack(4, __pyx_int_127, __pyx_int_106, __pyx_int_79, __pyx_int_255); if (unlikely(!__pyx_tuple__151)) __PYX_ERR(0, 164, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__151);
-  __Pyx_GIVEREF(__pyx_tuple__151);
+  __pyx_tuple__154 = PyTuple_Pack(4, __pyx_int_127, __pyx_int_106, __pyx_int_79, __pyx_int_255); if (unlikely(!__pyx_tuple__154)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__154);
+  __Pyx_GIVEREF(__pyx_tuple__154);
 
-  /* "raylib.pyx":165
+  /* "raylib.pyx":166
  * cdef CyColor _BEIGE     = CyColor(211, 176, 131, 255)
  * cdef CyColor _BROWN     = CyColor(127, 106, 79, 255 )
  * cdef CyColor _DARKBROWN = CyColor(76, 63, 47, 255   )             # <<<<<<<<<<<<<<
  * cdef CyColor _WHITE     = CyColor(255, 255, 255, 255)
  * cdef CyColor _BLACK     = CyColor(0, 0, 0, 255      )
  */
-  __pyx_tuple__152 = PyTuple_Pack(4, __pyx_int_76, __pyx_int_63, __pyx_int_47, __pyx_int_255); if (unlikely(!__pyx_tuple__152)) __PYX_ERR(0, 165, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__152);
-  __Pyx_GIVEREF(__pyx_tuple__152);
+  __pyx_tuple__155 = PyTuple_Pack(4, __pyx_int_76, __pyx_int_63, __pyx_int_47, __pyx_int_255); if (unlikely(!__pyx_tuple__155)) __PYX_ERR(0, 166, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__155);
+  __Pyx_GIVEREF(__pyx_tuple__155);
 
-  /* "raylib.pyx":166
+  /* "raylib.pyx":167
  * cdef CyColor _BROWN     = CyColor(127, 106, 79, 255 )
  * cdef CyColor _DARKBROWN = CyColor(76, 63, 47, 255   )
  * cdef CyColor _WHITE     = CyColor(255, 255, 255, 255)             # <<<<<<<<<<<<<<
  * cdef CyColor _BLACK     = CyColor(0, 0, 0, 255      )
  * cdef CyColor _BLANK     = CyColor(0, 0, 0, 0        )
  */
-  __pyx_tuple__153 = PyTuple_Pack(4, __pyx_int_255, __pyx_int_255, __pyx_int_255, __pyx_int_255); if (unlikely(!__pyx_tuple__153)) __PYX_ERR(0, 166, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__153);
-  __Pyx_GIVEREF(__pyx_tuple__153);
+  __pyx_tuple__156 = PyTuple_Pack(4, __pyx_int_255, __pyx_int_255, __pyx_int_255, __pyx_int_255); if (unlikely(!__pyx_tuple__156)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__156);
+  __Pyx_GIVEREF(__pyx_tuple__156);
 
-  /* "raylib.pyx":167
+  /* "raylib.pyx":168
  * cdef CyColor _DARKBROWN = CyColor(76, 63, 47, 255   )
  * cdef CyColor _WHITE     = CyColor(255, 255, 255, 255)
  * cdef CyColor _BLACK     = CyColor(0, 0, 0, 255      )             # <<<<<<<<<<<<<<
  * cdef CyColor _BLANK     = CyColor(0, 0, 0, 0        )
  * cdef CyColor _MAGENTA   = CyColor(255, 0, 255, 255  )
  */
-  __pyx_tuple__154 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_0, __pyx_int_0, __pyx_int_255); if (unlikely(!__pyx_tuple__154)) __PYX_ERR(0, 167, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__154);
-  __Pyx_GIVEREF(__pyx_tuple__154);
+  __pyx_tuple__157 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_0, __pyx_int_0, __pyx_int_255); if (unlikely(!__pyx_tuple__157)) __PYX_ERR(0, 168, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__157);
+  __Pyx_GIVEREF(__pyx_tuple__157);
 
-  /* "raylib.pyx":168
+  /* "raylib.pyx":169
  * cdef CyColor _WHITE     = CyColor(255, 255, 255, 255)
  * cdef CyColor _BLACK     = CyColor(0, 0, 0, 255      )
  * cdef CyColor _BLANK     = CyColor(0, 0, 0, 0        )             # <<<<<<<<<<<<<<
  * cdef CyColor _MAGENTA   = CyColor(255, 0, 255, 255  )
  * cdef CyColor _RAYWHITE  = CyColor(245, 245, 245, 255)
  */
-  __pyx_tuple__155 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_0, __pyx_int_0, __pyx_int_0); if (unlikely(!__pyx_tuple__155)) __PYX_ERR(0, 168, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__155);
-  __Pyx_GIVEREF(__pyx_tuple__155);
+  __pyx_tuple__158 = PyTuple_Pack(4, __pyx_int_0, __pyx_int_0, __pyx_int_0, __pyx_int_0); if (unlikely(!__pyx_tuple__158)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__158);
+  __Pyx_GIVEREF(__pyx_tuple__158);
 
-  /* "raylib.pyx":169
+  /* "raylib.pyx":170
  * cdef CyColor _BLACK     = CyColor(0, 0, 0, 255      )
  * cdef CyColor _BLANK     = CyColor(0, 0, 0, 0        )
  * cdef CyColor _MAGENTA   = CyColor(255, 0, 255, 255  )             # <<<<<<<<<<<<<<
  * cdef CyColor _RAYWHITE  = CyColor(245, 245, 245, 255)
  * 
  */
-  __pyx_tuple__156 = PyTuple_Pack(4, __pyx_int_255, __pyx_int_0, __pyx_int_255, __pyx_int_255); if (unlikely(!__pyx_tuple__156)) __PYX_ERR(0, 169, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__156);
-  __Pyx_GIVEREF(__pyx_tuple__156);
+  __pyx_tuple__159 = PyTuple_Pack(4, __pyx_int_255, __pyx_int_0, __pyx_int_255, __pyx_int_255); if (unlikely(!__pyx_tuple__159)) __PYX_ERR(0, 170, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__159);
+  __Pyx_GIVEREF(__pyx_tuple__159);
 
-  /* "raylib.pyx":170
+  /* "raylib.pyx":171
  * cdef CyColor _BLANK     = CyColor(0, 0, 0, 0        )
  * cdef CyColor _MAGENTA   = CyColor(255, 0, 255, 255  )
  * cdef CyColor _RAYWHITE  = CyColor(245, 245, 245, 255)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_tuple__157 = PyTuple_Pack(4, __pyx_int_245, __pyx_int_245, __pyx_int_245, __pyx_int_255); if (unlikely(!__pyx_tuple__157)) __PYX_ERR(0, 170, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__157);
-  __Pyx_GIVEREF(__pyx_tuple__157);
+  __pyx_tuple__160 = PyTuple_Pack(4, __pyx_int_245, __pyx_int_245, __pyx_int_245, __pyx_int_255); if (unlikely(!__pyx_tuple__160)) __PYX_ERR(0, 171, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__160);
+  __Pyx_GIVEREF(__pyx_tuple__160);
 
-  /* "raylib.pyx":455
+  /* "raylib.pyx":456
  * 
  *     @staticmethod
  *     def load_font(str path) -> 'CyFont':             # <<<<<<<<<<<<<<
  *         raise NotImplementedError("Not Implemented Yet!")
  * 
  */
-  __pyx_tuple__158 = PyTuple_Pack(1, __pyx_n_s_path); if (unlikely(!__pyx_tuple__158)) __PYX_ERR(0, 455, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__158);
-  __Pyx_GIVEREF(__pyx_tuple__158);
-  __pyx_codeobj__159 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__158, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_load_font, 455, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__159)) __PYX_ERR(0, 455, __pyx_L1_error)
+  __pyx_tuple__161 = PyTuple_Pack(1, __pyx_n_s_path); if (unlikely(!__pyx_tuple__161)) __PYX_ERR(0, 456, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__161);
+  __Pyx_GIVEREF(__pyx_tuple__161);
+  __pyx_codeobj__162 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__161, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_load_font, 456, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__162)) __PYX_ERR(0, 456, __pyx_L1_error)
 
-  /* "raylib.pyx":962
+  /* "raylib.pyx":467
+ *     #cdef Font GetFontDefault()                                                            # Get the default Font
+ *     @staticmethod
+ *     def get_font_default() -> 'CyFont':             # <<<<<<<<<<<<<<
+ *         cdef CyFont font = CyFont.__new__(CyFont)
+ *         font._font = GetFontDefault()
+ */
+  __pyx_tuple__163 = PyTuple_Pack(1, __pyx_n_s_font); if (unlikely(!__pyx_tuple__163)) __PYX_ERR(0, 467, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__163);
+  __Pyx_GIVEREF(__pyx_tuple__163);
+  __pyx_codeobj__164 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__163, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_font_default, 467, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__164)) __PYX_ERR(0, 467, __pyx_L1_error)
+
+  /* "raylib.pyx":969
  * 
  *     @staticmethod
  *     def load_vr_stereo_config(CyVrDeviceInfo device) -> 'CyVrStereoConfig':             # <<<<<<<<<<<<<<
  *         cdef CyVrStereoConfig stereo_config = CyVrStereoConfig.__new__(CyVrStereoConfig)
  *         stereo_config._vr_stereo_config = LoadVrStereoConfig(device._vr_device_info)
  */
-  __pyx_tuple__160 = PyTuple_Pack(2, __pyx_n_s_device, __pyx_n_s_stereo_config); if (unlikely(!__pyx_tuple__160)) __PYX_ERR(0, 962, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__160);
-  __Pyx_GIVEREF(__pyx_tuple__160);
-  __pyx_codeobj__161 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__160, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_load_vr_stereo_config, 962, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__161)) __PYX_ERR(0, 962, __pyx_L1_error)
+  __pyx_tuple__165 = PyTuple_Pack(2, __pyx_n_s_device, __pyx_n_s_stereo_config); if (unlikely(!__pyx_tuple__165)) __PYX_ERR(0, 969, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__165);
+  __Pyx_GIVEREF(__pyx_tuple__165);
+  __pyx_codeobj__166 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__165, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_load_vr_stereo_config, 969, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__166)) __PYX_ERR(0, 969, __pyx_L1_error)
 
-  /* "raylib.pyx":1304
+  /* "raylib.pyx":1168
+ *         int font_size,
+ *         CyColor tint = None,
+ *         raymath.CyVector2 pos = raymath.CyVector2(0, 0),             # <<<<<<<<<<<<<<
+ *         CyFont font = CyFont.get_font_default(),
+ *         float spacing = 0,
+ */
+  __pyx_tuple__167 = PyTuple_Pack(2, __pyx_int_0, __pyx_int_0); if (unlikely(!__pyx_tuple__167)) __PYX_ERR(0, 1168, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__167);
+  __Pyx_GIVEREF(__pyx_tuple__167);
+
+  /* "raylib.pyx":1418
  * 
  * 
  * def init_window(width: int, height: int, title: str) -> None:             # <<<<<<<<<<<<<<
  *     InitWindow(width, height, str.encode(title))
  * 
  */
-  __pyx_tuple__162 = PyTuple_Pack(3, __pyx_n_s_width, __pyx_n_s_height, __pyx_n_s_title); if (unlikely(!__pyx_tuple__162)) __PYX_ERR(0, 1304, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__162);
-  __Pyx_GIVEREF(__pyx_tuple__162);
-  __pyx_codeobj__163 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__162, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_init_window, 1304, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__163)) __PYX_ERR(0, 1304, __pyx_L1_error)
+  __pyx_tuple__168 = PyTuple_Pack(3, __pyx_n_s_width, __pyx_n_s_height, __pyx_n_s_title); if (unlikely(!__pyx_tuple__168)) __PYX_ERR(0, 1418, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__168);
+  __Pyx_GIVEREF(__pyx_tuple__168);
+  __pyx_codeobj__169 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__168, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_init_window, 1418, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__169)) __PYX_ERR(0, 1418, __pyx_L1_error)
 
-  /* "raylib.pyx":1307
+  /* "raylib.pyx":1421
  *     InitWindow(width, height, str.encode(title))
  * 
  * def close_window() -> None:             # <<<<<<<<<<<<<<
  *     CloseWindow()
  * 
  */
-  __pyx_codeobj__164 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_close_window, 1307, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__164)) __PYX_ERR(0, 1307, __pyx_L1_error)
+  __pyx_codeobj__170 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_close_window, 1421, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__170)) __PYX_ERR(0, 1421, __pyx_L1_error)
 
-  /* "raylib.pyx":1310
+  /* "raylib.pyx":1424
  *     CloseWindow()
  * 
  * def window_should_close() -> bool:             # <<<<<<<<<<<<<<
  *     return WindowShouldClose()
  * 
  */
-  __pyx_codeobj__165 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_window_should_close, 1310, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__165)) __PYX_ERR(0, 1310, __pyx_L1_error)
+  __pyx_codeobj__171 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_window_should_close, 1424, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__171)) __PYX_ERR(0, 1424, __pyx_L1_error)
 
-  /* "raylib.pyx":1313
+  /* "raylib.pyx":1427
  *     return WindowShouldClose()
  * 
  * def is_window_ready() -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowReady()
  * 
  */
-  __pyx_codeobj__166 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_ready, 1313, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__166)) __PYX_ERR(0, 1313, __pyx_L1_error)
+  __pyx_codeobj__172 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_ready, 1427, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__172)) __PYX_ERR(0, 1427, __pyx_L1_error)
 
-  /* "raylib.pyx":1316
+  /* "raylib.pyx":1430
  *     return IsWindowReady()
  * 
  * def is_window_fullscreen() -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowFullscreen()
  * 
  */
-  __pyx_codeobj__167 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_fullscreen, 1316, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__167)) __PYX_ERR(0, 1316, __pyx_L1_error)
+  __pyx_codeobj__173 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_fullscreen, 1430, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__173)) __PYX_ERR(0, 1430, __pyx_L1_error)
 
-  /* "raylib.pyx":1319
+  /* "raylib.pyx":1433
  *     return IsWindowFullscreen()
  * 
  * def is_window_hidden() -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowHidden()
  * 
  */
-  __pyx_codeobj__168 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_hidden, 1319, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__168)) __PYX_ERR(0, 1319, __pyx_L1_error)
+  __pyx_codeobj__174 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_hidden, 1433, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__174)) __PYX_ERR(0, 1433, __pyx_L1_error)
 
-  /* "raylib.pyx":1322
+  /* "raylib.pyx":1436
  *     return IsWindowHidden()
  * 
  * def is_window_minimized() -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowMinimized()
  * 
  */
-  __pyx_codeobj__169 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_minimized, 1322, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__169)) __PYX_ERR(0, 1322, __pyx_L1_error)
+  __pyx_codeobj__175 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_minimized, 1436, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__175)) __PYX_ERR(0, 1436, __pyx_L1_error)
 
-  /* "raylib.pyx":1325
+  /* "raylib.pyx":1439
  *     return IsWindowMinimized()
  * 
  * def is_window_maximized() -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowMaximized()
  * 
  */
-  __pyx_codeobj__170 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_maximized, 1325, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__170)) __PYX_ERR(0, 1325, __pyx_L1_error)
+  __pyx_codeobj__176 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_maximized, 1439, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__176)) __PYX_ERR(0, 1439, __pyx_L1_error)
 
-  /* "raylib.pyx":1328
+  /* "raylib.pyx":1442
  *     return IsWindowMaximized()
  * 
  * def is_window_focused() -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowFocused()
  * 
  */
-  __pyx_codeobj__171 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_focused, 1328, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__171)) __PYX_ERR(0, 1328, __pyx_L1_error)
+  __pyx_codeobj__177 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_focused, 1442, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__177)) __PYX_ERR(0, 1442, __pyx_L1_error)
 
-  /* "raylib.pyx":1331
+  /* "raylib.pyx":1445
  *     return IsWindowFocused()
  * 
  * def is_window_resized() -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowResized()
  * 
  */
-  __pyx_codeobj__172 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_resized, 1331, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__172)) __PYX_ERR(0, 1331, __pyx_L1_error)
+  __pyx_codeobj__178 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_resized, 1445, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__178)) __PYX_ERR(0, 1445, __pyx_L1_error)
 
-  /* "raylib.pyx":1334
+  /* "raylib.pyx":1448
  *     return IsWindowResized()
  * 
  * def is_window_state(flag: int) -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowState(flag)
  * 
  */
-  __pyx_tuple__173 = PyTuple_Pack(1, __pyx_n_s_flag); if (unlikely(!__pyx_tuple__173)) __PYX_ERR(0, 1334, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__173);
-  __Pyx_GIVEREF(__pyx_tuple__173);
-  __pyx_codeobj__174 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__173, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_state, 1334, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__174)) __PYX_ERR(0, 1334, __pyx_L1_error)
+  __pyx_tuple__179 = PyTuple_Pack(1, __pyx_n_s_flag); if (unlikely(!__pyx_tuple__179)) __PYX_ERR(0, 1448, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__179);
+  __Pyx_GIVEREF(__pyx_tuple__179);
+  __pyx_codeobj__180 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__179, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_window_state, 1448, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__180)) __PYX_ERR(0, 1448, __pyx_L1_error)
 
-  /* "raylib.pyx":1337
+  /* "raylib.pyx":1451
  *     return IsWindowState(flag)
  * 
  * def set_window_state(flags: int) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowState(flags)
  * 
  */
-  __pyx_tuple__175 = PyTuple_Pack(1, __pyx_n_s_flags); if (unlikely(!__pyx_tuple__175)) __PYX_ERR(0, 1337, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__175);
-  __Pyx_GIVEREF(__pyx_tuple__175);
-  __pyx_codeobj__176 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__175, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_state, 1337, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__176)) __PYX_ERR(0, 1337, __pyx_L1_error)
+  __pyx_tuple__181 = PyTuple_Pack(1, __pyx_n_s_flags); if (unlikely(!__pyx_tuple__181)) __PYX_ERR(0, 1451, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__181);
+  __Pyx_GIVEREF(__pyx_tuple__181);
+  __pyx_codeobj__182 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__181, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_state, 1451, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__182)) __PYX_ERR(0, 1451, __pyx_L1_error)
 
-  /* "raylib.pyx":1340
+  /* "raylib.pyx":1454
  *     SetWindowState(flags)
  * 
  * def clear_window_state(flags: int) -> None:             # <<<<<<<<<<<<<<
  *     ClearWindowState(flags)
  * 
  */
-  __pyx_tuple__177 = PyTuple_Pack(1, __pyx_n_s_flags); if (unlikely(!__pyx_tuple__177)) __PYX_ERR(0, 1340, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__177);
-  __Pyx_GIVEREF(__pyx_tuple__177);
-  __pyx_codeobj__178 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__177, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_clear_window_state, 1340, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__178)) __PYX_ERR(0, 1340, __pyx_L1_error)
+  __pyx_tuple__183 = PyTuple_Pack(1, __pyx_n_s_flags); if (unlikely(!__pyx_tuple__183)) __PYX_ERR(0, 1454, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__183);
+  __Pyx_GIVEREF(__pyx_tuple__183);
+  __pyx_codeobj__184 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__183, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_clear_window_state, 1454, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__184)) __PYX_ERR(0, 1454, __pyx_L1_error)
 
-  /* "raylib.pyx":1343
+  /* "raylib.pyx":1457
  *     ClearWindowState(flags)
  * 
  * def toggle_fullscreen() -> None:             # <<<<<<<<<<<<<<
  *     ToggleFullscreen()
  * 
  */
-  __pyx_codeobj__179 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_toggle_fullscreen, 1343, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__179)) __PYX_ERR(0, 1343, __pyx_L1_error)
+  __pyx_codeobj__185 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_toggle_fullscreen, 1457, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__185)) __PYX_ERR(0, 1457, __pyx_L1_error)
 
-  /* "raylib.pyx":1346
+  /* "raylib.pyx":1460
  *     ToggleFullscreen()
  * 
  * def toggle_borderless_window() -> None:             # <<<<<<<<<<<<<<
  *     ToggleBorderlessWindowed()
  * 
  */
-  __pyx_codeobj__180 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_toggle_borderless_window, 1346, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__180)) __PYX_ERR(0, 1346, __pyx_L1_error)
+  __pyx_codeobj__186 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_toggle_borderless_window, 1460, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__186)) __PYX_ERR(0, 1460, __pyx_L1_error)
 
-  /* "raylib.pyx":1349
+  /* "raylib.pyx":1463
  *     ToggleBorderlessWindowed()
  * 
  * def maximize_window() -> None:             # <<<<<<<<<<<<<<
  *     MaximizeWindow()
  * 
  */
-  __pyx_codeobj__181 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_maximize_window, 1349, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__181)) __PYX_ERR(0, 1349, __pyx_L1_error)
+  __pyx_codeobj__187 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_maximize_window, 1463, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__187)) __PYX_ERR(0, 1463, __pyx_L1_error)
 
-  /* "raylib.pyx":1352
+  /* "raylib.pyx":1466
  *     MaximizeWindow()
  * 
  * def minimize_window() -> None:             # <<<<<<<<<<<<<<
  *     MinimizeWindow()
  * 
  */
-  __pyx_codeobj__182 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_minimize_window, 1352, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__182)) __PYX_ERR(0, 1352, __pyx_L1_error)
+  __pyx_codeobj__188 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_minimize_window, 1466, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__188)) __PYX_ERR(0, 1466, __pyx_L1_error)
 
-  /* "raylib.pyx":1355
+  /* "raylib.pyx":1469
  *     MinimizeWindow()
  * 
  * def restore_window() -> None:             # <<<<<<<<<<<<<<
  *     RestoreWindow()
  * 
  */
-  __pyx_codeobj__183 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_restore_window, 1355, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__183)) __PYX_ERR(0, 1355, __pyx_L1_error)
+  __pyx_codeobj__189 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_restore_window, 1469, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__189)) __PYX_ERR(0, 1469, __pyx_L1_error)
 
-  /* "raylib.pyx":1358
+  /* "raylib.pyx":1472
  *     RestoreWindow()
  * 
  * def set_window_icon(image: CyImage) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowIcon(image._image)
  * 
  */
-  __pyx_tuple__184 = PyTuple_Pack(1, __pyx_n_s_image); if (unlikely(!__pyx_tuple__184)) __PYX_ERR(0, 1358, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__184);
-  __Pyx_GIVEREF(__pyx_tuple__184);
-  __pyx_codeobj__185 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__184, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_icon, 1358, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__185)) __PYX_ERR(0, 1358, __pyx_L1_error)
+  __pyx_tuple__190 = PyTuple_Pack(1, __pyx_n_s_image); if (unlikely(!__pyx_tuple__190)) __PYX_ERR(0, 1472, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__190);
+  __Pyx_GIVEREF(__pyx_tuple__190);
+  __pyx_codeobj__191 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__190, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_icon, 1472, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__191)) __PYX_ERR(0, 1472, __pyx_L1_error)
 
-  /* "raylib.pyx":1361
+  /* "raylib.pyx":1475
  *     SetWindowIcon(image._image)
  * 
  * def set_windows_icons(images: list[CyImage]) -> None:             # <<<<<<<<<<<<<<
  *     raise NotImplementedError("set_windows_icons is not implemented yet, use set_window_icon")
  *     #cdef int count = len(images)
  */
-  __pyx_tuple__186 = PyTuple_Pack(1, __pyx_n_s_images); if (unlikely(!__pyx_tuple__186)) __PYX_ERR(0, 1361, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__186);
-  __Pyx_GIVEREF(__pyx_tuple__186);
-  __pyx_codeobj__187 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__186, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_windows_icons, 1361, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__187)) __PYX_ERR(0, 1361, __pyx_L1_error)
+  __pyx_tuple__192 = PyTuple_Pack(1, __pyx_n_s_images); if (unlikely(!__pyx_tuple__192)) __PYX_ERR(0, 1475, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__192);
+  __Pyx_GIVEREF(__pyx_tuple__192);
+  __pyx_codeobj__193 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__192, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_windows_icons, 1475, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__193)) __PYX_ERR(0, 1475, __pyx_L1_error)
 
-  /* "raylib.pyx":1382
+  /* "raylib.pyx":1496
  *     #    free(image_array)
  * 
  * def set_window_title(title: str) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowTitle(str.encode(title))
  * 
  */
-  __pyx_tuple__188 = PyTuple_Pack(1, __pyx_n_s_title); if (unlikely(!__pyx_tuple__188)) __PYX_ERR(0, 1382, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__188);
-  __Pyx_GIVEREF(__pyx_tuple__188);
-  __pyx_codeobj__189 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__188, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_title, 1382, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__189)) __PYX_ERR(0, 1382, __pyx_L1_error)
+  __pyx_tuple__194 = PyTuple_Pack(1, __pyx_n_s_title); if (unlikely(!__pyx_tuple__194)) __PYX_ERR(0, 1496, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__194);
+  __Pyx_GIVEREF(__pyx_tuple__194);
+  __pyx_codeobj__195 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__194, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_title, 1496, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__195)) __PYX_ERR(0, 1496, __pyx_L1_error)
 
-  /* "raylib.pyx":1385
+  /* "raylib.pyx":1499
  *     SetWindowTitle(str.encode(title))
  * 
  * def set_window_position(x: int, y: int) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowPosition(x, y)
  * 
  */
-  __pyx_tuple__190 = PyTuple_Pack(2, __pyx_n_s_x, __pyx_n_s_y); if (unlikely(!__pyx_tuple__190)) __PYX_ERR(0, 1385, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__190);
-  __Pyx_GIVEREF(__pyx_tuple__190);
-  __pyx_codeobj__191 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__190, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_position, 1385, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__191)) __PYX_ERR(0, 1385, __pyx_L1_error)
+  __pyx_tuple__196 = PyTuple_Pack(2, __pyx_n_s_x, __pyx_n_s_y); if (unlikely(!__pyx_tuple__196)) __PYX_ERR(0, 1499, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__196);
+  __Pyx_GIVEREF(__pyx_tuple__196);
+  __pyx_codeobj__197 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__196, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_position, 1499, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__197)) __PYX_ERR(0, 1499, __pyx_L1_error)
 
-  /* "raylib.pyx":1388
+  /* "raylib.pyx":1502
  *     SetWindowPosition(x, y)
  * 
  * def set_window_monitor(monitor: int) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowMonitor(monitor)
  * 
  */
-  __pyx_tuple__192 = PyTuple_Pack(1, __pyx_n_s_monitor); if (unlikely(!__pyx_tuple__192)) __PYX_ERR(0, 1388, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__192);
-  __Pyx_GIVEREF(__pyx_tuple__192);
-  __pyx_codeobj__193 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__192, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_monitor, 1388, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__193)) __PYX_ERR(0, 1388, __pyx_L1_error)
+  __pyx_tuple__198 = PyTuple_Pack(1, __pyx_n_s_monitor); if (unlikely(!__pyx_tuple__198)) __PYX_ERR(0, 1502, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__198);
+  __Pyx_GIVEREF(__pyx_tuple__198);
+  __pyx_codeobj__199 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__198, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_monitor, 1502, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__199)) __PYX_ERR(0, 1502, __pyx_L1_error)
 
-  /* "raylib.pyx":1391
+  /* "raylib.pyx":1505
  *     SetWindowMonitor(monitor)
  * 
  * def set_window_min_size(width: int, height: int) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowMinSize(width, height)
  * 
  */
-  __pyx_tuple__194 = PyTuple_Pack(2, __pyx_n_s_width, __pyx_n_s_height); if (unlikely(!__pyx_tuple__194)) __PYX_ERR(0, 1391, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__194);
-  __Pyx_GIVEREF(__pyx_tuple__194);
-  __pyx_codeobj__195 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__194, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_min_size, 1391, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__195)) __PYX_ERR(0, 1391, __pyx_L1_error)
+  __pyx_tuple__200 = PyTuple_Pack(2, __pyx_n_s_width, __pyx_n_s_height); if (unlikely(!__pyx_tuple__200)) __PYX_ERR(0, 1505, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__200);
+  __Pyx_GIVEREF(__pyx_tuple__200);
+  __pyx_codeobj__201 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__200, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_min_size, 1505, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__201)) __PYX_ERR(0, 1505, __pyx_L1_error)
 
-  /* "raylib.pyx":1394
+  /* "raylib.pyx":1508
  *     SetWindowMinSize(width, height)
  * 
  * def set_window_max_size(width: int, height: int) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowMaxSize(width, height)
  * 
  */
-  __pyx_tuple__196 = PyTuple_Pack(2, __pyx_n_s_width, __pyx_n_s_height); if (unlikely(!__pyx_tuple__196)) __PYX_ERR(0, 1394, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__196);
-  __Pyx_GIVEREF(__pyx_tuple__196);
-  __pyx_codeobj__197 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__196, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_max_size, 1394, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__197)) __PYX_ERR(0, 1394, __pyx_L1_error)
+  __pyx_tuple__202 = PyTuple_Pack(2, __pyx_n_s_width, __pyx_n_s_height); if (unlikely(!__pyx_tuple__202)) __PYX_ERR(0, 1508, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__202);
+  __Pyx_GIVEREF(__pyx_tuple__202);
+  __pyx_codeobj__203 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__202, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_max_size, 1508, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__203)) __PYX_ERR(0, 1508, __pyx_L1_error)
 
-  /* "raylib.pyx":1397
+  /* "raylib.pyx":1511
  *     SetWindowMaxSize(width, height)
  * 
  * def set_window_size(width: int, height: int) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowSize(width, height)
  * 
  */
-  __pyx_tuple__198 = PyTuple_Pack(2, __pyx_n_s_width, __pyx_n_s_height); if (unlikely(!__pyx_tuple__198)) __PYX_ERR(0, 1397, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__198);
-  __Pyx_GIVEREF(__pyx_tuple__198);
-  __pyx_codeobj__199 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__198, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_size, 1397, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__199)) __PYX_ERR(0, 1397, __pyx_L1_error)
+  __pyx_tuple__204 = PyTuple_Pack(2, __pyx_n_s_width, __pyx_n_s_height); if (unlikely(!__pyx_tuple__204)) __PYX_ERR(0, 1511, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__204);
+  __Pyx_GIVEREF(__pyx_tuple__204);
+  __pyx_codeobj__205 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__204, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_size, 1511, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__205)) __PYX_ERR(0, 1511, __pyx_L1_error)
 
-  /* "raylib.pyx":1400
+  /* "raylib.pyx":1514
  *     SetWindowSize(width, height)
  * 
  * def set_window_opacity(opacity: float) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowOpacity(<float>opacity)
  * 
  */
-  __pyx_tuple__200 = PyTuple_Pack(2, __pyx_n_s_opacity, __pyx_n_s_opacity); if (unlikely(!__pyx_tuple__200)) __PYX_ERR(0, 1400, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__200);
-  __Pyx_GIVEREF(__pyx_tuple__200);
-  __pyx_codeobj__201 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__200, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_opacity, 1400, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__201)) __PYX_ERR(0, 1400, __pyx_L1_error)
+  __pyx_tuple__206 = PyTuple_Pack(2, __pyx_n_s_opacity, __pyx_n_s_opacity); if (unlikely(!__pyx_tuple__206)) __PYX_ERR(0, 1514, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__206);
+  __Pyx_GIVEREF(__pyx_tuple__206);
+  __pyx_codeobj__207 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__206, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_opacity, 1514, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__207)) __PYX_ERR(0, 1514, __pyx_L1_error)
 
-  /* "raylib.pyx":1403
+  /* "raylib.pyx":1517
  *     SetWindowOpacity(<float>opacity)
  * 
  * def set_window_focused() -> None:             # <<<<<<<<<<<<<<
  *     SetWindowFocused()
  * 
  */
-  __pyx_codeobj__202 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_focused, 1403, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__202)) __PYX_ERR(0, 1403, __pyx_L1_error)
+  __pyx_codeobj__208 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_window_focused, 1517, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__208)) __PYX_ERR(0, 1517, __pyx_L1_error)
 
-  /* "raylib.pyx":1406
+  /* "raylib.pyx":1520
  *     SetWindowFocused()
  * 
  * def get_window_handle() -> int:             # <<<<<<<<<<<<<<
  *     return <long>GetWindowHandle()
  * 
  */
-  __pyx_codeobj__203 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_window_handle, 1406, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__203)) __PYX_ERR(0, 1406, __pyx_L1_error)
+  __pyx_codeobj__209 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_window_handle, 1520, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__209)) __PYX_ERR(0, 1520, __pyx_L1_error)
 
-  /* "raylib.pyx":1409
+  /* "raylib.pyx":1523
  *     return <long>GetWindowHandle()
  * 
  * def get_screen_width() -> int:             # <<<<<<<<<<<<<<
  *     return GetScreenWidth()
  * 
  */
-  __pyx_codeobj__204 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_screen_width, 1409, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__204)) __PYX_ERR(0, 1409, __pyx_L1_error)
+  __pyx_codeobj__210 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_screen_width, 1523, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__210)) __PYX_ERR(0, 1523, __pyx_L1_error)
 
-  /* "raylib.pyx":1412
+  /* "raylib.pyx":1526
  *     return GetScreenWidth()
  * 
  * def get_screen_height() -> int:             # <<<<<<<<<<<<<<
  *     return GetScreenHeight()
  * 
  */
-  __pyx_codeobj__205 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_screen_height, 1412, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__205)) __PYX_ERR(0, 1412, __pyx_L1_error)
+  __pyx_codeobj__211 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_screen_height, 1526, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__211)) __PYX_ERR(0, 1526, __pyx_L1_error)
 
-  /* "raylib.pyx":1415
+  /* "raylib.pyx":1529
  *     return GetScreenHeight()
  * 
  * def get_render_width() -> int:             # <<<<<<<<<<<<<<
  *     return GetRenderWidth()
  * 
  */
-  __pyx_codeobj__206 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_render_width, 1415, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__206)) __PYX_ERR(0, 1415, __pyx_L1_error)
+  __pyx_codeobj__212 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_render_width, 1529, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__212)) __PYX_ERR(0, 1529, __pyx_L1_error)
 
-  /* "raylib.pyx":1418
+  /* "raylib.pyx":1532
  *     return GetRenderWidth()
  * 
  * def get_render_height() -> int:             # <<<<<<<<<<<<<<
  *     return GetRenderHeight()
  * 
  */
-  __pyx_codeobj__207 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_render_height, 1418, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__207)) __PYX_ERR(0, 1418, __pyx_L1_error)
+  __pyx_codeobj__213 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_render_height, 1532, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__213)) __PYX_ERR(0, 1532, __pyx_L1_error)
 
-  /* "raylib.pyx":1421
+  /* "raylib.pyx":1535
  *     return GetRenderHeight()
  * 
  * def get_monitor_count() -> int:             # <<<<<<<<<<<<<<
  *     return GetMonitorCount()
  * 
  */
-  __pyx_codeobj__208 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_count, 1421, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__208)) __PYX_ERR(0, 1421, __pyx_L1_error)
+  __pyx_codeobj__214 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_count, 1535, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__214)) __PYX_ERR(0, 1535, __pyx_L1_error)
 
-  /* "raylib.pyx":1424
+  /* "raylib.pyx":1538
  *     return GetMonitorCount()
  * 
  * def get_current_monitor() -> int:             # <<<<<<<<<<<<<<
  *     return GetCurrentMonitor()
  * 
  */
-  __pyx_codeobj__209 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_current_monitor, 1424, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__209)) __PYX_ERR(0, 1424, __pyx_L1_error)
+  __pyx_codeobj__215 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_current_monitor, 1538, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__215)) __PYX_ERR(0, 1538, __pyx_L1_error)
 
-  /* "raylib.pyx":1427
+  /* "raylib.pyx":1541
  *     return GetCurrentMonitor()
  * 
  * def get_monitor_position(int monitor) -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     _vec._vector = GetMonitorPosition(monitor)
  */
-  __pyx_tuple__210 = PyTuple_Pack(3, __pyx_n_s_monitor, __pyx_n_s_monitor, __pyx_n_s_vec); if (unlikely(!__pyx_tuple__210)) __PYX_ERR(0, 1427, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__210);
-  __Pyx_GIVEREF(__pyx_tuple__210);
-  __pyx_codeobj__211 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__210, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_position, 1427, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__211)) __PYX_ERR(0, 1427, __pyx_L1_error)
+  __pyx_tuple__216 = PyTuple_Pack(3, __pyx_n_s_monitor, __pyx_n_s_monitor, __pyx_n_s_vec); if (unlikely(!__pyx_tuple__216)) __PYX_ERR(0, 1541, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__216);
+  __Pyx_GIVEREF(__pyx_tuple__216);
+  __pyx_codeobj__217 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__216, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_position, 1541, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__217)) __PYX_ERR(0, 1541, __pyx_L1_error)
 
-  /* "raylib.pyx":1432
+  /* "raylib.pyx":1546
  *     return _vec
  * 
  * def get_monitor_width(int monitor) -> int:             # <<<<<<<<<<<<<<
  *     return GetMonitorWidth(monitor)
  * 
  */
-  __pyx_tuple__212 = PyTuple_Pack(2, __pyx_n_s_monitor, __pyx_n_s_monitor); if (unlikely(!__pyx_tuple__212)) __PYX_ERR(0, 1432, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__212);
-  __Pyx_GIVEREF(__pyx_tuple__212);
-  __pyx_codeobj__213 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__212, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_width, 1432, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__213)) __PYX_ERR(0, 1432, __pyx_L1_error)
+  __pyx_tuple__218 = PyTuple_Pack(2, __pyx_n_s_monitor, __pyx_n_s_monitor); if (unlikely(!__pyx_tuple__218)) __PYX_ERR(0, 1546, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__218);
+  __Pyx_GIVEREF(__pyx_tuple__218);
+  __pyx_codeobj__219 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__218, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_width, 1546, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__219)) __PYX_ERR(0, 1546, __pyx_L1_error)
 
-  /* "raylib.pyx":1435
+  /* "raylib.pyx":1549
  *     return GetMonitorWidth(monitor)
  * 
  * def get_monitor_height(int monitor) -> int:             # <<<<<<<<<<<<<<
  *     return GetMonitorHeight(monitor)
  * 
  */
-  __pyx_tuple__214 = PyTuple_Pack(2, __pyx_n_s_monitor, __pyx_n_s_monitor); if (unlikely(!__pyx_tuple__214)) __PYX_ERR(0, 1435, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__214);
-  __Pyx_GIVEREF(__pyx_tuple__214);
-  __pyx_codeobj__215 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__214, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_height, 1435, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__215)) __PYX_ERR(0, 1435, __pyx_L1_error)
+  __pyx_tuple__220 = PyTuple_Pack(2, __pyx_n_s_monitor, __pyx_n_s_monitor); if (unlikely(!__pyx_tuple__220)) __PYX_ERR(0, 1549, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__220);
+  __Pyx_GIVEREF(__pyx_tuple__220);
+  __pyx_codeobj__221 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__220, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_height, 1549, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__221)) __PYX_ERR(0, 1549, __pyx_L1_error)
 
-  /* "raylib.pyx":1438
+  /* "raylib.pyx":1552
  *     return GetMonitorHeight(monitor)
  * 
  * def get_monitor_physical_width(int monitor) -> int:             # <<<<<<<<<<<<<<
  *     return GetMonitorPhysicalWidth(monitor)
  * 
  */
-  __pyx_tuple__216 = PyTuple_Pack(2, __pyx_n_s_monitor, __pyx_n_s_monitor); if (unlikely(!__pyx_tuple__216)) __PYX_ERR(0, 1438, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__216);
-  __Pyx_GIVEREF(__pyx_tuple__216);
-  __pyx_codeobj__217 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__216, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_physical_width, 1438, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__217)) __PYX_ERR(0, 1438, __pyx_L1_error)
+  __pyx_tuple__222 = PyTuple_Pack(2, __pyx_n_s_monitor, __pyx_n_s_monitor); if (unlikely(!__pyx_tuple__222)) __PYX_ERR(0, 1552, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__222);
+  __Pyx_GIVEREF(__pyx_tuple__222);
+  __pyx_codeobj__223 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__222, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_physical_width, 1552, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__223)) __PYX_ERR(0, 1552, __pyx_L1_error)
 
-  /* "raylib.pyx":1441
+  /* "raylib.pyx":1555
  *     return GetMonitorPhysicalWidth(monitor)
  * 
  * def get_monitor_physical_height(int monitor) -> int:             # <<<<<<<<<<<<<<
  *     return GetMonitorPhysicalHeight(monitor)
  * 
  */
-  __pyx_tuple__218 = PyTuple_Pack(2, __pyx_n_s_monitor, __pyx_n_s_monitor); if (unlikely(!__pyx_tuple__218)) __PYX_ERR(0, 1441, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__218);
-  __Pyx_GIVEREF(__pyx_tuple__218);
-  __pyx_codeobj__219 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__218, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_physical_height, 1441, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__219)) __PYX_ERR(0, 1441, __pyx_L1_error)
+  __pyx_tuple__224 = PyTuple_Pack(2, __pyx_n_s_monitor, __pyx_n_s_monitor); if (unlikely(!__pyx_tuple__224)) __PYX_ERR(0, 1555, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__224);
+  __Pyx_GIVEREF(__pyx_tuple__224);
+  __pyx_codeobj__225 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__224, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_physical_height, 1555, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__225)) __PYX_ERR(0, 1555, __pyx_L1_error)
 
-  /* "raylib.pyx":1444
+  /* "raylib.pyx":1558
  *     return GetMonitorPhysicalHeight(monitor)
  * 
  * def get_monitor_refresh_rate(int monitor) -> int:             # <<<<<<<<<<<<<<
  *     return GetMonitorRefreshRate(monitor)
  * 
  */
-  __pyx_tuple__220 = PyTuple_Pack(2, __pyx_n_s_monitor, __pyx_n_s_monitor); if (unlikely(!__pyx_tuple__220)) __PYX_ERR(0, 1444, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__220);
-  __Pyx_GIVEREF(__pyx_tuple__220);
-  __pyx_codeobj__221 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__220, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_refresh_rate, 1444, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__221)) __PYX_ERR(0, 1444, __pyx_L1_error)
+  __pyx_tuple__226 = PyTuple_Pack(2, __pyx_n_s_monitor, __pyx_n_s_monitor); if (unlikely(!__pyx_tuple__226)) __PYX_ERR(0, 1558, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__226);
+  __Pyx_GIVEREF(__pyx_tuple__226);
+  __pyx_codeobj__227 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__226, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_refresh_rate, 1558, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__227)) __PYX_ERR(0, 1558, __pyx_L1_error)
 
-  /* "raylib.pyx":1447
+  /* "raylib.pyx":1561
  *     return GetMonitorRefreshRate(monitor)
  * 
  * def get_window_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     _vec._vector = GetWindowPosition()
  */
-  __pyx_tuple__222 = PyTuple_Pack(1, __pyx_n_s_vec); if (unlikely(!__pyx_tuple__222)) __PYX_ERR(0, 1447, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__222);
-  __Pyx_GIVEREF(__pyx_tuple__222);
-  __pyx_codeobj__223 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__222, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_window_position, 1447, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__223)) __PYX_ERR(0, 1447, __pyx_L1_error)
+  __pyx_tuple__228 = PyTuple_Pack(1, __pyx_n_s_vec); if (unlikely(!__pyx_tuple__228)) __PYX_ERR(0, 1561, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__228);
+  __Pyx_GIVEREF(__pyx_tuple__228);
+  __pyx_codeobj__229 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__228, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_window_position, 1561, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__229)) __PYX_ERR(0, 1561, __pyx_L1_error)
 
-  /* "raylib.pyx":1452
+  /* "raylib.pyx":1566
  *     return _vec
  * 
  * def get_window_scale_dpi() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     _vec._vector = GetWindowScaleDPI()
  */
-  __pyx_tuple__224 = PyTuple_Pack(1, __pyx_n_s_vec); if (unlikely(!__pyx_tuple__224)) __PYX_ERR(0, 1452, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__224);
-  __Pyx_GIVEREF(__pyx_tuple__224);
-  __pyx_codeobj__225 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__224, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_window_scale_dpi, 1452, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__225)) __PYX_ERR(0, 1452, __pyx_L1_error)
+  __pyx_tuple__230 = PyTuple_Pack(1, __pyx_n_s_vec); if (unlikely(!__pyx_tuple__230)) __PYX_ERR(0, 1566, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__230);
+  __Pyx_GIVEREF(__pyx_tuple__230);
+  __pyx_codeobj__231 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__230, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_window_scale_dpi, 1566, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__231)) __PYX_ERR(0, 1566, __pyx_L1_error)
 
-  /* "raylib.pyx":1457
+  /* "raylib.pyx":1571
  *     return _vec
  * 
  * def get_monitor_name(int monitor) -> bytes:             # <<<<<<<<<<<<<<
  *     return GetMonitorName(monitor)
  * 
  */
-  __pyx_tuple__226 = PyTuple_Pack(2, __pyx_n_s_monitor, __pyx_n_s_monitor); if (unlikely(!__pyx_tuple__226)) __PYX_ERR(0, 1457, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__226);
-  __Pyx_GIVEREF(__pyx_tuple__226);
-  __pyx_codeobj__227 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__226, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_name, 1457, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__227)) __PYX_ERR(0, 1457, __pyx_L1_error)
+  __pyx_tuple__232 = PyTuple_Pack(2, __pyx_n_s_monitor, __pyx_n_s_monitor); if (unlikely(!__pyx_tuple__232)) __PYX_ERR(0, 1571, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__232);
+  __Pyx_GIVEREF(__pyx_tuple__232);
+  __pyx_codeobj__233 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__232, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_monitor_name, 1571, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__233)) __PYX_ERR(0, 1571, __pyx_L1_error)
 
-  /* "raylib.pyx":1460
+  /* "raylib.pyx":1574
  *     return GetMonitorName(monitor)
  * 
  * def set_clipboard_text(str text) -> None:             # <<<<<<<<<<<<<<
  *     SetClipboardText(text)
  * 
  */
-  __pyx_tuple__228 = PyTuple_Pack(1, __pyx_n_s_text); if (unlikely(!__pyx_tuple__228)) __PYX_ERR(0, 1460, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__228);
-  __Pyx_GIVEREF(__pyx_tuple__228);
-  __pyx_codeobj__229 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__228, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_clipboard_text, 1460, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__229)) __PYX_ERR(0, 1460, __pyx_L1_error)
+  __pyx_tuple__234 = PyTuple_Pack(1, __pyx_n_s_text); if (unlikely(!__pyx_tuple__234)) __PYX_ERR(0, 1574, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__234);
+  __Pyx_GIVEREF(__pyx_tuple__234);
+  __pyx_codeobj__235 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__234, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_clipboard_text, 1574, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__235)) __PYX_ERR(0, 1574, __pyx_L1_error)
 
-  /* "raylib.pyx":1463
+  /* "raylib.pyx":1577
  *     SetClipboardText(text)
  * 
  * def get_clipboard_text() -> bytes:             # <<<<<<<<<<<<<<
  *     return GetClipboardText()
  * 
  */
-  __pyx_codeobj__230 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_clipboard_text, 1463, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__230)) __PYX_ERR(0, 1463, __pyx_L1_error)
+  __pyx_codeobj__236 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_clipboard_text, 1577, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__236)) __PYX_ERR(0, 1577, __pyx_L1_error)
 
-  /* "raylib.pyx":1466
+  /* "raylib.pyx":1580
  *     return GetClipboardText()
  * 
  * def enable_event_waiting() -> None:             # <<<<<<<<<<<<<<
  *     EnableEventWaiting()
  * 
  */
-  __pyx_codeobj__231 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_enable_event_waiting, 1466, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__231)) __PYX_ERR(0, 1466, __pyx_L1_error)
+  __pyx_codeobj__237 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_enable_event_waiting, 1580, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__237)) __PYX_ERR(0, 1580, __pyx_L1_error)
 
-  /* "raylib.pyx":1469
+  /* "raylib.pyx":1583
  *     EnableEventWaiting()
  * 
  * def disable_event_waiting() -> None:             # <<<<<<<<<<<<<<
  *     DisableEventWaiting()
  * 
  */
-  __pyx_codeobj__232 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_disable_event_waiting, 1469, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__232)) __PYX_ERR(0, 1469, __pyx_L1_error)
+  __pyx_codeobj__238 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_disable_event_waiting, 1583, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__238)) __PYX_ERR(0, 1583, __pyx_L1_error)
 
-  /* "raylib.pyx":1472
+  /* "raylib.pyx":1586
  *     DisableEventWaiting()
  * 
  * def show_cursor() -> None:             # <<<<<<<<<<<<<<
  *     ShowCursor()
  * 
  */
-  __pyx_codeobj__233 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_show_cursor, 1472, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__233)) __PYX_ERR(0, 1472, __pyx_L1_error)
+  __pyx_codeobj__239 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_show_cursor, 1586, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__239)) __PYX_ERR(0, 1586, __pyx_L1_error)
 
-  /* "raylib.pyx":1475
+  /* "raylib.pyx":1589
  *     ShowCursor()
  * 
  * def hide_cursor() -> None:             # <<<<<<<<<<<<<<
  *     HideCursor()
  * 
  */
-  __pyx_codeobj__234 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_hide_cursor, 1475, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__234)) __PYX_ERR(0, 1475, __pyx_L1_error)
+  __pyx_codeobj__240 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_hide_cursor, 1589, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__240)) __PYX_ERR(0, 1589, __pyx_L1_error)
 
-  /* "raylib.pyx":1478
+  /* "raylib.pyx":1592
  *     HideCursor()
  * 
  * def is_cursor_hidden() -> bint:             # <<<<<<<<<<<<<<
  *     return IsCursorHidden()
  * 
  */
-  __pyx_codeobj__235 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_cursor_hidden, 1478, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__235)) __PYX_ERR(0, 1478, __pyx_L1_error)
+  __pyx_codeobj__241 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_cursor_hidden, 1592, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__241)) __PYX_ERR(0, 1592, __pyx_L1_error)
 
-  /* "raylib.pyx":1481
+  /* "raylib.pyx":1595
  *     return IsCursorHidden()
  * 
  * def enable_cursor() -> None:             # <<<<<<<<<<<<<<
  *     EnableCursor()
  * 
  */
-  __pyx_codeobj__236 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_enable_cursor, 1481, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__236)) __PYX_ERR(0, 1481, __pyx_L1_error)
+  __pyx_codeobj__242 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_enable_cursor, 1595, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__242)) __PYX_ERR(0, 1595, __pyx_L1_error)
 
-  /* "raylib.pyx":1484
+  /* "raylib.pyx":1598
  *     EnableCursor()
  * 
  * def disable_cursor() -> None:             # <<<<<<<<<<<<<<
  *     DisableCursor()
  * 
  */
-  __pyx_codeobj__237 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_disable_cursor, 1484, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__237)) __PYX_ERR(0, 1484, __pyx_L1_error)
+  __pyx_codeobj__243 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_disable_cursor, 1598, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__243)) __PYX_ERR(0, 1598, __pyx_L1_error)
 
-  /* "raylib.pyx":1487
+  /* "raylib.pyx":1601
  *     DisableCursor()
  * 
  * def is_cursor_on_screen() -> bint:             # <<<<<<<<<<<<<<
  *     return IsCursorOnScreen()
  * 
  */
-  __pyx_codeobj__238 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_cursor_on_screen, 1487, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__238)) __PYX_ERR(0, 1487, __pyx_L1_error)
+  __pyx_codeobj__244 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_cursor_on_screen, 1601, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__244)) __PYX_ERR(0, 1601, __pyx_L1_error)
 
-  /* "raylib.pyx":1490
+  /* "raylib.pyx":1604
  *     return IsCursorOnScreen()
  * 
  * def set_target_fps(int fps) -> None:             # <<<<<<<<<<<<<<
  *     SetTargetFPS(fps)
  * 
  */
-  __pyx_tuple__239 = PyTuple_Pack(2, __pyx_n_s_fps, __pyx_n_s_fps); if (unlikely(!__pyx_tuple__239)) __PYX_ERR(0, 1490, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__239);
-  __Pyx_GIVEREF(__pyx_tuple__239);
-  __pyx_codeobj__240 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__239, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_target_fps, 1490, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__240)) __PYX_ERR(0, 1490, __pyx_L1_error)
+  __pyx_tuple__245 = PyTuple_Pack(2, __pyx_n_s_fps, __pyx_n_s_fps); if (unlikely(!__pyx_tuple__245)) __PYX_ERR(0, 1604, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__245);
+  __Pyx_GIVEREF(__pyx_tuple__245);
+  __pyx_codeobj__246 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__245, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_target_fps, 1604, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__246)) __PYX_ERR(0, 1604, __pyx_L1_error)
 
-  /* "raylib.pyx":1493
+  /* "raylib.pyx":1607
  *     SetTargetFPS(fps)
  * 
  * def get_delta_time() -> float:             # <<<<<<<<<<<<<<
  *     return GetFrameTime()
  * 
  */
-  __pyx_codeobj__241 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_delta_time, 1493, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__241)) __PYX_ERR(0, 1493, __pyx_L1_error)
+  __pyx_codeobj__247 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_delta_time, 1607, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__247)) __PYX_ERR(0, 1607, __pyx_L1_error)
 
-  /* "raylib.pyx":1496
+  /* "raylib.pyx":1610
  *     return GetFrameTime()
  * 
  * def get_frame_time() -> float:             # <<<<<<<<<<<<<<
  *     return GetFrameTime()
  * 
  */
-  __pyx_codeobj__242 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_frame_time, 1496, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__242)) __PYX_ERR(0, 1496, __pyx_L1_error)
+  __pyx_codeobj__248 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_frame_time, 1610, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__248)) __PYX_ERR(0, 1610, __pyx_L1_error)
 
-  /* "raylib.pyx":1499
+  /* "raylib.pyx":1613
  *     return GetFrameTime()
  * 
  * def get_time() -> float:             # <<<<<<<<<<<<<<
  *     return GetTime()
  * 
  */
-  __pyx_codeobj__243 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_time, 1499, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__243)) __PYX_ERR(0, 1499, __pyx_L1_error)
+  __pyx_codeobj__249 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_time, 1613, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__249)) __PYX_ERR(0, 1613, __pyx_L1_error)
 
-  /* "raylib.pyx":1502
+  /* "raylib.pyx":1616
  *     return GetTime()
  * 
  * def get_fps() -> int:             # <<<<<<<<<<<<<<
  *     return GetFPS()
  * 
  */
-  __pyx_codeobj__244 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_fps, 1502, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__244)) __PYX_ERR(0, 1502, __pyx_L1_error)
+  __pyx_codeobj__250 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_fps, 1616, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__250)) __PYX_ERR(0, 1616, __pyx_L1_error)
 
-  /* "raylib.pyx":1505
+  /* "raylib.pyx":1619
  *     return GetFPS()
  * 
  * def begin_drawing() -> None:             # <<<<<<<<<<<<<<
  *     BeginDrawing()
  * 
  */
-  __pyx_codeobj__245 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_drawing, 1505, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__245)) __PYX_ERR(0, 1505, __pyx_L1_error)
+  __pyx_codeobj__251 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_drawing, 1619, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__251)) __PYX_ERR(0, 1619, __pyx_L1_error)
 
-  /* "raylib.pyx":1508
+  /* "raylib.pyx":1622
  *     BeginDrawing()
  * 
  * def end_drawing() -> None:             # <<<<<<<<<<<<<<
  *     EndDrawing()
  * 
  */
-  __pyx_codeobj__246 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_drawing, 1508, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__246)) __PYX_ERR(0, 1508, __pyx_L1_error)
+  __pyx_codeobj__252 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_drawing, 1622, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__252)) __PYX_ERR(0, 1622, __pyx_L1_error)
 
-  /* "raylib.pyx":1511
+  /* "raylib.pyx":1625
  *     EndDrawing()
  * 
  * def begin_mode_2D(CyCamera2D camera) -> None:             # <<<<<<<<<<<<<<
  *     BeginMode2D(camera._camera_2d)
  * 
  */
-  __pyx_tuple__247 = PyTuple_Pack(1, __pyx_n_s_camera); if (unlikely(!__pyx_tuple__247)) __PYX_ERR(0, 1511, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__247);
-  __Pyx_GIVEREF(__pyx_tuple__247);
-  __pyx_codeobj__248 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__247, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_mode_2D, 1511, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__248)) __PYX_ERR(0, 1511, __pyx_L1_error)
+  __pyx_tuple__253 = PyTuple_Pack(1, __pyx_n_s_camera); if (unlikely(!__pyx_tuple__253)) __PYX_ERR(0, 1625, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__253);
+  __Pyx_GIVEREF(__pyx_tuple__253);
+  __pyx_codeobj__254 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__253, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_mode_2D, 1625, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__254)) __PYX_ERR(0, 1625, __pyx_L1_error)
 
-  /* "raylib.pyx":1514
+  /* "raylib.pyx":1628
  *     BeginMode2D(camera._camera_2d)
  * 
  * def end_mode_2d() -> None:             # <<<<<<<<<<<<<<
  *     EndMode2D()
  * 
  */
-  __pyx_codeobj__249 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_mode_2d, 1514, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__249)) __PYX_ERR(0, 1514, __pyx_L1_error)
+  __pyx_codeobj__255 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_mode_2d, 1628, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__255)) __PYX_ERR(0, 1628, __pyx_L1_error)
 
-  /* "raylib.pyx":1517
+  /* "raylib.pyx":1631
  *     EndMode2D()
  * 
  * def begin_mode_3d(CyCamera3D camera) -> None:             # <<<<<<<<<<<<<<
  *     BeginMode3D(camera._camera_3d)
  * 
  */
-  __pyx_tuple__250 = PyTuple_Pack(1, __pyx_n_s_camera); if (unlikely(!__pyx_tuple__250)) __PYX_ERR(0, 1517, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__250);
-  __Pyx_GIVEREF(__pyx_tuple__250);
-  __pyx_codeobj__251 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__250, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_mode_3d, 1517, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__251)) __PYX_ERR(0, 1517, __pyx_L1_error)
+  __pyx_tuple__256 = PyTuple_Pack(1, __pyx_n_s_camera); if (unlikely(!__pyx_tuple__256)) __PYX_ERR(0, 1631, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__256);
+  __Pyx_GIVEREF(__pyx_tuple__256);
+  __pyx_codeobj__257 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__256, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_mode_3d, 1631, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__257)) __PYX_ERR(0, 1631, __pyx_L1_error)
 
-  /* "raylib.pyx":1520
+  /* "raylib.pyx":1634
  *     BeginMode3D(camera._camera_3d)
  * 
  * def end_mode_3d() -> None:             # <<<<<<<<<<<<<<
  *     EndMode3D()
  * 
  */
-  __pyx_codeobj__252 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_mode_3d, 1520, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__252)) __PYX_ERR(0, 1520, __pyx_L1_error)
+  __pyx_codeobj__258 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_mode_3d, 1634, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__258)) __PYX_ERR(0, 1634, __pyx_L1_error)
 
-  /* "raylib.pyx":1523
+  /* "raylib.pyx":1637
  *     EndMode3D()
  * 
  * def begin_texture_mode(CyRenderTexture2D target) -> None:             # <<<<<<<<<<<<<<
  *     BeginTextureMode(target._render_texture)
  * 
  */
-  __pyx_tuple__253 = PyTuple_Pack(1, __pyx_n_s_target); if (unlikely(!__pyx_tuple__253)) __PYX_ERR(0, 1523, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__253);
-  __Pyx_GIVEREF(__pyx_tuple__253);
-  __pyx_codeobj__254 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__253, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_texture_mode, 1523, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__254)) __PYX_ERR(0, 1523, __pyx_L1_error)
+  __pyx_tuple__259 = PyTuple_Pack(1, __pyx_n_s_target); if (unlikely(!__pyx_tuple__259)) __PYX_ERR(0, 1637, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__259);
+  __Pyx_GIVEREF(__pyx_tuple__259);
+  __pyx_codeobj__260 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__259, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_texture_mode, 1637, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__260)) __PYX_ERR(0, 1637, __pyx_L1_error)
 
-  /* "raylib.pyx":1526
+  /* "raylib.pyx":1640
  *     BeginTextureMode(target._render_texture)
  * 
  * def end_texture_mode() -> None:             # <<<<<<<<<<<<<<
  *     EndTextureMode()
  * 
  */
-  __pyx_codeobj__255 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_texture_mode, 1526, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__255)) __PYX_ERR(0, 1526, __pyx_L1_error)
+  __pyx_codeobj__261 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_texture_mode, 1640, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__261)) __PYX_ERR(0, 1640, __pyx_L1_error)
 
-  /* "raylib.pyx":1529
+  /* "raylib.pyx":1643
  *     EndTextureMode()
  * 
  * def begin_shader_mode(CyShader shader) -> None:             # <<<<<<<<<<<<<<
  *     BeginShaderMode(shader._shader)
  * 
  */
-  __pyx_tuple__256 = PyTuple_Pack(1, __pyx_n_s_shader); if (unlikely(!__pyx_tuple__256)) __PYX_ERR(0, 1529, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__256);
-  __Pyx_GIVEREF(__pyx_tuple__256);
-  __pyx_codeobj__257 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__256, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_shader_mode, 1529, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__257)) __PYX_ERR(0, 1529, __pyx_L1_error)
+  __pyx_tuple__262 = PyTuple_Pack(1, __pyx_n_s_shader); if (unlikely(!__pyx_tuple__262)) __PYX_ERR(0, 1643, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__262);
+  __Pyx_GIVEREF(__pyx_tuple__262);
+  __pyx_codeobj__263 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__262, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_shader_mode, 1643, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__263)) __PYX_ERR(0, 1643, __pyx_L1_error)
 
-  /* "raylib.pyx":1532
+  /* "raylib.pyx":1646
  *     BeginShaderMode(shader._shader)
  * 
  * def end_shader_mode() -> None:             # <<<<<<<<<<<<<<
  *     EndShaderMode()
  * 
  */
-  __pyx_codeobj__258 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_shader_mode, 1532, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__258)) __PYX_ERR(0, 1532, __pyx_L1_error)
+  __pyx_codeobj__264 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_shader_mode, 1646, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__264)) __PYX_ERR(0, 1646, __pyx_L1_error)
 
-  /* "raylib.pyx":1535
+  /* "raylib.pyx":1649
  *     EndShaderMode()
  * 
  * def begin_blend_mode(int mode) -> None:             # <<<<<<<<<<<<<<
  *     BeginBlendMode(mode)
  * 
  */
-  __pyx_tuple__259 = PyTuple_Pack(2, __pyx_n_s_mode, __pyx_n_s_mode); if (unlikely(!__pyx_tuple__259)) __PYX_ERR(0, 1535, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__259);
-  __Pyx_GIVEREF(__pyx_tuple__259);
-  __pyx_codeobj__260 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__259, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_blend_mode, 1535, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__260)) __PYX_ERR(0, 1535, __pyx_L1_error)
+  __pyx_tuple__265 = PyTuple_Pack(2, __pyx_n_s_mode, __pyx_n_s_mode); if (unlikely(!__pyx_tuple__265)) __PYX_ERR(0, 1649, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__265);
+  __Pyx_GIVEREF(__pyx_tuple__265);
+  __pyx_codeobj__266 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__265, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_blend_mode, 1649, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__266)) __PYX_ERR(0, 1649, __pyx_L1_error)
 
-  /* "raylib.pyx":1538
+  /* "raylib.pyx":1652
  *     BeginBlendMode(mode)
  * 
  * def end_blend_mode() -> None:             # <<<<<<<<<<<<<<
  *     EndBlendMode()
  * 
  */
-  __pyx_codeobj__261 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_blend_mode, 1538, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__261)) __PYX_ERR(0, 1538, __pyx_L1_error)
+  __pyx_codeobj__267 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_blend_mode, 1652, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__267)) __PYX_ERR(0, 1652, __pyx_L1_error)
 
-  /* "raylib.pyx":1541
+  /* "raylib.pyx":1655
  *     EndBlendMode()
  * 
  * def begin_scissor_mode(int x, int y, int width, int height) -> None:             # <<<<<<<<<<<<<<
  *     BeginScissorMode(x, y, width, height)
  * 
  */
-  __pyx_tuple__262 = PyTuple_Pack(4, __pyx_n_s_x, __pyx_n_s_y, __pyx_n_s_width, __pyx_n_s_height); if (unlikely(!__pyx_tuple__262)) __PYX_ERR(0, 1541, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__262);
-  __Pyx_GIVEREF(__pyx_tuple__262);
-  __pyx_codeobj__263 = (PyObject*)__Pyx_PyCode_New(4, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__262, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_scissor_mode, 1541, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__263)) __PYX_ERR(0, 1541, __pyx_L1_error)
+  __pyx_tuple__268 = PyTuple_Pack(4, __pyx_n_s_x, __pyx_n_s_y, __pyx_n_s_width, __pyx_n_s_height); if (unlikely(!__pyx_tuple__268)) __PYX_ERR(0, 1655, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__268);
+  __Pyx_GIVEREF(__pyx_tuple__268);
+  __pyx_codeobj__269 = (PyObject*)__Pyx_PyCode_New(4, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__268, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_scissor_mode, 1655, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__269)) __PYX_ERR(0, 1655, __pyx_L1_error)
 
-  /* "raylib.pyx":1544
+  /* "raylib.pyx":1658
  *     BeginScissorMode(x, y, width, height)
  * 
  * def end_scissor_mode() -> None:             # <<<<<<<<<<<<<<
  *     EndScissorMode()
  * 
  */
-  __pyx_codeobj__264 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_scissor_mode, 1544, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__264)) __PYX_ERR(0, 1544, __pyx_L1_error)
+  __pyx_codeobj__270 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_scissor_mode, 1658, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__270)) __PYX_ERR(0, 1658, __pyx_L1_error)
 
-  /* "raylib.pyx":1547
+  /* "raylib.pyx":1661
  *     EndScissorMode()
  * 
  * def begin_vr_stereo_mode(CyVrStereoConfig config) -> None:             # <<<<<<<<<<<<<<
  *     BeginVrStereoMode(config._vr_stereo_config)
  * 
  */
-  __pyx_tuple__265 = PyTuple_Pack(1, __pyx_n_s_config); if (unlikely(!__pyx_tuple__265)) __PYX_ERR(0, 1547, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__265);
-  __Pyx_GIVEREF(__pyx_tuple__265);
-  __pyx_codeobj__266 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__265, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_vr_stereo_mode, 1547, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__266)) __PYX_ERR(0, 1547, __pyx_L1_error)
+  __pyx_tuple__271 = PyTuple_Pack(1, __pyx_n_s_config); if (unlikely(!__pyx_tuple__271)) __PYX_ERR(0, 1661, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__271);
+  __Pyx_GIVEREF(__pyx_tuple__271);
+  __pyx_codeobj__272 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__271, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_begin_vr_stereo_mode, 1661, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__272)) __PYX_ERR(0, 1661, __pyx_L1_error)
 
-  /* "raylib.pyx":1550
+  /* "raylib.pyx":1664
  *     BeginVrStereoMode(config._vr_stereo_config)
  * 
  * def end_vr_stereo_mode() -> None:             # <<<<<<<<<<<<<<
  *     EndVrStereoMode()
  * #cdef void SwapScreenBuffer()
  */
-  __pyx_codeobj__267 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_vr_stereo_mode, 1550, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__267)) __PYX_ERR(0, 1550, __pyx_L1_error)
+  __pyx_codeobj__273 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_end_vr_stereo_mode, 1664, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__273)) __PYX_ERR(0, 1664, __pyx_L1_error)
 
-  /* "raylib.pyx":1645
+  /* "raylib.pyx":1759
  * #cdef int GetMouseX()                                    # Get mouse position X
  * 
  * def get_mouse_x() -> int:             # <<<<<<<<<<<<<<
  *     return GetMouseX()
  * 
  */
-  __pyx_codeobj__268 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_x, 1645, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__268)) __PYX_ERR(0, 1645, __pyx_L1_error)
+  __pyx_codeobj__274 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_x, 1759, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__274)) __PYX_ERR(0, 1759, __pyx_L1_error)
 
-  /* "raylib.pyx":1649
+  /* "raylib.pyx":1763
  * 
  * #cdef int GetMouseY()                                    # Get mouse position Y
  * def get_mouse_y() -> int:             # <<<<<<<<<<<<<<
  *     return GetMouseY()
  * 
  */
-  __pyx_codeobj__269 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_y, 1649, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__269)) __PYX_ERR(0, 1649, __pyx_L1_error)
+  __pyx_codeobj__275 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_y, 1763, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__275)) __PYX_ERR(0, 1763, __pyx_L1_error)
 
-  /* "raylib.pyx":1653
+  /* "raylib.pyx":1767
  * 
  * #cdef Vector2 GetMousePosition()                         # Get mouse position XY
  * def get_mouse_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetMousePosition()
  */
-  __pyx_tuple__270 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__270)) __PYX_ERR(0, 1653, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__270);
-  __Pyx_GIVEREF(__pyx_tuple__270);
-  __pyx_codeobj__271 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__270, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_position, 1653, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__271)) __PYX_ERR(0, 1653, __pyx_L1_error)
+  __pyx_tuple__276 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__276)) __PYX_ERR(0, 1767, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__276);
+  __Pyx_GIVEREF(__pyx_tuple__276);
+  __pyx_codeobj__277 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__276, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_position, 1767, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__277)) __PYX_ERR(0, 1767, __pyx_L1_error)
 
-  /* "raylib.pyx":1659
+  /* "raylib.pyx":1773
  * 
  * #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
  * def get_mouse_delta() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetMouseDelta()
  */
-  __pyx_tuple__272 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__272)) __PYX_ERR(0, 1659, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__272);
-  __Pyx_GIVEREF(__pyx_tuple__272);
-  __pyx_codeobj__273 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__272, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_delta, 1659, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__273)) __PYX_ERR(0, 1659, __pyx_L1_error)
+  __pyx_tuple__278 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__278)) __PYX_ERR(0, 1773, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__278);
+  __Pyx_GIVEREF(__pyx_tuple__278);
+  __pyx_codeobj__279 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__278, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_delta, 1773, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__279)) __PYX_ERR(0, 1773, __pyx_L1_error)
 
-  /* "raylib.pyx":1664
+  /* "raylib.pyx":1778
  *     return vec
  * #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
  * def set_mouse_position(int x, int y) -> None:             # <<<<<<<<<<<<<<
  *     SetMousePosition(x, y)
  * 
  */
-  __pyx_tuple__274 = PyTuple_Pack(2, __pyx_n_s_x, __pyx_n_s_y); if (unlikely(!__pyx_tuple__274)) __PYX_ERR(0, 1664, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__274);
-  __Pyx_GIVEREF(__pyx_tuple__274);
-  __pyx_codeobj__275 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__274, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_position, 1664, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__275)) __PYX_ERR(0, 1664, __pyx_L1_error)
+  __pyx_tuple__280 = PyTuple_Pack(2, __pyx_n_s_x, __pyx_n_s_y); if (unlikely(!__pyx_tuple__280)) __PYX_ERR(0, 1778, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__280);
+  __Pyx_GIVEREF(__pyx_tuple__280);
+  __pyx_codeobj__281 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__280, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_position, 1778, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__281)) __PYX_ERR(0, 1778, __pyx_L1_error)
 
-  /* "raylib.pyx":1668
+  /* "raylib.pyx":1782
  * 
  * #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
  * def set_mouse_offset(int offset_x, int offset_y) -> None:             # <<<<<<<<<<<<<<
  *     SetMouseOffset(offset_x, offset_y)
  * 
  */
-  __pyx_tuple__276 = PyTuple_Pack(2, __pyx_n_s_offset_x, __pyx_n_s_offset_y); if (unlikely(!__pyx_tuple__276)) __PYX_ERR(0, 1668, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__276);
-  __Pyx_GIVEREF(__pyx_tuple__276);
-  __pyx_codeobj__277 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__276, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_offset, 1668, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__277)) __PYX_ERR(0, 1668, __pyx_L1_error)
+  __pyx_tuple__282 = PyTuple_Pack(2, __pyx_n_s_offset_x, __pyx_n_s_offset_y); if (unlikely(!__pyx_tuple__282)) __PYX_ERR(0, 1782, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__282);
+  __Pyx_GIVEREF(__pyx_tuple__282);
+  __pyx_codeobj__283 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__282, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_offset, 1782, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__283)) __PYX_ERR(0, 1782, __pyx_L1_error)
 
-  /* "raylib.pyx":1672
+  /* "raylib.pyx":1786
  * 
  * #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
  * def set_mouse_scale(float scale_x, float scale_y) -> None:             # <<<<<<<<<<<<<<
  *     SetMouseScale(scale_x, scale_y)
  * 
  */
-  __pyx_tuple__278 = PyTuple_Pack(2, __pyx_n_s_scale_x, __pyx_n_s_scale_y); if (unlikely(!__pyx_tuple__278)) __PYX_ERR(0, 1672, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__278);
-  __Pyx_GIVEREF(__pyx_tuple__278);
-  __pyx_codeobj__279 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__278, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_scale, 1672, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__279)) __PYX_ERR(0, 1672, __pyx_L1_error)
+  __pyx_tuple__284 = PyTuple_Pack(2, __pyx_n_s_scale_x, __pyx_n_s_scale_y); if (unlikely(!__pyx_tuple__284)) __PYX_ERR(0, 1786, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__284);
+  __Pyx_GIVEREF(__pyx_tuple__284);
+  __pyx_codeobj__285 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__284, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_scale, 1786, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__285)) __PYX_ERR(0, 1786, __pyx_L1_error)
 
-  /* "raylib.pyx":1676
+  /* "raylib.pyx":1790
  * 
  * #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
  * def get_mouse_wheel_move() -> float:             # <<<<<<<<<<<<<<
  *     return GetMouseWheelMove()
  * 
  */
-  __pyx_codeobj__280 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_wheel_move, 1676, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__280)) __PYX_ERR(0, 1676, __pyx_L1_error)
+  __pyx_codeobj__286 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_wheel_move, 1790, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__286)) __PYX_ERR(0, 1790, __pyx_L1_error)
 
-  /* "raylib.pyx":1680
+  /* "raylib.pyx":1794
  * 
  * #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
  * def get_mouse_wheel_move_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetMouseWheelMoveV()
  */
-  __pyx_tuple__281 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__281)) __PYX_ERR(0, 1680, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__281);
-  __Pyx_GIVEREF(__pyx_tuple__281);
-  __pyx_codeobj__282 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__281, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_wheel_move_vector, 1680, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__282)) __PYX_ERR(0, 1680, __pyx_L1_error)
+  __pyx_tuple__287 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__287)) __PYX_ERR(0, 1794, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__287);
+  __Pyx_GIVEREF(__pyx_tuple__287);
+  __pyx_codeobj__288 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__287, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_wheel_move_vector, 1794, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__288)) __PYX_ERR(0, 1794, __pyx_L1_error)
 
-  /* "raylib.pyx":1686
+  /* "raylib.pyx":1800
  * 
  * #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
  * def set_mouse_cursor(int cursor) -> None:             # <<<<<<<<<<<<<<
  *     SetMouseCursor(cursor)
  * 
  */
-  __pyx_tuple__283 = PyTuple_Pack(2, __pyx_n_s_cursor, __pyx_n_s_cursor); if (unlikely(!__pyx_tuple__283)) __PYX_ERR(0, 1686, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__283);
-  __Pyx_GIVEREF(__pyx_tuple__283);
-  __pyx_codeobj__284 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__283, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_cursor, 1686, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__284)) __PYX_ERR(0, 1686, __pyx_L1_error)
+  __pyx_tuple__289 = PyTuple_Pack(2, __pyx_n_s_cursor, __pyx_n_s_cursor); if (unlikely(!__pyx_tuple__289)) __PYX_ERR(0, 1800, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__289);
+  __Pyx_GIVEREF(__pyx_tuple__289);
+  __pyx_codeobj__290 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__289, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_cursor, 1800, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__290)) __PYX_ERR(0, 1800, __pyx_L1_error)
 
-  /* "raylib.pyx":1690
+  /* "raylib.pyx":1804
  * 
  * #cdef int GetTouchX()                                    # Get touch position X for touch point 0 (relative to screen size)
  * def get_touch_x() -> int:             # <<<<<<<<<<<<<<
  *     return GetTouchX()
  *     #cdef int GetTouchY()                                    # Get touch position Y for touch point 0 (relative to screen size)
  */
-  __pyx_codeobj__285 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_touch_x, 1690, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__285)) __PYX_ERR(0, 1690, __pyx_L1_error)
+  __pyx_codeobj__291 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_touch_x, 1804, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__291)) __PYX_ERR(0, 1804, __pyx_L1_error)
 
-  /* "raylib.pyx":1715
+  /* "raylib.pyx":1829
  * 
  * 
  * def clear_background(CyColor color) -> None:             # <<<<<<<<<<<<<<
  *     ClearBackground(color._color)
  * 
  */
-  __pyx_tuple__286 = PyTuple_Pack(1, __pyx_n_s_color); if (unlikely(!__pyx_tuple__286)) __PYX_ERR(0, 1715, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__286);
-  __Pyx_GIVEREF(__pyx_tuple__286);
-  __pyx_codeobj__287 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__286, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_clear_background, 1715, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__287)) __PYX_ERR(0, 1715, __pyx_L1_error)
+  __pyx_tuple__292 = PyTuple_Pack(1, __pyx_n_s_color); if (unlikely(!__pyx_tuple__292)) __PYX_ERR(0, 1829, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__292);
+  __Pyx_GIVEREF(__pyx_tuple__292);
+  __pyx_codeobj__293 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__292, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_clear_background, 1829, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__293)) __PYX_ERR(0, 1829, __pyx_L1_error)
 
-  /* "raylib.pyx":1718
+  /* "raylib.pyx":1832
  *     ClearBackground(color._color)
  * 
  * def draw_fps(int x, int y) -> None:             # <<<<<<<<<<<<<<
  *     DrawFPS(x, y)
  */
-  __pyx_tuple__288 = PyTuple_Pack(2, __pyx_n_s_x, __pyx_n_s_y); if (unlikely(!__pyx_tuple__288)) __PYX_ERR(0, 1718, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__288);
-  __Pyx_GIVEREF(__pyx_tuple__288);
-  __pyx_codeobj__289 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__288, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_draw_fps, 1718, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__289)) __PYX_ERR(0, 1718, __pyx_L1_error)
+  __pyx_tuple__294 = PyTuple_Pack(2, __pyx_n_s_x, __pyx_n_s_y); if (unlikely(!__pyx_tuple__294)) __PYX_ERR(0, 1832, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__294);
+  __Pyx_GIVEREF(__pyx_tuple__294);
+  __pyx_codeobj__295 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__294, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_draw_fps, 1832, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__295)) __PYX_ERR(0, 1832, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_CyLineBezier(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_tuple__290 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__290)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__290);
-  __Pyx_GIVEREF(__pyx_tuple__290);
-  __pyx_codeobj__291 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__290, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyLineBezier, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__291)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_tuple__292 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__292)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__292);
-  __Pyx_GIVEREF(__pyx_tuple__292);
-  __pyx_codeobj__293 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__292, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyCircle, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__293)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_tuple__294 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__294)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__294);
-  __Pyx_GIVEREF(__pyx_tuple__294);
-  __pyx_codeobj__295 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__294, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyEclypse, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__295)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__296 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__296)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__296);
   __Pyx_GIVEREF(__pyx_tuple__296);
-  __pyx_codeobj__297 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__296, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyRing, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__297)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__297 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__296, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyLineBezier, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__297)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__298 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__298)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__298);
   __Pyx_GIVEREF(__pyx_tuple__298);
-  __pyx_codeobj__299 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__298, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyTriangle, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__299)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__299 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__298, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyCircle, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__299)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__300 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__300)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__300);
   __Pyx_GIVEREF(__pyx_tuple__300);
-  __pyx_codeobj__301 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__300, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyPolygon, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__301)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__301 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__300, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyEclypse, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__301)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__302 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__302)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__302);
   __Pyx_GIVEREF(__pyx_tuple__302);
-  __pyx_codeobj__303 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__302, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CySpline, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__303)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__303 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__302, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyRing, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__303)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__304 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__304)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__304);
   __Pyx_GIVEREF(__pyx_tuple__304);
-  __pyx_codeobj__305 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__304, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyLine3D, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__305)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__305 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__304, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyTriangle, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__305)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__306 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__306)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__306);
   __Pyx_GIVEREF(__pyx_tuple__306);
-  __pyx_codeobj__307 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__306, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyPoint3D, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__307)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__307 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__306, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyPolygon, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__307)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__308 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__308)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__308);
   __Pyx_GIVEREF(__pyx_tuple__308);
-  __pyx_codeobj__309 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__308, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyCircle3D, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__309)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__309 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__308, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CySpline, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__309)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__310 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__310)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__310);
   __Pyx_GIVEREF(__pyx_tuple__310);
-  __pyx_codeobj__311 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__310, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyTriangle3D, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__311)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__311 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__310, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyLine3D, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__311)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__312 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__312)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__312);
   __Pyx_GIVEREF(__pyx_tuple__312);
-  __pyx_codeobj__313 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__312, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyTriangleStrip3D, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__313)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__313 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__312, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyPoint3D, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__313)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__314 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__314)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__314);
   __Pyx_GIVEREF(__pyx_tuple__314);
-  __pyx_codeobj__315 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__314, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyCube, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__315)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__315 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__314, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyCircle3D, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__315)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__316 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__316)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__316);
   __Pyx_GIVEREF(__pyx_tuple__316);
-  __pyx_codeobj__317 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__316, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CySphere, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__317)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__317 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__316, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyTriangle3D, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__317)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__318 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__318)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__318);
   __Pyx_GIVEREF(__pyx_tuple__318);
-  __pyx_codeobj__319 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__318, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyCylinder, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__319)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__319 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__318, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyTriangleStrip3D, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__319)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__320 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__320)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__320);
   __Pyx_GIVEREF(__pyx_tuple__320);
-  __pyx_codeobj__321 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__320, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyCapsule, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__321)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__321 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__320, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyCube, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__321)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__322 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__322)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__322);
   __Pyx_GIVEREF(__pyx_tuple__322);
-  __pyx_codeobj__323 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__322, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyPlane, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__323)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__323 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__322, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CySphere, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__323)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__324 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__324)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__324);
   __Pyx_GIVEREF(__pyx_tuple__324);
-  __pyx_codeobj__325 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__324, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyGrid, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__325)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__325 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__324, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyCylinder, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__325)) __PYX_ERR(1, 1, __pyx_L1_error)
   __pyx_tuple__326 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__326)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__326);
   __Pyx_GIVEREF(__pyx_tuple__326);
-  __pyx_codeobj__327 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__326, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyAudioDeviceMana, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__327)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__327 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__326, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyCapsule, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__327)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__328 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__328)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__328);
+  __Pyx_GIVEREF(__pyx_tuple__328);
+  __pyx_codeobj__329 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__328, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyPlane, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__329)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__330 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__330)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__330);
+  __Pyx_GIVEREF(__pyx_tuple__330);
+  __pyx_codeobj__331 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__330, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyGrid, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__331)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__332 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__332)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__332);
+  __Pyx_GIVEREF(__pyx_tuple__332);
+  __pyx_codeobj__333 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__332, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyAudioDeviceMana, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__333)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "View.MemoryView":287
  *         return self.name
@@ -57597,9 +58723,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_tuple__328 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__328)) __PYX_ERR(1, 287, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__328);
-  __Pyx_GIVEREF(__pyx_tuple__328);
+  __pyx_tuple__334 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__334)) __PYX_ERR(1, 287, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__334);
+  __Pyx_GIVEREF(__pyx_tuple__334);
 
   /* "View.MemoryView":288
  * 
@@ -57608,9 +58734,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_tuple__329 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__329)) __PYX_ERR(1, 288, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__329);
-  __Pyx_GIVEREF(__pyx_tuple__329);
+  __pyx_tuple__335 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__335)) __PYX_ERR(1, 288, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__335);
+  __Pyx_GIVEREF(__pyx_tuple__335);
 
   /* "View.MemoryView":289
  * cdef generic = Enum("<strided and direct or indirect>")
@@ -57619,9 +58745,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__330 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__330)) __PYX_ERR(1, 289, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__330);
-  __Pyx_GIVEREF(__pyx_tuple__330);
+  __pyx_tuple__336 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__336)) __PYX_ERR(1, 289, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__336);
+  __Pyx_GIVEREF(__pyx_tuple__336);
 
   /* "View.MemoryView":292
  * 
@@ -57630,9 +58756,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_tuple__331 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__331)) __PYX_ERR(1, 292, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__331);
-  __Pyx_GIVEREF(__pyx_tuple__331);
+  __pyx_tuple__337 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__337)) __PYX_ERR(1, 292, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__337);
+  __Pyx_GIVEREF(__pyx_tuple__337);
 
   /* "View.MemoryView":293
  * 
@@ -57641,19 +58767,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__332 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__332)) __PYX_ERR(1, 293, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__332);
-  __Pyx_GIVEREF(__pyx_tuple__332);
+  __pyx_tuple__338 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__338)) __PYX_ERR(1, 293, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__338);
+  __Pyx_GIVEREF(__pyx_tuple__338);
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_Enum(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_tuple__333 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__333)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__333);
-  __Pyx_GIVEREF(__pyx_tuple__333);
-  __pyx_codeobj__334 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__333, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__334)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__339 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__339)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__339);
+  __Pyx_GIVEREF(__pyx_tuple__339);
+  __pyx_codeobj__340 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__339, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__340)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -57789,571 +58915,571 @@ static int __Pyx_modinit_type_init_code(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_6raylib_CyColor) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyColor) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyColor.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyColor.tp_dictoffset && __pyx_type_6raylib_CyColor.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyColor.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyColor, (PyObject *)&__pyx_type_6raylib_CyColor) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyColor) < 0) __PYX_ERR(0, 12, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyColor, (PyObject *)&__pyx_type_6raylib_CyColor) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyColor) < 0) __PYX_ERR(0, 13, __pyx_L1_error)
   __pyx_ptype_6raylib_CyColor = &__pyx_type_6raylib_CyColor;
-  if (PyType_Ready(&__pyx_type_6raylib_CyRectangle) < 0) __PYX_ERR(0, 174, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyRectangle) < 0) __PYX_ERR(0, 175, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyRectangle.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyRectangle.tp_dictoffset && __pyx_type_6raylib_CyRectangle.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyRectangle.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyRectangle, (PyObject *)&__pyx_type_6raylib_CyRectangle) < 0) __PYX_ERR(0, 174, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyRectangle) < 0) __PYX_ERR(0, 174, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyRectangle, (PyObject *)&__pyx_type_6raylib_CyRectangle) < 0) __PYX_ERR(0, 175, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyRectangle) < 0) __PYX_ERR(0, 175, __pyx_L1_error)
   __pyx_ptype_6raylib_CyRectangle = &__pyx_type_6raylib_CyRectangle;
-  if (PyType_Ready(&__pyx_type_6raylib_CyImage) < 0) __PYX_ERR(0, 239, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyImage) < 0) __PYX_ERR(0, 240, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyImage.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyImage.tp_dictoffset && __pyx_type_6raylib_CyImage.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyImage.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyImage, (PyObject *)&__pyx_type_6raylib_CyImage) < 0) __PYX_ERR(0, 239, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyImage) < 0) __PYX_ERR(0, 239, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyImage, (PyObject *)&__pyx_type_6raylib_CyImage) < 0) __PYX_ERR(0, 240, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyImage) < 0) __PYX_ERR(0, 240, __pyx_L1_error)
   __pyx_ptype_6raylib_CyImage = &__pyx_type_6raylib_CyImage;
-  if (PyType_Ready(&__pyx_type_6raylib_CyTexture) < 0) __PYX_ERR(0, 337, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyTexture) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyTexture.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyTexture.tp_dictoffset && __pyx_type_6raylib_CyTexture.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyTexture.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyTexture, (PyObject *)&__pyx_type_6raylib_CyTexture) < 0) __PYX_ERR(0, 337, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyTexture) < 0) __PYX_ERR(0, 337, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyTexture, (PyObject *)&__pyx_type_6raylib_CyTexture) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyTexture) < 0) __PYX_ERR(0, 338, __pyx_L1_error)
   __pyx_ptype_6raylib_CyTexture = &__pyx_type_6raylib_CyTexture;
   __pyx_type_6raylib_CyTexture2D.tp_base = __pyx_ptype_6raylib_CyTexture;
-  if (PyType_Ready(&__pyx_type_6raylib_CyTexture2D) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyTexture2D) < 0) __PYX_ERR(0, 379, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyTexture2D.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyTexture2D.tp_dictoffset && __pyx_type_6raylib_CyTexture2D.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyTexture2D.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyTexture2D, (PyObject *)&__pyx_type_6raylib_CyTexture2D) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyTexture2D) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyTexture2D, (PyObject *)&__pyx_type_6raylib_CyTexture2D) < 0) __PYX_ERR(0, 379, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyTexture2D) < 0) __PYX_ERR(0, 379, __pyx_L1_error)
   __pyx_ptype_6raylib_CyTexture2D = &__pyx_type_6raylib_CyTexture2D;
   __pyx_type_6raylib_CyTextureCubemap.tp_base = __pyx_ptype_6raylib_CyTexture;
-  if (PyType_Ready(&__pyx_type_6raylib_CyTextureCubemap) < 0) __PYX_ERR(0, 386, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyTextureCubemap) < 0) __PYX_ERR(0, 387, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyTextureCubemap.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyTextureCubemap.tp_dictoffset && __pyx_type_6raylib_CyTextureCubemap.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyTextureCubemap.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyTextureCubemap, (PyObject *)&__pyx_type_6raylib_CyTextureCubemap) < 0) __PYX_ERR(0, 386, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyTextureCubemap) < 0) __PYX_ERR(0, 386, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyTextureCubemap, (PyObject *)&__pyx_type_6raylib_CyTextureCubemap) < 0) __PYX_ERR(0, 387, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyTextureCubemap) < 0) __PYX_ERR(0, 387, __pyx_L1_error)
   __pyx_ptype_6raylib_CyTextureCubemap = &__pyx_type_6raylib_CyTextureCubemap;
-  if (PyType_Ready(&__pyx_type_6raylib_CyRenderTexture) < 0) __PYX_ERR(0, 390, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyRenderTexture) < 0) __PYX_ERR(0, 391, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyRenderTexture.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyRenderTexture.tp_dictoffset && __pyx_type_6raylib_CyRenderTexture.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyRenderTexture.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyRenderTexture, (PyObject *)&__pyx_type_6raylib_CyRenderTexture) < 0) __PYX_ERR(0, 390, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyRenderTexture) < 0) __PYX_ERR(0, 390, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyRenderTexture, (PyObject *)&__pyx_type_6raylib_CyRenderTexture) < 0) __PYX_ERR(0, 391, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyRenderTexture) < 0) __PYX_ERR(0, 391, __pyx_L1_error)
   __pyx_ptype_6raylib_CyRenderTexture = &__pyx_type_6raylib_CyRenderTexture;
   __pyx_type_6raylib_CyRenderTexture2D.tp_base = __pyx_ptype_6raylib_CyRenderTexture;
-  if (PyType_Ready(&__pyx_type_6raylib_CyRenderTexture2D) < 0) __PYX_ERR(0, 402, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyRenderTexture2D) < 0) __PYX_ERR(0, 403, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyRenderTexture2D.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyRenderTexture2D.tp_dictoffset && __pyx_type_6raylib_CyRenderTexture2D.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyRenderTexture2D.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyRenderTexture2D, (PyObject *)&__pyx_type_6raylib_CyRenderTexture2D) < 0) __PYX_ERR(0, 402, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyRenderTexture2D) < 0) __PYX_ERR(0, 402, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyRenderTexture2D, (PyObject *)&__pyx_type_6raylib_CyRenderTexture2D) < 0) __PYX_ERR(0, 403, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyRenderTexture2D) < 0) __PYX_ERR(0, 403, __pyx_L1_error)
   __pyx_ptype_6raylib_CyRenderTexture2D = &__pyx_type_6raylib_CyRenderTexture2D;
-  if (PyType_Ready(&__pyx_type_6raylib_CyNPatchInfo) < 0) __PYX_ERR(0, 406, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyNPatchInfo) < 0) __PYX_ERR(0, 407, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyNPatchInfo.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyNPatchInfo.tp_dictoffset && __pyx_type_6raylib_CyNPatchInfo.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyNPatchInfo.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyNPatchInfo, (PyObject *)&__pyx_type_6raylib_CyNPatchInfo) < 0) __PYX_ERR(0, 406, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyNPatchInfo) < 0) __PYX_ERR(0, 406, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyNPatchInfo, (PyObject *)&__pyx_type_6raylib_CyNPatchInfo) < 0) __PYX_ERR(0, 407, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyNPatchInfo) < 0) __PYX_ERR(0, 407, __pyx_L1_error)
   __pyx_ptype_6raylib_CyNPatchInfo = &__pyx_type_6raylib_CyNPatchInfo;
-  if (PyType_Ready(&__pyx_type_6raylib_CyGlyphInfo) < 0) __PYX_ERR(0, 430, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyGlyphInfo) < 0) __PYX_ERR(0, 431, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyGlyphInfo.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyGlyphInfo.tp_dictoffset && __pyx_type_6raylib_CyGlyphInfo.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyGlyphInfo.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyGlyphInfo, (PyObject *)&__pyx_type_6raylib_CyGlyphInfo) < 0) __PYX_ERR(0, 430, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyGlyphInfo) < 0) __PYX_ERR(0, 430, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyGlyphInfo, (PyObject *)&__pyx_type_6raylib_CyGlyphInfo) < 0) __PYX_ERR(0, 431, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyGlyphInfo) < 0) __PYX_ERR(0, 431, __pyx_L1_error)
   __pyx_ptype_6raylib_CyGlyphInfo = &__pyx_type_6raylib_CyGlyphInfo;
   __pyx_vtabptr_6raylib_CyFont = &__pyx_vtable_6raylib_CyFont;
   __pyx_vtable_6raylib_CyFont.c_load_font = (struct __pyx_obj_6raylib_CyFont *(*)(PyObject *))__pyx_f_6raylib_6CyFont_c_load_font;
-  if (PyType_Ready(&__pyx_type_6raylib_CyFont) < 0) __PYX_ERR(0, 439, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyFont) < 0) __PYX_ERR(0, 440, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyFont.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyFont.tp_dictoffset && __pyx_type_6raylib_CyFont.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyFont.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (__Pyx_SetVtable(__pyx_type_6raylib_CyFont.tp_dict, __pyx_vtabptr_6raylib_CyFont) < 0) __PYX_ERR(0, 439, __pyx_L1_error)
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyFont, (PyObject *)&__pyx_type_6raylib_CyFont) < 0) __PYX_ERR(0, 439, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyFont) < 0) __PYX_ERR(0, 439, __pyx_L1_error)
+  if (__Pyx_SetVtable(__pyx_type_6raylib_CyFont.tp_dict, __pyx_vtabptr_6raylib_CyFont) < 0) __PYX_ERR(0, 440, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyFont, (PyObject *)&__pyx_type_6raylib_CyFont) < 0) __PYX_ERR(0, 440, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyFont) < 0) __PYX_ERR(0, 440, __pyx_L1_error)
   __pyx_ptype_6raylib_CyFont = &__pyx_type_6raylib_CyFont;
-  if (PyType_Ready(&__pyx_type_6raylib_CyCamera3D) < 0) __PYX_ERR(0, 480, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyCamera3D) < 0) __PYX_ERR(0, 487, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyCamera3D.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyCamera3D.tp_dictoffset && __pyx_type_6raylib_CyCamera3D.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyCamera3D.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyCamera3D, (PyObject *)&__pyx_type_6raylib_CyCamera3D) < 0) __PYX_ERR(0, 480, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyCamera3D) < 0) __PYX_ERR(0, 480, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyCamera3D, (PyObject *)&__pyx_type_6raylib_CyCamera3D) < 0) __PYX_ERR(0, 487, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyCamera3D) < 0) __PYX_ERR(0, 487, __pyx_L1_error)
   __pyx_ptype_6raylib_CyCamera3D = &__pyx_type_6raylib_CyCamera3D;
-  if (PyType_Ready(&__pyx_type_6raylib_CyCamera2D) < 0) __PYX_ERR(0, 510, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyCamera2D) < 0) __PYX_ERR(0, 517, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyCamera2D.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyCamera2D.tp_dictoffset && __pyx_type_6raylib_CyCamera2D.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyCamera2D.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyCamera2D, (PyObject *)&__pyx_type_6raylib_CyCamera2D) < 0) __PYX_ERR(0, 510, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyCamera2D) < 0) __PYX_ERR(0, 510, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyCamera2D, (PyObject *)&__pyx_type_6raylib_CyCamera2D) < 0) __PYX_ERR(0, 517, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyCamera2D) < 0) __PYX_ERR(0, 517, __pyx_L1_error)
   __pyx_ptype_6raylib_CyCamera2D = &__pyx_type_6raylib_CyCamera2D;
-  if (PyType_Ready(&__pyx_type_6raylib_CyMesh) < 0) __PYX_ERR(0, 553, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyMesh) < 0) __PYX_ERR(0, 560, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyMesh.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyMesh.tp_dictoffset && __pyx_type_6raylib_CyMesh.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyMesh.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyMesh, (PyObject *)&__pyx_type_6raylib_CyMesh) < 0) __PYX_ERR(0, 553, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyMesh) < 0) __PYX_ERR(0, 553, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyMesh, (PyObject *)&__pyx_type_6raylib_CyMesh) < 0) __PYX_ERR(0, 560, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyMesh) < 0) __PYX_ERR(0, 560, __pyx_L1_error)
   __pyx_ptype_6raylib_CyMesh = &__pyx_type_6raylib_CyMesh;
-  if (PyType_Ready(&__pyx_type_6raylib_CyShader) < 0) __PYX_ERR(0, 589, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyShader) < 0) __PYX_ERR(0, 596, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyShader.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyShader.tp_dictoffset && __pyx_type_6raylib_CyShader.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyShader.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyShader, (PyObject *)&__pyx_type_6raylib_CyShader) < 0) __PYX_ERR(0, 589, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyShader) < 0) __PYX_ERR(0, 589, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyShader, (PyObject *)&__pyx_type_6raylib_CyShader) < 0) __PYX_ERR(0, 596, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyShader) < 0) __PYX_ERR(0, 596, __pyx_L1_error)
   __pyx_ptype_6raylib_CyShader = &__pyx_type_6raylib_CyShader;
-  if (PyType_Ready(&__pyx_type_6raylib_CyMaterialMap) < 0) __PYX_ERR(0, 614, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyMaterialMap) < 0) __PYX_ERR(0, 621, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyMaterialMap.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyMaterialMap.tp_dictoffset && __pyx_type_6raylib_CyMaterialMap.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyMaterialMap.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyMaterialMap, (PyObject *)&__pyx_type_6raylib_CyMaterialMap) < 0) __PYX_ERR(0, 614, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyMaterialMap) < 0) __PYX_ERR(0, 614, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyMaterialMap, (PyObject *)&__pyx_type_6raylib_CyMaterialMap) < 0) __PYX_ERR(0, 621, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyMaterialMap) < 0) __PYX_ERR(0, 621, __pyx_L1_error)
   __pyx_ptype_6raylib_CyMaterialMap = &__pyx_type_6raylib_CyMaterialMap;
-  if (PyType_Ready(&__pyx_type_6raylib_CyMaterial) < 0) __PYX_ERR(0, 624, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyMaterial) < 0) __PYX_ERR(0, 631, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyMaterial.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyMaterial.tp_dictoffset && __pyx_type_6raylib_CyMaterial.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyMaterial.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyMaterial, (PyObject *)&__pyx_type_6raylib_CyMaterial) < 0) __PYX_ERR(0, 624, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyMaterial) < 0) __PYX_ERR(0, 624, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyMaterial, (PyObject *)&__pyx_type_6raylib_CyMaterial) < 0) __PYX_ERR(0, 631, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyMaterial) < 0) __PYX_ERR(0, 631, __pyx_L1_error)
   __pyx_ptype_6raylib_CyMaterial = &__pyx_type_6raylib_CyMaterial;
-  if (PyType_Ready(&__pyx_type_6raylib_CyTransform) < 0) __PYX_ERR(0, 644, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyTransform) < 0) __PYX_ERR(0, 651, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyTransform.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyTransform.tp_dictoffset && __pyx_type_6raylib_CyTransform.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyTransform.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyTransform, (PyObject *)&__pyx_type_6raylib_CyTransform) < 0) __PYX_ERR(0, 644, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyTransform) < 0) __PYX_ERR(0, 644, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyTransform, (PyObject *)&__pyx_type_6raylib_CyTransform) < 0) __PYX_ERR(0, 651, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyTransform) < 0) __PYX_ERR(0, 651, __pyx_L1_error)
   __pyx_ptype_6raylib_CyTransform = &__pyx_type_6raylib_CyTransform;
-  if (PyType_Ready(&__pyx_type_6raylib_CyBoneInfo) < 0) __PYX_ERR(0, 659, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyBoneInfo) < 0) __PYX_ERR(0, 666, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyBoneInfo.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyBoneInfo.tp_dictoffset && __pyx_type_6raylib_CyBoneInfo.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyBoneInfo.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyBoneInfo, (PyObject *)&__pyx_type_6raylib_CyBoneInfo) < 0) __PYX_ERR(0, 659, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyBoneInfo) < 0) __PYX_ERR(0, 659, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyBoneInfo, (PyObject *)&__pyx_type_6raylib_CyBoneInfo) < 0) __PYX_ERR(0, 666, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyBoneInfo) < 0) __PYX_ERR(0, 666, __pyx_L1_error)
   __pyx_ptype_6raylib_CyBoneInfo = &__pyx_type_6raylib_CyBoneInfo;
-  if (PyType_Ready(&__pyx_type_6raylib_CyModel) < 0) __PYX_ERR(0, 674, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyModel) < 0) __PYX_ERR(0, 681, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyModel.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyModel.tp_dictoffset && __pyx_type_6raylib_CyModel.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyModel.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyModel, (PyObject *)&__pyx_type_6raylib_CyModel) < 0) __PYX_ERR(0, 674, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyModel) < 0) __PYX_ERR(0, 674, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyModel, (PyObject *)&__pyx_type_6raylib_CyModel) < 0) __PYX_ERR(0, 681, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyModel) < 0) __PYX_ERR(0, 681, __pyx_L1_error)
   __pyx_ptype_6raylib_CyModel = &__pyx_type_6raylib_CyModel;
-  if (PyType_Ready(&__pyx_type_6raylib_CyModelAnimation) < 0) __PYX_ERR(0, 711, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyModelAnimation) < 0) __PYX_ERR(0, 718, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyModelAnimation.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyModelAnimation.tp_dictoffset && __pyx_type_6raylib_CyModelAnimation.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyModelAnimation.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyModelAnimation, (PyObject *)&__pyx_type_6raylib_CyModelAnimation) < 0) __PYX_ERR(0, 711, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyModelAnimation) < 0) __PYX_ERR(0, 711, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyModelAnimation, (PyObject *)&__pyx_type_6raylib_CyModelAnimation) < 0) __PYX_ERR(0, 718, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyModelAnimation) < 0) __PYX_ERR(0, 718, __pyx_L1_error)
   __pyx_ptype_6raylib_CyModelAnimation = &__pyx_type_6raylib_CyModelAnimation;
-  if (PyType_Ready(&__pyx_type_6raylib_CyRay) < 0) __PYX_ERR(0, 733, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyRay) < 0) __PYX_ERR(0, 740, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyRay.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyRay.tp_dictoffset && __pyx_type_6raylib_CyRay.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyRay.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyRay, (PyObject *)&__pyx_type_6raylib_CyRay) < 0) __PYX_ERR(0, 733, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyRay) < 0) __PYX_ERR(0, 733, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyRay, (PyObject *)&__pyx_type_6raylib_CyRay) < 0) __PYX_ERR(0, 740, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyRay) < 0) __PYX_ERR(0, 740, __pyx_L1_error)
   __pyx_ptype_6raylib_CyRay = &__pyx_type_6raylib_CyRay;
-  if (PyType_Ready(&__pyx_type_6raylib_CyRayCollision) < 0) __PYX_ERR(0, 752, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyRayCollision) < 0) __PYX_ERR(0, 759, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyRayCollision.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyRayCollision.tp_dictoffset && __pyx_type_6raylib_CyRayCollision.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyRayCollision.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyRayCollision, (PyObject *)&__pyx_type_6raylib_CyRayCollision) < 0) __PYX_ERR(0, 752, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyRayCollision) < 0) __PYX_ERR(0, 752, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyRayCollision, (PyObject *)&__pyx_type_6raylib_CyRayCollision) < 0) __PYX_ERR(0, 759, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyRayCollision) < 0) __PYX_ERR(0, 759, __pyx_L1_error)
   __pyx_ptype_6raylib_CyRayCollision = &__pyx_type_6raylib_CyRayCollision;
-  if (PyType_Ready(&__pyx_type_6raylib_CyBoundingBox) < 0) __PYX_ERR(0, 770, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyBoundingBox) < 0) __PYX_ERR(0, 777, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyBoundingBox.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyBoundingBox.tp_dictoffset && __pyx_type_6raylib_CyBoundingBox.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyBoundingBox.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyBoundingBox, (PyObject *)&__pyx_type_6raylib_CyBoundingBox) < 0) __PYX_ERR(0, 770, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyBoundingBox) < 0) __PYX_ERR(0, 770, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyBoundingBox, (PyObject *)&__pyx_type_6raylib_CyBoundingBox) < 0) __PYX_ERR(0, 777, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyBoundingBox) < 0) __PYX_ERR(0, 777, __pyx_L1_error)
   __pyx_ptype_6raylib_CyBoundingBox = &__pyx_type_6raylib_CyBoundingBox;
-  if (PyType_Ready(&__pyx_type_6raylib_CyWave) < 0) __PYX_ERR(0, 786, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyWave) < 0) __PYX_ERR(0, 793, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyWave.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyWave.tp_dictoffset && __pyx_type_6raylib_CyWave.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyWave.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyWave, (PyObject *)&__pyx_type_6raylib_CyWave) < 0) __PYX_ERR(0, 786, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyWave) < 0) __PYX_ERR(0, 786, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyWave, (PyObject *)&__pyx_type_6raylib_CyWave) < 0) __PYX_ERR(0, 793, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyWave) < 0) __PYX_ERR(0, 793, __pyx_L1_error)
   __pyx_ptype_6raylib_CyWave = &__pyx_type_6raylib_CyWave;
-  if (PyType_Ready(&__pyx_type_6raylib_CyAudioStream) < 0) __PYX_ERR(0, 820, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyAudioStream) < 0) __PYX_ERR(0, 827, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyAudioStream.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyAudioStream.tp_dictoffset && __pyx_type_6raylib_CyAudioStream.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyAudioStream.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyAudioStream, (PyObject *)&__pyx_type_6raylib_CyAudioStream) < 0) __PYX_ERR(0, 820, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyAudioStream) < 0) __PYX_ERR(0, 820, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyAudioStream, (PyObject *)&__pyx_type_6raylib_CyAudioStream) < 0) __PYX_ERR(0, 827, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyAudioStream) < 0) __PYX_ERR(0, 827, __pyx_L1_error)
   __pyx_ptype_6raylib_CyAudioStream = &__pyx_type_6raylib_CyAudioStream;
-  if (PyType_Ready(&__pyx_type_6raylib_CySound) < 0) __PYX_ERR(0, 862, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CySound) < 0) __PYX_ERR(0, 869, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CySound.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CySound.tp_dictoffset && __pyx_type_6raylib_CySound.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CySound.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CySound, (PyObject *)&__pyx_type_6raylib_CySound) < 0) __PYX_ERR(0, 862, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CySound) < 0) __PYX_ERR(0, 862, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CySound, (PyObject *)&__pyx_type_6raylib_CySound) < 0) __PYX_ERR(0, 869, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CySound) < 0) __PYX_ERR(0, 869, __pyx_L1_error)
   __pyx_ptype_6raylib_CySound = &__pyx_type_6raylib_CySound;
-  if (PyType_Ready(&__pyx_type_6raylib_CyMusic) < 0) __PYX_ERR(0, 889, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyMusic) < 0) __PYX_ERR(0, 896, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyMusic.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyMusic.tp_dictoffset && __pyx_type_6raylib_CyMusic.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyMusic.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyMusic, (PyObject *)&__pyx_type_6raylib_CyMusic) < 0) __PYX_ERR(0, 889, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyMusic) < 0) __PYX_ERR(0, 889, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyMusic, (PyObject *)&__pyx_type_6raylib_CyMusic) < 0) __PYX_ERR(0, 896, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyMusic) < 0) __PYX_ERR(0, 896, __pyx_L1_error)
   __pyx_ptype_6raylib_CyMusic = &__pyx_type_6raylib_CyMusic;
-  if (PyType_Ready(&__pyx_type_6raylib_CyVrDeviceInfo) < 0) __PYX_ERR(0, 925, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyVrDeviceInfo) < 0) __PYX_ERR(0, 932, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyVrDeviceInfo.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyVrDeviceInfo.tp_dictoffset && __pyx_type_6raylib_CyVrDeviceInfo.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyVrDeviceInfo.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyVrDeviceInfo, (PyObject *)&__pyx_type_6raylib_CyVrDeviceInfo) < 0) __PYX_ERR(0, 925, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyVrDeviceInfo) < 0) __PYX_ERR(0, 925, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyVrDeviceInfo, (PyObject *)&__pyx_type_6raylib_CyVrDeviceInfo) < 0) __PYX_ERR(0, 932, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyVrDeviceInfo) < 0) __PYX_ERR(0, 932, __pyx_L1_error)
   __pyx_ptype_6raylib_CyVrDeviceInfo = &__pyx_type_6raylib_CyVrDeviceInfo;
-  if (PyType_Ready(&__pyx_type_6raylib_CyVrStereoConfig) < 0) __PYX_ERR(0, 944, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyVrStereoConfig) < 0) __PYX_ERR(0, 951, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyVrStereoConfig.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyVrStereoConfig.tp_dictoffset && __pyx_type_6raylib_CyVrStereoConfig.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyVrStereoConfig.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyVrStereoConfig, (PyObject *)&__pyx_type_6raylib_CyVrStereoConfig) < 0) __PYX_ERR(0, 944, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyVrStereoConfig) < 0) __PYX_ERR(0, 944, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyVrStereoConfig, (PyObject *)&__pyx_type_6raylib_CyVrStereoConfig) < 0) __PYX_ERR(0, 951, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyVrStereoConfig) < 0) __PYX_ERR(0, 951, __pyx_L1_error)
   __pyx_ptype_6raylib_CyVrStereoConfig = &__pyx_type_6raylib_CyVrStereoConfig;
-  if (PyType_Ready(&__pyx_type_6raylib_CyFilePathList) < 0) __PYX_ERR(0, 974, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyFilePathList) < 0) __PYX_ERR(0, 981, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyFilePathList.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyFilePathList.tp_dictoffset && __pyx_type_6raylib_CyFilePathList.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyFilePathList.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyFilePathList, (PyObject *)&__pyx_type_6raylib_CyFilePathList) < 0) __PYX_ERR(0, 974, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyFilePathList) < 0) __PYX_ERR(0, 974, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyFilePathList, (PyObject *)&__pyx_type_6raylib_CyFilePathList) < 0) __PYX_ERR(0, 981, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyFilePathList) < 0) __PYX_ERR(0, 981, __pyx_L1_error)
   __pyx_ptype_6raylib_CyFilePathList = &__pyx_type_6raylib_CyFilePathList;
-  if (PyType_Ready(&__pyx_type_6raylib_CyAutomationEvent) < 0) __PYX_ERR(0, 987, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyAutomationEvent) < 0) __PYX_ERR(0, 994, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyAutomationEvent.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyAutomationEvent.tp_dictoffset && __pyx_type_6raylib_CyAutomationEvent.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyAutomationEvent.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyAutomationEvent, (PyObject *)&__pyx_type_6raylib_CyAutomationEvent) < 0) __PYX_ERR(0, 987, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyAutomationEvent) < 0) __PYX_ERR(0, 987, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyAutomationEvent, (PyObject *)&__pyx_type_6raylib_CyAutomationEvent) < 0) __PYX_ERR(0, 994, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyAutomationEvent) < 0) __PYX_ERR(0, 994, __pyx_L1_error)
   __pyx_ptype_6raylib_CyAutomationEvent = &__pyx_type_6raylib_CyAutomationEvent;
-  if (PyType_Ready(&__pyx_type_6raylib_CyAutomationEventList) < 0) __PYX_ERR(0, 1002, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyAutomationEventList) < 0) __PYX_ERR(0, 1009, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyAutomationEventList.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyAutomationEventList.tp_dictoffset && __pyx_type_6raylib_CyAutomationEventList.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyAutomationEventList.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyAutomationEventList, (PyObject *)&__pyx_type_6raylib_CyAutomationEventList) < 0) __PYX_ERR(0, 1002, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyAutomationEventList) < 0) __PYX_ERR(0, 1002, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyAutomationEventList, (PyObject *)&__pyx_type_6raylib_CyAutomationEventList) < 0) __PYX_ERR(0, 1009, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyAutomationEventList) < 0) __PYX_ERR(0, 1009, __pyx_L1_error)
   __pyx_ptype_6raylib_CyAutomationEventList = &__pyx_type_6raylib_CyAutomationEventList;
-  if (PyType_Ready(&__pyx_type_6raylib_CyPixel) < 0) __PYX_ERR(0, 1014, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyPixel) < 0) __PYX_ERR(0, 1021, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyPixel.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyPixel.tp_dictoffset && __pyx_type_6raylib_CyPixel.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyPixel.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyPixel, (PyObject *)&__pyx_type_6raylib_CyPixel) < 0) __PYX_ERR(0, 1014, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyPixel) < 0) __PYX_ERR(0, 1014, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyPixel, (PyObject *)&__pyx_type_6raylib_CyPixel) < 0) __PYX_ERR(0, 1021, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyPixel) < 0) __PYX_ERR(0, 1021, __pyx_L1_error)
   __pyx_ptype_6raylib_CyPixel = &__pyx_type_6raylib_CyPixel;
-  if (PyType_Ready(&__pyx_type_6raylib_CyLine) < 0) __PYX_ERR(0, 1025, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyLine) < 0) __PYX_ERR(0, 1032, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyLine.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyLine.tp_dictoffset && __pyx_type_6raylib_CyLine.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyLine.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyLine, (PyObject *)&__pyx_type_6raylib_CyLine) < 0) __PYX_ERR(0, 1025, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyLine) < 0) __PYX_ERR(0, 1025, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyLine, (PyObject *)&__pyx_type_6raylib_CyLine) < 0) __PYX_ERR(0, 1032, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyLine) < 0) __PYX_ERR(0, 1032, __pyx_L1_error)
   __pyx_ptype_6raylib_CyLine = &__pyx_type_6raylib_CyLine;
-  if (PyType_Ready(&__pyx_type_6raylib_CyLineStrip) < 0) __PYX_ERR(0, 1042, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyLineStrip) < 0) __PYX_ERR(0, 1049, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyLineStrip.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyLineStrip.tp_dictoffset && __pyx_type_6raylib_CyLineStrip.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyLineStrip.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyLineStrip, (PyObject *)&__pyx_type_6raylib_CyLineStrip) < 0) __PYX_ERR(0, 1042, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyLineStrip) < 0) __PYX_ERR(0, 1042, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyLineStrip, (PyObject *)&__pyx_type_6raylib_CyLineStrip) < 0) __PYX_ERR(0, 1049, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyLineStrip) < 0) __PYX_ERR(0, 1049, __pyx_L1_error)
   __pyx_ptype_6raylib_CyLineStrip = &__pyx_type_6raylib_CyLineStrip;
-  if (PyType_Ready(&__pyx_type_6raylib_CyLineBezier) < 0) __PYX_ERR(0, 1069, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyLineBezier) < 0) __PYX_ERR(0, 1076, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyLineBezier.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyLineBezier.tp_dictoffset && __pyx_type_6raylib_CyLineBezier.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyLineBezier.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyLineBezier, (PyObject *)&__pyx_type_6raylib_CyLineBezier) < 0) __PYX_ERR(0, 1069, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyLineBezier) < 0) __PYX_ERR(0, 1069, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyLineBezier, (PyObject *)&__pyx_type_6raylib_CyLineBezier) < 0) __PYX_ERR(0, 1076, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyLineBezier) < 0) __PYX_ERR(0, 1076, __pyx_L1_error)
   __pyx_ptype_6raylib_CyLineBezier = &__pyx_type_6raylib_CyLineBezier;
-  if (PyType_Ready(&__pyx_type_6raylib_CyCircle) < 0) __PYX_ERR(0, 1074, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyCircle) < 0) __PYX_ERR(0, 1081, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyCircle.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyCircle.tp_dictoffset && __pyx_type_6raylib_CyCircle.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyCircle.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyCircle, (PyObject *)&__pyx_type_6raylib_CyCircle) < 0) __PYX_ERR(0, 1074, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyCircle) < 0) __PYX_ERR(0, 1074, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyCircle, (PyObject *)&__pyx_type_6raylib_CyCircle) < 0) __PYX_ERR(0, 1081, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyCircle) < 0) __PYX_ERR(0, 1081, __pyx_L1_error)
   __pyx_ptype_6raylib_CyCircle = &__pyx_type_6raylib_CyCircle;
-  if (PyType_Ready(&__pyx_type_6raylib_CyEclypse) < 0) __PYX_ERR(0, 1086, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyEclypse) < 0) __PYX_ERR(0, 1093, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyEclypse.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyEclypse.tp_dictoffset && __pyx_type_6raylib_CyEclypse.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyEclypse.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyEclypse, (PyObject *)&__pyx_type_6raylib_CyEclypse) < 0) __PYX_ERR(0, 1086, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyEclypse) < 0) __PYX_ERR(0, 1086, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyEclypse, (PyObject *)&__pyx_type_6raylib_CyEclypse) < 0) __PYX_ERR(0, 1093, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyEclypse) < 0) __PYX_ERR(0, 1093, __pyx_L1_error)
   __pyx_ptype_6raylib_CyEclypse = &__pyx_type_6raylib_CyEclypse;
-  if (PyType_Ready(&__pyx_type_6raylib_CyRing) < 0) __PYX_ERR(0, 1091, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyRing) < 0) __PYX_ERR(0, 1098, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyRing.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyRing.tp_dictoffset && __pyx_type_6raylib_CyRing.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyRing.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyRing, (PyObject *)&__pyx_type_6raylib_CyRing) < 0) __PYX_ERR(0, 1091, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyRing) < 0) __PYX_ERR(0, 1091, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyRing, (PyObject *)&__pyx_type_6raylib_CyRing) < 0) __PYX_ERR(0, 1098, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyRing) < 0) __PYX_ERR(0, 1098, __pyx_L1_error)
   __pyx_ptype_6raylib_CyRing = &__pyx_type_6raylib_CyRing;
-  if (PyType_Ready(&__pyx_type_6raylib_CyTriangle) < 0) __PYX_ERR(0, 1096, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyTriangle) < 0) __PYX_ERR(0, 1103, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyTriangle.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyTriangle.tp_dictoffset && __pyx_type_6raylib_CyTriangle.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyTriangle.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyTriangle, (PyObject *)&__pyx_type_6raylib_CyTriangle) < 0) __PYX_ERR(0, 1096, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyTriangle) < 0) __PYX_ERR(0, 1096, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyTriangle, (PyObject *)&__pyx_type_6raylib_CyTriangle) < 0) __PYX_ERR(0, 1103, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyTriangle) < 0) __PYX_ERR(0, 1103, __pyx_L1_error)
   __pyx_ptype_6raylib_CyTriangle = &__pyx_type_6raylib_CyTriangle;
-  if (PyType_Ready(&__pyx_type_6raylib_CyPolygon) < 0) __PYX_ERR(0, 1104, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyPolygon) < 0) __PYX_ERR(0, 1111, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyPolygon.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyPolygon.tp_dictoffset && __pyx_type_6raylib_CyPolygon.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyPolygon.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyPolygon, (PyObject *)&__pyx_type_6raylib_CyPolygon) < 0) __PYX_ERR(0, 1104, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyPolygon) < 0) __PYX_ERR(0, 1104, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyPolygon, (PyObject *)&__pyx_type_6raylib_CyPolygon) < 0) __PYX_ERR(0, 1111, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyPolygon) < 0) __PYX_ERR(0, 1111, __pyx_L1_error)
   __pyx_ptype_6raylib_CyPolygon = &__pyx_type_6raylib_CyPolygon;
-  if (PyType_Ready(&__pyx_type_6raylib_CySpline) < 0) __PYX_ERR(0, 1113, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CySpline) < 0) __PYX_ERR(0, 1120, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CySpline.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CySpline.tp_dictoffset && __pyx_type_6raylib_CySpline.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CySpline.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CySpline, (PyObject *)&__pyx_type_6raylib_CySpline) < 0) __PYX_ERR(0, 1113, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CySpline) < 0) __PYX_ERR(0, 1113, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CySpline, (PyObject *)&__pyx_type_6raylib_CySpline) < 0) __PYX_ERR(0, 1120, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CySpline) < 0) __PYX_ERR(0, 1120, __pyx_L1_error)
   __pyx_ptype_6raylib_CySpline = &__pyx_type_6raylib_CySpline;
-  if (PyType_Ready(&__pyx_type_6raylib_CyText) < 0) __PYX_ERR(0, 1134, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyText) < 0) __PYX_ERR(0, 1141, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyText.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyText.tp_dictoffset && __pyx_type_6raylib_CyText.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyText.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyText, (PyObject *)&__pyx_type_6raylib_CyText) < 0) __PYX_ERR(0, 1134, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyText) < 0) __PYX_ERR(0, 1134, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyText, (PyObject *)&__pyx_type_6raylib_CyText) < 0) __PYX_ERR(0, 1141, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyText) < 0) __PYX_ERR(0, 1141, __pyx_L1_error)
   __pyx_ptype_6raylib_CyText = &__pyx_type_6raylib_CyText;
-  if (PyType_Ready(&__pyx_type_6raylib_CyLine3D) < 0) __PYX_ERR(0, 1228, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyLine3D) < 0) __PYX_ERR(0, 1342, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyLine3D.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyLine3D.tp_dictoffset && __pyx_type_6raylib_CyLine3D.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyLine3D.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyLine3D, (PyObject *)&__pyx_type_6raylib_CyLine3D) < 0) __PYX_ERR(0, 1228, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyLine3D) < 0) __PYX_ERR(0, 1228, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyLine3D, (PyObject *)&__pyx_type_6raylib_CyLine3D) < 0) __PYX_ERR(0, 1342, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyLine3D) < 0) __PYX_ERR(0, 1342, __pyx_L1_error)
   __pyx_ptype_6raylib_CyLine3D = &__pyx_type_6raylib_CyLine3D;
-  if (PyType_Ready(&__pyx_type_6raylib_CyPoint3D) < 0) __PYX_ERR(0, 1232, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyPoint3D) < 0) __PYX_ERR(0, 1346, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyPoint3D.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyPoint3D.tp_dictoffset && __pyx_type_6raylib_CyPoint3D.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyPoint3D.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyPoint3D, (PyObject *)&__pyx_type_6raylib_CyPoint3D) < 0) __PYX_ERR(0, 1232, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyPoint3D) < 0) __PYX_ERR(0, 1232, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyPoint3D, (PyObject *)&__pyx_type_6raylib_CyPoint3D) < 0) __PYX_ERR(0, 1346, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyPoint3D) < 0) __PYX_ERR(0, 1346, __pyx_L1_error)
   __pyx_ptype_6raylib_CyPoint3D = &__pyx_type_6raylib_CyPoint3D;
-  if (PyType_Ready(&__pyx_type_6raylib_CyCircle3D) < 0) __PYX_ERR(0, 1236, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyCircle3D) < 0) __PYX_ERR(0, 1350, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyCircle3D.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyCircle3D.tp_dictoffset && __pyx_type_6raylib_CyCircle3D.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyCircle3D.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyCircle3D, (PyObject *)&__pyx_type_6raylib_CyCircle3D) < 0) __PYX_ERR(0, 1236, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyCircle3D) < 0) __PYX_ERR(0, 1236, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyCircle3D, (PyObject *)&__pyx_type_6raylib_CyCircle3D) < 0) __PYX_ERR(0, 1350, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyCircle3D) < 0) __PYX_ERR(0, 1350, __pyx_L1_error)
   __pyx_ptype_6raylib_CyCircle3D = &__pyx_type_6raylib_CyCircle3D;
-  if (PyType_Ready(&__pyx_type_6raylib_CyTriangle3D) < 0) __PYX_ERR(0, 1240, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyTriangle3D) < 0) __PYX_ERR(0, 1354, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyTriangle3D.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyTriangle3D.tp_dictoffset && __pyx_type_6raylib_CyTriangle3D.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyTriangle3D.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyTriangle3D, (PyObject *)&__pyx_type_6raylib_CyTriangle3D) < 0) __PYX_ERR(0, 1240, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyTriangle3D) < 0) __PYX_ERR(0, 1240, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyTriangle3D, (PyObject *)&__pyx_type_6raylib_CyTriangle3D) < 0) __PYX_ERR(0, 1354, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyTriangle3D) < 0) __PYX_ERR(0, 1354, __pyx_L1_error)
   __pyx_ptype_6raylib_CyTriangle3D = &__pyx_type_6raylib_CyTriangle3D;
-  if (PyType_Ready(&__pyx_type_6raylib_CyTriangleStrip3D) < 0) __PYX_ERR(0, 1244, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyTriangleStrip3D) < 0) __PYX_ERR(0, 1358, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyTriangleStrip3D.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyTriangleStrip3D.tp_dictoffset && __pyx_type_6raylib_CyTriangleStrip3D.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyTriangleStrip3D.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyTriangleStrip3D, (PyObject *)&__pyx_type_6raylib_CyTriangleStrip3D) < 0) __PYX_ERR(0, 1244, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyTriangleStrip3D) < 0) __PYX_ERR(0, 1244, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyTriangleStrip3D, (PyObject *)&__pyx_type_6raylib_CyTriangleStrip3D) < 0) __PYX_ERR(0, 1358, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyTriangleStrip3D) < 0) __PYX_ERR(0, 1358, __pyx_L1_error)
   __pyx_ptype_6raylib_CyTriangleStrip3D = &__pyx_type_6raylib_CyTriangleStrip3D;
-  if (PyType_Ready(&__pyx_type_6raylib_CyCube) < 0) __PYX_ERR(0, 1248, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyCube) < 0) __PYX_ERR(0, 1362, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyCube.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyCube.tp_dictoffset && __pyx_type_6raylib_CyCube.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyCube.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyCube, (PyObject *)&__pyx_type_6raylib_CyCube) < 0) __PYX_ERR(0, 1248, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyCube) < 0) __PYX_ERR(0, 1248, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyCube, (PyObject *)&__pyx_type_6raylib_CyCube) < 0) __PYX_ERR(0, 1362, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyCube) < 0) __PYX_ERR(0, 1362, __pyx_L1_error)
   __pyx_ptype_6raylib_CyCube = &__pyx_type_6raylib_CyCube;
-  if (PyType_Ready(&__pyx_type_6raylib_CySphere) < 0) __PYX_ERR(0, 1255, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CySphere) < 0) __PYX_ERR(0, 1369, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CySphere.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CySphere.tp_dictoffset && __pyx_type_6raylib_CySphere.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CySphere.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CySphere, (PyObject *)&__pyx_type_6raylib_CySphere) < 0) __PYX_ERR(0, 1255, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CySphere) < 0) __PYX_ERR(0, 1255, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CySphere, (PyObject *)&__pyx_type_6raylib_CySphere) < 0) __PYX_ERR(0, 1369, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CySphere) < 0) __PYX_ERR(0, 1369, __pyx_L1_error)
   __pyx_ptype_6raylib_CySphere = &__pyx_type_6raylib_CySphere;
-  if (PyType_Ready(&__pyx_type_6raylib_CyCylinder) < 0) __PYX_ERR(0, 1262, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyCylinder) < 0) __PYX_ERR(0, 1376, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyCylinder.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyCylinder.tp_dictoffset && __pyx_type_6raylib_CyCylinder.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyCylinder.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyCylinder, (PyObject *)&__pyx_type_6raylib_CyCylinder) < 0) __PYX_ERR(0, 1262, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyCylinder) < 0) __PYX_ERR(0, 1262, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyCylinder, (PyObject *)&__pyx_type_6raylib_CyCylinder) < 0) __PYX_ERR(0, 1376, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyCylinder) < 0) __PYX_ERR(0, 1376, __pyx_L1_error)
   __pyx_ptype_6raylib_CyCylinder = &__pyx_type_6raylib_CyCylinder;
-  if (PyType_Ready(&__pyx_type_6raylib_CyCapsule) < 0) __PYX_ERR(0, 1269, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyCapsule) < 0) __PYX_ERR(0, 1383, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyCapsule.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyCapsule.tp_dictoffset && __pyx_type_6raylib_CyCapsule.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyCapsule.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyCapsule, (PyObject *)&__pyx_type_6raylib_CyCapsule) < 0) __PYX_ERR(0, 1269, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyCapsule) < 0) __PYX_ERR(0, 1269, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyCapsule, (PyObject *)&__pyx_type_6raylib_CyCapsule) < 0) __PYX_ERR(0, 1383, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyCapsule) < 0) __PYX_ERR(0, 1383, __pyx_L1_error)
   __pyx_ptype_6raylib_CyCapsule = &__pyx_type_6raylib_CyCapsule;
-  if (PyType_Ready(&__pyx_type_6raylib_CyPlane) < 0) __PYX_ERR(0, 1274, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyPlane) < 0) __PYX_ERR(0, 1388, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyPlane.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyPlane.tp_dictoffset && __pyx_type_6raylib_CyPlane.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyPlane.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyPlane, (PyObject *)&__pyx_type_6raylib_CyPlane) < 0) __PYX_ERR(0, 1274, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyPlane) < 0) __PYX_ERR(0, 1274, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyPlane, (PyObject *)&__pyx_type_6raylib_CyPlane) < 0) __PYX_ERR(0, 1388, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyPlane) < 0) __PYX_ERR(0, 1388, __pyx_L1_error)
   __pyx_ptype_6raylib_CyPlane = &__pyx_type_6raylib_CyPlane;
-  if (PyType_Ready(&__pyx_type_6raylib_CyGrid) < 0) __PYX_ERR(0, 1278, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyGrid) < 0) __PYX_ERR(0, 1392, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyGrid.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyGrid.tp_dictoffset && __pyx_type_6raylib_CyGrid.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyGrid.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyGrid, (PyObject *)&__pyx_type_6raylib_CyGrid) < 0) __PYX_ERR(0, 1278, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyGrid) < 0) __PYX_ERR(0, 1278, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyGrid, (PyObject *)&__pyx_type_6raylib_CyGrid) < 0) __PYX_ERR(0, 1392, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyGrid) < 0) __PYX_ERR(0, 1392, __pyx_L1_error)
   __pyx_ptype_6raylib_CyGrid = &__pyx_type_6raylib_CyGrid;
-  if (PyType_Ready(&__pyx_type_6raylib_CyAudioDeviceManager) < 0) __PYX_ERR(0, 1283, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6raylib_CyAudioDeviceManager) < 0) __PYX_ERR(0, 1397, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_6raylib_CyAudioDeviceManager.tp_print = 0;
   #endif
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyAudioDeviceManager.tp_dictoffset && __pyx_type_6raylib_CyAudioDeviceManager.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_6raylib_CyAudioDeviceManager.tp_getattro = __Pyx_PyObject_GenericGetAttr;
   }
-  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyAudioDeviceManager, (PyObject *)&__pyx_type_6raylib_CyAudioDeviceManager) < 0) __PYX_ERR(0, 1283, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyAudioDeviceManager) < 0) __PYX_ERR(0, 1283, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyAudioDeviceManager, (PyObject *)&__pyx_type_6raylib_CyAudioDeviceManager) < 0) __PYX_ERR(0, 1397, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyAudioDeviceManager) < 0) __PYX_ERR(0, 1397, __pyx_L1_error)
   __pyx_ptype_6raylib_CyAudioDeviceManager = &__pyx_type_6raylib_CyAudioDeviceManager;
   if (PyType_Ready(&__pyx_scope_struct____Pyx_CFunc_void____int____int____const__char_______to_py) < 0) __PYX_ERR(1, 64, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
@@ -58713,2235 +59839,2307 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "raylib.pyx":23
+  /* "raylib.pyx":24
  * 
  *     @staticmethod
  *     def lightgray() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _LIGHTGRAY
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_3lightgray, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_3lightgray, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_lightgray, __pyx_t_1) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_lightgray, __pyx_t_1) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":22
+  /* "raylib.pyx":23
  *         self._color.a = a
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def lightgray() -> 'CyColor':
  *         return _LIGHTGRAY
  */
-  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_lightgray); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_lightgray); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_lightgray, __pyx_t_2) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_lightgray, __pyx_t_2) < 0) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":27
+  /* "raylib.pyx":28
  * 
  *     @staticmethod
  *     def gray() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _GRAY
  * 
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_5gray, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_5gray, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_gray, __pyx_t_2) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_gray, __pyx_t_2) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":26
+  /* "raylib.pyx":27
  *         return _LIGHTGRAY
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def gray() -> 'CyColor':
  *         return _GRAY
  */
-  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_gray); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 27, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_gray); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 26, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 27, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_gray, __pyx_t_1) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_gray, __pyx_t_1) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":31
+  /* "raylib.pyx":32
  * 
  *     @staticmethod
  *     def darkgray() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _DARKGRAY
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_7darkgray, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_7darkgray, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkgray, __pyx_t_1) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkgray, __pyx_t_1) < 0) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":30
+  /* "raylib.pyx":31
  *         return _GRAY
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def darkgray() -> 'CyColor':
  *         return _DARKGRAY
  */
-  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_darkgray); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 31, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_darkgray); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 30, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkgray, __pyx_t_2) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkgray, __pyx_t_2) < 0) __PYX_ERR(0, 32, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":35
+  /* "raylib.pyx":36
  * 
  *     @staticmethod
  *     def yellow() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _YELLOW
  * 
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_9yellow, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_9yellow, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_yellow, __pyx_t_2) < 0) __PYX_ERR(0, 35, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_yellow, __pyx_t_2) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":34
+  /* "raylib.pyx":35
  *         return _DARKGRAY
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def yellow() -> 'CyColor':
  *         return _YELLOW
  */
-  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_yellow); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 35, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_yellow); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 34, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 35, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_yellow, __pyx_t_1) < 0) __PYX_ERR(0, 35, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_yellow, __pyx_t_1) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":39
+  /* "raylib.pyx":40
  * 
  *     @staticmethod
  *     def gold() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _GOLD
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_11gold, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_11gold, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_gold, __pyx_t_1) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_gold, __pyx_t_1) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":38
+  /* "raylib.pyx":39
  *         return _YELLOW
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def gold() -> 'CyColor':
  *         return _GOLD
  */
-  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_gold); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 39, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_gold); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 39, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_gold, __pyx_t_2) < 0) __PYX_ERR(0, 39, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_gold, __pyx_t_2) < 0) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":43
+  /* "raylib.pyx":44
  * 
  *     @staticmethod
  *     def orange() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _ORANGE
  * 
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_13orange, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_13orange, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_orange, __pyx_t_2) < 0) __PYX_ERR(0, 43, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_orange, __pyx_t_2) < 0) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":42
+  /* "raylib.pyx":43
  *         return _GOLD
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def orange() -> 'CyColor':
  *         return _ORANGE
  */
-  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_orange); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 43, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_orange); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 43, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_orange, __pyx_t_1) < 0) __PYX_ERR(0, 43, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_orange, __pyx_t_1) < 0) __PYX_ERR(0, 44, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":47
+  /* "raylib.pyx":48
  * 
  *     @staticmethod
  *     def pink() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _PINK
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_15pink, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_15pink, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_pink, __pyx_t_1) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_pink, __pyx_t_1) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":46
+  /* "raylib.pyx":47
  *         return _ORANGE
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def pink() -> 'CyColor':
  *         return _PINK
  */
-  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_pink); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_pink); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 46, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_pink, __pyx_t_2) < 0) __PYX_ERR(0, 47, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_pink, __pyx_t_2) < 0) __PYX_ERR(0, 48, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":51
+  /* "raylib.pyx":52
  * 
  *     @staticmethod
  *     def red() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _RED
  * 
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_17red, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_17red, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_red, __pyx_t_2) < 0) __PYX_ERR(0, 51, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_red, __pyx_t_2) < 0) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":50
+  /* "raylib.pyx":51
  *         return _PINK
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def red() -> 'CyColor':
  *         return _RED
  */
-  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_red); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 51, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_red); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_red, __pyx_t_1) < 0) __PYX_ERR(0, 51, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_red, __pyx_t_1) < 0) __PYX_ERR(0, 52, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":55
+  /* "raylib.pyx":56
  * 
  *     @staticmethod
  *     def maroon() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _MAROON
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_19maroon, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_19maroon, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_maroon, __pyx_t_1) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_maroon, __pyx_t_1) < 0) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":54
+  /* "raylib.pyx":55
  *         return _RED
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def maroon() -> 'CyColor':
  *         return _MAROON
  */
-  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_maroon); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 55, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_maroon); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 55, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_maroon, __pyx_t_2) < 0) __PYX_ERR(0, 55, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_maroon, __pyx_t_2) < 0) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":59
+  /* "raylib.pyx":60
  * 
  *     @staticmethod
  *     def green() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _GREEN
  * 
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_21green, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_21green, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_green, __pyx_t_2) < 0) __PYX_ERR(0, 59, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_green, __pyx_t_2) < 0) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":58
+  /* "raylib.pyx":59
  *         return _MAROON
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def green() -> 'CyColor':
  *         return _GREEN
  */
-  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_green); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 59, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_green); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 59, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_green, __pyx_t_1) < 0) __PYX_ERR(0, 59, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_green, __pyx_t_1) < 0) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":63
+  /* "raylib.pyx":64
  * 
  *     @staticmethod
  *     def lime() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _LIME
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_23lime, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_23lime, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_lime, __pyx_t_1) < 0) __PYX_ERR(0, 63, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_lime, __pyx_t_1) < 0) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":62
+  /* "raylib.pyx":63
  *         return _GREEN
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def lime() -> 'CyColor':
  *         return _LIME
  */
-  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_lime); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_lime); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 62, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_lime, __pyx_t_2) < 0) __PYX_ERR(0, 63, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_lime, __pyx_t_2) < 0) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":67
+  /* "raylib.pyx":68
  * 
  *     @staticmethod
  *     def darkgreen() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _DARKGREEN
  * 
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_25darkgreen, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_25darkgreen, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkgreen, __pyx_t_2) < 0) __PYX_ERR(0, 67, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkgreen, __pyx_t_2) < 0) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":66
+  /* "raylib.pyx":67
  *         return _LIME
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def darkgreen() -> 'CyColor':
  *         return _DARKGREEN
  */
-  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_darkgreen); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_darkgreen); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkgreen, __pyx_t_1) < 0) __PYX_ERR(0, 67, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkgreen, __pyx_t_1) < 0) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":71
+  /* "raylib.pyx":72
  * 
  *     @staticmethod
  *     def skyblue() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _SKYBLUE
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_27skyblue, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_27skyblue, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_skyblue, __pyx_t_1) < 0) __PYX_ERR(0, 71, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_skyblue, __pyx_t_1) < 0) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":70
+  /* "raylib.pyx":71
  *         return _DARKGREEN
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def skyblue() -> 'CyColor':
  *         return _SKYBLUE
  */
-  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_skyblue); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 71, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_skyblue); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_skyblue, __pyx_t_2) < 0) __PYX_ERR(0, 71, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_skyblue, __pyx_t_2) < 0) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":75
+  /* "raylib.pyx":76
  * 
  *     @staticmethod
  *     def blue() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _BLUE
  * 
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_29blue, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_29blue, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_blue, __pyx_t_2) < 0) __PYX_ERR(0, 75, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_blue, __pyx_t_2) < 0) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":74
+  /* "raylib.pyx":75
  *         return _SKYBLUE
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def blue() -> 'CyColor':
  *         return _BLUE
  */
-  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_blue); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 75, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_blue); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_blue, __pyx_t_1) < 0) __PYX_ERR(0, 75, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_blue, __pyx_t_1) < 0) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":79
+  /* "raylib.pyx":80
  * 
  *     @staticmethod
  *     def darkblue() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _DARKBLUE
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_31darkblue, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_31darkblue, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkblue, __pyx_t_1) < 0) __PYX_ERR(0, 79, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkblue, __pyx_t_1) < 0) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":78
+  /* "raylib.pyx":79
  *         return _BLUE
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def darkblue() -> 'CyColor':
  *         return _DARKBLUE
  */
-  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_darkblue); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 79, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_darkblue); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 78, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkblue, __pyx_t_2) < 0) __PYX_ERR(0, 79, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkblue, __pyx_t_2) < 0) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":83
+  /* "raylib.pyx":84
  * 
  *     @staticmethod
  *     def purple() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _PURPLE
  * 
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_33purple, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_33purple, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 84, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_purple, __pyx_t_2) < 0) __PYX_ERR(0, 83, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_purple, __pyx_t_2) < 0) __PYX_ERR(0, 84, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":82
+  /* "raylib.pyx":83
  *         return _DARKBLUE
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def purple() -> 'CyColor':
  *         return _PURPLE
  */
-  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_purple); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 83, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_purple); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 84, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 82, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_purple, __pyx_t_1) < 0) __PYX_ERR(0, 83, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_purple, __pyx_t_1) < 0) __PYX_ERR(0, 84, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":87
+  /* "raylib.pyx":88
  * 
  *     @staticmethod
  *     def violet() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _VIOLET
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_35violet, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_35violet, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_violet, __pyx_t_1) < 0) __PYX_ERR(0, 87, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_violet, __pyx_t_1) < 0) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":86
+  /* "raylib.pyx":87
  *         return _PURPLE
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def violet() -> 'CyColor':
  *         return _VIOLET
  */
-  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_violet); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_violet); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_violet, __pyx_t_2) < 0) __PYX_ERR(0, 87, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_violet, __pyx_t_2) < 0) __PYX_ERR(0, 88, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":91
+  /* "raylib.pyx":92
  * 
  *     @staticmethod
  *     def darkpurple() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _DARKPURPLE
  * 
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_37darkpurple, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_37darkpurple, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkpurple, __pyx_t_2) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkpurple, __pyx_t_2) < 0) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":90
+  /* "raylib.pyx":91
  *         return _VIOLET
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def darkpurple() -> 'CyColor':
  *         return _DARKPURPLE
  */
-  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_darkpurple); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 91, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_darkpurple); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 90, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkpurple, __pyx_t_1) < 0) __PYX_ERR(0, 91, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkpurple, __pyx_t_1) < 0) __PYX_ERR(0, 92, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":95
+  /* "raylib.pyx":96
  * 
  *     @staticmethod
  *     def beige() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _BEIGE
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_39beige, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_39beige, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_beige, __pyx_t_1) < 0) __PYX_ERR(0, 95, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_beige, __pyx_t_1) < 0) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":94
+  /* "raylib.pyx":95
  *         return _DARKPURPLE
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def beige() -> 'CyColor':
  *         return _BEIGE
  */
-  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_beige); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_beige); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 94, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_beige, __pyx_t_2) < 0) __PYX_ERR(0, 95, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_beige, __pyx_t_2) < 0) __PYX_ERR(0, 96, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":99
+  /* "raylib.pyx":100
  * 
  *     @staticmethod
  *     def brown() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _BROWN
  * 
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_41brown, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_41brown, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_brown, __pyx_t_2) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_brown, __pyx_t_2) < 0) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":98
+  /* "raylib.pyx":99
  *         return _BEIGE
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def brown() -> 'CyColor':
  *         return _BROWN
  */
-  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_brown); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 99, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_brown); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_brown, __pyx_t_1) < 0) __PYX_ERR(0, 99, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_brown, __pyx_t_1) < 0) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":103
+  /* "raylib.pyx":104
  * 
  *     @staticmethod
  *     def darkbrown() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _DARKBROWN
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_43darkbrown, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_43darkbrown, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkbrown, __pyx_t_1) < 0) __PYX_ERR(0, 103, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkbrown, __pyx_t_1) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":102
+  /* "raylib.pyx":103
  *         return _BROWN
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def darkbrown() -> 'CyColor':
  *         return _DARKBROWN
  */
-  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_darkbrown); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_darkbrown); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkbrown, __pyx_t_2) < 0) __PYX_ERR(0, 103, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_darkbrown, __pyx_t_2) < 0) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":107
+  /* "raylib.pyx":108
  * 
  *     @staticmethod
  *     def white() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _WHITE
  * 
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_45white, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 107, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_45white, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_white, __pyx_t_2) < 0) __PYX_ERR(0, 107, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_white, __pyx_t_2) < 0) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":106
+  /* "raylib.pyx":107
  *         return _DARKBROWN
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def white() -> 'CyColor':
  *         return _WHITE
  */
-  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_white); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 107, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_white); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_white, __pyx_t_1) < 0) __PYX_ERR(0, 107, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_white, __pyx_t_1) < 0) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":111
+  /* "raylib.pyx":112
  * 
  *     @staticmethod
  *     def black() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _BLACK
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_47black, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_47black, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_black, __pyx_t_1) < 0) __PYX_ERR(0, 111, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_black, __pyx_t_1) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":110
+  /* "raylib.pyx":111
  *         return _WHITE
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def black() -> 'CyColor':
  *         return _BLACK
  */
-  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_black); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_black); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 110, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_black, __pyx_t_2) < 0) __PYX_ERR(0, 111, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_black, __pyx_t_2) < 0) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":115
+  /* "raylib.pyx":116
  * 
  *     @staticmethod
  *     def blank() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _BLANK
  * 
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_49blank, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_49blank, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 116, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_blank, __pyx_t_2) < 0) __PYX_ERR(0, 115, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_blank, __pyx_t_2) < 0) __PYX_ERR(0, 116, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":114
+  /* "raylib.pyx":115
  *         return _BLACK
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def blank() -> 'CyColor':
  *         return _BLANK
  */
-  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_blank); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 115, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_blank); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 116, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 114, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 115, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_blank, __pyx_t_1) < 0) __PYX_ERR(0, 115, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_blank, __pyx_t_1) < 0) __PYX_ERR(0, 116, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":119
+  /* "raylib.pyx":120
  * 
  *     @staticmethod
  *     def magenta() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _MAGENTA
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_51magenta, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_51magenta, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_magenta, __pyx_t_1) < 0) __PYX_ERR(0, 119, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_magenta, __pyx_t_1) < 0) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":118
+  /* "raylib.pyx":119
  *         return _BLANK
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def magenta() -> 'CyColor':
  *         return _MAGENTA
  */
-  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_magenta); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 119, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_magenta); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 119, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_magenta, __pyx_t_2) < 0) __PYX_ERR(0, 119, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_magenta, __pyx_t_2) < 0) __PYX_ERR(0, 120, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":123
+  /* "raylib.pyx":124
  * 
  *     @staticmethod
  *     def raywhite() -> 'CyColor':             # <<<<<<<<<<<<<<
  *         return _RAYWHITE
  * 
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_53raywhite, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 123, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyColor_53raywhite, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_raywhite, __pyx_t_2) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_raywhite, __pyx_t_2) < 0) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":122
+  /* "raylib.pyx":123
  *         return _MAGENTA
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def raywhite() -> 'CyColor':
  *         return _RAYWHITE
  */
-  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_raywhite); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 123, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyColor, __pyx_n_s_raywhite); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 122, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_raywhite, __pyx_t_1) < 0) __PYX_ERR(0, 123, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyColor->tp_dict, __pyx_n_s_raywhite, __pyx_t_1) < 0) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyColor);
 
-  /* "raylib.pyx":145
+  /* "raylib.pyx":146
  * #
  * 
  * cdef CyColor _LIGHTGRAY = CyColor(200, 200, 200, 255)             # <<<<<<<<<<<<<<
  * cdef CyColor _GRAY      = CyColor(130, 130, 130, 255)
  * cdef CyColor _DARKGRAY  = CyColor(80, 80, 80, 255   )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__132, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 145, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__135, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 146, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__LIGHTGRAY));
   __Pyx_DECREF_SET(__pyx_v_6raylib__LIGHTGRAY, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":146
+  /* "raylib.pyx":147
  * 
  * cdef CyColor _LIGHTGRAY = CyColor(200, 200, 200, 255)
  * cdef CyColor _GRAY      = CyColor(130, 130, 130, 255)             # <<<<<<<<<<<<<<
  * cdef CyColor _DARKGRAY  = CyColor(80, 80, 80, 255   )
  * cdef CyColor _YELLOW    = CyColor(253, 249, 0, 255  )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__133, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 146, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__136, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__GRAY));
   __Pyx_DECREF_SET(__pyx_v_6raylib__GRAY, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":147
+  /* "raylib.pyx":148
  * cdef CyColor _LIGHTGRAY = CyColor(200, 200, 200, 255)
  * cdef CyColor _GRAY      = CyColor(130, 130, 130, 255)
  * cdef CyColor _DARKGRAY  = CyColor(80, 80, 80, 255   )             # <<<<<<<<<<<<<<
  * cdef CyColor _YELLOW    = CyColor(253, 249, 0, 255  )
  * cdef CyColor _GOLD      = CyColor(255, 203, 0, 255  )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__134, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 147, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__137, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__DARKGRAY));
   __Pyx_DECREF_SET(__pyx_v_6raylib__DARKGRAY, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":148
+  /* "raylib.pyx":149
  * cdef CyColor _GRAY      = CyColor(130, 130, 130, 255)
  * cdef CyColor _DARKGRAY  = CyColor(80, 80, 80, 255   )
  * cdef CyColor _YELLOW    = CyColor(253, 249, 0, 255  )             # <<<<<<<<<<<<<<
  * cdef CyColor _GOLD      = CyColor(255, 203, 0, 255  )
  * cdef CyColor _ORANGE    = CyColor(255, 161, 0, 255  )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__135, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 148, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__138, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 149, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__YELLOW));
   __Pyx_DECREF_SET(__pyx_v_6raylib__YELLOW, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":149
+  /* "raylib.pyx":150
  * cdef CyColor _DARKGRAY  = CyColor(80, 80, 80, 255   )
  * cdef CyColor _YELLOW    = CyColor(253, 249, 0, 255  )
  * cdef CyColor _GOLD      = CyColor(255, 203, 0, 255  )             # <<<<<<<<<<<<<<
  * cdef CyColor _ORANGE    = CyColor(255, 161, 0, 255  )
  * cdef CyColor _PINK      = CyColor(255, 109, 194, 255)
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__136, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 149, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__139, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 150, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__GOLD));
   __Pyx_DECREF_SET(__pyx_v_6raylib__GOLD, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":150
+  /* "raylib.pyx":151
  * cdef CyColor _YELLOW    = CyColor(253, 249, 0, 255  )
  * cdef CyColor _GOLD      = CyColor(255, 203, 0, 255  )
  * cdef CyColor _ORANGE    = CyColor(255, 161, 0, 255  )             # <<<<<<<<<<<<<<
  * cdef CyColor _PINK      = CyColor(255, 109, 194, 255)
  * cdef CyColor _RED       = CyColor(230, 41, 55, 255  )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__137, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 150, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__140, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 151, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__ORANGE));
   __Pyx_DECREF_SET(__pyx_v_6raylib__ORANGE, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":151
+  /* "raylib.pyx":152
  * cdef CyColor _GOLD      = CyColor(255, 203, 0, 255  )
  * cdef CyColor _ORANGE    = CyColor(255, 161, 0, 255  )
  * cdef CyColor _PINK      = CyColor(255, 109, 194, 255)             # <<<<<<<<<<<<<<
  * cdef CyColor _RED       = CyColor(230, 41, 55, 255  )
  * cdef CyColor _MAROON    = CyColor(190, 33, 55, 255  )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__138, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 151, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__141, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__PINK));
   __Pyx_DECREF_SET(__pyx_v_6raylib__PINK, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":152
+  /* "raylib.pyx":153
  * cdef CyColor _ORANGE    = CyColor(255, 161, 0, 255  )
  * cdef CyColor _PINK      = CyColor(255, 109, 194, 255)
  * cdef CyColor _RED       = CyColor(230, 41, 55, 255  )             # <<<<<<<<<<<<<<
  * cdef CyColor _MAROON    = CyColor(190, 33, 55, 255  )
  * cdef CyColor _GREEN     = CyColor(0, 228, 48, 255   )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__139, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 152, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__142, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__RED));
   __Pyx_DECREF_SET(__pyx_v_6raylib__RED, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":153
+  /* "raylib.pyx":154
  * cdef CyColor _PINK      = CyColor(255, 109, 194, 255)
  * cdef CyColor _RED       = CyColor(230, 41, 55, 255  )
  * cdef CyColor _MAROON    = CyColor(190, 33, 55, 255  )             # <<<<<<<<<<<<<<
  * cdef CyColor _GREEN     = CyColor(0, 228, 48, 255   )
  * cdef CyColor _LIME      = CyColor(0, 158, 47, 255   )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__140, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__143, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__MAROON));
   __Pyx_DECREF_SET(__pyx_v_6raylib__MAROON, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":154
+  /* "raylib.pyx":155
  * cdef CyColor _RED       = CyColor(230, 41, 55, 255  )
  * cdef CyColor _MAROON    = CyColor(190, 33, 55, 255  )
  * cdef CyColor _GREEN     = CyColor(0, 228, 48, 255   )             # <<<<<<<<<<<<<<
  * cdef CyColor _LIME      = CyColor(0, 158, 47, 255   )
  * cdef CyColor _DARKGREEN = CyColor(0, 117, 44, 255   )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__141, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__144, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__GREEN));
   __Pyx_DECREF_SET(__pyx_v_6raylib__GREEN, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":155
+  /* "raylib.pyx":156
  * cdef CyColor _MAROON    = CyColor(190, 33, 55, 255  )
  * cdef CyColor _GREEN     = CyColor(0, 228, 48, 255   )
  * cdef CyColor _LIME      = CyColor(0, 158, 47, 255   )             # <<<<<<<<<<<<<<
  * cdef CyColor _DARKGREEN = CyColor(0, 117, 44, 255   )
  * cdef CyColor _SKYBLUE   = CyColor(102, 191, 255, 255)
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__142, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__145, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 156, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__LIME));
   __Pyx_DECREF_SET(__pyx_v_6raylib__LIME, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":156
+  /* "raylib.pyx":157
  * cdef CyColor _GREEN     = CyColor(0, 228, 48, 255   )
  * cdef CyColor _LIME      = CyColor(0, 158, 47, 255   )
  * cdef CyColor _DARKGREEN = CyColor(0, 117, 44, 255   )             # <<<<<<<<<<<<<<
  * cdef CyColor _SKYBLUE   = CyColor(102, 191, 255, 255)
  * cdef CyColor _BLUE      = CyColor(0, 121, 241, 255  )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__143, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__146, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__DARKGREEN));
   __Pyx_DECREF_SET(__pyx_v_6raylib__DARKGREEN, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":157
+  /* "raylib.pyx":158
  * cdef CyColor _LIME      = CyColor(0, 158, 47, 255   )
  * cdef CyColor _DARKGREEN = CyColor(0, 117, 44, 255   )
  * cdef CyColor _SKYBLUE   = CyColor(102, 191, 255, 255)             # <<<<<<<<<<<<<<
  * cdef CyColor _BLUE      = CyColor(0, 121, 241, 255  )
  * cdef CyColor _DARKBLUE  = CyColor(0, 82, 172, 255   )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__144, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__147, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__SKYBLUE));
   __Pyx_DECREF_SET(__pyx_v_6raylib__SKYBLUE, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":158
+  /* "raylib.pyx":159
  * cdef CyColor _DARKGREEN = CyColor(0, 117, 44, 255   )
  * cdef CyColor _SKYBLUE   = CyColor(102, 191, 255, 255)
  * cdef CyColor _BLUE      = CyColor(0, 121, 241, 255  )             # <<<<<<<<<<<<<<
  * cdef CyColor _DARKBLUE  = CyColor(0, 82, 172, 255   )
  * cdef CyColor _PURPLE    = CyColor(200, 122, 255, 255)
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__145, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__148, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 159, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__BLUE));
   __Pyx_DECREF_SET(__pyx_v_6raylib__BLUE, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":159
+  /* "raylib.pyx":160
  * cdef CyColor _SKYBLUE   = CyColor(102, 191, 255, 255)
  * cdef CyColor _BLUE      = CyColor(0, 121, 241, 255  )
  * cdef CyColor _DARKBLUE  = CyColor(0, 82, 172, 255   )             # <<<<<<<<<<<<<<
  * cdef CyColor _PURPLE    = CyColor(200, 122, 255, 255)
  * cdef CyColor _VIOLET    = CyColor(135, 60, 190, 255 )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__146, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__149, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 160, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__DARKBLUE));
   __Pyx_DECREF_SET(__pyx_v_6raylib__DARKBLUE, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":160
+  /* "raylib.pyx":161
  * cdef CyColor _BLUE      = CyColor(0, 121, 241, 255  )
  * cdef CyColor _DARKBLUE  = CyColor(0, 82, 172, 255   )
  * cdef CyColor _PURPLE    = CyColor(200, 122, 255, 255)             # <<<<<<<<<<<<<<
  * cdef CyColor _VIOLET    = CyColor(135, 60, 190, 255 )
  * cdef CyColor _DARKPURPLE= CyColor(112, 31, 126, 255 )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__147, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 160, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__150, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__PURPLE));
   __Pyx_DECREF_SET(__pyx_v_6raylib__PURPLE, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":161
+  /* "raylib.pyx":162
  * cdef CyColor _DARKBLUE  = CyColor(0, 82, 172, 255   )
  * cdef CyColor _PURPLE    = CyColor(200, 122, 255, 255)
  * cdef CyColor _VIOLET    = CyColor(135, 60, 190, 255 )             # <<<<<<<<<<<<<<
  * cdef CyColor _DARKPURPLE= CyColor(112, 31, 126, 255 )
  * cdef CyColor _BEIGE     = CyColor(211, 176, 131, 255)
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__148, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 161, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__151, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 162, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__VIOLET));
   __Pyx_DECREF_SET(__pyx_v_6raylib__VIOLET, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":162
+  /* "raylib.pyx":163
  * cdef CyColor _PURPLE    = CyColor(200, 122, 255, 255)
  * cdef CyColor _VIOLET    = CyColor(135, 60, 190, 255 )
  * cdef CyColor _DARKPURPLE= CyColor(112, 31, 126, 255 )             # <<<<<<<<<<<<<<
  * cdef CyColor _BEIGE     = CyColor(211, 176, 131, 255)
  * cdef CyColor _BROWN     = CyColor(127, 106, 79, 255 )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__149, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 162, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__152, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__DARKPURPLE));
   __Pyx_DECREF_SET(__pyx_v_6raylib__DARKPURPLE, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":163
+  /* "raylib.pyx":164
  * cdef CyColor _VIOLET    = CyColor(135, 60, 190, 255 )
  * cdef CyColor _DARKPURPLE= CyColor(112, 31, 126, 255 )
  * cdef CyColor _BEIGE     = CyColor(211, 176, 131, 255)             # <<<<<<<<<<<<<<
  * cdef CyColor _BROWN     = CyColor(127, 106, 79, 255 )
  * cdef CyColor _DARKBROWN = CyColor(76, 63, 47, 255   )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__150, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__153, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__BEIGE));
   __Pyx_DECREF_SET(__pyx_v_6raylib__BEIGE, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":164
+  /* "raylib.pyx":165
  * cdef CyColor _DARKPURPLE= CyColor(112, 31, 126, 255 )
  * cdef CyColor _BEIGE     = CyColor(211, 176, 131, 255)
  * cdef CyColor _BROWN     = CyColor(127, 106, 79, 255 )             # <<<<<<<<<<<<<<
  * cdef CyColor _DARKBROWN = CyColor(76, 63, 47, 255   )
  * cdef CyColor _WHITE     = CyColor(255, 255, 255, 255)
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__151, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 164, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__154, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__BROWN));
   __Pyx_DECREF_SET(__pyx_v_6raylib__BROWN, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":165
+  /* "raylib.pyx":166
  * cdef CyColor _BEIGE     = CyColor(211, 176, 131, 255)
  * cdef CyColor _BROWN     = CyColor(127, 106, 79, 255 )
  * cdef CyColor _DARKBROWN = CyColor(76, 63, 47, 255   )             # <<<<<<<<<<<<<<
  * cdef CyColor _WHITE     = CyColor(255, 255, 255, 255)
  * cdef CyColor _BLACK     = CyColor(0, 0, 0, 255      )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__152, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 165, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__155, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__DARKBROWN));
   __Pyx_DECREF_SET(__pyx_v_6raylib__DARKBROWN, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":166
+  /* "raylib.pyx":167
  * cdef CyColor _BROWN     = CyColor(127, 106, 79, 255 )
  * cdef CyColor _DARKBROWN = CyColor(76, 63, 47, 255   )
  * cdef CyColor _WHITE     = CyColor(255, 255, 255, 255)             # <<<<<<<<<<<<<<
  * cdef CyColor _BLACK     = CyColor(0, 0, 0, 255      )
  * cdef CyColor _BLANK     = CyColor(0, 0, 0, 0        )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__153, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 166, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__156, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 167, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__WHITE));
   __Pyx_DECREF_SET(__pyx_v_6raylib__WHITE, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":167
+  /* "raylib.pyx":168
  * cdef CyColor _DARKBROWN = CyColor(76, 63, 47, 255   )
  * cdef CyColor _WHITE     = CyColor(255, 255, 255, 255)
  * cdef CyColor _BLACK     = CyColor(0, 0, 0, 255      )             # <<<<<<<<<<<<<<
  * cdef CyColor _BLANK     = CyColor(0, 0, 0, 0        )
  * cdef CyColor _MAGENTA   = CyColor(255, 0, 255, 255  )
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__154, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 167, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__157, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 168, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__BLACK));
   __Pyx_DECREF_SET(__pyx_v_6raylib__BLACK, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":168
+  /* "raylib.pyx":169
  * cdef CyColor _WHITE     = CyColor(255, 255, 255, 255)
  * cdef CyColor _BLACK     = CyColor(0, 0, 0, 255      )
  * cdef CyColor _BLANK     = CyColor(0, 0, 0, 0        )             # <<<<<<<<<<<<<<
  * cdef CyColor _MAGENTA   = CyColor(255, 0, 255, 255  )
  * cdef CyColor _RAYWHITE  = CyColor(245, 245, 245, 255)
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__155, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 168, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__158, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__BLANK));
   __Pyx_DECREF_SET(__pyx_v_6raylib__BLANK, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":169
+  /* "raylib.pyx":170
  * cdef CyColor _BLACK     = CyColor(0, 0, 0, 255      )
  * cdef CyColor _BLANK     = CyColor(0, 0, 0, 0        )
  * cdef CyColor _MAGENTA   = CyColor(255, 0, 255, 255  )             # <<<<<<<<<<<<<<
  * cdef CyColor _RAYWHITE  = CyColor(245, 245, 245, 255)
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__156, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__159, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 170, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__MAGENTA));
   __Pyx_DECREF_SET(__pyx_v_6raylib__MAGENTA, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":170
+  /* "raylib.pyx":171
  * cdef CyColor _BLANK     = CyColor(0, 0, 0, 0        )
  * cdef CyColor _MAGENTA   = CyColor(255, 0, 255, 255  )
  * cdef CyColor _RAYWHITE  = CyColor(245, 245, 245, 255)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__157, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 170, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_6raylib_CyColor), __pyx_tuple__160, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 171, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(((PyObject *)__pyx_v_6raylib__RAYWHITE));
   __Pyx_DECREF_SET(__pyx_v_6raylib__RAYWHITE, ((struct __pyx_obj_6raylib_CyColor *)__pyx_t_1));
   __Pyx_GIVEREF(__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":455
+  /* "raylib.pyx":456
  * 
  *     @staticmethod
  *     def load_font(str path) -> 'CyFont':             # <<<<<<<<<<<<<<
  *         raise NotImplementedError("Not Implemented Yet!")
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_6CyFont_3load_font, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 455, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_6CyFont_3load_font, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 456, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyFont->tp_dict, __pyx_n_s_load_font, __pyx_t_1) < 0) __PYX_ERR(0, 455, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyFont->tp_dict, __pyx_n_s_load_font, __pyx_t_1) < 0) __PYX_ERR(0, 456, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyFont);
 
-  /* "raylib.pyx":454
+  /* "raylib.pyx":455
  * 
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def load_font(str path) -> 'CyFont':
  *         raise NotImplementedError("Not Implemented Yet!")
  */
-  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyFont, __pyx_n_s_load_font); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 455, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyFont, __pyx_n_s_load_font); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 456, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 454, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 455, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyFont->tp_dict, __pyx_n_s_load_font, __pyx_t_2) < 0) __PYX_ERR(0, 455, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyFont->tp_dict, __pyx_n_s_load_font, __pyx_t_2) < 0) __PYX_ERR(0, 456, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyFont);
 
-  /* "raylib.pyx":962
+  /* "raylib.pyx":467
+ *     #cdef Font GetFontDefault()                                                            # Get the default Font
+ *     @staticmethod
+ *     def get_font_default() -> 'CyFont':             # <<<<<<<<<<<<<<
+ *         cdef CyFont font = CyFont.__new__(CyFont)
+ *         font._font = GetFontDefault()
+ */
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_6CyFont_5get_font_default, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 467, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyFont->tp_dict, __pyx_n_s_get_font_default, __pyx_t_2) < 0) __PYX_ERR(0, 467, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyFont);
+
+  /* "raylib.pyx":466
+ *     ## Font loading/unloading functions
+ *     #cdef Font GetFontDefault()                                                            # Get the default Font
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def get_font_default() -> 'CyFont':
+ *         cdef CyFont font = CyFont.__new__(CyFont)
+ */
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyFont, __pyx_n_s_get_font_default); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 467, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 466, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyFont->tp_dict, __pyx_n_s_get_font_default, __pyx_t_1) < 0) __PYX_ERR(0, 467, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyFont);
+
+  /* "raylib.pyx":969
  * 
  *     @staticmethod
  *     def load_vr_stereo_config(CyVrDeviceInfo device) -> 'CyVrStereoConfig':             # <<<<<<<<<<<<<<
  *         cdef CyVrStereoConfig stereo_config = CyVrStereoConfig.__new__(CyVrStereoConfig)
  *         stereo_config._vr_stereo_config = LoadVrStereoConfig(device._vr_device_info)
  */
-  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_16CyVrStereoConfig_3load_vr_stereo_config, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 962, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyVrStereoConfig->tp_dict, __pyx_n_s_load_vr_stereo_config, __pyx_t_2) < 0) __PYX_ERR(0, 962, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_16CyVrStereoConfig_3load_vr_stereo_config, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 969, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyVrStereoConfig->tp_dict, __pyx_n_s_load_vr_stereo_config, __pyx_t_1) < 0) __PYX_ERR(0, 969, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyVrStereoConfig);
 
-  /* "raylib.pyx":961
+  /* "raylib.pyx":968
  *         raise NotImplementedError("Not Implemented Yet!")
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def load_vr_stereo_config(CyVrDeviceInfo device) -> 'CyVrStereoConfig':
  *         cdef CyVrStereoConfig stereo_config = CyVrStereoConfig.__new__(CyVrStereoConfig)
  */
-  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyVrStereoConfig, __pyx_n_s_load_vr_stereo_config); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 962, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 961, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyVrStereoConfig, __pyx_n_s_load_vr_stereo_config); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 969, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyVrStereoConfig->tp_dict, __pyx_n_s_load_vr_stereo_config, __pyx_t_1) < 0) __PYX_ERR(0, 962, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 968, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyVrStereoConfig->tp_dict, __pyx_n_s_load_vr_stereo_config, __pyx_t_2) < 0) __PYX_ERR(0, 969, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_6raylib_CyVrStereoConfig);
 
-  /* "raylib.pyx":1304
+  /* "raylib.pyx":1168
+ *         int font_size,
+ *         CyColor tint = None,
+ *         raymath.CyVector2 pos = raymath.CyVector2(0, 0),             # <<<<<<<<<<<<<<
+ *         CyFont font = CyFont.get_font_default(),
+ *         float spacing = 0,
+ */
+  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_tuple__167, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1168, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_k__74 = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_t_2);
+  __Pyx_GIVEREF(__pyx_t_2);
+  __pyx_t_2 = 0;
+
+  /* "raylib.pyx":1169
+ *         CyColor tint = None,
+ *         raymath.CyVector2 pos = raymath.CyVector2(0, 0),
+ *         CyFont font = CyFont.get_font_default(),             # <<<<<<<<<<<<<<
+ *         float spacing = 0,
+ *         raymath.CyVector2 origin = raymath.CyVector2(0, 0),
+ */
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyFont), __pyx_n_s_get_font_default); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 1169, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1169, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_6raylib_CyFont))))) __PYX_ERR(0, 1169, __pyx_L1_error)
+  __pyx_k__75 = ((struct __pyx_obj_6raylib_CyFont *)__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  __pyx_t_1 = 0;
+
+  /* "raylib.pyx":1171
+ *         CyFont font = CyFont.get_font_default(),
+ *         float spacing = 0,
+ *         raymath.CyVector2 origin = raymath.CyVector2(0, 0),             # <<<<<<<<<<<<<<
+ *         float rotation = 0,
+ * 
+ */
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_tuple__167, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1171, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_k__76 = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  __pyx_t_1 = 0;
+
+  /* "raylib.pyx":1418
  * 
  * 
  * def init_window(width: int, height: int, title: str) -> None:             # <<<<<<<<<<<<<<
  *     InitWindow(width, height, str.encode(title))
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_1init_window, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1304, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_1init_window, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1418, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_init_window, __pyx_t_1) < 0) __PYX_ERR(0, 1304, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_init_window, __pyx_t_1) < 0) __PYX_ERR(0, 1418, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1307
+  /* "raylib.pyx":1421
  *     InitWindow(width, height, str.encode(title))
  * 
  * def close_window() -> None:             # <<<<<<<<<<<<<<
  *     CloseWindow()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_3close_window, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1307, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_3close_window, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1421, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_close_window, __pyx_t_1) < 0) __PYX_ERR(0, 1307, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_close_window, __pyx_t_1) < 0) __PYX_ERR(0, 1421, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1310
+  /* "raylib.pyx":1424
  *     CloseWindow()
  * 
  * def window_should_close() -> bool:             # <<<<<<<<<<<<<<
  *     return WindowShouldClose()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_5window_should_close, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1310, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_5window_should_close, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1424, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_window_should_close, __pyx_t_1) < 0) __PYX_ERR(0, 1310, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_window_should_close, __pyx_t_1) < 0) __PYX_ERR(0, 1424, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1313
+  /* "raylib.pyx":1427
  *     return WindowShouldClose()
  * 
  * def is_window_ready() -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowReady()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7is_window_ready, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1313, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7is_window_ready, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1427, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_ready, __pyx_t_1) < 0) __PYX_ERR(0, 1313, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_ready, __pyx_t_1) < 0) __PYX_ERR(0, 1427, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1316
+  /* "raylib.pyx":1430
  *     return IsWindowReady()
  * 
  * def is_window_fullscreen() -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowFullscreen()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_9is_window_fullscreen, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1316, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_9is_window_fullscreen, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1430, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_fullscreen, __pyx_t_1) < 0) __PYX_ERR(0, 1316, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_fullscreen, __pyx_t_1) < 0) __PYX_ERR(0, 1430, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1319
+  /* "raylib.pyx":1433
  *     return IsWindowFullscreen()
  * 
  * def is_window_hidden() -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowHidden()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_11is_window_hidden, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1319, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_11is_window_hidden, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1433, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_hidden, __pyx_t_1) < 0) __PYX_ERR(0, 1319, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_hidden, __pyx_t_1) < 0) __PYX_ERR(0, 1433, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1322
+  /* "raylib.pyx":1436
  *     return IsWindowHidden()
  * 
  * def is_window_minimized() -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowMinimized()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_13is_window_minimized, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1322, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_13is_window_minimized, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1436, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_minimized, __pyx_t_1) < 0) __PYX_ERR(0, 1322, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_minimized, __pyx_t_1) < 0) __PYX_ERR(0, 1436, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1325
+  /* "raylib.pyx":1439
  *     return IsWindowMinimized()
  * 
  * def is_window_maximized() -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowMaximized()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_15is_window_maximized, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1325, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_15is_window_maximized, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1439, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_maximized, __pyx_t_1) < 0) __PYX_ERR(0, 1325, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_maximized, __pyx_t_1) < 0) __PYX_ERR(0, 1439, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1328
+  /* "raylib.pyx":1442
  *     return IsWindowMaximized()
  * 
  * def is_window_focused() -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowFocused()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_17is_window_focused, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1328, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_17is_window_focused, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1442, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_focused, __pyx_t_1) < 0) __PYX_ERR(0, 1328, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_focused, __pyx_t_1) < 0) __PYX_ERR(0, 1442, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1331
+  /* "raylib.pyx":1445
  *     return IsWindowFocused()
  * 
  * def is_window_resized() -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowResized()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_19is_window_resized, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1331, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_19is_window_resized, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1445, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_resized, __pyx_t_1) < 0) __PYX_ERR(0, 1331, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_resized, __pyx_t_1) < 0) __PYX_ERR(0, 1445, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1334
+  /* "raylib.pyx":1448
  *     return IsWindowResized()
  * 
  * def is_window_state(flag: int) -> bool:             # <<<<<<<<<<<<<<
  *     return IsWindowState(flag)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_21is_window_state, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1334, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_21is_window_state, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1448, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_state, __pyx_t_1) < 0) __PYX_ERR(0, 1334, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_window_state, __pyx_t_1) < 0) __PYX_ERR(0, 1448, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1337
+  /* "raylib.pyx":1451
  *     return IsWindowState(flag)
  * 
  * def set_window_state(flags: int) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowState(flags)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_23set_window_state, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1337, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_23set_window_state, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1451, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_state, __pyx_t_1) < 0) __PYX_ERR(0, 1337, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_state, __pyx_t_1) < 0) __PYX_ERR(0, 1451, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1340
+  /* "raylib.pyx":1454
  *     SetWindowState(flags)
  * 
  * def clear_window_state(flags: int) -> None:             # <<<<<<<<<<<<<<
  *     ClearWindowState(flags)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_25clear_window_state, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1340, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_25clear_window_state, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1454, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_clear_window_state, __pyx_t_1) < 0) __PYX_ERR(0, 1340, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_clear_window_state, __pyx_t_1) < 0) __PYX_ERR(0, 1454, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1343
+  /* "raylib.pyx":1457
  *     ClearWindowState(flags)
  * 
  * def toggle_fullscreen() -> None:             # <<<<<<<<<<<<<<
  *     ToggleFullscreen()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_27toggle_fullscreen, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1343, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_27toggle_fullscreen, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1457, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_toggle_fullscreen, __pyx_t_1) < 0) __PYX_ERR(0, 1343, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_toggle_fullscreen, __pyx_t_1) < 0) __PYX_ERR(0, 1457, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1346
+  /* "raylib.pyx":1460
  *     ToggleFullscreen()
  * 
  * def toggle_borderless_window() -> None:             # <<<<<<<<<<<<<<
  *     ToggleBorderlessWindowed()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_29toggle_borderless_window, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1346, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_29toggle_borderless_window, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1460, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_toggle_borderless_window, __pyx_t_1) < 0) __PYX_ERR(0, 1346, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_toggle_borderless_window, __pyx_t_1) < 0) __PYX_ERR(0, 1460, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1349
+  /* "raylib.pyx":1463
  *     ToggleBorderlessWindowed()
  * 
  * def maximize_window() -> None:             # <<<<<<<<<<<<<<
  *     MaximizeWindow()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_31maximize_window, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1349, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_31maximize_window, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1463, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_maximize_window, __pyx_t_1) < 0) __PYX_ERR(0, 1349, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_maximize_window, __pyx_t_1) < 0) __PYX_ERR(0, 1463, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1352
+  /* "raylib.pyx":1466
  *     MaximizeWindow()
  * 
  * def minimize_window() -> None:             # <<<<<<<<<<<<<<
  *     MinimizeWindow()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_33minimize_window, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1352, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_33minimize_window, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1466, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_minimize_window, __pyx_t_1) < 0) __PYX_ERR(0, 1352, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_minimize_window, __pyx_t_1) < 0) __PYX_ERR(0, 1466, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1355
+  /* "raylib.pyx":1469
  *     MinimizeWindow()
  * 
  * def restore_window() -> None:             # <<<<<<<<<<<<<<
  *     RestoreWindow()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_35restore_window, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1355, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_35restore_window, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_restore_window, __pyx_t_1) < 0) __PYX_ERR(0, 1355, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_restore_window, __pyx_t_1) < 0) __PYX_ERR(0, 1469, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1358
+  /* "raylib.pyx":1472
  *     RestoreWindow()
  * 
  * def set_window_icon(image: CyImage) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowIcon(image._image)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_37set_window_icon, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1358, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_37set_window_icon, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_icon, __pyx_t_1) < 0) __PYX_ERR(0, 1358, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_icon, __pyx_t_1) < 0) __PYX_ERR(0, 1472, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1361
+  /* "raylib.pyx":1475
  *     SetWindowIcon(image._image)
  * 
  * def set_windows_icons(images: list[CyImage]) -> None:             # <<<<<<<<<<<<<<
  *     raise NotImplementedError("set_windows_icons is not implemented yet, use set_window_icon")
  *     #cdef int count = len(images)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_39set_windows_icons, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1361, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_39set_windows_icons, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1475, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_windows_icons, __pyx_t_1) < 0) __PYX_ERR(0, 1361, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_windows_icons, __pyx_t_1) < 0) __PYX_ERR(0, 1475, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1382
+  /* "raylib.pyx":1496
  *     #    free(image_array)
  * 
  * def set_window_title(title: str) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowTitle(str.encode(title))
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_41set_window_title, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1382, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_41set_window_title, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1496, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_title, __pyx_t_1) < 0) __PYX_ERR(0, 1382, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_title, __pyx_t_1) < 0) __PYX_ERR(0, 1496, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1385
+  /* "raylib.pyx":1499
  *     SetWindowTitle(str.encode(title))
  * 
  * def set_window_position(x: int, y: int) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowPosition(x, y)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_43set_window_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1385, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_43set_window_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1499, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_position, __pyx_t_1) < 0) __PYX_ERR(0, 1385, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_position, __pyx_t_1) < 0) __PYX_ERR(0, 1499, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1388
+  /* "raylib.pyx":1502
  *     SetWindowPosition(x, y)
  * 
  * def set_window_monitor(monitor: int) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowMonitor(monitor)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_45set_window_monitor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1388, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_45set_window_monitor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1502, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_monitor, __pyx_t_1) < 0) __PYX_ERR(0, 1388, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_monitor, __pyx_t_1) < 0) __PYX_ERR(0, 1502, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1391
+  /* "raylib.pyx":1505
  *     SetWindowMonitor(monitor)
  * 
  * def set_window_min_size(width: int, height: int) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowMinSize(width, height)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_47set_window_min_size, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1391, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_47set_window_min_size, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1505, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_min_size, __pyx_t_1) < 0) __PYX_ERR(0, 1391, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_min_size, __pyx_t_1) < 0) __PYX_ERR(0, 1505, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1394
+  /* "raylib.pyx":1508
  *     SetWindowMinSize(width, height)
  * 
  * def set_window_max_size(width: int, height: int) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowMaxSize(width, height)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_49set_window_max_size, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1394, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_49set_window_max_size, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1508, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_max_size, __pyx_t_1) < 0) __PYX_ERR(0, 1394, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_max_size, __pyx_t_1) < 0) __PYX_ERR(0, 1508, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1397
+  /* "raylib.pyx":1511
  *     SetWindowMaxSize(width, height)
  * 
  * def set_window_size(width: int, height: int) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowSize(width, height)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_51set_window_size, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1397, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_51set_window_size, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1511, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_size, __pyx_t_1) < 0) __PYX_ERR(0, 1397, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_size, __pyx_t_1) < 0) __PYX_ERR(0, 1511, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1400
+  /* "raylib.pyx":1514
  *     SetWindowSize(width, height)
  * 
  * def set_window_opacity(opacity: float) -> None:             # <<<<<<<<<<<<<<
  *     SetWindowOpacity(<float>opacity)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_53set_window_opacity, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1400, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_53set_window_opacity, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1514, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_opacity, __pyx_t_1) < 0) __PYX_ERR(0, 1400, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_opacity, __pyx_t_1) < 0) __PYX_ERR(0, 1514, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1403
+  /* "raylib.pyx":1517
  *     SetWindowOpacity(<float>opacity)
  * 
  * def set_window_focused() -> None:             # <<<<<<<<<<<<<<
  *     SetWindowFocused()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_55set_window_focused, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1403, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_55set_window_focused, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1517, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_focused, __pyx_t_1) < 0) __PYX_ERR(0, 1403, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_window_focused, __pyx_t_1) < 0) __PYX_ERR(0, 1517, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1406
+  /* "raylib.pyx":1520
  *     SetWindowFocused()
  * 
  * def get_window_handle() -> int:             # <<<<<<<<<<<<<<
  *     return <long>GetWindowHandle()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_57get_window_handle, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1406, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_57get_window_handle, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1520, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_window_handle, __pyx_t_1) < 0) __PYX_ERR(0, 1406, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_window_handle, __pyx_t_1) < 0) __PYX_ERR(0, 1520, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1409
+  /* "raylib.pyx":1523
  *     return <long>GetWindowHandle()
  * 
  * def get_screen_width() -> int:             # <<<<<<<<<<<<<<
  *     return GetScreenWidth()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_59get_screen_width, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1409, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_59get_screen_width, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1523, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_screen_width, __pyx_t_1) < 0) __PYX_ERR(0, 1409, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_screen_width, __pyx_t_1) < 0) __PYX_ERR(0, 1523, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1412
+  /* "raylib.pyx":1526
  *     return GetScreenWidth()
  * 
  * def get_screen_height() -> int:             # <<<<<<<<<<<<<<
  *     return GetScreenHeight()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_61get_screen_height, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1412, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_61get_screen_height, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1526, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_screen_height, __pyx_t_1) < 0) __PYX_ERR(0, 1412, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_screen_height, __pyx_t_1) < 0) __PYX_ERR(0, 1526, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1415
+  /* "raylib.pyx":1529
  *     return GetScreenHeight()
  * 
  * def get_render_width() -> int:             # <<<<<<<<<<<<<<
  *     return GetRenderWidth()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_63get_render_width, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1415, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_63get_render_width, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1529, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_render_width, __pyx_t_1) < 0) __PYX_ERR(0, 1415, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_render_width, __pyx_t_1) < 0) __PYX_ERR(0, 1529, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1418
+  /* "raylib.pyx":1532
  *     return GetRenderWidth()
  * 
  * def get_render_height() -> int:             # <<<<<<<<<<<<<<
  *     return GetRenderHeight()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_65get_render_height, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1418, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_65get_render_height, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1532, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_render_height, __pyx_t_1) < 0) __PYX_ERR(0, 1418, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_render_height, __pyx_t_1) < 0) __PYX_ERR(0, 1532, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1421
+  /* "raylib.pyx":1535
  *     return GetRenderHeight()
  * 
  * def get_monitor_count() -> int:             # <<<<<<<<<<<<<<
  *     return GetMonitorCount()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_67get_monitor_count, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1421, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_67get_monitor_count, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1535, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_count, __pyx_t_1) < 0) __PYX_ERR(0, 1421, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_count, __pyx_t_1) < 0) __PYX_ERR(0, 1535, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1424
+  /* "raylib.pyx":1538
  *     return GetMonitorCount()
  * 
  * def get_current_monitor() -> int:             # <<<<<<<<<<<<<<
  *     return GetCurrentMonitor()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_69get_current_monitor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1424, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_69get_current_monitor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1538, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_current_monitor, __pyx_t_1) < 0) __PYX_ERR(0, 1424, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_current_monitor, __pyx_t_1) < 0) __PYX_ERR(0, 1538, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1427
+  /* "raylib.pyx":1541
  *     return GetCurrentMonitor()
  * 
  * def get_monitor_position(int monitor) -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     _vec._vector = GetMonitorPosition(monitor)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_71get_monitor_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1427, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_71get_monitor_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1541, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_position, __pyx_t_1) < 0) __PYX_ERR(0, 1427, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_position, __pyx_t_1) < 0) __PYX_ERR(0, 1541, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1432
+  /* "raylib.pyx":1546
  *     return _vec
  * 
  * def get_monitor_width(int monitor) -> int:             # <<<<<<<<<<<<<<
  *     return GetMonitorWidth(monitor)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_73get_monitor_width, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1432, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_73get_monitor_width, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1546, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_width, __pyx_t_1) < 0) __PYX_ERR(0, 1432, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_width, __pyx_t_1) < 0) __PYX_ERR(0, 1546, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1435
+  /* "raylib.pyx":1549
  *     return GetMonitorWidth(monitor)
  * 
  * def get_monitor_height(int monitor) -> int:             # <<<<<<<<<<<<<<
  *     return GetMonitorHeight(monitor)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_75get_monitor_height, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1435, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_75get_monitor_height, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1549, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_height, __pyx_t_1) < 0) __PYX_ERR(0, 1435, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_height, __pyx_t_1) < 0) __PYX_ERR(0, 1549, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1438
+  /* "raylib.pyx":1552
  *     return GetMonitorHeight(monitor)
  * 
  * def get_monitor_physical_width(int monitor) -> int:             # <<<<<<<<<<<<<<
  *     return GetMonitorPhysicalWidth(monitor)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_77get_monitor_physical_width, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1438, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_77get_monitor_physical_width, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1552, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_physical_width, __pyx_t_1) < 0) __PYX_ERR(0, 1438, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_physical_width, __pyx_t_1) < 0) __PYX_ERR(0, 1552, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1441
+  /* "raylib.pyx":1555
  *     return GetMonitorPhysicalWidth(monitor)
  * 
  * def get_monitor_physical_height(int monitor) -> int:             # <<<<<<<<<<<<<<
  *     return GetMonitorPhysicalHeight(monitor)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_79get_monitor_physical_height, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1441, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_79get_monitor_physical_height, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1555, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_physical_height, __pyx_t_1) < 0) __PYX_ERR(0, 1441, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_physical_height, __pyx_t_1) < 0) __PYX_ERR(0, 1555, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1444
+  /* "raylib.pyx":1558
  *     return GetMonitorPhysicalHeight(monitor)
  * 
  * def get_monitor_refresh_rate(int monitor) -> int:             # <<<<<<<<<<<<<<
  *     return GetMonitorRefreshRate(monitor)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_81get_monitor_refresh_rate, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1444, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_81get_monitor_refresh_rate, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1558, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_refresh_rate, __pyx_t_1) < 0) __PYX_ERR(0, 1444, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_refresh_rate, __pyx_t_1) < 0) __PYX_ERR(0, 1558, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1447
+  /* "raylib.pyx":1561
  *     return GetMonitorRefreshRate(monitor)
  * 
  * def get_window_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     _vec._vector = GetWindowPosition()
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_83get_window_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1447, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_83get_window_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1561, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_window_position, __pyx_t_1) < 0) __PYX_ERR(0, 1447, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_window_position, __pyx_t_1) < 0) __PYX_ERR(0, 1561, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1452
+  /* "raylib.pyx":1566
  *     return _vec
  * 
  * def get_window_scale_dpi() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 _vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     _vec._vector = GetWindowScaleDPI()
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_85get_window_scale_dpi, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1452, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_85get_window_scale_dpi, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1566, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_window_scale_dpi, __pyx_t_1) < 0) __PYX_ERR(0, 1452, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_window_scale_dpi, __pyx_t_1) < 0) __PYX_ERR(0, 1566, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1457
+  /* "raylib.pyx":1571
  *     return _vec
  * 
  * def get_monitor_name(int monitor) -> bytes:             # <<<<<<<<<<<<<<
  *     return GetMonitorName(monitor)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_87get_monitor_name, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1457, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_87get_monitor_name, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1571, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_name, __pyx_t_1) < 0) __PYX_ERR(0, 1457, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_monitor_name, __pyx_t_1) < 0) __PYX_ERR(0, 1571, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1460
+  /* "raylib.pyx":1574
  *     return GetMonitorName(monitor)
  * 
  * def set_clipboard_text(str text) -> None:             # <<<<<<<<<<<<<<
  *     SetClipboardText(text)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_89set_clipboard_text, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1460, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_89set_clipboard_text, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1574, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_clipboard_text, __pyx_t_1) < 0) __PYX_ERR(0, 1460, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_clipboard_text, __pyx_t_1) < 0) __PYX_ERR(0, 1574, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1463
+  /* "raylib.pyx":1577
  *     SetClipboardText(text)
  * 
  * def get_clipboard_text() -> bytes:             # <<<<<<<<<<<<<<
  *     return GetClipboardText()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_91get_clipboard_text, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1463, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_91get_clipboard_text, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1577, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_clipboard_text, __pyx_t_1) < 0) __PYX_ERR(0, 1463, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_clipboard_text, __pyx_t_1) < 0) __PYX_ERR(0, 1577, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1466
+  /* "raylib.pyx":1580
  *     return GetClipboardText()
  * 
  * def enable_event_waiting() -> None:             # <<<<<<<<<<<<<<
  *     EnableEventWaiting()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_93enable_event_waiting, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1466, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_93enable_event_waiting, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1580, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_enable_event_waiting, __pyx_t_1) < 0) __PYX_ERR(0, 1466, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_enable_event_waiting, __pyx_t_1) < 0) __PYX_ERR(0, 1580, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1469
+  /* "raylib.pyx":1583
  *     EnableEventWaiting()
  * 
  * def disable_event_waiting() -> None:             # <<<<<<<<<<<<<<
  *     DisableEventWaiting()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_95disable_event_waiting, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1469, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_95disable_event_waiting, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1583, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_disable_event_waiting, __pyx_t_1) < 0) __PYX_ERR(0, 1469, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_disable_event_waiting, __pyx_t_1) < 0) __PYX_ERR(0, 1583, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1472
+  /* "raylib.pyx":1586
  *     DisableEventWaiting()
  * 
  * def show_cursor() -> None:             # <<<<<<<<<<<<<<
  *     ShowCursor()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_97show_cursor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1472, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_97show_cursor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1586, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_show_cursor, __pyx_t_1) < 0) __PYX_ERR(0, 1472, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_show_cursor, __pyx_t_1) < 0) __PYX_ERR(0, 1586, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1475
+  /* "raylib.pyx":1589
  *     ShowCursor()
  * 
  * def hide_cursor() -> None:             # <<<<<<<<<<<<<<
  *     HideCursor()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_99hide_cursor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1475, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_99hide_cursor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1589, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_hide_cursor, __pyx_t_1) < 0) __PYX_ERR(0, 1475, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_hide_cursor, __pyx_t_1) < 0) __PYX_ERR(0, 1589, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1478
+  /* "raylib.pyx":1592
  *     HideCursor()
  * 
  * def is_cursor_hidden() -> bint:             # <<<<<<<<<<<<<<
  *     return IsCursorHidden()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_101is_cursor_hidden, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1478, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_101is_cursor_hidden, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1592, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_cursor_hidden, __pyx_t_1) < 0) __PYX_ERR(0, 1478, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_cursor_hidden, __pyx_t_1) < 0) __PYX_ERR(0, 1592, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1481
+  /* "raylib.pyx":1595
  *     return IsCursorHidden()
  * 
  * def enable_cursor() -> None:             # <<<<<<<<<<<<<<
  *     EnableCursor()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_103enable_cursor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1481, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_103enable_cursor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1595, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_enable_cursor, __pyx_t_1) < 0) __PYX_ERR(0, 1481, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_enable_cursor, __pyx_t_1) < 0) __PYX_ERR(0, 1595, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1484
+  /* "raylib.pyx":1598
  *     EnableCursor()
  * 
  * def disable_cursor() -> None:             # <<<<<<<<<<<<<<
  *     DisableCursor()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_105disable_cursor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1484, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_105disable_cursor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1598, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_disable_cursor, __pyx_t_1) < 0) __PYX_ERR(0, 1484, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_disable_cursor, __pyx_t_1) < 0) __PYX_ERR(0, 1598, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1487
+  /* "raylib.pyx":1601
  *     DisableCursor()
  * 
  * def is_cursor_on_screen() -> bint:             # <<<<<<<<<<<<<<
  *     return IsCursorOnScreen()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_107is_cursor_on_screen, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1487, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_107is_cursor_on_screen, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1601, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_cursor_on_screen, __pyx_t_1) < 0) __PYX_ERR(0, 1487, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_cursor_on_screen, __pyx_t_1) < 0) __PYX_ERR(0, 1601, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1490
+  /* "raylib.pyx":1604
  *     return IsCursorOnScreen()
  * 
  * def set_target_fps(int fps) -> None:             # <<<<<<<<<<<<<<
  *     SetTargetFPS(fps)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_109set_target_fps, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1490, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_109set_target_fps, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1604, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_target_fps, __pyx_t_1) < 0) __PYX_ERR(0, 1490, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_target_fps, __pyx_t_1) < 0) __PYX_ERR(0, 1604, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1493
+  /* "raylib.pyx":1607
  *     SetTargetFPS(fps)
  * 
  * def get_delta_time() -> float:             # <<<<<<<<<<<<<<
  *     return GetFrameTime()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_111get_delta_time, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1493, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_111get_delta_time, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1607, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_delta_time, __pyx_t_1) < 0) __PYX_ERR(0, 1493, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_delta_time, __pyx_t_1) < 0) __PYX_ERR(0, 1607, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1496
+  /* "raylib.pyx":1610
  *     return GetFrameTime()
  * 
  * def get_frame_time() -> float:             # <<<<<<<<<<<<<<
  *     return GetFrameTime()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_113get_frame_time, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1496, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_113get_frame_time, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1610, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_frame_time, __pyx_t_1) < 0) __PYX_ERR(0, 1496, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_frame_time, __pyx_t_1) < 0) __PYX_ERR(0, 1610, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1499
+  /* "raylib.pyx":1613
  *     return GetFrameTime()
  * 
  * def get_time() -> float:             # <<<<<<<<<<<<<<
  *     return GetTime()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_115get_time, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1499, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_115get_time, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1613, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_time, __pyx_t_1) < 0) __PYX_ERR(0, 1499, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_time, __pyx_t_1) < 0) __PYX_ERR(0, 1613, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1502
+  /* "raylib.pyx":1616
  *     return GetTime()
  * 
  * def get_fps() -> int:             # <<<<<<<<<<<<<<
  *     return GetFPS()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_117get_fps, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1502, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_117get_fps, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1616, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_fps, __pyx_t_1) < 0) __PYX_ERR(0, 1502, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_fps, __pyx_t_1) < 0) __PYX_ERR(0, 1616, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1505
+  /* "raylib.pyx":1619
  *     return GetFPS()
  * 
  * def begin_drawing() -> None:             # <<<<<<<<<<<<<<
  *     BeginDrawing()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_119begin_drawing, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1505, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_119begin_drawing, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1619, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_drawing, __pyx_t_1) < 0) __PYX_ERR(0, 1505, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_drawing, __pyx_t_1) < 0) __PYX_ERR(0, 1619, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1508
+  /* "raylib.pyx":1622
  *     BeginDrawing()
  * 
  * def end_drawing() -> None:             # <<<<<<<<<<<<<<
  *     EndDrawing()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_121end_drawing, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1508, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_121end_drawing, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1622, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_drawing, __pyx_t_1) < 0) __PYX_ERR(0, 1508, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_drawing, __pyx_t_1) < 0) __PYX_ERR(0, 1622, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1511
+  /* "raylib.pyx":1625
  *     EndDrawing()
  * 
  * def begin_mode_2D(CyCamera2D camera) -> None:             # <<<<<<<<<<<<<<
  *     BeginMode2D(camera._camera_2d)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_123begin_mode_2D, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1511, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_123begin_mode_2D, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1625, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_mode_2D, __pyx_t_1) < 0) __PYX_ERR(0, 1511, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_mode_2D, __pyx_t_1) < 0) __PYX_ERR(0, 1625, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1514
+  /* "raylib.pyx":1628
  *     BeginMode2D(camera._camera_2d)
  * 
  * def end_mode_2d() -> None:             # <<<<<<<<<<<<<<
  *     EndMode2D()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_125end_mode_2d, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1514, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_125end_mode_2d, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1628, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_mode_2d, __pyx_t_1) < 0) __PYX_ERR(0, 1514, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_mode_2d, __pyx_t_1) < 0) __PYX_ERR(0, 1628, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1517
+  /* "raylib.pyx":1631
  *     EndMode2D()
  * 
  * def begin_mode_3d(CyCamera3D camera) -> None:             # <<<<<<<<<<<<<<
  *     BeginMode3D(camera._camera_3d)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_127begin_mode_3d, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1517, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_127begin_mode_3d, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1631, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_mode_3d, __pyx_t_1) < 0) __PYX_ERR(0, 1517, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_mode_3d, __pyx_t_1) < 0) __PYX_ERR(0, 1631, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1520
+  /* "raylib.pyx":1634
  *     BeginMode3D(camera._camera_3d)
  * 
  * def end_mode_3d() -> None:             # <<<<<<<<<<<<<<
  *     EndMode3D()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_129end_mode_3d, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1520, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_129end_mode_3d, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1634, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_mode_3d, __pyx_t_1) < 0) __PYX_ERR(0, 1520, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_mode_3d, __pyx_t_1) < 0) __PYX_ERR(0, 1634, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1523
+  /* "raylib.pyx":1637
  *     EndMode3D()
  * 
  * def begin_texture_mode(CyRenderTexture2D target) -> None:             # <<<<<<<<<<<<<<
  *     BeginTextureMode(target._render_texture)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_131begin_texture_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1523, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_131begin_texture_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1637, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_texture_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1523, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_texture_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1637, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1526
+  /* "raylib.pyx":1640
  *     BeginTextureMode(target._render_texture)
  * 
  * def end_texture_mode() -> None:             # <<<<<<<<<<<<<<
  *     EndTextureMode()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_133end_texture_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1526, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_133end_texture_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1640, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_texture_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1526, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_texture_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1640, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1529
+  /* "raylib.pyx":1643
  *     EndTextureMode()
  * 
  * def begin_shader_mode(CyShader shader) -> None:             # <<<<<<<<<<<<<<
  *     BeginShaderMode(shader._shader)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_135begin_shader_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1529, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_135begin_shader_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1643, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_shader_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1529, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_shader_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1643, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1532
+  /* "raylib.pyx":1646
  *     BeginShaderMode(shader._shader)
  * 
  * def end_shader_mode() -> None:             # <<<<<<<<<<<<<<
  *     EndShaderMode()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_137end_shader_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1532, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_137end_shader_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1646, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_shader_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1532, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_shader_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1646, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1535
+  /* "raylib.pyx":1649
  *     EndShaderMode()
  * 
  * def begin_blend_mode(int mode) -> None:             # <<<<<<<<<<<<<<
  *     BeginBlendMode(mode)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_139begin_blend_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1535, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_139begin_blend_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1649, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_blend_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1535, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_blend_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1649, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1538
+  /* "raylib.pyx":1652
  *     BeginBlendMode(mode)
  * 
  * def end_blend_mode() -> None:             # <<<<<<<<<<<<<<
  *     EndBlendMode()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_141end_blend_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1538, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_141end_blend_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1652, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_blend_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1538, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_blend_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1652, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1541
+  /* "raylib.pyx":1655
  *     EndBlendMode()
  * 
  * def begin_scissor_mode(int x, int y, int width, int height) -> None:             # <<<<<<<<<<<<<<
  *     BeginScissorMode(x, y, width, height)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_143begin_scissor_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1541, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_143begin_scissor_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1655, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_scissor_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1541, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_scissor_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1655, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1544
+  /* "raylib.pyx":1658
  *     BeginScissorMode(x, y, width, height)
  * 
  * def end_scissor_mode() -> None:             # <<<<<<<<<<<<<<
  *     EndScissorMode()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_145end_scissor_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1544, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_145end_scissor_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1658, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_scissor_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1544, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_scissor_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1658, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1547
+  /* "raylib.pyx":1661
  *     EndScissorMode()
  * 
  * def begin_vr_stereo_mode(CyVrStereoConfig config) -> None:             # <<<<<<<<<<<<<<
  *     BeginVrStereoMode(config._vr_stereo_config)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_147begin_vr_stereo_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1547, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_147begin_vr_stereo_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1661, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_vr_stereo_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1547, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_begin_vr_stereo_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1661, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1550
+  /* "raylib.pyx":1664
  *     BeginVrStereoMode(config._vr_stereo_config)
  * 
  * def end_vr_stereo_mode() -> None:             # <<<<<<<<<<<<<<
  *     EndVrStereoMode()
  * #cdef void SwapScreenBuffer()
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_149end_vr_stereo_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1550, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_149end_vr_stereo_mode, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1664, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_vr_stereo_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1550, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_end_vr_stereo_mode, __pyx_t_1) < 0) __PYX_ERR(0, 1664, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1645
+  /* "raylib.pyx":1759
  * #cdef int GetMouseX()                                    # Get mouse position X
  * 
  * def get_mouse_x() -> int:             # <<<<<<<<<<<<<<
  *     return GetMouseX()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_151get_mouse_x, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1645, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_151get_mouse_x, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1759, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_x, __pyx_t_1) < 0) __PYX_ERR(0, 1645, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_x, __pyx_t_1) < 0) __PYX_ERR(0, 1759, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1649
+  /* "raylib.pyx":1763
  * 
  * #cdef int GetMouseY()                                    # Get mouse position Y
  * def get_mouse_y() -> int:             # <<<<<<<<<<<<<<
  *     return GetMouseY()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_153get_mouse_y, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1649, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_153get_mouse_y, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1763, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_y, __pyx_t_1) < 0) __PYX_ERR(0, 1649, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_y, __pyx_t_1) < 0) __PYX_ERR(0, 1763, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1653
+  /* "raylib.pyx":1767
  * 
  * #cdef Vector2 GetMousePosition()                         # Get mouse position XY
  * def get_mouse_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetMousePosition()
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_155get_mouse_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1653, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_155get_mouse_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1767, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_position, __pyx_t_1) < 0) __PYX_ERR(0, 1653, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_position, __pyx_t_1) < 0) __PYX_ERR(0, 1767, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1659
+  /* "raylib.pyx":1773
  * 
  * #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
  * def get_mouse_delta() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetMouseDelta()
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_157get_mouse_delta, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1659, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_157get_mouse_delta, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1773, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_delta, __pyx_t_1) < 0) __PYX_ERR(0, 1659, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_delta, __pyx_t_1) < 0) __PYX_ERR(0, 1773, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1664
+  /* "raylib.pyx":1778
  *     return vec
  * #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
  * def set_mouse_position(int x, int y) -> None:             # <<<<<<<<<<<<<<
  *     SetMousePosition(x, y)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_159set_mouse_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1664, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_159set_mouse_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1778, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_mouse_position, __pyx_t_1) < 0) __PYX_ERR(0, 1664, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_mouse_position, __pyx_t_1) < 0) __PYX_ERR(0, 1778, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1668
+  /* "raylib.pyx":1782
  * 
  * #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
  * def set_mouse_offset(int offset_x, int offset_y) -> None:             # <<<<<<<<<<<<<<
  *     SetMouseOffset(offset_x, offset_y)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_161set_mouse_offset, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1668, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_161set_mouse_offset, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1782, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_mouse_offset, __pyx_t_1) < 0) __PYX_ERR(0, 1668, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_mouse_offset, __pyx_t_1) < 0) __PYX_ERR(0, 1782, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1672
+  /* "raylib.pyx":1786
  * 
  * #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
  * def set_mouse_scale(float scale_x, float scale_y) -> None:             # <<<<<<<<<<<<<<
  *     SetMouseScale(scale_x, scale_y)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_163set_mouse_scale, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1672, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_163set_mouse_scale, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1786, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_mouse_scale, __pyx_t_1) < 0) __PYX_ERR(0, 1672, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_mouse_scale, __pyx_t_1) < 0) __PYX_ERR(0, 1786, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1676
+  /* "raylib.pyx":1790
  * 
  * #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
  * def get_mouse_wheel_move() -> float:             # <<<<<<<<<<<<<<
  *     return GetMouseWheelMove()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_165get_mouse_wheel_move, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1676, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_165get_mouse_wheel_move, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1790, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_wheel_move, __pyx_t_1) < 0) __PYX_ERR(0, 1676, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_wheel_move, __pyx_t_1) < 0) __PYX_ERR(0, 1790, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1680
+  /* "raylib.pyx":1794
  * 
  * #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
  * def get_mouse_wheel_move_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetMouseWheelMoveV()
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_167get_mouse_wheel_move_vector, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1680, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_167get_mouse_wheel_move_vector, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1794, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_wheel_move_vector, __pyx_t_1) < 0) __PYX_ERR(0, 1680, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_wheel_move_vector, __pyx_t_1) < 0) __PYX_ERR(0, 1794, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1686
+  /* "raylib.pyx":1800
  * 
  * #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
  * def set_mouse_cursor(int cursor) -> None:             # <<<<<<<<<<<<<<
  *     SetMouseCursor(cursor)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_169set_mouse_cursor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1686, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_169set_mouse_cursor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1800, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_mouse_cursor, __pyx_t_1) < 0) __PYX_ERR(0, 1686, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_mouse_cursor, __pyx_t_1) < 0) __PYX_ERR(0, 1800, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1690
+  /* "raylib.pyx":1804
  * 
  * #cdef int GetTouchX()                                    # Get touch position X for touch point 0 (relative to screen size)
  * def get_touch_x() -> int:             # <<<<<<<<<<<<<<
  *     return GetTouchX()
  *     #cdef int GetTouchY()                                    # Get touch position Y for touch point 0 (relative to screen size)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_171get_touch_x, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1690, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_171get_touch_x, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1804, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_touch_x, __pyx_t_1) < 0) __PYX_ERR(0, 1690, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_touch_x, __pyx_t_1) < 0) __PYX_ERR(0, 1804, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1715
+  /* "raylib.pyx":1829
  * 
  * 
  * def clear_background(CyColor color) -> None:             # <<<<<<<<<<<<<<
  *     ClearBackground(color._color)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_173clear_background, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1715, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_173clear_background, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1829, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_clear_background, __pyx_t_1) < 0) __PYX_ERR(0, 1715, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_clear_background, __pyx_t_1) < 0) __PYX_ERR(0, 1829, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":1718
+  /* "raylib.pyx":1832
  *     ClearBackground(color._color)
  * 
  * def draw_fps(int x, int y) -> None:             # <<<<<<<<<<<<<<
  *     DrawFPS(x, y)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_175draw_fps, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1718, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_175draw_fps, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1832, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_draw_fps, __pyx_t_1) < 0) __PYX_ERR(0, 1718, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_draw_fps, __pyx_t_1) < 0) __PYX_ERR(0, 1832, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "(tree fragment)":1
@@ -61182,7 +62380,7 @@ if (!__Pyx_RefNanny) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__328, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 287, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__334, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 287, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(generic);
   __Pyx_DECREF_SET(generic, __pyx_t_1);
@@ -61196,7 +62394,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__329, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 288, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__335, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 288, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(strided);
   __Pyx_DECREF_SET(strided, __pyx_t_1);
@@ -61210,7 +62408,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__330, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 289, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__336, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(indirect);
   __Pyx_DECREF_SET(indirect, __pyx_t_1);
@@ -61224,7 +62422,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__331, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 292, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__337, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 292, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(contiguous);
   __Pyx_DECREF_SET(contiguous, __pyx_t_1);
@@ -61238,7 +62436,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__332, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 293, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__338, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(indirect_contiguous);
   __Pyx_DECREF_SET(indirect_contiguous, __pyx_t_1);
@@ -62108,181 +63306,37 @@ static CYTHON_INLINE PyObject *__Pyx__GetModuleGlobalName(PyObject *name)
     return __Pyx_GetBuiltinName(name);
 }
 
-/* CIntToDigits */
-static const char DIGIT_PAIRS_10[2*10*10+1] = {
-    "00010203040506070809"
-    "10111213141516171819"
-    "20212223242526272829"
-    "30313233343536373839"
-    "40414243444546474849"
-    "50515253545556575859"
-    "60616263646566676869"
-    "70717273747576777879"
-    "80818283848586878889"
-    "90919293949596979899"
-};
-static const char DIGIT_PAIRS_8[2*8*8+1] = {
-    "0001020304050607"
-    "1011121314151617"
-    "2021222324252627"
-    "3031323334353637"
-    "4041424344454647"
-    "5051525354555657"
-    "6061626364656667"
-    "7071727374757677"
-};
-static const char DIGITS_HEX[2*16+1] = {
-    "0123456789abcdef"
-    "0123456789ABCDEF"
-};
-
-/* BuildPyUnicode */
-static PyObject* __Pyx_PyUnicode_BuildFromAscii(Py_ssize_t ulength, char* chars, int clength,
-                                                int prepend_sign, char padding_char) {
-    PyObject *uval;
-    Py_ssize_t uoffset = ulength - clength;
-#if CYTHON_USE_UNICODE_INTERNALS
-    Py_ssize_t i;
-#if CYTHON_PEP393_ENABLED
-    void *udata;
-    uval = PyUnicode_New(ulength, 127);
-    if (unlikely(!uval)) return NULL;
-    udata = PyUnicode_DATA(uval);
-#else
-    Py_UNICODE *udata;
-    uval = PyUnicode_FromUnicode(NULL, ulength);
-    if (unlikely(!uval)) return NULL;
-    udata = PyUnicode_AS_UNICODE(uval);
-#endif
-    if (uoffset > 0) {
-        i = 0;
-        if (prepend_sign) {
-            __Pyx_PyUnicode_WRITE(PyUnicode_1BYTE_KIND, udata, 0, '-');
-            i++;
+/* decode_c_string */
+static CYTHON_INLINE PyObject* __Pyx_decode_c_string(
+         const char* cstring, Py_ssize_t start, Py_ssize_t stop,
+         const char* encoding, const char* errors,
+         PyObject* (*decode_func)(const char *s, Py_ssize_t size, const char *errors)) {
+    Py_ssize_t length;
+    if (unlikely((start < 0) | (stop < 0))) {
+        size_t slen = strlen(cstring);
+        if (unlikely(slen > (size_t) PY_SSIZE_T_MAX)) {
+            PyErr_SetString(PyExc_OverflowError,
+                            "c-string too long to convert to Python");
+            return NULL;
         }
-        for (; i < uoffset; i++) {
-            __Pyx_PyUnicode_WRITE(PyUnicode_1BYTE_KIND, udata, i, padding_char);
+        length = (Py_ssize_t) slen;
+        if (start < 0) {
+            start += length;
+            if (start < 0)
+                start = 0;
         }
+        if (stop < 0)
+            stop += length;
     }
-    for (i=0; i < clength; i++) {
-        __Pyx_PyUnicode_WRITE(PyUnicode_1BYTE_KIND, udata, uoffset+i, chars[i]);
+    if (unlikely(stop <= start))
+        return __Pyx_NewRef(__pyx_empty_unicode);
+    length = stop - start;
+    cstring += start;
+    if (decode_func) {
+        return decode_func(cstring, length, errors);
+    } else {
+        return PyUnicode_Decode(cstring, length, encoding, errors);
     }
-#else
-    {
-        PyObject *sign = NULL, *padding = NULL;
-        uval = NULL;
-        if (uoffset > 0) {
-            prepend_sign = !!prepend_sign;
-            if (uoffset > prepend_sign) {
-                padding = PyUnicode_FromOrdinal(padding_char);
-                if (likely(padding) && uoffset > prepend_sign + 1) {
-                    PyObject *tmp;
-                    PyObject *repeat = PyInt_FromSsize_t(uoffset - prepend_sign);
-                    if (unlikely(!repeat)) goto done_or_error;
-                    tmp = PyNumber_Multiply(padding, repeat);
-                    Py_DECREF(repeat);
-                    Py_DECREF(padding);
-                    padding = tmp;
-                }
-                if (unlikely(!padding)) goto done_or_error;
-            }
-            if (prepend_sign) {
-                sign = PyUnicode_FromOrdinal('-');
-                if (unlikely(!sign)) goto done_or_error;
-            }
-        }
-        uval = PyUnicode_DecodeASCII(chars, clength, NULL);
-        if (likely(uval) && padding) {
-            PyObject *tmp = PyNumber_Add(padding, uval);
-            Py_DECREF(uval);
-            uval = tmp;
-        }
-        if (likely(uval) && sign) {
-            PyObject *tmp = PyNumber_Add(sign, uval);
-            Py_DECREF(uval);
-            uval = tmp;
-        }
-done_or_error:
-        Py_XDECREF(padding);
-        Py_XDECREF(sign);
-    }
-#endif
-    return uval;
-}
-
-/* CIntToPyUnicode */
-static CYTHON_INLINE PyObject* __Pyx_PyUnicode_From_int(int value, Py_ssize_t width, char padding_char, char format_char) {
-    char digits[sizeof(int)*3+2];
-    char *dpos, *end = digits + sizeof(int)*3+2;
-    const char *hex_digits = DIGITS_HEX;
-    Py_ssize_t length, ulength;
-    int prepend_sign, last_one_off;
-    int remaining;
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wconversion"
-#endif
-    const int neg_one = (int) -1, const_zero = (int) 0;
-#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
-#pragma GCC diagnostic pop
-#endif
-    const int is_unsigned = neg_one > const_zero;
-    if (format_char == 'X') {
-        hex_digits += 16;
-        format_char = 'x';
-    }
-    remaining = value;
-    last_one_off = 0;
-    dpos = end;
-    do {
-        int digit_pos;
-        switch (format_char) {
-        case 'o':
-            digit_pos = abs((int)(remaining % (8*8)));
-            remaining = (int) (remaining / (8*8));
-            dpos -= 2;
-            memcpy(dpos, DIGIT_PAIRS_8 + digit_pos * 2, 2);
-            last_one_off = (digit_pos < 8);
-            break;
-        case 'd':
-            digit_pos = abs((int)(remaining % (10*10)));
-            remaining = (int) (remaining / (10*10));
-            dpos -= 2;
-            memcpy(dpos, DIGIT_PAIRS_10 + digit_pos * 2, 2);
-            last_one_off = (digit_pos < 10);
-            break;
-        case 'x':
-            *(--dpos) = hex_digits[abs((int)(remaining % 16))];
-            remaining = (int) (remaining / 16);
-            break;
-        default:
-            assert(0);
-            break;
-        }
-    } while (unlikely(remaining != 0));
-    if (last_one_off) {
-        assert(*dpos == '0');
-        dpos++;
-    }
-    length = end - dpos;
-    ulength = length;
-    prepend_sign = 0;
-    if (!is_unsigned && value <= neg_one) {
-        if (padding_char == ' ' || width <= length + 1) {
-            *(--dpos) = '-';
-            ++length;
-        } else {
-            prepend_sign = 1;
-        }
-        ++ulength;
-    }
-    if (width > ulength) {
-        ulength = width;
-    }
-    if (ulength == 1) {
-        return PyUnicode_FromOrdinal(*dpos);
-    }
-    return __Pyx_PyUnicode_BuildFromAscii(ulength, dpos, (int) length, prepend_sign, padding_char);
 }
 
 /* PyCFunctionFastCall */
@@ -62427,6 +63481,35 @@ done:
 #endif
 #endif
 
+/* PyObjectCall2Args */
+static CYTHON_UNUSED PyObject* __Pyx_PyObject_Call2Args(PyObject* function, PyObject* arg1, PyObject* arg2) {
+    PyObject *args, *result = NULL;
+    #if CYTHON_FAST_PYCALL
+    if (PyFunction_Check(function)) {
+        PyObject *args[2] = {arg1, arg2};
+        return __Pyx_PyFunction_FastCall(function, args, 2);
+    }
+    #endif
+    #if CYTHON_FAST_PYCCALL
+    if (__Pyx_PyFastCFunction_Check(function)) {
+        PyObject *args[2] = {arg1, arg2};
+        return __Pyx_PyCFunction_FastCall(function, args, 2);
+    }
+    #endif
+    args = PyTuple_New(2);
+    if (unlikely(!args)) goto done;
+    Py_INCREF(arg1);
+    PyTuple_SET_ITEM(args, 0, arg1);
+    Py_INCREF(arg2);
+    PyTuple_SET_ITEM(args, 1, arg2);
+    Py_INCREF(function);
+    result = __Pyx_PyObject_Call(function, args, NULL);
+    Py_DECREF(args);
+    Py_DECREF(function);
+done:
+    return result;
+}
+
 /* PyObjectCallMethO */
 #if CYTHON_COMPILING_IN_CPYTHON
 static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg) {
@@ -62486,68 +63569,6 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObjec
     return result;
 }
 #endif
-
-/* decode_c_string */
-static CYTHON_INLINE PyObject* __Pyx_decode_c_string(
-         const char* cstring, Py_ssize_t start, Py_ssize_t stop,
-         const char* encoding, const char* errors,
-         PyObject* (*decode_func)(const char *s, Py_ssize_t size, const char *errors)) {
-    Py_ssize_t length;
-    if (unlikely((start < 0) | (stop < 0))) {
-        size_t slen = strlen(cstring);
-        if (unlikely(slen > (size_t) PY_SSIZE_T_MAX)) {
-            PyErr_SetString(PyExc_OverflowError,
-                            "c-string too long to convert to Python");
-            return NULL;
-        }
-        length = (Py_ssize_t) slen;
-        if (start < 0) {
-            start += length;
-            if (start < 0)
-                start = 0;
-        }
-        if (stop < 0)
-            stop += length;
-    }
-    if (unlikely(stop <= start))
-        return __Pyx_NewRef(__pyx_empty_unicode);
-    length = stop - start;
-    cstring += start;
-    if (decode_func) {
-        return decode_func(cstring, length, errors);
-    } else {
-        return PyUnicode_Decode(cstring, length, encoding, errors);
-    }
-}
-
-/* PyObjectCall2Args */
-static CYTHON_UNUSED PyObject* __Pyx_PyObject_Call2Args(PyObject* function, PyObject* arg1, PyObject* arg2) {
-    PyObject *args, *result = NULL;
-    #if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(function)) {
-        PyObject *args[2] = {arg1, arg2};
-        return __Pyx_PyFunction_FastCall(function, args, 2);
-    }
-    #endif
-    #if CYTHON_FAST_PYCCALL
-    if (__Pyx_PyFastCFunction_Check(function)) {
-        PyObject *args[2] = {arg1, arg2};
-        return __Pyx_PyCFunction_FastCall(function, args, 2);
-    }
-    #endif
-    args = PyTuple_New(2);
-    if (unlikely(!args)) goto done;
-    Py_INCREF(arg1);
-    PyTuple_SET_ITEM(args, 0, arg1);
-    Py_INCREF(arg2);
-    PyTuple_SET_ITEM(args, 1, arg2);
-    Py_INCREF(function);
-    result = __Pyx_PyObject_Call(function, args, NULL);
-    Py_DECREF(args);
-    Py_DECREF(function);
-done:
-    return result;
-}
 
 /* ExtTypeTest */
 static CYTHON_INLINE int __Pyx_TypeTest(PyObject *obj, PyTypeObject *type) {
@@ -64338,6 +65359,28 @@ static PyObject *__Pyx__GetNameInClass(PyObject *nmspace, PyObject *name) {
     }
     return result;
 }
+
+/* PyObjectCallNoArg */
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func) {
+#if CYTHON_FAST_PYCALL
+    if (PyFunction_Check(func)) {
+        return __Pyx_PyFunction_FastCall(func, NULL, 0);
+    }
+#endif
+#if defined(__Pyx_CyFunction_USED) && defined(NDEBUG)
+    if (likely(PyCFunction_Check(func) || __Pyx_CyFunction_Check(func)))
+#else
+    if (likely(PyCFunction_Check(func)))
+#endif
+    {
+        if (likely(PyCFunction_GET_FLAGS(func) & METH_NOARGS)) {
+            return __Pyx_PyObject_CallMethO(func, NULL);
+        }
+    }
+    return __Pyx_PyObject_Call(func, __pyx_empty_tuple, NULL);
+}
+#endif
 
 /* CLineInTraceback */
 #ifndef CYTHON_CLINE_IN_TRACEBACK

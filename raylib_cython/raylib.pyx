@@ -1,6 +1,7 @@
 from libc.stdlib cimport malloc, free, realloc
 from libc.string cimport strcpy, strlen
 from raylib_cython cimport raymath
+from libc.math cimport round
 
 # TODO Move inputs to another MODULE
 # TODO move shapes to another MODULE?
@@ -448,7 +449,7 @@ cdef class CyFont:
     #        GlyphInfo *glyphs       # Glyphs info data
     #
     def __cinit__(self):
-        raise NotImplementedError("Not Implemented Yet!")
+        ...
         
     
     @staticmethod
@@ -462,6 +463,12 @@ cdef class CyFont:
         
     ## Font loading/unloading functions
     #cdef Font GetFontDefault()                                                            # Get the default Font
+    @staticmethod
+    def get_font_default() -> 'CyFont':
+        cdef CyFont font = CyFont.__new__(CyFont)
+        font._font = GetFontDefault()
+        return font
+
     #cdef Font LoadFont(const char *fileName)                                                  # Load font from file into GPU memory (VRAM)
     #cdef Font LoadFontEx(const char *fileName, int fontSize, int *codepoints, int codepointCount)  # Load font from file with extended parameters, use NULL for codepoints and 0 for codepointCount to load the default character set
     #cdef Font LoadFontFromImage(Image image, Color key, int firstChar)                        # Load font from Image (XNA style)
@@ -1132,69 +1139,171 @@ cdef class CySpline:
 #
 
 cdef class CyText:
-    cdef char* text
-    cdef int text_buffer_size
-    cdef raymath.CyVector2 pos
-    cdef int font_size
-    cdef CyColor color
-
-    def __cinit__(self, char* text, raymath.CyVector2 pos, int font_size, CyColor color):
+    cdef char* _text
+    cdef int _text_buffer_size
+    cdef raymath.CyVector2 _pos
+    cdef float _font_size
+    cdef CyColor _color
+    cdef CyFont _font
+    cdef float _spacing
+    cdef raymath.CyVector2 _origin
+    cdef float _rotation
+    cdef CyColor _tint
+ 
+    #cdef void DrawTextPro(
+    #    Font font, 
+    #    const char *text, 
+    #    Vector2 position, 
+    #    Vector2 origin, 
+    #    float rotation, 
+    #    float fontSize, 
+    #    float spacing, 
+    #    Color tint
+    #) # Draw text using Font and pro parameters (rotation)
+    def __cinit__(
+        self, 
+        char* text, 
+        int font_size, 
+        CyColor tint = None, 
+        raymath.CyVector2 pos = raymath.CyVector2(0, 0),
+        CyFont font = CyFont.get_font_default(), 
+        float spacing = 0,
+        raymath.CyVector2 origin = raymath.CyVector2(0, 0),
+        float rotation = 0,
         
-        self.text_buffer_size = len(text) + 1
-        self.text = <char*>malloc(self.text_buffer_size * sizeof(char))
-        self.text[self.text_buffer_size] = 0
-        if self.text is NULL:
+        
+    ):
+        
+        self._text_buffer_size = len(text) + 1
+        self._text = <char*>malloc(self._text_buffer_size * sizeof(char))
+        self._text[self._text_buffer_size] = 0
+        if self._text is NULL:
             raise MemoryError("Failed to allocate memory for text")
 
-        strcpy(self.text, text)
+        strcpy(self._text, text)
 
-        self.pos = pos
-        self.font_size = font_size
-        self.color = color
+        self._pos = pos
+        self._font_size = font_size
+        self._font = font
+        self._spacing = spacing
+        self._origin = origin
+        self._rotation = rotation
+        self._tint = tint
 
-    def update_text(self, char* new_text) -> None:
-        
+
+    @property
+    def text(self):
+        if self._text is NULL:
+            return ''
+        return self._text[:].decode('utf-8')
+
+    @text.setter
+    def text(self, char* new_text):
         cdef int new_text_len = len(new_text)
         cdef int new_buffer_size = 1
-        
-        if new_text_len + 1 < self.text_buffer_size:
-            strcpy(self.text, new_text)
-            self.text[new_text_len + 1] = 0
-
+        if new_text_len + 1 < self._text_buffer_size:
+            strcpy(self._text, new_text)
+            self._text[new_text_len + 1] = 0
         else:
-            if new_text_len + 1 > self.text_buffer_size:
-                
+            if new_text_len + 1 > self._text_buffer_size:
                 while new_buffer_size <= new_text_len:  
-                    new_buffer_size <<= 1
-
-                self.text = <char*>realloc(self.text, new_buffer_size * sizeof(char))
-
-                if self.text is NULL:
+                    new_buffer_size = new_buffer_size << 1
+                self._text = <char*>realloc(self._text, new_buffer_size * sizeof(char))
+                if self._text is NULL:
                     raise MemoryError("Failed to reallocate memory for text")
-                self.text_buffer_size = new_buffer_size 
+                self._text_buffer_size = new_buffer_size 
+            strcpy(self._text, new_text)
+            self._text[new_text_len] = 0
 
-            strcpy(self.text, new_text)
-            self.text[new_text_len] = 0
-        
-    def get_text(self) -> str:
-        if self.text is NULL:
-            return ''  
-        cdef str py_str = self.text[:].decode('utf-8')
-        return py_str
+    @property
+    def pos(self):
+        return self._pos
 
-    def update_pos(self, raymath.CyVector2 pos) -> None:
-        self.pos.x = pos.x
-        self.pos.y = pos.y
-        
+    @pos.setter
+    def pos(self, raymath.CyVector2 value):
+        self._pos.x = value.x
+        self._pos.y = value.y
+
+    @property
+    def font_size(self):
+        return self._font_size
+
+    @font_size.setter
+    def font_size(self, float value):
+        self._font_size = value
+
+    @property
+    def spacing(self):
+        return self._spacing
+
+    @spacing.setter
+    def spacing(self, float value):
+        self._spacing = value
+
+    @property
+    def origin(self):
+        return self._origin
+
+    @origin.setter
+    def origin(self, raymath.CyVector2 value):
+        self._origin = value
+
+    @property
+    def rotation(self):
+        return self._rotation
+
+    @rotation.setter
+    def rotation(self, float value):
+        self._rotation = value
+
+    @property
+    def tint(self):
+        return self._tint
+
+    @tint.setter
+    def tint(self, CyColor value):
+        self._tint._color.a = value._color.a
+        self._tint._color.r = value._color.r
+        self._tint._color.g = value._color.g
+        self._tint._color.b = value._color.b
+    
     def draw(self) -> None:
-        DrawText(<const char*> self.text, <int>self.pos.x, <int>self.pos.y, self.font_size, self.color._color)
+        DrawText(
+            <const char*> self._text, 
+            <int>round(self._pos.x), 
+            <int>round(self._pos.y), 
+            <int>round(self._font_size), 
+            self._tint._color
+        )
+    
+    def draw_pro(self) -> None:
+        DrawTextPro(
+            self._font._font,
+            <const char *> self._text,
+            self._pos._vector,
+            self._origin._vector,
+            self._rotation,
+            self._font_size,
+            self._spacing,
+            self._tint._color
+        )
+
+
+    def draw_ex(self) -> None:
+        DrawTextEx(
+            self._font._font,
+            <const char *> self._text,
+            self._pos._vector,
+            self._font_size,
+            self._spacing,
+            self._tint._color
+        )
+        
+        
 
     def __dealloc__(self):
-        free(self.text)
+        free(self._text)
 
-    #cdef void DrawText(const char *text, int posX, int posY, int fontSize, Color color)       # Draw text (using default font)
-    #cdef void DrawTextEx(Font font, const char *text, Vector2 position, float fontSize, float spacing, Color tint) # Draw text using font and additional parameters
-    #cdef void DrawTextPro(Font font, const char *text, Vector2 position, Vector2 origin, float rotation, float fontSize, float spacing, Color tint) # Draw text using Font and pro parameters (rotation)
     #cdef void DrawTextCodepoint(Font font, int codepoint, Vector2 position, float fontSize, Color tint) # Draw one character (codepoint)
     #cdef void DrawTextCodepoints(Font font, const int *codepoints, int codepointCount, Vector2 position, float fontSize, float spacing, Color tint) # Draw multiple character (codepoint)
     #cdef void SetTextLineSpacing(int spacing)                                                 # Set vertical line spacing when drawing with line-breaks

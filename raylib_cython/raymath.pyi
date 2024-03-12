@@ -2,6 +2,7 @@ from typing import Union
 
 
 class CyVector2:
+    _vector: 'Vector2'
     x: float
     y: float
     def __init__(self, x: float = 0.0, y: float = 0.0): ...

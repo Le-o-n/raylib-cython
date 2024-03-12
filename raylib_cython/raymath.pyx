@@ -19,7 +19,7 @@ def float_equals(float x, float y) -> int:
     return FloatEquals(x, y)
 
 cdef class CyVector2:
-    
+    _vector: Vector2
 
     def __cinit__(self, float x = 0.0, float y = 0.0):
         self._vector.x = x

@@ -37,7 +37,7 @@ END: Cython Metadata */
 #else
 #define CYTHON_ABI "0_29_33"
 #define CYTHON_HEX_VERSION 0x001D21F0
-#define CYTHON_FUTURE_DIVISION 0
+#define CYTHON_FUTURE_DIVISION 1
 #include <stddef.h>
 #ifndef offsetof
   #define offsetof(type, member) ( (size_t) & ((type*)0) -> member )
@@ -1303,7 +1303,7 @@ static struct __pyx_vtabstruct_7raymath_CyMatrix *__pyx_vtabptr_7raymath_CyMatri
  *     return FloatEquals(x, y)
  * 
  * cdef class CyVector2:             # <<<<<<<<<<<<<<
- * 
+ *     _vector: Vector2
  * 
  */
 
@@ -3411,7 +3411,7 @@ static PyObject *__pyx_pf_7raymath_10float_equals(CYTHON_UNUSED PyObject *__pyx_
 }
 
 /* "raymath.pyx":24
- * 
+ *     _vector: Vector2
  * 
  *     def __cinit__(self, float x = 0.0, float y = 0.0):             # <<<<<<<<<<<<<<
  *         self._vector.x = x
@@ -3520,7 +3520,7 @@ static int __pyx_pf_7raymath_9CyVector2___cinit__(struct __pyx_obj_7raymath_CyVe
   __pyx_v_self->_vector.y = __pyx_v_y;
 
   /* "raymath.pyx":24
- * 
+ *     _vector: Vector2
  * 
  *     def __cinit__(self, float x = 0.0, float y = 0.0):             # <<<<<<<<<<<<<<
  *         self._vector.x = x
@@ -39494,7 +39494,7 @@ static PyObject *__pyx_pf_7raymath_8CyMatrix_60__str__(struct __pyx_obj_7raymath
  * cdef class CyFloat3:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_v_mat_string); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1283, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyUnicode_Type)), __pyx_v_mat_string); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1283, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
