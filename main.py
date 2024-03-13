@@ -9,18 +9,21 @@ def main():
 
     m: raymath.CyVector2
 
-    text: str = "My cool text!"
-    text_size: float = 100
-    cy_text: raylib.CyText = raylib.CyText(
-        text.encode(),
-        text_size,
-        raylib.CyColor.green(),
-        spacing=10,
-        origin=raymath.CyVector2(200, 100),
+    codepoints: np.ndarray[np.int32] = np.array(
+        [100,100,100,99],
+        dtype=np.int32
     )
+    
+    utf8_bytes: bytes = raylib.CyText.load_utf8(codepoints)
 
+    utf8_text: raylib.CyText = raylib.CyText(
+        utf8_bytes,
+        100,
+        raylib.CyColor.green()
+    )
     raylib.init_window(1000, 900, "Hello World")
-
+    raylib.set_target_fps(60)
+    
     while not raylib.window_should_close():
 
         m = raylib.get_mouse_position()
@@ -29,9 +32,9 @@ def main():
         raylib.draw_fps(0, 0)
         raylib.begin_drawing()
 
-        cy_text.pos = m
-        cy_text.rotation = m.x
-        cy_text.draw_pro()
+        utf8_text.pos = m
+        utf8_text.draw()
+        
         raylib.end_drawing()
 
     raylib.close_window()

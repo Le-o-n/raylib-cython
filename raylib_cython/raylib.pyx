@@ -1145,12 +1145,14 @@ cdef class CySpline:
 
 cdef class CyText:
     cdef char* _text
+    cdef int _text_len
     cdef int _text_buffer_size
     cdef raymath.CyVector2 _pos
     cdef float _font_size
     cdef CyColor _color
     cdef CyFont _font
     cdef float _spacing
+    cdef float _line_spacing
     cdef raymath.CyVector2 _origin
     cdef float _rotation
     cdef CyColor _tint
@@ -1164,13 +1166,15 @@ cdef class CyText:
         raymath.CyVector2 pos = raymath.CyVector2(0, 0),
         CyFont font = CyFont.get_font_default(), 
         float spacing = 0,
+        float line_spacing = 0,
         raymath.CyVector2 origin = raymath.CyVector2(0, 0),
         float rotation = 0,
         
         
     ):
         
-        self._text_buffer_size = len(text) + 1
+        self._text_len = len(text)
+        self._text_buffer_size = self._text_len + 1
         self._text = <char*>malloc(self._text_buffer_size * sizeof(char))
         self._text[self._text_buffer_size] = 0
         if self._text is NULL:
@@ -1184,19 +1188,21 @@ cdef class CyText:
         self._spacing = spacing
         self._origin = origin
         self._rotation = rotation
+        self._line_spacing = line_spacing
         self._tint = tint
-
+        
 
     @property
-    def text(self):
+    def text(self) -> str:
         if self._text is NULL:
             return ''
         return self._text[:].decode('utf-8')
 
     @text.setter
-    def text(self, char* new_text):
+    def text(self, char* new_text) -> None:
         cdef int new_text_len = len(new_text)
         cdef int new_buffer_size = 1
+        self._text_len = new_text_len
         if new_text_len + 1 < self._text_buffer_size:
             strcpy(self._text, new_text)
             self._text[new_text_len + 1] = 0
@@ -1212,58 +1218,67 @@ cdef class CyText:
             self._text[new_text_len] = 0
 
     @property
-    def pos(self):
+    def pos(self) -> raymath.CyVector2:
         return self._pos
 
     @pos.setter
-    def pos(self, raymath.CyVector2 value):
+    def pos(self, raymath.CyVector2 value) -> None:
         self._pos.x = value.x
         self._pos.y = value.y
 
     @property
-    def font_size(self):
+    def font_size(self) -> float:
         return self._font_size
 
     @font_size.setter
-    def font_size(self, float value):
+    def font_size(self, float value) -> None:
         self._font_size = value
-
+ 
     @property
-    def spacing(self):
+    def spacing(self) -> float:
         return self._spacing
 
     @spacing.setter
-    def spacing(self, float value):
+    def spacing(self, float value) -> None:
         self._spacing = value
 
     @property
-    def origin(self):
+    def line_spacing(self) -> float:
+        return self._line_spacing
+    
+    @line_spacing.setter
+    def line_spacing(self, float value) -> None:
+        self._line_spacing = value
+
+    @property
+    def origin(self) -> raymath.CyVector2:
         return self._origin
 
     @origin.setter
-    def origin(self, raymath.CyVector2 value):
+    def origin(self, raymath.CyVector2 value) -> None:
         self._origin = value
 
     @property
-    def rotation(self):
+    def rotation(self) -> float:
         return self._rotation
 
     @rotation.setter
-    def rotation(self, float value):
+    def rotation(self, float value) -> None:
         self._rotation = value
 
     @property
-    def tint(self):
+    def tint(self) -> CyColor:
         return self._tint
 
     @tint.setter
-    def tint(self, CyColor value):
+    def tint(self, CyColor value) -> None:
         self._tint._color.a = value._color.a
         self._tint._color.r = value._color.r
         self._tint._color.g = value._color.g
         self._tint._color.b = value._color.b
     
     def draw(self) -> None:
+        SetTextLineSpacing(<int>round(self._line_spacing))
         DrawText(
             <const char*> self._text, 
             <int>round(self._pos.x), 
@@ -1273,6 +1288,7 @@ cdef class CyText:
         )
     
     def draw_pro(self) -> None:
+        SetTextLineSpacing(<int>round(self._line_spacing))
         DrawTextPro(
             self._font._font,
             <const char *> self._text,
@@ -1286,6 +1302,7 @@ cdef class CyText:
 
 
     def draw_ex(self) -> None:
+        SetTextLineSpacing(<int>round(self._line_spacing))
         DrawTextEx(
             self._font._font,
             <const char *> self._text,
@@ -1295,18 +1312,80 @@ cdef class CyText:
             self._tint._color
         )
         
+    @staticmethod
+    def draw_text_codepoint(
+        CyFont font,
+        int codepoint, 
+        raymath.CyVector2 position, 
+        float font_size, 
+        CyColor tint
+    ) -> None:
+        DrawTextCodepoint(font._font, codepoint, position._vector, font_size, tint._color)
+
+    @staticmethod
+    def draw_text_codepoints(
+        CyFont font,
+        int[:] codepoints, 
+        raymath.CyVector2 position, 
+        float font_size, 
+        float spacing, 
+        CyColor tint
+    ) -> None:
+        cdef int num_codepoints = len(codepoints)
+        cdef int* codepoints_array = <int *>malloc(num_codepoints * sizeof(int))
         
+        for i in range(num_codepoints):
+            codepoints_array[i] = codepoints[i]
+        
+        DrawTextCodepoints(
+            font._font, 
+            codepoints_array, 
+            num_codepoints, 
+            position._vector, 
+            font_size, 
+            spacing, 
+            tint._color
+        )
+
+        free(codepoints_array)
+
+    @staticmethod
+    def set_text_line_spacing(int spacing) -> None:
+        SetTextLineSpacing(spacing)
+
+    #cdef int MeasureText(const char *text, int fontSize)                                      # Measure string width for default font
+    #cdef Vector2 MeasureTextEx(Font font, const char *text, float fontSize, float spacing)    # Measure string size for Font
+    def measure_text(self) -> raymath.CyVector2:
+        cdef raymath.CyVector2 size_vec = raymath.CyVector2.__new__(raymath.CyVector2)
+        size_vec._vector = MeasureTextEx(self._font._font, self._text, self._font_size, self._spacing)
+        return size_vec
+    
+    #cdef char *LoadUTF8(const int *codepoints, int length)                # Load UTF-8 text encoded from codepoints array
+    #cdef void UnloadUTF8(char *text)                                      # Unload UTF-8 text encoded from codepoints array
+    @staticmethod
+    def load_utf8(int[:] codepoints) -> bytes:
+        cdef int* codepoints_array = <int*> malloc(len(codepoints) * sizeof(int))
+
+        if not codepoints_array:
+            raise MemoryError("Failed to allocate codepoints array")
+
+        for i in range(len(codepoints)):
+            codepoints_array[i] = codepoints[i]
+        
+        cdef char* utf8_str = LoadUTF8(codepoints_array, len(codepoints))
+        cdef bytes py_bytes = bytes(utf8_str)
+        
+        free(utf8_str)
+        free(codepoints_array)
+
+        return py_bytes
+
+    def __len__(self) -> int:
+        return self._text_len
 
     def __dealloc__(self):
         free(self._text)
 
-    #cdef void DrawTextCodepoint(Font font, int codepoint, Vector2 position, float fontSize, Color tint) # Draw one character (codepoint)
-    #cdef void DrawTextCodepoints(Font font, const int *codepoints, int codepointCount, Vector2 position, float fontSize, float spacing, Color tint) # Draw multiple character (codepoint)
-    #cdef void SetTextLineSpacing(int spacing)                                                 # Set vertical line spacing when drawing with line-breaks
-    #cdef int MeasureText(const char *text, int fontSize)                                      # Measure string width for default font
-    #cdef Vector2 MeasureTextEx(Font font, const char *text, float fontSize, float spacing)    # Measure string size for Font
-    #cdef char *LoadUTF8(const int *codepoints, int length)                # Load UTF-8 text encoded from codepoints array
-    #cdef void UnloadUTF8(char *text)                                      # Unload UTF-8 text encoded from codepoints array
     #cdef int *LoadCodepoints(const char *text, int *count)                # Load all codepoints from a UTF-8 text string, codepoints count returned by parameter
     #cdef void UnloadCodepoints(int *codepoints)                           # Unload codepoints data from memory
     #cdef int GetCodepointCount(const char *text)                          # Get total number of codepoints in a UTF-8 encoded string
@@ -1407,7 +1486,7 @@ cdef class CyAudioDeviceManager:
 
 
 
-  
+
 def init_window(width: int, height: int, title: str) -> None:
     InitWindow(width, height, str.encode(title))
 
