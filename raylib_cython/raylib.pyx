@@ -1485,7 +1485,7 @@ cdef class CyAudioDeviceManager:
 
 
 
-
+################# Window #################
 
 def init_window(width: int, height: int, title: str) -> None:
     InitWindow(width, height, str.encode(title))
@@ -1545,25 +1545,24 @@ def set_window_icon(image: CyImage) -> None:
     SetWindowIcon(image._image)
 
 def set_windows_icons(images: list[CyImage]) -> None:
-    raise NotImplementedError("set_windows_icons is not implemented yet, use set_window_icon")
-    #cdef int count = len(images)
+    cdef int count = len(images)
     
-    # Allocate memory for an array of Image objects
-    #cdef Image* image_array = <Image*>malloc(count * sizeof(Image))
-    #if not image_array:
-    #    raise MemoryError("Failed to allocate memory for Image array")
-    # 
-    #try:
-    #    # Populate the Image array with CyImage _image attributes
-    #    for i in range(count):
-    #        image_array[i] = <Image>images[i]._image
-    #    
-    #    # Call the C function with the Image array
-    #    SetWindowIcons(image_array, count)
-    # 
-    #finally:
-    #    # Free the allocated memory
-    #    free(image_array)
+    #Allocate memory for an array of Image objects
+    cdef Image* image_array = <Image*>malloc(count * sizeof(Image))
+    if not image_array:
+        raise MemoryError("Failed to allocate memory for Image array")
+     
+    try:
+        # Populate the Image array with CyImage _image attributes
+        for i in range(count):
+            image_array[i] = <Image>images[i]._image
+        
+        # Call the C function with the Image array
+        SetWindowIcons(image_array, count)
+     
+    finally:
+        # Free the allocated memory
+        free(image_array)
 
 def set_window_title(title: str) -> None:
     SetWindowTitle(str.encode(title))
@@ -1735,6 +1734,13 @@ def begin_vr_stereo_mode(CyVrStereoConfig config) -> None:
 
 def end_vr_stereo_mode() -> None:
     EndVrStereoMode()
+
+def clear_background(CyColor color) -> None:
+    ClearBackground(color._color)
+
+def draw_fps(int x, int y) -> None:
+    DrawFPS(x, y)
+
 #cdef void SwapScreenBuffer()                                
 #cdef void PollInputEvents()                                 
 #cdef void WaitTime(double seconds)                              
@@ -1798,6 +1804,7 @@ def end_vr_stereo_mode() -> None:
 #cdef void PlayAutomationEvent(AutomationEvent event)                                  
 
 
+############ Keyboard #############
 
 #cdef bint IsKeyPressed(int key)                             # Check if a key has been pressed once
 #cdef bint IsKeyPressedRepeat(int key)                       # Check if a key has been pressed again (Only PLATFORM_DESKTOP)
@@ -1808,7 +1815,9 @@ def end_vr_stereo_mode() -> None:
 #cdef int GetCharPressed()                               # Get char pressed (unicode), call it multiple times for chars queued, returns 0 when the queue is empty
 #cdef void SetExitKey(int key)                               # Set a custom key to exit program (default is ESC)
 #
-## Input-related functions: gamepads
+
+############## Gamepad ############
+
 #cdef bint IsGamepadAvailable(int gamepad)                   # Check if a gamepad is available
 #cdef const char *GetGamepadName(int gamepad)                # Get gamepad internal name id
 #cdef bint IsGamepadButtonPressed(int gamepad, int button)   # Check if a gamepad button has been pressed once
@@ -1820,7 +1829,11 @@ def end_vr_stereo_mode() -> None:
 #cdef float GetGamepadAxisMovement(int gamepad, int axis)    # Get axis movement value for a gamepad axis
 #cdef int SetGamepadMappings(const char *mappings)           # Set internal gamepad mappings (SDL_GameControllerDB)
 #
-## Input-related functions: mouse
+
+
+
+########### Mouse ############
+
 #cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
 #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
 #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
@@ -1872,13 +1885,31 @@ def get_mouse_wheel_move_vector() -> raymath.CyVector2:
 def set_mouse_cursor(int cursor) -> None:
     SetMouseCursor(cursor)
 
+
+############# Touch ##############
+
 #cdef int GetTouchX()                                    # Get touch position X for touch point 0 (relative to screen size)
 def get_touch_x() -> int:
     return GetTouchX()
-    #cdef int GetTouchY()                                    # Get touch position Y for touch point 0 (relative to screen size)
-    #cdef Vector2 GetTouchPosition(int index)                    # Get touch position XY for a touch point index (relative to screen size)
-    #cdef int GetTouchPointId(int index)                         # Get touch point identifier for given index
-    #cdef int GetTouchPointCount()                           # Get number of touch points
+#cdef int GetTouchY()                                    # Get touch position Y for touch point 0 (relative to screen size)
+def get_touch_y() -> int:
+    return GetTouchY()
+#cdef Vector2 GetTouchPosition(int index)                    # Get touch position XY for a touch point index (relative to screen size)
+def get_touch_position(int index) -> raymath.CyVector2:
+    cdef raymath.CyVector2 vec = raymath.CyVector2.__init__(raymath.CyVector2)
+    vec._vector = GetTouchPosition(index)
+    return vec
+
+#cdef int GetTouchPointId(int index)                         # Get touch point identifier for given index
+def get_touch_point_id(int index) -> int:
+    return GetTouchPointId(index)
+
+#cdef int GetTouchPointCount()                           # Get number of touch points
+def get_touch_point_count() -> int:
+    return get_touch_point_count()
+
+############ Gesture #############
+
 #
     #cdef void SetGesturesEnabled(unsigned int flags)      # Enable a set of gestures using flags
     #cdef bint IsGestureDetected(unsigned int gesture)     # Check if a gesture have been detected
@@ -1889,17 +1920,4 @@ def get_touch_x() -> int:
     #cdef Vector2 GetGesturePinchVector()              # Get gesture pinch delta
     #cdef float GetGesturePinchAngle()                 # Get gesture pinch angle
 #
-    
-    ##------------------------------------------------------------------------------------
-    ## Basic Shapes Drawing Functions (Module: shapes)
-    ##------------------------------------------------------------------------------------
-    ## Set texture and rectangle to be used on shapes drawing
-    ## NOTE: It can be useful when using basic shapes and one single font,
-    ## defining a font char white rectangle would allow drawing everything in a single draw call
-    
 
-def clear_background(CyColor color) -> None:
-    ClearBackground(color._color)
-
-def draw_fps(int x, int y) -> None:
-    DrawFPS(x, y)

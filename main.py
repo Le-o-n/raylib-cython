@@ -10,7 +10,7 @@ def main():
     m: raymath.CyVector2
 
     codepoints: np.ndarray[np.int32] = np.array(
-        [100,100,100,99],
+        [256,100,100,99],
         dtype=np.int32
     )
     
