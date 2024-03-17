@@ -1,3 +1,20 @@
+Disclaimer
+--------
+This project is a work in progress and is currently not in a state to use
+
+
+
+
+
+
+
+
+
+
+
+Under Development
+--------
+
 <img align="left" style="width:260px" src="https://github.com/raysan5/raylib/blob/master/logo/raylib_logo_animation.gif" width="288px">
 
 **raylib is a simple and easy-to-use library to enjoy videogames programming.**
