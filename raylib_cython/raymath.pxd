@@ -1,5 +1,6 @@
 
 
+
 cdef extern from "libs/raymath.h":
     
     cdef double PI
@@ -153,3 +154,313 @@ cdef extern from "libs/raymath.h":
     cdef Vector3 QuaternionToEuler(Quaternion q) # DONE
     cdef Quaternion QuaternionTransform(Quaternion q, Matrix mat) # DONE
     cdef int QuaternionEquals(Quaternion p, Quaternion q) # DONE
+
+cdef class CyFloat3:
+    cdef float3 _floats
+    
+    cpdef float get_float(CyFloat3 self, int index)
+    cpdef void set_float(CyFloat3 self, int index, float f)
+
+cdef class CyQuaternion:
+    cdef Vector4 _vector
+
+    cpdef CyQuaternion copy(CyQuaternion self)
+    cpdef float get_x(CyQuaternion self)
+    cpdef float get_y(CyQuaternion self)
+    cpdef float get_z(CyQuaternion self)
+    cpdef float get_w(CyQuaternion self)
+    cpdef void set_x(CyQuaternion self, float x_new)
+    cpdef void set_y(CyQuaternion self, float y_new)
+    cpdef void set_z(CyQuaternion self, float z_new)
+    cpdef void set_w(CyQuaternion self, float w_new)
+    cpdef CyQuaternion add(CyQuaternion self, CyQuaternion other)
+    cpdef CyQuaternion add_inplace(CyQuaternion self, CyQuaternion other)
+    cpdef CyQuaternion add_value(CyQuaternion self, float value)
+    cpdef CyQuaternion add_value_inplace(CyQuaternion self, float value)
+    cpdef CyQuaternion subtract(CyQuaternion self, CyQuaternion other)
+    cpdef CyQuaternion subtract_inplace(CyQuaternion self, CyQuaternion other)
+    cpdef CyQuaternion subtract_value(CyQuaternion self, float value)
+    cpdef CyQuaternion subtract_value_inplace(CyQuaternion self, float value)
+    @staticmethod
+    cdef CyQuaternion c_identity()
+    cpdef float length(CyQuaternion self)
+    cpdef CyQuaternion normalize(CyQuaternion self)
+    cpdef CyQuaternion normalize_inplace(CyQuaternion self)
+    cpdef CyQuaternion invert(CyQuaternion self)
+    cpdef CyQuaternion invert_inplace(CyQuaternion self)
+    cpdef CyQuaternion multiply(CyQuaternion self, CyQuaternion other)
+    cpdef CyQuaternion multiply_inplace(CyQuaternion self, CyQuaternion other)
+    cpdef CyQuaternion scale(CyQuaternion self, float mul)
+    cpdef CyQuaternion scale_inplace(CyQuaternion self, float mul)
+    cpdef CyQuaternion divide(CyQuaternion self, CyQuaternion other)
+    cpdef CyQuaternion divide_inplace(CyQuaternion self, CyQuaternion other)
+    cpdef CyQuaternion lerp(CyQuaternion self, CyQuaternion other, float amount)
+    cpdef CyQuaternion lerp_inplace(CyQuaternion self, CyQuaternion other, float amount)
+    cpdef CyQuaternion nlerp(CyQuaternion self, CyQuaternion other, float amount)
+    cpdef CyQuaternion nlerp_inplace(CyQuaternion self, CyQuaternion other, float amount)
+    cpdef CyQuaternion slerp(CyQuaternion self, CyQuaternion other, float amount)
+    cpdef CyQuaternion slerp_inplace(CyQuaternion self, CyQuaternion other, float amount)
+    @staticmethod
+    cdef CyQuaternion c_from_vector3_to_vector3(CyVector3 from_vec, CyVector3 to_vec)
+    @staticmethod
+    cdef CyQuaternion c_from_matrix(CyMatrix mat)
+    cpdef CyMatrix to_matrix(CyQuaternion self)
+    @staticmethod
+    cdef CyQuaternion c_from_axis_angle(CyVector3 axis, float angle)
+    cdef void c_to_axis_angle(CyQuaternion self, CyVector3 out_axis, float out_angle)
+    @staticmethod
+    cdef CyQuaternion c_from_euler(float pitch, float yaw, float roll)
+    cpdef CyVector3 to_euler(CyQuaternion self)
+    cpdef CyQuaternion transform(CyQuaternion self, CyMatrix mat)
+    cpdef CyQuaternion transform_inplace(CyQuaternion self, CyMatrix mat)
+    cpdef int equals(CyQuaternion self, CyQuaternion other)
+
+cdef class CyVector3:
+    cdef Vector3 _vector
+    cpdef CyVector3 copy(CyVector3 self)
+    cpdef float get_x(CyVector3 self)
+    cpdef float get_y(CyVector3 self)
+    cpdef float get_z(CyVector3 self)
+    cpdef void set_x(CyVector3 self, float x_new)
+    cpdef void set_y(CyVector3 self, float y_new)
+    cpdef void set_z(CyVector3 self, float z_new)
+    cpdef CyVector3 add_value(CyVector3 self, float value)
+    cpdef CyVector3 add(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 add_value_inplace(CyVector3 self, float value)
+    cpdef CyVector3 add_inplace(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 sub_value(CyVector3 self, float value)
+    cpdef CyVector3 sub(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 sub_value_inplace(CyVector3 self, float value)
+    cpdef CyVector3 sub_inplace(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 scale(CyVector3 self, float scalar)
+    cpdef CyVector3 scale_inplace(CyVector3 self, float scalar)
+    cpdef CyVector3 mul(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 mul_inplace(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 div(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 div_inplace(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 cross_product(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 cross_product_inplace(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 perpendicular(CyVector3 self)
+    cpdef CyVector3 perpendicular_inplace(CyVector3 self)
+    cpdef float length(CyVector3 self)
+    cpdef float length_sqr(CyVector3 self)
+    cpdef float dot(CyVector3 self, CyVector3 other)
+    cpdef float distance(CyVector3 self, CyVector3 other)
+    cpdef float distance_sqr(CyVector3 self, CyVector3 other)
+    cpdef float angle(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 negate(CyVector3 self)
+    cpdef CyVector3 negate_inplace(CyVector3 self)
+    cpdef CyVector3 normalize(CyVector3 self)
+    cpdef CyVector3 normalize_inplace(CyVector3 self)
+    cpdef CyVector3 project(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 project_inplace(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 reject(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 reject_inplace(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 ortho_normalize(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 ortho_normalize_inplace(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 transform(CyVector3 self, CyMatrix matrix)
+    cpdef CyVector3 transform_inplace(CyVector3 self, CyMatrix matrix)
+    cpdef CyVector3 rotate_by_quaternion(CyVector3 self, CyQuaternion quaternion)
+    cpdef CyVector3 rotate_by_quaternion_inplace(CyVector3 self, CyQuaternion quaternion)
+    cpdef CyVector3 rotate_by_axis_angle(CyVector3 self, CyVector3 axis, float angle)
+    cpdef CyVector3 rotate_by_axis_angle_inplace(CyVector3 self, CyVector3 axis, float angle)
+    cpdef CyVector3 lerp(CyVector3 self, CyVector3 target, float amount)
+    cpdef CyVector3 lerp_inplace(CyVector3 self, CyVector3 target, float amount)
+    cpdef CyVector3 reflect(CyVector3 self, CyVector3 normal)
+    cpdef CyVector3 reflect_inplace(CyVector3 self, CyVector3 normal)
+    cpdef CyVector3 min(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 min_inplace(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 max(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 max_inplace(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 barycenter(CyVector3 self, CyVector3 a, CyVector3 b, CyVector3 c) 
+    cpdef CyVector3 barycenter_inplace(CyVector3 self, CyVector3 a, CyVector3 b, CyVector3 c)
+    cpdef CyVector3 unproject(CyVector3 self, CyMatrix projection, CyMatrix view)
+    cpdef CyVector3 unproject_inplace(CyVector3 self, CyMatrix projection, CyMatrix view)
+    cpdef CyFloat3 to_float3(CyVector3 self)
+    cpdef CyVector3 invert(CyVector3 self)
+    cpdef CyVector3 invert_inplace(CyVector3 self)
+    cpdef CyVector3 clamp(CyVector3 self, CyVector3 min, CyVector3 max)
+    cpdef CyVector3 clamp_inplace(CyVector3 self, CyVector3 min, CyVector3 max)
+    cpdef CyVector3 clamp_value(CyVector3 self, float min, float max)
+    cpdef bint equals(CyVector3 self, CyVector3 other)
+    cpdef CyVector3 refract(CyVector3 self, CyVector3 normal, float r)
+    cpdef CyVector3 refract_inplace(CyVector3 self, CyVector3 normal, float r)
+
+
+cdef class CyFloat16:
+    cdef float16 _floats
+    
+    @staticmethod
+    cdef CyFloat16 from_float16(float16* float16_ptr)
+    cpdef float get_float(CyFloat16 self, int index)
+    cpdef void set_float(CyFloat16 self, int index, float f)
+    
+
+
+cdef class CyMatrix:
+    cdef Matrix _matrix
+
+    cpdef CyMatrix copy(CyMatrix self)
+        
+    cpdef float get_element(CyMatrix self, int row, int col)
+        
+    cpdef void set_element(CyMatrix self, int row, int col, float value)
+        
+    cpdef float determinant(CyMatrix self)
+        
+    cpdef float trace(CyMatrix self)
+        
+    cpdef CyMatrix transpose(CyMatrix self)
+        
+    cpdef CyMatrix transpose_inplace(CyMatrix self)
+        
+    cpdef CyMatrix invert(CyMatrix self)
+        
+    cpdef CyMatrix invert_inplace(CyMatrix self)
+        
+    @staticmethod
+    cdef CyMatrix c_identity()
+        
+    cpdef CyMatrix add(CyMatrix self, CyMatrix right)
+        
+    cpdef CyMatrix add_inplace(CyMatrix self, CyMatrix right)
+        
+    cpdef CyMatrix subtract(CyMatrix self, CyMatrix right)
+        
+    cpdef CyMatrix subtract_inplace(CyMatrix self, CyMatrix right)
+        
+    cpdef CyMatrix multiply(CyMatrix self, CyMatrix right)
+        
+    cpdef CyMatrix multiply_inplace(CyMatrix self, CyMatrix right)
+        
+    @staticmethod
+    cdef CyMatrix c_translate(float x, float y, float z)
+        
+    @staticmethod
+    cdef CyMatrix c_rotate(CyVector3 axis, float angle)
+        
+    @staticmethod
+    cdef CyMatrix c_rotate_x(float angle)
+        
+    @staticmethod
+    cdef CyMatrix c_rotate_y(float angle)
+        
+    @staticmethod
+    cdef CyMatrix c_rotate_z(float angle)
+        
+    @staticmethod
+    cdef CyMatrix c_rotate_xyz(CyVector3 angle)
+        
+    @staticmethod
+    cdef CyMatrix c_rotate_zyx(CyVector3 angle)
+        
+    @staticmethod
+    cdef CyMatrix c_scale(float x, float y, float z)
+        
+    @staticmethod
+    cdef CyMatrix c_frustrum(double left, double right, double bottom, double top, double near, double far)
+        
+    @staticmethod
+    cdef CyMatrix c_perspective(double fov_y, double aspect, double near_plane, double far_plane)
+        
+    @staticmethod
+    cdef CyMatrix c_orthogonal(double left, double right, double bottom, double top, double near_plane, double far_plane)
+        
+
+    @staticmethod
+    cdef CyMatrix c_look_at(CyVector3 eye, CyVector3 target, CyVector3 up)
+    cpdef CyFloat16 to_float16(CyMatrix self)
+
+cdef class CyVector2:
+    cdef Vector2 _vector
+
+    cpdef CyVector2 copy(CyVector2 self)
+        
+    cpdef float get_x(CyVector2 self)
+        
+    cpdef float get_y(CyVector2 self)
+        
+    cpdef void set_x(CyVector2 self, float x_new)
+        
+    cpdef void set_y(CyVector2 self, float y_new)
+        
+    cpdef CyVector2 add_value(CyVector2 self, float value)
+        
+    cpdef CyVector2 add(CyVector2 self, CyVector2 other)
+        
+    cpdef CyVector2 add_value_inplace(CyVector2 self, float value)
+         
+    cpdef CyVector2 add_inplace(CyVector2 self, CyVector2 other)
+        
+    cpdef CyVector2 sub_value(CyVector2 self, float value)
+        
+    cpdef CyVector2 sub(CyVector2 self, CyVector2 other)
+        
+    cpdef CyVector2 sub_value_inplace(CyVector2 self, float value)
+        
+    cpdef CyVector2 sub_inplace(CyVector2 self, CyVector2 other)
+        
+    cpdef CyVector2 scale(CyVector2 self, float scalar)
+        
+    cpdef CyVector2 scale_inplace(CyVector2 self, float scalar)
+        
+    cpdef CyVector2 mul(CyVector2 self, CyVector2 other)
+        
+    cpdef CyVector2 mul_inplace(CyVector2 self, CyVector2 other)
+        
+    cpdef float length(CyVector2 self)
+        
+    cpdef float length_sqr(CyVector2 self)
+        
+    cpdef float dot(CyVector2 self, CyVector2 other)
+        
+    cpdef float distance(CyVector2 self, CyVector2 other)
+        
+    cpdef float distance_sqr(CyVector2 self, CyVector2 other)
+        
+    cpdef float angle(CyVector2 self, CyVector2 other)
+        
+    cpdef float line_angle(CyVector2 self, CyVector2 other)
+        
+    cpdef CyVector2 negate(CyVector2 self)
+        
+    cpdef CyVector2 negate_inplace(CyVector2 self)
+        
+    cpdef CyVector2 normalize(CyVector2 self)
+        
+    cpdef CyVector2 normalize_inplace(CyVector2 self)
+        
+    cpdef CyVector2 transform(CyVector2 self, CyMatrix matrix)
+        
+    cpdef CyVector2 transform_inplace(CyVector2 self, CyMatrix matrix)
+        
+    cpdef CyVector2 lerp(CyVector2 self, CyVector2 target, float amount)    
+        
+    cpdef CyVector2 lerp_inplace(CyVector2 self, CyVector2 target, float amount)    
+        
+    cpdef CyVector2 reflect(CyVector2 self, CyVector2 normal)
+        
+    cpdef CyVector2 reflect_inplace(CyVector2 self, CyVector2 normal)
+        
+    cpdef CyVector2 rotate(CyVector2 self, float angle)
+        
+    cpdef CyVector2 rotate_inplace(CyVector2 self, float angle)
+        
+    cpdef CyVector2 move_towards(CyVector2 self, CyVector2 target, float max_distance)
+        
+    cpdef CyVector2 move_towards_inplace(CyVector2 self, CyVector2 target, float max_distance)
+        
+    cpdef CyVector2 invert(CyVector2 self)
+        
+    cpdef CyVector2 invert_inplace(CyVector2 self)
+        
+    cpdef CyVector2 clamp(CyVector2 self, CyVector2 min, CyVector2 max)
+        
+    cpdef CyVector2 clamp_inplace(CyVector2 self, CyVector2 min, CyVector2 max)
+        
+    
+    cpdef CyVector2 clamp_value(CyVector2 self, float min, float max)
+        
+    
+    cpdef CyVector2 clamp_value_inplace(CyVector2 self, float min, float max)
+        

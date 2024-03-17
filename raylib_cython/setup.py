@@ -19,29 +19,32 @@ def remove_file_extensions(
                 print(f"Removed: {file_name}")
 
 
-remove_file_extensions(directory_path, ["c", "pyd"])
+# remove_file_extensions(directory_path, ["c", "pyd"])
 
-raylib_extension: Extension = Extension(
-    "raylib_cython.raylib",
-    [
-        "raylib.pyx",
-    ],
-    include_dirs=["./libs"],
-    library_dirs=["./libs"],
-    libraries=["./libs/raylib"],  # Add any necessary libraries here
-    extra_compile_args=[],  # Add any necessary compile flags here
-)
 raymath_extension: Extension = Extension(
     "raylib_cython.raymath",
     [
         "raymath.pyx"
     ],
-    include_dirs=["./libs"],
+    include_dirs=["./libs", "."],
     library_dirs=["./libs"],
     libraries=["./libs/raylib"],  # Add any necessary libraries here
     extra_compile_args=[],  # Add any necessary compile flags here
 
 )
+raylib_extension: Extension = Extension(
+    "raylib_cython.raylib",
+    [
+        "raylib.pyx",
+        "raymath.pyx",
+    ],
+    include_dirs=["./libs", "."],
+    library_dirs=["./libs"],
+
+    libraries=["./libs/raylib"],  # Add any necessary libraries here
+    extra_compile_args=[],  # Add any necessary compile flags here
+)
+
 rlgl_extension: Extension = Extension(
     "raylib_cython.rlgl",
     [
@@ -54,8 +57,8 @@ rlgl_extension: Extension = Extension(
 )
 
 extensions = [
+    # raymath_extension,
     raylib_extension,
-    raymath_extension,
     rlgl_extension,
 ]
 
@@ -84,10 +87,12 @@ setup(
             'main.py'
         ],
     },
-    ext_modules=cythonize(extensions),
-    compiler_directives={"language_level": "3"},
+    ext_modules=cythonize(
+        extensions,
+        language_level="3"
+    ),
 
 
 )
 
-remove_file_extensions(directory_path, ["c"])
+# remove_file_extensions(directory_path, ["c"])
