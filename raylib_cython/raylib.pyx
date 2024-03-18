@@ -1910,14 +1910,39 @@ def get_touch_point_count() -> int:
 
 ############ Gesture #############
 
-#
-    #cdef void SetGesturesEnabled(unsigned int flags)      # Enable a set of gestures using flags
-    #cdef bint IsGestureDetected(unsigned int gesture)     # Check if a gesture have been detected
-    #cdef int GetGestureDetected()                     # Get latest detected gesture
-    #cdef float GetGestureHoldDuration()               # Get gesture hold time in milliseconds
-    #cdef Vector2 GetGestureDragVector()               # Get gesture drag vector
-    #cdef float GetGestureDragAngle()                  # Get gesture drag angle
-    #cdef Vector2 GetGesturePinchVector()              # Get gesture pinch delta
-    #cdef float GetGesturePinchAngle()                 # Get gesture pinch angle
-#
+#cdef void SetGesturesEnabled(unsigned int flags)      # Enable a set of gestures using flags
+def set_gesture_enabled(unsigned int flags) -> None:
+    SetGesturesEnabled(flags)
+
+#cdef bint IsGestureDetected(unsigned int gesture)     # Check if a gesture have been detected
+def is_gesture_detected(unsigned int gesture) -> bint:
+    return IsGestureDetected(gesture)
+
+#cdef int GetGestureDetected()                     # Get latest detected gesture
+def get_gesture_detected() -> int:
+    return GetGestureDetected()
+
+#cdef float GetGestureHoldDuration()               # Get gesture hold time in milliseconds
+def get_gesture_hold_duration() -> float:
+    return GetGestureHoldDuration()
+    
+#cdef Vector2 GetGestureDragVector()               # Get gesture drag vector
+def get_gesture_drag_vector() -> raymath.CyVector2:
+    cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+    vec._vector = GetGestureDragVector()
+    return vec
+
+#cdef float GetGestureDragAngle()                  # Get gesture drag angle
+def get_gesture_drag_angle() -> float:
+    return GetGestureDragAngle()
+
+#cdef Vector2 GetGesturePinchVector()              # Get gesture pinch delta
+def get_gesture_pinch_vector() -> raymath.CyVector2:
+    cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+    vec._vector = GetGesturePinchVector()
+    return vec
+
+#cdef float GetGesturePinchAngle()                 # Get gesture pinch angle
+def get_gesture_pinch_angle() -> float:
+    return GetGesturePinchAngle()
 
