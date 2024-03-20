@@ -1544,7 +1544,7 @@ def restore_window() -> None:
 def set_window_icon(image: CyImage) -> None:
     SetWindowIcon(image._image)
 
-def set_windows_icons(images: list[CyImage]) -> None:
+def set_windows_icons(CyImage[:] images) -> None:
     cdef int count = len(images)
     
     #Allocate memory for an array of Image objects
@@ -1660,7 +1660,7 @@ def show_cursor() -> None:
 def hide_cursor() -> None:
     HideCursor()
 
-def is_cursor_hidden() -> bint:
+def is_cursor_hidden() -> bool:
     return IsCursorHidden()
 
 def enable_cursor() -> None:
@@ -1669,7 +1669,7 @@ def enable_cursor() -> None:
 def disable_cursor() -> None:
     DisableCursor()
 
-def is_cursor_on_screen() -> bint:
+def is_cursor_on_screen() -> bool:
     return IsCursorOnScreen()                             
 
 def set_target_fps(int fps) -> None:
@@ -1807,40 +1807,110 @@ def draw_fps(int x, int y) -> None:
 ############ Keyboard #############
 
 #cdef bint IsKeyPressed(int key)                             # Check if a key has been pressed once
+def is_key_pressed(int key) -> bool:
+    return IsKeyPressed(key)
+
 #cdef bint IsKeyPressedRepeat(int key)                       # Check if a key has been pressed again (Only PLATFORM_DESKTOP)
+def is_key_pressed_repeat(int key) -> bool:
+    return IsKeyPressedRepeat(key)
+
 #cdef bint IsKeyDown(int key)                                # Check if a key is being pressed
+def is_key_down(int key) -> bool:
+    return IsKeyDown(key)
+
 #cdef bint IsKeyReleased(int key)                            # Check if a key has been released once
+def is_key_released(int key) -> bool:
+    return IsKeyReleased(key)
+
 #cdef bint IsKeyUp(int key)                                  # Check if a key is NOT being pressed
+def is_key_up(int key) -> bool:
+    return IsKeyUp(key)
+
 #cdef int GetKeyPressed()                                # Get key pressed (keycode), call it multiple times for keys queued, returns 0 when the queue is empty
+def get_key_pressed() -> int:
+    return GetKeyPressed()
+
 #cdef int GetCharPressed()                               # Get char pressed (unicode), call it multiple times for chars queued, returns 0 when the queue is empty
+def get_char_pressed() -> int:
+    return GetCharPressed()
+
 #cdef void SetExitKey(int key)                               # Set a custom key to exit program (default is ESC)
-#
+def set_exit_key(int key) -> None:
+    SetExitKey(key)
+
 
 ############## Gamepad ############
 
 #cdef bint IsGamepadAvailable(int gamepad)                   # Check if a gamepad is available
-#cdef const char *GetGamepadName(int gamepad)                # Get gamepad internal name id
-#cdef bint IsGamepadButtonPressed(int gamepad, int button)   # Check if a gamepad button has been pressed once
-#cdef bint IsGamepadButtonDown(int gamepad, int button)      # Check if a gamepad button is being pressed
-#cdef bint IsGamepadButtonReleased(int gamepad, int button)  # Check if a gamepad button has been released once
-#cdef bint IsGamepadButtonUp(int gamepad, int button)        # Check if a gamepad button is NOT being pressed
-#cdef int GetGamepadButtonPressed()                      # Get the last gamepad button pressed
-#cdef int GetGamepadAxisCount(int gamepad)                   # Get gamepad axis count for a gamepad
-#cdef float GetGamepadAxisMovement(int gamepad, int axis)    # Get axis movement value for a gamepad axis
-#cdef int SetGamepadMappings(const char *mappings)           # Set internal gamepad mappings (SDL_GameControllerDB)
-#
+def is_gamepad_available(int gamepad) -> bool:
+    return IsGamepadAvailable(gamepad)
 
+#cdef const char *GetGamepadName(int gamepad)                # Get gamepad internal name id
+def get_gamepad_name(int gamepad) -> str:
+    cdef const char* c_name = GetGamepadName(gamepad)
+    cdef str py_name
+
+    if c_name is not NULL:
+        py_name = c_name.decode('utf-8')  # Still need to decode from UTF-8
+    else:
+        py_name = ""
+
+    return py_name
+
+#cdef bint IsGamepadButtonPressed(int gamepad, int button)   # Check if a gamepad button has been pressed once
+def is_gamepad_button_pressed(int gamepad, int button) -> bool:
+    return IsGamepadButtonPressed(gamepad, button)
+
+#cdef bint IsGamepadButtonDown(int gamepad, int button)      # Check if a gamepad button is being pressed
+def is_gamepad_button_down(int gamepad, int button) -> bool:
+    return IsGamepadButtonDown(gamepad, button)
+
+#cdef bint IsGamepadButtonReleased(int gamepad, int button)  # Check if a gamepad button has been released once
+def is_gamepad_button_released(int gamepad, int button) -> bool:
+    return IsGamepadButtonReleased(gamepad, button)
+
+#cdef bint IsGamepadButtonUp(int gamepad, int button)        # Check if a gamepad button is NOT being pressed
+def is_gamepad_button_up(int gamepad, int button) -> bool:
+    return IsGamepadButtonUp(gamepad, button)
+
+#cdef int GetGamepadButtonPressed()                      # Get the last gamepad button pressed
+def get_gamepad_button_pressed() -> int:
+    return GetGamepadButtonPressed()
+
+#cdef int GetGamepadAxisCount(int gamepad)                   # Get gamepad axis count for a gamepad
+def get_gamepad_axis_count(int gamepad) -> int:
+    return GetGamepadAxisCount(gamepad)
+
+#cdef float GetGamepadAxisMovement(int gamepad, int axis)    # Get axis movement value for a gamepad axis
+def get_gamepad_axis_movement(int gamepad, int axis) -> float:
+    return GetGamepadAxisMovement(gamepad, axis)
+
+#cdef int SetGamepadMappings(const char *mappings)           # Set internal gamepad mappings (SDL_GameControllerDB)
+def set_gamepad_mappings(str mappings) -> int:
+    cdef bytes py_bytes = mappings.encode('utf-8')
+    cdef const char* c_mappings = <const char*>py_bytes
+    return SetGamepadMappings(c_mappings)
 
 
 ########### Mouse ############
 
 #cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
+def is_mouse_button_pressed(int button) -> bool:
+    return IsMouseButtonPressed(button)
+
 #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
+def is_mouse_button_down(int button) -> bool:
+    return IsMouseButtonDown(button)
+
 #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
+def is_mouse_button_released(int button) -> bool:
+    return IsMouseButtonReleased(button)
+
 #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
+def is_mouse_button_up(int button) -> bool:
+    return IsMouseButtonUp(button)
 
 #cdef int GetMouseX()                                    # Get mouse position X
-
 def get_mouse_x() -> int:
     return GetMouseX()
 
@@ -1915,7 +1985,7 @@ def set_gesture_enabled(unsigned int flags) -> None:
     SetGesturesEnabled(flags)
 
 #cdef bint IsGestureDetected(unsigned int gesture)     # Check if a gesture have been detected
-def is_gesture_detected(unsigned int gesture) -> bint:
+def is_gesture_detected(unsigned int gesture) -> bool:
     return IsGestureDetected(gesture)
 
 #cdef int GetGestureDetected()                     # Get latest detected gesture
