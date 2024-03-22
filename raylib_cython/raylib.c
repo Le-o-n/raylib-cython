@@ -1162,6 +1162,7 @@ struct __pyx_obj_6raylib_CyPlane;
 struct __pyx_obj_6raylib_CyGrid;
 struct __pyx_obj_6raylib_CyAudioDeviceManager;
 struct __pyx_obj_6raylib_CyKeyboard;
+struct __pyx_obj_6raylib_CyMouse;
 struct __pyx_obj___pyx_scope_struct____Pyx_CFunc_void____int____int____const__char_______to_py;
 struct __pyx_obj___pyx_scope_struct____Pyx_CFunc_void_______to_py;
 struct __pyx_obj___pyx_scope_struct____Pyx_CFunc_bint_______to_py;
@@ -1985,6 +1986,18 @@ struct __pyx_obj_6raylib_CyAudioDeviceManager {
  *     #cdef bint IsKeyPressed(int key)                             # Check if a key has been pressed once
  */
 struct __pyx_obj_6raylib_CyKeyboard {
+  PyObject_HEAD
+};
+
+
+/* "raylib.pyx":2326
+ * ########### Mouse ############
+ * 
+ * cdef class CyMouse:             # <<<<<<<<<<<<<<
+ *     #cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
+ *     @staticmethod
+ */
+struct __pyx_obj_6raylib_CyMouse {
   PyObject_HEAD
 };
 
@@ -3178,6 +3191,9 @@ static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_KeyboardKey(KeyboardKey value);
 
+/* CIntToPy.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyInt_From_MouseButton(MouseButton value);
+
 /* CIntFromPy.proto */
 static CYTHON_INLINE char __Pyx_PyInt_As_char(PyObject *);
 
@@ -3356,6 +3372,7 @@ static PyTypeObject *__pyx_ptype_6raylib_CyPlane = 0;
 static PyTypeObject *__pyx_ptype_6raylib_CyGrid = 0;
 static PyTypeObject *__pyx_ptype_6raylib_CyAudioDeviceManager = 0;
 static PyTypeObject *__pyx_ptype_6raylib_CyKeyboard = 0;
+static PyTypeObject *__pyx_ptype_6raylib_CyMouse = 0;
 static PyTypeObject *__pyx_ptype___pyx_scope_struct____Pyx_CFunc_void____int____int____const__char_______to_py = 0;
 static PyTypeObject *__pyx_ptype___pyx_scope_struct____Pyx_CFunc_void_______to_py = 0;
 static PyTypeObject *__pyx_ptype___pyx_scope_struct____Pyx_CFunc_bint_______to_py = 0;
@@ -3416,6 +3433,7 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyPlane__set_state(struct __pyx_
 static PyObject *__pyx_f_6raylib___pyx_unpickle_CyGrid__set_state(struct __pyx_obj_6raylib_CyGrid *, PyObject *); /*proto*/
 static PyObject *__pyx_f_6raylib___pyx_unpickle_CyAudioDeviceManager__set_state(struct __pyx_obj_6raylib_CyAudioDeviceManager *, PyObject *); /*proto*/
 static PyObject *__pyx_f_6raylib___pyx_unpickle_CyKeyboard__set_state(struct __pyx_obj_6raylib_CyKeyboard *, PyObject *); /*proto*/
+static PyObject *__pyx_f_6raylib___pyx_unpickle_CyMouse__set_state(struct __pyx_obj_6raylib_CyMouse *, PyObject *); /*proto*/
 static PyObject *__Pyx_CFunc_void____int____int____const__char_______to_py(void (*)(int, int, char const *)); /*proto*/
 static PyObject *__Pyx_CFunc_void_______to_py(void (*)(void)); /*proto*/
 static PyObject *__Pyx_CFunc_bint_______to_py(int (*)(void)); /*proto*/
@@ -3574,6 +3592,7 @@ static const char __pyx_k_yellow[] = "yellow";
 static const char __pyx_k_CyColor[] = "CyColor";
 static const char __pyx_k_CyImage[] = "CyImage";
 static const char __pyx_k_CyModel[] = "CyModel";
+static const char __pyx_k_CyMouse[] = "CyMouse";
 static const char __pyx_k_CyMusic[] = "CyMusic";
 static const char __pyx_k_CyPixel[] = "CyPixel";
 static const char __pyx_k_CyPlane[] = "CyPlane";
@@ -3795,6 +3814,7 @@ static const char __pyx_k_is_gamepad_available[] = "is_gamepad_available";
 static const char __pyx_k_is_gamepad_button_up[] = "is_gamepad_button_up";
 static const char __pyx_k_is_mouse_button_down[] = "is_mouse_button_down";
 static const char __pyx_k_is_window_fullscreen[] = "is_window_fullscreen";
+static const char __pyx_k_pyx_unpickle_CyMouse[] = "__pyx_unpickle_CyMouse";
 static const char __pyx_k_pyx_unpickle_CyPlane[] = "__pyx_unpickle_CyPlane";
 static const char __pyx_k_set_gamepad_mappings[] = "set_gamepad_mappings";
 static const char __pyx_k_strided_and_indirect[] = "<strided and indirect>";
@@ -3906,6 +3926,7 @@ static PyObject *__pyx_n_s_CyMaterialMap;
 static PyObject *__pyx_n_s_CyMesh;
 static PyObject *__pyx_n_s_CyModel;
 static PyObject *__pyx_n_s_CyModelAnimation;
+static PyObject *__pyx_n_s_CyMouse;
 static PyObject *__pyx_n_s_CyMusic;
 static PyObject *__pyx_n_s_CyNPatchInfo;
 static PyObject *__pyx_n_s_CyPixel;
@@ -4185,6 +4206,7 @@ static PyObject *__pyx_n_s_pyx_unpickle_CyGrid;
 static PyObject *__pyx_n_s_pyx_unpickle_CyKeyboard;
 static PyObject *__pyx_n_s_pyx_unpickle_CyLine3D;
 static PyObject *__pyx_n_s_pyx_unpickle_CyLineBezier;
+static PyObject *__pyx_n_s_pyx_unpickle_CyMouse;
 static PyObject *__pyx_n_s_pyx_unpickle_CyPlane;
 static PyObject *__pyx_n_s_pyx_unpickle_CyPoint3D;
 static PyObject *__pyx_n_s_pyx_unpickle_CyPolygon;
@@ -4689,53 +4711,63 @@ static PyObject *__pyx_pf_6raylib_166get_gamepad_button_pressed(CYTHON_UNUSED Py
 static PyObject *__pyx_pf_6raylib_168get_gamepad_axis_count(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_gamepad); /* proto */
 static PyObject *__pyx_pf_6raylib_170get_gamepad_axis_movement(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_gamepad, int __pyx_v_axis); /* proto */
 static PyObject *__pyx_pf_6raylib_172set_gamepad_mappings(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_mappings); /* proto */
-static PyObject *__pyx_pf_6raylib_174is_mouse_button_pressed(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_button); /* proto */
-static PyObject *__pyx_pf_6raylib_176is_mouse_button_down(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_button); /* proto */
-static PyObject *__pyx_pf_6raylib_178is_mouse_button_released(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_button); /* proto */
-static PyObject *__pyx_pf_6raylib_180is_mouse_button_up(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_button); /* proto */
-static PyObject *__pyx_pf_6raylib_182get_mouse_x(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_6raylib_184get_mouse_y(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_186get_mouse_position(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_188get_mouse_delta(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_6raylib_190set_mouse_position(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_x, int __pyx_v_y); /* proto */
-static PyObject *__pyx_pf_6raylib_192set_mouse_offset(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_offset_x, int __pyx_v_offset_y); /* proto */
-static PyObject *__pyx_pf_6raylib_194set_mouse_scale(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_scale_x, float __pyx_v_scale_y); /* proto */
-static PyObject *__pyx_pf_6raylib_196get_mouse_wheel_move(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_198get_mouse_wheel_move_vector(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_6raylib_200set_mouse_cursor(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_cursor); /* proto */
-static PyObject *__pyx_pf_6raylib_202get_touch_x(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_6raylib_204get_touch_y(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_206get_touch_position(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_index); /* proto */
-static PyObject *__pyx_pf_6raylib_208get_touch_point_id(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_index); /* proto */
-static PyObject *__pyx_pf_6raylib_210get_touch_point_count(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_6raylib_212set_gesture_enabled(CYTHON_UNUSED PyObject *__pyx_self, unsigned int __pyx_v_flags); /* proto */
-static PyObject *__pyx_pf_6raylib_214is_gesture_detected(CYTHON_UNUSED PyObject *__pyx_self, unsigned int __pyx_v_gesture); /* proto */
-static PyObject *__pyx_pf_6raylib_216get_gesture_detected(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_6raylib_218get_gesture_hold_duration(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_220get_gesture_drag_vector(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_6raylib_222get_gesture_drag_angle(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_224get_gesture_pinch_vector(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_6raylib_226get_gesture_pinch_angle(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_6raylib_228__pyx_unpickle_CyLineBezier(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_230__pyx_unpickle_CyCircle(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_232__pyx_unpickle_CyEclypse(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_234__pyx_unpickle_CyRing(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_236__pyx_unpickle_CyTriangle(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_238__pyx_unpickle_CyPolygon(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_240__pyx_unpickle_CySpline(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_242__pyx_unpickle_CyLine3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_244__pyx_unpickle_CyPoint3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_246__pyx_unpickle_CyCircle3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_248__pyx_unpickle_CyTriangle3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_250__pyx_unpickle_CyTriangleStrip3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_252__pyx_unpickle_CyCube(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_254__pyx_unpickle_CySphere(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_256__pyx_unpickle_CyCylinder(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_258__pyx_unpickle_CyCapsule(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_260__pyx_unpickle_CyPlane(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_262__pyx_unpickle_CyGrid(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_264__pyx_unpickle_CyAudioDeviceManager(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
-static PyObject *__pyx_pf_6raylib_266__pyx_unpickle_CyKeyboard(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_is_mouse_button_pressed(int __pyx_v_button); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_2is_mouse_button_down(int __pyx_v_button); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_4is_mouse_button_released(int __pyx_v_button); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_6is_mouse_button_up(int __pyx_v_button); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_8get_mouse_x(void); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_10get_mouse_y(void); /* proto */
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_7CyMouse_12get_mouse_position(void); /* proto */
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_7CyMouse_14get_mouse_delta(void); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_16set_mouse_position(int __pyx_v_x, int __pyx_v_y); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_18set_mouse_offset(int __pyx_v_offset_x, int __pyx_v_offset_y); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_20set_mouse_scale(float __pyx_v_scale_x, float __pyx_v_scale_y); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_22get_mouse_wheel_move(void); /* proto */
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_7CyMouse_24get_mouse_wheel_move_vector(void); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_26set_mouse_cursor(int __pyx_v_cursor); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_17MOUSE_BUTTON_LEFT___get__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyMouse *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_18MOUSE_BUTTON_RIGHT___get__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyMouse *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_19MOUSE_BUTTON_MIDDLE___get__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyMouse *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_17MOUSE_BUTTON_SIDE___get__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyMouse *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_18MOUSE_BUTTON_EXTRA___get__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyMouse *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_20MOUSE_BUTTON_FORWARD___get__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyMouse *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_17MOUSE_BUTTON_BACK___get__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyMouse *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_28__reduce_cython__(struct __pyx_obj_6raylib_CyMouse *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6raylib_7CyMouse_30__setstate_cython__(struct __pyx_obj_6raylib_CyMouse *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_174get_touch_x(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_6raylib_176get_touch_y(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_178get_touch_position(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_index); /* proto */
+static PyObject *__pyx_pf_6raylib_180get_touch_point_id(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_index); /* proto */
+static PyObject *__pyx_pf_6raylib_182get_touch_point_count(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_6raylib_184set_gesture_enabled(CYTHON_UNUSED PyObject *__pyx_self, unsigned int __pyx_v_flags); /* proto */
+static PyObject *__pyx_pf_6raylib_186is_gesture_detected(CYTHON_UNUSED PyObject *__pyx_self, unsigned int __pyx_v_gesture); /* proto */
+static PyObject *__pyx_pf_6raylib_188get_gesture_detected(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_6raylib_190get_gesture_hold_duration(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_192get_gesture_drag_vector(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_6raylib_194get_gesture_drag_angle(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_196get_gesture_pinch_vector(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_6raylib_198get_gesture_pinch_angle(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_6raylib_200__pyx_unpickle_CyLineBezier(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_202__pyx_unpickle_CyCircle(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_204__pyx_unpickle_CyEclypse(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_206__pyx_unpickle_CyRing(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_208__pyx_unpickle_CyTriangle(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_210__pyx_unpickle_CyPolygon(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_212__pyx_unpickle_CySpline(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_214__pyx_unpickle_CyLine3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_216__pyx_unpickle_CyPoint3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_218__pyx_unpickle_CyCircle3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_220__pyx_unpickle_CyTriangle3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_222__pyx_unpickle_CyTriangleStrip3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_224__pyx_unpickle_CyCube(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_226__pyx_unpickle_CySphere(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_228__pyx_unpickle_CyCylinder(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_230__pyx_unpickle_CyCapsule(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_232__pyx_unpickle_CyPlane(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_234__pyx_unpickle_CyGrid(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_236__pyx_unpickle_CyAudioDeviceManager(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_238__pyx_unpickle_CyKeyboard(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6raylib_240__pyx_unpickle_CyMouse(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_pf_11cfunc_dot_to_py_57__Pyx_CFunc_void____int____int____const__char_______to_py_wrap(PyObject *__pyx_self, int __pyx_v_width, int __pyx_v_height, char const *__pyx_v_title); /* proto */
 static PyObject *__pyx_pf_11cfunc_dot_to_py_28__Pyx_CFunc_void_______to_py_wrap(PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_pf_11cfunc_dot_to_py_28__Pyx_CFunc_bint_______to_py_wrap(PyObject *__pyx_self); /* proto */
@@ -4838,6 +4870,7 @@ static PyObject *__pyx_tp_new_6raylib_CyPlane(PyTypeObject *t, PyObject *a, PyOb
 static PyObject *__pyx_tp_new_6raylib_CyGrid(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_6raylib_CyAudioDeviceManager(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_6raylib_CyKeyboard(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_6raylib_CyMouse(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new___pyx_scope_struct____Pyx_CFunc_void____int____int____const__char_______to_py(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new___pyx_scope_struct____Pyx_CFunc_void_______to_py(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new___pyx_scope_struct____Pyx_CFunc_bint_______to_py(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
@@ -5121,11 +5154,12 @@ static PyObject *__pyx_tuple__398;
 static PyObject *__pyx_tuple__400;
 static PyObject *__pyx_tuple__402;
 static PyObject *__pyx_tuple__404;
-static PyObject *__pyx_tuple__405;
 static PyObject *__pyx_tuple__406;
 static PyObject *__pyx_tuple__407;
 static PyObject *__pyx_tuple__408;
 static PyObject *__pyx_tuple__409;
+static PyObject *__pyx_tuple__410;
+static PyObject *__pyx_tuple__411;
 static PyObject *__pyx_codeobj__86;
 static PyObject *__pyx_codeobj__87;
 static PyObject *__pyx_codeobj__88;
@@ -5304,7 +5338,8 @@ static PyObject *__pyx_codeobj__397;
 static PyObject *__pyx_codeobj__399;
 static PyObject *__pyx_codeobj__401;
 static PyObject *__pyx_codeobj__403;
-static PyObject *__pyx_codeobj__410;
+static PyObject *__pyx_codeobj__405;
+static PyObject *__pyx_codeobj__412;
 /* Late includes */
 
 /* "raylib.pyx":12
@@ -29153,7 +29188,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_14set_exit_key(int __pyx_v_key) {
 /* "raylib.pyx":1846
  * 
  *     @property
- *     def KEY_NULL(self):             # <<<<<<<<<<<<<<
+ *     def KEY_NULL(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_NULL
  * 
  */
@@ -29182,7 +29217,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_NULL___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":1847
  *     @property
- *     def KEY_NULL(self):
+ *     def KEY_NULL(self) -> int:
  *         return KeyboardKey.KEY_NULL             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -29197,7 +29232,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_NULL___get__(CYTHON_UNUSED s
   /* "raylib.pyx":1846
  * 
  *     @property
- *     def KEY_NULL(self):             # <<<<<<<<<<<<<<
+ *     def KEY_NULL(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_NULL
  * 
  */
@@ -29216,7 +29251,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_NULL___get__(CYTHON_UNUSED s
 /* "raylib.pyx":1850
  * 
  *     @property
- *     def KEY_APOSTROPHE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_APOSTROPHE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_APOSTROPHE
  * 
  */
@@ -29245,7 +29280,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_14KEY_APOSTROPHE___get__(CYTHON_U
 
   /* "raylib.pyx":1851
  *     @property
- *     def KEY_APOSTROPHE(self):
+ *     def KEY_APOSTROPHE(self) -> int:
  *         return KeyboardKey.KEY_APOSTROPHE             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -29260,7 +29295,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_14KEY_APOSTROPHE___get__(CYTHON_U
   /* "raylib.pyx":1850
  * 
  *     @property
- *     def KEY_APOSTROPHE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_APOSTROPHE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_APOSTROPHE
  * 
  */
@@ -29279,7 +29314,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_14KEY_APOSTROPHE___get__(CYTHON_U
 /* "raylib.pyx":1854
  * 
  *     @property
- *     def KEY_COMMA(self):             # <<<<<<<<<<<<<<
+ *     def KEY_COMMA(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_COMMA
  * 
  */
@@ -29308,7 +29343,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_COMMA___get__(CYTHON_UNUSED 
 
   /* "raylib.pyx":1855
  *     @property
- *     def KEY_COMMA(self):
+ *     def KEY_COMMA(self) -> int:
  *         return KeyboardKey.KEY_COMMA             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -29323,7 +29358,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_COMMA___get__(CYTHON_UNUSED 
   /* "raylib.pyx":1854
  * 
  *     @property
- *     def KEY_COMMA(self):             # <<<<<<<<<<<<<<
+ *     def KEY_COMMA(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_COMMA
  * 
  */
@@ -29342,7 +29377,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_COMMA___get__(CYTHON_UNUSED 
 /* "raylib.pyx":1858
  * 
  *     @property
- *     def KEY_MINUS(self):             # <<<<<<<<<<<<<<
+ *     def KEY_MINUS(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_MINUS
  * 
  */
@@ -29371,7 +29406,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_MINUS___get__(CYTHON_UNUSED 
 
   /* "raylib.pyx":1859
  *     @property
- *     def KEY_MINUS(self):
+ *     def KEY_MINUS(self) -> int:
  *         return KeyboardKey.KEY_MINUS             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -29386,7 +29421,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_MINUS___get__(CYTHON_UNUSED 
   /* "raylib.pyx":1858
  * 
  *     @property
- *     def KEY_MINUS(self):             # <<<<<<<<<<<<<<
+ *     def KEY_MINUS(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_MINUS
  * 
  */
@@ -29405,7 +29440,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_MINUS___get__(CYTHON_UNUSED 
 /* "raylib.pyx":1862
  * 
  *     @property
- *     def KEY_PERIOD(self):             # <<<<<<<<<<<<<<
+ *     def KEY_PERIOD(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_PERIOD
  * 
  */
@@ -29434,7 +29469,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_10KEY_PERIOD___get__(CYTHON_UNUSE
 
   /* "raylib.pyx":1863
  *     @property
- *     def KEY_PERIOD(self):
+ *     def KEY_PERIOD(self) -> int:
  *         return KeyboardKey.KEY_PERIOD             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -29449,7 +29484,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_10KEY_PERIOD___get__(CYTHON_UNUSE
   /* "raylib.pyx":1862
  * 
  *     @property
- *     def KEY_PERIOD(self):             # <<<<<<<<<<<<<<
+ *     def KEY_PERIOD(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_PERIOD
  * 
  */
@@ -29468,7 +29503,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_10KEY_PERIOD___get__(CYTHON_UNUSE
 /* "raylib.pyx":1866
  * 
  *     @property
- *     def KEY_SLASH(self):             # <<<<<<<<<<<<<<
+ *     def KEY_SLASH(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_SLASH
  * 
  */
@@ -29497,7 +29532,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_SLASH___get__(CYTHON_UNUSED 
 
   /* "raylib.pyx":1867
  *     @property
- *     def KEY_SLASH(self):
+ *     def KEY_SLASH(self) -> int:
  *         return KeyboardKey.KEY_SLASH             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -29512,7 +29547,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_SLASH___get__(CYTHON_UNUSED 
   /* "raylib.pyx":1866
  * 
  *     @property
- *     def KEY_SLASH(self):             # <<<<<<<<<<<<<<
+ *     def KEY_SLASH(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_SLASH
  * 
  */
@@ -29531,7 +29566,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_SLASH___get__(CYTHON_UNUSED 
 /* "raylib.pyx":1870
  * 
  *     @property
- *     def KEY_ZERO(self):             # <<<<<<<<<<<<<<
+ *     def KEY_ZERO(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_ZERO
  * 
  */
@@ -29560,7 +29595,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_ZERO___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":1871
  *     @property
- *     def KEY_ZERO(self):
+ *     def KEY_ZERO(self) -> int:
  *         return KeyboardKey.KEY_ZERO             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -29575,7 +29610,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_ZERO___get__(CYTHON_UNUSED s
   /* "raylib.pyx":1870
  * 
  *     @property
- *     def KEY_ZERO(self):             # <<<<<<<<<<<<<<
+ *     def KEY_ZERO(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_ZERO
  * 
  */
@@ -29594,7 +29629,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_ZERO___get__(CYTHON_UNUSED s
 /* "raylib.pyx":1874
  * 
  *     @property
- *     def KEY_ONE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_ONE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_ONE
  * 
  */
@@ -29623,7 +29658,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_ONE___get__(CYTHON_UNUSED st
 
   /* "raylib.pyx":1875
  *     @property
- *     def KEY_ONE(self):
+ *     def KEY_ONE(self) -> int:
  *         return KeyboardKey.KEY_ONE             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -29638,7 +29673,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_ONE___get__(CYTHON_UNUSED st
   /* "raylib.pyx":1874
  * 
  *     @property
- *     def KEY_ONE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_ONE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_ONE
  * 
  */
@@ -29657,7 +29692,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_ONE___get__(CYTHON_UNUSED st
 /* "raylib.pyx":1878
  * 
  *     @property
- *     def KEY_TWO(self):             # <<<<<<<<<<<<<<
+ *     def KEY_TWO(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_TWO
  * 
  */
@@ -29686,7 +29721,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_TWO___get__(CYTHON_UNUSED st
 
   /* "raylib.pyx":1879
  *     @property
- *     def KEY_TWO(self):
+ *     def KEY_TWO(self) -> int:
  *         return KeyboardKey.KEY_TWO             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -29701,7 +29736,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_TWO___get__(CYTHON_UNUSED st
   /* "raylib.pyx":1878
  * 
  *     @property
- *     def KEY_TWO(self):             # <<<<<<<<<<<<<<
+ *     def KEY_TWO(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_TWO
  * 
  */
@@ -29720,7 +29755,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_TWO___get__(CYTHON_UNUSED st
 /* "raylib.pyx":1882
  * 
  *     @property
- *     def KEY_THREE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_THREE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_THREE
  * 
  */
@@ -29749,7 +29784,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_THREE___get__(CYTHON_UNUSED 
 
   /* "raylib.pyx":1883
  *     @property
- *     def KEY_THREE(self):
+ *     def KEY_THREE(self) -> int:
  *         return KeyboardKey.KEY_THREE             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -29764,7 +29799,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_THREE___get__(CYTHON_UNUSED 
   /* "raylib.pyx":1882
  * 
  *     @property
- *     def KEY_THREE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_THREE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_THREE
  * 
  */
@@ -29783,7 +29818,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_THREE___get__(CYTHON_UNUSED 
 /* "raylib.pyx":1886
  * 
  *     @property
- *     def KEY_FOUR(self):             # <<<<<<<<<<<<<<
+ *     def KEY_FOUR(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_FOUR
  * 
  */
@@ -29812,7 +29847,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_FOUR___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":1887
  *     @property
- *     def KEY_FOUR(self):
+ *     def KEY_FOUR(self) -> int:
  *         return KeyboardKey.KEY_FOUR             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -29827,7 +29862,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_FOUR___get__(CYTHON_UNUSED s
   /* "raylib.pyx":1886
  * 
  *     @property
- *     def KEY_FOUR(self):             # <<<<<<<<<<<<<<
+ *     def KEY_FOUR(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_FOUR
  * 
  */
@@ -29846,7 +29881,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_FOUR___get__(CYTHON_UNUSED s
 /* "raylib.pyx":1890
  * 
  *     @property
- *     def KEY_FIVE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_FIVE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_FIVE
  * 
  */
@@ -29875,7 +29910,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_FIVE___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":1891
  *     @property
- *     def KEY_FIVE(self):
+ *     def KEY_FIVE(self) -> int:
  *         return KeyboardKey.KEY_FIVE             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -29890,7 +29925,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_FIVE___get__(CYTHON_UNUSED s
   /* "raylib.pyx":1890
  * 
  *     @property
- *     def KEY_FIVE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_FIVE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_FIVE
  * 
  */
@@ -29909,7 +29944,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_FIVE___get__(CYTHON_UNUSED s
 /* "raylib.pyx":1894
  * 
  *     @property
- *     def KEY_SIX(self):             # <<<<<<<<<<<<<<
+ *     def KEY_SIX(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_SIX
  * 
  */
@@ -29938,7 +29973,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_SIX___get__(CYTHON_UNUSED st
 
   /* "raylib.pyx":1895
  *     @property
- *     def KEY_SIX(self):
+ *     def KEY_SIX(self) -> int:
  *         return KeyboardKey.KEY_SIX             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -29953,7 +29988,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_SIX___get__(CYTHON_UNUSED st
   /* "raylib.pyx":1894
  * 
  *     @property
- *     def KEY_SIX(self):             # <<<<<<<<<<<<<<
+ *     def KEY_SIX(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_SIX
  * 
  */
@@ -29972,7 +30007,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_SIX___get__(CYTHON_UNUSED st
 /* "raylib.pyx":1898
  * 
  *     @property
- *     def KEY_SEVEN(self):             # <<<<<<<<<<<<<<
+ *     def KEY_SEVEN(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_SEVEN
  * 
  */
@@ -30001,7 +30036,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_SEVEN___get__(CYTHON_UNUSED 
 
   /* "raylib.pyx":1899
  *     @property
- *     def KEY_SEVEN(self):
+ *     def KEY_SEVEN(self) -> int:
  *         return KeyboardKey.KEY_SEVEN             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30016,7 +30051,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_SEVEN___get__(CYTHON_UNUSED 
   /* "raylib.pyx":1898
  * 
  *     @property
- *     def KEY_SEVEN(self):             # <<<<<<<<<<<<<<
+ *     def KEY_SEVEN(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_SEVEN
  * 
  */
@@ -30035,7 +30070,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_SEVEN___get__(CYTHON_UNUSED 
 /* "raylib.pyx":1902
  * 
  *     @property
- *     def KEY_EIGHT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_EIGHT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_EIGHT
  * 
  */
@@ -30064,7 +30099,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_EIGHT___get__(CYTHON_UNUSED 
 
   /* "raylib.pyx":1903
  *     @property
- *     def KEY_EIGHT(self):
+ *     def KEY_EIGHT(self) -> int:
  *         return KeyboardKey.KEY_EIGHT             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30079,7 +30114,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_EIGHT___get__(CYTHON_UNUSED 
   /* "raylib.pyx":1902
  * 
  *     @property
- *     def KEY_EIGHT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_EIGHT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_EIGHT
  * 
  */
@@ -30098,7 +30133,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_EIGHT___get__(CYTHON_UNUSED 
 /* "raylib.pyx":1906
  * 
  *     @property
- *     def KEY_NINE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_NINE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_NINE
  * 
  */
@@ -30127,7 +30162,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_NINE___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":1907
  *     @property
- *     def KEY_NINE(self):
+ *     def KEY_NINE(self) -> int:
  *         return KeyboardKey.KEY_NINE             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30142,7 +30177,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_NINE___get__(CYTHON_UNUSED s
   /* "raylib.pyx":1906
  * 
  *     @property
- *     def KEY_NINE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_NINE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_NINE
  * 
  */
@@ -30161,7 +30196,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_NINE___get__(CYTHON_UNUSED s
 /* "raylib.pyx":1910
  * 
  *     @property
- *     def KEY_SEMICOLON(self):             # <<<<<<<<<<<<<<
+ *     def KEY_SEMICOLON(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_SEMICOLON
  * 
  */
@@ -30190,7 +30225,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_SEMICOLON___get__(CYTHON_UN
 
   /* "raylib.pyx":1911
  *     @property
- *     def KEY_SEMICOLON(self):
+ *     def KEY_SEMICOLON(self) -> int:
  *         return KeyboardKey.KEY_SEMICOLON             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30205,7 +30240,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_SEMICOLON___get__(CYTHON_UN
   /* "raylib.pyx":1910
  * 
  *     @property
- *     def KEY_SEMICOLON(self):             # <<<<<<<<<<<<<<
+ *     def KEY_SEMICOLON(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_SEMICOLON
  * 
  */
@@ -30224,7 +30259,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_SEMICOLON___get__(CYTHON_UN
 /* "raylib.pyx":1914
  * 
  *     @property
- *     def KEY_EQUAL(self):             # <<<<<<<<<<<<<<
+ *     def KEY_EQUAL(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_EQUAL
  * 
  */
@@ -30253,7 +30288,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_EQUAL___get__(CYTHON_UNUSED 
 
   /* "raylib.pyx":1915
  *     @property
- *     def KEY_EQUAL(self):
+ *     def KEY_EQUAL(self) -> int:
  *         return KeyboardKey.KEY_EQUAL             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30268,7 +30303,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_EQUAL___get__(CYTHON_UNUSED 
   /* "raylib.pyx":1914
  * 
  *     @property
- *     def KEY_EQUAL(self):             # <<<<<<<<<<<<<<
+ *     def KEY_EQUAL(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_EQUAL
  * 
  */
@@ -30287,7 +30322,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_EQUAL___get__(CYTHON_UNUSED 
 /* "raylib.pyx":1918
  * 
  *     @property
- *     def KEY_A(self):             # <<<<<<<<<<<<<<
+ *     def KEY_A(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_A
  * 
  */
@@ -30316,7 +30351,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_A___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1919
  *     @property
- *     def KEY_A(self):
+ *     def KEY_A(self) -> int:
  *         return KeyboardKey.KEY_A             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30331,7 +30366,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_A___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1918
  * 
  *     @property
- *     def KEY_A(self):             # <<<<<<<<<<<<<<
+ *     def KEY_A(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_A
  * 
  */
@@ -30350,7 +30385,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_A___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1922
  * 
  *     @property
- *     def KEY_B(self):             # <<<<<<<<<<<<<<
+ *     def KEY_B(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_B
  * 
  */
@@ -30379,7 +30414,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_B___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1923
  *     @property
- *     def KEY_B(self):
+ *     def KEY_B(self) -> int:
  *         return KeyboardKey.KEY_B             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30394,7 +30429,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_B___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1922
  * 
  *     @property
- *     def KEY_B(self):             # <<<<<<<<<<<<<<
+ *     def KEY_B(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_B
  * 
  */
@@ -30413,7 +30448,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_B___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1926
  * 
  *     @property
- *     def KEY_C(self):             # <<<<<<<<<<<<<<
+ *     def KEY_C(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_C
  * 
  */
@@ -30442,7 +30477,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_C___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1927
  *     @property
- *     def KEY_C(self):
+ *     def KEY_C(self) -> int:
  *         return KeyboardKey.KEY_C             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30457,7 +30492,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_C___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1926
  * 
  *     @property
- *     def KEY_C(self):             # <<<<<<<<<<<<<<
+ *     def KEY_C(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_C
  * 
  */
@@ -30476,7 +30511,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_C___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1930
  * 
  *     @property
- *     def KEY_D(self):             # <<<<<<<<<<<<<<
+ *     def KEY_D(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_D
  * 
  */
@@ -30505,7 +30540,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_D___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1931
  *     @property
- *     def KEY_D(self):
+ *     def KEY_D(self) -> int:
  *         return KeyboardKey.KEY_D             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30520,7 +30555,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_D___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1930
  * 
  *     @property
- *     def KEY_D(self):             # <<<<<<<<<<<<<<
+ *     def KEY_D(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_D
  * 
  */
@@ -30539,7 +30574,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_D___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1934
  * 
  *     @property
- *     def KEY_E(self):             # <<<<<<<<<<<<<<
+ *     def KEY_E(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_E
  * 
  */
@@ -30568,7 +30603,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_E___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1935
  *     @property
- *     def KEY_E(self):
+ *     def KEY_E(self) -> int:
  *         return KeyboardKey.KEY_E             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30583,7 +30618,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_E___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1934
  * 
  *     @property
- *     def KEY_E(self):             # <<<<<<<<<<<<<<
+ *     def KEY_E(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_E
  * 
  */
@@ -30602,7 +30637,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_E___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1938
  * 
  *     @property
- *     def KEY_F(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F
  * 
  */
@@ -30631,7 +30666,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_F___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1939
  *     @property
- *     def KEY_F(self):
+ *     def KEY_F(self) -> int:
  *         return KeyboardKey.KEY_F             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30646,7 +30681,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_F___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1938
  * 
  *     @property
- *     def KEY_F(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F
  * 
  */
@@ -30665,7 +30700,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_F___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1942
  * 
  *     @property
- *     def KEY_G(self):             # <<<<<<<<<<<<<<
+ *     def KEY_G(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_G
  * 
  */
@@ -30694,7 +30729,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_G___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1943
  *     @property
- *     def KEY_G(self):
+ *     def KEY_G(self) -> int:
  *         return KeyboardKey.KEY_G             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30709,7 +30744,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_G___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1942
  * 
  *     @property
- *     def KEY_G(self):             # <<<<<<<<<<<<<<
+ *     def KEY_G(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_G
  * 
  */
@@ -30728,7 +30763,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_G___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1946
  * 
  *     @property
- *     def KEY_H(self):             # <<<<<<<<<<<<<<
+ *     def KEY_H(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_H
  * 
  */
@@ -30757,7 +30792,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_H___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1947
  *     @property
- *     def KEY_H(self):
+ *     def KEY_H(self) -> int:
  *         return KeyboardKey.KEY_H             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30772,7 +30807,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_H___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1946
  * 
  *     @property
- *     def KEY_H(self):             # <<<<<<<<<<<<<<
+ *     def KEY_H(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_H
  * 
  */
@@ -30791,7 +30826,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_H___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1950
  * 
  *     @property
- *     def KEY_I(self):             # <<<<<<<<<<<<<<
+ *     def KEY_I(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_I
  * 
  */
@@ -30820,7 +30855,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_I___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1951
  *     @property
- *     def KEY_I(self):
+ *     def KEY_I(self) -> int:
  *         return KeyboardKey.KEY_I             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30835,7 +30870,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_I___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1950
  * 
  *     @property
- *     def KEY_I(self):             # <<<<<<<<<<<<<<
+ *     def KEY_I(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_I
  * 
  */
@@ -30854,7 +30889,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_I___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1954
  * 
  *     @property
- *     def KEY_J(self):             # <<<<<<<<<<<<<<
+ *     def KEY_J(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_J
  * 
  */
@@ -30883,7 +30918,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_J___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1955
  *     @property
- *     def KEY_J(self):
+ *     def KEY_J(self) -> int:
  *         return KeyboardKey.KEY_J             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30898,7 +30933,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_J___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1954
  * 
  *     @property
- *     def KEY_J(self):             # <<<<<<<<<<<<<<
+ *     def KEY_J(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_J
  * 
  */
@@ -30917,7 +30952,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_J___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1958
  * 
  *     @property
- *     def KEY_K(self):             # <<<<<<<<<<<<<<
+ *     def KEY_K(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_K
  * 
  */
@@ -30946,7 +30981,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_K___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1959
  *     @property
- *     def KEY_K(self):
+ *     def KEY_K(self) -> int:
  *         return KeyboardKey.KEY_K             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -30961,7 +30996,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_K___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1958
  * 
  *     @property
- *     def KEY_K(self):             # <<<<<<<<<<<<<<
+ *     def KEY_K(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_K
  * 
  */
@@ -30980,7 +31015,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_K___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1962
  * 
  *     @property
- *     def KEY_L(self):             # <<<<<<<<<<<<<<
+ *     def KEY_L(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_L
  * 
  */
@@ -31009,7 +31044,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_L___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1963
  *     @property
- *     def KEY_L(self):
+ *     def KEY_L(self) -> int:
  *         return KeyboardKey.KEY_L             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -31024,7 +31059,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_L___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1962
  * 
  *     @property
- *     def KEY_L(self):             # <<<<<<<<<<<<<<
+ *     def KEY_L(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_L
  * 
  */
@@ -31043,7 +31078,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_L___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1966
  * 
  *     @property
- *     def KEY_M(self):             # <<<<<<<<<<<<<<
+ *     def KEY_M(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_M
  * 
  */
@@ -31072,7 +31107,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_M___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1967
  *     @property
- *     def KEY_M(self):
+ *     def KEY_M(self) -> int:
  *         return KeyboardKey.KEY_M             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -31087,7 +31122,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_M___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1966
  * 
  *     @property
- *     def KEY_M(self):             # <<<<<<<<<<<<<<
+ *     def KEY_M(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_M
  * 
  */
@@ -31106,7 +31141,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_M___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1970
  * 
  *     @property
- *     def KEY_N(self):             # <<<<<<<<<<<<<<
+ *     def KEY_N(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_N
  * 
  */
@@ -31135,7 +31170,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_N___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1971
  *     @property
- *     def KEY_N(self):
+ *     def KEY_N(self) -> int:
  *         return KeyboardKey.KEY_N             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -31150,7 +31185,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_N___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1970
  * 
  *     @property
- *     def KEY_N(self):             # <<<<<<<<<<<<<<
+ *     def KEY_N(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_N
  * 
  */
@@ -31169,7 +31204,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_N___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1974
  * 
  *     @property
- *     def KEY_O(self):             # <<<<<<<<<<<<<<
+ *     def KEY_O(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_O
  * 
  */
@@ -31198,7 +31233,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_O___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1975
  *     @property
- *     def KEY_O(self):
+ *     def KEY_O(self) -> int:
  *         return KeyboardKey.KEY_O             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -31213,7 +31248,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_O___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1974
  * 
  *     @property
- *     def KEY_O(self):             # <<<<<<<<<<<<<<
+ *     def KEY_O(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_O
  * 
  */
@@ -31232,7 +31267,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_O___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1978
  * 
  *     @property
- *     def KEY_P(self):             # <<<<<<<<<<<<<<
+ *     def KEY_P(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_P
  * 
  */
@@ -31261,7 +31296,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_P___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1979
  *     @property
- *     def KEY_P(self):
+ *     def KEY_P(self) -> int:
  *         return KeyboardKey.KEY_P             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -31276,7 +31311,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_P___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1978
  * 
  *     @property
- *     def KEY_P(self):             # <<<<<<<<<<<<<<
+ *     def KEY_P(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_P
  * 
  */
@@ -31295,7 +31330,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_P___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1982
  * 
  *     @property
- *     def KEY_Q(self):             # <<<<<<<<<<<<<<
+ *     def KEY_Q(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_Q
  * 
  */
@@ -31324,7 +31359,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_Q___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1983
  *     @property
- *     def KEY_Q(self):
+ *     def KEY_Q(self) -> int:
  *         return KeyboardKey.KEY_Q             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -31339,7 +31374,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_Q___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1982
  * 
  *     @property
- *     def KEY_Q(self):             # <<<<<<<<<<<<<<
+ *     def KEY_Q(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_Q
  * 
  */
@@ -31358,7 +31393,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_Q___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1986
  * 
  *     @property
- *     def KEY_R(self):             # <<<<<<<<<<<<<<
+ *     def KEY_R(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_R
  * 
  */
@@ -31387,7 +31422,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_R___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1987
  *     @property
- *     def KEY_R(self):
+ *     def KEY_R(self) -> int:
  *         return KeyboardKey.KEY_R             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -31402,7 +31437,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_R___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1986
  * 
  *     @property
- *     def KEY_R(self):             # <<<<<<<<<<<<<<
+ *     def KEY_R(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_R
  * 
  */
@@ -31421,7 +31456,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_R___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1990
  * 
  *     @property
- *     def KEY_S(self):             # <<<<<<<<<<<<<<
+ *     def KEY_S(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_S
  * 
  */
@@ -31450,7 +31485,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_S___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1991
  *     @property
- *     def KEY_S(self):
+ *     def KEY_S(self) -> int:
  *         return KeyboardKey.KEY_S             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -31465,7 +31500,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_S___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1990
  * 
  *     @property
- *     def KEY_S(self):             # <<<<<<<<<<<<<<
+ *     def KEY_S(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_S
  * 
  */
@@ -31484,7 +31519,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_S___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1994
  * 
  *     @property
- *     def KEY_T(self):             # <<<<<<<<<<<<<<
+ *     def KEY_T(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_T
  * 
  */
@@ -31513,7 +31548,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_T___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1995
  *     @property
- *     def KEY_T(self):
+ *     def KEY_T(self) -> int:
  *         return KeyboardKey.KEY_T             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -31528,7 +31563,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_T___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1994
  * 
  *     @property
- *     def KEY_T(self):             # <<<<<<<<<<<<<<
+ *     def KEY_T(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_T
  * 
  */
@@ -31547,7 +31582,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_T___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":1998
  * 
  *     @property
- *     def KEY_U(self):             # <<<<<<<<<<<<<<
+ *     def KEY_U(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_U
  * 
  */
@@ -31576,7 +31611,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_U___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":1999
  *     @property
- *     def KEY_U(self):
+ *     def KEY_U(self) -> int:
  *         return KeyboardKey.KEY_U             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -31591,7 +31626,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_U___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":1998
  * 
  *     @property
- *     def KEY_U(self):             # <<<<<<<<<<<<<<
+ *     def KEY_U(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_U
  * 
  */
@@ -31610,7 +31645,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_U___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":2002
  * 
  *     @property
- *     def KEY_V(self):             # <<<<<<<<<<<<<<
+ *     def KEY_V(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_V
  * 
  */
@@ -31639,7 +31674,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_V___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":2003
  *     @property
- *     def KEY_V(self):
+ *     def KEY_V(self) -> int:
  *         return KeyboardKey.KEY_V             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -31654,7 +31689,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_V___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":2002
  * 
  *     @property
- *     def KEY_V(self):             # <<<<<<<<<<<<<<
+ *     def KEY_V(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_V
  * 
  */
@@ -31673,7 +31708,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_V___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":2006
  * 
  *     @property
- *     def KEY_W(self):             # <<<<<<<<<<<<<<
+ *     def KEY_W(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_W
  * 
  */
@@ -31702,7 +31737,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_W___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":2007
  *     @property
- *     def KEY_W(self):
+ *     def KEY_W(self) -> int:
  *         return KeyboardKey.KEY_W             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -31717,7 +31752,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_W___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":2006
  * 
  *     @property
- *     def KEY_W(self):             # <<<<<<<<<<<<<<
+ *     def KEY_W(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_W
  * 
  */
@@ -31736,7 +31771,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_W___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":2010
  * 
  *     @property
- *     def KEY_X(self):             # <<<<<<<<<<<<<<
+ *     def KEY_X(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_X
  * 
  */
@@ -31765,7 +31800,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_X___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":2011
  *     @property
- *     def KEY_X(self):
+ *     def KEY_X(self) -> int:
  *         return KeyboardKey.KEY_X             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -31780,7 +31815,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_X___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":2010
  * 
  *     @property
- *     def KEY_X(self):             # <<<<<<<<<<<<<<
+ *     def KEY_X(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_X
  * 
  */
@@ -31799,7 +31834,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_X___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":2014
  * 
  *     @property
- *     def KEY_Y(self):             # <<<<<<<<<<<<<<
+ *     def KEY_Y(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_Y
  * 
  */
@@ -31828,7 +31863,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_Y___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":2015
  *     @property
- *     def KEY_Y(self):
+ *     def KEY_Y(self) -> int:
  *         return KeyboardKey.KEY_Y             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -31843,7 +31878,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_Y___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":2014
  * 
  *     @property
- *     def KEY_Y(self):             # <<<<<<<<<<<<<<
+ *     def KEY_Y(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_Y
  * 
  */
@@ -31862,7 +31897,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_Y___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":2018
  * 
  *     @property
- *     def KEY_Z(self):             # <<<<<<<<<<<<<<
+ *     def KEY_Z(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_Z
  * 
  */
@@ -31891,7 +31926,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_Z___get__(CYTHON_UNUSED stru
 
   /* "raylib.pyx":2019
  *     @property
- *     def KEY_Z(self):
+ *     def KEY_Z(self) -> int:
  *         return KeyboardKey.KEY_Z             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -31906,7 +31941,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_Z___get__(CYTHON_UNUSED stru
   /* "raylib.pyx":2018
  * 
  *     @property
- *     def KEY_Z(self):             # <<<<<<<<<<<<<<
+ *     def KEY_Z(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_Z
  * 
  */
@@ -31925,7 +31960,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_5KEY_Z___get__(CYTHON_UNUSED stru
 /* "raylib.pyx":2022
  * 
  *     @property
- *     def KEY_SPACE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_SPACE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_SPACE
  * 
  */
@@ -31954,7 +31989,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_SPACE___get__(CYTHON_UNUSED 
 
   /* "raylib.pyx":2023
  *     @property
- *     def KEY_SPACE(self):
+ *     def KEY_SPACE(self) -> int:
  *         return KeyboardKey.KEY_SPACE             # <<<<<<<<<<<<<<
  * 
  *     # Continue with function keys and other special keys
@@ -31969,7 +32004,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_SPACE___get__(CYTHON_UNUSED 
   /* "raylib.pyx":2022
  * 
  *     @property
- *     def KEY_SPACE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_SPACE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_SPACE
  * 
  */
@@ -31988,7 +32023,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_SPACE___get__(CYTHON_UNUSED 
 /* "raylib.pyx":2027
  *     # Continue with function keys and other special keys
  *     @property
- *     def KEY_ESCAPE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_ESCAPE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_ESCAPE
  * 
  */
@@ -32017,7 +32052,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_10KEY_ESCAPE___get__(CYTHON_UNUSE
 
   /* "raylib.pyx":2028
  *     @property
- *     def KEY_ESCAPE(self):
+ *     def KEY_ESCAPE(self) -> int:
  *         return KeyboardKey.KEY_ESCAPE             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32032,7 +32067,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_10KEY_ESCAPE___get__(CYTHON_UNUSE
   /* "raylib.pyx":2027
  *     # Continue with function keys and other special keys
  *     @property
- *     def KEY_ESCAPE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_ESCAPE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_ESCAPE
  * 
  */
@@ -32051,7 +32086,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_10KEY_ESCAPE___get__(CYTHON_UNUSE
 /* "raylib.pyx":2031
  * 
  *     @property
- *     def KEY_ENTER(self):             # <<<<<<<<<<<<<<
+ *     def KEY_ENTER(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_ENTER
  * 
  */
@@ -32080,7 +32115,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_ENTER___get__(CYTHON_UNUSED 
 
   /* "raylib.pyx":2032
  *     @property
- *     def KEY_ENTER(self):
+ *     def KEY_ENTER(self) -> int:
  *         return KeyboardKey.KEY_ENTER             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32095,7 +32130,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_ENTER___get__(CYTHON_UNUSED 
   /* "raylib.pyx":2031
  * 
  *     @property
- *     def KEY_ENTER(self):             # <<<<<<<<<<<<<<
+ *     def KEY_ENTER(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_ENTER
  * 
  */
@@ -32114,7 +32149,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_ENTER___get__(CYTHON_UNUSED 
 /* "raylib.pyx":2035
  * 
  *     @property
- *     def KEY_TAB(self):             # <<<<<<<<<<<<<<
+ *     def KEY_TAB(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_TAB
  * 
  */
@@ -32143,7 +32178,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_TAB___get__(CYTHON_UNUSED st
 
   /* "raylib.pyx":2036
  *     @property
- *     def KEY_TAB(self):
+ *     def KEY_TAB(self) -> int:
  *         return KeyboardKey.KEY_TAB             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32158,7 +32193,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_TAB___get__(CYTHON_UNUSED st
   /* "raylib.pyx":2035
  * 
  *     @property
- *     def KEY_TAB(self):             # <<<<<<<<<<<<<<
+ *     def KEY_TAB(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_TAB
  * 
  */
@@ -32177,7 +32212,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_TAB___get__(CYTHON_UNUSED st
 /* "raylib.pyx":2039
  * 
  *     @property
- *     def KEY_BACKSPACE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_BACKSPACE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_BACKSPACE
  * 
  */
@@ -32206,7 +32241,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_BACKSPACE___get__(CYTHON_UN
 
   /* "raylib.pyx":2040
  *     @property
- *     def KEY_BACKSPACE(self):
+ *     def KEY_BACKSPACE(self) -> int:
  *         return KeyboardKey.KEY_BACKSPACE             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32221,7 +32256,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_BACKSPACE___get__(CYTHON_UN
   /* "raylib.pyx":2039
  * 
  *     @property
- *     def KEY_BACKSPACE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_BACKSPACE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_BACKSPACE
  * 
  */
@@ -32240,7 +32275,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_BACKSPACE___get__(CYTHON_UN
 /* "raylib.pyx":2043
  * 
  *     @property
- *     def KEY_INSERT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_INSERT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_INSERT
  * 
  */
@@ -32269,7 +32304,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_10KEY_INSERT___get__(CYTHON_UNUSE
 
   /* "raylib.pyx":2044
  *     @property
- *     def KEY_INSERT(self):
+ *     def KEY_INSERT(self) -> int:
  *         return KeyboardKey.KEY_INSERT             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32284,7 +32319,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_10KEY_INSERT___get__(CYTHON_UNUSE
   /* "raylib.pyx":2043
  * 
  *     @property
- *     def KEY_INSERT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_INSERT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_INSERT
  * 
  */
@@ -32303,7 +32338,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_10KEY_INSERT___get__(CYTHON_UNUSE
 /* "raylib.pyx":2047
  * 
  *     @property
- *     def KEY_DELETE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_DELETE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_DELETE
  * 
  */
@@ -32332,7 +32367,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_10KEY_DELETE___get__(CYTHON_UNUSE
 
   /* "raylib.pyx":2048
  *     @property
- *     def KEY_DELETE(self):
+ *     def KEY_DELETE(self) -> int:
  *         return KeyboardKey.KEY_DELETE             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32347,7 +32382,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_10KEY_DELETE___get__(CYTHON_UNUSE
   /* "raylib.pyx":2047
  * 
  *     @property
- *     def KEY_DELETE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_DELETE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_DELETE
  * 
  */
@@ -32366,7 +32401,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_10KEY_DELETE___get__(CYTHON_UNUSE
 /* "raylib.pyx":2051
  * 
  *     @property
- *     def KEY_RIGHT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_RIGHT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_RIGHT
  * 
  */
@@ -32395,7 +32430,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_RIGHT___get__(CYTHON_UNUSED 
 
   /* "raylib.pyx":2052
  *     @property
- *     def KEY_RIGHT(self):
+ *     def KEY_RIGHT(self) -> int:
  *         return KeyboardKey.KEY_RIGHT             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32410,7 +32445,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_RIGHT___get__(CYTHON_UNUSED 
   /* "raylib.pyx":2051
  * 
  *     @property
- *     def KEY_RIGHT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_RIGHT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_RIGHT
  * 
  */
@@ -32429,7 +32464,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_RIGHT___get__(CYTHON_UNUSED 
 /* "raylib.pyx":2055
  * 
  *     @property
- *     def KEY_LEFT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_LEFT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_LEFT
  * 
  */
@@ -32458,7 +32493,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_LEFT___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":2056
  *     @property
- *     def KEY_LEFT(self):
+ *     def KEY_LEFT(self) -> int:
  *         return KeyboardKey.KEY_LEFT             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32473,7 +32508,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_LEFT___get__(CYTHON_UNUSED s
   /* "raylib.pyx":2055
  * 
  *     @property
- *     def KEY_LEFT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_LEFT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_LEFT
  * 
  */
@@ -32492,7 +32527,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_LEFT___get__(CYTHON_UNUSED s
 /* "raylib.pyx":2059
  * 
  *     @property
- *     def KEY_DOWN(self):             # <<<<<<<<<<<<<<
+ *     def KEY_DOWN(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_DOWN
  * 
  */
@@ -32521,7 +32556,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_DOWN___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":2060
  *     @property
- *     def KEY_DOWN(self):
+ *     def KEY_DOWN(self) -> int:
  *         return KeyboardKey.KEY_DOWN             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32536,7 +32571,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_DOWN___get__(CYTHON_UNUSED s
   /* "raylib.pyx":2059
  * 
  *     @property
- *     def KEY_DOWN(self):             # <<<<<<<<<<<<<<
+ *     def KEY_DOWN(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_DOWN
  * 
  */
@@ -32555,7 +32590,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_DOWN___get__(CYTHON_UNUSED s
 /* "raylib.pyx":2063
  * 
  *     @property
- *     def KEY_UP(self):             # <<<<<<<<<<<<<<
+ *     def KEY_UP(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_UP
  * 
  */
@@ -32584,7 +32619,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_UP___get__(CYTHON_UNUSED str
 
   /* "raylib.pyx":2064
  *     @property
- *     def KEY_UP(self):
+ *     def KEY_UP(self) -> int:
  *         return KeyboardKey.KEY_UP             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32599,7 +32634,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_UP___get__(CYTHON_UNUSED str
   /* "raylib.pyx":2063
  * 
  *     @property
- *     def KEY_UP(self):             # <<<<<<<<<<<<<<
+ *     def KEY_UP(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_UP
  * 
  */
@@ -32618,7 +32653,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_UP___get__(CYTHON_UNUSED str
 /* "raylib.pyx":2067
  * 
  *     @property
- *     def KEY_PAGE_UP(self):             # <<<<<<<<<<<<<<
+ *     def KEY_PAGE_UP(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_PAGE_UP
  * 
  */
@@ -32647,7 +32682,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_11KEY_PAGE_UP___get__(CYTHON_UNUS
 
   /* "raylib.pyx":2068
  *     @property
- *     def KEY_PAGE_UP(self):
+ *     def KEY_PAGE_UP(self) -> int:
  *         return KeyboardKey.KEY_PAGE_UP             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32662,7 +32697,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_11KEY_PAGE_UP___get__(CYTHON_UNUS
   /* "raylib.pyx":2067
  * 
  *     @property
- *     def KEY_PAGE_UP(self):             # <<<<<<<<<<<<<<
+ *     def KEY_PAGE_UP(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_PAGE_UP
  * 
  */
@@ -32681,7 +32716,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_11KEY_PAGE_UP___get__(CYTHON_UNUS
 /* "raylib.pyx":2071
  * 
  *     @property
- *     def KEY_PAGE_DOWN(self):             # <<<<<<<<<<<<<<
+ *     def KEY_PAGE_DOWN(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_PAGE_DOWN
  * 
  */
@@ -32710,7 +32745,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_PAGE_DOWN___get__(CYTHON_UN
 
   /* "raylib.pyx":2072
  *     @property
- *     def KEY_PAGE_DOWN(self):
+ *     def KEY_PAGE_DOWN(self) -> int:
  *         return KeyboardKey.KEY_PAGE_DOWN             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32725,7 +32760,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_PAGE_DOWN___get__(CYTHON_UN
   /* "raylib.pyx":2071
  * 
  *     @property
- *     def KEY_PAGE_DOWN(self):             # <<<<<<<<<<<<<<
+ *     def KEY_PAGE_DOWN(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_PAGE_DOWN
  * 
  */
@@ -32744,7 +32779,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_PAGE_DOWN___get__(CYTHON_UN
 /* "raylib.pyx":2075
  * 
  *     @property
- *     def KEY_HOME(self):             # <<<<<<<<<<<<<<
+ *     def KEY_HOME(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_HOME
  * 
  */
@@ -32773,7 +32808,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_HOME___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":2076
  *     @property
- *     def KEY_HOME(self):
+ *     def KEY_HOME(self) -> int:
  *         return KeyboardKey.KEY_HOME             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32788,7 +32823,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_HOME___get__(CYTHON_UNUSED s
   /* "raylib.pyx":2075
  * 
  *     @property
- *     def KEY_HOME(self):             # <<<<<<<<<<<<<<
+ *     def KEY_HOME(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_HOME
  * 
  */
@@ -32807,7 +32842,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_HOME___get__(CYTHON_UNUSED s
 /* "raylib.pyx":2079
  * 
  *     @property
- *     def KEY_END(self):             # <<<<<<<<<<<<<<
+ *     def KEY_END(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_END
  * 
  */
@@ -32836,7 +32871,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_END___get__(CYTHON_UNUSED st
 
   /* "raylib.pyx":2080
  *     @property
- *     def KEY_END(self):
+ *     def KEY_END(self) -> int:
  *         return KeyboardKey.KEY_END             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32851,7 +32886,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_END___get__(CYTHON_UNUSED st
   /* "raylib.pyx":2079
  * 
  *     @property
- *     def KEY_END(self):             # <<<<<<<<<<<<<<
+ *     def KEY_END(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_END
  * 
  */
@@ -32870,7 +32905,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_END___get__(CYTHON_UNUSED st
 /* "raylib.pyx":2083
  * 
  *     @property
- *     def KEY_CAPS_LOCK(self):             # <<<<<<<<<<<<<<
+ *     def KEY_CAPS_LOCK(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_CAPS_LOCK
  * 
  */
@@ -32899,7 +32934,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_CAPS_LOCK___get__(CYTHON_UN
 
   /* "raylib.pyx":2084
  *     @property
- *     def KEY_CAPS_LOCK(self):
+ *     def KEY_CAPS_LOCK(self) -> int:
  *         return KeyboardKey.KEY_CAPS_LOCK             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32914,7 +32949,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_CAPS_LOCK___get__(CYTHON_UN
   /* "raylib.pyx":2083
  * 
  *     @property
- *     def KEY_CAPS_LOCK(self):             # <<<<<<<<<<<<<<
+ *     def KEY_CAPS_LOCK(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_CAPS_LOCK
  * 
  */
@@ -32933,7 +32968,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_CAPS_LOCK___get__(CYTHON_UN
 /* "raylib.pyx":2087
  * 
  *     @property
- *     def KEY_SCROLL_LOCK(self):             # <<<<<<<<<<<<<<
+ *     def KEY_SCROLL_LOCK(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_SCROLL_LOCK
  * 
  */
@@ -32962,7 +32997,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_SCROLL_LOCK___get__(CYTHON_
 
   /* "raylib.pyx":2088
  *     @property
- *     def KEY_SCROLL_LOCK(self):
+ *     def KEY_SCROLL_LOCK(self) -> int:
  *         return KeyboardKey.KEY_SCROLL_LOCK             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -32977,7 +33012,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_SCROLL_LOCK___get__(CYTHON_
   /* "raylib.pyx":2087
  * 
  *     @property
- *     def KEY_SCROLL_LOCK(self):             # <<<<<<<<<<<<<<
+ *     def KEY_SCROLL_LOCK(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_SCROLL_LOCK
  * 
  */
@@ -32996,7 +33031,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_SCROLL_LOCK___get__(CYTHON_
 /* "raylib.pyx":2091
  * 
  *     @property
- *     def KEY_NUM_LOCK(self):             # <<<<<<<<<<<<<<
+ *     def KEY_NUM_LOCK(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_NUM_LOCK
  * 
  */
@@ -33025,7 +33060,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_12KEY_NUM_LOCK___get__(CYTHON_UNU
 
   /* "raylib.pyx":2092
  *     @property
- *     def KEY_NUM_LOCK(self):
+ *     def KEY_NUM_LOCK(self) -> int:
  *         return KeyboardKey.KEY_NUM_LOCK             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33040,7 +33075,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_12KEY_NUM_LOCK___get__(CYTHON_UNU
   /* "raylib.pyx":2091
  * 
  *     @property
- *     def KEY_NUM_LOCK(self):             # <<<<<<<<<<<<<<
+ *     def KEY_NUM_LOCK(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_NUM_LOCK
  * 
  */
@@ -33059,7 +33094,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_12KEY_NUM_LOCK___get__(CYTHON_UNU
 /* "raylib.pyx":2095
  * 
  *     @property
- *     def KEY_PRINT_SCREEN(self):             # <<<<<<<<<<<<<<
+ *     def KEY_PRINT_SCREEN(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_PRINT_SCREEN
  * 
  */
@@ -33088,7 +33123,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_16KEY_PRINT_SCREEN___get__(CYTHON
 
   /* "raylib.pyx":2096
  *     @property
- *     def KEY_PRINT_SCREEN(self):
+ *     def KEY_PRINT_SCREEN(self) -> int:
  *         return KeyboardKey.KEY_PRINT_SCREEN             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33103,7 +33138,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_16KEY_PRINT_SCREEN___get__(CYTHON
   /* "raylib.pyx":2095
  * 
  *     @property
- *     def KEY_PRINT_SCREEN(self):             # <<<<<<<<<<<<<<
+ *     def KEY_PRINT_SCREEN(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_PRINT_SCREEN
  * 
  */
@@ -33122,7 +33157,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_16KEY_PRINT_SCREEN___get__(CYTHON
 /* "raylib.pyx":2099
  * 
  *     @property
- *     def KEY_PAUSE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_PAUSE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_PAUSE
  * 
  */
@@ -33151,7 +33186,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_PAUSE___get__(CYTHON_UNUSED 
 
   /* "raylib.pyx":2100
  *     @property
- *     def KEY_PAUSE(self):
+ *     def KEY_PAUSE(self) -> int:
  *         return KeyboardKey.KEY_PAUSE             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33166,7 +33201,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_PAUSE___get__(CYTHON_UNUSED 
   /* "raylib.pyx":2099
  * 
  *     @property
- *     def KEY_PAUSE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_PAUSE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_PAUSE
  * 
  */
@@ -33185,7 +33220,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_9KEY_PAUSE___get__(CYTHON_UNUSED 
 /* "raylib.pyx":2103
  * 
  *     @property
- *     def KEY_F1(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F1(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F1
  * 
  */
@@ -33214,7 +33249,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F1___get__(CYTHON_UNUSED str
 
   /* "raylib.pyx":2104
  *     @property
- *     def KEY_F1(self):
+ *     def KEY_F1(self) -> int:
  *         return KeyboardKey.KEY_F1             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33229,7 +33264,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F1___get__(CYTHON_UNUSED str
   /* "raylib.pyx":2103
  * 
  *     @property
- *     def KEY_F1(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F1(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F1
  * 
  */
@@ -33248,7 +33283,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F1___get__(CYTHON_UNUSED str
 /* "raylib.pyx":2107
  * 
  *     @property
- *     def KEY_F2(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F2(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F2
  * 
  */
@@ -33277,7 +33312,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F2___get__(CYTHON_UNUSED str
 
   /* "raylib.pyx":2108
  *     @property
- *     def KEY_F2(self):
+ *     def KEY_F2(self) -> int:
  *         return KeyboardKey.KEY_F2             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33292,7 +33327,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F2___get__(CYTHON_UNUSED str
   /* "raylib.pyx":2107
  * 
  *     @property
- *     def KEY_F2(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F2(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F2
  * 
  */
@@ -33311,7 +33346,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F2___get__(CYTHON_UNUSED str
 /* "raylib.pyx":2111
  * 
  *     @property
- *     def KEY_F3(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F3(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F3
  * 
  */
@@ -33340,7 +33375,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F3___get__(CYTHON_UNUSED str
 
   /* "raylib.pyx":2112
  *     @property
- *     def KEY_F3(self):
+ *     def KEY_F3(self) -> int:
  *         return KeyboardKey.KEY_F3             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33355,7 +33390,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F3___get__(CYTHON_UNUSED str
   /* "raylib.pyx":2111
  * 
  *     @property
- *     def KEY_F3(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F3(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F3
  * 
  */
@@ -33374,7 +33409,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F3___get__(CYTHON_UNUSED str
 /* "raylib.pyx":2115
  * 
  *     @property
- *     def KEY_F4(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F4(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F4
  * 
  */
@@ -33403,7 +33438,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F4___get__(CYTHON_UNUSED str
 
   /* "raylib.pyx":2116
  *     @property
- *     def KEY_F4(self):
+ *     def KEY_F4(self) -> int:
  *         return KeyboardKey.KEY_F4             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33418,7 +33453,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F4___get__(CYTHON_UNUSED str
   /* "raylib.pyx":2115
  * 
  *     @property
- *     def KEY_F4(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F4(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F4
  * 
  */
@@ -33437,7 +33472,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F4___get__(CYTHON_UNUSED str
 /* "raylib.pyx":2119
  * 
  *     @property
- *     def KEY_F5(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F5(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F5
  * 
  */
@@ -33466,7 +33501,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F5___get__(CYTHON_UNUSED str
 
   /* "raylib.pyx":2120
  *     @property
- *     def KEY_F5(self):
+ *     def KEY_F5(self) -> int:
  *         return KeyboardKey.KEY_F5             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33481,7 +33516,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F5___get__(CYTHON_UNUSED str
   /* "raylib.pyx":2119
  * 
  *     @property
- *     def KEY_F5(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F5(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F5
  * 
  */
@@ -33500,7 +33535,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F5___get__(CYTHON_UNUSED str
 /* "raylib.pyx":2123
  * 
  *     @property
- *     def KEY_F6(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F6(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F6
  * 
  */
@@ -33529,7 +33564,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F6___get__(CYTHON_UNUSED str
 
   /* "raylib.pyx":2124
  *     @property
- *     def KEY_F6(self):
+ *     def KEY_F6(self) -> int:
  *         return KeyboardKey.KEY_F6             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33544,7 +33579,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F6___get__(CYTHON_UNUSED str
   /* "raylib.pyx":2123
  * 
  *     @property
- *     def KEY_F6(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F6(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F6
  * 
  */
@@ -33563,7 +33598,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F6___get__(CYTHON_UNUSED str
 /* "raylib.pyx":2127
  * 
  *     @property
- *     def KEY_F7(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F7(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F7
  * 
  */
@@ -33592,7 +33627,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F7___get__(CYTHON_UNUSED str
 
   /* "raylib.pyx":2128
  *     @property
- *     def KEY_F7(self):
+ *     def KEY_F7(self) -> int:
  *         return KeyboardKey.KEY_F7             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33607,7 +33642,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F7___get__(CYTHON_UNUSED str
   /* "raylib.pyx":2127
  * 
  *     @property
- *     def KEY_F7(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F7(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F7
  * 
  */
@@ -33626,7 +33661,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F7___get__(CYTHON_UNUSED str
 /* "raylib.pyx":2131
  * 
  *     @property
- *     def KEY_F8(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F8(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F8
  * 
  */
@@ -33655,7 +33690,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F8___get__(CYTHON_UNUSED str
 
   /* "raylib.pyx":2132
  *     @property
- *     def KEY_F8(self):
+ *     def KEY_F8(self) -> int:
  *         return KeyboardKey.KEY_F8             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33670,7 +33705,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F8___get__(CYTHON_UNUSED str
   /* "raylib.pyx":2131
  * 
  *     @property
- *     def KEY_F8(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F8(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F8
  * 
  */
@@ -33689,7 +33724,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F8___get__(CYTHON_UNUSED str
 /* "raylib.pyx":2135
  * 
  *     @property
- *     def KEY_F9(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F9(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F9
  * 
  */
@@ -33718,7 +33753,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F9___get__(CYTHON_UNUSED str
 
   /* "raylib.pyx":2136
  *     @property
- *     def KEY_F9(self):
+ *     def KEY_F9(self) -> int:
  *         return KeyboardKey.KEY_F9             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33733,7 +33768,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F9___get__(CYTHON_UNUSED str
   /* "raylib.pyx":2135
  * 
  *     @property
- *     def KEY_F9(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F9(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F9
  * 
  */
@@ -33752,7 +33787,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_6KEY_F9___get__(CYTHON_UNUSED str
 /* "raylib.pyx":2139
  * 
  *     @property
- *     def KEY_F10(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F10(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F10
  * 
  */
@@ -33781,7 +33816,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_F10___get__(CYTHON_UNUSED st
 
   /* "raylib.pyx":2140
  *     @property
- *     def KEY_F10(self):
+ *     def KEY_F10(self) -> int:
  *         return KeyboardKey.KEY_F10             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33796,7 +33831,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_F10___get__(CYTHON_UNUSED st
   /* "raylib.pyx":2139
  * 
  *     @property
- *     def KEY_F10(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F10(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F10
  * 
  */
@@ -33815,7 +33850,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_F10___get__(CYTHON_UNUSED st
 /* "raylib.pyx":2143
  * 
  *     @property
- *     def KEY_F11(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F11(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F11
  * 
  */
@@ -33844,7 +33879,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_F11___get__(CYTHON_UNUSED st
 
   /* "raylib.pyx":2144
  *     @property
- *     def KEY_F11(self):
+ *     def KEY_F11(self) -> int:
  *         return KeyboardKey.KEY_F11             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33859,7 +33894,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_F11___get__(CYTHON_UNUSED st
   /* "raylib.pyx":2143
  * 
  *     @property
- *     def KEY_F11(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F11(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F11
  * 
  */
@@ -33878,7 +33913,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_F11___get__(CYTHON_UNUSED st
 /* "raylib.pyx":2147
  * 
  *     @property
- *     def KEY_F12(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F12(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F12
  * 
  */
@@ -33907,7 +33942,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_F12___get__(CYTHON_UNUSED st
 
   /* "raylib.pyx":2148
  *     @property
- *     def KEY_F12(self):
+ *     def KEY_F12(self) -> int:
  *         return KeyboardKey.KEY_F12             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33922,7 +33957,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_F12___get__(CYTHON_UNUSED st
   /* "raylib.pyx":2147
  * 
  *     @property
- *     def KEY_F12(self):             # <<<<<<<<<<<<<<
+ *     def KEY_F12(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_F12
  * 
  */
@@ -33941,7 +33976,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_7KEY_F12___get__(CYTHON_UNUSED st
 /* "raylib.pyx":2151
  * 
  *     @property
- *     def KEY_LEFT_SHIFT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_LEFT_SHIFT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_LEFT_SHIFT
  * 
  */
@@ -33970,7 +34005,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_14KEY_LEFT_SHIFT___get__(CYTHON_U
 
   /* "raylib.pyx":2152
  *     @property
- *     def KEY_LEFT_SHIFT(self):
+ *     def KEY_LEFT_SHIFT(self) -> int:
  *         return KeyboardKey.KEY_LEFT_SHIFT             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -33985,7 +34020,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_14KEY_LEFT_SHIFT___get__(CYTHON_U
   /* "raylib.pyx":2151
  * 
  *     @property
- *     def KEY_LEFT_SHIFT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_LEFT_SHIFT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_LEFT_SHIFT
  * 
  */
@@ -34004,7 +34039,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_14KEY_LEFT_SHIFT___get__(CYTHON_U
 /* "raylib.pyx":2155
  * 
  *     @property
- *     def KEY_LEFT_CONTROL(self):             # <<<<<<<<<<<<<<
+ *     def KEY_LEFT_CONTROL(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_LEFT_CONTROL
  * 
  */
@@ -34033,7 +34068,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_16KEY_LEFT_CONTROL___get__(CYTHON
 
   /* "raylib.pyx":2156
  *     @property
- *     def KEY_LEFT_CONTROL(self):
+ *     def KEY_LEFT_CONTROL(self) -> int:
  *         return KeyboardKey.KEY_LEFT_CONTROL             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34048,7 +34083,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_16KEY_LEFT_CONTROL___get__(CYTHON
   /* "raylib.pyx":2155
  * 
  *     @property
- *     def KEY_LEFT_CONTROL(self):             # <<<<<<<<<<<<<<
+ *     def KEY_LEFT_CONTROL(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_LEFT_CONTROL
  * 
  */
@@ -34067,7 +34102,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_16KEY_LEFT_CONTROL___get__(CYTHON
 /* "raylib.pyx":2159
  * 
  *     @property
- *     def KEY_LEFT_ALT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_LEFT_ALT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_LEFT_ALT
  * 
  */
@@ -34096,7 +34131,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_12KEY_LEFT_ALT___get__(CYTHON_UNU
 
   /* "raylib.pyx":2160
  *     @property
- *     def KEY_LEFT_ALT(self):
+ *     def KEY_LEFT_ALT(self) -> int:
  *         return KeyboardKey.KEY_LEFT_ALT             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34111,7 +34146,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_12KEY_LEFT_ALT___get__(CYTHON_UNU
   /* "raylib.pyx":2159
  * 
  *     @property
- *     def KEY_LEFT_ALT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_LEFT_ALT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_LEFT_ALT
  * 
  */
@@ -34130,7 +34165,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_12KEY_LEFT_ALT___get__(CYTHON_UNU
 /* "raylib.pyx":2163
  * 
  *     @property
- *     def KEY_LEFT_SUPER(self):             # <<<<<<<<<<<<<<
+ *     def KEY_LEFT_SUPER(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_LEFT_SUPER
  * 
  */
@@ -34159,7 +34194,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_14KEY_LEFT_SUPER___get__(CYTHON_U
 
   /* "raylib.pyx":2164
  *     @property
- *     def KEY_LEFT_SUPER(self):
+ *     def KEY_LEFT_SUPER(self) -> int:
  *         return KeyboardKey.KEY_LEFT_SUPER             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34174,7 +34209,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_14KEY_LEFT_SUPER___get__(CYTHON_U
   /* "raylib.pyx":2163
  * 
  *     @property
- *     def KEY_LEFT_SUPER(self):             # <<<<<<<<<<<<<<
+ *     def KEY_LEFT_SUPER(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_LEFT_SUPER
  * 
  */
@@ -34193,7 +34228,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_14KEY_LEFT_SUPER___get__(CYTHON_U
 /* "raylib.pyx":2167
  * 
  *     @property
- *     def KEY_RIGHT_SHIFT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_RIGHT_SHIFT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_RIGHT_SHIFT
  * 
  */
@@ -34222,7 +34257,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_RIGHT_SHIFT___get__(CYTHON_
 
   /* "raylib.pyx":2168
  *     @property
- *     def KEY_RIGHT_SHIFT(self):
+ *     def KEY_RIGHT_SHIFT(self) -> int:
  *         return KeyboardKey.KEY_RIGHT_SHIFT             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34237,7 +34272,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_RIGHT_SHIFT___get__(CYTHON_
   /* "raylib.pyx":2167
  * 
  *     @property
- *     def KEY_RIGHT_SHIFT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_RIGHT_SHIFT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_RIGHT_SHIFT
  * 
  */
@@ -34256,7 +34291,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_RIGHT_SHIFT___get__(CYTHON_
 /* "raylib.pyx":2171
  * 
  *     @property
- *     def KEY_RIGHT_CONTROL(self):             # <<<<<<<<<<<<<<
+ *     def KEY_RIGHT_CONTROL(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_RIGHT_CONTROL
  * 
  */
@@ -34285,7 +34320,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_17KEY_RIGHT_CONTROL___get__(CYTHO
 
   /* "raylib.pyx":2172
  *     @property
- *     def KEY_RIGHT_CONTROL(self):
+ *     def KEY_RIGHT_CONTROL(self) -> int:
  *         return KeyboardKey.KEY_RIGHT_CONTROL             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34300,7 +34335,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_17KEY_RIGHT_CONTROL___get__(CYTHO
   /* "raylib.pyx":2171
  * 
  *     @property
- *     def KEY_RIGHT_CONTROL(self):             # <<<<<<<<<<<<<<
+ *     def KEY_RIGHT_CONTROL(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_RIGHT_CONTROL
  * 
  */
@@ -34319,7 +34354,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_17KEY_RIGHT_CONTROL___get__(CYTHO
 /* "raylib.pyx":2175
  * 
  *     @property
- *     def KEY_RIGHT_ALT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_RIGHT_ALT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_RIGHT_ALT
  * 
  */
@@ -34348,7 +34383,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_RIGHT_ALT___get__(CYTHON_UN
 
   /* "raylib.pyx":2176
  *     @property
- *     def KEY_RIGHT_ALT(self):
+ *     def KEY_RIGHT_ALT(self) -> int:
  *         return KeyboardKey.KEY_RIGHT_ALT             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34363,7 +34398,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_RIGHT_ALT___get__(CYTHON_UN
   /* "raylib.pyx":2175
  * 
  *     @property
- *     def KEY_RIGHT_ALT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_RIGHT_ALT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_RIGHT_ALT
  * 
  */
@@ -34382,7 +34417,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_RIGHT_ALT___get__(CYTHON_UN
 /* "raylib.pyx":2179
  * 
  *     @property
- *     def KEY_RIGHT_SUPER(self):             # <<<<<<<<<<<<<<
+ *     def KEY_RIGHT_SUPER(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_RIGHT_SUPER
  * 
  */
@@ -34411,7 +34446,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_RIGHT_SUPER___get__(CYTHON_
 
   /* "raylib.pyx":2180
  *     @property
- *     def KEY_RIGHT_SUPER(self):
+ *     def KEY_RIGHT_SUPER(self) -> int:
  *         return KeyboardKey.KEY_RIGHT_SUPER             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34426,7 +34461,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_RIGHT_SUPER___get__(CYTHON_
   /* "raylib.pyx":2179
  * 
  *     @property
- *     def KEY_RIGHT_SUPER(self):             # <<<<<<<<<<<<<<
+ *     def KEY_RIGHT_SUPER(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_RIGHT_SUPER
  * 
  */
@@ -34445,7 +34480,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_RIGHT_SUPER___get__(CYTHON_
 /* "raylib.pyx":2183
  * 
  *     @property
- *     def KEY_KB_MENU(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KB_MENU(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KB_MENU
  * 
  */
@@ -34474,7 +34509,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_11KEY_KB_MENU___get__(CYTHON_UNUS
 
   /* "raylib.pyx":2184
  *     @property
- *     def KEY_KB_MENU(self):
+ *     def KEY_KB_MENU(self) -> int:
  *         return KeyboardKey.KEY_KB_MENU             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34489,7 +34524,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_11KEY_KB_MENU___get__(CYTHON_UNUS
   /* "raylib.pyx":2183
  * 
  *     @property
- *     def KEY_KB_MENU(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KB_MENU(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KB_MENU
  * 
  */
@@ -34508,7 +34543,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_11KEY_KB_MENU___get__(CYTHON_UNUS
 /* "raylib.pyx":2187
  * 
  *     @property
- *     def KEY_KP_0(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_0(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_0
  * 
  */
@@ -34537,7 +34572,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_0___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":2188
  *     @property
- *     def KEY_KP_0(self):
+ *     def KEY_KP_0(self) -> int:
  *         return KeyboardKey.KEY_KP_0             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34552,7 +34587,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_0___get__(CYTHON_UNUSED s
   /* "raylib.pyx":2187
  * 
  *     @property
- *     def KEY_KP_0(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_0(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_0
  * 
  */
@@ -34571,7 +34606,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_0___get__(CYTHON_UNUSED s
 /* "raylib.pyx":2191
  * 
  *     @property
- *     def KEY_KP_1(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_1(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_1
  * 
  */
@@ -34600,7 +34635,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_1___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":2192
  *     @property
- *     def KEY_KP_1(self):
+ *     def KEY_KP_1(self) -> int:
  *         return KeyboardKey.KEY_KP_1             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34615,7 +34650,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_1___get__(CYTHON_UNUSED s
   /* "raylib.pyx":2191
  * 
  *     @property
- *     def KEY_KP_1(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_1(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_1
  * 
  */
@@ -34634,7 +34669,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_1___get__(CYTHON_UNUSED s
 /* "raylib.pyx":2195
  * 
  *     @property
- *     def KEY_KP_2(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_2(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_2
  * 
  */
@@ -34663,7 +34698,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_2___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":2196
  *     @property
- *     def KEY_KP_2(self):
+ *     def KEY_KP_2(self) -> int:
  *         return KeyboardKey.KEY_KP_2             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34678,7 +34713,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_2___get__(CYTHON_UNUSED s
   /* "raylib.pyx":2195
  * 
  *     @property
- *     def KEY_KP_2(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_2(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_2
  * 
  */
@@ -34697,7 +34732,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_2___get__(CYTHON_UNUSED s
 /* "raylib.pyx":2199
  * 
  *     @property
- *     def KEY_KP_3(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_3(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_3
  * 
  */
@@ -34726,7 +34761,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_3___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":2200
  *     @property
- *     def KEY_KP_3(self):
+ *     def KEY_KP_3(self) -> int:
  *         return KeyboardKey.KEY_KP_3             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34741,7 +34776,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_3___get__(CYTHON_UNUSED s
   /* "raylib.pyx":2199
  * 
  *     @property
- *     def KEY_KP_3(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_3(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_3
  * 
  */
@@ -34760,7 +34795,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_3___get__(CYTHON_UNUSED s
 /* "raylib.pyx":2203
  * 
  *     @property
- *     def KEY_KP_4(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_4(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_4
  * 
  */
@@ -34789,7 +34824,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_4___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":2204
  *     @property
- *     def KEY_KP_4(self):
+ *     def KEY_KP_4(self) -> int:
  *         return KeyboardKey.KEY_KP_4             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34804,7 +34839,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_4___get__(CYTHON_UNUSED s
   /* "raylib.pyx":2203
  * 
  *     @property
- *     def KEY_KP_4(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_4(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_4
  * 
  */
@@ -34823,7 +34858,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_4___get__(CYTHON_UNUSED s
 /* "raylib.pyx":2207
  * 
  *     @property
- *     def KEY_KP_5(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_5(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_5
  * 
  */
@@ -34852,7 +34887,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_5___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":2208
  *     @property
- *     def KEY_KP_5(self):
+ *     def KEY_KP_5(self) -> int:
  *         return KeyboardKey.KEY_KP_5             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34867,7 +34902,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_5___get__(CYTHON_UNUSED s
   /* "raylib.pyx":2207
  * 
  *     @property
- *     def KEY_KP_5(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_5(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_5
  * 
  */
@@ -34886,7 +34921,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_5___get__(CYTHON_UNUSED s
 /* "raylib.pyx":2211
  * 
  *     @property
- *     def KEY_KP_6(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_6(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_6
  * 
  */
@@ -34915,7 +34950,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_6___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":2212
  *     @property
- *     def KEY_KP_6(self):
+ *     def KEY_KP_6(self) -> int:
  *         return KeyboardKey.KEY_KP_6             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34930,7 +34965,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_6___get__(CYTHON_UNUSED s
   /* "raylib.pyx":2211
  * 
  *     @property
- *     def KEY_KP_6(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_6(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_6
  * 
  */
@@ -34949,7 +34984,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_6___get__(CYTHON_UNUSED s
 /* "raylib.pyx":2215
  * 
  *     @property
- *     def KEY_KP_7(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_7(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_7
  * 
  */
@@ -34978,7 +35013,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_7___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":2216
  *     @property
- *     def KEY_KP_7(self):
+ *     def KEY_KP_7(self) -> int:
  *         return KeyboardKey.KEY_KP_7             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -34993,7 +35028,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_7___get__(CYTHON_UNUSED s
   /* "raylib.pyx":2215
  * 
  *     @property
- *     def KEY_KP_7(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_7(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_7
  * 
  */
@@ -35012,7 +35047,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_7___get__(CYTHON_UNUSED s
 /* "raylib.pyx":2219
  * 
  *     @property
- *     def KEY_KP_8(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_8(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_8
  * 
  */
@@ -35041,7 +35076,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_8___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":2220
  *     @property
- *     def KEY_KP_8(self):
+ *     def KEY_KP_8(self) -> int:
  *         return KeyboardKey.KEY_KP_8             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -35056,7 +35091,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_8___get__(CYTHON_UNUSED s
   /* "raylib.pyx":2219
  * 
  *     @property
- *     def KEY_KP_8(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_8(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_8
  * 
  */
@@ -35075,7 +35110,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_8___get__(CYTHON_UNUSED s
 /* "raylib.pyx":2223
  * 
  *     @property
- *     def KEY_KP_9(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_9(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_9
  * 
  */
@@ -35104,7 +35139,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_9___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":2224
  *     @property
- *     def KEY_KP_9(self):
+ *     def KEY_KP_9(self) -> int:
  *         return KeyboardKey.KEY_KP_9             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -35119,7 +35154,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_9___get__(CYTHON_UNUSED s
   /* "raylib.pyx":2223
  * 
  *     @property
- *     def KEY_KP_9(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_9(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_9
  * 
  */
@@ -35138,7 +35173,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_KP_9___get__(CYTHON_UNUSED s
 /* "raylib.pyx":2227
  * 
  *     @property
- *     def KEY_KP_DECIMAL(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_DECIMAL(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_DECIMAL
  * 
  */
@@ -35167,7 +35202,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_14KEY_KP_DECIMAL___get__(CYTHON_U
 
   /* "raylib.pyx":2228
  *     @property
- *     def KEY_KP_DECIMAL(self):
+ *     def KEY_KP_DECIMAL(self) -> int:
  *         return KeyboardKey.KEY_KP_DECIMAL             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -35182,7 +35217,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_14KEY_KP_DECIMAL___get__(CYTHON_U
   /* "raylib.pyx":2227
  * 
  *     @property
- *     def KEY_KP_DECIMAL(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_DECIMAL(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_DECIMAL
  * 
  */
@@ -35201,7 +35236,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_14KEY_KP_DECIMAL___get__(CYTHON_U
 /* "raylib.pyx":2231
  * 
  *     @property
- *     def KEY_KP_DIVIDE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_DIVIDE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_DIVIDE
  * 
  */
@@ -35230,7 +35265,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_KP_DIVIDE___get__(CYTHON_UN
 
   /* "raylib.pyx":2232
  *     @property
- *     def KEY_KP_DIVIDE(self):
+ *     def KEY_KP_DIVIDE(self) -> int:
  *         return KeyboardKey.KEY_KP_DIVIDE             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -35245,7 +35280,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_KP_DIVIDE___get__(CYTHON_UN
   /* "raylib.pyx":2231
  * 
  *     @property
- *     def KEY_KP_DIVIDE(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_DIVIDE(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_DIVIDE
  * 
  */
@@ -35264,7 +35299,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_KP_DIVIDE___get__(CYTHON_UN
 /* "raylib.pyx":2235
  * 
  *     @property
- *     def KEY_KP_MULTIPLY(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_MULTIPLY(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_MULTIPLY
  * 
  */
@@ -35293,7 +35328,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_KP_MULTIPLY___get__(CYTHON_
 
   /* "raylib.pyx":2236
  *     @property
- *     def KEY_KP_MULTIPLY(self):
+ *     def KEY_KP_MULTIPLY(self) -> int:
  *         return KeyboardKey.KEY_KP_MULTIPLY             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -35308,7 +35343,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_KP_MULTIPLY___get__(CYTHON_
   /* "raylib.pyx":2235
  * 
  *     @property
- *     def KEY_KP_MULTIPLY(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_MULTIPLY(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_MULTIPLY
  * 
  */
@@ -35327,7 +35362,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_KP_MULTIPLY___get__(CYTHON_
 /* "raylib.pyx":2239
  * 
  *     @property
- *     def KEY_KP_SUBTRACT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_SUBTRACT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_SUBTRACT
  * 
  */
@@ -35356,7 +35391,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_KP_SUBTRACT___get__(CYTHON_
 
   /* "raylib.pyx":2240
  *     @property
- *     def KEY_KP_SUBTRACT(self):
+ *     def KEY_KP_SUBTRACT(self) -> int:
  *         return KeyboardKey.KEY_KP_SUBTRACT             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -35371,7 +35406,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_KP_SUBTRACT___get__(CYTHON_
   /* "raylib.pyx":2239
  * 
  *     @property
- *     def KEY_KP_SUBTRACT(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_SUBTRACT(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_SUBTRACT
  * 
  */
@@ -35390,7 +35425,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_KP_SUBTRACT___get__(CYTHON_
 /* "raylib.pyx":2243
  * 
  *     @property
- *     def KEY_KP_ADD(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_ADD(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_ADD
  * 
  */
@@ -35419,7 +35454,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_10KEY_KP_ADD___get__(CYTHON_UNUSE
 
   /* "raylib.pyx":2244
  *     @property
- *     def KEY_KP_ADD(self):
+ *     def KEY_KP_ADD(self) -> int:
  *         return KeyboardKey.KEY_KP_ADD             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -35434,7 +35469,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_10KEY_KP_ADD___get__(CYTHON_UNUSE
   /* "raylib.pyx":2243
  * 
  *     @property
- *     def KEY_KP_ADD(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_ADD(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_ADD
  * 
  */
@@ -35453,7 +35488,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_10KEY_KP_ADD___get__(CYTHON_UNUSE
 /* "raylib.pyx":2247
  * 
  *     @property
- *     def KEY_KP_ENTER(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_ENTER(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_ENTER
  * 
  */
@@ -35482,7 +35517,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_12KEY_KP_ENTER___get__(CYTHON_UNU
 
   /* "raylib.pyx":2248
  *     @property
- *     def KEY_KP_ENTER(self):
+ *     def KEY_KP_ENTER(self) -> int:
  *         return KeyboardKey.KEY_KP_ENTER             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -35497,7 +35532,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_12KEY_KP_ENTER___get__(CYTHON_UNU
   /* "raylib.pyx":2247
  * 
  *     @property
- *     def KEY_KP_ENTER(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_ENTER(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_ENTER
  * 
  */
@@ -35516,7 +35551,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_12KEY_KP_ENTER___get__(CYTHON_UNU
 /* "raylib.pyx":2251
  * 
  *     @property
- *     def KEY_KP_EQUAL(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_EQUAL(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_EQUAL
  * 
  */
@@ -35545,7 +35580,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_12KEY_KP_EQUAL___get__(CYTHON_UNU
 
   /* "raylib.pyx":2252
  *     @property
- *     def KEY_KP_EQUAL(self):
+ *     def KEY_KP_EQUAL(self) -> int:
  *         return KeyboardKey.KEY_KP_EQUAL             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -35560,7 +35595,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_12KEY_KP_EQUAL___get__(CYTHON_UNU
   /* "raylib.pyx":2251
  * 
  *     @property
- *     def KEY_KP_EQUAL(self):             # <<<<<<<<<<<<<<
+ *     def KEY_KP_EQUAL(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_KP_EQUAL
  * 
  */
@@ -35579,7 +35614,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_12KEY_KP_EQUAL___get__(CYTHON_UNU
 /* "raylib.pyx":2255
  * 
  *     @property
- *     def KEY_BACK(self):             # <<<<<<<<<<<<<<
+ *     def KEY_BACK(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_BACK
  * 
  */
@@ -35608,7 +35643,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_BACK___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":2256
  *     @property
- *     def KEY_BACK(self):
+ *     def KEY_BACK(self) -> int:
  *         return KeyboardKey.KEY_BACK             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -35623,7 +35658,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_BACK___get__(CYTHON_UNUSED s
   /* "raylib.pyx":2255
  * 
  *     @property
- *     def KEY_BACK(self):             # <<<<<<<<<<<<<<
+ *     def KEY_BACK(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_BACK
  * 
  */
@@ -35642,7 +35677,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_BACK___get__(CYTHON_UNUSED s
 /* "raylib.pyx":2259
  * 
  *     @property
- *     def KEY_MENU(self):             # <<<<<<<<<<<<<<
+ *     def KEY_MENU(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_MENU
  * 
  */
@@ -35671,7 +35706,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_MENU___get__(CYTHON_UNUSED s
 
   /* "raylib.pyx":2260
  *     @property
- *     def KEY_MENU(self):
+ *     def KEY_MENU(self) -> int:
  *         return KeyboardKey.KEY_MENU             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -35686,7 +35721,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_MENU___get__(CYTHON_UNUSED s
   /* "raylib.pyx":2259
  * 
  *     @property
- *     def KEY_MENU(self):             # <<<<<<<<<<<<<<
+ *     def KEY_MENU(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_MENU
  * 
  */
@@ -35705,7 +35740,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_8KEY_MENU___get__(CYTHON_UNUSED s
 /* "raylib.pyx":2263
  * 
  *     @property
- *     def KEY_VOLUME_UP(self):             # <<<<<<<<<<<<<<
+ *     def KEY_VOLUME_UP(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_VOLUME_UP
  * 
  */
@@ -35734,7 +35769,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_VOLUME_UP___get__(CYTHON_UN
 
   /* "raylib.pyx":2264
  *     @property
- *     def KEY_VOLUME_UP(self):
+ *     def KEY_VOLUME_UP(self) -> int:
  *         return KeyboardKey.KEY_VOLUME_UP             # <<<<<<<<<<<<<<
  * 
  *     @property
@@ -35749,7 +35784,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_VOLUME_UP___get__(CYTHON_UN
   /* "raylib.pyx":2263
  * 
  *     @property
- *     def KEY_VOLUME_UP(self):             # <<<<<<<<<<<<<<
+ *     def KEY_VOLUME_UP(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_VOLUME_UP
  * 
  */
@@ -35768,7 +35803,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_13KEY_VOLUME_UP___get__(CYTHON_UN
 /* "raylib.pyx":2267
  * 
  *     @property
- *     def KEY_VOLUME_DOWN(self):             # <<<<<<<<<<<<<<
+ *     def KEY_VOLUME_DOWN(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_VOLUME_DOWN
  * 
  */
@@ -35797,7 +35832,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_VOLUME_DOWN___get__(CYTHON_
 
   /* "raylib.pyx":2268
  *     @property
- *     def KEY_VOLUME_DOWN(self):
+ *     def KEY_VOLUME_DOWN(self) -> int:
  *         return KeyboardKey.KEY_VOLUME_DOWN             # <<<<<<<<<<<<<<
  * 
  * 
@@ -35812,7 +35847,7 @@ static PyObject *__pyx_pf_6raylib_10CyKeyboard_15KEY_VOLUME_DOWN___get__(CYTHON_
   /* "raylib.pyx":2267
  * 
  *     @property
- *     def KEY_VOLUME_DOWN(self):             # <<<<<<<<<<<<<<
+ *     def KEY_VOLUME_DOWN(self) -> int:             # <<<<<<<<<<<<<<
  *         return KeyboardKey.KEY_VOLUME_DOWN
  * 
  */
@@ -37147,18 +37182,18 @@ static PyObject *__pyx_pf_6raylib_172set_gamepad_mappings(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "raylib.pyx":2327
- * 
- * #cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
- * def is_mouse_button_pressed(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonPressed(button)
+/* "raylib.pyx":2329
+ *     #cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
+ *     @staticmethod
+ *     def is_mouse_button_pressed(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonPressed(button)
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_175is_mouse_button_pressed(PyObject *__pyx_self, PyObject *__pyx_arg_button); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_175is_mouse_button_pressed = {"is_mouse_button_pressed", (PyCFunction)__pyx_pw_6raylib_175is_mouse_button_pressed, METH_O, 0};
-static PyObject *__pyx_pw_6raylib_175is_mouse_button_pressed(PyObject *__pyx_self, PyObject *__pyx_arg_button) {
+static PyObject *__pyx_pw_6raylib_7CyMouse_1is_mouse_button_pressed(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_7CyMouse_1is_mouse_button_pressed = {"is_mouse_button_pressed", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_1is_mouse_button_pressed, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_7CyMouse_1is_mouse_button_pressed(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_button;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -37166,23 +37201,50 @@ static PyObject *__pyx_pw_6raylib_175is_mouse_button_pressed(PyObject *__pyx_sel
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("is_mouse_button_pressed (wrapper)", 0);
-  assert(__pyx_arg_button); {
-    __pyx_v_button = __Pyx_PyInt_As_int(__pyx_arg_button); if (unlikely((__pyx_v_button == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2327, __pyx_L3_error)
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_button,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_button)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "is_mouse_button_pressed") < 0)) __PYX_ERR(0, 2329, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_button = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_button == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2329, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("is_mouse_button_pressed", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2329, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("raylib.is_mouse_button_pressed", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.is_mouse_button_pressed", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_174is_mouse_button_pressed(__pyx_self, ((int)__pyx_v_button));
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_is_mouse_button_pressed(__pyx_v_button);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_174is_mouse_button_pressed(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_button) {
+static PyObject *__pyx_pf_6raylib_7CyMouse_is_mouse_button_pressed(int __pyx_v_button) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -37191,32 +37253,32 @@ static PyObject *__pyx_pf_6raylib_174is_mouse_button_pressed(CYTHON_UNUSED PyObj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("is_mouse_button_pressed", 0);
 
-  /* "raylib.pyx":2328
- * #cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
- * def is_mouse_button_pressed(int button) -> bool:
- *     return IsMouseButtonPressed(button)             # <<<<<<<<<<<<<<
+  /* "raylib.pyx":2330
+ *     @staticmethod
+ *     def is_mouse_button_pressed(int button) -> bool:
+ *         return IsMouseButtonPressed(button)             # <<<<<<<<<<<<<<
  * 
- * #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
+ *     #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(IsMouseButtonPressed(__pyx_v_button)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2328, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(IsMouseButtonPressed(__pyx_v_button)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2330, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2327
- * 
- * #cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
- * def is_mouse_button_pressed(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonPressed(button)
+  /* "raylib.pyx":2329
+ *     #cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
+ *     @staticmethod
+ *     def is_mouse_button_pressed(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonPressed(button)
  * 
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("raylib.is_mouse_button_pressed", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.is_mouse_button_pressed", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -37224,18 +37286,18 @@ static PyObject *__pyx_pf_6raylib_174is_mouse_button_pressed(CYTHON_UNUSED PyObj
   return __pyx_r;
 }
 
-/* "raylib.pyx":2331
- * 
- * #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
- * def is_mouse_button_down(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonDown(button)
+/* "raylib.pyx":2334
+ *     #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
+ *     @staticmethod
+ *     def is_mouse_button_down(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonDown(button)
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_177is_mouse_button_down(PyObject *__pyx_self, PyObject *__pyx_arg_button); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_177is_mouse_button_down = {"is_mouse_button_down", (PyCFunction)__pyx_pw_6raylib_177is_mouse_button_down, METH_O, 0};
-static PyObject *__pyx_pw_6raylib_177is_mouse_button_down(PyObject *__pyx_self, PyObject *__pyx_arg_button) {
+static PyObject *__pyx_pw_6raylib_7CyMouse_3is_mouse_button_down(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_7CyMouse_3is_mouse_button_down = {"is_mouse_button_down", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_3is_mouse_button_down, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_7CyMouse_3is_mouse_button_down(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_button;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -37243,23 +37305,50 @@ static PyObject *__pyx_pw_6raylib_177is_mouse_button_down(PyObject *__pyx_self, 
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("is_mouse_button_down (wrapper)", 0);
-  assert(__pyx_arg_button); {
-    __pyx_v_button = __Pyx_PyInt_As_int(__pyx_arg_button); if (unlikely((__pyx_v_button == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2331, __pyx_L3_error)
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_button,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_button)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "is_mouse_button_down") < 0)) __PYX_ERR(0, 2334, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_button = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_button == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2334, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("is_mouse_button_down", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2334, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("raylib.is_mouse_button_down", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.is_mouse_button_down", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_176is_mouse_button_down(__pyx_self, ((int)__pyx_v_button));
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_2is_mouse_button_down(__pyx_v_button);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_176is_mouse_button_down(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_button) {
+static PyObject *__pyx_pf_6raylib_7CyMouse_2is_mouse_button_down(int __pyx_v_button) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -37268,109 +37357,32 @@ static PyObject *__pyx_pf_6raylib_176is_mouse_button_down(CYTHON_UNUSED PyObject
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("is_mouse_button_down", 0);
 
-  /* "raylib.pyx":2332
- * #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
- * def is_mouse_button_down(int button) -> bool:
- *     return IsMouseButtonDown(button)             # <<<<<<<<<<<<<<
- * 
- * #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
- */
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(IsMouseButtonDown(__pyx_v_button)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2332, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
-  /* "raylib.pyx":2331
- * 
- * #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
- * def is_mouse_button_down(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonDown(button)
- * 
- */
-
-  /* function exit code */
-  __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("raylib.is_mouse_button_down", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __pyx_r = NULL;
-  __pyx_L0:;
-  __Pyx_XGIVEREF(__pyx_r);
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-/* "raylib.pyx":2335
- * 
- * #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
- * def is_mouse_button_released(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonReleased(button)
- * 
- */
-
-/* Python wrapper */
-static PyObject *__pyx_pw_6raylib_179is_mouse_button_released(PyObject *__pyx_self, PyObject *__pyx_arg_button); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_179is_mouse_button_released = {"is_mouse_button_released", (PyCFunction)__pyx_pw_6raylib_179is_mouse_button_released, METH_O, 0};
-static PyObject *__pyx_pw_6raylib_179is_mouse_button_released(PyObject *__pyx_self, PyObject *__pyx_arg_button) {
-  int __pyx_v_button;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  PyObject *__pyx_r = 0;
-  __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("is_mouse_button_released (wrapper)", 0);
-  assert(__pyx_arg_button); {
-    __pyx_v_button = __Pyx_PyInt_As_int(__pyx_arg_button); if (unlikely((__pyx_v_button == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2335, __pyx_L3_error)
-  }
-  goto __pyx_L4_argument_unpacking_done;
-  __pyx_L3_error:;
-  __Pyx_AddTraceback("raylib.is_mouse_button_released", __pyx_clineno, __pyx_lineno, __pyx_filename);
-  __Pyx_RefNannyFinishContext();
-  return NULL;
-  __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_178is_mouse_button_released(__pyx_self, ((int)__pyx_v_button));
-
-  /* function exit code */
-  __Pyx_RefNannyFinishContext();
-  return __pyx_r;
-}
-
-static PyObject *__pyx_pf_6raylib_178is_mouse_button_released(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_button) {
-  PyObject *__pyx_r = NULL;
-  __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
-  int __pyx_lineno = 0;
-  const char *__pyx_filename = NULL;
-  int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("is_mouse_button_released", 0);
-
-  /* "raylib.pyx":2336
- * #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
- * def is_mouse_button_released(int button) -> bool:
- *     return IsMouseButtonReleased(button)             # <<<<<<<<<<<<<<
- * 
- * #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
- */
-  __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(IsMouseButtonReleased(__pyx_v_button)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2336, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  __pyx_r = __pyx_t_1;
-  __pyx_t_1 = 0;
-  goto __pyx_L0;
-
   /* "raylib.pyx":2335
+ *     @staticmethod
+ *     def is_mouse_button_down(int button) -> bool:
+ *         return IsMouseButtonDown(button)             # <<<<<<<<<<<<<<
  * 
- * #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
- * def is_mouse_button_released(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonReleased(button)
+ *     #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyBool_FromLong(IsMouseButtonDown(__pyx_v_button)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2335, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "raylib.pyx":2334
+ *     #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
+ *     @staticmethod
+ *     def is_mouse_button_down(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonDown(button)
  * 
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("raylib.is_mouse_button_released", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.is_mouse_button_down", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -37379,17 +37391,121 @@ static PyObject *__pyx_pf_6raylib_178is_mouse_button_released(CYTHON_UNUSED PyOb
 }
 
 /* "raylib.pyx":2339
- * 
- * #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
- * def is_mouse_button_up(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonUp(button)
+ *     #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
+ *     @staticmethod
+ *     def is_mouse_button_released(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonReleased(button)
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_181is_mouse_button_up(PyObject *__pyx_self, PyObject *__pyx_arg_button); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_181is_mouse_button_up = {"is_mouse_button_up", (PyCFunction)__pyx_pw_6raylib_181is_mouse_button_up, METH_O, 0};
-static PyObject *__pyx_pw_6raylib_181is_mouse_button_up(PyObject *__pyx_self, PyObject *__pyx_arg_button) {
+static PyObject *__pyx_pw_6raylib_7CyMouse_5is_mouse_button_released(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_7CyMouse_5is_mouse_button_released = {"is_mouse_button_released", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_5is_mouse_button_released, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_7CyMouse_5is_mouse_button_released(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  int __pyx_v_button;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("is_mouse_button_released (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_button,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_button)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "is_mouse_button_released") < 0)) __PYX_ERR(0, 2339, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_button = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_button == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2339, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("is_mouse_button_released", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2339, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("raylib.CyMouse.is_mouse_button_released", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_4is_mouse_button_released(__pyx_v_button);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_7CyMouse_4is_mouse_button_released(int __pyx_v_button) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("is_mouse_button_released", 0);
+
+  /* "raylib.pyx":2340
+ *     @staticmethod
+ *     def is_mouse_button_released(int button) -> bool:
+ *         return IsMouseButtonReleased(button)             # <<<<<<<<<<<<<<
+ * 
+ *     #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyBool_FromLong(IsMouseButtonReleased(__pyx_v_button)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2340, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "raylib.pyx":2339
+ *     #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
+ *     @staticmethod
+ *     def is_mouse_button_released(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonReleased(button)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("raylib.CyMouse.is_mouse_button_released", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":2344
+ *     #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
+ *     @staticmethod
+ *     def is_mouse_button_up(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonUp(button)
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_7CyMouse_7is_mouse_button_up(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_7CyMouse_7is_mouse_button_up = {"is_mouse_button_up", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_7is_mouse_button_up, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_7CyMouse_7is_mouse_button_up(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_button;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -37397,23 +37513,50 @@ static PyObject *__pyx_pw_6raylib_181is_mouse_button_up(PyObject *__pyx_self, Py
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("is_mouse_button_up (wrapper)", 0);
-  assert(__pyx_arg_button); {
-    __pyx_v_button = __Pyx_PyInt_As_int(__pyx_arg_button); if (unlikely((__pyx_v_button == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2339, __pyx_L3_error)
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_button,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_button)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "is_mouse_button_up") < 0)) __PYX_ERR(0, 2344, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_button = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_button == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2344, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("is_mouse_button_up", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2344, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("raylib.is_mouse_button_up", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.is_mouse_button_up", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_180is_mouse_button_up(__pyx_self, ((int)__pyx_v_button));
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_6is_mouse_button_up(__pyx_v_button);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_180is_mouse_button_up(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_button) {
+static PyObject *__pyx_pf_6raylib_7CyMouse_6is_mouse_button_up(int __pyx_v_button) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -37422,32 +37565,32 @@ static PyObject *__pyx_pf_6raylib_180is_mouse_button_up(CYTHON_UNUSED PyObject *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("is_mouse_button_up", 0);
 
-  /* "raylib.pyx":2340
- * #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
- * def is_mouse_button_up(int button) -> bool:
- *     return IsMouseButtonUp(button)             # <<<<<<<<<<<<<<
+  /* "raylib.pyx":2345
+ *     @staticmethod
+ *     def is_mouse_button_up(int button) -> bool:
+ *         return IsMouseButtonUp(button)             # <<<<<<<<<<<<<<
  * 
- * #cdef int GetMouseX()                                    # Get mouse position X
+ *     #cdef int GetMouseX()                                    # Get mouse position X
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(IsMouseButtonUp(__pyx_v_button)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2340, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(IsMouseButtonUp(__pyx_v_button)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2345, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2339
- * 
- * #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
- * def is_mouse_button_up(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonUp(button)
+  /* "raylib.pyx":2344
+ *     #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
+ *     @staticmethod
+ *     def is_mouse_button_up(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonUp(button)
  * 
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("raylib.is_mouse_button_up", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.is_mouse_button_up", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -37455,29 +37598,32 @@ static PyObject *__pyx_pf_6raylib_180is_mouse_button_up(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "raylib.pyx":2343
- * 
- * #cdef int GetMouseX()                                    # Get mouse position X
- * def get_mouse_x() -> int:             # <<<<<<<<<<<<<<
- *     return GetMouseX()
+/* "raylib.pyx":2349
+ *     #cdef int GetMouseX()                                    # Get mouse position X
+ *     @staticmethod
+ *     def get_mouse_x() -> int:             # <<<<<<<<<<<<<<
+ *         return GetMouseX()
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_183get_mouse_x(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_183get_mouse_x = {"get_mouse_x", (PyCFunction)__pyx_pw_6raylib_183get_mouse_x, METH_NOARGS, 0};
-static PyObject *__pyx_pw_6raylib_183get_mouse_x(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_6raylib_7CyMouse_9get_mouse_x(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_7CyMouse_9get_mouse_x = {"get_mouse_x", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_9get_mouse_x, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_7CyMouse_9get_mouse_x(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_mouse_x (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_182get_mouse_x(__pyx_self);
+  if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
+    __Pyx_RaiseArgtupleInvalid("get_mouse_x", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return NULL;}
+  if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "get_mouse_x", 0))) return NULL;
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_8get_mouse_x();
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_182get_mouse_x(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_6raylib_7CyMouse_8get_mouse_x(void) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -37486,32 +37632,32 @@ static PyObject *__pyx_pf_6raylib_182get_mouse_x(CYTHON_UNUSED PyObject *__pyx_s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_mouse_x", 0);
 
-  /* "raylib.pyx":2344
- * #cdef int GetMouseX()                                    # Get mouse position X
- * def get_mouse_x() -> int:
- *     return GetMouseX()             # <<<<<<<<<<<<<<
+  /* "raylib.pyx":2350
+ *     @staticmethod
+ *     def get_mouse_x() -> int:
+ *         return GetMouseX()             # <<<<<<<<<<<<<<
  * 
- * #cdef int GetMouseY()                                    # Get mouse position Y
+ *     #cdef int GetMouseY()                                    # Get mouse position Y
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetMouseX()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2344, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetMouseX()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2350, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2343
- * 
- * #cdef int GetMouseX()                                    # Get mouse position X
- * def get_mouse_x() -> int:             # <<<<<<<<<<<<<<
- *     return GetMouseX()
+  /* "raylib.pyx":2349
+ *     #cdef int GetMouseX()                                    # Get mouse position X
+ *     @staticmethod
+ *     def get_mouse_x() -> int:             # <<<<<<<<<<<<<<
+ *         return GetMouseX()
  * 
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("raylib.get_mouse_x", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.get_mouse_x", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -37519,29 +37665,32 @@ static PyObject *__pyx_pf_6raylib_182get_mouse_x(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "raylib.pyx":2347
- * 
- * #cdef int GetMouseY()                                    # Get mouse position Y
- * def get_mouse_y() -> int:             # <<<<<<<<<<<<<<
- *     return GetMouseY()
+/* "raylib.pyx":2354
+ *     #cdef int GetMouseY()                                    # Get mouse position Y
+ *     @staticmethod
+ *     def get_mouse_y() -> int:             # <<<<<<<<<<<<<<
+ *         return GetMouseY()
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_185get_mouse_y(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_185get_mouse_y = {"get_mouse_y", (PyCFunction)__pyx_pw_6raylib_185get_mouse_y, METH_NOARGS, 0};
-static PyObject *__pyx_pw_6raylib_185get_mouse_y(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_6raylib_7CyMouse_11get_mouse_y(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_7CyMouse_11get_mouse_y = {"get_mouse_y", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_11get_mouse_y, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_7CyMouse_11get_mouse_y(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_mouse_y (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_184get_mouse_y(__pyx_self);
+  if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
+    __Pyx_RaiseArgtupleInvalid("get_mouse_y", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return NULL;}
+  if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "get_mouse_y", 0))) return NULL;
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_10get_mouse_y();
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_184get_mouse_y(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_6raylib_7CyMouse_10get_mouse_y(void) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -37550,32 +37699,32 @@ static PyObject *__pyx_pf_6raylib_184get_mouse_y(CYTHON_UNUSED PyObject *__pyx_s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_mouse_y", 0);
 
-  /* "raylib.pyx":2348
- * #cdef int GetMouseY()                                    # Get mouse position Y
- * def get_mouse_y() -> int:
- *     return GetMouseY()             # <<<<<<<<<<<<<<
+  /* "raylib.pyx":2355
+ *     @staticmethod
+ *     def get_mouse_y() -> int:
+ *         return GetMouseY()             # <<<<<<<<<<<<<<
  * 
- * #cdef Vector2 GetMousePosition()                         # Get mouse position XY
+ *     #cdef Vector2 GetMousePosition()                         # Get mouse position XY
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetMouseY()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2348, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetMouseY()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2355, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2347
- * 
- * #cdef int GetMouseY()                                    # Get mouse position Y
- * def get_mouse_y() -> int:             # <<<<<<<<<<<<<<
- *     return GetMouseY()
+  /* "raylib.pyx":2354
+ *     #cdef int GetMouseY()                                    # Get mouse position Y
+ *     @staticmethod
+ *     def get_mouse_y() -> int:             # <<<<<<<<<<<<<<
+ *         return GetMouseY()
  * 
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("raylib.get_mouse_y", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.get_mouse_y", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -37583,29 +37732,32 @@ static PyObject *__pyx_pf_6raylib_184get_mouse_y(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "raylib.pyx":2351
- * 
- * #cdef Vector2 GetMousePosition()                         # Get mouse position XY
- * def get_mouse_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMousePosition()
+/* "raylib.pyx":2359
+ *     #cdef Vector2 GetMousePosition()                         # Get mouse position XY
+ *     @staticmethod
+ *     def get_mouse_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMousePosition()
  */
 
 /* Python wrapper */
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_187get_mouse_position(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_187get_mouse_position = {"get_mouse_position", (PyCFunction)__pyx_pw_6raylib_187get_mouse_position, METH_NOARGS, 0};
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_187get_mouse_position(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_7CyMouse_13get_mouse_position(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_7CyMouse_13get_mouse_position = {"get_mouse_position", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_13get_mouse_position, METH_VARARGS|METH_KEYWORDS, 0};
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_7CyMouse_13get_mouse_position(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_mouse_position (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_186get_mouse_position(__pyx_self);
+  if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
+    __Pyx_RaiseArgtupleInvalid("get_mouse_position", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return NULL;}
+  if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "get_mouse_position", 0))) return NULL;
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_12get_mouse_position();
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_186get_mouse_position(CYTHON_UNUSED PyObject *__pyx_self) {
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_7CyMouse_12get_mouse_position(void) {
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_vec = 0;
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -37615,52 +37767,52 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_186
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_mouse_position", 0);
 
-  /* "raylib.pyx":2352
- * #cdef Vector2 GetMousePosition()                         # Get mouse position XY
- * def get_mouse_position() -> raymath.CyVector2:
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)             # <<<<<<<<<<<<<<
- *     vec._vector = GetMousePosition()
- *     return vec
+  /* "raylib.pyx":2360
+ *     @staticmethod
+ *     def get_mouse_position() -> raymath.CyVector2:
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)             # <<<<<<<<<<<<<<
+ *         vec._vector = GetMousePosition()
+ *         return vec
  */
-  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2352, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2360, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 2352, __pyx_L1_error)
+  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 2360, __pyx_L1_error)
   __pyx_v_vec = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2353
- * def get_mouse_position() -> raymath.CyVector2:
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMousePosition()             # <<<<<<<<<<<<<<
- *     return vec
+  /* "raylib.pyx":2361
+ *     def get_mouse_position() -> raymath.CyVector2:
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMousePosition()             # <<<<<<<<<<<<<<
+ *         return vec
  * 
  */
   __pyx_v_vec->_vector = GetMousePosition();
 
-  /* "raylib.pyx":2354
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMousePosition()
- *     return vec             # <<<<<<<<<<<<<<
+  /* "raylib.pyx":2362
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMousePosition()
+ *         return vec             # <<<<<<<<<<<<<<
  * 
- * #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
+ *     #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
   __Pyx_INCREF(((PyObject *)__pyx_v_vec));
   __pyx_r = __pyx_v_vec;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2351
- * 
- * #cdef Vector2 GetMousePosition()                         # Get mouse position XY
- * def get_mouse_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMousePosition()
+  /* "raylib.pyx":2359
+ *     #cdef Vector2 GetMousePosition()                         # Get mouse position XY
+ *     @staticmethod
+ *     def get_mouse_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMousePosition()
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("raylib.get_mouse_position", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.get_mouse_position", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_vec);
@@ -37669,29 +37821,32 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_186
   return __pyx_r;
 }
 
-/* "raylib.pyx":2357
- * 
- * #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
- * def get_mouse_delta() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMouseDelta()
+/* "raylib.pyx":2366
+ *     #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
+ *     @staticmethod
+ *     def get_mouse_delta() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMouseDelta()
  */
 
 /* Python wrapper */
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_189get_mouse_delta(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_189get_mouse_delta = {"get_mouse_delta", (PyCFunction)__pyx_pw_6raylib_189get_mouse_delta, METH_NOARGS, 0};
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_189get_mouse_delta(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_7CyMouse_15get_mouse_delta(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_7CyMouse_15get_mouse_delta = {"get_mouse_delta", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_15get_mouse_delta, METH_VARARGS|METH_KEYWORDS, 0};
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_7CyMouse_15get_mouse_delta(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_mouse_delta (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_188get_mouse_delta(__pyx_self);
+  if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
+    __Pyx_RaiseArgtupleInvalid("get_mouse_delta", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return NULL;}
+  if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "get_mouse_delta", 0))) return NULL;
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_14get_mouse_delta();
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_188get_mouse_delta(CYTHON_UNUSED PyObject *__pyx_self) {
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_7CyMouse_14get_mouse_delta(void) {
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_vec = 0;
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -37701,52 +37856,52 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_188
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_mouse_delta", 0);
 
-  /* "raylib.pyx":2358
- * #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
- * def get_mouse_delta() -> raymath.CyVector2:
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)             # <<<<<<<<<<<<<<
- *     vec._vector = GetMouseDelta()
- *     return vec
+  /* "raylib.pyx":2367
+ *     @staticmethod
+ *     def get_mouse_delta() -> raymath.CyVector2:
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)             # <<<<<<<<<<<<<<
+ *         vec._vector = GetMouseDelta()
+ *         return vec
  */
-  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2358, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2367, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 2358, __pyx_L1_error)
+  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 2367, __pyx_L1_error)
   __pyx_v_vec = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2359
- * def get_mouse_delta() -> raymath.CyVector2:
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMouseDelta()             # <<<<<<<<<<<<<<
- *     return vec
- * #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
+  /* "raylib.pyx":2368
+ *     def get_mouse_delta() -> raymath.CyVector2:
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMouseDelta()             # <<<<<<<<<<<<<<
+ *         return vec
+ * 
  */
   __pyx_v_vec->_vector = GetMouseDelta();
 
-  /* "raylib.pyx":2360
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMouseDelta()
- *     return vec             # <<<<<<<<<<<<<<
- * #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
- * def set_mouse_position(int x, int y) -> None:
+  /* "raylib.pyx":2369
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMouseDelta()
+ *         return vec             # <<<<<<<<<<<<<<
+ * 
+ *     #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
   __Pyx_INCREF(((PyObject *)__pyx_v_vec));
   __pyx_r = __pyx_v_vec;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2357
- * 
- * #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
- * def get_mouse_delta() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMouseDelta()
+  /* "raylib.pyx":2366
+ *     #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
+ *     @staticmethod
+ *     def get_mouse_delta() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMouseDelta()
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("raylib.get_mouse_delta", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.get_mouse_delta", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_vec);
@@ -37755,18 +37910,18 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_188
   return __pyx_r;
 }
 
-/* "raylib.pyx":2362
- *     return vec
- * #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
- * def set_mouse_position(int x, int y) -> None:             # <<<<<<<<<<<<<<
- *     SetMousePosition(x, y)
+/* "raylib.pyx":2373
+ *     #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
+ *     @staticmethod
+ *     def set_mouse_position(int x, int y) -> None:             # <<<<<<<<<<<<<<
+ *         SetMousePosition(x, y)
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_191set_mouse_position(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_191set_mouse_position = {"set_mouse_position", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_191set_mouse_position, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_191set_mouse_position(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_7CyMouse_17set_mouse_position(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_7CyMouse_17set_mouse_position = {"set_mouse_position", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_17set_mouse_position, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_7CyMouse_17set_mouse_position(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_x;
   int __pyx_v_y;
   int __pyx_lineno = 0;
@@ -37798,11 +37953,11 @@ static PyObject *__pyx_pw_6raylib_191set_mouse_position(PyObject *__pyx_self, Py
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_y)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_mouse_position", 1, 2, 2, 1); __PYX_ERR(0, 2362, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_mouse_position", 1, 2, 2, 1); __PYX_ERR(0, 2373, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_mouse_position") < 0)) __PYX_ERR(0, 2362, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_mouse_position") < 0)) __PYX_ERR(0, 2373, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -37810,43 +37965,43 @@ static PyObject *__pyx_pw_6raylib_191set_mouse_position(PyObject *__pyx_self, Py
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_x = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_x == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2362, __pyx_L3_error)
-    __pyx_v_y = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_y == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2362, __pyx_L3_error)
+    __pyx_v_x = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_x == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2373, __pyx_L3_error)
+    __pyx_v_y = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_y == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2373, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_mouse_position", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2362, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_mouse_position", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2373, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("raylib.set_mouse_position", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.set_mouse_position", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_190set_mouse_position(__pyx_self, __pyx_v_x, __pyx_v_y);
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_16set_mouse_position(__pyx_v_x, __pyx_v_y);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_190set_mouse_position(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_x, int __pyx_v_y) {
+static PyObject *__pyx_pf_6raylib_7CyMouse_16set_mouse_position(int __pyx_v_x, int __pyx_v_y) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_mouse_position", 0);
 
-  /* "raylib.pyx":2363
- * #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
- * def set_mouse_position(int x, int y) -> None:
- *     SetMousePosition(x, y)             # <<<<<<<<<<<<<<
+  /* "raylib.pyx":2374
+ *     @staticmethod
+ *     def set_mouse_position(int x, int y) -> None:
+ *         SetMousePosition(x, y)             # <<<<<<<<<<<<<<
  * 
- * #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
+ *     #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
  */
   SetMousePosition(__pyx_v_x, __pyx_v_y);
 
-  /* "raylib.pyx":2362
- *     return vec
- * #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
- * def set_mouse_position(int x, int y) -> None:             # <<<<<<<<<<<<<<
- *     SetMousePosition(x, y)
+  /* "raylib.pyx":2373
+ *     #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
+ *     @staticmethod
+ *     def set_mouse_position(int x, int y) -> None:             # <<<<<<<<<<<<<<
+ *         SetMousePosition(x, y)
  * 
  */
 
@@ -37857,18 +38012,18 @@ static PyObject *__pyx_pf_6raylib_190set_mouse_position(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "raylib.pyx":2366
- * 
- * #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
- * def set_mouse_offset(int offset_x, int offset_y) -> None:             # <<<<<<<<<<<<<<
- *     SetMouseOffset(offset_x, offset_y)
+/* "raylib.pyx":2378
+ *     #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
+ *     @staticmethod
+ *     def set_mouse_offset(int offset_x, int offset_y) -> None:             # <<<<<<<<<<<<<<
+ *         SetMouseOffset(offset_x, offset_y)
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_193set_mouse_offset(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_193set_mouse_offset = {"set_mouse_offset", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_193set_mouse_offset, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_193set_mouse_offset(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_7CyMouse_19set_mouse_offset(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_7CyMouse_19set_mouse_offset = {"set_mouse_offset", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_19set_mouse_offset, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_7CyMouse_19set_mouse_offset(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_offset_x;
   int __pyx_v_offset_y;
   int __pyx_lineno = 0;
@@ -37900,11 +38055,11 @@ static PyObject *__pyx_pw_6raylib_193set_mouse_offset(PyObject *__pyx_self, PyOb
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_offset_y)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_mouse_offset", 1, 2, 2, 1); __PYX_ERR(0, 2366, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_mouse_offset", 1, 2, 2, 1); __PYX_ERR(0, 2378, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_mouse_offset") < 0)) __PYX_ERR(0, 2366, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_mouse_offset") < 0)) __PYX_ERR(0, 2378, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -37912,43 +38067,43 @@ static PyObject *__pyx_pw_6raylib_193set_mouse_offset(PyObject *__pyx_self, PyOb
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_offset_x = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_offset_x == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2366, __pyx_L3_error)
-    __pyx_v_offset_y = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_offset_y == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2366, __pyx_L3_error)
+    __pyx_v_offset_x = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_offset_x == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2378, __pyx_L3_error)
+    __pyx_v_offset_y = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_offset_y == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2378, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_mouse_offset", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2366, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_mouse_offset", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2378, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("raylib.set_mouse_offset", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.set_mouse_offset", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_192set_mouse_offset(__pyx_self, __pyx_v_offset_x, __pyx_v_offset_y);
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_18set_mouse_offset(__pyx_v_offset_x, __pyx_v_offset_y);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_192set_mouse_offset(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_offset_x, int __pyx_v_offset_y) {
+static PyObject *__pyx_pf_6raylib_7CyMouse_18set_mouse_offset(int __pyx_v_offset_x, int __pyx_v_offset_y) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_mouse_offset", 0);
 
-  /* "raylib.pyx":2367
- * #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
- * def set_mouse_offset(int offset_x, int offset_y) -> None:
- *     SetMouseOffset(offset_x, offset_y)             # <<<<<<<<<<<<<<
+  /* "raylib.pyx":2379
+ *     @staticmethod
+ *     def set_mouse_offset(int offset_x, int offset_y) -> None:
+ *         SetMouseOffset(offset_x, offset_y)             # <<<<<<<<<<<<<<
  * 
- * #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
+ *     #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
  */
   SetMouseOffset(__pyx_v_offset_x, __pyx_v_offset_y);
 
-  /* "raylib.pyx":2366
- * 
- * #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
- * def set_mouse_offset(int offset_x, int offset_y) -> None:             # <<<<<<<<<<<<<<
- *     SetMouseOffset(offset_x, offset_y)
+  /* "raylib.pyx":2378
+ *     #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
+ *     @staticmethod
+ *     def set_mouse_offset(int offset_x, int offset_y) -> None:             # <<<<<<<<<<<<<<
+ *         SetMouseOffset(offset_x, offset_y)
  * 
  */
 
@@ -37959,18 +38114,18 @@ static PyObject *__pyx_pf_6raylib_192set_mouse_offset(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":2370
- * 
- * #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
- * def set_mouse_scale(float scale_x, float scale_y) -> None:             # <<<<<<<<<<<<<<
- *     SetMouseScale(scale_x, scale_y)
+/* "raylib.pyx":2383
+ *     #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
+ *     @staticmethod
+ *     def set_mouse_scale(float scale_x, float scale_y) -> None:             # <<<<<<<<<<<<<<
+ *         SetMouseScale(scale_x, scale_y)
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_195set_mouse_scale(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_195set_mouse_scale = {"set_mouse_scale", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_195set_mouse_scale, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_195set_mouse_scale(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_7CyMouse_21set_mouse_scale(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_7CyMouse_21set_mouse_scale = {"set_mouse_scale", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_21set_mouse_scale, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_7CyMouse_21set_mouse_scale(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   float __pyx_v_scale_x;
   float __pyx_v_scale_y;
   int __pyx_lineno = 0;
@@ -38002,11 +38157,11 @@ static PyObject *__pyx_pw_6raylib_195set_mouse_scale(PyObject *__pyx_self, PyObj
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_scale_y)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_mouse_scale", 1, 2, 2, 1); __PYX_ERR(0, 2370, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_mouse_scale", 1, 2, 2, 1); __PYX_ERR(0, 2383, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_mouse_scale") < 0)) __PYX_ERR(0, 2370, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_mouse_scale") < 0)) __PYX_ERR(0, 2383, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -38014,43 +38169,43 @@ static PyObject *__pyx_pw_6raylib_195set_mouse_scale(PyObject *__pyx_self, PyObj
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_scale_x = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_scale_x == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 2370, __pyx_L3_error)
-    __pyx_v_scale_y = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_scale_y == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 2370, __pyx_L3_error)
+    __pyx_v_scale_x = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_scale_x == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 2383, __pyx_L3_error)
+    __pyx_v_scale_y = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_scale_y == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 2383, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_mouse_scale", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2370, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_mouse_scale", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2383, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("raylib.set_mouse_scale", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.set_mouse_scale", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_194set_mouse_scale(__pyx_self, __pyx_v_scale_x, __pyx_v_scale_y);
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_20set_mouse_scale(__pyx_v_scale_x, __pyx_v_scale_y);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_194set_mouse_scale(CYTHON_UNUSED PyObject *__pyx_self, float __pyx_v_scale_x, float __pyx_v_scale_y) {
+static PyObject *__pyx_pf_6raylib_7CyMouse_20set_mouse_scale(float __pyx_v_scale_x, float __pyx_v_scale_y) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_mouse_scale", 0);
 
-  /* "raylib.pyx":2371
- * #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
- * def set_mouse_scale(float scale_x, float scale_y) -> None:
- *     SetMouseScale(scale_x, scale_y)             # <<<<<<<<<<<<<<
+  /* "raylib.pyx":2384
+ *     @staticmethod
+ *     def set_mouse_scale(float scale_x, float scale_y) -> None:
+ *         SetMouseScale(scale_x, scale_y)             # <<<<<<<<<<<<<<
  * 
- * #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
+ *     #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
  */
   SetMouseScale(__pyx_v_scale_x, __pyx_v_scale_y);
 
-  /* "raylib.pyx":2370
- * 
- * #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
- * def set_mouse_scale(float scale_x, float scale_y) -> None:             # <<<<<<<<<<<<<<
- *     SetMouseScale(scale_x, scale_y)
+  /* "raylib.pyx":2383
+ *     #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
+ *     @staticmethod
+ *     def set_mouse_scale(float scale_x, float scale_y) -> None:             # <<<<<<<<<<<<<<
+ *         SetMouseScale(scale_x, scale_y)
  * 
  */
 
@@ -38061,29 +38216,32 @@ static PyObject *__pyx_pf_6raylib_194set_mouse_scale(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "raylib.pyx":2374
- * 
- * #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
- * def get_mouse_wheel_move() -> float:             # <<<<<<<<<<<<<<
- *     return GetMouseWheelMove()
+/* "raylib.pyx":2388
+ *     #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
+ *     @staticmethod
+ *     def get_mouse_wheel_move() -> float:             # <<<<<<<<<<<<<<
+ *         return GetMouseWheelMove()
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_197get_mouse_wheel_move(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_197get_mouse_wheel_move = {"get_mouse_wheel_move", (PyCFunction)__pyx_pw_6raylib_197get_mouse_wheel_move, METH_NOARGS, 0};
-static PyObject *__pyx_pw_6raylib_197get_mouse_wheel_move(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_6raylib_7CyMouse_23get_mouse_wheel_move(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_7CyMouse_23get_mouse_wheel_move = {"get_mouse_wheel_move", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_23get_mouse_wheel_move, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_7CyMouse_23get_mouse_wheel_move(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_mouse_wheel_move (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_196get_mouse_wheel_move(__pyx_self);
+  if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
+    __Pyx_RaiseArgtupleInvalid("get_mouse_wheel_move", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return NULL;}
+  if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "get_mouse_wheel_move", 0))) return NULL;
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_22get_mouse_wheel_move();
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_196get_mouse_wheel_move(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_6raylib_7CyMouse_22get_mouse_wheel_move(void) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -38092,32 +38250,32 @@ static PyObject *__pyx_pf_6raylib_196get_mouse_wheel_move(CYTHON_UNUSED PyObject
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_mouse_wheel_move", 0);
 
-  /* "raylib.pyx":2375
- * #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
- * def get_mouse_wheel_move() -> float:
- *     return GetMouseWheelMove()             # <<<<<<<<<<<<<<
+  /* "raylib.pyx":2389
+ *     @staticmethod
+ *     def get_mouse_wheel_move() -> float:
+ *         return GetMouseWheelMove()             # <<<<<<<<<<<<<<
  * 
- * #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
+ *     #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(GetMouseWheelMove()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2375, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(GetMouseWheelMove()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2389, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2374
- * 
- * #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
- * def get_mouse_wheel_move() -> float:             # <<<<<<<<<<<<<<
- *     return GetMouseWheelMove()
+  /* "raylib.pyx":2388
+ *     #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
+ *     @staticmethod
+ *     def get_mouse_wheel_move() -> float:             # <<<<<<<<<<<<<<
+ *         return GetMouseWheelMove()
  * 
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("raylib.get_mouse_wheel_move", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.get_mouse_wheel_move", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -38125,29 +38283,32 @@ static PyObject *__pyx_pf_6raylib_196get_mouse_wheel_move(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "raylib.pyx":2378
- * 
- * #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
- * def get_mouse_wheel_move_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMouseWheelMoveV()
+/* "raylib.pyx":2393
+ *     #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
+ *     @staticmethod
+ *     def get_mouse_wheel_move_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMouseWheelMoveV()
  */
 
 /* Python wrapper */
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_199get_mouse_wheel_move_vector(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_199get_mouse_wheel_move_vector = {"get_mouse_wheel_move_vector", (PyCFunction)__pyx_pw_6raylib_199get_mouse_wheel_move_vector, METH_NOARGS, 0};
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_199get_mouse_wheel_move_vector(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_7CyMouse_25get_mouse_wheel_move_vector(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_7CyMouse_25get_mouse_wheel_move_vector = {"get_mouse_wheel_move_vector", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_25get_mouse_wheel_move_vector, METH_VARARGS|METH_KEYWORDS, 0};
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_7CyMouse_25get_mouse_wheel_move_vector(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_mouse_wheel_move_vector (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_198get_mouse_wheel_move_vector(__pyx_self);
+  if (unlikely(PyTuple_GET_SIZE(__pyx_args) > 0)) {
+    __Pyx_RaiseArgtupleInvalid("get_mouse_wheel_move_vector", 1, 0, 0, PyTuple_GET_SIZE(__pyx_args)); return NULL;}
+  if (unlikely(__pyx_kwds) && unlikely(PyDict_Size(__pyx_kwds) > 0) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "get_mouse_wheel_move_vector", 0))) return NULL;
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_24get_mouse_wheel_move_vector();
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_198get_mouse_wheel_move_vector(CYTHON_UNUSED PyObject *__pyx_self) {
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_7CyMouse_24get_mouse_wheel_move_vector(void) {
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_vec = 0;
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -38157,52 +38318,52 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_198
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_mouse_wheel_move_vector", 0);
 
-  /* "raylib.pyx":2379
- * #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
- * def get_mouse_wheel_move_vector() -> raymath.CyVector2:
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)             # <<<<<<<<<<<<<<
- *     vec._vector = GetMouseWheelMoveV()
- *     return vec
+  /* "raylib.pyx":2394
+ *     @staticmethod
+ *     def get_mouse_wheel_move_vector() -> raymath.CyVector2:
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)             # <<<<<<<<<<<<<<
+ *         vec._vector = GetMouseWheelMoveV()
+ *         return vec
  */
-  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2379, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2394, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 2379, __pyx_L1_error)
+  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 2394, __pyx_L1_error)
   __pyx_v_vec = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2380
- * def get_mouse_wheel_move_vector() -> raymath.CyVector2:
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMouseWheelMoveV()             # <<<<<<<<<<<<<<
- *     return vec
+  /* "raylib.pyx":2395
+ *     def get_mouse_wheel_move_vector() -> raymath.CyVector2:
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMouseWheelMoveV()             # <<<<<<<<<<<<<<
+ *         return vec
  * 
  */
   __pyx_v_vec->_vector = GetMouseWheelMoveV();
 
-  /* "raylib.pyx":2381
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMouseWheelMoveV()
- *     return vec             # <<<<<<<<<<<<<<
+  /* "raylib.pyx":2396
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMouseWheelMoveV()
+ *         return vec             # <<<<<<<<<<<<<<
  * 
- * #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
+ *     #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
  */
   __Pyx_XDECREF(((PyObject *)__pyx_r));
   __Pyx_INCREF(((PyObject *)__pyx_v_vec));
   __pyx_r = __pyx_v_vec;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2378
- * 
- * #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
- * def get_mouse_wheel_move_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMouseWheelMoveV()
+  /* "raylib.pyx":2393
+ *     #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
+ *     @staticmethod
+ *     def get_mouse_wheel_move_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMouseWheelMoveV()
  */
 
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("raylib.get_mouse_wheel_move_vector", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.get_mouse_wheel_move_vector", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF((PyObject *)__pyx_v_vec);
@@ -38211,18 +38372,18 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_198
   return __pyx_r;
 }
 
-/* "raylib.pyx":2384
- * 
- * #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
- * def set_mouse_cursor(int cursor) -> None:             # <<<<<<<<<<<<<<
- *     SetMouseCursor(cursor)
+/* "raylib.pyx":2400
+ *     #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
+ *     @staticmethod
+ *     def set_mouse_cursor(int cursor) -> None:             # <<<<<<<<<<<<<<
+ *         SetMouseCursor(cursor)
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_201set_mouse_cursor(PyObject *__pyx_self, PyObject *__pyx_arg_cursor); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_201set_mouse_cursor = {"set_mouse_cursor", (PyCFunction)__pyx_pw_6raylib_201set_mouse_cursor, METH_O, 0};
-static PyObject *__pyx_pw_6raylib_201set_mouse_cursor(PyObject *__pyx_self, PyObject *__pyx_arg_cursor) {
+static PyObject *__pyx_pw_6raylib_7CyMouse_27set_mouse_cursor(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_7CyMouse_27set_mouse_cursor = {"set_mouse_cursor", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_27set_mouse_cursor, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_7CyMouse_27set_mouse_cursor(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   int __pyx_v_cursor;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -38230,41 +38391,68 @@ static PyObject *__pyx_pw_6raylib_201set_mouse_cursor(PyObject *__pyx_self, PyOb
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_mouse_cursor (wrapper)", 0);
-  assert(__pyx_arg_cursor); {
-    __pyx_v_cursor = __Pyx_PyInt_As_int(__pyx_arg_cursor); if (unlikely((__pyx_v_cursor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2384, __pyx_L3_error)
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_cursor,0};
+    PyObject* values[1] = {0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_cursor)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_mouse_cursor") < 0)) __PYX_ERR(0, 2400, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+    }
+    __pyx_v_cursor = __Pyx_PyInt_As_int(values[0]); if (unlikely((__pyx_v_cursor == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2400, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("set_mouse_cursor", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 2400, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("raylib.set_mouse_cursor", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("raylib.CyMouse.set_mouse_cursor", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_200set_mouse_cursor(__pyx_self, ((int)__pyx_v_cursor));
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_26set_mouse_cursor(__pyx_v_cursor);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_200set_mouse_cursor(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_cursor) {
+static PyObject *__pyx_pf_6raylib_7CyMouse_26set_mouse_cursor(int __pyx_v_cursor) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_mouse_cursor", 0);
 
-  /* "raylib.pyx":2385
- * #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
- * def set_mouse_cursor(int cursor) -> None:
- *     SetMouseCursor(cursor)             # <<<<<<<<<<<<<<
+  /* "raylib.pyx":2401
+ *     @staticmethod
+ *     def set_mouse_cursor(int cursor) -> None:
+ *         SetMouseCursor(cursor)             # <<<<<<<<<<<<<<
  * 
- * 
+ *     @property
  */
   SetMouseCursor(__pyx_v_cursor);
 
-  /* "raylib.pyx":2384
- * 
- * #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
- * def set_mouse_cursor(int cursor) -> None:             # <<<<<<<<<<<<<<
- *     SetMouseCursor(cursor)
+  /* "raylib.pyx":2400
+ *     #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
+ *     @staticmethod
+ *     def set_mouse_cursor(int cursor) -> None:             # <<<<<<<<<<<<<<
+ *         SetMouseCursor(cursor)
  * 
  */
 
@@ -38275,7 +38463,735 @@ static PyObject *__pyx_pf_6raylib_200set_mouse_cursor(CYTHON_UNUSED PyObject *__
   return __pyx_r;
 }
 
-/* "raylib.pyx":2391
+/* "raylib.pyx":2404
+ * 
+ *     @property
+ *     def MOUSE_BUTTON_LEFT(self) -> int:             # <<<<<<<<<<<<<<
+ *         return MouseButton.MOUSE_BUTTON_LEFT
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_7CyMouse_17MOUSE_BUTTON_LEFT_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_6raylib_7CyMouse_17MOUSE_BUTTON_LEFT_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_17MOUSE_BUTTON_LEFT___get__(((struct __pyx_obj_6raylib_CyMouse *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_7CyMouse_17MOUSE_BUTTON_LEFT___get__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyMouse *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__get__", 0);
+
+  /* "raylib.pyx":2405
+ *     @property
+ *     def MOUSE_BUTTON_LEFT(self) -> int:
+ *         return MouseButton.MOUSE_BUTTON_LEFT             # <<<<<<<<<<<<<<
+ * 
+ *     @property
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_MouseButton(MOUSE_BUTTON_LEFT); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2405, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "raylib.pyx":2404
+ * 
+ *     @property
+ *     def MOUSE_BUTTON_LEFT(self) -> int:             # <<<<<<<<<<<<<<
+ *         return MouseButton.MOUSE_BUTTON_LEFT
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("raylib.CyMouse.MOUSE_BUTTON_LEFT.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":2408
+ * 
+ *     @property
+ *     def MOUSE_BUTTON_RIGHT(self) -> int:             # <<<<<<<<<<<<<<
+ *         return MouseButton.MOUSE_BUTTON_RIGHT
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_7CyMouse_18MOUSE_BUTTON_RIGHT_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_6raylib_7CyMouse_18MOUSE_BUTTON_RIGHT_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_18MOUSE_BUTTON_RIGHT___get__(((struct __pyx_obj_6raylib_CyMouse *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_7CyMouse_18MOUSE_BUTTON_RIGHT___get__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyMouse *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__get__", 0);
+
+  /* "raylib.pyx":2409
+ *     @property
+ *     def MOUSE_BUTTON_RIGHT(self) -> int:
+ *         return MouseButton.MOUSE_BUTTON_RIGHT             # <<<<<<<<<<<<<<
+ * 
+ *     @property
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_MouseButton(MOUSE_BUTTON_RIGHT); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2409, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "raylib.pyx":2408
+ * 
+ *     @property
+ *     def MOUSE_BUTTON_RIGHT(self) -> int:             # <<<<<<<<<<<<<<
+ *         return MouseButton.MOUSE_BUTTON_RIGHT
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("raylib.CyMouse.MOUSE_BUTTON_RIGHT.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":2412
+ * 
+ *     @property
+ *     def MOUSE_BUTTON_MIDDLE(self) -> int:             # <<<<<<<<<<<<<<
+ *         return MouseButton.MOUSE_BUTTON_MIDDLE
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_7CyMouse_19MOUSE_BUTTON_MIDDLE_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_6raylib_7CyMouse_19MOUSE_BUTTON_MIDDLE_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_19MOUSE_BUTTON_MIDDLE___get__(((struct __pyx_obj_6raylib_CyMouse *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_7CyMouse_19MOUSE_BUTTON_MIDDLE___get__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyMouse *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__get__", 0);
+
+  /* "raylib.pyx":2413
+ *     @property
+ *     def MOUSE_BUTTON_MIDDLE(self) -> int:
+ *         return MouseButton.MOUSE_BUTTON_MIDDLE             # <<<<<<<<<<<<<<
+ * 
+ *     @property
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_MouseButton(MOUSE_BUTTON_MIDDLE); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2413, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "raylib.pyx":2412
+ * 
+ *     @property
+ *     def MOUSE_BUTTON_MIDDLE(self) -> int:             # <<<<<<<<<<<<<<
+ *         return MouseButton.MOUSE_BUTTON_MIDDLE
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("raylib.CyMouse.MOUSE_BUTTON_MIDDLE.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":2416
+ * 
+ *     @property
+ *     def MOUSE_BUTTON_SIDE(self) -> int:             # <<<<<<<<<<<<<<
+ *         return MouseButton.MOUSE_BUTTON_SIDE
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_7CyMouse_17MOUSE_BUTTON_SIDE_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_6raylib_7CyMouse_17MOUSE_BUTTON_SIDE_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_17MOUSE_BUTTON_SIDE___get__(((struct __pyx_obj_6raylib_CyMouse *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_7CyMouse_17MOUSE_BUTTON_SIDE___get__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyMouse *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__get__", 0);
+
+  /* "raylib.pyx":2417
+ *     @property
+ *     def MOUSE_BUTTON_SIDE(self) -> int:
+ *         return MouseButton.MOUSE_BUTTON_SIDE             # <<<<<<<<<<<<<<
+ * 
+ *     @property
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_MouseButton(MOUSE_BUTTON_SIDE); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2417, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "raylib.pyx":2416
+ * 
+ *     @property
+ *     def MOUSE_BUTTON_SIDE(self) -> int:             # <<<<<<<<<<<<<<
+ *         return MouseButton.MOUSE_BUTTON_SIDE
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("raylib.CyMouse.MOUSE_BUTTON_SIDE.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":2420
+ * 
+ *     @property
+ *     def MOUSE_BUTTON_EXTRA(self) -> int:             # <<<<<<<<<<<<<<
+ *         return MouseButton.MOUSE_BUTTON_EXTRA
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_7CyMouse_18MOUSE_BUTTON_EXTRA_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_6raylib_7CyMouse_18MOUSE_BUTTON_EXTRA_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_18MOUSE_BUTTON_EXTRA___get__(((struct __pyx_obj_6raylib_CyMouse *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_7CyMouse_18MOUSE_BUTTON_EXTRA___get__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyMouse *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__get__", 0);
+
+  /* "raylib.pyx":2421
+ *     @property
+ *     def MOUSE_BUTTON_EXTRA(self) -> int:
+ *         return MouseButton.MOUSE_BUTTON_EXTRA             # <<<<<<<<<<<<<<
+ * 
+ *     @property
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_MouseButton(MOUSE_BUTTON_EXTRA); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2421, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "raylib.pyx":2420
+ * 
+ *     @property
+ *     def MOUSE_BUTTON_EXTRA(self) -> int:             # <<<<<<<<<<<<<<
+ *         return MouseButton.MOUSE_BUTTON_EXTRA
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("raylib.CyMouse.MOUSE_BUTTON_EXTRA.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":2424
+ * 
+ *     @property
+ *     def MOUSE_BUTTON_FORWARD(self) -> int:             # <<<<<<<<<<<<<<
+ *         return MouseButton.MOUSE_BUTTON_FORWARD
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_7CyMouse_20MOUSE_BUTTON_FORWARD_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_6raylib_7CyMouse_20MOUSE_BUTTON_FORWARD_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_20MOUSE_BUTTON_FORWARD___get__(((struct __pyx_obj_6raylib_CyMouse *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_7CyMouse_20MOUSE_BUTTON_FORWARD___get__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyMouse *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__get__", 0);
+
+  /* "raylib.pyx":2425
+ *     @property
+ *     def MOUSE_BUTTON_FORWARD(self) -> int:
+ *         return MouseButton.MOUSE_BUTTON_FORWARD             # <<<<<<<<<<<<<<
+ * 
+ *     @property
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_MouseButton(MOUSE_BUTTON_FORWARD); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2425, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "raylib.pyx":2424
+ * 
+ *     @property
+ *     def MOUSE_BUTTON_FORWARD(self) -> int:             # <<<<<<<<<<<<<<
+ *         return MouseButton.MOUSE_BUTTON_FORWARD
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("raylib.CyMouse.MOUSE_BUTTON_FORWARD.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":2428
+ * 
+ *     @property
+ *     def MOUSE_BUTTON_BACK(self) -> int:             # <<<<<<<<<<<<<<
+ *         return MouseButton.MOUSE_BUTTON_BACK
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_7CyMouse_17MOUSE_BUTTON_BACK_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_6raylib_7CyMouse_17MOUSE_BUTTON_BACK_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_17MOUSE_BUTTON_BACK___get__(((struct __pyx_obj_6raylib_CyMouse *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_7CyMouse_17MOUSE_BUTTON_BACK___get__(CYTHON_UNUSED struct __pyx_obj_6raylib_CyMouse *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__get__", 0);
+
+  /* "raylib.pyx":2429
+ *     @property
+ *     def MOUSE_BUTTON_BACK(self) -> int:
+ *         return MouseButton.MOUSE_BUTTON_BACK             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_MouseButton(MOUSE_BUTTON_BACK); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2429, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "raylib.pyx":2428
+ * 
+ *     @property
+ *     def MOUSE_BUTTON_BACK(self) -> int:             # <<<<<<<<<<<<<<
+ *         return MouseButton.MOUSE_BUTTON_BACK
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("raylib.CyMouse.MOUSE_BUTTON_BACK.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "(tree fragment)":1
+ * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
+ *     cdef tuple state
+ *     cdef object _dict
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_7CyMouse_29__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_6raylib_7CyMouse_29__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_28__reduce_cython__(((struct __pyx_obj_6raylib_CyMouse *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_7CyMouse_28__reduce_cython__(struct __pyx_obj_6raylib_CyMouse *__pyx_v_self) {
+  PyObject *__pyx_v_state = 0;
+  PyObject *__pyx_v__dict = 0;
+  int __pyx_v_use_setstate;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_t_2;
+  int __pyx_t_3;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__reduce_cython__", 0);
+
+  /* "(tree fragment)":5
+ *     cdef object _dict
+ *     cdef bint use_setstate
+ *     state = ()             # <<<<<<<<<<<<<<
+ *     _dict = getattr(self, '__dict__', None)
+ *     if _dict is not None:
+ */
+  __Pyx_INCREF(__pyx_empty_tuple);
+  __pyx_v_state = __pyx_empty_tuple;
+
+  /* "(tree fragment)":6
+ *     cdef bint use_setstate
+ *     state = ()
+ *     _dict = getattr(self, '__dict__', None)             # <<<<<<<<<<<<<<
+ *     if _dict is not None:
+ *         state += (_dict,)
+ */
+  __pyx_t_1 = __Pyx_GetAttr3(((PyObject *)__pyx_v_self), __pyx_n_s_dict, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 6, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_v__dict = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "(tree fragment)":7
+ *     state = ()
+ *     _dict = getattr(self, '__dict__', None)
+ *     if _dict is not None:             # <<<<<<<<<<<<<<
+ *         state += (_dict,)
+ *         use_setstate = True
+ */
+  __pyx_t_2 = (__pyx_v__dict != Py_None);
+  __pyx_t_3 = (__pyx_t_2 != 0);
+  if (__pyx_t_3) {
+
+    /* "(tree fragment)":8
+ *     _dict = getattr(self, '__dict__', None)
+ *     if _dict is not None:
+ *         state += (_dict,)             # <<<<<<<<<<<<<<
+ *         use_setstate = True
+ *     else:
+ */
+    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 8, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(__pyx_v__dict);
+    __Pyx_GIVEREF(__pyx_v__dict);
+    PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v__dict);
+    __pyx_t_4 = PyNumber_InPlaceAdd(__pyx_v_state, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 8, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF_SET(__pyx_v_state, ((PyObject*)__pyx_t_4));
+    __pyx_t_4 = 0;
+
+    /* "(tree fragment)":9
+ *     if _dict is not None:
+ *         state += (_dict,)
+ *         use_setstate = True             # <<<<<<<<<<<<<<
+ *     else:
+ *         use_setstate = False
+ */
+    __pyx_v_use_setstate = 1;
+
+    /* "(tree fragment)":7
+ *     state = ()
+ *     _dict = getattr(self, '__dict__', None)
+ *     if _dict is not None:             # <<<<<<<<<<<<<<
+ *         state += (_dict,)
+ *         use_setstate = True
+ */
+    goto __pyx_L3;
+  }
+
+  /* "(tree fragment)":11
+ *         use_setstate = True
+ *     else:
+ *         use_setstate = False             # <<<<<<<<<<<<<<
+ *     if use_setstate:
+ *         return __pyx_unpickle_CyMouse, (type(self), 0xd41d8cd, None), state
+ */
+  /*else*/ {
+    __pyx_v_use_setstate = 0;
+  }
+  __pyx_L3:;
+
+  /* "(tree fragment)":12
+ *     else:
+ *         use_setstate = False
+ *     if use_setstate:             # <<<<<<<<<<<<<<
+ *         return __pyx_unpickle_CyMouse, (type(self), 0xd41d8cd, None), state
+ *     else:
+ */
+  __pyx_t_3 = (__pyx_v_use_setstate != 0);
+  if (__pyx_t_3) {
+
+    /* "(tree fragment)":13
+ *         use_setstate = False
+ *     if use_setstate:
+ *         return __pyx_unpickle_CyMouse, (type(self), 0xd41d8cd, None), state             # <<<<<<<<<<<<<<
+ *     else:
+ *         return __pyx_unpickle_CyMouse, (type(self), 0xd41d8cd, state)
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_pyx_unpickle_CyMouse); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
+    __Pyx_GIVEREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
+    PyTuple_SET_ITEM(__pyx_t_1, 0, ((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
+    __Pyx_INCREF(__pyx_int_222419149);
+    __Pyx_GIVEREF(__pyx_int_222419149);
+    PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_int_222419149);
+    __Pyx_INCREF(Py_None);
+    __Pyx_GIVEREF(Py_None);
+    PyTuple_SET_ITEM(__pyx_t_1, 2, Py_None);
+    __pyx_t_5 = PyTuple_New(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_GIVEREF(__pyx_t_4);
+    PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4);
+    __Pyx_GIVEREF(__pyx_t_1);
+    PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_1);
+    __Pyx_INCREF(__pyx_v_state);
+    __Pyx_GIVEREF(__pyx_v_state);
+    PyTuple_SET_ITEM(__pyx_t_5, 2, __pyx_v_state);
+    __pyx_t_4 = 0;
+    __pyx_t_1 = 0;
+    __pyx_r = __pyx_t_5;
+    __pyx_t_5 = 0;
+    goto __pyx_L0;
+
+    /* "(tree fragment)":12
+ *     else:
+ *         use_setstate = False
+ *     if use_setstate:             # <<<<<<<<<<<<<<
+ *         return __pyx_unpickle_CyMouse, (type(self), 0xd41d8cd, None), state
+ *     else:
+ */
+  }
+
+  /* "(tree fragment)":15
+ *         return __pyx_unpickle_CyMouse, (type(self), 0xd41d8cd, None), state
+ *     else:
+ *         return __pyx_unpickle_CyMouse, (type(self), 0xd41d8cd, state)             # <<<<<<<<<<<<<<
+ * def __setstate_cython__(self, __pyx_state):
+ *     __pyx_unpickle_CyMouse__set_state(self, __pyx_state)
+ */
+  /*else*/ {
+    __Pyx_XDECREF(__pyx_r);
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pyx_unpickle_CyMouse); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 15, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 15, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
+    __Pyx_GIVEREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
+    PyTuple_SET_ITEM(__pyx_t_1, 0, ((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
+    __Pyx_INCREF(__pyx_int_222419149);
+    __Pyx_GIVEREF(__pyx_int_222419149);
+    PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_int_222419149);
+    __Pyx_INCREF(__pyx_v_state);
+    __Pyx_GIVEREF(__pyx_v_state);
+    PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_v_state);
+    __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 15, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_GIVEREF(__pyx_t_5);
+    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_5);
+    __Pyx_GIVEREF(__pyx_t_1);
+    PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_1);
+    __pyx_t_5 = 0;
+    __pyx_t_1 = 0;
+    __pyx_r = __pyx_t_4;
+    __pyx_t_4 = 0;
+    goto __pyx_L0;
+  }
+
+  /* "(tree fragment)":1
+ * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
+ *     cdef tuple state
+ *     cdef object _dict
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("raylib.CyMouse.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_state);
+  __Pyx_XDECREF(__pyx_v__dict);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "(tree fragment)":16
+ *     else:
+ *         return __pyx_unpickle_CyMouse, (type(self), 0xd41d8cd, state)
+ * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
+ *     __pyx_unpickle_CyMouse__set_state(self, __pyx_state)
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_7CyMouse_31__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static PyObject *__pyx_pw_6raylib_7CyMouse_31__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6raylib_7CyMouse_30__setstate_cython__(((struct __pyx_obj_6raylib_CyMouse *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_7CyMouse_30__setstate_cython__(struct __pyx_obj_6raylib_CyMouse *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__setstate_cython__", 0);
+
+  /* "(tree fragment)":17
+ *         return __pyx_unpickle_CyMouse, (type(self), 0xd41d8cd, state)
+ * def __setstate_cython__(self, __pyx_state):
+ *     __pyx_unpickle_CyMouse__set_state(self, __pyx_state)             # <<<<<<<<<<<<<<
+ */
+  if (!(likely(PyTuple_CheckExact(__pyx_v___pyx_state))||((__pyx_v___pyx_state) == Py_None)||((void)PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "tuple", Py_TYPE(__pyx_v___pyx_state)->tp_name), 0))) __PYX_ERR(1, 17, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_6raylib___pyx_unpickle_CyMouse__set_state(__pyx_v_self, ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 17, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "(tree fragment)":16
+ *     else:
+ *         return __pyx_unpickle_CyMouse, (type(self), 0xd41d8cd, state)
+ * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
+ *     __pyx_unpickle_CyMouse__set_state(self, __pyx_state)
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("raylib.CyMouse.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "raylib.pyx":2435
  * 
  * #cdef int GetTouchX()                                    # Get touch position X for touch point 0 (relative to screen size)
  * def get_touch_x() -> int:             # <<<<<<<<<<<<<<
@@ -38284,20 +39200,20 @@ static PyObject *__pyx_pf_6raylib_200set_mouse_cursor(CYTHON_UNUSED PyObject *__
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_203get_touch_x(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_203get_touch_x = {"get_touch_x", (PyCFunction)__pyx_pw_6raylib_203get_touch_x, METH_NOARGS, 0};
-static PyObject *__pyx_pw_6raylib_203get_touch_x(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_6raylib_175get_touch_x(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_175get_touch_x = {"get_touch_x", (PyCFunction)__pyx_pw_6raylib_175get_touch_x, METH_NOARGS, 0};
+static PyObject *__pyx_pw_6raylib_175get_touch_x(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_touch_x (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_202get_touch_x(__pyx_self);
+  __pyx_r = __pyx_pf_6raylib_174get_touch_x(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_202get_touch_x(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_6raylib_174get_touch_x(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -38306,7 +39222,7 @@ static PyObject *__pyx_pf_6raylib_202get_touch_x(CYTHON_UNUSED PyObject *__pyx_s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_touch_x", 0);
 
-  /* "raylib.pyx":2392
+  /* "raylib.pyx":2436
  * #cdef int GetTouchX()                                    # Get touch position X for touch point 0 (relative to screen size)
  * def get_touch_x() -> int:
  *     return GetTouchX()             # <<<<<<<<<<<<<<
@@ -38314,13 +39230,13 @@ static PyObject *__pyx_pf_6raylib_202get_touch_x(CYTHON_UNUSED PyObject *__pyx_s
  * def get_touch_y() -> int:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetTouchX()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2392, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetTouchX()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2436, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2391
+  /* "raylib.pyx":2435
  * 
  * #cdef int GetTouchX()                                    # Get touch position X for touch point 0 (relative to screen size)
  * def get_touch_x() -> int:             # <<<<<<<<<<<<<<
@@ -38339,7 +39255,7 @@ static PyObject *__pyx_pf_6raylib_202get_touch_x(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "raylib.pyx":2394
+/* "raylib.pyx":2438
  *     return GetTouchX()
  * #cdef int GetTouchY()                                    # Get touch position Y for touch point 0 (relative to screen size)
  * def get_touch_y() -> int:             # <<<<<<<<<<<<<<
@@ -38348,20 +39264,20 @@ static PyObject *__pyx_pf_6raylib_202get_touch_x(CYTHON_UNUSED PyObject *__pyx_s
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_205get_touch_y(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_205get_touch_y = {"get_touch_y", (PyCFunction)__pyx_pw_6raylib_205get_touch_y, METH_NOARGS, 0};
-static PyObject *__pyx_pw_6raylib_205get_touch_y(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_6raylib_177get_touch_y(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_177get_touch_y = {"get_touch_y", (PyCFunction)__pyx_pw_6raylib_177get_touch_y, METH_NOARGS, 0};
+static PyObject *__pyx_pw_6raylib_177get_touch_y(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_touch_y (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_204get_touch_y(__pyx_self);
+  __pyx_r = __pyx_pf_6raylib_176get_touch_y(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_204get_touch_y(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_6raylib_176get_touch_y(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -38370,7 +39286,7 @@ static PyObject *__pyx_pf_6raylib_204get_touch_y(CYTHON_UNUSED PyObject *__pyx_s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_touch_y", 0);
 
-  /* "raylib.pyx":2395
+  /* "raylib.pyx":2439
  * #cdef int GetTouchY()                                    # Get touch position Y for touch point 0 (relative to screen size)
  * def get_touch_y() -> int:
  *     return GetTouchY()             # <<<<<<<<<<<<<<
@@ -38378,13 +39294,13 @@ static PyObject *__pyx_pf_6raylib_204get_touch_y(CYTHON_UNUSED PyObject *__pyx_s
  * def get_touch_position(int index) -> raymath.CyVector2:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetTouchY()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2395, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetTouchY()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2439, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2394
+  /* "raylib.pyx":2438
  *     return GetTouchX()
  * #cdef int GetTouchY()                                    # Get touch position Y for touch point 0 (relative to screen size)
  * def get_touch_y() -> int:             # <<<<<<<<<<<<<<
@@ -38403,7 +39319,7 @@ static PyObject *__pyx_pf_6raylib_204get_touch_y(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "raylib.pyx":2397
+/* "raylib.pyx":2441
  *     return GetTouchY()
  * #cdef Vector2 GetTouchPosition(int index)                    # Get touch position XY for a touch point index (relative to screen size)
  * def get_touch_position(int index) -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -38412,9 +39328,9 @@ static PyObject *__pyx_pf_6raylib_204get_touch_y(CYTHON_UNUSED PyObject *__pyx_s
  */
 
 /* Python wrapper */
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_207get_touch_position(PyObject *__pyx_self, PyObject *__pyx_arg_index); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_207get_touch_position = {"get_touch_position", (PyCFunction)__pyx_pw_6raylib_207get_touch_position, METH_O, 0};
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_207get_touch_position(PyObject *__pyx_self, PyObject *__pyx_arg_index) {
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_179get_touch_position(PyObject *__pyx_self, PyObject *__pyx_arg_index); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_179get_touch_position = {"get_touch_position", (PyCFunction)__pyx_pw_6raylib_179get_touch_position, METH_O, 0};
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_179get_touch_position(PyObject *__pyx_self, PyObject *__pyx_arg_index) {
   int __pyx_v_index;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -38423,7 +39339,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_207
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_touch_position (wrapper)", 0);
   assert(__pyx_arg_index); {
-    __pyx_v_index = __Pyx_PyInt_As_int(__pyx_arg_index); if (unlikely((__pyx_v_index == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2397, __pyx_L3_error)
+    __pyx_v_index = __Pyx_PyInt_As_int(__pyx_arg_index); if (unlikely((__pyx_v_index == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2441, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -38431,14 +39347,14 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_207
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_206get_touch_position(__pyx_self, ((int)__pyx_v_index));
+  __pyx_r = __pyx_pf_6raylib_178get_touch_position(__pyx_self, ((int)__pyx_v_index));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_206get_touch_position(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_index) {
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_178get_touch_position(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_index) {
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_vec = 0;
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -38450,14 +39366,14 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_206
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_touch_position", 0);
 
-  /* "raylib.pyx":2398
+  /* "raylib.pyx":2442
  * #cdef Vector2 GetTouchPosition(int index)                    # Get touch position XY for a touch point index (relative to screen size)
  * def get_touch_position(int index) -> raymath.CyVector2:
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__init__(raymath.CyVector2)             # <<<<<<<<<<<<<<
  *     vec._vector = GetTouchPosition(index)
  *     return vec
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2398, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_n_s_init); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2442, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -38471,14 +39387,14 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_206
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, ((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2)) : __Pyx_PyObject_CallOneArg(__pyx_t_2, ((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2));
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2398, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2442, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2))))) __PYX_ERR(0, 2398, __pyx_L1_error)
+  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2))))) __PYX_ERR(0, 2442, __pyx_L1_error)
   __pyx_v_vec = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2399
+  /* "raylib.pyx":2443
  * def get_touch_position(int index) -> raymath.CyVector2:
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__init__(raymath.CyVector2)
  *     vec._vector = GetTouchPosition(index)             # <<<<<<<<<<<<<<
@@ -38487,7 +39403,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_206
  */
   __pyx_v_vec->_vector = GetTouchPosition(__pyx_v_index);
 
-  /* "raylib.pyx":2400
+  /* "raylib.pyx":2444
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__init__(raymath.CyVector2)
  *     vec._vector = GetTouchPosition(index)
  *     return vec             # <<<<<<<<<<<<<<
@@ -38499,7 +39415,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_206
   __pyx_r = __pyx_v_vec;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2397
+  /* "raylib.pyx":2441
  *     return GetTouchY()
  * #cdef Vector2 GetTouchPosition(int index)                    # Get touch position XY for a touch point index (relative to screen size)
  * def get_touch_position(int index) -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -38521,7 +39437,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_206
   return __pyx_r;
 }
 
-/* "raylib.pyx":2403
+/* "raylib.pyx":2447
  * 
  * #cdef int GetTouchPointId(int index)                         # Get touch point identifier for given index
  * def get_touch_point_id(int index) -> int:             # <<<<<<<<<<<<<<
@@ -38530,9 +39446,9 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_206
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_209get_touch_point_id(PyObject *__pyx_self, PyObject *__pyx_arg_index); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_209get_touch_point_id = {"get_touch_point_id", (PyCFunction)__pyx_pw_6raylib_209get_touch_point_id, METH_O, 0};
-static PyObject *__pyx_pw_6raylib_209get_touch_point_id(PyObject *__pyx_self, PyObject *__pyx_arg_index) {
+static PyObject *__pyx_pw_6raylib_181get_touch_point_id(PyObject *__pyx_self, PyObject *__pyx_arg_index); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_181get_touch_point_id = {"get_touch_point_id", (PyCFunction)__pyx_pw_6raylib_181get_touch_point_id, METH_O, 0};
+static PyObject *__pyx_pw_6raylib_181get_touch_point_id(PyObject *__pyx_self, PyObject *__pyx_arg_index) {
   int __pyx_v_index;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -38541,7 +39457,7 @@ static PyObject *__pyx_pw_6raylib_209get_touch_point_id(PyObject *__pyx_self, Py
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_touch_point_id (wrapper)", 0);
   assert(__pyx_arg_index); {
-    __pyx_v_index = __Pyx_PyInt_As_int(__pyx_arg_index); if (unlikely((__pyx_v_index == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2403, __pyx_L3_error)
+    __pyx_v_index = __Pyx_PyInt_As_int(__pyx_arg_index); if (unlikely((__pyx_v_index == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2447, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -38549,14 +39465,14 @@ static PyObject *__pyx_pw_6raylib_209get_touch_point_id(PyObject *__pyx_self, Py
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_208get_touch_point_id(__pyx_self, ((int)__pyx_v_index));
+  __pyx_r = __pyx_pf_6raylib_180get_touch_point_id(__pyx_self, ((int)__pyx_v_index));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_208get_touch_point_id(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_index) {
+static PyObject *__pyx_pf_6raylib_180get_touch_point_id(CYTHON_UNUSED PyObject *__pyx_self, int __pyx_v_index) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -38565,7 +39481,7 @@ static PyObject *__pyx_pf_6raylib_208get_touch_point_id(CYTHON_UNUSED PyObject *
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_touch_point_id", 0);
 
-  /* "raylib.pyx":2404
+  /* "raylib.pyx":2448
  * #cdef int GetTouchPointId(int index)                         # Get touch point identifier for given index
  * def get_touch_point_id(int index) -> int:
  *     return GetTouchPointId(index)             # <<<<<<<<<<<<<<
@@ -38573,13 +39489,13 @@ static PyObject *__pyx_pf_6raylib_208get_touch_point_id(CYTHON_UNUSED PyObject *
  * #cdef int GetTouchPointCount()                           # Get number of touch points
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetTouchPointId(__pyx_v_index)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2404, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetTouchPointId(__pyx_v_index)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2448, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2403
+  /* "raylib.pyx":2447
  * 
  * #cdef int GetTouchPointId(int index)                         # Get touch point identifier for given index
  * def get_touch_point_id(int index) -> int:             # <<<<<<<<<<<<<<
@@ -38598,7 +39514,7 @@ static PyObject *__pyx_pf_6raylib_208get_touch_point_id(CYTHON_UNUSED PyObject *
   return __pyx_r;
 }
 
-/* "raylib.pyx":2407
+/* "raylib.pyx":2451
  * 
  * #cdef int GetTouchPointCount()                           # Get number of touch points
  * def get_touch_point_count() -> int:             # <<<<<<<<<<<<<<
@@ -38607,20 +39523,20 @@ static PyObject *__pyx_pf_6raylib_208get_touch_point_id(CYTHON_UNUSED PyObject *
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_211get_touch_point_count(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_211get_touch_point_count = {"get_touch_point_count", (PyCFunction)__pyx_pw_6raylib_211get_touch_point_count, METH_NOARGS, 0};
-static PyObject *__pyx_pw_6raylib_211get_touch_point_count(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_6raylib_183get_touch_point_count(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_183get_touch_point_count = {"get_touch_point_count", (PyCFunction)__pyx_pw_6raylib_183get_touch_point_count, METH_NOARGS, 0};
+static PyObject *__pyx_pw_6raylib_183get_touch_point_count(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_touch_point_count (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_210get_touch_point_count(__pyx_self);
+  __pyx_r = __pyx_pf_6raylib_182get_touch_point_count(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_210get_touch_point_count(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_6raylib_182get_touch_point_count(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -38631,7 +39547,7 @@ static PyObject *__pyx_pf_6raylib_210get_touch_point_count(CYTHON_UNUSED PyObjec
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_touch_point_count", 0);
 
-  /* "raylib.pyx":2408
+  /* "raylib.pyx":2452
  * #cdef int GetTouchPointCount()                           # Get number of touch points
  * def get_touch_point_count() -> int:
  *     return get_touch_point_count()             # <<<<<<<<<<<<<<
@@ -38639,7 +39555,7 @@ static PyObject *__pyx_pf_6raylib_210get_touch_point_count(CYTHON_UNUSED PyObjec
  * ############ Gesture #############
  */
   __Pyx_XDECREF(__pyx_r);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_get_touch_point_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2408, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_get_touch_point_count); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2452, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -38653,14 +39569,14 @@ static PyObject *__pyx_pf_6raylib_210get_touch_point_count(CYTHON_UNUSED PyObjec
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2408, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2452, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2407
+  /* "raylib.pyx":2451
  * 
  * #cdef int GetTouchPointCount()                           # Get number of touch points
  * def get_touch_point_count() -> int:             # <<<<<<<<<<<<<<
@@ -38681,7 +39597,7 @@ static PyObject *__pyx_pf_6raylib_210get_touch_point_count(CYTHON_UNUSED PyObjec
   return __pyx_r;
 }
 
-/* "raylib.pyx":2413
+/* "raylib.pyx":2457
  * 
  * #cdef void SetGesturesEnabled(unsigned int flags)      # Enable a set of gestures using flags
  * def set_gesture_enabled(unsigned int flags) -> None:             # <<<<<<<<<<<<<<
@@ -38690,9 +39606,9 @@ static PyObject *__pyx_pf_6raylib_210get_touch_point_count(CYTHON_UNUSED PyObjec
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_213set_gesture_enabled(PyObject *__pyx_self, PyObject *__pyx_arg_flags); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_213set_gesture_enabled = {"set_gesture_enabled", (PyCFunction)__pyx_pw_6raylib_213set_gesture_enabled, METH_O, 0};
-static PyObject *__pyx_pw_6raylib_213set_gesture_enabled(PyObject *__pyx_self, PyObject *__pyx_arg_flags) {
+static PyObject *__pyx_pw_6raylib_185set_gesture_enabled(PyObject *__pyx_self, PyObject *__pyx_arg_flags); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_185set_gesture_enabled = {"set_gesture_enabled", (PyCFunction)__pyx_pw_6raylib_185set_gesture_enabled, METH_O, 0};
+static PyObject *__pyx_pw_6raylib_185set_gesture_enabled(PyObject *__pyx_self, PyObject *__pyx_arg_flags) {
   unsigned int __pyx_v_flags;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -38701,7 +39617,7 @@ static PyObject *__pyx_pw_6raylib_213set_gesture_enabled(PyObject *__pyx_self, P
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_gesture_enabled (wrapper)", 0);
   assert(__pyx_arg_flags); {
-    __pyx_v_flags = __Pyx_PyInt_As_unsigned_int(__pyx_arg_flags); if (unlikely((__pyx_v_flags == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2413, __pyx_L3_error)
+    __pyx_v_flags = __Pyx_PyInt_As_unsigned_int(__pyx_arg_flags); if (unlikely((__pyx_v_flags == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2457, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -38709,19 +39625,19 @@ static PyObject *__pyx_pw_6raylib_213set_gesture_enabled(PyObject *__pyx_self, P
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_212set_gesture_enabled(__pyx_self, ((unsigned int)__pyx_v_flags));
+  __pyx_r = __pyx_pf_6raylib_184set_gesture_enabled(__pyx_self, ((unsigned int)__pyx_v_flags));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_212set_gesture_enabled(CYTHON_UNUSED PyObject *__pyx_self, unsigned int __pyx_v_flags) {
+static PyObject *__pyx_pf_6raylib_184set_gesture_enabled(CYTHON_UNUSED PyObject *__pyx_self, unsigned int __pyx_v_flags) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_gesture_enabled", 0);
 
-  /* "raylib.pyx":2414
+  /* "raylib.pyx":2458
  * #cdef void SetGesturesEnabled(unsigned int flags)      # Enable a set of gestures using flags
  * def set_gesture_enabled(unsigned int flags) -> None:
  *     SetGesturesEnabled(flags)             # <<<<<<<<<<<<<<
@@ -38730,7 +39646,7 @@ static PyObject *__pyx_pf_6raylib_212set_gesture_enabled(CYTHON_UNUSED PyObject 
  */
   SetGesturesEnabled(__pyx_v_flags);
 
-  /* "raylib.pyx":2413
+  /* "raylib.pyx":2457
  * 
  * #cdef void SetGesturesEnabled(unsigned int flags)      # Enable a set of gestures using flags
  * def set_gesture_enabled(unsigned int flags) -> None:             # <<<<<<<<<<<<<<
@@ -38745,7 +39661,7 @@ static PyObject *__pyx_pf_6raylib_212set_gesture_enabled(CYTHON_UNUSED PyObject 
   return __pyx_r;
 }
 
-/* "raylib.pyx":2417
+/* "raylib.pyx":2461
  * 
  * #cdef bint IsGestureDetected(unsigned int gesture)     # Check if a gesture have been detected
  * def is_gesture_detected(unsigned int gesture) -> bool:             # <<<<<<<<<<<<<<
@@ -38754,9 +39670,9 @@ static PyObject *__pyx_pf_6raylib_212set_gesture_enabled(CYTHON_UNUSED PyObject 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_215is_gesture_detected(PyObject *__pyx_self, PyObject *__pyx_arg_gesture); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_215is_gesture_detected = {"is_gesture_detected", (PyCFunction)__pyx_pw_6raylib_215is_gesture_detected, METH_O, 0};
-static PyObject *__pyx_pw_6raylib_215is_gesture_detected(PyObject *__pyx_self, PyObject *__pyx_arg_gesture) {
+static PyObject *__pyx_pw_6raylib_187is_gesture_detected(PyObject *__pyx_self, PyObject *__pyx_arg_gesture); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_187is_gesture_detected = {"is_gesture_detected", (PyCFunction)__pyx_pw_6raylib_187is_gesture_detected, METH_O, 0};
+static PyObject *__pyx_pw_6raylib_187is_gesture_detected(PyObject *__pyx_self, PyObject *__pyx_arg_gesture) {
   unsigned int __pyx_v_gesture;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
@@ -38765,7 +39681,7 @@ static PyObject *__pyx_pw_6raylib_215is_gesture_detected(PyObject *__pyx_self, P
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("is_gesture_detected (wrapper)", 0);
   assert(__pyx_arg_gesture); {
-    __pyx_v_gesture = __Pyx_PyInt_As_unsigned_int(__pyx_arg_gesture); if (unlikely((__pyx_v_gesture == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2417, __pyx_L3_error)
+    __pyx_v_gesture = __Pyx_PyInt_As_unsigned_int(__pyx_arg_gesture); if (unlikely((__pyx_v_gesture == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(0, 2461, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -38773,14 +39689,14 @@ static PyObject *__pyx_pw_6raylib_215is_gesture_detected(PyObject *__pyx_self, P
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_214is_gesture_detected(__pyx_self, ((unsigned int)__pyx_v_gesture));
+  __pyx_r = __pyx_pf_6raylib_186is_gesture_detected(__pyx_self, ((unsigned int)__pyx_v_gesture));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_214is_gesture_detected(CYTHON_UNUSED PyObject *__pyx_self, unsigned int __pyx_v_gesture) {
+static PyObject *__pyx_pf_6raylib_186is_gesture_detected(CYTHON_UNUSED PyObject *__pyx_self, unsigned int __pyx_v_gesture) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -38789,7 +39705,7 @@ static PyObject *__pyx_pf_6raylib_214is_gesture_detected(CYTHON_UNUSED PyObject 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("is_gesture_detected", 0);
 
-  /* "raylib.pyx":2418
+  /* "raylib.pyx":2462
  * #cdef bint IsGestureDetected(unsigned int gesture)     # Check if a gesture have been detected
  * def is_gesture_detected(unsigned int gesture) -> bool:
  *     return IsGestureDetected(gesture)             # <<<<<<<<<<<<<<
@@ -38797,13 +39713,13 @@ static PyObject *__pyx_pf_6raylib_214is_gesture_detected(CYTHON_UNUSED PyObject 
  * #cdef int GetGestureDetected()                     # Get latest detected gesture
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyBool_FromLong(IsGestureDetected(__pyx_v_gesture)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2418, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyBool_FromLong(IsGestureDetected(__pyx_v_gesture)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2462, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2417
+  /* "raylib.pyx":2461
  * 
  * #cdef bint IsGestureDetected(unsigned int gesture)     # Check if a gesture have been detected
  * def is_gesture_detected(unsigned int gesture) -> bool:             # <<<<<<<<<<<<<<
@@ -38822,7 +39738,7 @@ static PyObject *__pyx_pf_6raylib_214is_gesture_detected(CYTHON_UNUSED PyObject 
   return __pyx_r;
 }
 
-/* "raylib.pyx":2421
+/* "raylib.pyx":2465
  * 
  * #cdef int GetGestureDetected()                     # Get latest detected gesture
  * def get_gesture_detected() -> int:             # <<<<<<<<<<<<<<
@@ -38831,20 +39747,20 @@ static PyObject *__pyx_pf_6raylib_214is_gesture_detected(CYTHON_UNUSED PyObject 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_217get_gesture_detected(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_217get_gesture_detected = {"get_gesture_detected", (PyCFunction)__pyx_pw_6raylib_217get_gesture_detected, METH_NOARGS, 0};
-static PyObject *__pyx_pw_6raylib_217get_gesture_detected(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_6raylib_189get_gesture_detected(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_189get_gesture_detected = {"get_gesture_detected", (PyCFunction)__pyx_pw_6raylib_189get_gesture_detected, METH_NOARGS, 0};
+static PyObject *__pyx_pw_6raylib_189get_gesture_detected(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_gesture_detected (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_216get_gesture_detected(__pyx_self);
+  __pyx_r = __pyx_pf_6raylib_188get_gesture_detected(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_216get_gesture_detected(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_6raylib_188get_gesture_detected(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -38853,7 +39769,7 @@ static PyObject *__pyx_pf_6raylib_216get_gesture_detected(CYTHON_UNUSED PyObject
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_gesture_detected", 0);
 
-  /* "raylib.pyx":2422
+  /* "raylib.pyx":2466
  * #cdef int GetGestureDetected()                     # Get latest detected gesture
  * def get_gesture_detected() -> int:
  *     return GetGestureDetected()             # <<<<<<<<<<<<<<
@@ -38861,13 +39777,13 @@ static PyObject *__pyx_pf_6raylib_216get_gesture_detected(CYTHON_UNUSED PyObject
  * #cdef float GetGestureHoldDuration()               # Get gesture hold time in milliseconds
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(GetGestureDetected()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2422, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(GetGestureDetected()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2466, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2421
+  /* "raylib.pyx":2465
  * 
  * #cdef int GetGestureDetected()                     # Get latest detected gesture
  * def get_gesture_detected() -> int:             # <<<<<<<<<<<<<<
@@ -38886,7 +39802,7 @@ static PyObject *__pyx_pf_6raylib_216get_gesture_detected(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "raylib.pyx":2425
+/* "raylib.pyx":2469
  * 
  * #cdef float GetGestureHoldDuration()               # Get gesture hold time in milliseconds
  * def get_gesture_hold_duration() -> float:             # <<<<<<<<<<<<<<
@@ -38895,20 +39811,20 @@ static PyObject *__pyx_pf_6raylib_216get_gesture_detected(CYTHON_UNUSED PyObject
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_219get_gesture_hold_duration(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_219get_gesture_hold_duration = {"get_gesture_hold_duration", (PyCFunction)__pyx_pw_6raylib_219get_gesture_hold_duration, METH_NOARGS, 0};
-static PyObject *__pyx_pw_6raylib_219get_gesture_hold_duration(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_6raylib_191get_gesture_hold_duration(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_191get_gesture_hold_duration = {"get_gesture_hold_duration", (PyCFunction)__pyx_pw_6raylib_191get_gesture_hold_duration, METH_NOARGS, 0};
+static PyObject *__pyx_pw_6raylib_191get_gesture_hold_duration(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_gesture_hold_duration (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_218get_gesture_hold_duration(__pyx_self);
+  __pyx_r = __pyx_pf_6raylib_190get_gesture_hold_duration(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_218get_gesture_hold_duration(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_6raylib_190get_gesture_hold_duration(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -38917,7 +39833,7 @@ static PyObject *__pyx_pf_6raylib_218get_gesture_hold_duration(CYTHON_UNUSED PyO
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_gesture_hold_duration", 0);
 
-  /* "raylib.pyx":2426
+  /* "raylib.pyx":2470
  * #cdef float GetGestureHoldDuration()               # Get gesture hold time in milliseconds
  * def get_gesture_hold_duration() -> float:
  *     return GetGestureHoldDuration()             # <<<<<<<<<<<<<<
@@ -38925,13 +39841,13 @@ static PyObject *__pyx_pf_6raylib_218get_gesture_hold_duration(CYTHON_UNUSED PyO
  * #cdef Vector2 GetGestureDragVector()               # Get gesture drag vector
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(GetGestureHoldDuration()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2426, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(GetGestureHoldDuration()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2470, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2425
+  /* "raylib.pyx":2469
  * 
  * #cdef float GetGestureHoldDuration()               # Get gesture hold time in milliseconds
  * def get_gesture_hold_duration() -> float:             # <<<<<<<<<<<<<<
@@ -38950,7 +39866,7 @@ static PyObject *__pyx_pf_6raylib_218get_gesture_hold_duration(CYTHON_UNUSED PyO
   return __pyx_r;
 }
 
-/* "raylib.pyx":2429
+/* "raylib.pyx":2473
  * 
  * #cdef Vector2 GetGestureDragVector()               # Get gesture drag vector
  * def get_gesture_drag_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -38959,20 +39875,20 @@ static PyObject *__pyx_pf_6raylib_218get_gesture_hold_duration(CYTHON_UNUSED PyO
  */
 
 /* Python wrapper */
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_221get_gesture_drag_vector(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_221get_gesture_drag_vector = {"get_gesture_drag_vector", (PyCFunction)__pyx_pw_6raylib_221get_gesture_drag_vector, METH_NOARGS, 0};
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_221get_gesture_drag_vector(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_193get_gesture_drag_vector(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_193get_gesture_drag_vector = {"get_gesture_drag_vector", (PyCFunction)__pyx_pw_6raylib_193get_gesture_drag_vector, METH_NOARGS, 0};
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_193get_gesture_drag_vector(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_gesture_drag_vector (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_220get_gesture_drag_vector(__pyx_self);
+  __pyx_r = __pyx_pf_6raylib_192get_gesture_drag_vector(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_220get_gesture_drag_vector(CYTHON_UNUSED PyObject *__pyx_self) {
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_192get_gesture_drag_vector(CYTHON_UNUSED PyObject *__pyx_self) {
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_vec = 0;
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -38982,20 +39898,20 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_220
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_gesture_drag_vector", 0);
 
-  /* "raylib.pyx":2430
+  /* "raylib.pyx":2474
  * #cdef Vector2 GetGestureDragVector()               # Get gesture drag vector
  * def get_gesture_drag_vector() -> raymath.CyVector2:
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)             # <<<<<<<<<<<<<<
  *     vec._vector = GetGestureDragVector()
  *     return vec
  */
-  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2430, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2474, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 2430, __pyx_L1_error)
+  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 2474, __pyx_L1_error)
   __pyx_v_vec = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2431
+  /* "raylib.pyx":2475
  * def get_gesture_drag_vector() -> raymath.CyVector2:
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetGestureDragVector()             # <<<<<<<<<<<<<<
@@ -39004,7 +39920,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_220
  */
   __pyx_v_vec->_vector = GetGestureDragVector();
 
-  /* "raylib.pyx":2432
+  /* "raylib.pyx":2476
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetGestureDragVector()
  *     return vec             # <<<<<<<<<<<<<<
@@ -39016,7 +39932,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_220
   __pyx_r = __pyx_v_vec;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2429
+  /* "raylib.pyx":2473
  * 
  * #cdef Vector2 GetGestureDragVector()               # Get gesture drag vector
  * def get_gesture_drag_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -39036,7 +39952,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_220
   return __pyx_r;
 }
 
-/* "raylib.pyx":2435
+/* "raylib.pyx":2479
  * 
  * #cdef float GetGestureDragAngle()                  # Get gesture drag angle
  * def get_gesture_drag_angle() -> float:             # <<<<<<<<<<<<<<
@@ -39045,20 +39961,20 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_220
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_223get_gesture_drag_angle(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_223get_gesture_drag_angle = {"get_gesture_drag_angle", (PyCFunction)__pyx_pw_6raylib_223get_gesture_drag_angle, METH_NOARGS, 0};
-static PyObject *__pyx_pw_6raylib_223get_gesture_drag_angle(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_6raylib_195get_gesture_drag_angle(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_195get_gesture_drag_angle = {"get_gesture_drag_angle", (PyCFunction)__pyx_pw_6raylib_195get_gesture_drag_angle, METH_NOARGS, 0};
+static PyObject *__pyx_pw_6raylib_195get_gesture_drag_angle(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_gesture_drag_angle (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_222get_gesture_drag_angle(__pyx_self);
+  __pyx_r = __pyx_pf_6raylib_194get_gesture_drag_angle(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_222get_gesture_drag_angle(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_6raylib_194get_gesture_drag_angle(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -39067,7 +39983,7 @@ static PyObject *__pyx_pf_6raylib_222get_gesture_drag_angle(CYTHON_UNUSED PyObje
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_gesture_drag_angle", 0);
 
-  /* "raylib.pyx":2436
+  /* "raylib.pyx":2480
  * #cdef float GetGestureDragAngle()                  # Get gesture drag angle
  * def get_gesture_drag_angle() -> float:
  *     return GetGestureDragAngle()             # <<<<<<<<<<<<<<
@@ -39075,13 +39991,13 @@ static PyObject *__pyx_pf_6raylib_222get_gesture_drag_angle(CYTHON_UNUSED PyObje
  * #cdef Vector2 GetGesturePinchVector()              # Get gesture pinch delta
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(GetGestureDragAngle()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2436, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(GetGestureDragAngle()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2480, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2435
+  /* "raylib.pyx":2479
  * 
  * #cdef float GetGestureDragAngle()                  # Get gesture drag angle
  * def get_gesture_drag_angle() -> float:             # <<<<<<<<<<<<<<
@@ -39100,7 +40016,7 @@ static PyObject *__pyx_pf_6raylib_222get_gesture_drag_angle(CYTHON_UNUSED PyObje
   return __pyx_r;
 }
 
-/* "raylib.pyx":2439
+/* "raylib.pyx":2483
  * 
  * #cdef Vector2 GetGesturePinchVector()              # Get gesture pinch delta
  * def get_gesture_pinch_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -39109,20 +40025,20 @@ static PyObject *__pyx_pf_6raylib_222get_gesture_drag_angle(CYTHON_UNUSED PyObje
  */
 
 /* Python wrapper */
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_225get_gesture_pinch_vector(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_225get_gesture_pinch_vector = {"get_gesture_pinch_vector", (PyCFunction)__pyx_pw_6raylib_225get_gesture_pinch_vector, METH_NOARGS, 0};
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_225get_gesture_pinch_vector(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_197get_gesture_pinch_vector(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_197get_gesture_pinch_vector = {"get_gesture_pinch_vector", (PyCFunction)__pyx_pw_6raylib_197get_gesture_pinch_vector, METH_NOARGS, 0};
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pw_6raylib_197get_gesture_pinch_vector(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_gesture_pinch_vector (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_224get_gesture_pinch_vector(__pyx_self);
+  __pyx_r = __pyx_pf_6raylib_196get_gesture_pinch_vector(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_224get_gesture_pinch_vector(CYTHON_UNUSED PyObject *__pyx_self) {
+static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_196get_gesture_pinch_vector(CYTHON_UNUSED PyObject *__pyx_self) {
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_v_vec = 0;
   struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
@@ -39132,20 +40048,20 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_224
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_gesture_pinch_vector", 0);
 
-  /* "raylib.pyx":2440
+  /* "raylib.pyx":2484
  * #cdef Vector2 GetGesturePinchVector()              # Get gesture pinch delta
  * def get_gesture_pinch_vector() -> raymath.CyVector2:
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)             # <<<<<<<<<<<<<<
  *     vec._vector = GetGesturePinchVector()
  *     return vec
  */
-  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2440, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_tp_new(((PyObject *)__pyx_ptype_13raylib_cython_7raymath_CyVector2), __pyx_empty_tuple); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2484, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 2440, __pyx_L1_error)
+  if (!(likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_13raylib_cython_7raymath_CyVector2)))) __PYX_ERR(0, 2484, __pyx_L1_error)
   __pyx_v_vec = ((struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2441
+  /* "raylib.pyx":2485
  * def get_gesture_pinch_vector() -> raymath.CyVector2:
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetGesturePinchVector()             # <<<<<<<<<<<<<<
@@ -39154,7 +40070,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_224
  */
   __pyx_v_vec->_vector = GetGesturePinchVector();
 
-  /* "raylib.pyx":2442
+  /* "raylib.pyx":2486
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetGesturePinchVector()
  *     return vec             # <<<<<<<<<<<<<<
@@ -39166,7 +40082,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_224
   __pyx_r = __pyx_v_vec;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2439
+  /* "raylib.pyx":2483
  * 
  * #cdef Vector2 GetGesturePinchVector()              # Get gesture pinch delta
  * def get_gesture_pinch_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
@@ -39186,7 +40102,7 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_224
   return __pyx_r;
 }
 
-/* "raylib.pyx":2445
+/* "raylib.pyx":2489
  * 
  * #cdef float GetGesturePinchAngle()                 # Get gesture pinch angle
  * def get_gesture_pinch_angle() -> float:             # <<<<<<<<<<<<<<
@@ -39195,20 +40111,20 @@ static struct __pyx_obj_13raylib_cython_7raymath_CyVector2 *__pyx_pf_6raylib_224
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_227get_gesture_pinch_angle(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_227get_gesture_pinch_angle = {"get_gesture_pinch_angle", (PyCFunction)__pyx_pw_6raylib_227get_gesture_pinch_angle, METH_NOARGS, 0};
-static PyObject *__pyx_pw_6raylib_227get_gesture_pinch_angle(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_6raylib_199get_gesture_pinch_angle(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_199get_gesture_pinch_angle = {"get_gesture_pinch_angle", (PyCFunction)__pyx_pw_6raylib_199get_gesture_pinch_angle, METH_NOARGS, 0};
+static PyObject *__pyx_pw_6raylib_199get_gesture_pinch_angle(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_gesture_pinch_angle (wrapper)", 0);
-  __pyx_r = __pyx_pf_6raylib_226get_gesture_pinch_angle(__pyx_self);
+  __pyx_r = __pyx_pf_6raylib_198get_gesture_pinch_angle(__pyx_self);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_226get_gesture_pinch_angle(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_6raylib_198get_gesture_pinch_angle(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -39217,20 +40133,20 @@ static PyObject *__pyx_pf_6raylib_226get_gesture_pinch_angle(CYTHON_UNUSED PyObj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("get_gesture_pinch_angle", 0);
 
-  /* "raylib.pyx":2446
+  /* "raylib.pyx":2490
  * #cdef float GetGesturePinchAngle()                 # Get gesture pinch angle
  * def get_gesture_pinch_angle() -> float:
  *     return GetGesturePinchAngle()             # <<<<<<<<<<<<<<
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(GetGesturePinchAngle()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2446, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(GetGesturePinchAngle()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2490, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "raylib.pyx":2445
+  /* "raylib.pyx":2489
  * 
  * #cdef float GetGesturePinchAngle()                 # Get gesture pinch angle
  * def get_gesture_pinch_angle() -> float:             # <<<<<<<<<<<<<<
@@ -39256,9 +40172,9 @@ static PyObject *__pyx_pf_6raylib_226get_gesture_pinch_angle(CYTHON_UNUSED PyObj
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_229__pyx_unpickle_CyLineBezier(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_229__pyx_unpickle_CyLineBezier = {"__pyx_unpickle_CyLineBezier", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_229__pyx_unpickle_CyLineBezier, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_229__pyx_unpickle_CyLineBezier(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_201__pyx_unpickle_CyLineBezier(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_201__pyx_unpickle_CyLineBezier = {"__pyx_unpickle_CyLineBezier", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_201__pyx_unpickle_CyLineBezier, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_201__pyx_unpickle_CyLineBezier(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -39324,14 +40240,14 @@ static PyObject *__pyx_pw_6raylib_229__pyx_unpickle_CyLineBezier(PyObject *__pyx
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_228__pyx_unpickle_CyLineBezier(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_200__pyx_unpickle_CyLineBezier(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_228__pyx_unpickle_CyLineBezier(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_200__pyx_unpickle_CyLineBezier(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -39638,9 +40554,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyLineBezier__set_state(struct _
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_231__pyx_unpickle_CyCircle(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_231__pyx_unpickle_CyCircle = {"__pyx_unpickle_CyCircle", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_231__pyx_unpickle_CyCircle, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_231__pyx_unpickle_CyCircle(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_203__pyx_unpickle_CyCircle(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_203__pyx_unpickle_CyCircle = {"__pyx_unpickle_CyCircle", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_203__pyx_unpickle_CyCircle, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_203__pyx_unpickle_CyCircle(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -39706,14 +40622,14 @@ static PyObject *__pyx_pw_6raylib_231__pyx_unpickle_CyCircle(PyObject *__pyx_sel
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_230__pyx_unpickle_CyCircle(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_202__pyx_unpickle_CyCircle(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_230__pyx_unpickle_CyCircle(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_202__pyx_unpickle_CyCircle(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -40020,9 +40936,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyCircle__set_state(struct __pyx
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_233__pyx_unpickle_CyEclypse(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_233__pyx_unpickle_CyEclypse = {"__pyx_unpickle_CyEclypse", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_233__pyx_unpickle_CyEclypse, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_233__pyx_unpickle_CyEclypse(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_205__pyx_unpickle_CyEclypse(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_205__pyx_unpickle_CyEclypse = {"__pyx_unpickle_CyEclypse", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_205__pyx_unpickle_CyEclypse, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_205__pyx_unpickle_CyEclypse(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -40088,14 +41004,14 @@ static PyObject *__pyx_pw_6raylib_233__pyx_unpickle_CyEclypse(PyObject *__pyx_se
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_232__pyx_unpickle_CyEclypse(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_204__pyx_unpickle_CyEclypse(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_232__pyx_unpickle_CyEclypse(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_204__pyx_unpickle_CyEclypse(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -40402,9 +41318,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyEclypse__set_state(struct __py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_235__pyx_unpickle_CyRing(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_235__pyx_unpickle_CyRing = {"__pyx_unpickle_CyRing", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_235__pyx_unpickle_CyRing, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_235__pyx_unpickle_CyRing(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_207__pyx_unpickle_CyRing(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_207__pyx_unpickle_CyRing = {"__pyx_unpickle_CyRing", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_207__pyx_unpickle_CyRing, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_207__pyx_unpickle_CyRing(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -40470,14 +41386,14 @@ static PyObject *__pyx_pw_6raylib_235__pyx_unpickle_CyRing(PyObject *__pyx_self,
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_234__pyx_unpickle_CyRing(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_206__pyx_unpickle_CyRing(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_234__pyx_unpickle_CyRing(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_206__pyx_unpickle_CyRing(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -40784,9 +41700,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyRing__set_state(struct __pyx_o
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_237__pyx_unpickle_CyTriangle(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_237__pyx_unpickle_CyTriangle = {"__pyx_unpickle_CyTriangle", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_237__pyx_unpickle_CyTriangle, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_237__pyx_unpickle_CyTriangle(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_209__pyx_unpickle_CyTriangle(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_209__pyx_unpickle_CyTriangle = {"__pyx_unpickle_CyTriangle", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_209__pyx_unpickle_CyTriangle, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_209__pyx_unpickle_CyTriangle(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -40852,14 +41768,14 @@ static PyObject *__pyx_pw_6raylib_237__pyx_unpickle_CyTriangle(PyObject *__pyx_s
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_236__pyx_unpickle_CyTriangle(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_208__pyx_unpickle_CyTriangle(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_236__pyx_unpickle_CyTriangle(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_208__pyx_unpickle_CyTriangle(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -41166,9 +42082,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyTriangle__set_state(struct __p
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_239__pyx_unpickle_CyPolygon(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_239__pyx_unpickle_CyPolygon = {"__pyx_unpickle_CyPolygon", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_239__pyx_unpickle_CyPolygon, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_239__pyx_unpickle_CyPolygon(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_211__pyx_unpickle_CyPolygon(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_211__pyx_unpickle_CyPolygon = {"__pyx_unpickle_CyPolygon", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_211__pyx_unpickle_CyPolygon, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_211__pyx_unpickle_CyPolygon(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -41234,14 +42150,14 @@ static PyObject *__pyx_pw_6raylib_239__pyx_unpickle_CyPolygon(PyObject *__pyx_se
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_238__pyx_unpickle_CyPolygon(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_210__pyx_unpickle_CyPolygon(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_238__pyx_unpickle_CyPolygon(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_210__pyx_unpickle_CyPolygon(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -41548,9 +42464,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyPolygon__set_state(struct __py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_241__pyx_unpickle_CySpline(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_241__pyx_unpickle_CySpline = {"__pyx_unpickle_CySpline", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_241__pyx_unpickle_CySpline, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_241__pyx_unpickle_CySpline(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_213__pyx_unpickle_CySpline(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_213__pyx_unpickle_CySpline = {"__pyx_unpickle_CySpline", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_213__pyx_unpickle_CySpline, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_213__pyx_unpickle_CySpline(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -41616,14 +42532,14 @@ static PyObject *__pyx_pw_6raylib_241__pyx_unpickle_CySpline(PyObject *__pyx_sel
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_240__pyx_unpickle_CySpline(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_212__pyx_unpickle_CySpline(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_240__pyx_unpickle_CySpline(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_212__pyx_unpickle_CySpline(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -41930,9 +42846,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CySpline__set_state(struct __pyx
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_243__pyx_unpickle_CyLine3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_243__pyx_unpickle_CyLine3D = {"__pyx_unpickle_CyLine3D", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_243__pyx_unpickle_CyLine3D, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_243__pyx_unpickle_CyLine3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_215__pyx_unpickle_CyLine3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_215__pyx_unpickle_CyLine3D = {"__pyx_unpickle_CyLine3D", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_215__pyx_unpickle_CyLine3D, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_215__pyx_unpickle_CyLine3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -41998,14 +42914,14 @@ static PyObject *__pyx_pw_6raylib_243__pyx_unpickle_CyLine3D(PyObject *__pyx_sel
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_242__pyx_unpickle_CyLine3D(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_214__pyx_unpickle_CyLine3D(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_242__pyx_unpickle_CyLine3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_214__pyx_unpickle_CyLine3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -42312,9 +43228,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyLine3D__set_state(struct __pyx
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_245__pyx_unpickle_CyPoint3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_245__pyx_unpickle_CyPoint3D = {"__pyx_unpickle_CyPoint3D", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_245__pyx_unpickle_CyPoint3D, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_245__pyx_unpickle_CyPoint3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_217__pyx_unpickle_CyPoint3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_217__pyx_unpickle_CyPoint3D = {"__pyx_unpickle_CyPoint3D", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_217__pyx_unpickle_CyPoint3D, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_217__pyx_unpickle_CyPoint3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -42380,14 +43296,14 @@ static PyObject *__pyx_pw_6raylib_245__pyx_unpickle_CyPoint3D(PyObject *__pyx_se
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_244__pyx_unpickle_CyPoint3D(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_216__pyx_unpickle_CyPoint3D(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_244__pyx_unpickle_CyPoint3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_216__pyx_unpickle_CyPoint3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -42694,9 +43610,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyPoint3D__set_state(struct __py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_247__pyx_unpickle_CyCircle3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_247__pyx_unpickle_CyCircle3D = {"__pyx_unpickle_CyCircle3D", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_247__pyx_unpickle_CyCircle3D, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_247__pyx_unpickle_CyCircle3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_219__pyx_unpickle_CyCircle3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_219__pyx_unpickle_CyCircle3D = {"__pyx_unpickle_CyCircle3D", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_219__pyx_unpickle_CyCircle3D, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_219__pyx_unpickle_CyCircle3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -42762,14 +43678,14 @@ static PyObject *__pyx_pw_6raylib_247__pyx_unpickle_CyCircle3D(PyObject *__pyx_s
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_246__pyx_unpickle_CyCircle3D(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_218__pyx_unpickle_CyCircle3D(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_246__pyx_unpickle_CyCircle3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_218__pyx_unpickle_CyCircle3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -43076,9 +43992,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyCircle3D__set_state(struct __p
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_249__pyx_unpickle_CyTriangle3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_249__pyx_unpickle_CyTriangle3D = {"__pyx_unpickle_CyTriangle3D", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_249__pyx_unpickle_CyTriangle3D, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_249__pyx_unpickle_CyTriangle3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_221__pyx_unpickle_CyTriangle3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_221__pyx_unpickle_CyTriangle3D = {"__pyx_unpickle_CyTriangle3D", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_221__pyx_unpickle_CyTriangle3D, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_221__pyx_unpickle_CyTriangle3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -43144,14 +44060,14 @@ static PyObject *__pyx_pw_6raylib_249__pyx_unpickle_CyTriangle3D(PyObject *__pyx
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_248__pyx_unpickle_CyTriangle3D(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_220__pyx_unpickle_CyTriangle3D(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_248__pyx_unpickle_CyTriangle3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_220__pyx_unpickle_CyTriangle3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -43458,9 +44374,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyTriangle3D__set_state(struct _
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_251__pyx_unpickle_CyTriangleStrip3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_251__pyx_unpickle_CyTriangleStrip3D = {"__pyx_unpickle_CyTriangleStrip3D", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_251__pyx_unpickle_CyTriangleStrip3D, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_251__pyx_unpickle_CyTriangleStrip3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_223__pyx_unpickle_CyTriangleStrip3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_223__pyx_unpickle_CyTriangleStrip3D = {"__pyx_unpickle_CyTriangleStrip3D", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_223__pyx_unpickle_CyTriangleStrip3D, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_223__pyx_unpickle_CyTriangleStrip3D(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -43526,14 +44442,14 @@ static PyObject *__pyx_pw_6raylib_251__pyx_unpickle_CyTriangleStrip3D(PyObject *
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_250__pyx_unpickle_CyTriangleStrip3D(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_222__pyx_unpickle_CyTriangleStrip3D(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_250__pyx_unpickle_CyTriangleStrip3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_222__pyx_unpickle_CyTriangleStrip3D(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -43840,9 +44756,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyTriangleStrip3D__set_state(str
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_253__pyx_unpickle_CyCube(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_253__pyx_unpickle_CyCube = {"__pyx_unpickle_CyCube", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_253__pyx_unpickle_CyCube, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_253__pyx_unpickle_CyCube(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_225__pyx_unpickle_CyCube(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_225__pyx_unpickle_CyCube = {"__pyx_unpickle_CyCube", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_225__pyx_unpickle_CyCube, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_225__pyx_unpickle_CyCube(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -43908,14 +44824,14 @@ static PyObject *__pyx_pw_6raylib_253__pyx_unpickle_CyCube(PyObject *__pyx_self,
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_252__pyx_unpickle_CyCube(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_224__pyx_unpickle_CyCube(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_252__pyx_unpickle_CyCube(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_224__pyx_unpickle_CyCube(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -44222,9 +45138,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyCube__set_state(struct __pyx_o
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_255__pyx_unpickle_CySphere(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_255__pyx_unpickle_CySphere = {"__pyx_unpickle_CySphere", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_255__pyx_unpickle_CySphere, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_255__pyx_unpickle_CySphere(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_227__pyx_unpickle_CySphere(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_227__pyx_unpickle_CySphere = {"__pyx_unpickle_CySphere", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_227__pyx_unpickle_CySphere, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_227__pyx_unpickle_CySphere(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -44290,14 +45206,14 @@ static PyObject *__pyx_pw_6raylib_255__pyx_unpickle_CySphere(PyObject *__pyx_sel
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_254__pyx_unpickle_CySphere(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_226__pyx_unpickle_CySphere(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_254__pyx_unpickle_CySphere(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_226__pyx_unpickle_CySphere(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -44604,9 +45520,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CySphere__set_state(struct __pyx
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_257__pyx_unpickle_CyCylinder(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_257__pyx_unpickle_CyCylinder = {"__pyx_unpickle_CyCylinder", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_257__pyx_unpickle_CyCylinder, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_257__pyx_unpickle_CyCylinder(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_229__pyx_unpickle_CyCylinder(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_229__pyx_unpickle_CyCylinder = {"__pyx_unpickle_CyCylinder", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_229__pyx_unpickle_CyCylinder, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_229__pyx_unpickle_CyCylinder(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -44672,14 +45588,14 @@ static PyObject *__pyx_pw_6raylib_257__pyx_unpickle_CyCylinder(PyObject *__pyx_s
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_256__pyx_unpickle_CyCylinder(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_228__pyx_unpickle_CyCylinder(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_256__pyx_unpickle_CyCylinder(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_228__pyx_unpickle_CyCylinder(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -44986,9 +45902,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyCylinder__set_state(struct __p
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_259__pyx_unpickle_CyCapsule(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_259__pyx_unpickle_CyCapsule = {"__pyx_unpickle_CyCapsule", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_259__pyx_unpickle_CyCapsule, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_259__pyx_unpickle_CyCapsule(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_231__pyx_unpickle_CyCapsule(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_231__pyx_unpickle_CyCapsule = {"__pyx_unpickle_CyCapsule", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_231__pyx_unpickle_CyCapsule, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_231__pyx_unpickle_CyCapsule(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -45054,14 +45970,14 @@ static PyObject *__pyx_pw_6raylib_259__pyx_unpickle_CyCapsule(PyObject *__pyx_se
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_258__pyx_unpickle_CyCapsule(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_230__pyx_unpickle_CyCapsule(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_258__pyx_unpickle_CyCapsule(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_230__pyx_unpickle_CyCapsule(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -45368,9 +46284,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyCapsule__set_state(struct __py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_261__pyx_unpickle_CyPlane(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_261__pyx_unpickle_CyPlane = {"__pyx_unpickle_CyPlane", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_261__pyx_unpickle_CyPlane, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_261__pyx_unpickle_CyPlane(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_233__pyx_unpickle_CyPlane(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_233__pyx_unpickle_CyPlane = {"__pyx_unpickle_CyPlane", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_233__pyx_unpickle_CyPlane, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_233__pyx_unpickle_CyPlane(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -45436,14 +46352,14 @@ static PyObject *__pyx_pw_6raylib_261__pyx_unpickle_CyPlane(PyObject *__pyx_self
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_260__pyx_unpickle_CyPlane(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_232__pyx_unpickle_CyPlane(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_260__pyx_unpickle_CyPlane(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_232__pyx_unpickle_CyPlane(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -45750,9 +46666,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyPlane__set_state(struct __pyx_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_263__pyx_unpickle_CyGrid(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_263__pyx_unpickle_CyGrid = {"__pyx_unpickle_CyGrid", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_263__pyx_unpickle_CyGrid, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_263__pyx_unpickle_CyGrid(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_235__pyx_unpickle_CyGrid(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_235__pyx_unpickle_CyGrid = {"__pyx_unpickle_CyGrid", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_235__pyx_unpickle_CyGrid, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_235__pyx_unpickle_CyGrid(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -45818,14 +46734,14 @@ static PyObject *__pyx_pw_6raylib_263__pyx_unpickle_CyGrid(PyObject *__pyx_self,
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_262__pyx_unpickle_CyGrid(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_234__pyx_unpickle_CyGrid(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_262__pyx_unpickle_CyGrid(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_234__pyx_unpickle_CyGrid(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -46132,9 +47048,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyGrid__set_state(struct __pyx_o
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_265__pyx_unpickle_CyAudioDeviceManager(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_265__pyx_unpickle_CyAudioDeviceManager = {"__pyx_unpickle_CyAudioDeviceManager", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_265__pyx_unpickle_CyAudioDeviceManager, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_265__pyx_unpickle_CyAudioDeviceManager(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_237__pyx_unpickle_CyAudioDeviceManager(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_237__pyx_unpickle_CyAudioDeviceManager = {"__pyx_unpickle_CyAudioDeviceManager", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_237__pyx_unpickle_CyAudioDeviceManager, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_237__pyx_unpickle_CyAudioDeviceManager(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -46200,14 +47116,14 @@ static PyObject *__pyx_pw_6raylib_265__pyx_unpickle_CyAudioDeviceManager(PyObjec
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_264__pyx_unpickle_CyAudioDeviceManager(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_236__pyx_unpickle_CyAudioDeviceManager(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_264__pyx_unpickle_CyAudioDeviceManager(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_236__pyx_unpickle_CyAudioDeviceManager(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -46514,9 +47430,9 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyAudioDeviceManager__set_state(
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6raylib_267__pyx_unpickle_CyKeyboard(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6raylib_267__pyx_unpickle_CyKeyboard = {"__pyx_unpickle_CyKeyboard", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_267__pyx_unpickle_CyKeyboard, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6raylib_267__pyx_unpickle_CyKeyboard(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6raylib_239__pyx_unpickle_CyKeyboard(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_239__pyx_unpickle_CyKeyboard = {"__pyx_unpickle_CyKeyboard", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_239__pyx_unpickle_CyKeyboard, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_239__pyx_unpickle_CyKeyboard(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v___pyx_type = 0;
   long __pyx_v___pyx_checksum;
   PyObject *__pyx_v___pyx_state = 0;
@@ -46582,14 +47498,14 @@ static PyObject *__pyx_pw_6raylib_267__pyx_unpickle_CyKeyboard(PyObject *__pyx_s
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6raylib_266__pyx_unpickle_CyKeyboard(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+  __pyx_r = __pyx_pf_6raylib_238__pyx_unpickle_CyKeyboard(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6raylib_266__pyx_unpickle_CyKeyboard(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6raylib_238__pyx_unpickle_CyKeyboard(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_v___pyx_PickleError = 0;
   PyObject *__pyx_v___pyx_result = 0;
   PyObject *__pyx_r = NULL;
@@ -46882,6 +47798,388 @@ static PyObject *__pyx_f_6raylib___pyx_unpickle_CyKeyboard__set_state(struct __p
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_AddTraceback("raylib.__pyx_unpickle_CyKeyboard__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "(tree fragment)":1
+ * def __pyx_unpickle_CyMouse(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
+ *     cdef object __pyx_PickleError
+ *     cdef object __pyx_result
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6raylib_241__pyx_unpickle_CyMouse(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6raylib_241__pyx_unpickle_CyMouse = {"__pyx_unpickle_CyMouse", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_241__pyx_unpickle_CyMouse, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6raylib_241__pyx_unpickle_CyMouse(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v___pyx_type = 0;
+  long __pyx_v___pyx_checksum;
+  PyObject *__pyx_v___pyx_state = 0;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__pyx_unpickle_CyMouse (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_pyx_type,&__pyx_n_s_pyx_checksum,&__pyx_n_s_pyx_state,0};
+    PyObject* values[3] = {0,0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  3: values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_pyx_type)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_pyx_checksum)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("__pyx_unpickle_CyMouse", 1, 3, 3, 1); __PYX_ERR(1, 1, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_pyx_state)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("__pyx_unpickle_CyMouse", 1, 3, 3, 2); __PYX_ERR(1, 1, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__pyx_unpickle_CyMouse") < 0)) __PYX_ERR(1, 1, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+      values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
+    }
+    __pyx_v___pyx_type = values[0];
+    __pyx_v___pyx_checksum = __Pyx_PyInt_As_long(values[1]); if (unlikely((__pyx_v___pyx_checksum == (long)-1) && PyErr_Occurred())) __PYX_ERR(1, 1, __pyx_L3_error)
+    __pyx_v___pyx_state = values[2];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__pyx_unpickle_CyMouse", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(1, 1, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("raylib.__pyx_unpickle_CyMouse", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6raylib_240__pyx_unpickle_CyMouse(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6raylib_240__pyx_unpickle_CyMouse(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+  PyObject *__pyx_v___pyx_PickleError = 0;
+  PyObject *__pyx_v___pyx_result = 0;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_t_2;
+  int __pyx_t_3;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__pyx_unpickle_CyMouse", 0);
+
+  /* "(tree fragment)":4
+ *     cdef object __pyx_PickleError
+ *     cdef object __pyx_result
+ *     if __pyx_checksum not in (0xd41d8cd, 0xe3b0c44, 0xda39a3e):             # <<<<<<<<<<<<<<
+ *         from pickle import PickleError as __pyx_PickleError
+ *         raise __pyx_PickleError("Incompatible checksums (0x%x vs (0xd41d8cd, 0xe3b0c44, 0xda39a3e) = ())" % __pyx_checksum)
+ */
+  __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__84, Py_NE)); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_3 = (__pyx_t_2 != 0);
+  if (__pyx_t_3) {
+
+    /* "(tree fragment)":5
+ *     cdef object __pyx_result
+ *     if __pyx_checksum not in (0xd41d8cd, 0xe3b0c44, 0xda39a3e):
+ *         from pickle import PickleError as __pyx_PickleError             # <<<<<<<<<<<<<<
+ *         raise __pyx_PickleError("Incompatible checksums (0x%x vs (0xd41d8cd, 0xe3b0c44, 0xda39a3e) = ())" % __pyx_checksum)
+ *     __pyx_result = CyMouse.__new__(__pyx_type)
+ */
+    __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 5, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(__pyx_n_s_PickleError);
+    __Pyx_GIVEREF(__pyx_n_s_PickleError);
+    PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_PickleError);
+    __pyx_t_4 = __Pyx_Import(__pyx_n_s_pickle, __pyx_t_1, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 5, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_4, __pyx_n_s_PickleError); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 5, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(__pyx_t_1);
+    __pyx_v___pyx_PickleError = __pyx_t_1;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+    /* "(tree fragment)":6
+ *     if __pyx_checksum not in (0xd41d8cd, 0xe3b0c44, 0xda39a3e):
+ *         from pickle import PickleError as __pyx_PickleError
+ *         raise __pyx_PickleError("Incompatible checksums (0x%x vs (0xd41d8cd, 0xe3b0c44, 0xda39a3e) = ())" % __pyx_checksum)             # <<<<<<<<<<<<<<
+ *     __pyx_result = CyMouse.__new__(__pyx_type)
+ *     if __pyx_state is not None:
+ */
+    __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 6, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_5 = __Pyx_PyString_Format(__pyx_kp_s_Incompatible_checksums_0x_x_vs_0, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 6, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_INCREF(__pyx_v___pyx_PickleError);
+    __pyx_t_1 = __pyx_v___pyx_PickleError; __pyx_t_6 = NULL;
+    if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
+      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_1);
+      if (likely(__pyx_t_6)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+        __Pyx_INCREF(__pyx_t_6);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_1, function);
+      }
+    }
+    __pyx_t_4 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_6, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_5);
+    __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 6, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_Raise(__pyx_t_4, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __PYX_ERR(1, 6, __pyx_L1_error)
+
+    /* "(tree fragment)":4
+ *     cdef object __pyx_PickleError
+ *     cdef object __pyx_result
+ *     if __pyx_checksum not in (0xd41d8cd, 0xe3b0c44, 0xda39a3e):             # <<<<<<<<<<<<<<
+ *         from pickle import PickleError as __pyx_PickleError
+ *         raise __pyx_PickleError("Incompatible checksums (0x%x vs (0xd41d8cd, 0xe3b0c44, 0xda39a3e) = ())" % __pyx_checksum)
+ */
+  }
+
+  /* "(tree fragment)":7
+ *         from pickle import PickleError as __pyx_PickleError
+ *         raise __pyx_PickleError("Incompatible checksums (0x%x vs (0xd41d8cd, 0xe3b0c44, 0xda39a3e) = ())" % __pyx_checksum)
+ *     __pyx_result = CyMouse.__new__(__pyx_type)             # <<<<<<<<<<<<<<
+ *     if __pyx_state is not None:
+ *         __pyx_unpickle_CyMouse__set_state(<CyMouse> __pyx_result, __pyx_state)
+ */
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_6raylib_CyMouse), __pyx_n_s_new); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_5 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_1);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_1, function);
+    }
+  }
+  __pyx_t_4 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_5, __pyx_v___pyx_type) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v___pyx_type);
+  __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+  if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v___pyx_result = __pyx_t_4;
+  __pyx_t_4 = 0;
+
+  /* "(tree fragment)":8
+ *         raise __pyx_PickleError("Incompatible checksums (0x%x vs (0xd41d8cd, 0xe3b0c44, 0xda39a3e) = ())" % __pyx_checksum)
+ *     __pyx_result = CyMouse.__new__(__pyx_type)
+ *     if __pyx_state is not None:             # <<<<<<<<<<<<<<
+ *         __pyx_unpickle_CyMouse__set_state(<CyMouse> __pyx_result, __pyx_state)
+ *     return __pyx_result
+ */
+  __pyx_t_3 = (__pyx_v___pyx_state != Py_None);
+  __pyx_t_2 = (__pyx_t_3 != 0);
+  if (__pyx_t_2) {
+
+    /* "(tree fragment)":9
+ *     __pyx_result = CyMouse.__new__(__pyx_type)
+ *     if __pyx_state is not None:
+ *         __pyx_unpickle_CyMouse__set_state(<CyMouse> __pyx_result, __pyx_state)             # <<<<<<<<<<<<<<
+ *     return __pyx_result
+ * cdef __pyx_unpickle_CyMouse__set_state(CyMouse __pyx_result, tuple __pyx_state):
+ */
+    if (!(likely(PyTuple_CheckExact(__pyx_v___pyx_state))||((__pyx_v___pyx_state) == Py_None)||((void)PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "tuple", Py_TYPE(__pyx_v___pyx_state)->tp_name), 0))) __PYX_ERR(1, 9, __pyx_L1_error)
+    __pyx_t_4 = __pyx_f_6raylib___pyx_unpickle_CyMouse__set_state(((struct __pyx_obj_6raylib_CyMouse *)__pyx_v___pyx_result), ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 9, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+
+    /* "(tree fragment)":8
+ *         raise __pyx_PickleError("Incompatible checksums (0x%x vs (0xd41d8cd, 0xe3b0c44, 0xda39a3e) = ())" % __pyx_checksum)
+ *     __pyx_result = CyMouse.__new__(__pyx_type)
+ *     if __pyx_state is not None:             # <<<<<<<<<<<<<<
+ *         __pyx_unpickle_CyMouse__set_state(<CyMouse> __pyx_result, __pyx_state)
+ *     return __pyx_result
+ */
+  }
+
+  /* "(tree fragment)":10
+ *     if __pyx_state is not None:
+ *         __pyx_unpickle_CyMouse__set_state(<CyMouse> __pyx_result, __pyx_state)
+ *     return __pyx_result             # <<<<<<<<<<<<<<
+ * cdef __pyx_unpickle_CyMouse__set_state(CyMouse __pyx_result, tuple __pyx_state):
+ *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v___pyx_result);
+  __pyx_r = __pyx_v___pyx_result;
+  goto __pyx_L0;
+
+  /* "(tree fragment)":1
+ * def __pyx_unpickle_CyMouse(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
+ *     cdef object __pyx_PickleError
+ *     cdef object __pyx_result
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_AddTraceback("raylib.__pyx_unpickle_CyMouse", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v___pyx_PickleError);
+  __Pyx_XDECREF(__pyx_v___pyx_result);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "(tree fragment)":11
+ *         __pyx_unpickle_CyMouse__set_state(<CyMouse> __pyx_result, __pyx_state)
+ *     return __pyx_result
+ * cdef __pyx_unpickle_CyMouse__set_state(CyMouse __pyx_result, tuple __pyx_state):             # <<<<<<<<<<<<<<
+ *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):
+ *         __pyx_result.__dict__.update(__pyx_state[0])
+ */
+
+static PyObject *__pyx_f_6raylib___pyx_unpickle_CyMouse__set_state(struct __pyx_obj_6raylib_CyMouse *__pyx_v___pyx_result, PyObject *__pyx_v___pyx_state) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  Py_ssize_t __pyx_t_2;
+  int __pyx_t_3;
+  int __pyx_t_4;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  PyObject *__pyx_t_7 = NULL;
+  PyObject *__pyx_t_8 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__pyx_unpickle_CyMouse__set_state", 0);
+
+  /* "(tree fragment)":12
+ *     return __pyx_result
+ * cdef __pyx_unpickle_CyMouse__set_state(CyMouse __pyx_result, tuple __pyx_state):
+ *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
+ *         __pyx_result.__dict__.update(__pyx_state[0])
+ */
+  if (unlikely(__pyx_v___pyx_state == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
+    __PYX_ERR(1, 12, __pyx_L1_error)
+  }
+  __pyx_t_2 = PyTuple_GET_SIZE(__pyx_v___pyx_state); if (unlikely(__pyx_t_2 == ((Py_ssize_t)-1))) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_t_3 = ((__pyx_t_2 > 0) != 0);
+  if (__pyx_t_3) {
+  } else {
+    __pyx_t_1 = __pyx_t_3;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_3 = __Pyx_HasAttr(((PyObject *)__pyx_v___pyx_result), __pyx_n_s_dict); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(1, 12, __pyx_L1_error)
+  __pyx_t_4 = (__pyx_t_3 != 0);
+  __pyx_t_1 = __pyx_t_4;
+  __pyx_L4_bool_binop_done:;
+  if (__pyx_t_1) {
+
+    /* "(tree fragment)":13
+ * cdef __pyx_unpickle_CyMouse__set_state(CyMouse __pyx_result, tuple __pyx_state):
+ *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):
+ *         __pyx_result.__dict__.update(__pyx_state[0])             # <<<<<<<<<<<<<<
+ */
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v___pyx_result), __pyx_n_s_dict); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_update); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    if (unlikely(__pyx_v___pyx_state == Py_None)) {
+      PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+      __PYX_ERR(1, 13, __pyx_L1_error)
+    }
+    __pyx_t_6 = __Pyx_GetItemInt_Tuple(__pyx_v___pyx_state, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_8 = NULL;
+    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
+      __pyx_t_8 = PyMethod_GET_SELF(__pyx_t_7);
+      if (likely(__pyx_t_8)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+        __Pyx_INCREF(__pyx_t_8);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_7, function);
+      }
+    }
+    __pyx_t_5 = (__pyx_t_8) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_8, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_6);
+    __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+
+    /* "(tree fragment)":12
+ *     return __pyx_result
+ * cdef __pyx_unpickle_CyMouse__set_state(CyMouse __pyx_result, tuple __pyx_state):
+ *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
+ *         __pyx_result.__dict__.update(__pyx_state[0])
+ */
+  }
+
+  /* "(tree fragment)":11
+ *         __pyx_unpickle_CyMouse__set_state(<CyMouse> __pyx_result, __pyx_state)
+ *     return __pyx_result
+ * cdef __pyx_unpickle_CyMouse__set_state(CyMouse __pyx_result, tuple __pyx_state):             # <<<<<<<<<<<<<<
+ *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):
+ *         __pyx_result.__dict__.update(__pyx_state[0])
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_AddTraceback("raylib.__pyx_unpickle_CyMouse__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -67347,6 +68645,157 @@ static PyTypeObject __pyx_type_6raylib_CyKeyboard = {
   #endif
 };
 
+static PyObject *__pyx_tp_new_6raylib_CyMouse(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  PyObject *o;
+  if (likely((t->tp_flags & Py_TPFLAGS_IS_ABSTRACT) == 0)) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  return o;
+}
+
+static void __pyx_tp_dealloc_6raylib_CyMouse(PyObject *o) {
+  #if CYTHON_USE_TP_FINALIZE
+  if (unlikely(PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE) && Py_TYPE(o)->tp_finalize) && (!PyType_IS_GC(Py_TYPE(o)) || !_PyGC_FINALIZED(o))) {
+    if (PyObject_CallFinalizerFromDealloc(o)) return;
+  }
+  #endif
+  (*Py_TYPE(o)->tp_free)(o);
+}
+
+static PyObject *__pyx_getprop_6raylib_7CyMouse_MOUSE_BUTTON_LEFT(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_6raylib_7CyMouse_17MOUSE_BUTTON_LEFT_1__get__(o);
+}
+
+static PyObject *__pyx_getprop_6raylib_7CyMouse_MOUSE_BUTTON_RIGHT(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_6raylib_7CyMouse_18MOUSE_BUTTON_RIGHT_1__get__(o);
+}
+
+static PyObject *__pyx_getprop_6raylib_7CyMouse_MOUSE_BUTTON_MIDDLE(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_6raylib_7CyMouse_19MOUSE_BUTTON_MIDDLE_1__get__(o);
+}
+
+static PyObject *__pyx_getprop_6raylib_7CyMouse_MOUSE_BUTTON_SIDE(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_6raylib_7CyMouse_17MOUSE_BUTTON_SIDE_1__get__(o);
+}
+
+static PyObject *__pyx_getprop_6raylib_7CyMouse_MOUSE_BUTTON_EXTRA(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_6raylib_7CyMouse_18MOUSE_BUTTON_EXTRA_1__get__(o);
+}
+
+static PyObject *__pyx_getprop_6raylib_7CyMouse_MOUSE_BUTTON_FORWARD(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_6raylib_7CyMouse_20MOUSE_BUTTON_FORWARD_1__get__(o);
+}
+
+static PyObject *__pyx_getprop_6raylib_7CyMouse_MOUSE_BUTTON_BACK(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_6raylib_7CyMouse_17MOUSE_BUTTON_BACK_1__get__(o);
+}
+
+static PyMethodDef __pyx_methods_6raylib_CyMouse[] = {
+  {"is_mouse_button_pressed", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_1is_mouse_button_pressed, METH_VARARGS|METH_KEYWORDS, 0},
+  {"is_mouse_button_down", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_3is_mouse_button_down, METH_VARARGS|METH_KEYWORDS, 0},
+  {"is_mouse_button_released", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_5is_mouse_button_released, METH_VARARGS|METH_KEYWORDS, 0},
+  {"is_mouse_button_up", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_7is_mouse_button_up, METH_VARARGS|METH_KEYWORDS, 0},
+  {"get_mouse_x", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_9get_mouse_x, METH_VARARGS|METH_KEYWORDS, 0},
+  {"get_mouse_y", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_11get_mouse_y, METH_VARARGS|METH_KEYWORDS, 0},
+  {"get_mouse_position", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_13get_mouse_position, METH_VARARGS|METH_KEYWORDS, 0},
+  {"get_mouse_delta", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_15get_mouse_delta, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_mouse_position", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_17set_mouse_position, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_mouse_offset", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_19set_mouse_offset, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_mouse_scale", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_21set_mouse_scale, METH_VARARGS|METH_KEYWORDS, 0},
+  {"get_mouse_wheel_move", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_23get_mouse_wheel_move, METH_VARARGS|METH_KEYWORDS, 0},
+  {"get_mouse_wheel_move_vector", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_25get_mouse_wheel_move_vector, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_mouse_cursor", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_6raylib_7CyMouse_27set_mouse_cursor, METH_VARARGS|METH_KEYWORDS, 0},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_6raylib_7CyMouse_29__reduce_cython__, METH_NOARGS, 0},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_6raylib_7CyMouse_31__setstate_cython__, METH_O, 0},
+  {0, 0, 0, 0}
+};
+
+static struct PyGetSetDef __pyx_getsets_6raylib_CyMouse[] = {
+  {(char *)"MOUSE_BUTTON_LEFT", __pyx_getprop_6raylib_7CyMouse_MOUSE_BUTTON_LEFT, 0, (char *)0, 0},
+  {(char *)"MOUSE_BUTTON_RIGHT", __pyx_getprop_6raylib_7CyMouse_MOUSE_BUTTON_RIGHT, 0, (char *)0, 0},
+  {(char *)"MOUSE_BUTTON_MIDDLE", __pyx_getprop_6raylib_7CyMouse_MOUSE_BUTTON_MIDDLE, 0, (char *)0, 0},
+  {(char *)"MOUSE_BUTTON_SIDE", __pyx_getprop_6raylib_7CyMouse_MOUSE_BUTTON_SIDE, 0, (char *)0, 0},
+  {(char *)"MOUSE_BUTTON_EXTRA", __pyx_getprop_6raylib_7CyMouse_MOUSE_BUTTON_EXTRA, 0, (char *)0, 0},
+  {(char *)"MOUSE_BUTTON_FORWARD", __pyx_getprop_6raylib_7CyMouse_MOUSE_BUTTON_FORWARD, 0, (char *)0, 0},
+  {(char *)"MOUSE_BUTTON_BACK", __pyx_getprop_6raylib_7CyMouse_MOUSE_BUTTON_BACK, 0, (char *)0, 0},
+  {0, 0, 0, 0, 0}
+};
+
+static PyTypeObject __pyx_type_6raylib_CyMouse = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "raylib.CyMouse", /*tp_name*/
+  sizeof(struct __pyx_obj_6raylib_CyMouse), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_6raylib_CyMouse, /*tp_dealloc*/
+  #if PY_VERSION_HEX < 0x030800b4
+  0, /*tp_print*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030800b4
+  0, /*tp_vectorcall_offset*/
+  #endif
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_6raylib_CyMouse, /*tp_methods*/
+  0, /*tp_members*/
+  __pyx_getsets_6raylib_CyMouse, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  0, /*tp_dictoffset*/
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_6raylib_CyMouse, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  0, /*tp_finalize*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030800b1 && (!CYTHON_COMPILING_IN_PYPY || PYPY_VERSION_NUM >= 0x07030800)
+  0, /*tp_vectorcall*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030800b4 && PY_VERSION_HEX < 0x03090000
+  0, /*tp_print*/
+  #endif
+  #if CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX >= 0x03090000
+  0, /*tp_pypy_flags*/
+  #endif
+};
+
 static struct __pyx_obj___pyx_scope_struct____Pyx_CFunc_void____int____int____const__char_______to_py *__pyx_freelist___pyx_scope_struct____Pyx_CFunc_void____int____int____const__char_______to_py[8];
 static int __pyx_freecount___pyx_scope_struct____Pyx_CFunc_void____int____int____const__char_______to_py = 0;
 
@@ -68444,6 +69893,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_CyMesh, __pyx_k_CyMesh, sizeof(__pyx_k_CyMesh), 0, 0, 1, 1},
   {&__pyx_n_s_CyModel, __pyx_k_CyModel, sizeof(__pyx_k_CyModel), 0, 0, 1, 1},
   {&__pyx_n_s_CyModelAnimation, __pyx_k_CyModelAnimation, sizeof(__pyx_k_CyModelAnimation), 0, 0, 1, 1},
+  {&__pyx_n_s_CyMouse, __pyx_k_CyMouse, sizeof(__pyx_k_CyMouse), 0, 0, 1, 1},
   {&__pyx_n_s_CyMusic, __pyx_k_CyMusic, sizeof(__pyx_k_CyMusic), 0, 0, 1, 1},
   {&__pyx_n_s_CyNPatchInfo, __pyx_k_CyNPatchInfo, sizeof(__pyx_k_CyNPatchInfo), 0, 0, 1, 1},
   {&__pyx_n_s_CyPixel, __pyx_k_CyPixel, sizeof(__pyx_k_CyPixel), 0, 0, 1, 1},
@@ -68723,6 +70173,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_pyx_unpickle_CyKeyboard, __pyx_k_pyx_unpickle_CyKeyboard, sizeof(__pyx_k_pyx_unpickle_CyKeyboard), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_unpickle_CyLine3D, __pyx_k_pyx_unpickle_CyLine3D, sizeof(__pyx_k_pyx_unpickle_CyLine3D), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_unpickle_CyLineBezier, __pyx_k_pyx_unpickle_CyLineBezier, sizeof(__pyx_k_pyx_unpickle_CyLineBezier), 0, 0, 1, 1},
+  {&__pyx_n_s_pyx_unpickle_CyMouse, __pyx_k_pyx_unpickle_CyMouse, sizeof(__pyx_k_pyx_unpickle_CyMouse), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_unpickle_CyPlane, __pyx_k_pyx_unpickle_CyPlane, sizeof(__pyx_k_pyx_unpickle_CyPlane), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_unpickle_CyPoint3D, __pyx_k_pyx_unpickle_CyPoint3D, sizeof(__pyx_k_pyx_unpickle_CyPoint3D), 0, 0, 1, 1},
   {&__pyx_n_s_pyx_unpickle_CyPolygon, __pyx_k_pyx_unpickle_CyPolygon, sizeof(__pyx_k_pyx_unpickle_CyPolygon), 0, 0, 1, 1},
@@ -71446,299 +72897,299 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__318);
   __pyx_codeobj__319 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__318, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_gamepad_mappings, 2318, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__319)) __PYX_ERR(0, 2318, __pyx_L1_error)
 
-  /* "raylib.pyx":2327
- * 
- * #cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
- * def is_mouse_button_pressed(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonPressed(button)
+  /* "raylib.pyx":2329
+ *     #cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
+ *     @staticmethod
+ *     def is_mouse_button_pressed(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonPressed(button)
  * 
  */
-  __pyx_tuple__320 = PyTuple_Pack(2, __pyx_n_s_button, __pyx_n_s_button); if (unlikely(!__pyx_tuple__320)) __PYX_ERR(0, 2327, __pyx_L1_error)
+  __pyx_tuple__320 = PyTuple_Pack(1, __pyx_n_s_button); if (unlikely(!__pyx_tuple__320)) __PYX_ERR(0, 2329, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__320);
   __Pyx_GIVEREF(__pyx_tuple__320);
-  __pyx_codeobj__321 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__320, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_mouse_button_pressed, 2327, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__321)) __PYX_ERR(0, 2327, __pyx_L1_error)
+  __pyx_codeobj__321 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__320, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_mouse_button_pressed, 2329, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__321)) __PYX_ERR(0, 2329, __pyx_L1_error)
 
-  /* "raylib.pyx":2331
- * 
- * #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
- * def is_mouse_button_down(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonDown(button)
+  /* "raylib.pyx":2334
+ *     #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
+ *     @staticmethod
+ *     def is_mouse_button_down(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonDown(button)
  * 
  */
-  __pyx_tuple__322 = PyTuple_Pack(2, __pyx_n_s_button, __pyx_n_s_button); if (unlikely(!__pyx_tuple__322)) __PYX_ERR(0, 2331, __pyx_L1_error)
+  __pyx_tuple__322 = PyTuple_Pack(1, __pyx_n_s_button); if (unlikely(!__pyx_tuple__322)) __PYX_ERR(0, 2334, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__322);
   __Pyx_GIVEREF(__pyx_tuple__322);
-  __pyx_codeobj__323 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__322, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_mouse_button_down, 2331, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__323)) __PYX_ERR(0, 2331, __pyx_L1_error)
-
-  /* "raylib.pyx":2335
- * 
- * #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
- * def is_mouse_button_released(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonReleased(button)
- * 
- */
-  __pyx_tuple__324 = PyTuple_Pack(2, __pyx_n_s_button, __pyx_n_s_button); if (unlikely(!__pyx_tuple__324)) __PYX_ERR(0, 2335, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__324);
-  __Pyx_GIVEREF(__pyx_tuple__324);
-  __pyx_codeobj__325 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__324, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_mouse_button_released, 2335, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__325)) __PYX_ERR(0, 2335, __pyx_L1_error)
+  __pyx_codeobj__323 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__322, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_mouse_button_down, 2334, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__323)) __PYX_ERR(0, 2334, __pyx_L1_error)
 
   /* "raylib.pyx":2339
- * 
- * #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
- * def is_mouse_button_up(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonUp(button)
+ *     #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
+ *     @staticmethod
+ *     def is_mouse_button_released(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonReleased(button)
  * 
  */
-  __pyx_tuple__326 = PyTuple_Pack(2, __pyx_n_s_button, __pyx_n_s_button); if (unlikely(!__pyx_tuple__326)) __PYX_ERR(0, 2339, __pyx_L1_error)
+  __pyx_tuple__324 = PyTuple_Pack(1, __pyx_n_s_button); if (unlikely(!__pyx_tuple__324)) __PYX_ERR(0, 2339, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__324);
+  __Pyx_GIVEREF(__pyx_tuple__324);
+  __pyx_codeobj__325 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__324, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_mouse_button_released, 2339, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__325)) __PYX_ERR(0, 2339, __pyx_L1_error)
+
+  /* "raylib.pyx":2344
+ *     #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
+ *     @staticmethod
+ *     def is_mouse_button_up(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonUp(button)
+ * 
+ */
+  __pyx_tuple__326 = PyTuple_Pack(1, __pyx_n_s_button); if (unlikely(!__pyx_tuple__326)) __PYX_ERR(0, 2344, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__326);
   __Pyx_GIVEREF(__pyx_tuple__326);
-  __pyx_codeobj__327 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__326, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_mouse_button_up, 2339, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__327)) __PYX_ERR(0, 2339, __pyx_L1_error)
+  __pyx_codeobj__327 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__326, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_mouse_button_up, 2344, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__327)) __PYX_ERR(0, 2344, __pyx_L1_error)
 
-  /* "raylib.pyx":2343
- * 
- * #cdef int GetMouseX()                                    # Get mouse position X
- * def get_mouse_x() -> int:             # <<<<<<<<<<<<<<
- *     return GetMouseX()
+  /* "raylib.pyx":2349
+ *     #cdef int GetMouseX()                                    # Get mouse position X
+ *     @staticmethod
+ *     def get_mouse_x() -> int:             # <<<<<<<<<<<<<<
+ *         return GetMouseX()
  * 
  */
-  __pyx_codeobj__328 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_x, 2343, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__328)) __PYX_ERR(0, 2343, __pyx_L1_error)
+  __pyx_codeobj__328 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_x, 2349, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__328)) __PYX_ERR(0, 2349, __pyx_L1_error)
 
-  /* "raylib.pyx":2347
- * 
- * #cdef int GetMouseY()                                    # Get mouse position Y
- * def get_mouse_y() -> int:             # <<<<<<<<<<<<<<
- *     return GetMouseY()
+  /* "raylib.pyx":2354
+ *     #cdef int GetMouseY()                                    # Get mouse position Y
+ *     @staticmethod
+ *     def get_mouse_y() -> int:             # <<<<<<<<<<<<<<
+ *         return GetMouseY()
  * 
  */
-  __pyx_codeobj__329 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_y, 2347, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__329)) __PYX_ERR(0, 2347, __pyx_L1_error)
+  __pyx_codeobj__329 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_y, 2354, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__329)) __PYX_ERR(0, 2354, __pyx_L1_error)
 
-  /* "raylib.pyx":2351
- * 
- * #cdef Vector2 GetMousePosition()                         # Get mouse position XY
- * def get_mouse_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMousePosition()
+  /* "raylib.pyx":2359
+ *     #cdef Vector2 GetMousePosition()                         # Get mouse position XY
+ *     @staticmethod
+ *     def get_mouse_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMousePosition()
  */
-  __pyx_tuple__330 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__330)) __PYX_ERR(0, 2351, __pyx_L1_error)
+  __pyx_tuple__330 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__330)) __PYX_ERR(0, 2359, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__330);
   __Pyx_GIVEREF(__pyx_tuple__330);
-  __pyx_codeobj__331 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__330, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_position, 2351, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__331)) __PYX_ERR(0, 2351, __pyx_L1_error)
-
-  /* "raylib.pyx":2357
- * 
- * #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
- * def get_mouse_delta() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMouseDelta()
- */
-  __pyx_tuple__332 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__332)) __PYX_ERR(0, 2357, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__332);
-  __Pyx_GIVEREF(__pyx_tuple__332);
-  __pyx_codeobj__333 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__332, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_delta, 2357, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__333)) __PYX_ERR(0, 2357, __pyx_L1_error)
-
-  /* "raylib.pyx":2362
- *     return vec
- * #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
- * def set_mouse_position(int x, int y) -> None:             # <<<<<<<<<<<<<<
- *     SetMousePosition(x, y)
- * 
- */
-  __pyx_tuple__334 = PyTuple_Pack(2, __pyx_n_s_x, __pyx_n_s_y); if (unlikely(!__pyx_tuple__334)) __PYX_ERR(0, 2362, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__334);
-  __Pyx_GIVEREF(__pyx_tuple__334);
-  __pyx_codeobj__335 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__334, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_position, 2362, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__335)) __PYX_ERR(0, 2362, __pyx_L1_error)
+  __pyx_codeobj__331 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__330, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_position, 2359, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__331)) __PYX_ERR(0, 2359, __pyx_L1_error)
 
   /* "raylib.pyx":2366
- * 
- * #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
- * def set_mouse_offset(int offset_x, int offset_y) -> None:             # <<<<<<<<<<<<<<
- *     SetMouseOffset(offset_x, offset_y)
- * 
+ *     #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
+ *     @staticmethod
+ *     def get_mouse_delta() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMouseDelta()
  */
-  __pyx_tuple__336 = PyTuple_Pack(2, __pyx_n_s_offset_x, __pyx_n_s_offset_y); if (unlikely(!__pyx_tuple__336)) __PYX_ERR(0, 2366, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__336);
-  __Pyx_GIVEREF(__pyx_tuple__336);
-  __pyx_codeobj__337 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__336, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_offset, 2366, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__337)) __PYX_ERR(0, 2366, __pyx_L1_error)
+  __pyx_tuple__332 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__332)) __PYX_ERR(0, 2366, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__332);
+  __Pyx_GIVEREF(__pyx_tuple__332);
+  __pyx_codeobj__333 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__332, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_delta, 2366, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__333)) __PYX_ERR(0, 2366, __pyx_L1_error)
 
-  /* "raylib.pyx":2370
- * 
- * #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
- * def set_mouse_scale(float scale_x, float scale_y) -> None:             # <<<<<<<<<<<<<<
- *     SetMouseScale(scale_x, scale_y)
- * 
- */
-  __pyx_tuple__338 = PyTuple_Pack(2, __pyx_n_s_scale_x, __pyx_n_s_scale_y); if (unlikely(!__pyx_tuple__338)) __PYX_ERR(0, 2370, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__338);
-  __Pyx_GIVEREF(__pyx_tuple__338);
-  __pyx_codeobj__339 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__338, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_scale, 2370, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__339)) __PYX_ERR(0, 2370, __pyx_L1_error)
-
-  /* "raylib.pyx":2374
- * 
- * #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
- * def get_mouse_wheel_move() -> float:             # <<<<<<<<<<<<<<
- *     return GetMouseWheelMove()
+  /* "raylib.pyx":2373
+ *     #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
+ *     @staticmethod
+ *     def set_mouse_position(int x, int y) -> None:             # <<<<<<<<<<<<<<
+ *         SetMousePosition(x, y)
  * 
  */
-  __pyx_codeobj__340 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_wheel_move, 2374, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__340)) __PYX_ERR(0, 2374, __pyx_L1_error)
+  __pyx_tuple__334 = PyTuple_Pack(2, __pyx_n_s_x, __pyx_n_s_y); if (unlikely(!__pyx_tuple__334)) __PYX_ERR(0, 2373, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__334);
+  __Pyx_GIVEREF(__pyx_tuple__334);
+  __pyx_codeobj__335 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__334, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_position, 2373, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__335)) __PYX_ERR(0, 2373, __pyx_L1_error)
 
   /* "raylib.pyx":2378
+ *     #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
+ *     @staticmethod
+ *     def set_mouse_offset(int offset_x, int offset_y) -> None:             # <<<<<<<<<<<<<<
+ *         SetMouseOffset(offset_x, offset_y)
  * 
- * #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
- * def get_mouse_wheel_move_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMouseWheelMoveV()
  */
-  __pyx_tuple__341 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__341)) __PYX_ERR(0, 2378, __pyx_L1_error)
+  __pyx_tuple__336 = PyTuple_Pack(2, __pyx_n_s_offset_x, __pyx_n_s_offset_y); if (unlikely(!__pyx_tuple__336)) __PYX_ERR(0, 2378, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__336);
+  __Pyx_GIVEREF(__pyx_tuple__336);
+  __pyx_codeobj__337 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__336, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_offset, 2378, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__337)) __PYX_ERR(0, 2378, __pyx_L1_error)
+
+  /* "raylib.pyx":2383
+ *     #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
+ *     @staticmethod
+ *     def set_mouse_scale(float scale_x, float scale_y) -> None:             # <<<<<<<<<<<<<<
+ *         SetMouseScale(scale_x, scale_y)
+ * 
+ */
+  __pyx_tuple__338 = PyTuple_Pack(2, __pyx_n_s_scale_x, __pyx_n_s_scale_y); if (unlikely(!__pyx_tuple__338)) __PYX_ERR(0, 2383, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__338);
+  __Pyx_GIVEREF(__pyx_tuple__338);
+  __pyx_codeobj__339 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__338, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_scale, 2383, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__339)) __PYX_ERR(0, 2383, __pyx_L1_error)
+
+  /* "raylib.pyx":2388
+ *     #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
+ *     @staticmethod
+ *     def get_mouse_wheel_move() -> float:             # <<<<<<<<<<<<<<
+ *         return GetMouseWheelMove()
+ * 
+ */
+  __pyx_codeobj__340 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_wheel_move, 2388, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__340)) __PYX_ERR(0, 2388, __pyx_L1_error)
+
+  /* "raylib.pyx":2393
+ *     #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
+ *     @staticmethod
+ *     def get_mouse_wheel_move_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMouseWheelMoveV()
+ */
+  __pyx_tuple__341 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__341)) __PYX_ERR(0, 2393, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__341);
   __Pyx_GIVEREF(__pyx_tuple__341);
-  __pyx_codeobj__342 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__341, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_wheel_move_vector, 2378, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__342)) __PYX_ERR(0, 2378, __pyx_L1_error)
+  __pyx_codeobj__342 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__341, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_mouse_wheel_move_vector, 2393, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__342)) __PYX_ERR(0, 2393, __pyx_L1_error)
 
-  /* "raylib.pyx":2384
- * 
- * #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
- * def set_mouse_cursor(int cursor) -> None:             # <<<<<<<<<<<<<<
- *     SetMouseCursor(cursor)
+  /* "raylib.pyx":2400
+ *     #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
+ *     @staticmethod
+ *     def set_mouse_cursor(int cursor) -> None:             # <<<<<<<<<<<<<<
+ *         SetMouseCursor(cursor)
  * 
  */
-  __pyx_tuple__343 = PyTuple_Pack(2, __pyx_n_s_cursor, __pyx_n_s_cursor); if (unlikely(!__pyx_tuple__343)) __PYX_ERR(0, 2384, __pyx_L1_error)
+  __pyx_tuple__343 = PyTuple_Pack(1, __pyx_n_s_cursor); if (unlikely(!__pyx_tuple__343)) __PYX_ERR(0, 2400, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__343);
   __Pyx_GIVEREF(__pyx_tuple__343);
-  __pyx_codeobj__344 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__343, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_cursor, 2384, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__344)) __PYX_ERR(0, 2384, __pyx_L1_error)
+  __pyx_codeobj__344 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__343, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_mouse_cursor, 2400, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__344)) __PYX_ERR(0, 2400, __pyx_L1_error)
 
-  /* "raylib.pyx":2391
+  /* "raylib.pyx":2435
  * 
  * #cdef int GetTouchX()                                    # Get touch position X for touch point 0 (relative to screen size)
  * def get_touch_x() -> int:             # <<<<<<<<<<<<<<
  *     return GetTouchX()
  * #cdef int GetTouchY()                                    # Get touch position Y for touch point 0 (relative to screen size)
  */
-  __pyx_codeobj__345 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_touch_x, 2391, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__345)) __PYX_ERR(0, 2391, __pyx_L1_error)
+  __pyx_codeobj__345 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_touch_x, 2435, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__345)) __PYX_ERR(0, 2435, __pyx_L1_error)
 
-  /* "raylib.pyx":2394
+  /* "raylib.pyx":2438
  *     return GetTouchX()
  * #cdef int GetTouchY()                                    # Get touch position Y for touch point 0 (relative to screen size)
  * def get_touch_y() -> int:             # <<<<<<<<<<<<<<
  *     return GetTouchY()
  * #cdef Vector2 GetTouchPosition(int index)                    # Get touch position XY for a touch point index (relative to screen size)
  */
-  __pyx_codeobj__346 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_touch_y, 2394, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__346)) __PYX_ERR(0, 2394, __pyx_L1_error)
+  __pyx_codeobj__346 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_touch_y, 2438, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__346)) __PYX_ERR(0, 2438, __pyx_L1_error)
 
-  /* "raylib.pyx":2397
+  /* "raylib.pyx":2441
  *     return GetTouchY()
  * #cdef Vector2 GetTouchPosition(int index)                    # Get touch position XY for a touch point index (relative to screen size)
  * def get_touch_position(int index) -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__init__(raymath.CyVector2)
  *     vec._vector = GetTouchPosition(index)
  */
-  __pyx_tuple__347 = PyTuple_Pack(3, __pyx_n_s_index, __pyx_n_s_index, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__347)) __PYX_ERR(0, 2397, __pyx_L1_error)
+  __pyx_tuple__347 = PyTuple_Pack(3, __pyx_n_s_index, __pyx_n_s_index, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__347)) __PYX_ERR(0, 2441, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__347);
   __Pyx_GIVEREF(__pyx_tuple__347);
-  __pyx_codeobj__348 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__347, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_touch_position, 2397, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__348)) __PYX_ERR(0, 2397, __pyx_L1_error)
+  __pyx_codeobj__348 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__347, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_touch_position, 2441, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__348)) __PYX_ERR(0, 2441, __pyx_L1_error)
 
-  /* "raylib.pyx":2403
+  /* "raylib.pyx":2447
  * 
  * #cdef int GetTouchPointId(int index)                         # Get touch point identifier for given index
  * def get_touch_point_id(int index) -> int:             # <<<<<<<<<<<<<<
  *     return GetTouchPointId(index)
  * 
  */
-  __pyx_tuple__349 = PyTuple_Pack(2, __pyx_n_s_index, __pyx_n_s_index); if (unlikely(!__pyx_tuple__349)) __PYX_ERR(0, 2403, __pyx_L1_error)
+  __pyx_tuple__349 = PyTuple_Pack(2, __pyx_n_s_index, __pyx_n_s_index); if (unlikely(!__pyx_tuple__349)) __PYX_ERR(0, 2447, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__349);
   __Pyx_GIVEREF(__pyx_tuple__349);
-  __pyx_codeobj__350 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__349, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_touch_point_id, 2403, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__350)) __PYX_ERR(0, 2403, __pyx_L1_error)
+  __pyx_codeobj__350 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__349, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_touch_point_id, 2447, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__350)) __PYX_ERR(0, 2447, __pyx_L1_error)
 
-  /* "raylib.pyx":2407
+  /* "raylib.pyx":2451
  * 
  * #cdef int GetTouchPointCount()                           # Get number of touch points
  * def get_touch_point_count() -> int:             # <<<<<<<<<<<<<<
  *     return get_touch_point_count()
  * 
  */
-  __pyx_codeobj__351 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_touch_point_count, 2407, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__351)) __PYX_ERR(0, 2407, __pyx_L1_error)
+  __pyx_codeobj__351 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_touch_point_count, 2451, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__351)) __PYX_ERR(0, 2451, __pyx_L1_error)
 
-  /* "raylib.pyx":2413
+  /* "raylib.pyx":2457
  * 
  * #cdef void SetGesturesEnabled(unsigned int flags)      # Enable a set of gestures using flags
  * def set_gesture_enabled(unsigned int flags) -> None:             # <<<<<<<<<<<<<<
  *     SetGesturesEnabled(flags)
  * 
  */
-  __pyx_tuple__352 = PyTuple_Pack(2, __pyx_n_s_flags, __pyx_n_s_flags); if (unlikely(!__pyx_tuple__352)) __PYX_ERR(0, 2413, __pyx_L1_error)
+  __pyx_tuple__352 = PyTuple_Pack(2, __pyx_n_s_flags, __pyx_n_s_flags); if (unlikely(!__pyx_tuple__352)) __PYX_ERR(0, 2457, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__352);
   __Pyx_GIVEREF(__pyx_tuple__352);
-  __pyx_codeobj__353 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__352, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_gesture_enabled, 2413, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__353)) __PYX_ERR(0, 2413, __pyx_L1_error)
+  __pyx_codeobj__353 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__352, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_set_gesture_enabled, 2457, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__353)) __PYX_ERR(0, 2457, __pyx_L1_error)
 
-  /* "raylib.pyx":2417
+  /* "raylib.pyx":2461
  * 
  * #cdef bint IsGestureDetected(unsigned int gesture)     # Check if a gesture have been detected
  * def is_gesture_detected(unsigned int gesture) -> bool:             # <<<<<<<<<<<<<<
  *     return IsGestureDetected(gesture)
  * 
  */
-  __pyx_tuple__354 = PyTuple_Pack(2, __pyx_n_s_gesture, __pyx_n_s_gesture); if (unlikely(!__pyx_tuple__354)) __PYX_ERR(0, 2417, __pyx_L1_error)
+  __pyx_tuple__354 = PyTuple_Pack(2, __pyx_n_s_gesture, __pyx_n_s_gesture); if (unlikely(!__pyx_tuple__354)) __PYX_ERR(0, 2461, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__354);
   __Pyx_GIVEREF(__pyx_tuple__354);
-  __pyx_codeobj__355 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__354, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_gesture_detected, 2417, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__355)) __PYX_ERR(0, 2417, __pyx_L1_error)
+  __pyx_codeobj__355 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__354, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_is_gesture_detected, 2461, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__355)) __PYX_ERR(0, 2461, __pyx_L1_error)
 
-  /* "raylib.pyx":2421
+  /* "raylib.pyx":2465
  * 
  * #cdef int GetGestureDetected()                     # Get latest detected gesture
  * def get_gesture_detected() -> int:             # <<<<<<<<<<<<<<
  *     return GetGestureDetected()
  * 
  */
-  __pyx_codeobj__356 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_gesture_detected, 2421, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__356)) __PYX_ERR(0, 2421, __pyx_L1_error)
+  __pyx_codeobj__356 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_gesture_detected, 2465, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__356)) __PYX_ERR(0, 2465, __pyx_L1_error)
 
-  /* "raylib.pyx":2425
+  /* "raylib.pyx":2469
  * 
  * #cdef float GetGestureHoldDuration()               # Get gesture hold time in milliseconds
  * def get_gesture_hold_duration() -> float:             # <<<<<<<<<<<<<<
  *     return GetGestureHoldDuration()
  * 
  */
-  __pyx_codeobj__357 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_gesture_hold_duration, 2425, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__357)) __PYX_ERR(0, 2425, __pyx_L1_error)
+  __pyx_codeobj__357 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_gesture_hold_duration, 2469, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__357)) __PYX_ERR(0, 2469, __pyx_L1_error)
 
-  /* "raylib.pyx":2429
+  /* "raylib.pyx":2473
  * 
  * #cdef Vector2 GetGestureDragVector()               # Get gesture drag vector
  * def get_gesture_drag_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetGestureDragVector()
  */
-  __pyx_tuple__358 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__358)) __PYX_ERR(0, 2429, __pyx_L1_error)
+  __pyx_tuple__358 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__358)) __PYX_ERR(0, 2473, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__358);
   __Pyx_GIVEREF(__pyx_tuple__358);
-  __pyx_codeobj__359 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__358, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_gesture_drag_vector, 2429, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__359)) __PYX_ERR(0, 2429, __pyx_L1_error)
+  __pyx_codeobj__359 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__358, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_gesture_drag_vector, 2473, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__359)) __PYX_ERR(0, 2473, __pyx_L1_error)
 
-  /* "raylib.pyx":2435
+  /* "raylib.pyx":2479
  * 
  * #cdef float GetGestureDragAngle()                  # Get gesture drag angle
  * def get_gesture_drag_angle() -> float:             # <<<<<<<<<<<<<<
  *     return GetGestureDragAngle()
  * 
  */
-  __pyx_codeobj__360 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_gesture_drag_angle, 2435, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__360)) __PYX_ERR(0, 2435, __pyx_L1_error)
+  __pyx_codeobj__360 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_gesture_drag_angle, 2479, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__360)) __PYX_ERR(0, 2479, __pyx_L1_error)
 
-  /* "raylib.pyx":2439
+  /* "raylib.pyx":2483
  * 
  * #cdef Vector2 GetGesturePinchVector()              # Get gesture pinch delta
  * def get_gesture_pinch_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetGesturePinchVector()
  */
-  __pyx_tuple__361 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__361)) __PYX_ERR(0, 2439, __pyx_L1_error)
+  __pyx_tuple__361 = PyTuple_Pack(1, __pyx_n_s_vec_2); if (unlikely(!__pyx_tuple__361)) __PYX_ERR(0, 2483, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__361);
   __Pyx_GIVEREF(__pyx_tuple__361);
-  __pyx_codeobj__362 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__361, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_gesture_pinch_vector, 2439, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__362)) __PYX_ERR(0, 2439, __pyx_L1_error)
+  __pyx_codeobj__362 = (PyObject*)__Pyx_PyCode_New(0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__361, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_gesture_pinch_vector, 2483, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__362)) __PYX_ERR(0, 2483, __pyx_L1_error)
 
-  /* "raylib.pyx":2445
+  /* "raylib.pyx":2489
  * 
  * #cdef float GetGesturePinchAngle()                 # Get gesture pinch angle
  * def get_gesture_pinch_angle() -> float:             # <<<<<<<<<<<<<<
  *     return GetGesturePinchAngle()
  * 
  */
-  __pyx_codeobj__363 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_gesture_pinch_angle, 2445, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__363)) __PYX_ERR(0, 2445, __pyx_L1_error)
+  __pyx_codeobj__363 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_raylib_pyx, __pyx_n_s_get_gesture_pinch_angle, 2489, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__363)) __PYX_ERR(0, 2489, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_CyLineBezier(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
@@ -71825,6 +73276,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__402);
   __Pyx_GIVEREF(__pyx_tuple__402);
   __pyx_codeobj__403 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__402, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyKeyboard, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__403)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__404 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__404)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__404);
+  __Pyx_GIVEREF(__pyx_tuple__404);
+  __pyx_codeobj__405 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__404, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_CyMouse, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__405)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "View.MemoryView":287
  *         return self.name
@@ -71833,9 +73288,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_tuple__404 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__404)) __PYX_ERR(1, 287, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__404);
-  __Pyx_GIVEREF(__pyx_tuple__404);
+  __pyx_tuple__406 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct_or_indirect); if (unlikely(!__pyx_tuple__406)) __PYX_ERR(1, 287, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__406);
+  __Pyx_GIVEREF(__pyx_tuple__406);
 
   /* "View.MemoryView":288
  * 
@@ -71844,9 +73299,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_tuple__405 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__405)) __PYX_ERR(1, 288, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__405);
-  __Pyx_GIVEREF(__pyx_tuple__405);
+  __pyx_tuple__407 = PyTuple_Pack(1, __pyx_kp_s_strided_and_direct); if (unlikely(!__pyx_tuple__407)) __PYX_ERR(1, 288, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__407);
+  __Pyx_GIVEREF(__pyx_tuple__407);
 
   /* "View.MemoryView":289
  * cdef generic = Enum("<strided and direct or indirect>")
@@ -71855,9 +73310,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__406 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__406)) __PYX_ERR(1, 289, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__406);
-  __Pyx_GIVEREF(__pyx_tuple__406);
+  __pyx_tuple__408 = PyTuple_Pack(1, __pyx_kp_s_strided_and_indirect); if (unlikely(!__pyx_tuple__408)) __PYX_ERR(1, 289, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__408);
+  __Pyx_GIVEREF(__pyx_tuple__408);
 
   /* "View.MemoryView":292
  * 
@@ -71866,9 +73321,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_tuple__407 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__407)) __PYX_ERR(1, 292, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__407);
-  __Pyx_GIVEREF(__pyx_tuple__407);
+  __pyx_tuple__409 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_direct); if (unlikely(!__pyx_tuple__409)) __PYX_ERR(1, 292, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__409);
+  __Pyx_GIVEREF(__pyx_tuple__409);
 
   /* "View.MemoryView":293
  * 
@@ -71877,19 +73332,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * 
  */
-  __pyx_tuple__408 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__408)) __PYX_ERR(1, 293, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__408);
-  __Pyx_GIVEREF(__pyx_tuple__408);
+  __pyx_tuple__410 = PyTuple_Pack(1, __pyx_kp_s_contiguous_and_indirect); if (unlikely(!__pyx_tuple__410)) __PYX_ERR(1, 293, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__410);
+  __Pyx_GIVEREF(__pyx_tuple__410);
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_Enum(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_tuple__409 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__409)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__409);
-  __Pyx_GIVEREF(__pyx_tuple__409);
-  __pyx_codeobj__410 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__409, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__410)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__411 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__411)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__411);
+  __Pyx_GIVEREF(__pyx_tuple__411);
+  __pyx_codeobj__412 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__411, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__412)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -72601,6 +74056,16 @@ static int __Pyx_modinit_type_init_code(void) {
   if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyKeyboard, (PyObject *)&__pyx_type_6raylib_CyKeyboard) < 0) __PYX_ERR(0, 1802, __pyx_L1_error)
   if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyKeyboard) < 0) __PYX_ERR(0, 1802, __pyx_L1_error)
   __pyx_ptype_6raylib_CyKeyboard = &__pyx_type_6raylib_CyKeyboard;
+  if (PyType_Ready(&__pyx_type_6raylib_CyMouse) < 0) __PYX_ERR(0, 2326, __pyx_L1_error)
+  #if PY_VERSION_HEX < 0x030800B1
+  __pyx_type_6raylib_CyMouse.tp_print = 0;
+  #endif
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_6raylib_CyMouse.tp_dictoffset && __pyx_type_6raylib_CyMouse.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_6raylib_CyMouse.tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  }
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_CyMouse, (PyObject *)&__pyx_type_6raylib_CyMouse) < 0) __PYX_ERR(0, 2326, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6raylib_CyMouse) < 0) __PYX_ERR(0, 2326, __pyx_L1_error)
+  __pyx_ptype_6raylib_CyMouse = &__pyx_type_6raylib_CyMouse;
   if (PyType_Ready(&__pyx_scope_struct____Pyx_CFunc_void____int____int____const__char_______to_py) < 0) __PYX_ERR(1, 64, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_scope_struct____Pyx_CFunc_void____int____int____const__char_______to_py.tp_print = 0;
@@ -75599,328 +77064,566 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_gamepad_mappings, __pyx_t_1) < 0) __PYX_ERR(0, 2318, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2327
- * 
- * #cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
- * def is_mouse_button_pressed(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonPressed(button)
+  /* "raylib.pyx":2329
+ *     #cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
+ *     @staticmethod
+ *     def is_mouse_button_pressed(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonPressed(button)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_175is_mouse_button_pressed, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2327, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyMouse_1is_mouse_button_pressed, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2329, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_mouse_button_pressed, __pyx_t_1) < 0) __PYX_ERR(0, 2327, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_is_mouse_button_pressed, __pyx_t_1) < 0) __PYX_ERR(0, 2329, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
 
-  /* "raylib.pyx":2331
- * 
- * #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
- * def is_mouse_button_down(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonDown(button)
- * 
+  /* "raylib.pyx":2328
+ * cdef class CyMouse:
+ *     #cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def is_mouse_button_pressed(int button) -> bool:
+ *         return IsMouseButtonPressed(button)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_177is_mouse_button_down, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2331, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyMouse, __pyx_n_s_is_mouse_button_pressed); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2329, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_mouse_button_down, __pyx_t_1) < 0) __PYX_ERR(0, 2331, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2328, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_is_mouse_button_pressed, __pyx_t_2) < 0) __PYX_ERR(0, 2329, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
 
-  /* "raylib.pyx":2335
- * 
- * #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
- * def is_mouse_button_released(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonReleased(button)
+  /* "raylib.pyx":2334
+ *     #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
+ *     @staticmethod
+ *     def is_mouse_button_down(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonDown(button)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_179is_mouse_button_released, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2335, __pyx_L1_error)
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyMouse_3is_mouse_button_down, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2334, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_is_mouse_button_down, __pyx_t_2) < 0) __PYX_ERR(0, 2334, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
+
+  /* "raylib.pyx":2333
+ * 
+ *     #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def is_mouse_button_down(int button) -> bool:
+ *         return IsMouseButtonDown(button)
+ */
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyMouse, __pyx_n_s_is_mouse_button_down); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2334, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2333, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_mouse_button_released, __pyx_t_1) < 0) __PYX_ERR(0, 2335, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_is_mouse_button_down, __pyx_t_1) < 0) __PYX_ERR(0, 2334, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
 
   /* "raylib.pyx":2339
- * 
- * #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
- * def is_mouse_button_up(int button) -> bool:             # <<<<<<<<<<<<<<
- *     return IsMouseButtonUp(button)
+ *     #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
+ *     @staticmethod
+ *     def is_mouse_button_released(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonReleased(button)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_181is_mouse_button_up, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2339, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyMouse_5is_mouse_button_released, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_mouse_button_up, __pyx_t_1) < 0) __PYX_ERR(0, 2339, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_is_mouse_button_released, __pyx_t_1) < 0) __PYX_ERR(0, 2339, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
+
+  /* "raylib.pyx":2338
+ * 
+ *     #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def is_mouse_button_released(int button) -> bool:
+ *         return IsMouseButtonReleased(button)
+ */
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyMouse, __pyx_n_s_is_mouse_button_released); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2339, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2338, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_is_mouse_button_released, __pyx_t_2) < 0) __PYX_ERR(0, 2339, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
+
+  /* "raylib.pyx":2344
+ *     #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
+ *     @staticmethod
+ *     def is_mouse_button_up(int button) -> bool:             # <<<<<<<<<<<<<<
+ *         return IsMouseButtonUp(button)
+ * 
+ */
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyMouse_7is_mouse_button_up, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2344, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_is_mouse_button_up, __pyx_t_2) < 0) __PYX_ERR(0, 2344, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
 
   /* "raylib.pyx":2343
  * 
- * #cdef int GetMouseX()                                    # Get mouse position X
- * def get_mouse_x() -> int:             # <<<<<<<<<<<<<<
- *     return GetMouseX()
- * 
+ *     #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def is_mouse_button_up(int button) -> bool:
+ *         return IsMouseButtonUp(button)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_183get_mouse_x, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2343, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyMouse, __pyx_n_s_is_mouse_button_up); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2344, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2343, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_x, __pyx_t_1) < 0) __PYX_ERR(0, 2343, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_is_mouse_button_up, __pyx_t_1) < 0) __PYX_ERR(0, 2344, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
 
-  /* "raylib.pyx":2347
- * 
- * #cdef int GetMouseY()                                    # Get mouse position Y
- * def get_mouse_y() -> int:             # <<<<<<<<<<<<<<
- *     return GetMouseY()
+  /* "raylib.pyx":2349
+ *     #cdef int GetMouseX()                                    # Get mouse position X
+ *     @staticmethod
+ *     def get_mouse_x() -> int:             # <<<<<<<<<<<<<<
+ *         return GetMouseX()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_185get_mouse_y, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2347, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyMouse_9get_mouse_x, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2349, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_y, __pyx_t_1) < 0) __PYX_ERR(0, 2347, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_get_mouse_x, __pyx_t_1) < 0) __PYX_ERR(0, 2349, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
 
-  /* "raylib.pyx":2351
+  /* "raylib.pyx":2348
  * 
- * #cdef Vector2 GetMousePosition()                         # Get mouse position XY
- * def get_mouse_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMousePosition()
+ *     #cdef int GetMouseX()                                    # Get mouse position X
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def get_mouse_x() -> int:
+ *         return GetMouseX()
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_187get_mouse_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2351, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyMouse, __pyx_n_s_get_mouse_x); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2349, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_position, __pyx_t_1) < 0) __PYX_ERR(0, 2351, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2348, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_get_mouse_x, __pyx_t_2) < 0) __PYX_ERR(0, 2349, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
 
-  /* "raylib.pyx":2357
+  /* "raylib.pyx":2354
+ *     #cdef int GetMouseY()                                    # Get mouse position Y
+ *     @staticmethod
+ *     def get_mouse_y() -> int:             # <<<<<<<<<<<<<<
+ *         return GetMouseY()
  * 
- * #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
- * def get_mouse_delta() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMouseDelta()
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_189get_mouse_delta, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2357, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_delta, __pyx_t_1) < 0) __PYX_ERR(0, 2357, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyMouse_11get_mouse_y, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2354, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_get_mouse_y, __pyx_t_2) < 0) __PYX_ERR(0, 2354, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
 
-  /* "raylib.pyx":2362
- *     return vec
- * #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
- * def set_mouse_position(int x, int y) -> None:             # <<<<<<<<<<<<<<
- *     SetMousePosition(x, y)
+  /* "raylib.pyx":2353
  * 
+ *     #cdef int GetMouseY()                                    # Get mouse position Y
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def get_mouse_y() -> int:
+ *         return GetMouseY()
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_191set_mouse_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2362, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyMouse, __pyx_n_s_get_mouse_y); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2354, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2353, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_mouse_position, __pyx_t_1) < 0) __PYX_ERR(0, 2362, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_get_mouse_y, __pyx_t_1) < 0) __PYX_ERR(0, 2354, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
+
+  /* "raylib.pyx":2359
+ *     #cdef Vector2 GetMousePosition()                         # Get mouse position XY
+ *     @staticmethod
+ *     def get_mouse_position() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMousePosition()
+ */
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyMouse_13get_mouse_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2359, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_get_mouse_position, __pyx_t_1) < 0) __PYX_ERR(0, 2359, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
+
+  /* "raylib.pyx":2358
+ * 
+ *     #cdef Vector2 GetMousePosition()                         # Get mouse position XY
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def get_mouse_position() -> raymath.CyVector2:
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ */
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyMouse, __pyx_n_s_get_mouse_position); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2359, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2358, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_get_mouse_position, __pyx_t_2) < 0) __PYX_ERR(0, 2359, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
 
   /* "raylib.pyx":2366
- * 
- * #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
- * def set_mouse_offset(int offset_x, int offset_y) -> None:             # <<<<<<<<<<<<<<
- *     SetMouseOffset(offset_x, offset_y)
- * 
+ *     #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
+ *     @staticmethod
+ *     def get_mouse_delta() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMouseDelta()
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_193set_mouse_offset, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2366, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_mouse_offset, __pyx_t_1) < 0) __PYX_ERR(0, 2366, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyMouse_15get_mouse_delta, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2366, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_get_mouse_delta, __pyx_t_2) < 0) __PYX_ERR(0, 2366, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
 
-  /* "raylib.pyx":2370
+  /* "raylib.pyx":2365
  * 
- * #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
- * def set_mouse_scale(float scale_x, float scale_y) -> None:             # <<<<<<<<<<<<<<
- *     SetMouseScale(scale_x, scale_y)
- * 
+ *     #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def get_mouse_delta() -> raymath.CyVector2:
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_195set_mouse_scale, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2370, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyMouse, __pyx_n_s_get_mouse_delta); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2366, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2365, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_mouse_scale, __pyx_t_1) < 0) __PYX_ERR(0, 2370, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_get_mouse_delta, __pyx_t_1) < 0) __PYX_ERR(0, 2366, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
 
-  /* "raylib.pyx":2374
- * 
- * #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
- * def get_mouse_wheel_move() -> float:             # <<<<<<<<<<<<<<
- *     return GetMouseWheelMove()
+  /* "raylib.pyx":2373
+ *     #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
+ *     @staticmethod
+ *     def set_mouse_position(int x, int y) -> None:             # <<<<<<<<<<<<<<
+ *         SetMousePosition(x, y)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_197get_mouse_wheel_move, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2374, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyMouse_17set_mouse_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2373, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_wheel_move, __pyx_t_1) < 0) __PYX_ERR(0, 2374, __pyx_L1_error)
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_set_mouse_position, __pyx_t_1) < 0) __PYX_ERR(0, 2373, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
+
+  /* "raylib.pyx":2372
+ * 
+ *     #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def set_mouse_position(int x, int y) -> None:
+ *         SetMousePosition(x, y)
+ */
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyMouse, __pyx_n_s_set_mouse_position); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2373, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2372, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_set_mouse_position, __pyx_t_2) < 0) __PYX_ERR(0, 2373, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
 
   /* "raylib.pyx":2378
- * 
- * #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
- * def get_mouse_wheel_move_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
- *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
- *     vec._vector = GetMouseWheelMoveV()
- */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_199get_mouse_wheel_move_vector, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2378, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_mouse_wheel_move_vector, __pyx_t_1) < 0) __PYX_ERR(0, 2378, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-
-  /* "raylib.pyx":2384
- * 
- * #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
- * def set_mouse_cursor(int cursor) -> None:             # <<<<<<<<<<<<<<
- *     SetMouseCursor(cursor)
+ *     #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
+ *     @staticmethod
+ *     def set_mouse_offset(int offset_x, int offset_y) -> None:             # <<<<<<<<<<<<<<
+ *         SetMouseOffset(offset_x, offset_y)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_201set_mouse_cursor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2384, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_mouse_cursor, __pyx_t_1) < 0) __PYX_ERR(0, 2384, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyMouse_19set_mouse_offset, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2378, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_set_mouse_offset, __pyx_t_2) < 0) __PYX_ERR(0, 2378, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
 
-  /* "raylib.pyx":2391
+  /* "raylib.pyx":2377
+ * 
+ *     #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def set_mouse_offset(int offset_x, int offset_y) -> None:
+ *         SetMouseOffset(offset_x, offset_y)
+ */
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyMouse, __pyx_n_s_set_mouse_offset); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2378, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2377, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_set_mouse_offset, __pyx_t_1) < 0) __PYX_ERR(0, 2378, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
+
+  /* "raylib.pyx":2383
+ *     #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
+ *     @staticmethod
+ *     def set_mouse_scale(float scale_x, float scale_y) -> None:             # <<<<<<<<<<<<<<
+ *         SetMouseScale(scale_x, scale_y)
+ * 
+ */
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyMouse_21set_mouse_scale, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2383, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_set_mouse_scale, __pyx_t_1) < 0) __PYX_ERR(0, 2383, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
+
+  /* "raylib.pyx":2382
+ * 
+ *     #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def set_mouse_scale(float scale_x, float scale_y) -> None:
+ *         SetMouseScale(scale_x, scale_y)
+ */
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyMouse, __pyx_n_s_set_mouse_scale); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2383, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2382, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_set_mouse_scale, __pyx_t_2) < 0) __PYX_ERR(0, 2383, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
+
+  /* "raylib.pyx":2388
+ *     #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
+ *     @staticmethod
+ *     def get_mouse_wheel_move() -> float:             # <<<<<<<<<<<<<<
+ *         return GetMouseWheelMove()
+ * 
+ */
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyMouse_23get_mouse_wheel_move, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2388, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_get_mouse_wheel_move, __pyx_t_2) < 0) __PYX_ERR(0, 2388, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
+
+  /* "raylib.pyx":2387
+ * 
+ *     #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def get_mouse_wheel_move() -> float:
+ *         return GetMouseWheelMove()
+ */
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyMouse, __pyx_n_s_get_mouse_wheel_move); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2388, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2387, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_get_mouse_wheel_move, __pyx_t_1) < 0) __PYX_ERR(0, 2388, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
+
+  /* "raylib.pyx":2393
+ *     #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
+ *     @staticmethod
+ *     def get_mouse_wheel_move_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ *         vec._vector = GetMouseWheelMoveV()
+ */
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyMouse_25get_mouse_wheel_move_vector, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2393, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_get_mouse_wheel_move_vector, __pyx_t_1) < 0) __PYX_ERR(0, 2393, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
+
+  /* "raylib.pyx":2392
+ * 
+ *     #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def get_mouse_wheel_move_vector() -> raymath.CyVector2:
+ *         cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+ */
+  __Pyx_GetNameInClass(__pyx_t_1, (PyObject *)__pyx_ptype_6raylib_CyMouse, __pyx_n_s_get_mouse_wheel_move_vector); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2393, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2392, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_get_mouse_wheel_move_vector, __pyx_t_2) < 0) __PYX_ERR(0, 2393, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
+
+  /* "raylib.pyx":2400
+ *     #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
+ *     @staticmethod
+ *     def set_mouse_cursor(int cursor) -> None:             # <<<<<<<<<<<<<<
+ *         SetMouseCursor(cursor)
+ * 
+ */
+  __pyx_t_2 = PyCFunction_NewEx(&__pyx_mdef_6raylib_7CyMouse_27set_mouse_cursor, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2400, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_set_mouse_cursor, __pyx_t_2) < 0) __PYX_ERR(0, 2400, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
+
+  /* "raylib.pyx":2399
+ * 
+ *     #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def set_mouse_cursor(int cursor) -> None:
+ *         SetMouseCursor(cursor)
+ */
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_6raylib_CyMouse, __pyx_n_s_set_mouse_cursor); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2400, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2399, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (PyDict_SetItem((PyObject *)__pyx_ptype_6raylib_CyMouse->tp_dict, __pyx_n_s_set_mouse_cursor, __pyx_t_1) < 0) __PYX_ERR(0, 2400, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  PyType_Modified(__pyx_ptype_6raylib_CyMouse);
+
+  /* "raylib.pyx":2435
  * 
  * #cdef int GetTouchX()                                    # Get touch position X for touch point 0 (relative to screen size)
  * def get_touch_x() -> int:             # <<<<<<<<<<<<<<
  *     return GetTouchX()
  * #cdef int GetTouchY()                                    # Get touch position Y for touch point 0 (relative to screen size)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_203get_touch_x, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2391, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_175get_touch_x, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2435, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_touch_x, __pyx_t_1) < 0) __PYX_ERR(0, 2391, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_touch_x, __pyx_t_1) < 0) __PYX_ERR(0, 2435, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2394
+  /* "raylib.pyx":2438
  *     return GetTouchX()
  * #cdef int GetTouchY()                                    # Get touch position Y for touch point 0 (relative to screen size)
  * def get_touch_y() -> int:             # <<<<<<<<<<<<<<
  *     return GetTouchY()
  * #cdef Vector2 GetTouchPosition(int index)                    # Get touch position XY for a touch point index (relative to screen size)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_205get_touch_y, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2394, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_177get_touch_y, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2438, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_touch_y, __pyx_t_1) < 0) __PYX_ERR(0, 2394, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_touch_y, __pyx_t_1) < 0) __PYX_ERR(0, 2438, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2397
+  /* "raylib.pyx":2441
  *     return GetTouchY()
  * #cdef Vector2 GetTouchPosition(int index)                    # Get touch position XY for a touch point index (relative to screen size)
  * def get_touch_position(int index) -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__init__(raymath.CyVector2)
  *     vec._vector = GetTouchPosition(index)
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_207get_touch_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2397, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_179get_touch_position, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2441, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_touch_position, __pyx_t_1) < 0) __PYX_ERR(0, 2397, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_touch_position, __pyx_t_1) < 0) __PYX_ERR(0, 2441, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2403
+  /* "raylib.pyx":2447
  * 
  * #cdef int GetTouchPointId(int index)                         # Get touch point identifier for given index
  * def get_touch_point_id(int index) -> int:             # <<<<<<<<<<<<<<
  *     return GetTouchPointId(index)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_209get_touch_point_id, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2403, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_181get_touch_point_id, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2447, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_touch_point_id, __pyx_t_1) < 0) __PYX_ERR(0, 2403, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_touch_point_id, __pyx_t_1) < 0) __PYX_ERR(0, 2447, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2407
+  /* "raylib.pyx":2451
  * 
  * #cdef int GetTouchPointCount()                           # Get number of touch points
  * def get_touch_point_count() -> int:             # <<<<<<<<<<<<<<
  *     return get_touch_point_count()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_211get_touch_point_count, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2407, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_183get_touch_point_count, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2451, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_touch_point_count, __pyx_t_1) < 0) __PYX_ERR(0, 2407, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_touch_point_count, __pyx_t_1) < 0) __PYX_ERR(0, 2451, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2413
+  /* "raylib.pyx":2457
  * 
  * #cdef void SetGesturesEnabled(unsigned int flags)      # Enable a set of gestures using flags
  * def set_gesture_enabled(unsigned int flags) -> None:             # <<<<<<<<<<<<<<
  *     SetGesturesEnabled(flags)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_213set_gesture_enabled, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2413, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_185set_gesture_enabled, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2457, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_gesture_enabled, __pyx_t_1) < 0) __PYX_ERR(0, 2413, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_set_gesture_enabled, __pyx_t_1) < 0) __PYX_ERR(0, 2457, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2417
+  /* "raylib.pyx":2461
  * 
  * #cdef bint IsGestureDetected(unsigned int gesture)     # Check if a gesture have been detected
  * def is_gesture_detected(unsigned int gesture) -> bool:             # <<<<<<<<<<<<<<
  *     return IsGestureDetected(gesture)
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_215is_gesture_detected, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2417, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_187is_gesture_detected, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2461, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_gesture_detected, __pyx_t_1) < 0) __PYX_ERR(0, 2417, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_is_gesture_detected, __pyx_t_1) < 0) __PYX_ERR(0, 2461, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2421
+  /* "raylib.pyx":2465
  * 
  * #cdef int GetGestureDetected()                     # Get latest detected gesture
  * def get_gesture_detected() -> int:             # <<<<<<<<<<<<<<
  *     return GetGestureDetected()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_217get_gesture_detected, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2421, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_189get_gesture_detected, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2465, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_gesture_detected, __pyx_t_1) < 0) __PYX_ERR(0, 2421, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_gesture_detected, __pyx_t_1) < 0) __PYX_ERR(0, 2465, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2425
+  /* "raylib.pyx":2469
  * 
  * #cdef float GetGestureHoldDuration()               # Get gesture hold time in milliseconds
  * def get_gesture_hold_duration() -> float:             # <<<<<<<<<<<<<<
  *     return GetGestureHoldDuration()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_219get_gesture_hold_duration, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2425, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_191get_gesture_hold_duration, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2469, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_gesture_hold_duration, __pyx_t_1) < 0) __PYX_ERR(0, 2425, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_gesture_hold_duration, __pyx_t_1) < 0) __PYX_ERR(0, 2469, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2429
+  /* "raylib.pyx":2473
  * 
  * #cdef Vector2 GetGestureDragVector()               # Get gesture drag vector
  * def get_gesture_drag_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetGestureDragVector()
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_221get_gesture_drag_vector, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2429, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_193get_gesture_drag_vector, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2473, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_gesture_drag_vector, __pyx_t_1) < 0) __PYX_ERR(0, 2429, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_gesture_drag_vector, __pyx_t_1) < 0) __PYX_ERR(0, 2473, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2435
+  /* "raylib.pyx":2479
  * 
  * #cdef float GetGestureDragAngle()                  # Get gesture drag angle
  * def get_gesture_drag_angle() -> float:             # <<<<<<<<<<<<<<
  *     return GetGestureDragAngle()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_223get_gesture_drag_angle, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2435, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_195get_gesture_drag_angle, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2479, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_gesture_drag_angle, __pyx_t_1) < 0) __PYX_ERR(0, 2435, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_gesture_drag_angle, __pyx_t_1) < 0) __PYX_ERR(0, 2479, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2439
+  /* "raylib.pyx":2483
  * 
  * #cdef Vector2 GetGesturePinchVector()              # Get gesture pinch delta
  * def get_gesture_pinch_vector() -> raymath.CyVector2:             # <<<<<<<<<<<<<<
  *     cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
  *     vec._vector = GetGesturePinchVector()
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_225get_gesture_pinch_vector, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2439, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_197get_gesture_pinch_vector, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2483, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_gesture_pinch_vector, __pyx_t_1) < 0) __PYX_ERR(0, 2439, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_gesture_pinch_vector, __pyx_t_1) < 0) __PYX_ERR(0, 2483, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "raylib.pyx":2445
+  /* "raylib.pyx":2489
  * 
  * #cdef float GetGesturePinchAngle()                 # Get gesture pinch angle
  * def get_gesture_pinch_angle() -> float:             # <<<<<<<<<<<<<<
  *     return GetGesturePinchAngle()
  * 
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_227get_gesture_pinch_angle, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2445, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_199get_gesture_pinch_angle, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 2489, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_gesture_pinch_angle, __pyx_t_1) < 0) __PYX_ERR(0, 2445, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_gesture_pinch_angle, __pyx_t_1) < 0) __PYX_ERR(0, 2489, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "(tree fragment)":1
@@ -75928,7 +77631,7 @@ if (!__Pyx_RefNanny) {
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_229__pyx_unpickle_CyLineBezier, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_201__pyx_unpickle_CyLineBezier, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyLineBezier, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -75940,7 +77643,7 @@ if (!__Pyx_RefNanny) {
  *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):
  *         __pyx_result.__dict__.update(__pyx_state[0])
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_231__pyx_unpickle_CyCircle, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_203__pyx_unpickle_CyCircle, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyCircle, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -75950,7 +77653,7 @@ if (!__Pyx_RefNanny) {
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_233__pyx_unpickle_CyEclypse, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_205__pyx_unpickle_CyEclypse, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyEclypse, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -75962,7 +77665,7 @@ if (!__Pyx_RefNanny) {
  *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):
  *         __pyx_result.__dict__.update(__pyx_state[0])
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_235__pyx_unpickle_CyRing, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_207__pyx_unpickle_CyRing, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyRing, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -75972,7 +77675,7 @@ if (!__Pyx_RefNanny) {
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_237__pyx_unpickle_CyTriangle, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_209__pyx_unpickle_CyTriangle, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyTriangle, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -75984,7 +77687,7 @@ if (!__Pyx_RefNanny) {
  *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):
  *         __pyx_result.__dict__.update(__pyx_state[0])
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_239__pyx_unpickle_CyPolygon, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_211__pyx_unpickle_CyPolygon, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyPolygon, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -75994,7 +77697,7 @@ if (!__Pyx_RefNanny) {
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_241__pyx_unpickle_CySpline, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_213__pyx_unpickle_CySpline, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CySpline, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -76006,7 +77709,7 @@ if (!__Pyx_RefNanny) {
  *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):
  *         __pyx_result.__dict__.update(__pyx_state[0])
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_243__pyx_unpickle_CyLine3D, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_215__pyx_unpickle_CyLine3D, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyLine3D, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -76016,7 +77719,7 @@ if (!__Pyx_RefNanny) {
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_245__pyx_unpickle_CyPoint3D, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_217__pyx_unpickle_CyPoint3D, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyPoint3D, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -76028,7 +77731,7 @@ if (!__Pyx_RefNanny) {
  *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):
  *         __pyx_result.__dict__.update(__pyx_state[0])
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_247__pyx_unpickle_CyCircle3D, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_219__pyx_unpickle_CyCircle3D, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyCircle3D, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -76038,7 +77741,7 @@ if (!__Pyx_RefNanny) {
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_249__pyx_unpickle_CyTriangle3D, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_221__pyx_unpickle_CyTriangle3D, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyTriangle3D, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -76050,7 +77753,7 @@ if (!__Pyx_RefNanny) {
  *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):
  *         __pyx_result.__dict__.update(__pyx_state[0])
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_251__pyx_unpickle_CyTriangleStrip3D, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_223__pyx_unpickle_CyTriangleStrip3D, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyTriangleStrip3D, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -76060,7 +77763,7 @@ if (!__Pyx_RefNanny) {
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_253__pyx_unpickle_CyCube, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_225__pyx_unpickle_CyCube, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyCube, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -76072,7 +77775,7 @@ if (!__Pyx_RefNanny) {
  *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):
  *         __pyx_result.__dict__.update(__pyx_state[0])
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_255__pyx_unpickle_CySphere, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_227__pyx_unpickle_CySphere, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CySphere, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -76082,7 +77785,7 @@ if (!__Pyx_RefNanny) {
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_257__pyx_unpickle_CyCylinder, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_229__pyx_unpickle_CyCylinder, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyCylinder, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -76094,7 +77797,7 @@ if (!__Pyx_RefNanny) {
  *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):
  *         __pyx_result.__dict__.update(__pyx_state[0])
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_259__pyx_unpickle_CyCapsule, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_231__pyx_unpickle_CyCapsule, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyCapsule, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -76104,7 +77807,7 @@ if (!__Pyx_RefNanny) {
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_261__pyx_unpickle_CyPlane, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_233__pyx_unpickle_CyPlane, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyPlane, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -76116,7 +77819,7 @@ if (!__Pyx_RefNanny) {
  *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):
  *         __pyx_result.__dict__.update(__pyx_state[0])
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_263__pyx_unpickle_CyGrid, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_235__pyx_unpickle_CyGrid, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyGrid, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -76126,7 +77829,7 @@ if (!__Pyx_RefNanny) {
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_265__pyx_unpickle_CyAudioDeviceManager, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_237__pyx_unpickle_CyAudioDeviceManager, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyAudioDeviceMana, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -76138,9 +77841,19 @@ if (!__Pyx_RefNanny) {
  *     if len(__pyx_state) > 0 and hasattr(__pyx_result, '__dict__'):
  *         __pyx_result.__dict__.update(__pyx_state[0])
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_267__pyx_unpickle_CyKeyboard, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_239__pyx_unpickle_CyKeyboard, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyKeyboard, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "(tree fragment)":1
+ * def __pyx_unpickle_CyMouse(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
+ *     cdef object __pyx_PickleError
+ *     cdef object __pyx_result
+ */
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_6raylib_241__pyx_unpickle_CyMouse, NULL, __pyx_n_s_raylib); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_CyMouse, __pyx_t_1) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "raylib.pyx":1
@@ -76173,7 +77886,7 @@ if (!__Pyx_RefNanny) {
  * cdef strided = Enum("<strided and direct>") # default
  * cdef indirect = Enum("<strided and indirect>")
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__404, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 287, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__406, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 287, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(generic);
   __Pyx_DECREF_SET(generic, __pyx_t_1);
@@ -76187,7 +77900,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect = Enum("<strided and indirect>")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__405, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 288, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__407, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 288, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(strided);
   __Pyx_DECREF_SET(strided, __pyx_t_1);
@@ -76201,7 +77914,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__406, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 289, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__408, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(indirect);
   __Pyx_DECREF_SET(indirect, __pyx_t_1);
@@ -76215,7 +77928,7 @@ if (!__Pyx_RefNanny) {
  * cdef indirect_contiguous = Enum("<contiguous and indirect>")
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__407, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 292, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__409, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 292, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(contiguous);
   __Pyx_DECREF_SET(contiguous, __pyx_t_1);
@@ -76229,7 +77942,7 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__408, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 293, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)__pyx_MemviewEnum_type), __pyx_tuple__410, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_XGOTREF(indirect_contiguous);
   __Pyx_DECREF_SET(indirect_contiguous, __pyx_t_1);
@@ -81309,6 +83022,44 @@ raise_neg_overflow:
         int one = 1; int little = (int)*(unsigned char *)&one;
         unsigned char *bytes = (unsigned char *)&value;
         return _PyLong_FromByteArray(bytes, sizeof(KeyboardKey),
+                                     little, !is_unsigned);
+    }
+}
+
+/* CIntToPy */
+  static CYTHON_INLINE PyObject* __Pyx_PyInt_From_MouseButton(MouseButton value) {
+#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+    const MouseButton neg_one = (MouseButton) -1, const_zero = (MouseButton) 0;
+#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
+#pragma GCC diagnostic pop
+#endif
+    const int is_unsigned = neg_one > const_zero;
+    if (is_unsigned) {
+        if (sizeof(MouseButton) < sizeof(long)) {
+            return PyInt_FromLong((long) value);
+        } else if (sizeof(MouseButton) <= sizeof(unsigned long)) {
+            return PyLong_FromUnsignedLong((unsigned long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(MouseButton) <= sizeof(unsigned PY_LONG_LONG)) {
+            return PyLong_FromUnsignedLongLong((unsigned PY_LONG_LONG) value);
+#endif
+        }
+    } else {
+        if (sizeof(MouseButton) <= sizeof(long)) {
+            return PyInt_FromLong((long) value);
+#ifdef HAVE_LONG_LONG
+        } else if (sizeof(MouseButton) <= sizeof(PY_LONG_LONG)) {
+            return PyLong_FromLongLong((PY_LONG_LONG) value);
+#endif
+        }
+    }
+    {
+        int one = 1; int little = (int)*(unsigned char *)&one;
+        unsigned char *bytes = (unsigned char *)&value;
+        return _PyLong_FromByteArray(bytes, sizeof(MouseButton),
                                      little, !is_unsigned);
     }
 }

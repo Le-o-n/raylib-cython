@@ -1843,428 +1843,428 @@ cdef class CyKeyboard:
 
 
     @property
-    def KEY_NULL(self):
+    def KEY_NULL(self) -> int:
         return KeyboardKey.KEY_NULL
 
     @property
-    def KEY_APOSTROPHE(self):
+    def KEY_APOSTROPHE(self) -> int:
         return KeyboardKey.KEY_APOSTROPHE
 
     @property
-    def KEY_COMMA(self):
+    def KEY_COMMA(self) -> int:
         return KeyboardKey.KEY_COMMA
 
     @property
-    def KEY_MINUS(self):
+    def KEY_MINUS(self) -> int:
         return KeyboardKey.KEY_MINUS
 
     @property
-    def KEY_PERIOD(self):
+    def KEY_PERIOD(self) -> int:
         return KeyboardKey.KEY_PERIOD
 
     @property
-    def KEY_SLASH(self):
+    def KEY_SLASH(self) -> int:
         return KeyboardKey.KEY_SLASH
 
     @property
-    def KEY_ZERO(self):
+    def KEY_ZERO(self) -> int:
         return KeyboardKey.KEY_ZERO
 
     @property
-    def KEY_ONE(self):
+    def KEY_ONE(self) -> int:
         return KeyboardKey.KEY_ONE
 
     @property
-    def KEY_TWO(self):
+    def KEY_TWO(self) -> int:
         return KeyboardKey.KEY_TWO
 
     @property
-    def KEY_THREE(self):
+    def KEY_THREE(self) -> int:
         return KeyboardKey.KEY_THREE
 
     @property
-    def KEY_FOUR(self):
+    def KEY_FOUR(self) -> int:
         return KeyboardKey.KEY_FOUR
 
     @property
-    def KEY_FIVE(self):
+    def KEY_FIVE(self) -> int:
         return KeyboardKey.KEY_FIVE
 
     @property
-    def KEY_SIX(self):
+    def KEY_SIX(self) -> int:
         return KeyboardKey.KEY_SIX
 
     @property
-    def KEY_SEVEN(self):
+    def KEY_SEVEN(self) -> int:
         return KeyboardKey.KEY_SEVEN
 
     @property
-    def KEY_EIGHT(self):
+    def KEY_EIGHT(self) -> int:
         return KeyboardKey.KEY_EIGHT
 
     @property
-    def KEY_NINE(self):
+    def KEY_NINE(self) -> int:
         return KeyboardKey.KEY_NINE
 
     @property
-    def KEY_SEMICOLON(self):
+    def KEY_SEMICOLON(self) -> int:
         return KeyboardKey.KEY_SEMICOLON
 
     @property
-    def KEY_EQUAL(self):
+    def KEY_EQUAL(self) -> int:
         return KeyboardKey.KEY_EQUAL
 
     @property
-    def KEY_A(self):
+    def KEY_A(self) -> int:
         return KeyboardKey.KEY_A
 
     @property
-    def KEY_B(self):
+    def KEY_B(self) -> int:
         return KeyboardKey.KEY_B
 
     @property
-    def KEY_C(self):
+    def KEY_C(self) -> int:
         return KeyboardKey.KEY_C
 
     @property
-    def KEY_D(self):
+    def KEY_D(self) -> int:
         return KeyboardKey.KEY_D
 
     @property
-    def KEY_E(self):
+    def KEY_E(self) -> int:
         return KeyboardKey.KEY_E
 
     @property
-    def KEY_F(self):
+    def KEY_F(self) -> int:
         return KeyboardKey.KEY_F
 
     @property
-    def KEY_G(self):
+    def KEY_G(self) -> int:
         return KeyboardKey.KEY_G
 
     @property
-    def KEY_H(self):
+    def KEY_H(self) -> int:
         return KeyboardKey.KEY_H
 
     @property
-    def KEY_I(self):
+    def KEY_I(self) -> int:
         return KeyboardKey.KEY_I
 
     @property
-    def KEY_J(self):
+    def KEY_J(self) -> int:
         return KeyboardKey.KEY_J
 
     @property
-    def KEY_K(self):
+    def KEY_K(self) -> int:
         return KeyboardKey.KEY_K
 
     @property
-    def KEY_L(self):
+    def KEY_L(self) -> int:
         return KeyboardKey.KEY_L
 
     @property
-    def KEY_M(self):
+    def KEY_M(self) -> int:
         return KeyboardKey.KEY_M
 
     @property
-    def KEY_N(self):
+    def KEY_N(self) -> int:
         return KeyboardKey.KEY_N
 
     @property
-    def KEY_O(self):
+    def KEY_O(self) -> int:
         return KeyboardKey.KEY_O
 
     @property
-    def KEY_P(self):
+    def KEY_P(self) -> int:
         return KeyboardKey.KEY_P
 
     @property
-    def KEY_Q(self):
+    def KEY_Q(self) -> int:
         return KeyboardKey.KEY_Q
 
     @property
-    def KEY_R(self):
+    def KEY_R(self) -> int:
         return KeyboardKey.KEY_R
 
     @property
-    def KEY_S(self):
+    def KEY_S(self) -> int:
         return KeyboardKey.KEY_S
 
     @property
-    def KEY_T(self):
+    def KEY_T(self) -> int:
         return KeyboardKey.KEY_T
 
     @property
-    def KEY_U(self):
+    def KEY_U(self) -> int:
         return KeyboardKey.KEY_U
 
     @property
-    def KEY_V(self):
+    def KEY_V(self) -> int:
         return KeyboardKey.KEY_V
 
     @property
-    def KEY_W(self):
+    def KEY_W(self) -> int:
         return KeyboardKey.KEY_W
 
     @property
-    def KEY_X(self):
+    def KEY_X(self) -> int:
         return KeyboardKey.KEY_X
 
     @property
-    def KEY_Y(self):
+    def KEY_Y(self) -> int:
         return KeyboardKey.KEY_Y
 
     @property
-    def KEY_Z(self):
+    def KEY_Z(self) -> int:
         return KeyboardKey.KEY_Z
 
     @property
-    def KEY_SPACE(self):
+    def KEY_SPACE(self) -> int:
         return KeyboardKey.KEY_SPACE
 
     # Continue with function keys and other special keys
     @property
-    def KEY_ESCAPE(self):
+    def KEY_ESCAPE(self) -> int:
         return KeyboardKey.KEY_ESCAPE
 
     @property
-    def KEY_ENTER(self):
+    def KEY_ENTER(self) -> int:
         return KeyboardKey.KEY_ENTER
 
     @property
-    def KEY_TAB(self):
+    def KEY_TAB(self) -> int:
         return KeyboardKey.KEY_TAB
 
     @property
-    def KEY_BACKSPACE(self):
+    def KEY_BACKSPACE(self) -> int:
         return KeyboardKey.KEY_BACKSPACE
 
     @property
-    def KEY_INSERT(self):
+    def KEY_INSERT(self) -> int:
         return KeyboardKey.KEY_INSERT
 
     @property
-    def KEY_DELETE(self):
+    def KEY_DELETE(self) -> int:
         return KeyboardKey.KEY_DELETE
 
     @property
-    def KEY_RIGHT(self):
+    def KEY_RIGHT(self) -> int:
         return KeyboardKey.KEY_RIGHT
 
     @property
-    def KEY_LEFT(self):
+    def KEY_LEFT(self) -> int:
         return KeyboardKey.KEY_LEFT
 
     @property
-    def KEY_DOWN(self):
+    def KEY_DOWN(self) -> int:
         return KeyboardKey.KEY_DOWN
 
     @property
-    def KEY_UP(self):
+    def KEY_UP(self) -> int:
         return KeyboardKey.KEY_UP
 
     @property
-    def KEY_PAGE_UP(self):
+    def KEY_PAGE_UP(self) -> int:
         return KeyboardKey.KEY_PAGE_UP
 
     @property
-    def KEY_PAGE_DOWN(self):
+    def KEY_PAGE_DOWN(self) -> int:
         return KeyboardKey.KEY_PAGE_DOWN
 
     @property
-    def KEY_HOME(self):
+    def KEY_HOME(self) -> int:
         return KeyboardKey.KEY_HOME
 
     @property
-    def KEY_END(self):
+    def KEY_END(self) -> int:
         return KeyboardKey.KEY_END
 
     @property
-    def KEY_CAPS_LOCK(self):
+    def KEY_CAPS_LOCK(self) -> int:
         return KeyboardKey.KEY_CAPS_LOCK
 
     @property
-    def KEY_SCROLL_LOCK(self):
+    def KEY_SCROLL_LOCK(self) -> int:
         return KeyboardKey.KEY_SCROLL_LOCK
 
     @property
-    def KEY_NUM_LOCK(self):
+    def KEY_NUM_LOCK(self) -> int:
         return KeyboardKey.KEY_NUM_LOCK
 
     @property
-    def KEY_PRINT_SCREEN(self):
+    def KEY_PRINT_SCREEN(self) -> int:
         return KeyboardKey.KEY_PRINT_SCREEN
 
     @property
-    def KEY_PAUSE(self):
+    def KEY_PAUSE(self) -> int:
         return KeyboardKey.KEY_PAUSE
 
     @property
-    def KEY_F1(self):
+    def KEY_F1(self) -> int:
         return KeyboardKey.KEY_F1
 
     @property
-    def KEY_F2(self):
+    def KEY_F2(self) -> int:
         return KeyboardKey.KEY_F2
 
     @property
-    def KEY_F3(self):
+    def KEY_F3(self) -> int:
         return KeyboardKey.KEY_F3
 
     @property
-    def KEY_F4(self):
+    def KEY_F4(self) -> int:
         return KeyboardKey.KEY_F4
 
     @property
-    def KEY_F5(self):
+    def KEY_F5(self) -> int:
         return KeyboardKey.KEY_F5
 
     @property
-    def KEY_F6(self):
+    def KEY_F6(self) -> int:
         return KeyboardKey.KEY_F6
 
     @property
-    def KEY_F7(self):
+    def KEY_F7(self) -> int:
         return KeyboardKey.KEY_F7
 
     @property
-    def KEY_F8(self):
+    def KEY_F8(self) -> int:
         return KeyboardKey.KEY_F8
 
     @property
-    def KEY_F9(self):
+    def KEY_F9(self) -> int:
         return KeyboardKey.KEY_F9
 
     @property
-    def KEY_F10(self):
+    def KEY_F10(self) -> int:
         return KeyboardKey.KEY_F10
 
     @property
-    def KEY_F11(self):
+    def KEY_F11(self) -> int:
         return KeyboardKey.KEY_F11
 
     @property
-    def KEY_F12(self):
+    def KEY_F12(self) -> int:
         return KeyboardKey.KEY_F12
 
     @property
-    def KEY_LEFT_SHIFT(self):
+    def KEY_LEFT_SHIFT(self) -> int:
         return KeyboardKey.KEY_LEFT_SHIFT
 
     @property
-    def KEY_LEFT_CONTROL(self):
+    def KEY_LEFT_CONTROL(self) -> int:
         return KeyboardKey.KEY_LEFT_CONTROL
 
     @property
-    def KEY_LEFT_ALT(self):
+    def KEY_LEFT_ALT(self) -> int:
         return KeyboardKey.KEY_LEFT_ALT
 
     @property
-    def KEY_LEFT_SUPER(self):
+    def KEY_LEFT_SUPER(self) -> int:
         return KeyboardKey.KEY_LEFT_SUPER
 
     @property
-    def KEY_RIGHT_SHIFT(self):
+    def KEY_RIGHT_SHIFT(self) -> int:
         return KeyboardKey.KEY_RIGHT_SHIFT
 
     @property
-    def KEY_RIGHT_CONTROL(self):
+    def KEY_RIGHT_CONTROL(self) -> int:
         return KeyboardKey.KEY_RIGHT_CONTROL
 
     @property
-    def KEY_RIGHT_ALT(self):
+    def KEY_RIGHT_ALT(self) -> int:
         return KeyboardKey.KEY_RIGHT_ALT
 
     @property
-    def KEY_RIGHT_SUPER(self):
+    def KEY_RIGHT_SUPER(self) -> int:
         return KeyboardKey.KEY_RIGHT_SUPER
 
     @property
-    def KEY_KB_MENU(self):
+    def KEY_KB_MENU(self) -> int:
         return KeyboardKey.KEY_KB_MENU
 
     @property
-    def KEY_KP_0(self):
+    def KEY_KP_0(self) -> int:
         return KeyboardKey.KEY_KP_0
 
     @property
-    def KEY_KP_1(self):
+    def KEY_KP_1(self) -> int:
         return KeyboardKey.KEY_KP_1
 
     @property
-    def KEY_KP_2(self):
+    def KEY_KP_2(self) -> int:
         return KeyboardKey.KEY_KP_2
 
     @property
-    def KEY_KP_3(self):
+    def KEY_KP_3(self) -> int:
         return KeyboardKey.KEY_KP_3
 
     @property
-    def KEY_KP_4(self):
+    def KEY_KP_4(self) -> int:
         return KeyboardKey.KEY_KP_4
 
     @property
-    def KEY_KP_5(self):
+    def KEY_KP_5(self) -> int:
         return KeyboardKey.KEY_KP_5
 
     @property
-    def KEY_KP_6(self):
+    def KEY_KP_6(self) -> int:
         return KeyboardKey.KEY_KP_6
 
     @property
-    def KEY_KP_7(self):
+    def KEY_KP_7(self) -> int:
         return KeyboardKey.KEY_KP_7
 
     @property
-    def KEY_KP_8(self):
+    def KEY_KP_8(self) -> int:
         return KeyboardKey.KEY_KP_8
 
     @property
-    def KEY_KP_9(self):
+    def KEY_KP_9(self) -> int:
         return KeyboardKey.KEY_KP_9
 
     @property
-    def KEY_KP_DECIMAL(self):
+    def KEY_KP_DECIMAL(self) -> int:
         return KeyboardKey.KEY_KP_DECIMAL
 
     @property
-    def KEY_KP_DIVIDE(self):
+    def KEY_KP_DIVIDE(self) -> int:
         return KeyboardKey.KEY_KP_DIVIDE
 
     @property
-    def KEY_KP_MULTIPLY(self):
+    def KEY_KP_MULTIPLY(self) -> int:
         return KeyboardKey.KEY_KP_MULTIPLY
 
     @property
-    def KEY_KP_SUBTRACT(self):
+    def KEY_KP_SUBTRACT(self) -> int:
         return KeyboardKey.KEY_KP_SUBTRACT
 
     @property
-    def KEY_KP_ADD(self):
+    def KEY_KP_ADD(self) -> int:
         return KeyboardKey.KEY_KP_ADD
 
     @property
-    def KEY_KP_ENTER(self):
+    def KEY_KP_ENTER(self) -> int:
         return KeyboardKey.KEY_KP_ENTER
 
     @property
-    def KEY_KP_EQUAL(self):
+    def KEY_KP_EQUAL(self) -> int:
         return KeyboardKey.KEY_KP_EQUAL
 
     @property
-    def KEY_BACK(self):
+    def KEY_BACK(self) -> int:
         return KeyboardKey.KEY_BACK
 
     @property
-    def KEY_MENU(self):
+    def KEY_MENU(self) -> int:
         return KeyboardKey.KEY_MENU
 
     @property
-    def KEY_VOLUME_UP(self):
+    def KEY_VOLUME_UP(self) -> int:
         return KeyboardKey.KEY_VOLUME_UP
 
     @property
-    def KEY_VOLUME_DOWN(self):
+    def KEY_VOLUME_DOWN(self) -> int:
         return KeyboardKey.KEY_VOLUME_DOWN
 
 
@@ -2323,67 +2323,111 @@ def set_gamepad_mappings(str mappings) -> int:
 
 ########### Mouse ############
 
-#cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
-def is_mouse_button_pressed(int button) -> bool:
-    return IsMouseButtonPressed(button)
+cdef class CyMouse:
+    #cdef bint IsMouseButtonPressed(int button)                  # Check if a mouse button has been pressed once
+    @staticmethod
+    def is_mouse_button_pressed(int button) -> bool:
+        return IsMouseButtonPressed(button)
 
-#cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
-def is_mouse_button_down(int button) -> bool:
-    return IsMouseButtonDown(button)
+    #cdef bint IsMouseButtonDown(int button)                     # Check if a mouse button is being pressed
+    @staticmethod
+    def is_mouse_button_down(int button) -> bool:
+        return IsMouseButtonDown(button)
 
-#cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
-def is_mouse_button_released(int button) -> bool:
-    return IsMouseButtonReleased(button)
+    #cdef bint IsMouseButtonReleased(int button)                 # Check if a mouse button has been released once
+    @staticmethod
+    def is_mouse_button_released(int button) -> bool:
+        return IsMouseButtonReleased(button)
 
-#cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
-def is_mouse_button_up(int button) -> bool:
-    return IsMouseButtonUp(button)
+    #cdef bint IsMouseButtonUp(int button)                       # Check if a mouse button is NOT being pressed
+    @staticmethod
+    def is_mouse_button_up(int button) -> bool:
+        return IsMouseButtonUp(button)
 
-#cdef int GetMouseX()                                    # Get mouse position X
-def get_mouse_x() -> int:
-    return GetMouseX()
+    #cdef int GetMouseX()                                    # Get mouse position X
+    @staticmethod
+    def get_mouse_x() -> int:
+        return GetMouseX()
 
-#cdef int GetMouseY()                                    # Get mouse position Y
-def get_mouse_y() -> int:
-    return GetMouseY()
+    #cdef int GetMouseY()                                    # Get mouse position Y
+    @staticmethod
+    def get_mouse_y() -> int:
+        return GetMouseY()
 
-#cdef Vector2 GetMousePosition()                         # Get mouse position XY
-def get_mouse_position() -> raymath.CyVector2:
-    cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
-    vec._vector = GetMousePosition()
-    return vec
+    #cdef Vector2 GetMousePosition()                         # Get mouse position XY
+    @staticmethod
+    def get_mouse_position() -> raymath.CyVector2:
+        cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+        vec._vector = GetMousePosition()
+        return vec
 
-#cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
-def get_mouse_delta() -> raymath.CyVector2:
-    cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
-    vec._vector = GetMouseDelta()
-    return vec
-#cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
-def set_mouse_position(int x, int y) -> None:
-    SetMousePosition(x, y)
+    #cdef Vector2 GetMouseDelta()                            # Get mouse delta between frames
+    @staticmethod
+    def get_mouse_delta() -> raymath.CyVector2:
+        cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+        vec._vector = GetMouseDelta()
+        return vec
 
-#cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
-def set_mouse_offset(int offset_x, int offset_y) -> None:
-    SetMouseOffset(offset_x, offset_y)
+    #cdef void SetMousePosition(int x, int y)                    # Set mouse position XY
+    @staticmethod
+    def set_mouse_position(int x, int y) -> None:
+        SetMousePosition(x, y)
 
-#cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
-def set_mouse_scale(float scale_x, float scale_y) -> None:
-    SetMouseScale(scale_x, scale_y)
+    #cdef void SetMouseOffset(int offsetX, int offsetY)          # Set mouse offset
+    @staticmethod
+    def set_mouse_offset(int offset_x, int offset_y) -> None:
+        SetMouseOffset(offset_x, offset_y)
 
-#cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
-def get_mouse_wheel_move() -> float:
-    return GetMouseWheelMove()
+    #cdef void SetMouseScale(float scaleX, float scaleY)         # Set mouse scaling
+    @staticmethod
+    def set_mouse_scale(float scale_x, float scale_y) -> None:
+        SetMouseScale(scale_x, scale_y)
 
-#cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
-def get_mouse_wheel_move_vector() -> raymath.CyVector2:
-    cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
-    vec._vector = GetMouseWheelMoveV()
-    return vec
+    #cdef float GetMouseWheelMove()                          # Get mouse wheel movement for X or Y, whichever is larger
+    @staticmethod
+    def get_mouse_wheel_move() -> float:
+        return GetMouseWheelMove()
 
-#cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
-def set_mouse_cursor(int cursor) -> None:
-    SetMouseCursor(cursor)
+    #cdef Vector2 GetMouseWheelMoveV()                       # Get mouse wheel movement for both X and Y
+    @staticmethod
+    def get_mouse_wheel_move_vector() -> raymath.CyVector2:
+        cdef raymath.CyVector2 vec = raymath.CyVector2.__new__(raymath.CyVector2)
+        vec._vector = GetMouseWheelMoveV()
+        return vec
 
+    #cdef void SetMouseCursor(int cursor)                        # Set mouse cursor
+    @staticmethod
+    def set_mouse_cursor(int cursor) -> None:
+        SetMouseCursor(cursor)
+
+    @property
+    def MOUSE_BUTTON_LEFT(self) -> int:
+        return MouseButton.MOUSE_BUTTON_LEFT
+    
+    @property
+    def MOUSE_BUTTON_RIGHT(self) -> int:
+        return MouseButton.MOUSE_BUTTON_RIGHT
+    
+    @property
+    def MOUSE_BUTTON_MIDDLE(self) -> int:
+        return MouseButton.MOUSE_BUTTON_MIDDLE
+    
+    @property
+    def MOUSE_BUTTON_SIDE(self) -> int:
+        return MouseButton.MOUSE_BUTTON_SIDE
+    
+    @property
+    def MOUSE_BUTTON_EXTRA(self) -> int:
+        return MouseButton.MOUSE_BUTTON_EXTRA
+    
+    @property
+    def MOUSE_BUTTON_FORWARD(self) -> int:
+        return MouseButton.MOUSE_BUTTON_FORWARD
+    
+    @property
+    def MOUSE_BUTTON_BACK(self) -> int:
+        return MouseButton.MOUSE_BUTTON_BACK
+    
 
 ############# Touch ##############
 
