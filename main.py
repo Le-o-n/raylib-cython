@@ -5,6 +5,7 @@ from raylib_cython import raymath
 import numpy as np
 
 keyboard = raylib.CyKeyboard()
+mouse = raylib.CyMouse()
 
 
 def main():
@@ -28,14 +29,14 @@ def main():
 
     while not raylib.window_should_close():
 
-        m = raylib.get_mouse_position()
+        m = mouse.get_mouse_position()
 
         raylib.clear_background(raylib.CyColor.black())
         raylib.draw_fps(0, 0)
         raylib.begin_drawing()
 
         utf8_text.pos = m
-        if keyboard.is_key_down(keyboard.KEY_SPACE):
+        if mouse.is_mouse_button_down(mouse.MOUSE_BUTTON_LEFT):
             utf8_text.draw()
 
         raylib.end_drawing()
