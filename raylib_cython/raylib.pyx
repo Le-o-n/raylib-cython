@@ -3,12 +3,7 @@ from libc.string cimport strcpy, strlen
 from raylib_cython cimport raymath
 from libc.math cimport round
 
-# TODO Move inputs to another MODULE
-# TODO move shapes to another MODULE?
-# TODO remove OS functions since python can do these
-
-  
-   
+ 
 
 cdef class CyColor:
     
@@ -235,8 +230,6 @@ cdef class CyRectangle:
     #cdef void DrawRectangleRounded(Rectangle rec, float roundness, int segments, Color color)              # Draw rectangle with rounded edges
     #cdef void DrawRectangleRoundedLines(Rectangle rec, float roundness, int segments, float lineThick, Color color) # Draw rectangle with rounded edges outline
     
-
-
 cdef class CyImage:
     cdef Image _image
     #    # Image, pixel data stored in CPU memory (RAM)
@@ -1806,37 +1799,473 @@ def draw_fps(int x, int y) -> None:
 
 ############ Keyboard #############
 
-#cdef bint IsKeyPressed(int key)                             # Check if a key has been pressed once
-def is_key_pressed(int key) -> bool:
-    return IsKeyPressed(key)
+cdef class CyKeyboard:
 
-#cdef bint IsKeyPressedRepeat(int key)                       # Check if a key has been pressed again (Only PLATFORM_DESKTOP)
-def is_key_pressed_repeat(int key) -> bool:
-    return IsKeyPressedRepeat(key)
+    #cdef bint IsKeyPressed(int key)                             # Check if a key has been pressed once
+    @staticmethod
+    def is_key_pressed(int key) -> bool:
+        return IsKeyPressed(key)
 
-#cdef bint IsKeyDown(int key)                                # Check if a key is being pressed
-def is_key_down(int key) -> bool:
-    return IsKeyDown(key)
+    #cdef bint IsKeyPressedRepeat(int key)                       # Check if a key has been pressed again (Only PLATFORM_DESKTOP)
+    @staticmethod
+    def is_key_pressed_repeat(int key) -> bool:
+        return IsKeyPressedRepeat(key)
 
-#cdef bint IsKeyReleased(int key)                            # Check if a key has been released once
-def is_key_released(int key) -> bool:
-    return IsKeyReleased(key)
+    #cdef bint IsKeyDown(int key)                                # Check if a key is being pressed
+    @staticmethod
+    def is_key_down(int key) -> bool:
+        return IsKeyDown(key)
 
-#cdef bint IsKeyUp(int key)                                  # Check if a key is NOT being pressed
-def is_key_up(int key) -> bool:
-    return IsKeyUp(key)
+    #cdef bint IsKeyReleased(int key)                            # Check if a key has been released once
+    @staticmethod
+    def is_key_released(int key) -> bool:
+        return IsKeyReleased(key)
 
-#cdef int GetKeyPressed()                                # Get key pressed (keycode), call it multiple times for keys queued, returns 0 when the queue is empty
-def get_key_pressed() -> int:
-    return GetKeyPressed()
+    #cdef bint IsKeyUp(int key)                                  # Check if a key is NOT being pressed
+    @staticmethod
+    def is_key_up(int key) -> bool:
+        return IsKeyUp(key)
 
-#cdef int GetCharPressed()                               # Get char pressed (unicode), call it multiple times for chars queued, returns 0 when the queue is empty
-def get_char_pressed() -> int:
-    return GetCharPressed()
+    #cdef int GetKeyPressed()                                # Get key pressed (keycode), call it multiple times for keys queued, returns 0 when the queue is empty
+    @staticmethod
+    def get_key_pressed() -> int:
+        return GetKeyPressed()
 
-#cdef void SetExitKey(int key)                               # Set a custom key to exit program (default is ESC)
-def set_exit_key(int key) -> None:
-    SetExitKey(key)
+    #cdef int GetCharPressed()                               # Get char pressed (unicode), call it multiple times for chars queued, returns 0 when the queue is empty
+    @staticmethod
+    def get_char_pressed() -> int:
+        return GetCharPressed()
+
+    #cdef void SetExitKey(int key)                               # Set a custom key to exit program (default is ESC)
+    @staticmethod
+    def set_exit_key(int key) -> None:
+        SetExitKey(key)
+
+
+    @property
+    def KEY_NULL(self):
+        return KeyboardKey.KEY_NULL
+
+    @property
+    def KEY_APOSTROPHE(self):
+        return KeyboardKey.KEY_APOSTROPHE
+
+    @property
+    def KEY_COMMA(self):
+        return KeyboardKey.KEY_COMMA
+
+    @property
+    def KEY_MINUS(self):
+        return KeyboardKey.KEY_MINUS
+
+    @property
+    def KEY_PERIOD(self):
+        return KeyboardKey.KEY_PERIOD
+
+    @property
+    def KEY_SLASH(self):
+        return KeyboardKey.KEY_SLASH
+
+    @property
+    def KEY_ZERO(self):
+        return KeyboardKey.KEY_ZERO
+
+    @property
+    def KEY_ONE(self):
+        return KeyboardKey.KEY_ONE
+
+    @property
+    def KEY_TWO(self):
+        return KeyboardKey.KEY_TWO
+
+    @property
+    def KEY_THREE(self):
+        return KeyboardKey.KEY_THREE
+
+    @property
+    def KEY_FOUR(self):
+        return KeyboardKey.KEY_FOUR
+
+    @property
+    def KEY_FIVE(self):
+        return KeyboardKey.KEY_FIVE
+
+    @property
+    def KEY_SIX(self):
+        return KeyboardKey.KEY_SIX
+
+    @property
+    def KEY_SEVEN(self):
+        return KeyboardKey.KEY_SEVEN
+
+    @property
+    def KEY_EIGHT(self):
+        return KeyboardKey.KEY_EIGHT
+
+    @property
+    def KEY_NINE(self):
+        return KeyboardKey.KEY_NINE
+
+    @property
+    def KEY_SEMICOLON(self):
+        return KeyboardKey.KEY_SEMICOLON
+
+    @property
+    def KEY_EQUAL(self):
+        return KeyboardKey.KEY_EQUAL
+
+    @property
+    def KEY_A(self):
+        return KeyboardKey.KEY_A
+
+    @property
+    def KEY_B(self):
+        return KeyboardKey.KEY_B
+
+    @property
+    def KEY_C(self):
+        return KeyboardKey.KEY_C
+
+    @property
+    def KEY_D(self):
+        return KeyboardKey.KEY_D
+
+    @property
+    def KEY_E(self):
+        return KeyboardKey.KEY_E
+
+    @property
+    def KEY_F(self):
+        return KeyboardKey.KEY_F
+
+    @property
+    def KEY_G(self):
+        return KeyboardKey.KEY_G
+
+    @property
+    def KEY_H(self):
+        return KeyboardKey.KEY_H
+
+    @property
+    def KEY_I(self):
+        return KeyboardKey.KEY_I
+
+    @property
+    def KEY_J(self):
+        return KeyboardKey.KEY_J
+
+    @property
+    def KEY_K(self):
+        return KeyboardKey.KEY_K
+
+    @property
+    def KEY_L(self):
+        return KeyboardKey.KEY_L
+
+    @property
+    def KEY_M(self):
+        return KeyboardKey.KEY_M
+
+    @property
+    def KEY_N(self):
+        return KeyboardKey.KEY_N
+
+    @property
+    def KEY_O(self):
+        return KeyboardKey.KEY_O
+
+    @property
+    def KEY_P(self):
+        return KeyboardKey.KEY_P
+
+    @property
+    def KEY_Q(self):
+        return KeyboardKey.KEY_Q
+
+    @property
+    def KEY_R(self):
+        return KeyboardKey.KEY_R
+
+    @property
+    def KEY_S(self):
+        return KeyboardKey.KEY_S
+
+    @property
+    def KEY_T(self):
+        return KeyboardKey.KEY_T
+
+    @property
+    def KEY_U(self):
+        return KeyboardKey.KEY_U
+
+    @property
+    def KEY_V(self):
+        return KeyboardKey.KEY_V
+
+    @property
+    def KEY_W(self):
+        return KeyboardKey.KEY_W
+
+    @property
+    def KEY_X(self):
+        return KeyboardKey.KEY_X
+
+    @property
+    def KEY_Y(self):
+        return KeyboardKey.KEY_Y
+
+    @property
+    def KEY_Z(self):
+        return KeyboardKey.KEY_Z
+
+    @property
+    def KEY_SPACE(self):
+        return KeyboardKey.KEY_SPACE
+
+    # Continue with function keys and other special keys
+    @property
+    def KEY_ESCAPE(self):
+        return KeyboardKey.KEY_ESCAPE
+
+    @property
+    def KEY_ENTER(self):
+        return KeyboardKey.KEY_ENTER
+
+    @property
+    def KEY_TAB(self):
+        return KeyboardKey.KEY_TAB
+
+    @property
+    def KEY_BACKSPACE(self):
+        return KeyboardKey.KEY_BACKSPACE
+
+    @property
+    def KEY_INSERT(self):
+        return KeyboardKey.KEY_INSERT
+
+    @property
+    def KEY_DELETE(self):
+        return KeyboardKey.KEY_DELETE
+
+    @property
+    def KEY_RIGHT(self):
+        return KeyboardKey.KEY_RIGHT
+
+    @property
+    def KEY_LEFT(self):
+        return KeyboardKey.KEY_LEFT
+
+    @property
+    def KEY_DOWN(self):
+        return KeyboardKey.KEY_DOWN
+
+    @property
+    def KEY_UP(self):
+        return KeyboardKey.KEY_UP
+
+    @property
+    def KEY_PAGE_UP(self):
+        return KeyboardKey.KEY_PAGE_UP
+
+    @property
+    def KEY_PAGE_DOWN(self):
+        return KeyboardKey.KEY_PAGE_DOWN
+
+    @property
+    def KEY_HOME(self):
+        return KeyboardKey.KEY_HOME
+
+    @property
+    def KEY_END(self):
+        return KeyboardKey.KEY_END
+
+    @property
+    def KEY_CAPS_LOCK(self):
+        return KeyboardKey.KEY_CAPS_LOCK
+
+    @property
+    def KEY_SCROLL_LOCK(self):
+        return KeyboardKey.KEY_SCROLL_LOCK
+
+    @property
+    def KEY_NUM_LOCK(self):
+        return KeyboardKey.KEY_NUM_LOCK
+
+    @property
+    def KEY_PRINT_SCREEN(self):
+        return KeyboardKey.KEY_PRINT_SCREEN
+
+    @property
+    def KEY_PAUSE(self):
+        return KeyboardKey.KEY_PAUSE
+
+    @property
+    def KEY_F1(self):
+        return KeyboardKey.KEY_F1
+
+    @property
+    def KEY_F2(self):
+        return KeyboardKey.KEY_F2
+
+    @property
+    def KEY_F3(self):
+        return KeyboardKey.KEY_F3
+
+    @property
+    def KEY_F4(self):
+        return KeyboardKey.KEY_F4
+
+    @property
+    def KEY_F5(self):
+        return KeyboardKey.KEY_F5
+
+    @property
+    def KEY_F6(self):
+        return KeyboardKey.KEY_F6
+
+    @property
+    def KEY_F7(self):
+        return KeyboardKey.KEY_F7
+
+    @property
+    def KEY_F8(self):
+        return KeyboardKey.KEY_F8
+
+    @property
+    def KEY_F9(self):
+        return KeyboardKey.KEY_F9
+
+    @property
+    def KEY_F10(self):
+        return KeyboardKey.KEY_F10
+
+    @property
+    def KEY_F11(self):
+        return KeyboardKey.KEY_F11
+
+    @property
+    def KEY_F12(self):
+        return KeyboardKey.KEY_F12
+
+    @property
+    def KEY_LEFT_SHIFT(self):
+        return KeyboardKey.KEY_LEFT_SHIFT
+
+    @property
+    def KEY_LEFT_CONTROL(self):
+        return KeyboardKey.KEY_LEFT_CONTROL
+
+    @property
+    def KEY_LEFT_ALT(self):
+        return KeyboardKey.KEY_LEFT_ALT
+
+    @property
+    def KEY_LEFT_SUPER(self):
+        return KeyboardKey.KEY_LEFT_SUPER
+
+    @property
+    def KEY_RIGHT_SHIFT(self):
+        return KeyboardKey.KEY_RIGHT_SHIFT
+
+    @property
+    def KEY_RIGHT_CONTROL(self):
+        return KeyboardKey.KEY_RIGHT_CONTROL
+
+    @property
+    def KEY_RIGHT_ALT(self):
+        return KeyboardKey.KEY_RIGHT_ALT
+
+    @property
+    def KEY_RIGHT_SUPER(self):
+        return KeyboardKey.KEY_RIGHT_SUPER
+
+    @property
+    def KEY_KB_MENU(self):
+        return KeyboardKey.KEY_KB_MENU
+
+    @property
+    def KEY_KP_0(self):
+        return KeyboardKey.KEY_KP_0
+
+    @property
+    def KEY_KP_1(self):
+        return KeyboardKey.KEY_KP_1
+
+    @property
+    def KEY_KP_2(self):
+        return KeyboardKey.KEY_KP_2
+
+    @property
+    def KEY_KP_3(self):
+        return KeyboardKey.KEY_KP_3
+
+    @property
+    def KEY_KP_4(self):
+        return KeyboardKey.KEY_KP_4
+
+    @property
+    def KEY_KP_5(self):
+        return KeyboardKey.KEY_KP_5
+
+    @property
+    def KEY_KP_6(self):
+        return KeyboardKey.KEY_KP_6
+
+    @property
+    def KEY_KP_7(self):
+        return KeyboardKey.KEY_KP_7
+
+    @property
+    def KEY_KP_8(self):
+        return KeyboardKey.KEY_KP_8
+
+    @property
+    def KEY_KP_9(self):
+        return KeyboardKey.KEY_KP_9
+
+    @property
+    def KEY_KP_DECIMAL(self):
+        return KeyboardKey.KEY_KP_DECIMAL
+
+    @property
+    def KEY_KP_DIVIDE(self):
+        return KeyboardKey.KEY_KP_DIVIDE
+
+    @property
+    def KEY_KP_MULTIPLY(self):
+        return KeyboardKey.KEY_KP_MULTIPLY
+
+    @property
+    def KEY_KP_SUBTRACT(self):
+        return KeyboardKey.KEY_KP_SUBTRACT
+
+    @property
+    def KEY_KP_ADD(self):
+        return KeyboardKey.KEY_KP_ADD
+
+    @property
+    def KEY_KP_ENTER(self):
+        return KeyboardKey.KEY_KP_ENTER
+
+    @property
+    def KEY_KP_EQUAL(self):
+        return KeyboardKey.KEY_KP_EQUAL
+
+    @property
+    def KEY_BACK(self):
+        return KeyboardKey.KEY_BACK
+
+    @property
+    def KEY_MENU(self):
+        return KeyboardKey.KEY_MENU
+
+    @property
+    def KEY_VOLUME_UP(self):
+        return KeyboardKey.KEY_VOLUME_UP
+
+    @property
+    def KEY_VOLUME_DOWN(self):
+        return KeyboardKey.KEY_VOLUME_DOWN
 
 
 ############## Gamepad ############

@@ -4,16 +4,18 @@ from raylib_cython import raylib
 from raylib_cython import raymath
 import numpy as np
 
+keyboard = raylib.CyKeyboard()
+
 
 def main():
 
     m: raymath.CyVector2
 
     codepoints: np.ndarray[np.int32] = np.array(
-        [256,100,100,99],
+        [256, 100, 100, 99],
         dtype=np.int32
     )
-    
+
     utf8_bytes: bytes = raylib.CyText.load_utf8(codepoints)
 
     utf8_text: raylib.CyText = raylib.CyText(
@@ -22,8 +24,8 @@ def main():
         raylib.CyColor.green()
     )
     raylib.init_window(1000, 900, "Hello World")
-    raylib.set_target_fps(60)
-    
+    # raylib.set_target_fps(60)
+
     while not raylib.window_should_close():
 
         m = raylib.get_mouse_position()
@@ -33,8 +35,9 @@ def main():
         raylib.begin_drawing()
 
         utf8_text.pos = m
-        utf8_text.draw()
-        
+        if keyboard.is_key_down(keyboard.KEY_SPACE):
+            utf8_text.draw()
+
         raylib.end_drawing()
 
     raylib.close_window()
